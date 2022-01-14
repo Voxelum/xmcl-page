@@ -1,9 +1,9 @@
-name: 'GitHub Action deploy example'
+name: "GitHub Action deploy example"
 on:
   pull_request:
   push:
     branches:
-      - '*'
+      - "*"
 
 jobs:
   run-example-deployment:
@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.25.0
       - run: "pnpm i"
       # Extracts GitHub metadata (branch name, etc.)
       - name: Expose GitHub slug/short variables # See https://github.com/rlespinasse/github-slug-action#exposed-github-environment-variables
@@ -31,10 +33,10 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-      - run: "echo \"Found deployment url: ${{ env.VERCEL_DEPLOYMENT_URL }}\""
-      - run: "echo \"Created ${{ env.VERCEL_ALIASES_CREATED_COUNT }} aliases\""
-      - run: "echo \"Created aliases: ${{ env.VERCEL_ALIASES_CREATED }}\""
-      - run: "echo \"Created aliases (full): ${{ env.VERCEL_ALIASES_CREATED_FULL }}\""
-      - run: "echo \"Alias markdown generated: ${{ env.VERCEL_ALIASES_CREATED_URLS_MD }}\""
-      - run: "echo \"Failed ${{ env.VERCEL_ALIASES_FAILED_COUNT }} aliases\""
-      - run: "echo \"Failed aliases (full): ${{ env.VERCEL_ALIASES_FAILED_FULL }}\""
+      - run: 'echo "Found deployment url: ${{ env.VERCEL_DEPLOYMENT_URL }}"'
+      - run: 'echo "Created ${{ env.VERCEL_ALIASES_CREATED_COUNT }} aliases"'
+      - run: 'echo "Created aliases: ${{ env.VERCEL_ALIASES_CREATED }}"'
+      - run: 'echo "Created aliases (full): ${{ env.VERCEL_ALIASES_CREATED_FULL }}"'
+      - run: 'echo "Alias markdown generated: ${{ env.VERCEL_ALIASES_CREATED_URLS_MD }}"'
+      - run: 'echo "Failed ${{ env.VERCEL_ALIASES_FAILED_COUNT }} aliases"'
+      - run: 'echo "Failed aliases (full): ${{ env.VERCEL_ALIASES_FAILED_FULL }}"'
