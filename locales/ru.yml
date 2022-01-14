@@ -1,0 +1,52 @@
+lang: Русский
+repository: Репозиторий исходного кода
+launcher:
+  manage:
+    intro: Эффективно управляйте своим Minecraft.
+  description: Простой, с открытым исходным кодом и ориентированный на выполнение функций Minecraft Launcher
+download: Монтажник
+downloadFor:
+  windows: 'Скачать Для Windows:'
+  mac: 'Скачать для Mac:'
+  linux: 'Скачать для Linux:'
+author: Связаться с автором
+download-zip: Zip (64 bits)
+download-web: Веб-установщик
+download-portable: Портативный
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+azure-source: Скачать из Azure
+azure-ms-source: Загрузка из Azure Microsoft CDN
+baidu-source: Download From Baidu CDN
+github-source: Загрузить с Github
+auto-source: Автоматическое определение источника загрузки
+prerelease: Предварительная версия
+authSuccess: Преуспеть! 
+authSuccessTitle: >-
+  Авторизация прошла успешно. Вы будете перенаправлены обратно в Minecraft Launcher!
+redirectHelperTitle: >-
+  Если вы не перенаправляетесь, вы можете попробовать нажать кнопку Открыть в приложении, чтобы вручную перенаправить.
+redirectHelperMessage: >-
+  Появится всплывающее окно с просьбой открыть пусковую установку. Если это не сработает вы можете попробовать перетащить кнопку в окно пусковой установки!
+notWork: Не работает?
+openInAppButton: Открыть в программе Launcher
+nothingWork: Если ничего из вышеперечисленного не работает, возможно, вы захотите повторно загрузить последнюю версию Launcher
+features: Характеристики
+feature:
+  multilingual:
+    description: >-
+      В настоящее время программа запуска поддерживает английский, китайский и русский языки. Язык легко расширяется! Не стесняйтесь вносить свой вклад!
+    title: Многоязычный
+  modManage:
+    title: Управление модами
+    description: >-
+      Вы можете управлять огромными ресурсами в простом интерфейсе и помечать их по своему усмотрению. по своему усмотрению.
+  curseforgeIntegration:
+    title: Интеграция с Curseforge
+    description: Вы можете загружать ресурсы с curseforge внутри программы запуска.
+  resourcepackManage:
+    title: Управление пакетами ресурсов
+    description: Вы можете включить/выключить пакет ресурсов и рекламный тег для них.

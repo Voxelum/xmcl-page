@@ -1,0 +1,57 @@
+lang: English
+repository: Source Code Repository
+launcher:
+  manage:
+    intro: Manage your Minecraft effectively.
+  description: An Simple, Open Sources, and Function Orientated Minecraft Launcher
+download: Installer
+downloadFor:
+  windows: 'Download For Windows:'
+  mac: 'Download For Mac:'
+  linux: 'Download For Linux:'
+author: Contant Author
+download-zip: Zip (64 bits)
+download-web: Web Installer
+download-portable: Portable
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+azure-source: Download From Azure
+azure-ms-source: Download From Azure Microsoft CDN
+baidu-source: Download From Baidu CDN
+github-source: Download From Github
+auto-source: Auto Detect The Download Source
+prerelease: Prerelease
+authSuccess: Succeed!
+authSuccessTitle: >-
+  Authorization was successful. You will be redirected back to Minecraft
+  Launcher!
+redirectHelperTitle: >-
+  If you aren't redirected, you can try to click Open In App button to manually
+  redirect.
+redirectHelperMessage: >-
+  It will create popup and ask you to open the launcher. If that don't work
+  either, you can try to drag the button to launcher window!
+notWork: Doesn't Work?
+openInAppButton: Open In Launcher
+nothingWork: If none of above works, you might want to re-download the latest Launcher
+features: Features
+feature:
+  multilingual:
+    description: >-
+      The launcher currently supports English, Chinese and Russian. And the
+      language is easy to extends! Feel free to contribute!
+    title: Multi Lingual
+  modManage:
+    title: Mod Management
+    description: >-
+      You can manage massive resources in easy interface and tagging them as you
+      wish.
+  curseforgeIntegration:
+    title: Curseforge Integration
+    description: You can download resources from curseforge inside the launcher.
+  resourcepackManage:
+    title: ResourcePack Management
+    description: You can enable/disable resource pack and add tag to them.

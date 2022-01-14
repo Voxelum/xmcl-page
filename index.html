@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="A Empower Your Minecraft Experience, 极简、强大的 Minecraft 启动器">
+  <meta name="keywords"
+    content="Minecraft, Launcher, Minecraft Launcher, 启动器, Minecraft 启动器, Electron, NodeJS, Electron Minecraft Launcher">
+  <meta name="robots" content="all">
+
+  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+  <link rel="mask-icon" href="/favicon.svg" color="#00aba9">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/pagepiling.js@1.5.6/jquery.pagepiling.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/site.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/menu.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/card.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/container.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/icon.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/dropdown.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/label.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/button.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/tab.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/transition.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/message.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/grid.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/popup.min.css">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/divider.min.css">
+
+  <script>
+    (function () {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+  </script>
+</head>
+
+<body>
+  <div id="app" class="overflow-auto"></div>
+  <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/dropdown.min.js"></script>
+  <script crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/tab.min.js"></script>
+  <script crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/transition.min.js"></script>
+  <script crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/popup.min.js"></script>
+
+  <script crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/pagepiling.js@1.5.6/jquery.pagepiling.min.js"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+    "rewrites": [
+        {
+            "source": "/minecraft-core",
+            "destination": "https://voxelum.github.io/minecraft-launcher-core-node/"
+        },
+        {
+            "source": "/.well-known/microsoft-identity-association.json",
+            "destination": "/microsoft-identity-association.json"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/microsoft-identity-association.json",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                }
+            ]
+        }
+    ]
+}
