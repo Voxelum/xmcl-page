@@ -6,7 +6,7 @@ on:
       - "*"
 
 jobs:
-  run-example-deployment:
+  deploy:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
 
       - uses: UnlyEd/github-action-deploy-on-vercel@latest
         with:
-          command: "vercel ./dist --confirm --token ${{ secrets.VERCEL_TOKEN }}"
+          command: "vercel --local-config ./vercel.json --prod ./dist --confirm --token ${{ secrets.VERCEL_TOKEN }}"
           applyDomainAliases: true
           failIfAliasNotLinked: false
           # Uses dynamically resolved additional aliases (e.g: one based on the current branch's name)
