@@ -1,4 +1,4 @@
-name: "GitHub Action deploy example"
+name: "Deploy"
 on:
   pull_request:
   push:
@@ -13,12 +13,13 @@ jobs:
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.25.0
-      - run: "pnpm i"
+      - name: "Install"
+        run: "pnpm i"
       # Extracts GitHub metadata (branch name, etc.)
       - name: Expose GitHub slug/short variables # See https://github.com/rlespinasse/github-slug-action#exposed-github-environment-variables
         uses: rlespinasse/github-slug-action@v3.x # See https://github.com/rlespinasse/github-slug-action
 
-      - uses: ./
+      - uses: UnlyEd/github-action-deploy-on-vercel@latest
         with:
           command: "vercel ./dist --confirm --token ${{ secrets.VERCEL_TOKEN }}"
           applyDomainAliases: true
