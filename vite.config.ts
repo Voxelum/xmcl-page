@@ -95,22 +95,22 @@ export default defineConfig({
         }),
 
         // https://github.com/antfu/vite-plugin-pwa
-        VitePWA({
-            registerType: 'autoUpdate',
-            includeAssets: ['favicon.svg', 'robots.txt'],
-            manifest: {
-                name: 'xmcl',
-                short_name: 'xmcl',
-                theme_color: '#ffffff',
-                icons: [
-                    {
-                        src: '/apple-touch-icon.png',
-                        sizes: '180x180',
-                        type: 'image/png',
-                    },
-                ],
-            },
-        }),
+        // VitePWA({
+        //     registerType: 'autoUpdate',
+        //     includeAssets: ['favicon.svg', 'robots.txt'],
+        //     manifest: {
+        //         name: 'xmcl',
+        //         short_name: 'xmcl',
+        //         theme_color: '#ffffff',
+        //         icons: [
+        //             {
+        //                 src: '/apple-touch-icon.png',
+        //                 sizes: '180x180',
+        //                 type: 'image/png',
+        //             },
+        //         ],
+        //     },
+        // }),
 
         // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
         VueI18n({
