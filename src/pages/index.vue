@@ -74,9 +74,9 @@ const github = useGithubInfoStore()
 const platform = usePlatform()
 const { t } = useI18n()
 
-onMounted(() => {
-  github.refresh()
-})
+// onMounted(() => {
+//   github.refresh()
+// })
 
 const showingIndex = ref(-1)
 const activeIndex = ref(1)

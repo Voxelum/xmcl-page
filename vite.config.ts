@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+// import fetch from 'node-fetch'
 // import 'vite-ssg'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -22,6 +23,22 @@ export default defineConfig({
         },
     },
     plugins: [
+        {
+            name: 'latest-release',
+            resolveId(id) {
+                if (id === 'virtual:latest-release') {
+                    return id
+                }
+            },
+            async load(id) {
+                if (id === 'virtual:latest-release') {
+                    const fetch = await import('node-fetch')
+                    const resp = await fetch.default('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases')
+                    const releases = await resp.text()
+                    return `export default ${releases}`
+                }
+            }
+        },
         Vue({
             include: [/\.vue$/, /\.md$/],
         }),

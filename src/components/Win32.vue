@@ -9,7 +9,7 @@
     <a
       win-web
       class="ui huge inverted download labeled icon teal button"
-      :disabled="!artifacts.winWeb"
+      :class="{ disabled: !artifacts.winWeb }"
       :href="artifacts.winWeb"
     >
       <i class="plane icon"></i>
@@ -18,7 +18,7 @@
     <a
       win-setup
       class="ui huge inverted download labeled icon positive button"
-      :disabled="!artifacts.winNsis"
+      :class="{ disabled: !artifacts.winNsis }"
       :href="artifacts.winNsis"
     >
       <i class="rocket icon"></i>
@@ -28,6 +28,7 @@
       win-zip
       class="ui huge inverted download labeled icon brown button"
       :disabled="!artifacts.winZip"
+      :class="{ disabled: !artifacts.winZip }"
       :href="artifacts.winZip"
     >
       <i class="box icon"></i>

@@ -16,6 +16,7 @@
     <a
       snap
       class="ui huge inverted download labeled icon teal button"
+      :class="{ disabled: !artifacts.snap }"
       :disabled="!artifacts.snap"
       :href="artifacts.snap"
     >
@@ -25,6 +26,7 @@
     <a
       appimage
       class="ui huge inverted download labeled icon positive button"
+      :class="{ disabled: !artifacts.appImage }"
       :disabled="!artifacts.appImage"
       :href="artifacts.appImage"
     >
@@ -34,6 +36,7 @@
     <a
       rpm
       class="ui huge inverted download labeled icon button"
+      :class="{ disabled: !artifacts.rpm }"
       :disabled="!artifacts.rpm"
       :href="artifacts.rpm"
     >

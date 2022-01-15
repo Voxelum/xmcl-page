@@ -9,7 +9,7 @@
     <a
       dmg
       class="ui huge inverted download labeled icon positive button"
-      :disabled="!artifacts.macDmg"
+      :class="{ disabled: !artifacts.macDmg }"
       :href="artifacts.macDmg"
     >
       <i class="hdd icon"></i>
@@ -17,8 +17,8 @@
     </a>
     <a
       mac-zip
-      :disabled="!artifacts.macZip"
       class="ui huge inverted download labeled icon brown button"
+      :class="{ disabled: !artifacts.macZip }"
       :href="artifacts.macZip"
     >
       <i class="box icon"></i>

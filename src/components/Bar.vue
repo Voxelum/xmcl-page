@@ -37,7 +37,6 @@
                 <div class="item" @click="download.source = 'auto'">{{ t("auto-source") }}</div>
                 <div class="item" @click="download.source = 'azure'">{{ t("azure-source") }}</div>
                 <div class="item" @click="download.source = 'azure-ms'">{{ t("azure-ms-source") }}</div>
-                <div class="item" @click="download.source = 'baidu'">{{ t("baidu-source") }}</div>
                 <div class="item" @click="download.source = 'github'">{{ t("github-source") }}</div>
               </div>
             </div>
