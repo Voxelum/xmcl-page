@@ -21,20 +21,22 @@
       <div class="flex">
         <div class="w-250 max-w-250 relative">
           <div class="flex flex-col mt-30">
-            <transition-group name="transition-list">
-              <div
-                v-for="(item, index) in visibled"
-                :key="item.id"
-                class="rounded hover:bg-[rgba(255,255,255,0.4)] p-5 cursor-pointer feature w-200"
-                :class="{ 'active-feature': index === 1 }"
-                @mouseenter="onMouseEnter(index)"
-                @mouseleave="onMouseLeave()"
-                @click="go(index - 1)"
-              >
-                <h1 class="text-3xl font-bold">{{ item.title }}</h1>
-                <p>{{ item.contents }}</p>
-              </div>
-            </transition-group>
+            <keep-alive>
+              <transition-group name="transition-list">
+                <div
+                  v-for="(item, index) in visibled"
+                  :key="item.id"
+                  class="rounded hover:bg-[rgba(255,255,255,0.4)] p-5 cursor-pointer feature w-200"
+                  :class="{ 'active-feature': index === 1 }"
+                  @mouseenter="onMouseEnter(index)"
+                  @mouseleave="onMouseLeave()"
+                  @click="go(index - 1)"
+                >
+                  <h1 class="text-3xl font-bold">{{ item.title }}</h1>
+                  <p>{{ item.contents }}</p>
+                </div>
+              </transition-group>
+            </keep-alive>
           </div>
         </div>
         <div class="p-25">
@@ -73,6 +75,10 @@ import { Ref } from "vue";
 const github = useGithubInfoStore()
 const platform = usePlatform()
 const { t } = useI18n()
+
+useHead({
+  title: 'XMCL',
+})
 
 // onMounted(() => {
 //   github.refresh()
