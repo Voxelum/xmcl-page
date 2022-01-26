@@ -35,15 +35,22 @@
         <div
           style="color: rgb(222 222 222);  line-height: 1.4; font-size: 1.4rem; padding-top: 10px"
         >{{ t("nothingWork") }}</div>
-        <component :is="platform" />
+        <component :is="componentByPlatform" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang=ts setup>
-import { usePlatform } from "~/composables";
 import logo from "~/assets/logo.webp";
+import LinuxVue from "~/components/Linux.vue";
+import MacVue from "~/components/Mac.vue";
+import Win32Vue from "~/components/Win32.vue";
+import { usePlatform } from "~/composables";
+
+useHead({
+  title: 'XMCL',
+})
 
 const query = useUrlSearchParams()
 
@@ -68,6 +75,12 @@ onMounted(() => {
   }
 });
 const platform = usePlatform()
+
+const componentByPlatform = computed(() => {
+  if (platform === 'Mac') return MacVue
+  if (platform === 'Linux') return LinuxVue
+   return Win32Vue
+})
 
 </script>
 
