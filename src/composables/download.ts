@@ -32,10 +32,12 @@ export const useArtifactsStore = defineStore('artifacts', () => {
     return ''
   }
 
+
+  const winZip32 = computed(() => getUrl(a => a.name.endsWith('win32-ia32.zip')))
   const winWeb = computed(() => getUrl(a => a.name.indexOf('Web-Setup') !== -1 && a.name.endsWith('.exe')))
-  const winZip = computed(() => getUrl(a => a.name.endsWith('win.zip')))
+  const winZip = computed(() => getUrl(a => a.name.endsWith('win32-x64.zip')))
   const winNsis = computed(() => getUrl(a => a.name.indexOf('-Setup') !== -1 && a.name.endsWith('.exe') && a.name.indexOf('Web') === -1))
-  const macZip = computed(() => getUrl(a => a.name.endsWith('mac.zip')))
+  const macZip = computed(() => getUrl(a => a.name.endsWith('darwin-x64.zip')))
   const macDmg = computed(() => getUrl(a => a.name.endsWith('.dmg')))
   const deb = computed(() => getUrl(a => a.name.endsWith('.deb')))
   const snap = computed(() => getUrl(a => a.name.endsWith('.snap')))
@@ -43,6 +45,7 @@ export const useArtifactsStore = defineStore('artifacts', () => {
   const rpm = computed(() => getUrl(a => a.name.endsWith('.rpm')))
 
   return {
+    winZip32,
     winWeb,
     winZip,
     winNsis,

@@ -11,6 +11,7 @@ downloadFor:
   linux: 'Скачать для Linux:'
 author: Связаться с автором
 download-zip: Zip (64 bits)
+download-zip-32: Zip (32 bits)
 download-web: Веб-установщик
 download-portable: Портативный
 download-dmg: DMG

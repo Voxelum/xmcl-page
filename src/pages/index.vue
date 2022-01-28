@@ -13,8 +13,8 @@
           <div style="font-size: 0.75em">KeyStone UI</div>
           <div style="font-size: 0.75em">{{ t("launcher.description") }}</div>
         </h1>
+        <component :is="platformDownload" />
       </div>
-      <component :is="platformDownload" />
     </div>
     <div class="section flex flex-col p-15 pt-25 bg-red-500 text-white">
       <h1 class="text-5xl text-center w-full font-bold">{{ t('features') }}</h1>
