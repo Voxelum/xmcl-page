@@ -14,7 +14,7 @@
           <div style="font-size: 0.75em">{{ t("launcher.description") }}</div>
         </h1>
       </div>
-      <component :is="platform" />
+      <component :is="platformDownload" />
     </div>
     <div class="section flex flex-col p-15 pt-25 bg-red-500 text-white">
       <h1 class="text-5xl text-center w-full font-bold">{{ t('features') }}</h1>
@@ -71,9 +71,20 @@ import modGif from '../assets/mod.webp'
 import resourcePackGif from '../assets/resourcepack.webp'
 import curseforgeGif from '../assets/curseforge.webp'
 import { Ref } from "vue";
+import MacVue from '~/components/Mac.vue'
+import LinuxVue from '~/components/Linux.vue'
+import Win32Vue from '~/components/Win32.vue'
 
 const github = useGithubInfoStore()
 const platform = usePlatform()
+
+const platformDownload = computed(() => {
+  switch (platform) {
+    case 'Linux': return LinuxVue
+    case 'Mac': return MacVue
+    default: return Win32Vue
+  }
+})
 const { t } = useI18n()
 
 useHead({
