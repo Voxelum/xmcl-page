@@ -7,11 +7,11 @@
       <div class="ui large inverted secondary network menu">
         <a class="item" href="https://github.com/voxelum/x-minecraft-launcher">
           <i class="github square icon"></i>
-          <p data-i18n="repository">{{ t("repository") }}</p>
+          <p data-i18n="repository" class="sm:block hidden">{{ t("repository") }}</p>
         </a>
-        <a class="item" href="https://github.com/ci010">
+        <a class="item sm:flex hidden" href="https://github.com/ci010">
           <i class="github square icon"></i>
-          <p>cijhn@hotmail.com</p>
+          <p class="">cijhn@hotmail.com</p>
         </a>
         <!-- <a class="item" @click="push('/docs')">{{ t('userManual') }}</a> -->
         <div class="right menu">
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="menu">
+        <div class="menu sm:flex hidden">
           <div class="item"></div>
           <div class="ui language floating dropdown link item" id="source">
             <i class="download icon"></i>

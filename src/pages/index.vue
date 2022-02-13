@@ -20,7 +20,7 @@
             <span
               class="text-amber-600"
             >{{ t('intro.mods') }}</span>
-            <package-file-icon class="text-sm max-h-18 inline-block px-2 -mt-4" />!
+            <package-file-icon class="max-h-10 sm:max-h-18 inline-block px-2 sm:-mt-4 -mt-2" />!
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
@@ -342,11 +342,11 @@ onMounted(() => {
 } */
 
 .leading-title {
-  @apply text-6xl font-bold leading-19 text-left lg:mr-2 mr-7;
+  @apply text-left font-bold sm:text-6xl sm:leading-19 lg:mr-2 mr-7 text-3xl leading-10;
 }
 
 .description-part {
-  @apply flex flex-col items-center justify-center lg:h-100vh pt-20 px-20;
+  @apply flex flex-col items-center justify-center lg:h-100vh pt-20 sm:px-20 px-8;
 }
 
 /* .features::after {
