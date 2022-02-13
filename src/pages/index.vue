@@ -1,58 +1,192 @@
 <template>
-  <div id="fullpage" class>
+  <div id="fullpage" class="relative">
     <!-- <div class=" bg-light-50 w-10 h-10 absolute z-100 top-120">1</div> -->
-    <div class="section face h-100vh">
-      <div main class="ui container h-full flex flex-col items-center justify-center">
-        <a
-          class="ui black version label"
-          target="_blank"
-          href="https://github.com/voxelum/x-minecraft-launcher/releases"
-        >{{ github.latestVersion }}</a>
-        <h1 class="ui inverted header" style="line-height: 1.4; font-size: 3em">
-          <div style="font-size: 1.75em; font-weight: bold">X Minecraft Launcher</div>
-          <div style="font-size: 0.75em">KeyStone UI</div>
-          <div style="font-size: 0.75em">{{ t("launcher.description") }}</div>
-        </h1>
-        <component :is="platformDownload" />
-      </div>
-    </div>
-    <div class="section flex flex-col p-15 pt-25 bg-red-500 text-white">
-      <h1 class="text-5xl text-center w-full font-bold">{{ t('features') }}</h1>
-      <div class="flex">
-        <div class="w-250 max-w-250 relative">
-          <div class="flex flex-col mt-30">
-            <keep-alive>
-              <transition-group name="transition-list">
-                <div
-                  v-for="(item, index) in visibled"
-                  :key="item.id"
-                  class="rounded hover:bg-[rgba(255,255,255,0.4)] p-5 cursor-pointer feature w-200"
-                  :class="{ 'active-feature': index === 1 }"
-                  @mouseenter="onMouseEnter(index)"
-                  @mouseleave="onMouseLeave()"
-                  @click="go(index - 1)"
-                >
-                  <h1 class="text-3xl font-bold">{{ item.title }}</h1>
-                  <p>{{ item.contents }}</p>
-                </div>
-              </transition-group>
-            </keep-alive>
+    <div class="section face min-h-100vh bg-gray-900 text-gray-200 py-20">
+      <div class="flex lg:flex-row flex-col p-1 items-center gap-4">
+        <div main class="lg:w-1/2 description-part">
+          <p class="leading-title">
+            {{ t('intro.an') }}
+            <span class="text-[rgb(61,239,233)]">{{ t('intro.openSource') }}</span>
+            {{ t('intro.minecraftLauncher') }}
+            <span
+              class="text-[rgb(107,217,104)]"
+            >{{ t('intro.modern') }}</span>
+            {{ t('intro.ux') }}.
+          </p>
+          <p class="leading-title">
+            {{ t('intro.provide') }}
+            <span class="text-yellow-300">{{ t('intro.diskEfficient') }}</span>
+            {{ t('intro.wayToManage') }}
+            <span
+              class="text-amber-600"
+            >{{ t('intro.mods') }}</span>
+            <package-file-icon class="text-sm max-h-18 inline-block px-2 -mt-4" />!
+          </p>
+          <p
+            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
+          >{{ t('intro.description') }}</p>
+          <span class="flex gap-2 items-start w-full mt-5">
+            <a href="https://fabricmc.net/" target="_blank">
+              <img src="../assets/fabric.png" class="h-15" />
+            </a>
+            <a
+              href="https://files.minecraftforge.net/net/minecraftforge/forge/"
+              target="_blank"
+              class="relative"
+            >
+              <img src="../assets/forge.png" class="h-15" />
+            </a>
+            <a href="http://curseforge.com/minecraft" target="_blank" class="relative rounded">
+              <curseforge-icon class="h-15 w-15" />
+            </a>
+            <a href="https://modrinth.com/" target="_blank">
+              <modrinth-icon class="h-15 w-15" />
+            </a>
+          </span>
+          <!-- <a
+            class="ui inverted version label z-0"
+            target="_blank"
+            href="https://github.com/voxelum/x-minecraft-launcher/releases"
+          >{{ github.latestVersion }}</a>-->
+          <component :is="platformDownload" class="mt-10 mx-10" />
+        </div>
+        <div class="lg:w-1/2 side-image-container">
+          <div
+            class="bg-yellow-400 p-15 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
+          >
+            <img src="../assets/home.webp" class="rounded-xl" />
           </div>
         </div>
-        <div class="p-25">
-          <img
-            class="rounded shadow-black shadow-2xl"
-            style="width: 920px;"
-            :src="activeItem.image"
-          />
+      </div>
+    </div>
+
+    <div class="section flex flex-col min-h-80vh text-white features">
+      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
+      <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse">
+        <div class="lg:w-1/2 side-image-container">
+          <div
+            class="bg-orange-400 p-15 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
+          >
+            <img src="../assets/install.webp" class="rounded-xl" />
+          </div>
+        </div>
+        <div class="description-part lg:w-1/2">
+          <p class="leading-title">
+            No worry about the
+            <span class="text-green-400">Game Install</span>
+          </p>
+          <p
+            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
+          >XMCL supports to install the vanllia Minecraft, Minecraft Forge, Fabric, and even Optifine All in One! You can install them in a single place within the Launcher. It also support third party mirror link BMCL API. You can even customize your own mirror in launcher.</p>
+            <div class="flex flex-col w-full mt-3 text-gray-400">
+            <a
+              href="https://bmclapidoc.bangbang93.com/"
+              class="text-lg w-full"
+              target="_blank"
+            >> BMCL API</a>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+
+    <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
+      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
+      <div class="flex gap-5 lg:flex-row flex-col">
+        <div class="description-part lg:w-1/2">
+          <p class="leading-title">
+            <span class="text-yellow-300">Optimal</span> disk space with
+            <span class="text-red-700">Massive Resources</span>
+          </p>
+          <p
+            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
+          >XMCL will store all the mods, resource packs, shader packs, modpacks to a single store location. While you try to use any resource, it will use hard link to install the resource to the instance. You will never see duplicated copy in /mods folder anymore.</p>
+          <div class="flex flex-col w-full mt-3 text-gray-400">
+            <a
+              href="https://en.wikipedia.org/wiki/Hard_link"
+              class="text-lg w-full"
+              target="_blank"
+            >> What is hard link?</a>
+            <a href="https://en.wikipedia.org/wiki/Symbolic_link" class="text-lg w-full" target="_blank">> What is symbolic link?</a>
+          </div>
+        </div>
+        <div class="lg:w-1/2 side-image-container">
+          <div
+            class="bg-red-400 p-15 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
+          >
+            <img src="../assets/mods.webp" class="rounded-xl" />
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="section flex flex-col min-h-80vh text-white">
+      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
+      <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse">
+        <div class="lg:w-1/2 side-image-container">
+          <div
+            class="bg-pink-300 p-15 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
+          >
+            <img src="../assets/instances.webp" class="rounded-xl" />
+          </div>
+        </div>
+        <div class="description-part lg:w-1/2">
+          <p class="leading-title">
+            Keep your workspace
+            <span class="text-sky-400">Clean</span> with multi-instances
+          </p>
+          <p
+            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
+          >XMCL has builtin support of multi-instances. You can create multiple instances easily. So you don't need to be worried about the mixture of the different launch settings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
+      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
+      <div class="flex gap-5 lg:flex-row flex-col">
+        <div class="description-part lg:w-1/2">
+          <p class="leading-title">
+            Integrated with
+            <span class="text-emerald-700">Multiple Communities</span>
+          </p>
+          <p
+            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
+          >XMCL builtin supports with Curseforge, Modrinth. It also provides ability to support custom user account/skin system like blessing skin.</p>
+          <div class="flex flex-col w-full mt-3 text-gray-400">
+            <a
+              href="https://curseforge.com/minecraft/"
+              class="text-lg w-full"
+              target="_blank"
+            >> Curseforge</a>
+            <a href="https://modrinth.com/" class="text-lg w-full" target="_blank">> Modrinth</a>
+            <a
+              href="https://github.com/bs-community"
+              class="text-lg w-full"
+              target="_blank"
+            >> Blessing Skin</a>
+            <a
+              href="https://blessing.netlify.app/yggdrasil-api/authlib-injector.html"
+              class="text-lg w-full"
+              target="_blank"
+            >> Authlib Injector</a>
+          </div>
+        </div>
+        <div class="lg:w-1/2 side-image-container">
+          <div
+            class="bg-white p-15 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
+          >
+            <img src="../assets/modrinth.webp" class="rounded-xl" />
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="section intro h-100vh">
       <div class="ui container h-full flex flex-col justify-center">
-        <win-32 />
-        <mac />
-        <linux />
+        <win-32 title />
+        <mac title />
+        <linux title />
       </div>
       <div class="w-full absolute bottom-0 flex items-center justify-center">
         <div class="flex flex-col items-center pb-2">
@@ -65,17 +199,12 @@
 </template>
 
 <script lang=ts setup>
-import { useGithubInfoStore, usePlatform } from "../composables";
-import i18nGif from '../assets/i18n.webp'
-import modGif from '../assets/mod.webp'
-import resourcePackGif from '../assets/resourcepack.webp'
-import curseforgeGif from '../assets/curseforge.webp'
-import { Ref } from "vue";
-import MacVue from '~/components/Mac.vue'
-import LinuxVue from '~/components/Linux.vue'
-import Win32Vue from '~/components/Win32.vue'
+import LinuxVue from '~/components/Linux.vue';
+import MacVue from '~/components/Mac.vue';
+import Win32Vue from '~/components/Win32.vue';
+import { usePlatform } from "../composables";
 
-const github = useGithubInfoStore()
+// const github = useGithubInfoStore()
 const platform = usePlatform()
 
 const platformDownload = computed(() => {
@@ -88,101 +217,101 @@ const platformDownload = computed(() => {
 const { t } = useI18n()
 
 useHead({
-  title: 'XMCL',
+  title: 'X Minecraft Launcher - A fully featured Minecraft launcher',
 })
 
 // onMounted(() => {
 //   github.refresh()
 // })
 
-const showingIndex = ref(-1)
-const activeIndex = ref(1)
+// const showingIndex = ref(-1)
+// const activeIndex = ref(1)
 
-const activeItem = computed(() => paused.value && showingIndex.value !== -1 ? items.value[showingIndex.value] : items.value[activeIndex.value])
+// const activeItem = computed(() => paused.value && showingIndex.value !== -1 ? items.value[showingIndex.value] : items.value[activeIndex.value])
 
-const paused = ref(false)
+// const paused = ref(false)
 
-interface Feature {
-  id: number,
-  title: string
-  contents: string
-  image: string
-  time: number
-}
+// interface Feature {
+//   id: number,
+//   title: string
+//   contents: string
+//   image: string
+//   time: number
+// }
 
-let freeId = -1
+// let freeId = -1
 
-const items: Ref<Feature[]> = ref([{
-  id: 0,
-  title: computed(() => t('feature.multilingual.title')),
-  contents: computed(() => t('feature.multilingual.description')),
-  image: i18nGif,
-  time: 10,
-}, {
-  id: 1,
-  title: computed(() => t('feature.modManage.title')),
-  contents: computed(() => t('feature.modManage.description')),
-  image: modGif,
-  time: 10,
-}, {
-  id: 2,
-  title: computed(() => t('feature.curseforgeIntegration.title')),
-  contents: computed(() => t('feature.curseforgeIntegration.description')),
-  image: curseforgeGif,
-  time: 10,
-}, {
-  id: 3,
-  title: computed(() => t('feature.resourcepackManage.title')),
-  contents: computed(() => t('feature.resourcepackManage.description')),
-  image: resourcePackGif,
-  time: 10,
-}])
+// const items: Ref<Feature[]> = ref([{
+//   id: 0,
+//   title: computed(() => t('feature.multilingual.title')),
+//   contents: computed(() => t('feature.multilingual.description')),
+//   image: i18nGif,
+//   time: 10,
+// }, {
+//   id: 1,
+//   title: computed(() => t('feature.modManage.title')),
+//   contents: computed(() => t('feature.modManage.description')),
+//   image: modGif,
+//   time: 10,
+// }, {
+//   id: 2,
+//   title: computed(() => t('feature.curseforgeIntegration.title')),
+//   contents: computed(() => t('feature.curseforgeIntegration.description')),
+//   image: curseforgeGif,
+//   time: 10,
+// }, {
+//   id: 3,
+//   title: computed(() => t('feature.resourcepackManage.title')),
+//   contents: computed(() => t('feature.resourcepackManage.description')),
+//   image: resourcePackGif,
+//   time: 10,
+// }])
 
-const visibled = computed(() => items.value.filter((v, i) => i <= 2))
+// const visibled = computed(() => items.value.filter((v, i) => i <= 2))
 
-function go(offset: number) {
-  if (offset === 0) {
-    showingIndex.value = 1
-    return
-  }
-  if (offset === 1) {
-    showingIndex.value = 2
-  } else {
-    showingIndex.value = 0
-  }
-}
+// function go(offset: number) {
+//   if (offset === 0) {
+//     showingIndex.value = 1
+//     return
+//   }
+//   if (offset === 1) {
+//     showingIndex.value = 2
+//   } else {
+//     showingIndex.value = 0
+//   }
+// }
 
-function next() {
-  const last = items.value.pop()
-  if (last) {
-    const lastId = last.id
-    last.id = freeId
-    freeId = lastId
-    items.value.unshift(last)
-  }
-}
+// function next() {
+//   const last = items.value.pop()
+//   if (last) {
+//     const lastId = last.id
+//     last.id = freeId
+//     freeId = lastId
+//     items.value.unshift(last)
+//   }
+// }
 
-function onMouseEnter(index: number) {
-  showingIndex.value = index
-  paused.value = true
-}
+// function onMouseEnter(index: number) {
+//   showingIndex.value = index
+//   paused.value = true
+// }
 
-function onMouseLeave() {
-  paused.value = false
-  showingIndex.value = -1
-}
+// function onMouseLeave() {
+//   paused.value = false
+//   showingIndex.value = -1
+// }
 
-useIntervalFn(() => {
-  if (!paused.value) {
-    next()
-  }
-}, 3000)
+// useIntervalFn(() => {
+//   if (!paused.value) {
+//     next()
+//   }
+// }, 3000)
 
 onMounted(() => {
-  $("body").pagepiling({
-    // onLeave: function (index, nextIndex, direction) {
-    // },
-  });
+  // $("body").pagepiling({
+  //   // onLeave: function (index, nextIndex, direction) {
+  //   // },
+  // });
 })
 
 </script>
@@ -198,9 +327,35 @@ onMounted(() => {
   bottom: 40%;
 }
 
-.feature {
-  transition-property: opacity transform background-color;
-  transition-duration: 1s;
+.features {
+  @apply bg-gray-800;
+}
+
+/* .features::before {
+  @apply transform-gpu h-20vh top-[100vh] absolute right-0 left-0 bg-gray-800 z-0 bg-gradient-to-b from-gray-900;
+  content: "";
+}
+
+.features::after {
+  @apply transform-gpu h-20vh top-[100vh] absolute right-0 left-0 bg-gray-900 z-0 bg-gradient-to-b from-gray-800;
+  content: "";
+} */
+
+.leading-title {
+  @apply text-6xl font-bold leading-19 text-left lg:mr-2 mr-7;
+}
+
+.description-part {
+  @apply flex flex-col items-center justify-center lg:h-100vh pt-20 px-20;
+}
+
+/* .features::after {
+  @apply transform-gpu h-20vh absolute right-0 left-0 bg-gray-700 z-0 mt-10 grayscale-0 from-gray-700 bg-gradient-to-b;
+  content: '';
+} */
+
+.side-image-container {
+  @apply flex items-center overflow-hidden relative lg:h-100vh mt-10 lg:mt-0;
 }
 
 .active-feature {
@@ -227,3 +382,7 @@ onMounted(() => {
   transform: translateY(40px) scale(75%);
 }
 </style>
+<route lang="yaml">
+meta:
+  layout: default
+</route>

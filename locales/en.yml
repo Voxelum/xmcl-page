@@ -1,5 +1,17 @@
 lang: English
 repository: Source Code Repository
+intro:
+  an: An
+  openSource: Open Source
+  minecraftLauncher: Minecraft Launcher with
+  modern: Modern
+  ux: UX
+  provide: Provide
+  diskEfficient: Disk Efficient
+  wayToManage: way to manage all your
+  mods: Mods
+  description: X Minecraft Launcher (XMCL) is a modern Minecraft launcher that let you manage your massive resources like modpacks, resource packs, mods, shader packs.
+            It also has integration with Minecraft Forge, Fabric, CurseForge and Modrinth.
 launcher:
   manage:
     intro: Manage your Minecraft effectively.
@@ -12,7 +24,8 @@ downloadFor:
 author: Contant Author
 download-zip: Zip (64 bits)
 download-zip-32: Zip (32 bits)
-download-web: Web Installer
+download-appx: AppX Package
+download-appinstaller: App Installer
 download-portable: Portable
 download-dmg: DMG
 download-snap: Snap
@@ -56,3 +69,4 @@ feature:
   resourcepackManage:
     title: ResourcePack Management
     description: You can enable/disable resource pack and add tag to them.
+userManual: User Manual

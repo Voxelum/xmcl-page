@@ -13,6 +13,7 @@
           <i class="github square icon"></i>
           <p>cijhn@hotmail.com</p>
         </a>
+        <!-- <a class="item" @click="push('/docs')">{{ t('userManual') }}</a> -->
         <div class="right menu">
           <div class="item"></div>
           <div class="ui language floating dropdown link item" id="languages">
@@ -22,7 +23,7 @@
               <div class="scrolling menu">
                 <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
                 <div class="item" value="en" @click="setLocale('en')">English</div>
-                <div class="item" value="ru" @click="setLocale('ru')">Русский</div>
+                <!-- <div class="item" value="ru" @click="setLocale('ru')">Русский</div> -->
               </div>
             </div>
           </div>

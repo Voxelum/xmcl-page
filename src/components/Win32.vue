@@ -1,9 +1,10 @@
 <template>
   <div win>
-    <h1 class="ui inverted header" style="line-height: 1.4; font-size: 3em">
+    <h1 v-if="title" class="ui inverted header" style="line-height: 1.4; font-size: 3em">
       <div style="font-size: 0.45em">{{ t('downloadFor.windows') }}</div>
     </h1>
     <div class="ui hidden divider" style="padding: 0 0"></div>
+    <div class="flex gap-2 flex-wrap ">
     <a
       win-web
       class="ui huge inverted download labeled icon teal button"
@@ -11,7 +12,7 @@
       :href="artifacts.winWeb"
     >
       <i class="plane icon"></i>
-      <span>{{ t("download-web") }}</span>
+      <span>{{ t("download-appinstaller") }}</span>
     </a>
     <a
       win-setup
@@ -20,7 +21,7 @@
       :href="artifacts.winNsis"
     >
       <i class="rocket icon"></i>
-      <span>{{ t('download') }}</span>
+      <span>{{ t('download-appx') }}</span>
     </a>
     <a
       win-zip
@@ -42,11 +43,15 @@
       <i class="box icon"></i>
       <span>{{ t("download-zip-32") }}</span>
     </a>
+    </div>
+
   </div>
 </template>
 
 <script lang=ts setup>
 import { useArtifactsStore } from "../composables";
+
+const { title } = defineProps({ title: Boolean })
 
 const artifacts = useArtifactsStore()
 const { t } = useI18n()
