@@ -1,17 +1,17 @@
 <template>
   <div class="following bar flex">
-    <div class="flex flex-col items-center justify-center pl-5">
+    <div class="flex flex-col items-center justify-center px-5">
       <img src="../assets/logo.webp" width="28" class="cursor-pointer" @click="push('/')" />
     </div>
     <div class="ui container">
       <div class="ui large inverted secondary network menu">
         <a class="item" href="https://github.com/voxelum/x-minecraft-launcher" target="_blank">
-          <i class="github square icon"></i>
+          <i class="github square icon m-0 sm:mr-2"></i>
           <p data-i18n="repository" class="sm:block hidden">{{ t("repository") }}</p>
         </a>
-        <a class="item sm:flex hidden" href="https://discord.gg/W5XVwYY7GQ" target="_blank">
-          <i class="discord square icon"></i>
-          <p class="">Discord</p>
+        <a class="item" href="https://discord.gg/W5XVwYY7GQ" target="_blank">
+          <i class="discord square icon m-0 sm:mr-2"></i>
+          <p class="sm:block hidden">Discord</p>
         </a>
         <!-- <a class="item" @click="push('/docs')">{{ t('userManual') }}</a> -->
         <div class="right menu">
