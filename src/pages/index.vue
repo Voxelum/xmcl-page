@@ -48,11 +48,11 @@
             target="_blank"
             href="https://github.com/voxelum/x-minecraft-launcher/releases"
           >{{ github.latestVersion }}</a>-->
-          <component :is="platformDownload" class="mt-10 mx-10" />
+          <component :is="platformDownload" class="mt-10 sm:mx-10" />
         </div>
         <div class="lg:w-1/2 side-image-container">
           <div
-            class="bg-yellow-400 p-15 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
+            class="bg-yellow-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
           >
             <img src="../assets/home.webp" class="rounded-xl" />
           </div>
@@ -65,20 +65,22 @@
       <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse">
         <div class="lg:w-1/2 side-image-container">
           <div
-            class="bg-orange-400 p-15 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
+            class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
           >
             <img src="../assets/install.webp" class="rounded-xl" />
           </div>
         </div>
         <div class="description-part lg:w-1/2">
           <p class="leading-title">
-            No worry about the
-            <span class="text-green-400">Game Install</span>
+            {{ t('gameInstall.noWorry') }}
+            <span
+              class="text-green-400"
+            >{{ t('gameInstall.gameInstall') }}</span>
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >XMCL supports to install the vanllia Minecraft, Minecraft Forge, Fabric, and even Optifine All in One! You can install them in a single place within the Launcher. It also support third party mirror link BMCL API. You can even customize your own mirror in launcher.</p>
-            <div class="flex flex-col w-full mt-3 text-gray-400">
+          >{{ t('gameInstall.description') }}</p>
+          <div class="flex flex-col w-full mt-3 text-gray-400">
             <a
               href="https://bmclapidoc.bangbang93.com/"
               class="text-lg w-full"
@@ -86,7 +88,6 @@
             >> BMCL API</a>
           </div>
         </div>
-       
       </div>
     </div>
 
@@ -95,24 +96,30 @@
       <div class="flex gap-5 lg:flex-row flex-col">
         <div class="description-part lg:w-1/2">
           <p class="leading-title">
-            <span class="text-yellow-300">Optimal</span> disk space with
-            <span class="text-red-700">Massive Resources</span>
+            <!-- <optimal-disk-zh /> -->
+            <optimal-disk-en />
+            <!-- <span class="text-yellow-300">Optimal</span> disk space with
+            <span class="text-red-700">Massive Resources</span>-->
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >XMCL will store all the mods, resource packs, shader packs, modpacks to a single store location. While you try to use any resource, it will use hard link to install the resource to the instance. You will never see duplicated copy in /mods folder anymore.</p>
+          >{{ t('optimalDisk.description') }}</p>
           <div class="flex flex-col w-full mt-3 text-gray-400">
             <a
               href="https://en.wikipedia.org/wiki/Hard_link"
               class="text-lg w-full"
               target="_blank"
             >> What is hard link?</a>
-            <a href="https://en.wikipedia.org/wiki/Symbolic_link" class="text-lg w-full" target="_blank">> What is symbolic link?</a>
+            <a
+              href="https://en.wikipedia.org/wiki/Symbolic_link"
+              class="text-lg w-full"
+              target="_blank"
+            >> What is symbolic link?</a>
           </div>
         </div>
         <div class="lg:w-1/2 side-image-container">
           <div
-            class="bg-red-400 p-15 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
+            class="bg-red-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
           >
             <img src="../assets/mods.webp" class="rounded-xl" />
           </div>
@@ -125,7 +132,7 @@
       <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse">
         <div class="lg:w-1/2 side-image-container">
           <div
-            class="bg-pink-300 p-15 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
+            class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
           >
             <img src="../assets/instances.webp" class="rounded-xl" />
           </div>
@@ -137,7 +144,7 @@
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >XMCL has builtin support of multi-instances. You can create multiple instances easily. So you don't need to be worried about the mixture of the different launch settings.</p>
+          >{{ t('cleanWorkspace.description') }}</p>
         </div>
       </div>
     </div>
@@ -152,7 +159,7 @@
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >XMCL builtin supports with Curseforge, Modrinth. It also provides ability to support custom user account/skin system like blessing skin.</p>
+          >{{t('communityIntegration.description')}}</p>
           <div class="flex flex-col w-full mt-3 text-gray-400">
             <a
               href="https://curseforge.com/minecraft/"
@@ -174,7 +181,7 @@
         </div>
         <div class="lg:w-1/2 side-image-container">
           <div
-            class="bg-white p-15 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
+            class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
           >
             <img src="../assets/modrinth.webp" class="rounded-xl" />
           </div>

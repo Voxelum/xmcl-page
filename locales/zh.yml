@@ -10,7 +10,9 @@ intro:
   diskEfficient: 磁盘空间最优的
   wayToManage: 的方式来管理你所有的
   mods: 模组
-  description: X Minecraft Launcher (XMCL) 是一个方便你管理大量的整合包，模组，资源包，光影包的的现代化启动器。它对 Minecraft Forge，Fabric，Curseforge 和 Modrinth 都有内置支持。
+  description: >-
+    X Minecraft Launcher (XMCL) 是一个方便你管理大量的整合包，模组，资源包，光影包的的现代化启动器。它对 Minecraft
+    Forge，Fabric，Curseforge 和 Modrinth 都有内置支持。
 launcher:
   manage:
     intro: Manage your Minecraft effectively.
@@ -59,3 +61,18 @@ feature:
     title: Mod 管理
     description: 可以简单地在启动器内管理大量 Mod，支持自定义标签便于管理
 userManual: 用户手册
+gameInstall:
+  noWorry: 轻松处理所有
+  gameInstall: 游戏安装
+  description: >-
+    XMCL 支持安装原版 Minecraft, Minecraft Forge, Fabric,
+    甚至 Optifine！你可以在一个界面处理所有基本的游戏安装。它同样支持第三方镜像，如 BMCL API。
+optimalDisk:
+  description: >-
+    XMCL 会在统一的地方存储所有安装过的模组，资源包，光影包，整合包。当你尝试安装任何已有资源，启动器会使用硬链接来安装资源，以节省磁盘空间。这意味着你几乎不会看到任何在 /mods 文件夹中的文件是被复制的副本的。
+cleanWorkspace:
+  description: >-
+    XMCL 内置支持多实例。你可以通过创建不同的实例来进行版本隔离，这能确保你每个启动配置完全不会互相影响。
+communityIntegration:
+  description: >-
+    XMCL 目前支持 Curseforge, Modrinth，可以在启动器内访问并下载资源。启动器同样支持了自定义用户账号系统，如 blessing skin。

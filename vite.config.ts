@@ -99,7 +99,7 @@ export default defineConfig({
             headEnabled: true,
             markdownItSetup(md) {
                 // https://prismjs.com/
-                md.use(Prism)
+                // md.use(Prism)
                 md.use(LinkAttributes, {
                     pattern: /^https?:\/\//,
                     attrs: {

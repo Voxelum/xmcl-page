@@ -10,8 +10,11 @@ intro:
   diskEfficient: Disk Efficient
   wayToManage: way to manage all your
   mods: Mods
-  description: X Minecraft Launcher (XMCL) is a modern Minecraft launcher that let you manage your massive resources like modpacks, resource packs, mods, shader packs.
-            It also has integration with Minecraft Forge, Fabric, CurseForge and Modrinth.
+  description: >-
+    X Minecraft Launcher (XMCL) is a modern Minecraft launcher that let you
+    manage your massive resources like modpacks, resource packs, mods, shader
+    packs. It also has integration with Minecraft Forge, Fabric, CurseForge and
+    Modrinth.
 launcher:
   manage:
     intro: Manage your Minecraft effectively.
@@ -70,3 +73,26 @@ feature:
     title: ResourcePack Management
     description: You can enable/disable resource pack and add tag to them.
 userManual: User Manual
+gameInstall:
+  noWorry: No worry about the
+  gameInstall: Game Install
+  description: >-
+    XMCL supports to install the vanllia Minecraft, Minecraft Forge, Fabric, and
+    even Optifine All in One! You can install them in a single place within the
+    Launcher. It also support third party mirror link BMCL API. You can even
+    customize your own mirror in launcher.
+optimalDisk:
+  description: >-
+    XMCL will store all the mods, resource packs, shader packs, modpacks to a
+    single store location. While you try to use any known resource, it will use
+    hard link to install the resource to the instance without copying. It means
+    you will never see any duplicated copy in /mods folder anymore.
+cleanWorkspace:
+  description: >-
+    XMCL has builtin support of multi-instances. You can create multiple
+    instances easily. So you don't need to be worried about the mixture of the
+    different launch settings.
+communityIntegration:
+  description: >-
+    XMCL builtin supports with Curseforge, Modrinth. It also provides ability to
+    support custom user account/skin system like blessing skin.

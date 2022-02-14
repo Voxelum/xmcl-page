@@ -5,11 +5,11 @@
     </div>
     <div class="ui container">
       <div class="ui large inverted secondary network menu">
-        <a class="item" href="https://github.com/voxelum/x-minecraft-launcher">
+        <a class="item" href="https://github.com/voxelum/x-minecraft-launcher" target="_blank">
           <i class="github square icon"></i>
           <p data-i18n="repository" class="sm:block hidden">{{ t("repository") }}</p>
         </a>
-        <a class="item sm:flex hidden" href="https://github.com/ci010">
+        <a class="item sm:flex hidden" href="https://github.com/ci010" target="_blank">
           <i class="github square icon"></i>
           <p class="">cijhn@hotmail.com</p>
         </a>

@@ -12,6 +12,8 @@ declare module 'vue' {
     Linux: typeof import('./components/Linux.vue')['default']
     Mac: typeof import('./components/Mac.vue')['default']
     ModrinthIcon: typeof import('./components/ModrinthIcon.vue')['default']
+    OptimalDiskEn: typeof import('./components/OptimalDiskEn.vue')['default']
+    OptimalDiskZh: typeof import('./components/OptimalDiskZh.vue')['default']
     PackageFileIcon: typeof import('./components/PackageFileIcon.vue')['default']
     PrivacyContent: typeof import('./components/PrivacyContent.md')['default']
     Win32: typeof import('./components/Win32.vue')['default']
