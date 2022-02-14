@@ -16,8 +16,8 @@
       <a
         win-setup
         class="ui huge inverted download labeled icon positive button w-full md:w-auto"
-        :class="{ disabled: !artifacts.winNsis }"
-        :href="artifacts.winNsis"
+        :class="{ disabled: !artifacts.winAppx }"
+        :href="artifacts.winAppx"
       >
         <i class="rocket icon"></i>
         <span>{{ t('download-appx') }}</span>
