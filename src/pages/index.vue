@@ -1,5 +1,5 @@
 <template>
-  <div id="fullpage" class="relative">
+  <div id="fullpage" class="relative overflow-x-hidden">
     <!-- <div class=" bg-light-50 w-10 h-10 absolute z-100 top-120">1</div> -->
     <div class="section face min-h-100vh bg-gray-900 text-gray-200 py-20">
       <div class="flex lg:flex-row flex-col p-1 items-center gap-4">
@@ -20,7 +20,7 @@
             <span
               class="text-amber-600"
             >{{ t('intro.mods') }}</span>
-            <package-file-icon class="max-h-10 sm:max-h-18 inline-block px-2 sm:-mt-4 -mt-2" />!
+            <package-file-icon class="max-h-10 sm:max-h-18 inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2" />!
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
@@ -80,10 +80,10 @@
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('gameInstall.description') }}</p>
-          <div class="flex flex-col w-full mt-3 text-gray-400">
+          <div class="flex flex-col items-start w-full mt-3 text-gray-400">
             <a
               href="https://bmclapidoc.bangbang93.com/"
-              class="text-lg w-full"
+              class="text-lg"
               target="_blank"
             >> BMCL API</a>
           </div>
@@ -104,17 +104,17 @@
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('optimalDisk.description') }}</p>
-          <div class="flex flex-col w-full mt-3 text-gray-400">
+          <div class="flex flex-col items-start w-full mt-3 text-gray-400">
             <a
               href="https://en.wikipedia.org/wiki/Hard_link"
-              class="text-lg w-full"
+              class="text-lg"
               target="_blank"
-            >> What is hard link?</a>
+            >> Hard link</a>
             <a
               href="https://en.wikipedia.org/wiki/Symbolic_link"
-              class="text-lg w-full"
+              class="text-lg"
               target="_blank"
-            >> What is symbolic link?</a>
+            >> Symbolic link</a>
           </div>
         </div>
         <div class="lg:w-1/2 side-image-container">
@@ -163,21 +163,21 @@
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('communityIntegration.description') }}</p>
-          <div class="flex flex-col w-full mt-3 text-gray-400">
+          <div class="flex flex-col w-full mt-3 text-gray-400 items-start">
             <a
               href="https://curseforge.com/minecraft/"
-              class="text-lg w-full"
+              class="text-lg"
               target="_blank"
             >> Curseforge</a>
-            <a href="https://modrinth.com/" class="text-lg w-full" target="_blank">> Modrinth</a>
+            <a href="https://modrinth.com/" class="text-lg" target="_blank">> Modrinth</a>
             <a
               href="https://github.com/bs-community"
-              class="text-lg w-full"
+              class="text-lg"
               target="_blank"
             >> Blessing Skin</a>
             <a
               href="https://blessing.netlify.app/yggdrasil-api/authlib-injector.html"
-              class="text-lg w-full"
+              class="text-lg"
               target="_blank"
             >> Authlib Injector</a>
           </div>

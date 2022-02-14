@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite --port 3333 --open",
+    "dev": "vite --port 3333 --open --host",
     "build": "vite-ssg build"
   },
   "browserslist": [
