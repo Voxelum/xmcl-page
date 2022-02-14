@@ -93,6 +93,8 @@ cleanWorkspace:
     instances easily. So you don't need to be worried about the mixture of the
     different launch settings.
 communityIntegration:
+  integrate: Integrated with
+  communities: Multiple Communities
   description: >-
     XMCL builtin supports with Curseforge, Modrinth. It also provides ability to
     support custom user account/skin system like blessing skin.

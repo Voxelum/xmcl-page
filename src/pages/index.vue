@@ -97,7 +97,7 @@
         <div class="description-part lg:w-1/2">
           <p class="leading-title">
             <!-- <optimal-disk-zh /> -->
-            <optimal-disk-en />
+            <component :is="localeOptimal" />
             <!-- <span class="text-yellow-300">Optimal</span> disk space with
             <span class="text-red-700">Massive Resources</span>-->
           </p>
@@ -139,8 +139,9 @@
         </div>
         <div class="description-part lg:w-1/2">
           <p class="leading-title">
-            Keep your workspace
-            <span class="text-sky-400">Clean</span> with multi-instances
+            <component :is="localeMultiInstances" />
+            <!-- Keep your workspace
+            <span class="text-sky-400">Clean</span> with multi-instances-->
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
@@ -154,12 +155,14 @@
       <div class="flex gap-5 lg:flex-row flex-col">
         <div class="description-part lg:w-1/2">
           <p class="leading-title">
-            Integrated with
-            <span class="text-emerald-700">Multiple Communities</span>
+            {{ t('communityIntegration.integrate') }}
+            <span
+              class="text-emerald-700"
+            >{{ t('communityIntegration.communities') }}</span>
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >{{t('communityIntegration.description')}}</p>
+          >{{ t('communityIntegration.description') }}</p>
           <div class="flex flex-col w-full mt-3 text-gray-400">
             <a
               href="https://curseforge.com/minecraft/"
@@ -209,16 +212,41 @@
 import LinuxVue from '~/components/Linux.vue';
 import MacVue from '~/components/Mac.vue';
 import Win32Vue from '~/components/Win32.vue';
+import OptimalDiskEn from '~/components/OptimalDiskEn.vue';
+import OptimalDiskZh from '~/components/OptimalDiskZh.vue';
+import MultiInstancesEn from '~/components/MultiInstancesEn.vue';
+import MultiInstancesZh from '~/components/MultiInstancesZh.vue';
 import { usePlatform } from "../composables";
 
 // const github = useGithubInfoStore()
 const platform = usePlatform()
+const { locale } = useI18n()
 
 const platformDownload = computed(() => {
   switch (platform) {
     case 'Linux': return LinuxVue
     case 'Mac': return MacVue
     default: return Win32Vue
+  }
+})
+const localeOptimal = computed(() => {
+  switch (locale.value) {
+    case 'zh':
+    case 'zh-CN':
+      return OptimalDiskZh
+    case 'en':
+    default:
+      return OptimalDiskEn
+  }
+})
+const localeMultiInstances = computed(() => {
+  switch (locale.value) {
+    case 'zh':
+    case 'zh-CN':
+      return MultiInstancesZh
+    case 'en':
+    default:
+      return MultiInstancesEn
   }
 })
 const { t } = useI18n()
@@ -353,7 +381,7 @@ onMounted(() => {
 }
 
 .description-part {
-  @apply flex flex-col items-center justify-center lg:h-100vh pt-20 sm:px-20 px-8;
+  @apply flex flex-col items-start justify-center lg:h-100vh pt-20 sm:px-20 px-8;
 }
 
 /* .features::after {

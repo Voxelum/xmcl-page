@@ -9,9 +9,9 @@
           <i class="github square icon"></i>
           <p data-i18n="repository" class="sm:block hidden">{{ t("repository") }}</p>
         </a>
-        <a class="item sm:flex hidden" href="https://github.com/ci010" target="_blank">
-          <i class="github square icon"></i>
-          <p class="">cijhn@hotmail.com</p>
+        <a class="item sm:flex hidden" href="https://discord.gg/W5XVwYY7GQ" target="_blank">
+          <i class="discord square icon"></i>
+          <p class="">Discord</p>
         </a>
         <!-- <a class="item" @click="push('/docs')">{{ t('userManual') }}</a> -->
         <div class="right menu">
