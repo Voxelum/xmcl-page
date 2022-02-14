@@ -192,13 +192,13 @@
       </div>
     </div>
 
-    <div class="section intro h-100vh">
-      <div class="ui container h-full flex flex-col justify-center">
+    <div class="section intro min-h-100vh">
+      <div class="h-full flex flex-col justify-center h-100vh px-10 sm:px-25">
         <win-32 title />
         <mac title />
         <linux title />
       </div>
-      <div class="w-full absolute bottom-0 flex items-center justify-center">
+      <div class="w-full bottom-0 flex items-center justify-center">
         <div class="flex flex-col items-center pb-2">
           <router-link to="privacy">Software Privacy</router-link>
           <div>Copyright © 2020-2021 CI010</div>

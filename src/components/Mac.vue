@@ -7,7 +7,7 @@
     <div class="flex gap-2 flex-wrap">
       <a
         dmg
-        class="ui huge inverted download labeled icon positive button"
+        class="ui huge inverted download labeled icon positive button w-full md:w-auto"
         :class="{ disabled: !artifacts.macDmg }"
         :href="artifacts.macDmg"
       >
@@ -16,7 +16,7 @@
       </a>
       <a
         mac-zip
-        class="ui huge inverted download labeled icon brown button"
+        class="ui huge inverted download labeled icon brown button w-full md:w-auto"
         :class="{ disabled: !artifacts.macZip }"
         :href="artifacts.macZip"
       >

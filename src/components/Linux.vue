@@ -7,7 +7,7 @@
     <div class="flex gap-2 flex-wrap">
       <a
         deb
-        class="ui huge inverted download labeled icon red button"
+        class="ui huge inverted download labeled icon red button w-full md:w-auto"
         :disabled="!artifacts.deb"
         :href="artifacts.deb"
       >
@@ -16,7 +16,7 @@
       </a>
       <a
         snap
-        class="ui huge inverted download labeled icon teal button"
+        class="ui huge inverted download labeled icon teal button w-full md:w-auto"
         :class="{ disabled: !artifacts.snap }"
         :disabled="!artifacts.snap"
         :href="artifacts.snap"
@@ -26,7 +26,7 @@
       </a>
       <a
         appimage
-        class="ui huge inverted download labeled icon positive button"
+        class="ui huge inverted download labeled icon positive button w-full md:w-auto"
         :class="{ disabled: !artifacts.appImage }"
         :disabled="!artifacts.appImage"
         :href="artifacts.appImage"
@@ -36,7 +36,7 @@
       </a>
       <a
         rpm
-        class="ui huge inverted download labeled icon button"
+        class="ui huge inverted download labeled icon button w-full md:w-auto"
         :class="{ disabled: !artifacts.rpm }"
         :disabled="!artifacts.rpm"
         :href="artifacts.rpm"
