@@ -12,7 +12,7 @@ export default defineComponent({
   setup() {
     const { locale } = useI18n()
 
-    const localeCache = useLocalStorage('locale', 'en')
+    const localeCache = useLocalStorage('locale', navigator?.language ?? '')
 
     locale.value = localeCache.value
 
