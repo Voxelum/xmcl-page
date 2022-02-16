@@ -11,6 +11,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@microsoft/applicationinsights-web": "^2.7.3",
     "@vueuse/core": "^7.3.0",
     "@vueuse/head": "^0.5.1",
     "pinia": "^2.0.8",

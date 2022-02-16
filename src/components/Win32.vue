@@ -9,6 +9,7 @@
         class="ui huge inverted download labeled icon teal button w-full md:w-auto"
         :class="{ disabled: !artifacts.winWeb }"
         :href="artifacts.winWeb"
+        @click="trackDownload('win32', 'appinstaller')"
       >
         <i class="plane icon"></i>
         <span>{{ t("download-appinstaller") }}</span>
@@ -18,6 +19,7 @@
         class="ui huge inverted download labeled icon positive button w-full md:w-auto"
         :class="{ disabled: !artifacts.winAppx }"
         :href="artifacts.winAppx"
+        @click="trackDownload('win32', 'appx')"
       >
         <i class="rocket icon"></i>
         <span>{{ t('download-appx') }}</span>
@@ -28,6 +30,7 @@
         :disabled="!artifacts.winZip"
         :class="{ disabled: !artifacts.winZip }"
         :href="artifacts.winZip"
+        @click="trackDownload('win32', 'zip64')"
       >
         <i class="box icon"></i>
         <span>{{ t("download-zip") }}</span>
@@ -38,6 +41,7 @@
         :disabled="!artifacts.winZip32"
         :class="{ disabled: !artifacts.winZip32 }"
         :href="artifacts.winZip32"
+        @click="trackDownload('win32', 'zip32')"
       >
         <i class="box icon"></i>
         <span>{{ t("download-zip-32") }}</span>
@@ -47,11 +51,13 @@
 </template>
 
 <script lang=ts setup>
+import { useTelemetry } from "~/composables/telemetry";
 import { useArtifactsStore } from "../composables";
 
 const { title } = defineProps({ title: Boolean })
 
 const artifacts = useArtifactsStore()
+const { trackDownload } = useTelemetry()
 const { t } = useI18n()
 
 </script>

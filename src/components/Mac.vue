@@ -10,6 +10,7 @@
         class="ui huge inverted download labeled icon positive button w-full md:w-auto"
         :class="{ disabled: !artifacts.macDmg }"
         :href="artifacts.macDmg"
+        @click="trackDownload('mac', 'dmg')"
       >
         <i class="hdd icon"></i>
         <span>{{ t("download-dmg") }}</span>
@@ -19,6 +20,7 @@
         class="ui huge inverted download labeled icon brown button w-full md:w-auto"
         :class="{ disabled: !artifacts.macZip }"
         :href="artifacts.macZip"
+        @click="trackDownload('mac', 'zip')"
       >
         <i class="box icon"></i>
         <span>{{ t("download-zip") }}</span>
@@ -29,8 +31,10 @@
 
 <script lang=ts setup>
 import { useArtifactsStore } from "~/composables";
+import { useTelemetry } from "~/composables/telemetry";
 
 const artifacts = useArtifactsStore()
 const { t } = useI18n()
+const { trackDownload } = useTelemetry()
 
 </script>

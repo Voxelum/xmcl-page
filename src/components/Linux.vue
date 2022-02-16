@@ -10,6 +10,7 @@
         class="ui huge inverted download labeled icon red button w-full md:w-auto"
         :disabled="!artifacts.deb"
         :href="artifacts.deb"
+        @click="trackDownload('linux', 'deb')"
       >
         <i class="circle outline icon"></i>
         <span>{{ t("download-deb") }}</span>
@@ -20,6 +21,7 @@
         :class="{ disabled: !artifacts.snap }"
         :disabled="!artifacts.snap"
         :href="artifacts.snap"
+        @click="trackDownload('linux', 'snap')"
       >
         <i class="dolly icon"></i>
         <span>{{ t("download-snap") }}</span>
@@ -30,6 +32,7 @@
         :class="{ disabled: !artifacts.appImage }"
         :disabled="!artifacts.appImage"
         :href="artifacts.appImage"
+        @click="trackDownload('linux', 'appimage')"
       >
         <i class="dolly flatbed icon"></i>
         <span>{{ t("download-appimage") }}</span>
@@ -40,6 +43,7 @@
         :class="{ disabled: !artifacts.rpm }"
         :disabled="!artifacts.rpm"
         :href="artifacts.rpm"
+        @click="trackDownload('linux', 'rpm')"
       >
         <i class="hdd icon"></i>
         <span>{{ t("download-rpm") }}</span>
@@ -49,9 +53,11 @@
 </template>
 
 <script lang=ts setup>
+import { useTelemetry } from "~/composables/telemetry";
 import { useArtifactsStore } from "../composables";
 
 const artifacts = useArtifactsStore()
 const { t } = useI18n()
+const { trackDownload } = useTelemetry()
 
 </script>

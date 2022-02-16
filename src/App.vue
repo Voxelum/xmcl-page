@@ -8,11 +8,19 @@
 <script lang="ts">
 import "./assets/style.css"
 
+function getNavigator() {
+  try {
+    return navigator
+  } catch (e) {
+    return undefined
+  }
+}
+
 export default defineComponent({
   setup() {
     const { locale } = useI18n()
 
-    const localeCache = useLocalStorage('locale', navigator?.language ?? '')
+    const localeCache = useLocalStorage('locale', getNavigator()?.language ?? '')
 
     locale.value = localeCache.value
 
@@ -26,13 +34,6 @@ export default defineComponent({
     });
   }
 });
-
-if (import.meta.hot) {
-  $("body").pagepiling({
-    // onLeave: function (index, nextIndex, direction) {
-    // },
-  });
-}
 
 </script>
 
