@@ -32,9 +32,14 @@ export default defineConfig({
             async load(id) {
                 if (id === 'virtual:latest-release') {
                     const fetch = await import('node-fetch')
-                    const resp = await fetch.default('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases')
-                    const releases = await resp.text()
-                    return `export default ${releases}`
+                    const resp = await fetch.default('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases?per_page=5')
+                    const releases = await resp.json()
+
+                    const filteredReleases = JSON.stringify((releases as any[]).map((r: any) => ({
+                        assets: r.assets.map((a: any) => ({ name: a.name, browser_download_url: a.browser_download_url })),
+                        prerelease: r.prerelease, tag_name: r.tag_name
+                    })))
+                    return `export default ${filteredReleases}`
                 }
             }
         },

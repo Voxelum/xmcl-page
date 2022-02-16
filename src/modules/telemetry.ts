@@ -5,9 +5,9 @@ import type { UserModule } from '~/types'
 export const AppInsightKey: InjectionKey<Promise<ApplicationInsights>> = Symbol('ApplicationInsights')
 
 export const install: UserModule = ({ isClient, router, app }) => {
-  if (!isClient)
-    return
-
+  // if (!isClient) {
+  //   return
+  // }
   app.provide(AppInsightKey, import('@microsoft/applicationinsights-web').then(({ ApplicationInsights }) => {
     const appInsights = new ApplicationInsights({
       config: {
