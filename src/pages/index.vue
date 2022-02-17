@@ -1,8 +1,7 @@
 <template>
   <div id="fullpage" class="relative overflow-x-hidden">
-    <!-- <div class=" bg-light-50 w-10 h-10 absolute z-100 top-120">1</div> -->
-    <div class="section face min-h-100vh bg-gray-900 text-gray-200 py-20">
-      <div class="flex lg:flex-row flex-col p-1 items-center gap-4">
+    <div class="section face min-h-100vh bg-gray-900 text-gray-200 lg:py-0 py-20">
+      <div class="flex lg:flex-row flex-col p-1 items-center gap-4 pl-0 2xl:pl-20">
         <div main class="lg:w-1/2 description-part">
           <p class="leading-title">
             {{ t('intro.an') }}
@@ -48,7 +47,7 @@
             target="_blank"
             href="https://github.com/voxelum/x-minecraft-launcher/releases"
           >{{ github.latestVersion }}</a>-->
-          <component :is="platformDownload" class="mt-10 sm:mx-10" />
+          <component :is="platformDownload" class="mt-10 sm:mx-10 mb-10" />
         </div>
         <div class="lg:w-1/2 side-image-container">
           <div
@@ -61,8 +60,7 @@
     </div>
 
     <div class="section flex flex-col min-h-80vh text-white features">
-      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
-      <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse">
+      <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse pr-0 2xl:pr-20">
         <div class="lg:w-1/2 side-image-container">
           <div
             class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
@@ -92,8 +90,7 @@
     </div>
 
     <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
-      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
-      <div class="flex gap-5 lg:flex-row flex-col">
+      <div class="flex gap-5 lg:flex-row flex-col pl- 2xl:pl-20">
         <div class="description-part lg:w-1/2">
           <p class="leading-title">
             <!-- <optimal-disk-zh /> -->
@@ -128,8 +125,7 @@
     </div>
 
     <div class="section flex flex-col min-h-80vh text-white">
-      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
-      <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse">
+      <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse pr-0 2xl:pr-20">
         <div class="lg:w-1/2 side-image-container">
           <div
             class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
@@ -151,8 +147,7 @@
     </div>
 
     <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
-      <!-- <h1 class="text-5xl text-center w-full font-bold">A Full Featured Launcher🚀</h1> -->
-      <div class="flex gap-5 lg:flex-row flex-col">
+      <div class="flex gap-5 lg:flex-row flex-col pl-0 2xl:pl-20">
         <div class="description-part lg:w-1/2">
           <p class="leading-title">
             {{ t('communityIntegration.integrate') }}
@@ -193,7 +188,7 @@
     </div>
 
     <div class="section intro min-h-100vh">
-      <div class="h-full flex flex-col justify-center h-100vh px-10 sm:px-25">
+      <div class="h-full flex flex-col justify-center h-100vh px-10 sm:px-40">
         <win-32 title />
         <mac title />
         <linux title />
@@ -381,7 +376,7 @@ onMounted(() => {
 }
 
 .description-part {
-  @apply flex flex-col items-start justify-center lg:h-100vh pt-20 sm:px-20 px-8;
+  @apply flex flex-col items-start justify-center lg:min-h-100vh pt-20 sm:px-20 px-8;
 }
 
 /* .features::after {
@@ -390,7 +385,7 @@ onMounted(() => {
 } */
 
 .side-image-container {
-  @apply flex items-center overflow-hidden relative lg:h-100vh mt-10 lg:mt-0;
+  @apply flex items-center overflow-hidden relative lg:min-h-100vh mt-10 lg:mt-0;
 }
 
 .active-feature {
