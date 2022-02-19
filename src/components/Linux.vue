@@ -1,13 +1,20 @@
 <template>
-  <div linux>
-    <h1 class="ui inverted header" style="line-height: 1.4; font-size: 3em">
+  <div linux class="flex flex-col">
+    <h1 v-if="title" class="ui inverted header" style="line-height: 1.4; font-size: 3em">
       <div id="downloadFor" style="font-size: 0.45em">{{ t("downloadFor.linux") }}</div>
     </h1>
     <div class="ui hidden divider" style="padding: 0 0"></div>
-    <div class="flex gap-2 flex-wrap">
+    <div
+      class="flex gap-2 flex-wrap"
+      :class="{
+        'w-full': organized,
+        'justify-center': organized
+      }"
+    >
       <a
         deb
-        class="ui huge inverted download labeled icon red button w-full md:w-auto"
+        class="ui huge inverted download labeled icon red button w-full"
+        :class="{ 'md:w-auto': !organized, 'md:w-[45%]': organized }"
         :disabled="!artifacts.deb"
         :href="artifacts.deb"
         @click="trackDownload('linux', 'deb')"
@@ -17,8 +24,8 @@
       </a>
       <a
         snap
-        class="ui huge inverted download labeled icon teal button w-full md:w-auto"
-        :class="{ disabled: !artifacts.snap }"
+        class="ui huge inverted download labeled icon teal button w-full"
+        :class="{ disabled: !artifacts.snap, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
         :disabled="!artifacts.snap"
         :href="artifacts.snap"
         @click="trackDownload('linux', 'snap')"
@@ -28,8 +35,8 @@
       </a>
       <a
         appimage
-        class="ui huge inverted download labeled icon positive button w-full md:w-auto"
-        :class="{ disabled: !artifacts.appImage }"
+        class="ui huge inverted download labeled icon positive button w-full"
+        :class="{ disabled: !artifacts.appImage, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
         :disabled="!artifacts.appImage"
         :href="artifacts.appImage"
         @click="trackDownload('linux', 'appimage')"
@@ -40,7 +47,7 @@
       <a
         rpm
         class="ui huge inverted download labeled icon button w-full md:w-auto"
-        :class="{ disabled: !artifacts.rpm }"
+        :class="{ disabled: !artifacts.rpm, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
         :disabled="!artifacts.rpm"
         :href="artifacts.rpm"
         @click="trackDownload('linux', 'rpm')"
@@ -55,6 +62,8 @@
 <script lang=ts setup>
 import { useTelemetry } from "~/composables/telemetry";
 import { useArtifactsStore } from "../composables";
+
+const { title, organized } = defineProps({ title: Boolean, organized: Boolean })
 
 const artifacts = useArtifactsStore()
 const { t } = useI18n()

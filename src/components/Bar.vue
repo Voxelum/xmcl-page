@@ -1,7 +1,8 @@
 <template>
   <div class="following bar flex">
-    <div class="flex flex-col items-center justify-center px-5">
-      <img src="../assets/logo.webp" width="28" class="cursor-pointer" @click="push('/')" />
+    <div class="flex items-center justify-center px-5 gap-5 cursor-pointer" @click="push('/')">
+      <!-- <img src="../assets/Compact White.png" width="28" /> -->
+      <span class="font-bold">XMCL</span>
     </div>
     <div class="ui container">
       <div class="ui large inverted secondary network menu">
@@ -64,7 +65,8 @@ function setLocale(newLocale: string) {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.following .bar {
-  background-color: #666666;
-}
+/* .following.bar {
+  background-color: #66666671;
+  @apply rounded-b-2xl;
+} */
 </style>

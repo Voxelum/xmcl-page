@@ -3,11 +3,15 @@
     <h1 v-if="title" class="ui inverted header" style="line-height: 1.4; font-size: 3em">
       <div style="font-size: 0.45em">{{ t('downloadFor.windows') }}</div>
     </h1>
-    <div class="flex gap-2 flex-wrap">
+    <div class="flex gap-2 flex-wrap"
+    :class="{
+      'w-full': organized,
+      'justify-center': organized
+    }">
       <a
         win-web
-        class="ui huge inverted download labeled icon teal button w-full md:w-auto"
-        :class="{ disabled: !artifacts.winWeb }"
+        class="ui huge inverted download labeled icon teal button w-full"
+        :class="{ disabled: !artifacts.winWeb, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winWeb"
         @click="trackDownload('win32', 'appinstaller')"
       >
@@ -16,8 +20,8 @@
       </a>
       <a
         win-setup
-        class="ui huge inverted download labeled icon positive button w-full md:w-auto"
-        :class="{ disabled: !artifacts.winAppx }"
+        class="ui huge inverted download labeled icon positive button w-full"
+        :class="{ disabled: !artifacts.winAppx, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winAppx"
         @click="trackDownload('win32', 'appx')"
       >
@@ -26,9 +30,9 @@
       </a>
       <a
         win-zip
-        class="ui huge inverted download labeled icon brown button w-full md:w-auto"
+        class="ui huge inverted download labeled icon brown button w-full"
         :disabled="!artifacts.winZip"
-        :class="{ disabled: !artifacts.winZip }"
+        :class="{ disabled: !artifacts.winZip, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winZip"
         @click="trackDownload('win32', 'zip64')"
       >
@@ -37,9 +41,9 @@
       </a>
       <a
         win-zip
-        class="ui huge inverted download labeled icon brown button w-full md:w-auto"
+        class="ui huge inverted download labeled icon brown button w-full"
         :disabled="!artifacts.winZip32"
-        :class="{ disabled: !artifacts.winZip32 }"
+        :class="{ disabled: !artifacts.winZip32, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winZip32"
         @click="trackDownload('win32', 'zip32')"
       >
@@ -54,7 +58,7 @@
 import { useTelemetry } from "~/composables/telemetry";
 import { useArtifactsStore } from "../composables";
 
-const { title } = defineProps({ title: Boolean })
+const { title, organized } = defineProps({ title: Boolean, organized: Boolean })
 
 const artifacts = useArtifactsStore()
 const { trackDownload } = useTelemetry()

@@ -1,5 +1,5 @@
 <template>
-  <div id="fullpage" class="relative overflow-x-hidden">
+  <div class="relative">
     <div class="section face min-h-100vh bg-gray-900 text-gray-200 lg:py-0 py-20">
       <div class="flex lg:flex-row flex-col p-1 items-center gap-4 pl-0 2xl:pl-20">
         <div main class="lg:w-1/2 description-part">
@@ -19,12 +19,23 @@
             <span
               class="text-amber-600"
             >{{ t('intro.mods') }}</span>
-            <package-file-icon class="max-h-10 sm:max-h-18 inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2" />!
+            <package-file-icon
+              class="max-h-10 sm:max-h-18 inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2"
+            />!
           </p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('intro.description') }}</p>
-          <span class="flex gap-2 items-start w-full mt-5">
+          <div class="w-full flex justify-center mt-10">
+            <a
+              class="ui version inverted basic label"
+              target="_blank"
+              href="https://github.com/voxelum/x-minecraft-launcher/releases"
+            >{{ github.latestVersion }}</a>
+          </div>
+          <component :is="platformDownload" class="mt-10 w-full mb-10" :organized="true" />
+
+          <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
             <a href="https://fabricmc.net/" target="_blank">
               <img src="../assets/fabric.png" class="h-15" />
             </a>
@@ -42,12 +53,6 @@
               <modrinth-icon class="h-15 w-15" />
             </a>
           </span>
-          <!-- <a
-            class="ui inverted version label z-0"
-            target="_blank"
-            href="https://github.com/voxelum/x-minecraft-launcher/releases"
-          >{{ github.latestVersion }}</a>-->
-          <component :is="platformDownload" class="mt-10 sm:mx-10 mb-10" />
         </div>
         <div class="lg:w-1/2 side-image-container">
           <div
@@ -79,11 +84,7 @@
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('gameInstall.description') }}</p>
           <div class="flex flex-col items-start w-full mt-3 text-gray-400">
-            <a
-              href="https://bmclapidoc.bangbang93.com/"
-              class="text-lg"
-              target="_blank"
-            >> BMCL API</a>
+            <a href="https://bmclapidoc.bangbang93.com/" class="text-lg" target="_blank">> BMCL API</a>
           </div>
         </div>
       </div>
@@ -159,11 +160,7 @@
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('communityIntegration.description') }}</p>
           <div class="flex flex-col w-full mt-3 text-gray-400 items-start">
-            <a
-              href="https://curseforge.com/minecraft/"
-              class="text-lg"
-              target="_blank"
-            >> Curseforge</a>
+            <a href="https://curseforge.com/minecraft/" class="text-lg" target="_blank">> Curseforge</a>
             <a href="https://modrinth.com/" class="text-lg" target="_blank">> Modrinth</a>
             <a
               href="https://github.com/bs-community"
@@ -211,9 +208,9 @@ import OptimalDiskEn from '~/components/OptimalDiskEn.vue';
 import OptimalDiskZh from '~/components/OptimalDiskZh.vue';
 import MultiInstancesEn from '~/components/MultiInstancesEn.vue';
 import MultiInstancesZh from '~/components/MultiInstancesZh.vue';
-import { usePlatform } from "../composables";
+import { useGithubInfoStore, usePlatform } from "../composables";
 
-// const github = useGithubInfoStore()
+const github = useGithubInfoStore()
 const platform = usePlatform()
 const { locale } = useI18n()
 

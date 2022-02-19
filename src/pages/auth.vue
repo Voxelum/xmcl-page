@@ -1,5 +1,5 @@
 <template>
-  <div class="auth">
+  <div class="auth w-full min-h-full pt-20">
     <div class="ui inverted container">
       <div class="icon-container">
         <i class="ui inverted massive windows icon"></i>
@@ -35,7 +35,16 @@
         <div
           style="color: rgb(222 222 222);  line-height: 1.4; font-size: 1.4rem; padding-top: 10px"
         >{{ t("nothingWork") }}</div>
-        <component :is="componentByPlatform" />
+        <div class="w-full flex justify-center mt-10">
+          <a
+            class="ui version inverted basic label"
+            target="_blank"
+            href="https://github.com/voxelum/x-minecraft-launcher/releases"
+          >{{ github.latestVersion }}</a>
+        </div>
+        <div class="flex item-center w-full justify-center mb-20 mt-10">
+          <component :is="componentByPlatform" />
+        </div>
       </div>
     </div>
   </div>
@@ -46,7 +55,9 @@ import logo from "~/assets/logo.webp";
 import LinuxVue from "~/components/Linux.vue";
 import MacVue from "~/components/Mac.vue";
 import Win32Vue from "~/components/Win32.vue";
-import { usePlatform } from "~/composables";
+import { useGithubInfoStore, usePlatform } from "~/composables";
+
+const github = useGithubInfoStore()
 
 useHead({
   title: 'XMCL',
@@ -79,7 +90,7 @@ const platform = usePlatform()
 const componentByPlatform = computed(() => {
   if (platform === 'Mac') return MacVue
   if (platform === 'Linux') return LinuxVue
-   return Win32Vue
+  return Win32Vue
 })
 
 </script>
@@ -89,8 +100,6 @@ const componentByPlatform = computed(() => {
 .auth {
   text-align: center;
   background: #1b1c1d;
-  height: 100%;
-  width: 100%;
   display: flex;
   justify-items: center;
   align-items: center;
