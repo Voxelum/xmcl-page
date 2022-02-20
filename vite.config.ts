@@ -9,6 +9,7 @@ import Markdown from 'vite-plugin-md'
 import WindiCSS from 'vite-plugin-windicss'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import { resolve } from 'path'
+import { VitePWA } from 'vite-plugin-pwa'
 import Prism from 'markdown-it-prism'
 // @ts-ignore
 import LinkAttributes from 'markdown-it-link-attributes'
@@ -116,22 +117,22 @@ export default defineConfig({
         }),
 
         // https://github.com/antfu/vite-plugin-pwa
-        // VitePWA({
-        //     registerType: 'autoUpdate',
-        //     includeAssets: ['favicon.svg', 'robots.txt'],
-        //     manifest: {
-        //         name: 'xmcl',
-        //         short_name: 'xmcl',
-        //         theme_color: '#ffffff',
-        //         icons: [
-        //             {
-        //                 src: '/apple-touch-icon.png',
-        //                 sizes: '180x180',
-        //                 type: 'image/png',
-        //             },
-        //         ],
-        //     },
-        // }),
+        VitePWA({
+            registerType: 'autoUpdate',
+            includeAssets: ['favicon.svg', 'robots.txt'],
+            manifest: {
+                name: 'xmcl',
+                short_name: 'xmcl',
+                theme_color: '#ffffff',
+                icons: [
+                    {
+                        src: '/apple-touch-icon.png',
+                        sizes: '180x180',
+                        type: 'image/png',
+                    },
+                ],
+            },
+        }),
 
         // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
         VueI18n({
