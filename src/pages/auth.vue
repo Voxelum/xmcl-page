@@ -24,7 +24,7 @@
             <button
               class="ui teal right labeled icon button"
               @click="openApp"
-              draggable
+              draggable="true"
               @dragstart="onDragStart"
             >
               <i class="play icon"></i>
