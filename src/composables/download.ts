@@ -55,6 +55,7 @@ export const useArtifactsStore = defineStore('artifacts', () => {
     snap,
     appImage,
     rpm,
+    refreshing: githubStore.refreshing
   }
 })
 
@@ -69,11 +70,13 @@ export const useGithubInfoStore = defineStore('github', () => {
   }> = computed(() => releases.value[0])
   const latestVersion: Ref<string> = computed(() => latest.value ? latest.value.tag_name : 'unknown')
   const prerelease = computed(() => latest.value ? !!latest.value.prerelease : false)
-
+  const refreshing = ref(false)
   function refresh() {
+    refreshing.value = true
     fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases')
       .then(resp => resp.json())
       .then(r => releases.value = r)
+      .finally(() => { refreshing.value = false })
   }
 
   const github = {
@@ -81,6 +84,7 @@ export const useGithubInfoStore = defineStore('github', () => {
     latestVersion,
     prerelease,
     refresh,
+    refreshing,
   }
 
   return github

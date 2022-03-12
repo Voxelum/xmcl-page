@@ -11,7 +11,7 @@
       <a
         win-web
         class="ui huge inverted download labeled icon teal button w-full"
-        :class="{ disabled: !artifacts.winWeb, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
+        :class="{ disabled: artifacts.refreshing || !artifacts.winWeb, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winWeb"
         @click="trackDownload('win32', 'appinstaller')"
       >
@@ -21,7 +21,7 @@
       <a
         win-setup
         class="ui huge inverted download labeled icon positive button w-full"
-        :class="{ disabled: !artifacts.winAppx, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
+        :class="{ disabled: artifacts.refreshing || !artifacts.winAppx, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winAppx"
         @click="trackDownload('win32', 'appx')"
       >
@@ -32,7 +32,7 @@
         win-zip
         class="ui huge inverted download labeled icon brown button w-full"
         :disabled="!artifacts.winZip"
-        :class="{ disabled: !artifacts.winZip, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
+        :class="{ disabled: artifacts.refreshing || !artifacts.winZip, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winZip"
         @click="trackDownload('win32', 'zip64')"
       >
@@ -43,7 +43,7 @@
         win-zip
         class="ui huge inverted download labeled icon brown button w-full"
         :disabled="!artifacts.winZip32"
-        :class="{ disabled: !artifacts.winZip32, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
+        :class="{ disabled: artifacts.refreshing || !artifacts.winZip32, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
         :href="artifacts.winZip32"
         @click="trackDownload('win32', 'zip32')"
       >

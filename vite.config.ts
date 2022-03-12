@@ -120,6 +120,9 @@ export default defineConfig({
         VitePWA({
             registerType: 'autoUpdate',
             includeAssets: ['favicon.svg', 'robots.txt'],
+            workbox: {
+                dontCacheBustURLsMatching: /.+xmcl.app\/?/g
+            },
             manifest: {
                 name: 'xmcl',
                 short_name: 'xmcl',

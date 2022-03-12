@@ -14,7 +14,7 @@
       <a
         dmg
         class="ui huge inverted download labeled icon positive button w-full"
-        :class="{ disabled: !artifacts.macDmg, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
+        :class="{ disabled: artifacts.refreshing || !artifacts.macDmg, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
         :href="artifacts.macDmg"
         @click="trackDownload('mac', 'dmg')"
       >
@@ -24,7 +24,7 @@
       <a
         mac-zip
         class="ui huge inverted download labeled icon brown button w-full"
-        :class="{ disabled: !artifacts.macZip, ' md:w-auto': !organized, 'md:w-[45%]': organized }"
+        :class="{ disabled: artifacts.refreshing || !artifacts.macZip, ' md:w-auto': !organized, 'md:w-[45%]': organized }"
         :href="artifacts.macZip"
         @click="trackDownload('mac', 'zip')"
       >

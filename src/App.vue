@@ -27,11 +27,6 @@ export default defineComponent({
     watch(locale, (newLocale) => {
       localeCache.value = newLocale
     })
-
-    onMounted(() => {
-      $(".menu .item").tab();
-      $(".dropdown").dropdown();
-    });
   }
 });
 

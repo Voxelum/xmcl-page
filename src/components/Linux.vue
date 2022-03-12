@@ -15,7 +15,7 @@
         deb
         class="ui huge inverted download labeled icon red button w-full"
         :class="{ 'md:w-auto': !organized, 'md:w-[45%]': organized }"
-        :disabled="!artifacts.deb"
+        :disabled="artifacts.refreshing || !artifacts.deb"
         :href="artifacts.deb"
         @click="trackDownload('linux', 'deb')"
       >
@@ -26,7 +26,7 @@
         snap
         class="ui huge inverted download labeled icon teal button w-full"
         :class="{ disabled: !artifacts.snap, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
-        :disabled="!artifacts.snap"
+        :disabled="artifacts.refreshing || !artifacts.snap"
         :href="artifacts.snap"
         @click="trackDownload('linux', 'snap')"
       >
@@ -37,7 +37,7 @@
         appimage
         class="ui huge inverted download labeled icon positive button w-full"
         :class="{ disabled: !artifacts.appImage, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
-        :disabled="!artifacts.appImage"
+        :disabled="artifacts.refreshing || !artifacts.appImage"
         :href="artifacts.appImage"
         @click="trackDownload('linux', 'appimage')"
       >
@@ -47,7 +47,7 @@
       <a
         rpm
         class="ui huge inverted download labeled icon button w-full md:w-auto"
-        :class="{ disabled: !artifacts.rpm, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
+        :class="{ disabled: artifacts.refreshing || !artifacts.rpm, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
         :disabled="!artifacts.rpm"
         :href="artifacts.rpm"
         @click="trackDownload('linux', 'rpm')"

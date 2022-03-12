@@ -31,7 +31,9 @@
               class="ui version inverted basic label"
               target="_blank"
               href="https://github.com/voxelum/x-minecraft-launcher/releases"
-            >{{ github.latestVersion }}</a>
+            >
+              <span>{{ github.latestVersion }}</span>
+            </a>
           </div>
           <component :is="platformDownload" class="mt-10 w-full mb-10" :organized="true" />
 
@@ -193,7 +195,7 @@
       <div class="w-full bottom-0 flex items-center justify-center">
         <div class="flex flex-col items-center pb-2">
           <router-link to="privacy">Software Privacy</router-link>
-          <div>Copyright © 2020-2021 CI010</div>
+          <div>Copyright © 2020-2022 CI010</div>
         </div>
       </div>
     </div>
@@ -209,6 +211,10 @@ import OptimalDiskZh from '~/components/OptimalDiskZh.vue';
 import MultiInstancesEn from '~/components/MultiInstancesEn.vue';
 import MultiInstancesZh from '~/components/MultiInstancesZh.vue';
 import { useGithubInfoStore, usePlatform } from "../composables";
+
+useHead({
+  title: 'X Minecraft Launcher - A fully featured Minecraft launcher',
+})
 
 const github = useGithubInfoStore()
 const platform = usePlatform()
@@ -243,102 +249,9 @@ const localeMultiInstances = computed(() => {
 })
 const { t } = useI18n()
 
-useHead({
-  title: 'X Minecraft Launcher - A fully featured Minecraft launcher',
-})
-
-// onMounted(() => {
-//   github.refresh()
-// })
-
-// const showingIndex = ref(-1)
-// const activeIndex = ref(1)
-
-// const activeItem = computed(() => paused.value && showingIndex.value !== -1 ? items.value[showingIndex.value] : items.value[activeIndex.value])
-
-// const paused = ref(false)
-
-// interface Feature {
-//   id: number,
-//   title: string
-//   contents: string
-//   image: string
-//   time: number
-// }
-
-// let freeId = -1
-
-// const items: Ref<Feature[]> = ref([{
-//   id: 0,
-//   title: computed(() => t('feature.multilingual.title')),
-//   contents: computed(() => t('feature.multilingual.description')),
-//   image: i18nGif,
-//   time: 10,
-// }, {
-//   id: 1,
-//   title: computed(() => t('feature.modManage.title')),
-//   contents: computed(() => t('feature.modManage.description')),
-//   image: modGif,
-//   time: 10,
-// }, {
-//   id: 2,
-//   title: computed(() => t('feature.curseforgeIntegration.title')),
-//   contents: computed(() => t('feature.curseforgeIntegration.description')),
-//   image: curseforgeGif,
-//   time: 10,
-// }, {
-//   id: 3,
-//   title: computed(() => t('feature.resourcepackManage.title')),
-//   contents: computed(() => t('feature.resourcepackManage.description')),
-//   image: resourcePackGif,
-//   time: 10,
-// }])
-
-// const visibled = computed(() => items.value.filter((v, i) => i <= 2))
-
-// function go(offset: number) {
-//   if (offset === 0) {
-//     showingIndex.value = 1
-//     return
-//   }
-//   if (offset === 1) {
-//     showingIndex.value = 2
-//   } else {
-//     showingIndex.value = 0
-//   }
-// }
-
-// function next() {
-//   const last = items.value.pop()
-//   if (last) {
-//     const lastId = last.id
-//     last.id = freeId
-//     freeId = lastId
-//     items.value.unshift(last)
-//   }
-// }
-
-// function onMouseEnter(index: number) {
-//   showingIndex.value = index
-//   paused.value = true
-// }
-
-// function onMouseLeave() {
-//   paused.value = false
-//   showingIndex.value = -1
-// }
-
-// useIntervalFn(() => {
-//   if (!paused.value) {
-//     next()
-//   }
-// }, 3000)
 
 onMounted(() => {
-  // $("body").pagepiling({
-  //   // onLeave: function (index, nextIndex, direction) {
-  //   // },
-  // });
+  github.refresh()
 })
 
 </script>

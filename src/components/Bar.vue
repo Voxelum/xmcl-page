@@ -14,8 +14,8 @@
           <i class="discord square icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">Discord</p>
         </a>
-        <!-- <a class="item" @click="push('/docs')">{{ t('userManual') }}</a> -->
-        <div class="right menu">
+
+        <!-- <div class="right menu">
           <div class="item"></div>
           <div class="ui language floating dropdown link item" id="languages">
             <i class="world icon"></i>
@@ -24,26 +24,72 @@
               <div class="scrolling menu">
                 <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
                 <div class="item" value="en" @click="setLocale('en')">English</div>
-                <!-- <div class="item" value="ru" @click="setLocale('ru')">Русский</div> -->
               </div>
             </div>
           </div>
-        </div>
-        <div class="menu sm:flex hidden">
-          <div class="item"></div>
-          <div class="ui language floating dropdown link item" id="source">
+        </div>-->
+        <Menu as="div" class="relative inline-block text-left right menu flex">
+          <MenuButton class="ui language floating dropdown link item">
+            <i class="world icon"></i>
+            <div class="text-white">{{ t("lang") }}</div>
+          </MenuButton>
+
+          <transition
+            enter-active-class="transition ease-out duration-100"
+            enter-from-class="transform opacity-0 scale-95"
+            enter-to-class="transform opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-75"
+            leave-from-class="transform opacity-100 scale-100"
+            leave-to-class="transform opacity-0 scale-95"
+          >
+            <MenuItems
+              class="ui dropdown origin-bottom-left bg-dark-300 absolute left-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
+            >
+              <div class="py-1">
+                <MenuItem>
+                  <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
+                </MenuItem>
+                <MenuItem>
+                  <div class="item" value="en" @click="setLocale('en')">English</div>
+                </MenuItem>
+              </div>
+            </MenuItems>
+          </transition>
+        </Menu>
+        <Menu as="div" class="relative inline-block text-left menu sm:flex hidden">
+          <MenuButton class="ui language floating dropdown link item">
             <i class="download icon"></i>
-            <div class="text" style="color: white" data-i18n="auto-source">{{ t("auto-source") }}</div>
-            <div class="menu">
-              <div class="scrolling menu">
-                <div class="item" @click="download.source = 'auto'">{{ t("auto-source") }}</div>
-                <div class="item" @click="download.source = 'azure'">{{ t("azure-source") }}</div>
-                <div class="item" @click="download.source = 'azure-ms'">{{ t("azure-ms-source") }}</div>
-                <div class="item" @click="download.source = 'github'">{{ t("github-source") }}</div>
+            <div class="text-white">{{ mapping[download.source] }}</div>
+          </MenuButton>
+
+          <transition
+            enter-active-class="transition ease-out duration-100"
+            enter-from-class="transform opacity-0 scale-95"
+            enter-to-class="transform opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-75"
+            leave-from-class="transform opacity-100 scale-100"
+            leave-to-class="transform opacity-0 scale-95"
+          >
+            <MenuItems
+              class="ui dropdown origin-bottom-left bg-dark-300 absolute left-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            >
+              <div class="py-1">
+                <MenuItem>
+                  <div class="item" @click="download.source = 'auto'">{{ t("auto-source") }}</div>
+                </MenuItem>
+                <MenuItem>
+                  <div class="item" @click="download.source = 'azure'">{{ t("azure-source") }}</div>
+                </MenuItem>
+                <MenuItem>
+                  <div class="item" @click="download.source = 'azure-ms'">{{ t("azure-ms-source") }}</div>
+                </MenuItem>
+                <MenuItem>
+                  <div class="item" @click="download.source = 'github'">{{ t("github-source") }}</div>
+                </MenuItem>
               </div>
-            </div>
-          </div>
-        </div>
+            </MenuItems>
+          </transition>
+        </Menu>
       </div>
     </div>
   </div>
@@ -51,6 +97,7 @@
 
 <script lang=ts setup>
 import { useDownloadStore } from "~/composables";
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
 const download = useDownloadStore()
 
@@ -61,6 +108,14 @@ function setLocale(newLocale: string) {
   locale.value = newLocale
 }
 
+const mapping = reactive({
+  ['auto']: computed(() => t("auto-source")),
+  ['azure']: computed(() => t("azure-source")),
+  ['azure-ms']: computed(() => t("azure-ms-source")),
+  ['github']: computed(() => t("github-source")),
+})
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -69,4 +124,8 @@ function setLocale(newLocale: string) {
   background-color: #66666671;
   @apply rounded-b-2xl;
 } */
+
+.dropdown .item {
+  @apply hover:bg-[rgba(123,123,123,0.5)];
+}
 </style>

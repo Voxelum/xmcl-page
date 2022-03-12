@@ -11,6 +11,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@headlessui/vue": "^1.5.0",
     "@microsoft/applicationinsights-web": "^2.7.3",
     "@vueuse/core": "^7.6.2",
     "@vueuse/head": "^0.7.5",
