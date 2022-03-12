@@ -1,53 +1,99 @@
 lang: Русский
 repository: Репозиторий исходного кода
+intro:
+  an: В
+  openSource: Открытый исходный код
+  minecraftLauncher: Minecraft Launcher с
+  modern: Современный
+  ux: UX
+  provide: Provide
+  diskEfficient: Эффективный диск
+  wayToManage: способ управления всеми вашими
+  mods: Моды
+  description: >-
+    X Minecraft Launcher (XMCL) - это современный лаунчер Minecraft, который позволяет вам
+    управлять тяжёлыми ресурсами, такими как модпаки, пакеты ресурсов, моды, шейдеры.
+    Он также имеет интеграцию с Minecraft Forge, Fabric, CurseForge и
+    Modrinth.
 launcher:
   manage:
     intro: Эффективно управляйте своим Minecraft.
-  description: Простой, с открытым исходным кодом и ориентированный на выполнение функций Minecraft Launcher
-download: Монтажник
+  description: Простой, с открытым исходным кодом и ориентированный на выполнение функций лаунчера Minecraft
+download: Установщик
 downloadFor:
-  windows: 'Скачать Для Windows:'
+  windows: 'Скачать для Windows:'
   mac: 'Скачать для Mac:'
   linux: 'Скачать для Linux:'
-author: Связаться с автором
-download-zip: Zip (64 bits)
-download-zip-32: Zip (32 bits)
-download-web: Веб-установщик
-download-portable: Портативный
+author: Автор контента
+download-zip: Zip (64 бита)
+download-zip-32: Zip (32 бита)
+download-appx: AppX Package
+download-appinstaller: Установщик приложения
+download-portable: Portable
 download-dmg: DMG
 download-snap: Snap
 download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
-azure-source: Скачать из Azure
-azure-ms-source: Загрузка из Azure Microsoft CDN
-baidu-source: Download From Baidu CDN
-github-source: Загрузить с Github
-auto-source: Автоматическое определение источника загрузки
-prerelease: Предварительная версия
-authSuccess: Преуспеть! 
+azure-source: Скачать с Azure
+azure-ms-source: Скачать с Azure Microsoft CDN
+baidu-source: Скачать с Baidu CDN
+github-source: Скачать с Github
+auto-source: Автоопределение источника загрузки
+prerelease: Предрелиз
+authSuccess: Успешно!
 authSuccessTitle: >-
-  Авторизация прошла успешно. Вы будете перенаправлены обратно в Minecraft Launcher!
+  Успешная авторизация. Вы будете перенаправлены обратно в лаунчер Minecraft!
 redirectHelperTitle: >-
-  Если вы не перенаправляетесь, вы можете попробовать нажать кнопку Открыть в приложении, чтобы вручную перенаправить.
+  Если вы не перенаправлены, вы можете попробовать нажать «Открыть вприложении»,
+  чтобы перенаправить вручную.
 redirectHelperMessage: >-
-  Появится всплывающее окно с просьбой открыть пусковую установку. Если это не сработает вы можете попробовать перетащить кнопку в окно пусковой установки!
+  Появится всплывающее окно с просьбой открыть лаунчер. Если и это не работает,
+  попробуйте перетащить кнопку в окно лаунчера!
 notWork: Не работает?
-openInAppButton: Открыть в программе Launcher
-nothingWork: Если ничего из вышеперечисленного не работает, возможно, вы захотите повторно загрузить последнюю версию Launcher
-features: Характеристики
+openInAppButton: Открыть в лаунчере
+nothingWork: Если ничего из вышеперечисленного не работает, вы можете заново скачать последнюю версию лаунчера.
+features: Возможности
 feature:
   multilingual:
     description: >-
-      В настоящее время программа запуска поддерживает английский, китайский и русский языки. Язык легко расширяется! Не стесняйтесь вносить свой вклад!
+      В настоящее время лаунчер поддерживает английский, китайский и русский языки.
+      И язык легко расширяется! Не стесняйтесь вносить свой вклад!
     title: Многоязычный
   modManage:
     title: Управление модами
     description: >-
-      Вы можете управлять огромными ресурсами в простом интерфейсе и помечать их по своему усмотрению. по своему усмотрению.
+      Вы можете управлять тяжёлыми ресурсами в удобном интерфейсе и помечать их
+      по своему усмотрению.
   curseforgeIntegration:
     title: Интеграция с Curseforge
-    description: Вы можете загружать ресурсы с curseforge внутри программы запуска.
+    description: Вы можете скачивать ресурсы с curseforge внутри лаунчера.
   resourcepackManage:
     title: Управление пакетами ресурсов
-    description: Вы можете включить/выключить пакет ресурсов и рекламный тег для них.
+    description: Вы можете включать/выключать пакеты ресурсов и добавлять к ним метки.
+userManual: Руководство пользователя
+gameInstall:
+  noWorry: Не беспокойтесь о
+  gameInstall: Установить игру
+  description: >-
+    XMCL поддерживает установку чистого Minecraft, Minecraft Forge, Fabric и даже
+    Optifine всё в одном! Вы можете установить их в одном месте в лаунчере.
+    Он также поддерживает сторонние зеркальные ссылки BMCL API.
+    Вы даже можете настроить собственное зеркало в лаунчере.
+optimalDisk:
+  description: >-
+    XMCL хранит все моды, пакеты ресурсов, шейдеры, модпаки в одном месте.
+    Если вы попытаетесь использовать любой известный ресурс, он будет использовать
+    жёсткую ссылку для установки ресурса на экземпляр без копирования. Это означает,
+    что вы больше не увидите дубликатов в папке /mods.
+cleanWorkspace:
+  description: >-
+    XMCL имеет встроенную поддержку мультиэкземпляров. Вы можете легко создать
+    несколько экземпляров. Так что вам не нужно беспокоиться о сочетании различных
+    настроек запуска.
+communityIntegration:
+  integrate: Интегрировано с
+  communities: Несколько сообществ
+  description: >-
+    XMCL имеет встроенную поддержку с Curseforge, Modrinth. Он также предоставляет
+    возможность поддержки пользовательской учётной записи/системы скинов, типо blessing skin.
