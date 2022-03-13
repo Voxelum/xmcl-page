@@ -20,6 +20,9 @@ export const useArtifactsStore = defineStore('artifacts', () => {
     if (!githubStore.latest.assets) return ''
     const result = githubStore.latest.assets.find(find)
     if (result) {
+      if (result.name.endsWith('.appinstaller')) {
+        return 'https://xmcl.blob.core.windows.net/releases/xmcl.appinstaller'
+      }
       if (downloadStore.source === 'auto') {
         return gfwStore ? getAzureMsUrl(result.name) : result.browser_download_url
       } else if (downloadStore.source === 'azure') {
