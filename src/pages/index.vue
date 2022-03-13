@@ -72,7 +72,11 @@
           <div
             class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
           >
-            <img src="../assets/install.webp" class="rounded-xl" />
+            <picture class="rounded-xl">
+              <source srcset="../assets/install.webp" type="image/webp" />
+              <source srcset="../assets/install.jpg" type="image/jpg" />
+              <img src="../assets/install.png" />
+            </picture>
           </div>
         </div>
         <div class="description-part lg:w-1/2">
@@ -121,7 +125,11 @@
           <div
             class="bg-red-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
           >
-            <img src="../assets/mods.webp" class="rounded-xl" />
+            <picture class="rounded-xl">
+              <source srcset="../assets/mods.webp" type="image/webp" />
+              <source srcset="../assets/mods.jpg" type="image/jpg" />
+              <img src="../assets/mods.png" />
+            </picture>
           </div>
         </div>
       </div>
@@ -133,7 +141,11 @@
           <div
             class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
           >
-            <img src="../assets/instances.webp" class="rounded-xl" />
+            <picture class="rounded-xl">
+              <source srcset="../assets/instances.webp" type="image/webp" />
+              <source srcset="../assets/instances.jpg" type="image/jpg" />
+              <img src="../assets/instances.png" />
+            </picture>
           </div>
         </div>
         <div class="description-part lg:w-1/2">
@@ -180,7 +192,11 @@
           <div
             class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
           >
-            <img src="../assets/modrinth.webp" class="rounded-xl" />
+            <picture class="rounded-xl">
+              <source srcset="../assets/modrinth.webp" type="image/webp" />
+              <source srcset="../assets/modrinth.jpg" type="image/jpg" />
+              <img src="../assets/modrinth.png" />
+            </picture>
           </div>
         </div>
       </div>
