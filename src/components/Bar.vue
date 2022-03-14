@@ -105,16 +105,9 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 const download = useDownloadStore()
 
 const { t, locale } = useI18n()
-const { push, currentRoute } = useRouter()
+const { push } = useRouter()
 
 function setLocale(newLocale: string) {
-  if (currentRoute.value.fullPath === '/zh' && newLocale !== 'zh') {
-    push(`/${newLocale}`)
-  } else if (currentRoute.value.fullPath === '/ru' && newLocale !== 'ru') {
-    push(`/${newLocale}`)
-  } else if (currentRoute.value.fullPath === '/en' && newLocale !== 'en') {
-    push(`/${newLocale}`)
-  }
   locale.value = newLocale
 }
 

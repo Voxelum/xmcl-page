@@ -14,7 +14,7 @@ const messages = Object.fromEntries(
     }),
 )
 
-export const install: UserModule = ({ app, isClient, initialState }) => {
+export const install: UserModule = ({ app, isClient, initialState, router }) => {
   const i18n = createI18n({
     legacy: false,
     locale: 'en',
@@ -28,7 +28,17 @@ export const install: UserModule = ({ app, isClient, initialState }) => {
       initialState.locale = locale
     })
   } else {
-    watchEffect(() => {
+    watch(i18n.global.locale, (locale) => {
+      const currentRoute = router.currentRoute
+      if (currentRoute.value.fullPath === '/zh' && locale !== 'zh') {
+        router.push(`/${locale}`)
+      } else if (currentRoute.value.fullPath === '/ru' && locale !== 'ru') {
+        router.push(`/${locale}`)
+      } else if (currentRoute.value.fullPath === '/en' && locale !== 'en') {
+        router.push(`/${locale}`)
+      } else if (currentRoute.value.fullPath === '/') {
+        router.push(`/${locale}`)
+      }
       document.getElementsByTagName('html').item(0)?.setAttribute('lang', i18n.global.locale.value)
     })
   }

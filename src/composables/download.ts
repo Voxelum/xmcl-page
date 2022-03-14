@@ -76,7 +76,7 @@ export const useGithubInfoStore = defineStore('github', () => {
   const refreshing = ref(false)
   function refresh() {
     refreshing.value = true
-    fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases')
+    fetch('https://cdnms.xmcl.app/releases/latest_version.json')
       .then(resp => resp.json())
       .then(r => releases.value = r)
       .finally(() => { refreshing.value = false })

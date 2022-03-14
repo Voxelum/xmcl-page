@@ -14,7 +14,7 @@ import Prism from 'markdown-it-prism'
 // @ts-ignore
 import LinkAttributes from 'markdown-it-link-attributes'
 
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
+const markdownWrapperClasses = 'prose prose-sm m-auto text-left text-yellow-300 text-red-700 text-sky-400 text-emerald-700 text-green-400 text-[rgb(61,239,233)] text-[rgb(107,217,104)] text-yellow-300 text-amber-600'
 
 export default defineConfig({
     resolve: {
