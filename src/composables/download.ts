@@ -78,7 +78,7 @@ export const useGithubInfoStore = defineStore('github', () => {
     refreshing.value = true
     fetch('https://cdnms.xmcl.app/releases/latest_version.json')
       .then(resp => resp.json())
-      .then(r => releases.value = r)
+      .then(r => releases.value = [r])
       .finally(() => { refreshing.value = false })
   }
 
