@@ -14,7 +14,7 @@ const messages = Object.fromEntries(
     }),
 )
 
-export const install: UserModule = ({ app }) => {
+export const install: UserModule = ({ app, isClient, initialState }) => {
   const i18n = createI18n({
     legacy: false,
     locale: 'en',
@@ -22,4 +22,14 @@ export const install: UserModule = ({ app }) => {
   })
 
   app.use(i18n)
+
+  if (!isClient) {
+    watch(i18n.global.locale, (locale) => {
+      initialState.locale = locale
+    })
+  } else {
+    watchEffect(() => {
+      document.getElementsByTagName('html').item(0)?.setAttribute('lang', i18n.global.locale.value)
+    })
+  }
 }

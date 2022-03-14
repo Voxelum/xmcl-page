@@ -47,10 +47,13 @@
             >
               <div class="py-1">
                 <MenuItem>
-                  <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
+                  <div class="item" value="en" @click="setLocale('en')">English</div>
                 </MenuItem>
                 <MenuItem>
-                  <div class="item" value="en" @click="setLocale('en')">English</div>
+                  <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
+                </MenuItem>
+                  <MenuItem>
+                  <div class="item" value="zh" @click="setLocale('ru')">Русский</div>
                 </MenuItem>
               </div>
             </MenuItems>
@@ -102,9 +105,16 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 const download = useDownloadStore()
 
 const { t, locale } = useI18n()
-const { push } = useRouter()
+const { push, currentRoute } = useRouter()
 
 function setLocale(newLocale: string) {
+  if (currentRoute.value.fullPath === '/zh' && newLocale !== 'zh') {
+    push(`/${newLocale}`)
+  } else if (currentRoute.value.fullPath === '/ru' && newLocale !== 'ru') {
+    push(`/${newLocale}`)
+  } else if (currentRoute.value.fullPath === '/en' && newLocale !== 'en') {
+    push(`/${newLocale}`)
+  }
   locale.value = newLocale
 }
 

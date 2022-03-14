@@ -1,15 +1,25 @@
 lang: 简体中文
 repository: 仓库地址
+title:
+  index: X Minecraft Launcher - 一个现代化的 Minecraft 启动器
+  auth: X Minecraft Launcher - 验证你的账号
+  privacy: X Minecraft Launcher - 一个现代化的 Minecraft 启动器
+description: 极简、功能驱动的 Minecraft 启动器
+# this is the keyword for search engine searching
+keywords: minecraft,启动器,curseforge,模组,hmcl,multimc,modrinth,minecraftforge,fabricmc
 intro:
-  an: 一个
-  openSource: 开源的
-  minecraftLauncher: Minecraft 启动器，拥有
-  modern: 现代化
-  ux: 的 UX
-  provide: 提供一种
-  diskEfficient: 磁盘空间最优的
-  wayToManage: 的方式来管理你所有的
-  mods: 模组
+  first: <p class="leading-title">
+    一个
+    <span class="text-[rgb(61,239,233)]">开源的</span>
+    Minecraft 启动器，拥有
+    <span class="text-[rgb(107,217,104)]">现代化</span>
+    的 UX.
+    </p>
+  second: 
+    提供一种
+    <span class="text-yellow-300">磁盘空间最优的</span>
+    的方式来管理你所有的
+    <span class="text-amber-600">模组</span>
   description: >-
     X Minecraft Launcher (XMCL) 是一个方便你管理大量的整合包，模组，资源包，光影包的的现代化启动器。它对 Minecraft
     Forge，Fabric，Curseforge 和 Modrinth 都有内置支持。
@@ -46,35 +56,40 @@ redirectHelperMessage: 浏览器会弹出窗口询问是否打开启动器，请
 notWork: 无法跳转?
 openInAppButton: 在启动器中打开
 nothingWork: 如果上述方法都不顶用，请你尝试重新下载安装最新的启动器吧
-features: 特性
-feature:
-  multilingual:
-    title: 多语言
-    description: 启动器目前支持英语，中文，俄语
-  curseforgeIntegration:
-    title: 集成 Curseforge API
-    description: 你可以在启动器内通过 Curseforge API 直接下载资源。
-  resourcepackManage:
-    title: 资源包管理
-    description: 你可以在启动器内控制资源包，以及可以通过自定义标签来管理它们。
-  modManage:
-    title: Mod 管理
-    description: 可以简单地在启动器内管理大量 Mod，支持自定义标签便于管理
-userManual: 用户手册
+# features: 特性
+# feature:
+#   multilingual:
+#     title: 多语言
+#     description: 启动器目前支持英语，中文，俄语
+#   curseforgeIntegration:
+#     title: 集成 Curseforge API
+#     description: 你可以在启动器内通过 Curseforge API 直接下载资源。
+#   resourcepackManage:
+#     title: 资源包管理
+#     description: 你可以在启动器内控制资源包，以及可以通过自定义标签来管理它们。
+#   modManage:
+#     title: Mod 管理
+#     description: 可以简单地在启动器内管理大量 Mod，支持自定义标签便于管理
+# userManual: 用户手册
 gameInstall:
-  noWorry: 轻松处理所有
-  gameInstall: 游戏安装
+  title: 轻松处理所有 <span class="text-green-400"> 游戏安装</span>
   description: >-
     XMCL 支持安装原版 Minecraft, Minecraft Forge, Fabric,
     甚至 Optifine！你可以在一个界面处理所有基本的游戏安装。它同样支持第三方镜像，如 BMCL API。
 optimalDisk:
+  title:
+    磁盘空间
+    <span class="text-yellow-300">最优</span> 选，轻松处理
+    <span class="text-red-700">大量资源</span>
   description: >-
     XMCL 会在统一的地方存储所有安装过的模组，资源包，光影包，整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。所以在 /mods 文件夹中不会存在任何副本文件。
 cleanWorkspace:
+  title: 多实例，保证你的启动配置
+    <span class="text-sky-400">干净整洁</span>
   description: >-
     XMCL 内置支持多实例。你可以通过创建不同的实例来进行版本隔离，这能确保你每个启动配置完全不会互相影响。
 communityIntegration:
-  integrate: 有效集成
-  communities: 知名第三方社区
+  title: 有效集成
+            <span class="text-emerald-700">知名第三方社区</span>
   description: >-
     XMCL 目前支持 Curseforge, Modrinth，可以在启动器内访问并下载资源。启动器同样支持了自定义用户账号系统，如 blessing skin。

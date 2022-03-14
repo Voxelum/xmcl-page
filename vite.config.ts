@@ -161,6 +161,12 @@ export default defineConfig({
     ssgOptions: {
         script: 'async',
         formatting: 'minify',
+        onPageRendered(route, html, context) {
+            if (context.initialState.locale) {
+                html = html.replace(`lang="en"`, `lang="${context.initialState.locale}"`)
+            }
+            return html
+        }
     },
 
     optimizeDeps: {

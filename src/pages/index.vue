@@ -3,22 +3,9 @@
     <div class="section face min-h-100vh bg-gray-900 text-gray-200 lg:py-0 py-20">
       <div class="flex lg:flex-row flex-col p-1 items-center gap-4 pl-0 2xl:pl-20">
         <div main class="lg:w-1/2 description-part">
+          <p class="leading-title" v-html="t('intro.first')"></p>
           <p class="leading-title">
-            {{ t('intro.an') }}
-            <span class="text-[rgb(61,239,233)]">{{ t('intro.openSource') }}</span>
-            {{ t('intro.minecraftLauncher') }}
-            <span
-              class="text-[rgb(107,217,104)]"
-            >{{ t('intro.modern') }}</span>
-            {{ t('intro.ux') }}.
-          </p>
-          <p class="leading-title">
-            {{ t('intro.provide') }}
-            <span class="text-yellow-300">{{ t('intro.diskEfficient') }}</span>
-            {{ t('intro.wayToManage') }}
-            <span
-              class="text-amber-600"
-            >{{ t('intro.mods') }}</span>
+            <span v-html="t('intro.second')"></span>
             <package-file-icon
               class="max-h-10 sm:max-h-18 inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2"
             />!
@@ -80,12 +67,7 @@
           </div>
         </div>
         <div class="description-part lg:w-1/2">
-          <p class="leading-title">
-            {{ t('gameInstall.noWorry') }}
-            <span
-              class="text-green-400"
-            >{{ t('gameInstall.gameInstall') }}</span>
-          </p>
+          <p class="leading-title" v-html="t('gameInstall.title')"></p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('gameInstall.description') }}</p>
@@ -99,12 +81,7 @@
     <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
       <div class="flex gap-5 lg:flex-row flex-col pl- 2xl:pl-20">
         <div class="description-part lg:w-1/2">
-          <p class="leading-title">
-            <!-- <optimal-disk-zh /> -->
-            <component :is="localeOptimal" />
-            <!-- <span class="text-yellow-300">Optimal</span> disk space with
-            <span class="text-red-700">Massive Resources</span>-->
-          </p>
+          <p class="leading-title" v-html="t('optimalDisk.title')"></p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('optimalDisk.description') }}</p>
@@ -149,11 +126,7 @@
           </div>
         </div>
         <div class="description-part lg:w-1/2">
-          <p class="leading-title">
-            <component :is="localeMultiInstances" />
-            <!-- Keep your workspace
-            <span class="text-sky-400">Clean</span> with multi-instances-->
-          </p>
+          <p class="leading-title" v-html="t('cleanWorkspace.title')"></p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('cleanWorkspace.description') }}</p>
@@ -164,12 +137,7 @@
     <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
       <div class="flex gap-5 lg:flex-row flex-col pl-0 2xl:pl-20">
         <div class="description-part lg:w-1/2">
-          <p class="leading-title">
-            {{ t('communityIntegration.integrate') }}
-            <span
-              class="text-emerald-700"
-            >{{ t('communityIntegration.communities') }}</span>
-          </p>
+          <p class="leading-title" v-html="t('communityIntegration.title')"></p>
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('communityIntegration.description') }}</p>
@@ -222,19 +190,26 @@
 import LinuxVue from '~/components/Linux.vue';
 import MacVue from '~/components/Mac.vue';
 import Win32Vue from '~/components/Win32.vue';
-import OptimalDiskEn from '~/components/OptimalDiskEn.vue';
-import OptimalDiskZh from '~/components/OptimalDiskZh.vue';
-import MultiInstancesEn from '~/components/MultiInstancesEn.vue';
-import MultiInstancesZh from '~/components/MultiInstancesZh.vue';
 import { useGithubInfoStore, usePlatform } from "../composables";
 
+const { t } = useI18n()
+
 useHead({
-  title: 'X Minecraft Launcher - A fully featured Minecraft launcher',
+  title: computed(() => t('title.index')),
+  meta: computed(() => [
+    {
+      name: 'keywords',
+      content: t('keywords')
+    },
+    {
+      name: 'description',
+      content: t('description')
+    }
+  ])
 })
 
 const github = useGithubInfoStore()
 const platform = usePlatform()
-const { locale } = useI18n()
 
 const platformDownload = computed(() => {
   switch (platform) {
@@ -243,27 +218,6 @@ const platformDownload = computed(() => {
     default: return Win32Vue
   }
 })
-const localeOptimal = computed(() => {
-  switch (locale.value) {
-    case 'zh':
-    case 'zh-CN':
-      return OptimalDiskZh
-    case 'en':
-    default:
-      return OptimalDiskEn
-  }
-})
-const localeMultiInstances = computed(() => {
-  switch (locale.value) {
-    case 'zh':
-    case 'zh-CN':
-      return MultiInstancesZh
-    case 'en':
-    default:
-      return MultiInstancesEn
-  }
-})
-const { t } = useI18n()
 
 
 onMounted(() => {

@@ -58,14 +58,24 @@ import Win32Vue from "~/components/Win32.vue";
 import { useGithubInfoStore, usePlatform } from "~/composables";
 
 const github = useGithubInfoStore()
+const { t } = useI18n()
 
 useHead({
-  title: 'XMCL',
+  title: computed(() => t('title.auth')),
+  meta: computed(() => [
+    {
+      name: 'keywords',
+      content: t('keywords')
+    },
+    {
+      name: 'description',
+      content: t('description')
+    }
+  ])
 })
 
 const query = useUrlSearchParams()
 
-const { t } = useI18n()
 
 const callbackUrl = computed(
   () => `xmcl://launcher/auth?code=${query.code}`
