@@ -124,18 +124,7 @@ export default defineConfig({
                 globIgnores: ["**\/node_modules\/**\/*", "zh.html", "en.html", "ru.html", "index.html"],
                 globPatterns: ["**\/*.{js,css,html}"]
             },
-            manifest: {
-                name: 'xmcl',
-                short_name: 'xmcl',
-                theme_color: '#ffffff',
-                icons: [
-                    {
-                        src: '/apple-touch-icon.png',
-                        sizes: '180x180',
-                        type: 'image/png',
-                    },
-                ],
-            },
+            manifest: false,
         }),
 
         // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
