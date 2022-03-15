@@ -121,7 +121,8 @@ export default defineConfig({
             registerType: 'autoUpdate',
             includeAssets: ['favicon.svg', 'robots.txt'],
             workbox: {
-                dontCacheBustURLsMatching: /.+xmcl.app\/?/g
+                globIgnores: ["**\/node_modules\/**\/*", "zh.html", "en.html", "ru.html", "index.html"],
+                globPatterns: ["**\/*.{js,css,html}"]
             },
             manifest: {
                 name: 'xmcl',
