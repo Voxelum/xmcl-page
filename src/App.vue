@@ -20,7 +20,23 @@ export default defineComponent({
   setup() {
     const { locale } = useI18n()
 
-    const localeCache = useLocalStorage('locale', getNavigator()?.language ?? '')
+    const normalizeLocale = (locale?: string) => {
+      if (!locale) {
+        return 'en'
+      }
+      if (locale.startsWith('en')) {
+        return 'en'
+      }
+      if (locale.startsWith('zh')) {
+        return 'zh'
+      }
+      if (locale.startsWith('ru')) {
+        return 'ru'
+      }
+      return 'en'
+    }
+
+    const localeCache = useLocalStorage('locale', normalizeLocale(getNavigator()?.language) ?? 'en')
 
     locale.value = localeCache.value
 
