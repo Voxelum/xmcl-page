@@ -5,6 +5,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Bar: typeof import('./components/Bar.vue')['default']
+    CentraProjectTree: typeof import('./components/CentraProjectTree.vue')['default']
     CurseforgeIcon: typeof import('./components/CurseforgeIcon.vue')['default']
     DocsSidebar: typeof import('./components/DocsSidebar.vue')['default']
     FabricIcon: typeof import('./components/FabricIcon.vue')['default']
@@ -14,7 +15,9 @@ declare module 'vue' {
     ModrinthIcon: typeof import('./components/ModrinthIcon.vue')['default']
     PackageFileIcon: typeof import('./components/PackageFileIcon.vue')['default']
     PrivacyContent: typeof import('./components/PrivacyContent.md')['default']
+    VanillaProjectTree: typeof import('./components/VanillaProjectTree.vue')['default']
     Win32: typeof import('./components/Win32.vue')['default']
+    XMCLProjectTree: typeof import('./components/XMCLProjectTree.vue')['default']
     ZipFileIcon: typeof import('./components/ZipFileIcon.vue')['default']
   }
 }

@@ -14,7 +14,7 @@ import Prism from 'markdown-it-prism'
 // @ts-ignore
 import LinkAttributes from 'markdown-it-link-attributes'
 
-const markdownWrapperClasses = 'prose prose-sm m-auto text-left text-yellow-300 text-red-700 text-sky-400 text-emerald-700 text-green-400 text-[rgb(61,239,233)] text-[rgb(107,217,104)] text-yellow-300 text-amber-600'
+const markdownWrapperClasses = 'mt-20 m-auto max-w-[70vw] markdown-body'
 
 export default defineConfig({
     resolve: {
@@ -102,17 +102,25 @@ export default defineConfig({
         // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
         Markdown({
             wrapperClasses: markdownWrapperClasses,
+            markdownItOptions: {
+                html: true,
+            },
             headEnabled: true,
             markdownItSetup(md) {
+                md.renderer.rules.table = (token, idx, options, env, self) => {
+                    console.log(`render table`)
+                    console.log(token)
+                    return 'hllo'
+                }
                 // https://prismjs.com/
                 // md.use(Prism)
-                md.use(LinkAttributes, {
-                    pattern: /^https?:\/\//,
-                    attrs: {
-                        target: '_blank',
-                        rel: 'noopener',
-                    },
-                })
+                // md.use(LinkAttributes, {
+                //     pattern: /^https?:\/\//,
+                //     attrs: {
+                //         target: '_blank',
+                //         rel: 'noopener',
+                //     },
+                // })
             },
         }),
 

@@ -10,6 +10,16 @@ import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
 
-export const createApp = ViteSSG(App, { routes }, (ctx) => {
+export const createApp = ViteSSG(App, {
+    routes,
+    scrollBehavior(to, from, savedPos) {
+        if (to.hash) {
+            return {
+                el: `[href="${to.hash}"]`,
+                behavior: 'auto'
+            }
+        }
+    }
+}, (ctx) => {
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
 })

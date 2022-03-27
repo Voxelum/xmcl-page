@@ -72,3 +72,46 @@ body {
 .ui.labeled.icon.buttons > .button > .icon {
   height: unset !important;
 }
+
+.markdown-body {
+}
+
+.markdown-body h1 {
+  @apply text-7xl font-bold leading-18 relative;
+}
+
+
+.markdown-body h2 {
+  @apply text-4xl font-bold leading-16 relative;
+}
+
+.markdown-body p {
+  @apply leading-9;
+}
+
+.markdown-body h1 a::before,.markdown-body h2 a::before,.markdown-body h3 a::before {
+  content: '#';
+  position: absolute;
+  left: -2rem;
+  @apply text-right transition-all duration-400 text-transparent;
+}
+
+.markdown-body a {
+  @apply text-amber-500;
+}
+
+.markdown-body h1 a,.markdown-body h2 a,.markdown-body h3 a {
+  @apply text-white;
+}
+
+.markdown-body a:hover {
+  color: currentColor;
+}
+
+.markdown-body a:hover::before {
+  @apply text-amber-500;
+}
+
+.markdown-body code {
+  @apply rounded text-amber-500 bg-[#333437] p-1.5 mx-1;
+}
