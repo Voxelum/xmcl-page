@@ -19,6 +19,8 @@ export const useGFWStore = defineStore('gfw', () => {
 
     setTimeout(() => {
       inGFW.value = true
+      img.src = ''
+      img.remove()
     }, 1500)
   })
   return inGFW

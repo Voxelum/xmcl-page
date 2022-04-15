@@ -11,6 +11,9 @@ export default defineConfig({
     plugins: [
       typography(),
     ],
+    extract: {
+      include: ['locales/*.yaml', '**/*.vue', '**/*.md', '**/*.html']
+    },
     theme: {
       extend: {
         typography: {
