@@ -95,7 +95,7 @@ export default defineConfig({
 
         // https://github.com/antfu/vite-plugin-windicss
         WindiCSS({
-            safelist: [...markdownWrapperClasses, 'text-[rgb(61,239,233)]', 'text-[rgb(107,217,104)]', 'text-amber-600'],
+            safelist: [...markdownWrapperClasses, 'text-[rgb(61,239,233)]', 'text-[rgb(107,217,104)]', 'text-amber-600', 'text-emerald-700', 'text-red-700'],
         }),
 
         // https://github.com/antfu/vite-plugin-md
