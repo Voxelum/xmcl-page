@@ -40,12 +40,14 @@ export const useArtifactsStore = defineStore('artifacts', () => {
   const winWeb = computed(() => getUrl(a => a.name.endsWith('.appinstaller')))
   const winZip = computed(() => getUrl(a => a.name.endsWith('win32-x64.zip')))
   const winAppx = computed(() => getUrl(a => a.name.endsWith('.appx') && a.name.indexOf('unsigned') === -1))
-  const macZip = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('win32') === -1))
+  const macZip = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1))
   const macDmg = computed(() => getUrl(a => a.name.endsWith('.dmg')))
   const deb = computed(() => getUrl(a => a.name.endsWith('.deb')))
   const snap = computed(() => getUrl(a => a.name.endsWith('.snap')))
   const appImage = computed(() => getUrl(a => a.name.endsWith('.AppImage')))
+  const tarxz = computed(() => getUrl(a => a.name.endsWith('.tar.xz')))
   const rpm = computed(() => getUrl(a => a.name.endsWith('.rpm')))
+  const linuxZip = computed(() => getUrl(a => a.name.endsWith('.zip') && a.name.indexOf('darwin') === -1 && a.name.indexOf('win') === -1))
 
   return {
     winZip32,
@@ -55,8 +57,10 @@ export const useArtifactsStore = defineStore('artifacts', () => {
     macZip,
     macDmg,
     deb,
+    tarxz,
     snap,
     appImage,
+    linuxZip,
     rpm,
     refreshing: githubStore.refreshing
   }

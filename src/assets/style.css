@@ -115,3 +115,7 @@ body {
 .markdown-body code {
   @apply rounded text-amber-500 bg-[#333437] p-1.5 mx-1;
 }
+
+.ui.button {
+  @apply transition-all duration-300;
+}
