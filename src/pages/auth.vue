@@ -88,17 +88,15 @@ const callbackUrl = computed(
 
 const openApp = () => {
   window.location.assign(callbackUrl.value);
+  fetch(`http://localhost:25555/auth?code=${query.code}`)
 };
 const onDragStart = (e: DragEvent) => {
   e.dataTransfer!.effectAllowed = "copyLink";
   e.dataTransfer!.setData("xmcl/url", callbackUrl.value);
 };
 onMounted(() => {
-  if (import.meta.env.DEV) {
-    fetch(`http://localhost:3001/auth?code=${query.code}`)
-  } else {
-    window.location.assign(callbackUrl.value);
-  }
+  window.location.assign(callbackUrl.value);
+  fetch(`http://localhost:25555/auth?code=${query.code}`)
 });
 const platform = usePlatform()
 
