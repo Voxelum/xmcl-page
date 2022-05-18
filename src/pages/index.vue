@@ -214,7 +214,6 @@ const platformDownload = computed(() => {
   }
 })
 
-
 onMounted(() => {
   github.refresh()
 })

@@ -71,3 +71,6 @@ communityIntegration:
     skin。
 download-tarxz: 压缩包 (.tar.xz)
 download-linuxZip: 压缩包 (zip)
+joinPeer: 和 {inviter} 一起玩
+joinPeerDescription: >-
+  {inviter} 邀请你加入 Minecraft 联机群组，浏览器将自动打开启动器并加入群组。

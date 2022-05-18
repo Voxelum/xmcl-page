@@ -91,3 +91,7 @@ communityIntegration:
     support custom user account/skin system like blessing skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
+joinPeer: Join {inviter}'s Party
+joinPeerDescription: >-
+  {inviter} invite you to join their group to play Minecraft together!
+  You will be redirected back to Launcher!"
