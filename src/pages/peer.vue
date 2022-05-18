@@ -11,7 +11,7 @@
         <div style="font-size: 1.25em">{{ t("joinPeer", { inviter }) }}</div>
         <div class="ui grey text"
           style="font-size: 0.55em; color: rgb(222 222 222); font-weight: 100; padding-top: 10px">{{
-            t("joinPeerDescription", { inviter })
+              t("joinPeerDescription", { inviter })
           }}</div>
       </h1>
       <div class="ui horizontal inverted divider" style="margin-bottom: 40px;">{{ t("notWork") }}</div>
@@ -29,7 +29,7 @@
           </div>
         </div>
         <div style="color: rgb(222 222 222);  line-height: 1.4; font-size: 1.4rem; padding-top: 10px">{{
-          t("nothingWork")
+            t("nothingWork")
         }}</div>
         <div class="w-full flex justify-center mt-10">
           <a class="ui version inverted basic label" target="_blank"
@@ -85,20 +85,17 @@ const callbackUrl = computed(
   () => `xmcl://launcher/peer?description=${query.description}&type=${query.type}`
 );
 
-
 const openApp = () => {
   window.location.assign(callbackUrl.value);
+  fetch(`http://localhost:25555/peer?description=${query.description}&type=${query.type}`)
 };
 const onDragStart = (e: DragEvent) => {
   e.dataTransfer!.effectAllowed = "copyLink";
   e.dataTransfer!.setData("xmcl/url", callbackUrl.value);
 };
 onMounted(() => {
-  if (import.meta.env.DEV) {
-    fetch(`http://localhost:3001/peer?description=${query.description}&type=${query.type}`)
-  } else {
-    window.location.assign(callbackUrl.value);
-  }
+  window.location.assign(callbackUrl.value);
+  fetch(`http://localhost:25555/peer?description=${query.description}&type=${query.type}`)
 });
 const platform = usePlatform()
 
