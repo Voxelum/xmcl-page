@@ -69,12 +69,12 @@ useHead({
     {
       rel: 'stylesheet',
       crossorigin: "anonymous",
-      href: "https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/message.min.css",
+      href: "/message.min.css",
     },
     {
       rel: 'stylesheet',
       crossorigin: "anonymous",
-      href: "https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/divider.min.css",
+      href: "/divider.min.css",
     }
   ]
 })
