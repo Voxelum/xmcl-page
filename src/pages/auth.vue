@@ -44,7 +44,7 @@
 </template>
 
 <script lang=ts setup>
-import logo from "~/assets/logo.webp";
+import logo from "~/assets/logo.png";
 import LinuxVue from "~/components/Linux.vue";
 import MacVue from "~/components/Mac.vue";
 import Win32Vue from "~/components/Win32.vue";
