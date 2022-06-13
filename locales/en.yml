@@ -19,8 +19,8 @@ intro:
   description: >-
     X Minecraft Launcher (XMCL) is a modern Minecraft launcher that let you
     manage your massive resources like modpacks, resource packs, mods, shader
-    packs. It also has integration with Minecraft Forge, Fabric, CurseForge and
-    Modrinth.
+    packs. It also has integration with Minecraft Forge, Fabric, Quilt,
+    CurseForge and Modrinth.
 launcher:
   manage:
     intro: Manage your Minecraft effectively.
@@ -93,5 +93,6 @@ download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Join {inviter}'s Party
 joinPeerDescription: >-
-  {inviter} invite you to join their group to play Minecraft together!
-  You will be redirected back to Launcher!"
+  {inviter} invite you to join their group to play Minecraft together! You will
+  be redirected back to Launcher!"
+fullChangelog: What's New?

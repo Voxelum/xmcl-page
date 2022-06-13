@@ -14,6 +14,10 @@
           <i class="discord square icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">Discord</p>
         </a>
+        <a target="_blank" href="https://github.com/Voxelum/x-minecraft-launcher/releases" class="item">
+          <i class="history icon m-0 sm:mr-2"></i>
+          {{ t('fullChangelog') }}
+        </a>
 
         <!-- <div class="right menu">
           <div class="item"></div>
@@ -34,26 +38,21 @@
             <div class="text-white">{{ t("lang") }}</div>
           </MenuButton>
 
-          <transition
-            enter-active-class="transition ease-out duration-100"
-            enter-from-class="transform opacity-0 scale-95"
-            enter-to-class="transform opacity-100 scale-100"
-            leave-active-class="transition ease-in duration-75"
-            leave-from-class="transform opacity-100 scale-100"
-            leave-to-class="transform opacity-0 scale-95"
-          >
+          <transition enter-active-class="transition ease-out duration-100"
+            enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100"
+            leave-to-class="transform opacity-0 scale-95">
             <MenuItems
-              class="ui dropdown origin-bottom-left bg-dark-300 absolute left-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10"
-            >
+              class="ui dropdown origin-bottom-left bg-dark-300 absolute left-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
               <div class="py-1">
-                <MenuItem>
-                  <div class="item" value="en" @click="setLocale('en')">English</div>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" value="en" @click="setLocale('en')">English</div>
                 </MenuItem>
-                <MenuItem>
-                  <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
                 </MenuItem>
-                  <MenuItem>
-                  <div class="item" value="zh" @click="setLocale('ru')">Русский</div>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" value="zh" @click="setLocale('ru')">Русский</div>
                 </MenuItem>
               </div>
             </MenuItems>
@@ -65,29 +64,24 @@
             <div class="text-white">{{ mapping[download.source] }}</div>
           </MenuButton>
 
-          <transition
-            enter-active-class="transition ease-out duration-100"
-            enter-from-class="transform opacity-0 scale-95"
-            enter-to-class="transform opacity-100 scale-100"
-            leave-active-class="transition ease-in duration-75"
-            leave-from-class="transform opacity-100 scale-100"
-            leave-to-class="transform opacity-0 scale-95"
-          >
+          <transition enter-active-class="transition ease-out duration-100"
+            enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100"
+            leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100"
+            leave-to-class="transform opacity-0 scale-95">
             <MenuItems
-              class="ui dropdown origin-bottom-left bg-dark-300 absolute left-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-            >
+              class="ui dropdown origin-bottom-left bg-dark-300 absolute left-0 mt-2 w-56 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div class="py-1">
-                <MenuItem>
-                  <div class="item" @click="download.source = 'auto'">{{ t("auto-source") }}</div>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" @click="download.source = 'auto'">{{ t("auto-source") }}</div>
                 </MenuItem>
-                <MenuItem>
-                  <div class="item" @click="download.source = 'azure'">{{ t("azure-source") }}</div>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" @click="download.source = 'azure'">{{ t("azure-source") }}</div>
                 </MenuItem>
-                <MenuItem>
-                  <div class="item" @click="download.source = 'azure-ms'">{{ t("azure-ms-source") }}</div>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" @click="download.source = 'azure-ms'">{{ t("azure-ms-source") }}</div>
                 </MenuItem>
-                <MenuItem>
-                  <div class="item" @click="download.source = 'github'">{{ t("github-source") }}</div>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" @click="download.source = 'github'">{{ t("github-source") }}</div>
                 </MenuItem>
               </div>
             </MenuItems>
@@ -129,6 +123,6 @@ const mapping = reactive({
 } */
 
 .dropdown .item {
-  @apply hover:bg-[rgba(123,123,123,0.5)];
+  @apply hover: bg-[rgba(123, 123, 123, 0.5)];
 }
 </style>

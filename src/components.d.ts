@@ -15,6 +15,7 @@ declare module 'vue' {
     ModrinthIcon: typeof import('./components/ModrinthIcon.vue')['default']
     PackageFileIcon: typeof import('./components/PackageFileIcon.vue')['default']
     PrivacyContent: typeof import('./components/PrivacyContent.md')['default']
+    QuiltIcon: typeof import('./components/QuiltIcon.vue')['default']
     VanillaProjectTree: typeof import('./components/VanillaProjectTree.vue')['default']
     Win32: typeof import('./components/Win32.vue')['default']
     XMCLProjectTree: typeof import('./components/XMCLProjectTree.vue')['default']

@@ -13,7 +13,7 @@
           <p
             class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
           >{{ t('intro.description') }}</p>
-          <div class="w-full flex justify-center mt-10">
+          <div class="w-full flex justify-center mt-10 gap-2">
             <a
               class="ui version inverted basic label"
               target="_blank"
@@ -22,6 +22,7 @@
               <span>{{ github.latestVersion }}</span>
             </a>
           </div>
+           
           <component :is="platformDownload" class="mt-10 w-full mb-10" :organized="true" />
 
           <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
@@ -40,6 +41,9 @@
             </a>
             <a href="https://modrinth.com/" target="_blank">
               <modrinth-icon class="h-15 w-15" />
+            </a>
+            <a href="https://quiltmc.org/" target="_blank">
+              <quilt-icon class="h-15 w-15" />
             </a>
           </span>
         </div>
