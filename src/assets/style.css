@@ -40,7 +40,7 @@ body {
   padding-bottom: 50px;
 }
 
-.following.bar > .menu .item {
+.following.bar>.menu .item {
   transition: all 0.5s ease;
 }
 
@@ -64,16 +64,18 @@ body {
   background-color: #666666;
 }
 
-.ui.dropdown .menu > .item {
+.ui.dropdown .menu>.item {
   min-height: unset !important;
 }
 
-.ui.labeled.icon.button > .icon,
-.ui.labeled.icon.buttons > .button > .icon {
+.ui.labeled.icon.button>.icon,
+.ui.labeled.icon.buttons>.button>.icon {
   height: unset !important;
 }
 
 .markdown-body {
+  line-height: 1.6;
+  font-size: 16px;
 }
 
 .markdown-body h1 {
@@ -85,11 +87,28 @@ body {
   @apply text-4xl font-bold leading-16 relative;
 }
 
+.markdown-body h3 {
+  @apply text-3xl font-bold leading-16 relative before:(text-yellow-300 content-['#'] pr-2 -mx-1) hover:(text-green-300) transition-all;
+}
+
+.markdown-body ul {
+  @apply mt-2 list-disc list-inside;
+}
+
+.markdown-body a {
+  @apply hover:(underline) transition-all;
+}
+
+.markdown-body li {}
+
+
 .markdown-body p {
   @apply leading-9;
 }
 
-.markdown-body h1 a::before,.markdown-body h2 a::before,.markdown-body h3 a::before {
+.markdown-body h1 a::before,
+.markdown-body h2 a::before,
+.markdown-body h3 a::before {
   content: '#';
   position: absolute;
   left: -2rem;
@@ -100,7 +119,9 @@ body {
   @apply text-amber-500;
 }
 
-.markdown-body h1 a,.markdown-body h2 a,.markdown-body h3 a {
+.markdown-body h1 a,
+.markdown-body h2 a,
+.markdown-body h3 a {
   @apply text-white;
 }
 

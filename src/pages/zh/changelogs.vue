@@ -1,8 +1,10 @@
 <template>
-    <div class="my-30">
+    <div class="">
+        <h1 class="text-5xl font-bold text-amber-400 leading-8 text-center">
+            更新日志
+        </h1>
         <router-view></router-view>
     </div>
-    <Footer />
 </template>
 <script lang="ts" setup>
 
@@ -24,8 +26,14 @@ useHead({
 onMounted(() => {
     const body = document.getElementsByClassName('markdown-body')
     const tables = body.item(0)?.getElementsByTagName('table')
-    console.log(tables?.item(0))
     tables?.item(0)?.classList.add('ui', 'celled', 'inverted', 'table')
 })
 
 </script>
+
+<route lang="yaml">
+meta:
+  layout: changelog
+</route>
+
+

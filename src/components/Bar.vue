@@ -14,10 +14,10 @@
           <i class="discord square icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">Discord</p>
         </a>
-        <a target="_blank" href="https://github.com/Voxelum/x-minecraft-launcher/releases" class="item">
+        <router-link :to="`/${locale}/changelogs`" href="https://github.com/Voxelum/x-minecraft-launcher/releases" class="item">
           <i class="history icon m-0 sm:mr-2"></i>
           {{ t('fullChangelog') }}
-        </a>
+        </router-link>
 
         <!-- <div class="right menu">
           <div class="item"></div>
