@@ -88,7 +88,8 @@ const callbackUrl = computed(
 
 const openApp = () => {
   window.location.assign(callbackUrl.value);
-  fetch(`http://localhost:25555/auth?code=${query.code}`)
+  const port = query.port || 25555
+  fetch(`http://localhost:${port}/auth?code=${query.code}`)
 };
 const onDragStart = (e: DragEvent) => {
   e.dataTransfer!.effectAllowed = "copyLink";
@@ -96,7 +97,8 @@ const onDragStart = (e: DragEvent) => {
 };
 onMounted(() => {
   window.location.assign(callbackUrl.value);
-  fetch(`http://localhost:25555/auth?code=${query.code}`)
+  const port = query.port || 25555
+  fetch(`http://localhost:${port}/auth?code=${query.code}`)
 });
 const platform = usePlatform()
 
