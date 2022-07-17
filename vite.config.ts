@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 // import fetch from 'node-fetch'
 // import 'vite-ssg'
+import Layouts from 'vite-plugin-vue-layouts'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
@@ -23,6 +24,9 @@ export default defineConfig({
         },
     },
     plugins: [
+        Layouts({
+            extensions: ['vue', 'md'],
+        }),
         {
             name: 'latest-release',
             resolveId(id) {
@@ -38,7 +42,8 @@ export default defineConfig({
 
                     const filteredReleases = JSON.stringify((releases as any[]).map((r: any) => ({
                         assets: r.assets.map((a: any) => ({ name: a.name, browser_download_url: a.browser_download_url })),
-                        prerelease: r.prerelease, tag_name: r.tag_name
+                        prerelease: r.prerelease,
+                        tag_name: r.tag_name
                     })))
                     return `export default ${filteredReleases}`
                 }

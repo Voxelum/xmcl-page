@@ -1,6 +1,7 @@
 import { ViteSSG } from 'vite-ssg'
-import routes from 'virtual:generated-pages'
+import generatedRoutes from 'virtual:generated-pages'
 import App from './App.vue'
+import { setupLayouts } from 'virtual:generated-layouts'
 
 import 'virtual:windi-base.css'
 import 'virtual:windi-components.css'
@@ -9,6 +10,9 @@ import 'virtual:windi-components.css'
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
+
+const routes = setupLayouts(generatedRoutes)
+
 
 export const createApp = ViteSSG(App, {
     routes,
