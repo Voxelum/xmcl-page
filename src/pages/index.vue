@@ -6,34 +6,24 @@
           <p class="leading-title" v-html="t('intro.first')"></p>
           <p class="leading-title">
             <span v-html="t('intro.second')"></span>
-            <package-file-icon
-              class="max-h-10 sm:max-h-18 inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2"
-            />!
+            <package-file-icon class="max-h-10 sm:max-h-18 inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2" />!
           </p>
-          <p
-            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >{{ t('intro.description') }}</p>
+          <p class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{ t('intro.description')
+          }}</p>
           <div class="w-full flex justify-center mt-10 gap-2">
-            <a
-              class="ui version inverted basic label"
-              target="_blank"
-              href="https://github.com/voxelum/x-minecraft-launcher/releases"
-            >
+            <a class="ui version inverted basic label" target="_blank"
+              href="https://github.com/voxelum/x-minecraft-launcher/releases">
               <span>{{ github.latestVersion }}</span>
             </a>
           </div>
-           
+
           <component :is="platformDownload" class="mt-10 w-full mb-10" :organized="true" />
 
           <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
             <a href="https://fabricmc.net/" target="_blank">
               <img src="../assets/fabric.png" class="h-15" />
             </a>
-            <a
-              href="https://files.minecraftforge.net/net/minecraftforge/forge/"
-              target="_blank"
-              class="relative"
-            >
+            <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank" class="relative">
               <img src="../assets/forge.png" class="h-15" />
             </a>
             <a href="http://curseforge.com/minecraft" target="_blank" class="relative rounded">
@@ -48,10 +38,8 @@
           </span>
         </div>
         <div class="lg:w-1/2 side-image-container">
-          <div
-            class="bg-yellow-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
-          >
-            <img src="../assets/home.webp" class="rounded-xl" />
+          <div class="bg-yellow-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
+            <img src="../assets/home.png" class="rounded-xl" />
           </div>
         </div>
       </div>
@@ -60,21 +48,19 @@
     <div class="section flex flex-col min-h-80vh text-white features">
       <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse pr-0 2xl:pr-20">
         <div class="lg:w-1/2 side-image-container">
-          <div
-            class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
-          >
-            <picture class="rounded-xl">
-              <source srcset="../assets/install.webp" type="image/webp" />
-              <source srcset="../assets/install.jpg" type="image/jpg" />
+          <div class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
+            <picture class="rounded-xl relative">
               <img src="../assets/install.png" />
+              <img class="absolute left-0 top-0 transition-all duration-300" :class="{ 'opacity-0': !hoverInstall }"
+                src="../assets/install-2.png" />
             </picture>
           </div>
         </div>
         <div class="description-part lg:w-1/2">
-          <p class="leading-title" v-html="t('gameInstall.title')"></p>
-          <p
-            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >{{ t('gameInstall.description') }}</p>
+          <p class="leading-title" v-html="t('gameInstall.title')" @mouseenter="hoverInstall=true"
+            @mouseleave="hoverInstall=false"></p>
+          <p class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
+          t('gameInstall.description') }}</p>
           <div class="flex flex-col items-start w-full mt-3 text-gray-400">
             <a href="https://bmclapidoc.bangbang93.com/" class="text-lg" target="_blank">> BMCL API</a>
           </div>
@@ -85,31 +71,21 @@
     <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
       <div class="flex gap-5 lg:flex-row flex-col pl- 2xl:pl-20">
         <div class="description-part lg:w-1/2">
-          <p class="leading-title" v-html="t('optimalDisk.title')"></p>
-          <p
-            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >{{ t('optimalDisk.description') }}</p>
+          <p class="leading-title" v-html="t('optimalDisk.title')" @mouseenter="hoverResource=true"
+            @mouseleave="hoverResource=false"></p>
+          <p class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
+          t('optimalDisk.description') }}</p>
           <div class="flex flex-col items-start w-full mt-3 text-gray-400">
-            <a
-              href="https://en.wikipedia.org/wiki/Hard_link"
-              class="text-lg"
-              target="_blank"
-            >> Hard link</a>
-            <a
-              href="https://en.wikipedia.org/wiki/Symbolic_link"
-              class="text-lg"
-              target="_blank"
-            >> Symbolic link</a>
+            <a href="https://en.wikipedia.org/wiki/Hard_link" class="text-lg" target="_blank">> Hard link</a>
+            <a href="https://en.wikipedia.org/wiki/Symbolic_link" class="text-lg" target="_blank">> Symbolic link</a>
           </div>
         </div>
         <div class="lg:w-1/2 side-image-container">
-          <div
-            class="bg-red-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
-          >
-            <picture class="rounded-xl">
-              <source srcset="../assets/mods.webp" type="image/webp" />
-              <source srcset="../assets/mods.jpg" type="image/jpg" />
+          <div class="bg-red-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
+            <picture class="rounded-xl relative">
               <img src="../assets/mods.png" />
+              <img class="absolute left-0 top-0 transition-all duration-300" :class="{ 'opacity-0': !hoverResource }"
+                src="../assets/resourcePack.png" />
             </picture>
           </div>
         </div>
@@ -119,21 +95,19 @@
     <div class="section flex flex-col min-h-80vh text-white">
       <div class="flex gap-5 lg:flex-row flex-col flex-col-reverse pr-0 2xl:pr-20">
         <div class="lg:w-1/2 side-image-container">
-          <div
-            class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center"
-          >
-            <picture class="rounded-xl">
-              <source srcset="../assets/instances.webp" type="image/webp" />
-              <source srcset="../assets/instances.jpg" type="image/jpg" />
+          <div class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
+            <picture class="rounded-xl relative">
               <img src="../assets/instances.png" />
+              <img class="absolute left-0 top-0 transition-all duration-300" :class="{ 'opacity-0': !hoverInstance }"
+                src="../assets/instances-create.png" />
             </picture>
           </div>
         </div>
         <div class="description-part lg:w-1/2">
-          <p class="leading-title" v-html="t('cleanWorkspace.title')"></p>
-          <p
-            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >{{ t('cleanWorkspace.description') }}</p>
+          <p class="leading-title" v-html="t('cleanWorkspace.title')" @mouseenter="hoverInstance=true"
+            @mouseleave="hoverInstance=false"></p>
+          <p class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
+          t('cleanWorkspace.description') }}</p>
         </div>
       </div>
     </div>
@@ -141,33 +115,24 @@
     <div class="section flex flex-col min-h-80vh text-white bg-gray-900">
       <div class="flex gap-5 lg:flex-row flex-col pl-0 2xl:pl-20">
         <div class="description-part lg:w-1/2">
-          <p class="leading-title" v-html="t('communityIntegration.title')"></p>
-          <p
-            class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7"
-          >{{ t('communityIntegration.description') }}</p>
+          <p class="leading-title" v-html="t('communityIntegration.title')" @mouseenter="hoverCommunity=true"
+            @mouseleave="hoverCommunity=false"></p>
+          <p class="text-xl text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
+          t('communityIntegration.description') }}</p>
           <div class="flex flex-col w-full mt-3 text-gray-400 items-start">
             <a href="https://curseforge.com/minecraft/" class="text-lg" target="_blank">> Curseforge</a>
             <a href="https://modrinth.com/" class="text-lg" target="_blank">> Modrinth</a>
-            <a
-              href="https://github.com/bs-community"
-              class="text-lg"
-              target="_blank"
-            >> Blessing Skin</a>
-            <a
-              href="https://blessing.netlify.app/yggdrasil-api/authlib-injector.html"
-              class="text-lg"
-              target="_blank"
-            >> Authlib Injector</a>
+            <a href="https://github.com/bs-community" class="text-lg" target="_blank">> Blessing Skin</a>
+            <a href="https://blessing.netlify.app/yggdrasil-api/authlib-injector.html" class="text-lg" target="_blank">>
+              Authlib Injector</a>
           </div>
         </div>
         <div class="lg:w-1/2 side-image-container">
-          <div
-            class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center"
-          >
-            <picture class="rounded-xl">
-              <source srcset="../assets/modrinth.webp" type="image/webp" />
-              <source srcset="../assets/modrinth.jpg" type="image/jpg" />
+          <div class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
+            <picture class="rounded-xl relative">
               <img src="../assets/modrinth.png" />
+              <img class="absolute left-0 top-0 transition-all duration-300" :class="{ 'opacity-0': !hoverCommunity }"
+                src="../assets/curseforge.png" />
             </picture>
           </div>
         </div>
@@ -210,6 +175,11 @@ useHead({
 const github = useGithubInfoStore()
 const platform = usePlatform()
 
+const hoverInstall = ref(false)
+const hoverResource = ref(false)
+const hoverInstance = ref(false)
+const hoverCommunity = ref(false)
+
 const platformDownload = computed(() => {
   switch (platform) {
     case 'Linux': return LinuxVue
@@ -250,11 +220,11 @@ onMounted(() => {
 } */
 
 .leading-title {
-  @apply text-left font-bold sm:text-6xl sm:leading-19 lg:mr-2 mr-7 text-3xl leading-10;
+  @apply text-left font-bold sm: text-6xl sm:leading-19 lg:mr-2 mr-7 text-3xl leading-10;
 }
 
 .description-part {
-  @apply flex flex-col items-start justify-center lg:min-h-100vh pt-20 sm:px-20 px-8;
+  @apply flex flex-col items-start justify-center lg: min-h-100vh pt-20 sm:px-20 px-8;
 }
 
 /* .features::after {
@@ -263,11 +233,11 @@ onMounted(() => {
 } */
 
 .side-image-container {
-  @apply flex items-center overflow-hidden relative lg:min-h-100vh mt-10 lg:mt-0;
+  @apply flex items-center overflow-hidden relative lg: min-h-100vh mt-10 lg:mt-0;
 }
 
 .active-feature {
-  @apply bg-[rgba(255,255,255,0.1)];
+  @apply bg-[rgba(255, 255, 255, 0.1)];
 }
 
 .transition-list-enter-from {
