@@ -81,7 +81,6 @@ useHead({
 
 const query = useUrlSearchParams()
 
-
 const callbackUrl = computed(
   () => `xmcl://launcher/auth?code=${query.code}`
 );
@@ -96,9 +95,7 @@ const onDragStart = (e: DragEvent) => {
   e.dataTransfer!.setData("xmcl/url", callbackUrl.value);
 };
 onMounted(() => {
-  window.location.assign(callbackUrl.value);
-  const port = query.port || 25555
-  fetch(`http://localhost:${port}/auth?code=${query.code}`)
+  openApp()
 });
 const platform = usePlatform()
 
