@@ -1,7 +1,7 @@
-import { ViteSSG } from 'vite-ssg'
-import generatedRoutes from 'virtual:generated-pages'
-import App from './App.vue'
 import { setupLayouts } from 'virtual:generated-layouts'
+import generatedRoutes from 'virtual:generated-pages'
+import { ViteSSG } from 'vite-ssg'
+import App from './App.vue'
 
 import 'virtual:windi-base.css'
 import 'virtual:windi-components.css'
@@ -10,13 +10,11 @@ import 'virtual:windi-components.css'
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
-import { createWebHistory } from 'vue-router'
 
 const routes = setupLayouts(generatedRoutes)
 
 
 export const createApp = ViteSSG(App, {
-    history: createWebHistory(),
     routes,
     scrollBehavior(to, from, savedPos) {
         if (savedPos) {
