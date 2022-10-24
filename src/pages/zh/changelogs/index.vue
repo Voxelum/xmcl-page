@@ -21,29 +21,12 @@
 </template>
 <script lang="ts" setup>
 
-useHead({
-    link: [
-        {
-            rel: "stylesheet",
-            crossorigin: "anonymous",
-            href: "https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/list.min.css",
-        },
-        {
-            rel: "stylesheet",
-            crossorigin: "anonymous",
-            href: "https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/table.min.css",
-        }
-    ]
-})
 const { push } = useRouter()
 const navTo = (ver: string) => {
     push({ hash: `#${ver}` })
-    // document.querySelector(`a[href='#${ver}']`)?.scrollIntoView({  })
 }
 
 const versions = Object.values(import.meta.globEager('./*.md')).map((r: any) => {
-    // const { date, version } = r
-    // return { date, version }
     return r
 }).reverse()
 

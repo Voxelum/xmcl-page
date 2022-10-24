@@ -7,8 +7,22 @@
     </div>
 </template>
 <script lang="ts" setup>
+import { useLocaledPage } from '~/composables/localedPage';
 
+
+const { t } = useI18n()
 useHead({
+    title: computed(() => t('title.changelog')),
+    meta: computed(() => [
+        {
+            name: 'keywords',
+            content: t('keywords')
+        },
+        {
+            name: 'description',
+            content: t('description')
+        }
+    ]),
     link: [
         {
             rel: "stylesheet",
@@ -22,7 +36,7 @@ useHead({
         }
     ]
 })
-
+useLocaledPage('zh')
 onMounted(() => {
     const body = document.getElementsByClassName('markdown-body')
     const tables = body.item(0)?.getElementsByTagName('table')

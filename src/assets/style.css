@@ -4,8 +4,13 @@ html.dark {
   background: #121212;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background: transparent;
+  height: 100%;
 }
 
 .face {
@@ -104,6 +109,15 @@ body {
 
 .markdown-body p {
   @apply leading-9;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #aaa; /* or add it to the track */
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
 }
 
 .markdown-body h1 a::before,

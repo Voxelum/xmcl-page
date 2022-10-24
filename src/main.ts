@@ -22,8 +22,9 @@ export const createApp = ViteSSG(App, {
         }
         if (to.hash) {
             return {
+                top: 80,
                 el: `a[href='${to.hash}']`,
-                behavior: 'smooth'
+                behavior: 'smooth',
             }
         }
         return { x: 0, y: 0 }

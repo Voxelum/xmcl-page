@@ -1,5 +1,5 @@
 <template>
-  <div class="following bar flex">
+  <div class="following bar flex bg-black">
     <div class="flex items-center justify-center px-5 gap-5 cursor-pointer" @click="push('/')">
       <!-- <img src="../assets/Compact White.png" width="28" /> -->
       <span class="font-bold">XMCL</span>
@@ -14,7 +14,7 @@
           <i class="discord square icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">Discord</p>
         </a>
-        <router-link :to="`/${locale}/changelogs`" href="https://github.com/Voxelum/x-minecraft-launcher/releases" class="item">
+        <router-link :to="`/${locale}/changelogs`" class="item">
           <i class="history icon m-0 sm:mr-2"></i>
           {{ t('fullChangelog') }}
         </router-link>

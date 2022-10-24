@@ -5,6 +5,7 @@
     <Footer />
 </template>
 <script lang="ts" setup>
+import { useLocaledPage } from '~/composables/localedPage';
 
 useHead({
     link: [
@@ -21,6 +22,7 @@ useHead({
     ]
 })
 
+useLocaledPage('zh')
 onMounted(() => {
     const body = document.getElementsByClassName('markdown-body')
     const tables = body.item(0)?.getElementsByTagName('table')
