@@ -9,33 +9,6 @@
 <script lang="ts" setup>
 import { useLocaledPage } from '~/composables/localedPage';
 
-
-const { t } = useI18n()
-useHead({
-    title: computed(() => t('title.changelog')),
-    meta: computed(() => [
-        {
-            name: 'keywords',
-            content: t('keywords')
-        },
-        {
-            name: 'description',
-            content: t('description')
-        }
-    ]),
-    link: [
-        {
-            rel: "stylesheet",
-            crossorigin: "anonymous",
-            href: "https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/list.min.css",
-        },
-        {
-            rel: "stylesheet",
-            crossorigin: "anonymous",
-            href: "https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.6/dist/components/table.min.css",
-        }
-    ]
-})
 useLocaledPage('zh')
 onMounted(() => {
     const body = document.getElementsByClassName('markdown-body')

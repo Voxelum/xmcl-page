@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-20 pb-10">
+  <div class="my-40 xl:mx-80 mx-20 pb-40">
     <PrivacyContent />
   </div>
 </template>

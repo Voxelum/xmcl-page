@@ -84,7 +84,7 @@ body {
 }
 
 .markdown-body h1 {
-  @apply text-7xl font-bold leading-18 relative;
+  @apply text-7xl font-bold leading-28 relative;
 }
 
 
