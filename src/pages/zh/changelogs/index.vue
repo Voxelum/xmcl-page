@@ -1,12 +1,22 @@
 <template>
-    <div class="gap-2 p-4 mt-10 flex flex-col gap-4">
-        <router-link v-for="ver of versions" :to="`/zh/changelogs/${ver.version}`" :key="ver.version" class="rounded border p-4 hover:(border-teal-400) text-gray-400 hover:(text-white) transition-all flex items-center cursor-pointer">
-            <div class="leading-10 text-3xl transition-all">
-                v{{ ver.version }}
+    <div class="flex gap-2 relative mt-20">
+        <div class="flex-auto gap-2 p-4 flex flex-col gap-4">
+            <component v-for="ver of versions" :is="ver.default" :key="ver.version"></component>
+        </div>
+        <nav class="p-10">
+            <div class="sticky top-30">
+                <li v-for="ver of versions" :to="`/zh/changelogs/${ver.version}`" :key="ver.version"
+                    class="hover:(text-white) text-gray-200 transition-all cursor-pointer list-none ">
+                    <a class="border-l-2 border-l-gray-500 active:border-l-white focus:border-l-white p-1 pl-2 block"
+                        @click="navTo(ver.version)">
+                        <div class="transition-all text-lg ">
+                            v{{ ver.version }}
+                        </div>
+                        <span class="text-gray-400 text-sm "> {{ new Date(ver.date).toLocaleDateString() }} </span>
+                    </a>
+                </li>
             </div>
-            <div class="flex-grow"></div>
-            <span class="text-gray-400 ml-2"> {{ new Date(ver.date).toLocaleDateString() }} </span>
-        </router-link>
+        </nav>
     </div>
 </template>
 <script lang="ts" setup>
@@ -25,10 +35,16 @@ useHead({
         }
     ]
 })
+const { push } = useRouter()
+const navTo = (ver: string) => {
+    push({ hash: `#${ver}` })
+    // document.querySelector(`a[href='#${ver}']`)?.scrollIntoView({  })
+}
 
 const versions = Object.values(import.meta.globEager('./*.md')).map((r: any) => {
-    const { date, version } = r
-    return { date, version }
+    // const { date, version } = r
+    // return { date, version }
+    return r
 }).reverse()
 
 onMounted(() => {

@@ -84,11 +84,11 @@ body {
 
 
 .markdown-body h2 {
-  @apply text-4xl font-bold leading-16 relative;
+  @apply text-4xl font-bold leading-16 relative ;
 }
 
 .markdown-body h3 {
-  @apply text-3xl font-bold leading-16 relative before:(text-yellow-300 content-['#'] pr-2 -mx-1) hover:(text-green-300) transition-all;
+  @apply text-3xl font-bold leading-16 relative hover:(text-green-300) transition-all;
 }
 
 .markdown-body ul {

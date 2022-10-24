@@ -11,11 +11,10 @@ import WindiCSS from 'vite-plugin-windicss'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import { resolve } from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
-import Prism from 'markdown-it-prism'
 // @ts-ignore
 import LinkAttributes from 'markdown-it-link-attributes'
 
-const markdownWrapperClasses = 'mt-20 m-auto max-w-[70vw] markdown-body'
+const markdownWrapperClasses = 'markdown-body'
 
 export default defineConfig({
     resolve: {
