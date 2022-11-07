@@ -2,6 +2,32 @@
 
 本文描述了一种启动器实现 Minecraft 供跨局域网联机的协议。
 
+- [基于 WebRTC 的 Minecraft 联机协议](#基于-webrtc-的-minecraft-联机协议)
+  - [啥是 WebRTC？为什么选它](#啥是-webrtc为什么选它)
+    - [自定义程度](#自定义程度)
+    - [工程难度](#工程难度)
+    - [用户使用门槛](#用户使用门槛)
+  - [协议细节](#协议细节)
+    - [基本概念](#基本概念)
+      - [PeerConnection](#peerconnection)
+      - [DataChannel](#datachannel)
+      - [Description](#description)
+      - [ICEServer](#iceserver)
+    - [用户之间如何建立连接](#用户之间如何建立连接)
+    - [用户之间通信的协议格式](#用户之间通信的协议格式)
+      - [心跳消息](#心跳消息)
+      - [玩家身份消息](#玩家身份消息)
+      - [Minecraft 局域网公开消息](#minecraft-局域网公开消息)
+    - [如何使用 DataChannel 实现 Minecraft 联机](#如何使用-datachannel-实现-minecraft-联机)
+  - [附录](#附录)
+    - [广播 Minecraft 局域网信息](#广播-minecraft-局域网信息)
+    - [中继](#中继)
+    - [协调服务器](#协调服务器)
+    - [传输可靠性](#传输可靠性)
+    - [IPV6?](#ipv6)
+    - [Upnp?](#upnp)
+  - [WebRTC 库](#webrtc-库)
+
 ## 啥是 WebRTC？为什么选它
 
 WebRTC 是一个点对点实时通信技术，直接摘抄 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API)
@@ -418,7 +444,7 @@ let connection = new PeerConnection(id, {
 协调服务器需要负责交换用户和用户之间的 Description，以保证 PeerConnection 能正常建立连接。
 启动器的大厅服务器基本上就是这个协调服务器干的工作。
 
-可以用常见的 WebSocket 实现，或者自己实现 Socket 也可以。当然也可以让用户手动复制 Description 并发送给对方【原始有效
+可以用常见的 WebSocket 实现，或者自己实现 Socket 也可以。当然也可以让用户手动复制 Description 并发送给对方
 
 这方面的内容就暂时不在本文讨论。
 
@@ -438,7 +464,7 @@ WebRTC 支持 IPV6
 
 一个朴素的办法是给 WebRTC 指定端口范围，将已经映射好的端口放在范围前列就行了。
 
-## 一些参考
+## WebRTC 库
 
 - .NET C# 的 WebRTC https://github.com/microsoft/winrtc
 - Java 的 WebRTC binding https://github.com/devopvoid/webrtc-java
