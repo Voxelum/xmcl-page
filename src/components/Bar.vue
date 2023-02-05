@@ -52,7 +52,10 @@
                 <div class="item" value="zh" @click="setLocale('zh')">简体中文</div>
                 </MenuItem>
                 <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
-                <div class="item" value="zh" @click="setLocale('ru')">Русский</div>
+                <div class="item" value="ru" @click="setLocale('ru')">Русский</div>
+                </MenuItem>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" value="fr" @click="setLocale('fr')">French</div>
                 </MenuItem>
               </div>
             </MenuItems>
