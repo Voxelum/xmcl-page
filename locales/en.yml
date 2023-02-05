@@ -18,14 +18,14 @@ intro:
     Provide a <span class="text-yellow-300">Disk Efficient</span> way to manage
     all your <span class="text-amber-600">Mods</span>
   description: >-
-    X Minecraft Launcher (XMCL) is a modern Minecraft launcher that let you
+    X Minecraft Launcher (XMCL) is a modern Minecraft launcher that lets you
     manage your massive resources like modpacks, resource packs, mods, shader
-    packs. It also has integration with Minecraft Forge, Fabric, Quilt,
+    packs... It also has integration with Minecraft Forge, Fabric, Quilt,
     CurseForge and Modrinth.
 launcher:
   manage:
     intro: Manage your Minecraft effectively.
-  description: An Simple, Open Sources, and Function Orientated Minecraft Launcher
+  description: A Simple, Open Sources, and Function Orientated Minecraft Launcher
 download: Installer
 downloadFor:
   windows: 'Download For Windows:'
@@ -50,30 +50,30 @@ auto-source: Auto Detect The Download Source
 prerelease: Prerelease
 authSuccess: Succeed!
 authSuccessTitle: >-
-  Authorization was successful. You will be redirected back to Minecraft
+  Authorization was successful. You will be redirected back to the
   Launcher!
 redirectHelperTitle: >-
   If you aren't redirected, you can try to click Open In App button to manually
   redirect.
 redirectHelperMessage: >-
-  It will create popup and ask you to open the launcher. If that don't work
-  either, you can try to drag the button to launcher window!
+  It will create a popup and ask you to open the launcher. If it still
+  doesn't work, you can try to drag the button to the launcher window!
 notWork: Doesn't Work?
 openInAppButton: Open In Launcher
 nothingWork: If none of above works, you might want to re-download the latest Launcher
 gameInstall:
-  title: No worry about the <span class="text-green-400"> Game Install</span>
+  title: No more worry about the <span class="text-green-400"> Game Install</span>
   description: >-
-    XMCL supports to install the vanilla Minecraft, Minecraft Forge, Fabric, and
+    XMCL supports installation of vanilla Minecraft, Minecraft Forge, Fabric, and
     even Optifine All in One! You can install them in a single place within the
-    Launcher. It also support third party mirror link BMCL API. You can even
-    customize your own mirror in launcher.
+    Launcher. It also supports the third party mirror link BMCL API. You can even
+    customize your own mirror in the launcher.
 optimalDisk:
   title: >-
     <span class="text-yellow-300">Optimal</span> disk space with <span
     class="text-red-700">Massive Resources</span>
   description: >-
-    XMCL will store all the mods, resource packs, shader packs, modpacks to a
+    XMCL will store all the mods, resource packs, shader packs and modpacks to a
     single store location. While you try to use any known resource, it will use
     hard link to install the resource to the instance without copying. It means
     you will never see any duplicated copy in /mods folder anymore.
@@ -82,19 +82,19 @@ cleanWorkspace:
     Keep your workspace <span class="text-sky-400">Clean</span> with
     multi-instances
   description: >-
-    XMCL has builtin support of multi-instances. You can create multiple
+    XMCL has built in support of multi-instances. You can create multiple
     instances easily. So you don't need to be worried about the mixture of the
     different launch settings.
 communityIntegration:
   title: Integrated with <span class="text-emerald-700">Multiple Communities</span>
   description: >-
-    XMCL builtin supports with Curseforge, Modrinth. It also provides ability to
-    support custom user account/skin system like blessing skin.
+    XMCL built in supports with Curseforge & Modrinth. It also provides the ability
+    to support custom user accounts/skin systems like blessing skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Join {inviter}'s Party
 joinPeerDescription: >-
-  {inviter} invite you to join their group {group} to play Minecraft together!
-  You will be redirected back to Launcher!"
+  {inviter} has invited you to join their group {group} to play Minecraft together!
+  You will be redirected back to the Launcher!
 fullChangelog: What's New?
 privacy: Software Privacy
