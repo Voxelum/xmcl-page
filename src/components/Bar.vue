@@ -16,7 +16,7 @@
         </a>
         <router-link :to="`/${locale}/changelogs`" class="item">
           <i class="history icon m-0 sm:mr-2"></i>
-          {{ t('fullChangelog') }}
+          <p class="sm:block hidden">{{ t('fullChangelog') }}</p>
         </router-link>
 
         <!-- <div class="right menu">
