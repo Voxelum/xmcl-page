@@ -140,12 +140,12 @@
     </div>
 
     <div class="section intro min-h-100vh">
-      <div class="h-full flex flex-col justify-center h-100vh px-10 sm:px-40">
+      <div class="flex flex-col justify-center min-h-100vh px-10 sm:px-40">
         <win-32 title />
         <mac title />
         <linux title />
       </div>
-      <Footer />
+      <Footer class="mt-30 pb-10" />
     </div>
   </div>
 </template>
