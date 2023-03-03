@@ -32,6 +32,6 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           working-directory: "./docs/.vitepress"
-          vercel-args: '--prod ./docs/dist'
+          vercel-args: '--prod ./dist'
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.DOC_PROJECT_ID }}
