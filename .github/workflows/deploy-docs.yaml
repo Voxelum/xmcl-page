@@ -5,6 +5,7 @@ on:
     branches:
       - "*"
     paths:
+      - .github/workflows/deploy-docs.yaml
       - docs/**
       - public/**
       - package.json

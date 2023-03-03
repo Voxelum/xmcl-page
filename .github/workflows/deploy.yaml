@@ -5,6 +5,7 @@ on:
     branches:
       - "*"
     paths:
+      - .github/workflows/deploy.yaml
       - src/**
       - locales/**
       - public/**
