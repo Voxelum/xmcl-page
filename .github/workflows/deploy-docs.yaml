@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy-docs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -30,6 +30,7 @@ jobs:
       - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          working-directory: "./docs/.vitepress"
           vercel-args: '--prod ./docs/dist'
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.DOC_PROJECT_ID }}
