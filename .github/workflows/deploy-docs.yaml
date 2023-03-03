@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - "*"
+    paths:
+      - docs/**
+      - public/**
+      - package.json
   workflow_dispatch:
-  path:
-    - docs
-    - public
-    - package.json
 
 jobs:
   deploy:
