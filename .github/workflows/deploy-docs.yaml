@@ -1,4 +1,4 @@
-name: "Deploy"
+name: "Deploy Docs"
 on:
   pull_request:
   push:
@@ -6,13 +6,9 @@ on:
       - "*"
   workflow_dispatch:
   path:
-  - src
-  - vite.config.ts
-  - vercel.json
-  - windi.config.ts
-  - locales
-  - public
-  - package.json
+    - docs
+    - public
+    - package.json
 
 jobs:
   deploy:
@@ -30,10 +26,10 @@ jobs:
       - name: "Install"
         run: "pnpm i"
       - name: "Build"
-        run: "pnpm run build"
+        run: "pnpm run docs:build"
       - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod ./dist'
+          vercel-args: '--prod ./docs/dist'
           vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          vercel-project-id: ${{ secrets.DOC_PROJECT_ID }}

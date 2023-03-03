@@ -2,31 +2,7 @@
 
 本文描述了一种启动器实现 Minecraft 供跨局域网联机的协议。
 
-- [基于 WebRTC 的 Minecraft 联机协议](#基于-webrtc-的-minecraft-联机协议)
-  - [啥是 WebRTC？为什么选它](#啥是-webrtc为什么选它)
-    - [自定义程度](#自定义程度)
-    - [工程难度](#工程难度)
-    - [用户使用门槛](#用户使用门槛)
-  - [协议细节](#协议细节)
-    - [基本概念](#基本概念)
-      - [PeerConnection](#peerconnection)
-      - [DataChannel](#datachannel)
-      - [Description](#description)
-      - [ICEServer](#iceserver)
-    - [用户之间如何建立连接](#用户之间如何建立连接)
-    - [用户之间通信的协议格式](#用户之间通信的协议格式)
-      - [心跳消息](#心跳消息)
-      - [玩家身份消息](#玩家身份消息)
-      - [Minecraft 局域网公开消息](#minecraft-局域网公开消息)
-    - [如何使用 DataChannel 实现 Minecraft 联机](#如何使用-datachannel-实现-minecraft-联机)
-  - [附录](#附录)
-    - [广播 Minecraft 局域网信息](#广播-minecraft-局域网信息)
-    - [中继](#中继)
-    - [协调服务器](#协调服务器)
-    - [传输可靠性](#传输可靠性)
-    - [IPV6?](#ipv6)
-    - [Upnp?](#upnp)
-  - [WebRTC 库](#webrtc-库)
+[[toc]]
 
 ## 啥是 WebRTC？为什么选它
 
@@ -73,7 +49,7 @@ WebRTC 只负责处理用户之间建立连接的问题，而传输什么数据�
 
 手写打洞或者 WebRTC 的话，这部分用户体验可以完全自己控制。
 
-## 协议细节
+## 协议细节及基本概念
 
 协议主要分为几个部分
 
@@ -81,27 +57,25 @@ WebRTC 只负责处理用户之间建立连接的问题，而传输什么数据�
 2. 点对点连接建立后，用户之间通信的协议格式
 3. 如何让用户之间的 Minecraft 在通过 DataChannel 联机
 
-### 基本概念
-
 这里简单介绍一下 WebRTC 中出现的概念和其代表的意义
 
-#### PeerConnection
+### PeerConnection
 
 PeerConnection 代表与其他用户之间建立的连接。
 
-#### DataChannel
+### DataChannel
 
 代表在一个 PeerConnection 中和其他用户建立的数据通信通道，类似于 Socket。一个 PeerConnection 可以有很多个 DataChannel 用作不同通信。DataChannel 可以在 PeerConnection 成功建立连接后随意创建/关闭。
 
 DataChannel 创建时可以指定 `protocol` (协议)，远端监听到不同协议的 DataChannel 创建可以通过 `protocol` 来进行不同的处理。
 
-#### Description
+### Description
 
 Description 是由 PeerConnection 创建用来描述本机网络信息的字符串，这个里面包含了打洞需要的一些信息（毕竟本质上 WebRTC 还是要打洞的）
 
 开发者可以不用完全理解这个字符串的内容，只需要使用协调服务器正确发给对方就行。
 
-#### ICEServer
+### ICEServer
 
 ICEServer 分为 STUN 和 TURN 两种。
 
@@ -112,7 +86,7 @@ STUN 服务器很多都是免费的，例如 QQ 用的 STUN `stun:stun.qq.com`�
 TURN server 则是负责转发流量（中继）的服务器。
 这种一般都是自己架设，毕竟要花钱的。
 
-### 用户之间如何建立连接
+## 用户之间如何建立连接
 
 在 WebRTC 中，用户之间的连接是通过交换 Description 字符串来实现的。
 
@@ -210,7 +184,7 @@ function onGetOtherDescription(id: string, description: Description) {
 - "failed" - 连接失败
 - "new" - 连接刚刚才创建
 
-### 用户之间通信的协议格式
+## 用户之间通信的协议格式
 
 在 PeerConnection 成功建立后，用户之间需要通过 `protocol` 为 `metadata` 的 DataChannel 通信。
 
@@ -239,7 +213,7 @@ send<T>(type: string, payload: object) {
 }
 ```
 
-#### 心跳消息
+### 心跳消息
 
 心跳信息分为 Ping 和 Pong 两种。
 
@@ -268,7 +242,7 @@ Pong 的格式和 Ping 消息一样，只是 `type` 为 `heartbeat-pong`。Pong 
 }
 ```
 
-#### 玩家身份消息
+### 玩家身份消息
 
 玩家身份消息用于更新启动器显示玩家头像，名称等。这里的 `payload` 应当和 Minecraft 用户的 GameProfile 相似。
 
@@ -290,7 +264,7 @@ Pong 的格式和 Ping 消息一样，只是 `type` 为 `heartbeat-pong`。Pong 
 }
 ```
 
-#### Minecraft 局域网公开消息
+### Minecraft 局域网公开消息
 
 当监听到本机上一个 Minecraft 对局域网公开了世界的消息时，你应当将这个消息通过 metadata DataChannel 发送给其他的用户。
 
@@ -310,7 +284,7 @@ Pong 的格式和 Ping 消息一样，只是 `type` 为 `heartbeat-pong`。Pong 
 
 motd 为服务器的简述，port 为当前 Minecraft 开放到局域网的端口号
 
-### 如何使用 DataChannel 实现 Minecraft 联机
+## 如何使用 DataChannel 实现 Minecraft 联机
 
 我们需要创建一个协议为 `minecraft` 的 DataChannel 来传输所有来自于 Minecraft 的流量。
 

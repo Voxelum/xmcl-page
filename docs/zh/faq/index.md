@@ -1,4 +1,11 @@
 
+<script setup>
+import VanillaProjectTree from '../../../src/components/VanillaProjectTree.vue'
+import XMCLProjectTree from '../../../src/components/XMCLProjectTree.vue'
+import CentraProjectTree from '../../../src/components/CentraProjectTree.vue'
+</script>
+
+
 # KeyStone UI 常见问题 FAQ
 
 ## [版本隔离？不，XMCL中使用的是实例 (Instance)](#版本隔离不xmcl中使用的是实例)
@@ -27,7 +34,7 @@ XMCL 是通过 `实例隔离` 来实现不同启动目标的数据隔离的，�
 
 话不多说，直接上图
 
-![](../../../assets/select-instance.png)
+![](./select-instance.png)
 
 首先在侧边栏点击 `选择实例` 按钮。
 
