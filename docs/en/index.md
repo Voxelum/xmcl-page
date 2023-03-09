@@ -2,34 +2,31 @@
 layout: home
 
 hero:
-  name: X Minecraft Launcher
-  text: Welcome to XMCL document
-  tagline: Lorem ipsum...
+  name: XMCL official documentation
+  text: I hope you can find answers to any questions about XMCL here
+  tagline: If you can't ...... you are more than welcome to send PR to improvement the documentation!
   image:
     src: /logo.png
     alt: X Minecraft Launcher
   actions:
     - theme: brand
-      text: Get Started
-      link: /guide/what-is-vitepress
+      text: Installation guide
+      link: /en/guide/install
     - theme: alt
-      text: View on GitHub
-      link: https://github.com/vuejs/vitepress
-
+      text: GitHub address
+      link: https://github.com/voxelum/x-minecraft-launcher
 
 features:
-  - icon: 🛠️
-    title: Simple and minimal, always
-    details: Lorem ipsum...
-  - icon:
-      src: /cool-feature-icon.svg
-    title: Another cool feature
-    details: Lorem ipsum...
-  - icon:
-      dark: /dark-feature-icon.svg
-      light: /light-feature-icon.svg
-    title: Another cool feature
-    details: Lorem ipsum...
+  - icon: 📥
+    title: XMCL Appearance Guide
+    details: How to beautify XMCL interface?
+    link: /en/guide/appearance
+  - icon: ⚡️
+    title: P2P online protocols explained
+    details: The P2P protocols used by XMCL will be introduced in detail.
+    link: /en/protocol/p2p
+  - icon: 📚
+    title: Data format of XMCL
+    details: How does XMCL store data?
+    link: /en/guide/manage
 ---
-
-

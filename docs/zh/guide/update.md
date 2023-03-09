@@ -14,8 +14,37 @@ C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 ```
 :::
 
+你可以把它复制出来，放到桌面上。重装后 XMCL 新版的文件路径应该在
+
+::: code-group
+```[Windows (APPX)]
+C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+```
+:::
+
+把你备份的文件重新放进去就好了。
+
+## APPX 更新失败
+
+APPX 更新应该会同时打开一个文件夹，其中会有下载好的 `xmcl.appinstaller` 文件。你可以手动双击这个文件来安装更新。
+
 ## 其他更新需要重装
 
-这种情况其实不需要备份，因为只有 `APPX` 才会
+这种情况其实不需要备份，因为只有 `APPX` 才会清理掉 XMCL 的数据文件。当然你想备份也可以，数据文件会放在如下位置：
 
+::: code-group
+```[Windows]
+C:\Users\foo\AppData\Roaming\xmcl
+```
+```sh [macOS]
+~/Library/Application Support/xmcl
+```
+```sh [Linux]
+~/.config/xmcl
+```
+:::
+
+## 其他版本更新失败
+
+重新下载吧……
 

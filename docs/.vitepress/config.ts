@@ -83,9 +83,47 @@ export default defineConfig({
   },
   // shared properties and other top-level stuff...
   locales: {
-    root: {
-      label: '简体中文',
-      lang: 'zh-CN'
+    en: {
+      label: 'English',
+      lang: 'en-US',
+      themeConfig: {
+        socialLinks: [
+          { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
+          { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' }
+        ],
+        nav: [
+          { text: 'Official Site', link: 'https://xmcl.app' },
+        ],
+        sidebar: [
+          {
+            text: 'Guide',
+            items: [
+              { text: 'Installation Guide', link: '/en/guide/install' },
+              { text: 'Upgrade Guide', link: '/en/guide/update' },
+              { text: 'Data Managment', link: '/en/guide/manage' },
+              { text: 'Appearance Guide', link: '/en/guide/appearance' },
+              { text: 'Multiplayer Guide', link: '/en/guide/p2p' },
+              { text: 'FAQ', link: '/en/faq/' },
+            ]
+          },
+          {
+            text: 'Protocol',
+            items: [
+              { text: 'P2P Protocol', link: '/en/protocol/p2p' },
+              { text: 'Instance Data Schema', link: '/en/protocol/instance' },
+              { text: 'Global Setting Schema', link: '/en/protocol/setting' },
+              { text: 'User Data Schema', link: '/en/protocol/user' },
+            ]
+          }
+        ],
+        footer: {
+          message: '本文档遵循 MIT 协议.',
+          copyright: 'Copyright © 2022-present CI010'
+        },
+        editLink: {
+          pattern: 'https://github.com/voxelum/xmcl-page/edit/main/docs/:path'
+        }
+      }
     },
     zh: {
       label: '简体中文',
@@ -106,7 +144,7 @@ export default defineConfig({
               { text: '更新指南', link: '/zh/guide/update' },
               { text: '数据管理指南', link: '/zh/guide/manage' },
               { text: '外观指南', link: '/zh/guide/appearance' },
-              { text: 'XMCL 第三方 app 指南', link: '/zh/guide/app' },
+              { text: '联机指南', link: '/zh/guide/p2p' },
               { text: '常见问题', link: '/zh/faq/' },
             ]
           },
