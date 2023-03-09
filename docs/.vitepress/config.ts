@@ -91,9 +91,12 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh-CN',
       themeConfig: {
+        socialLinks: [
+          { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
+          { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' }
+        ],
         nav: [
           { text: '官方网站', link: 'https://xmcl.app' },
-          { text: 'Github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
         ],
         sidebar: [
           {
@@ -112,7 +115,8 @@ export default defineConfig({
             items: [
               { text: 'P2P 联机协议', link: '/zh/protocol/p2p' },
               { text: '实例数据格式', link: '/zh/protocol/instance' },
-              { text: '全局设置数据格式', link: '/zh/protocol/instance' },
+              { text: '全局设置数据格式', link: '/zh/protocol/setting' },
+              { text: '用户数据格式', link: '/zh/protocol/user' },
             ]
           }
         ],
