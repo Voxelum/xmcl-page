@@ -4,14 +4,15 @@ on:
   push:
     branches:
       - "*"
+    paths:
+      - .github/workflows/deploy-docs.yaml
+      - docs/**
+      - public/**
+      - package.json
   workflow_dispatch:
-  path:
-    - docs
-    - public
-    - package.json
 
 jobs:
-  deploy:
+  deploy-docs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
@@ -30,6 +31,7 @@ jobs:
       - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod ./docs/dist'
+          working-directory: "./docs/.vitepress"
+          vercel-args: '--prod ./dist'
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.DOC_PROJECT_ID }}

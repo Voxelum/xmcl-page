@@ -84,8 +84,8 @@ export default defineConfig({
   // shared properties and other top-level stuff...
   locales: {
     root: {
-      label: 'English',
-      lang: 'en'
+      label: '简体中文',
+      lang: 'zh-CN'
     },
     zh: {
       label: '简体中文',
@@ -136,9 +136,5 @@ export default defineConfig({
   },
   themeConfig: {
     i18nRouting: true,
-  },
-  transformHead(context) {
-    console.log(context.pageData.frontmatter)
-    return context.head
   },
 })

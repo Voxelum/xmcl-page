@@ -33,7 +33,7 @@ C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 
 - [用户数据](../protocol/user.md)。存储用户的账号，皮肤链接等。存储在 `/user.json` 文件中。
 - [全局配置](../protocol/setting.md)。全局设置，如语言，代理 URL，下载节点等。存储在 `/settings.json` 文件中。
-- [实例缓存](../protocol/instances.md)。记录了上次选择的实例路径，已经所有已知实例的路径。存储在 `/instances.json` 文件中。
+- [实例缓存](../protocol/instance.md)。记录了上次选择的实例路径，已经所有已知实例的路径。存储在 `/instances.json` 文件中。
 - [Java 缓存](../protocol/java.md)。记录已经检测到的 Java 路径、版本信息等。存储在 `/java.json` 文件中。
 - [资源数据库](../protocol/resources.md)。资源文件的元数据，如解析出的 mod 信息等。存储格式是 `leveldb`，存储在 `/resources-v2` 文件夹。
 - [日志](../protocol/logs.md)。XMCL 历史日志。存储在 `/logs` 文件夹中

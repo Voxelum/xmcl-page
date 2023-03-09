@@ -14,25 +14,21 @@ hero:
       link: /zh/guide/install
     - theme: alt
       text: GitHub 地址
-      link: https://github.com/vuejs/vitepress
+      link: https://github.com/voxelum/x-minecraft-launcher
 
 features:
   - icon: 📥
-    title: 如何美化 XMCL 界面？
-    details: 
+    title: XMCL 外观指南
+    details: 如何美化 XMCL 界面？
     link: /zh/guide/appearance
   - icon: ⚡️
     title: P2P 联机协议详解
     details: 将详细介绍 XMCL 使用的 P2P 协议
     link: /zh/protocol/p2p
-  - icon: 💻
-    title: 如何基于 XMCL 开发一个新的启动器界面？
-    details: 启动器基于 Electron，支持 🗔 Windows，🍎 MacOS 和 🐧 Linux。
-    link: /zh/guide/app
   - icon: 📚
     title: XMCL 的数据格式
-    details: 使用多实例实现完全的版本隔离，保证不同启动配置不会互相影响。
-    link: /zh/guide/app
+    details: XMCL 时如何存储数据的？
+    link: /zh/guide/manage
 ---
 
 

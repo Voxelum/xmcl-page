@@ -4,15 +4,16 @@ on:
   push:
     branches:
       - "*"
+    paths:
+      - .github/workflows/deploy.yaml
+      - src/**
+      - locales/**
+      - public/**
+      - vite.config.ts
+      - vercel.json
+      - windi.config.ts
+      - package.json
   workflow_dispatch:
-  path:
-  - src
-  - vite.config.ts
-  - vercel.json
-  - windi.config.ts
-  - locales
-  - public
-  - package.json
 
 jobs:
   deploy:
