@@ -10,14 +10,14 @@ Because the old version of the launcher certificate in `APPX` format has expired
 
 ::: code-group
 ```[Windows (APPX)]
-C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 :::
 
 You can copy it out and put it on the desktop. After reinstallation the file path for the new version of XMCL should be in
 
 ::: code-group
 ```[Windows (APPX)
-C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 :::
 
 Just put the file you backed up back in.
@@ -32,7 +32,7 @@ In this case you don't really need to backup, because only `APPX` will clean up 
 
 ::: code-group
 ```[Windows]
-C:\Users\foo\AppData\Roaming\xmcl
+%AppData%\xmcl
 ```
 ```sh [macOS]
 ~/Library/Application Support/xmcl

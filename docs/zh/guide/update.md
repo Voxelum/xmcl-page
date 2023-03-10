@@ -12,7 +12,7 @@
 
 ::: code-group
 ```[Windows (APPX)]
-C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 ```
 :::
 
@@ -20,7 +20,7 @@ C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 
 ::: code-group
 ```[Windows (APPX)]
-C:\Users\foo\AppData\Local\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
+%LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
 :::
 
@@ -36,7 +36,7 @@ APPX 更新应该会同时打开一个文件夹，其中会有下载好的 `xmcl
 
 ::: code-group
 ```[Windows]
-C:\Users\foo\AppData\Roaming\xmcl
+%AppData%\xmcl
 ```
 ```sh [macOS]
 ~/Library/Application Support/xmcl

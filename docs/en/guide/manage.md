@@ -11,10 +11,10 @@ The XMCL cache itself is stored in the system appdata path, which varies from pl
 
 ::: code-group
 ```[Windows]
-C:\Users\foo\AppData\Roaming\xmcl
+%AppData%\xmcl
 ```
 ```[Windows (APPX)
-C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 ```
 ```sh [macOS]
 ~/Library/Application Support/xmcl

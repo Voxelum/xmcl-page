@@ -7,17 +7,17 @@ XMCL 的数据分为2个部分
 
 ## XMCL 缓存及数据库
 
-其中 XMCL 本身相关的缓存会存储到系统 appdata 路径中，而这个路径不同平台是不一样的。假如你的用户名是 `foo`，那么数据将被存储在
+其中 XMCL 本身相关的缓存会存储到系统 appdata 路径中，而这个路径不同平台是不一样的。
 
 ::: code-group
 ```[Windows]sh
-C:\Users\foo\AppData\Roaming\xmcl
+%AppData%\xmcl
 ```
 ```[Windows (APPX/appinstaller)]sh
 # 版本 < 0.34
-C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 # 版本 >= 0.34
-C:\Users\foo\AppData\Local\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
+%LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
 ```sh [macOS]
 ~/Library/Application Support/xmcl

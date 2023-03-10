@@ -2,8 +2,6 @@
 
 本文描述了一种启动器实现 Minecraft 供跨局域网联机的协议。
 
-[[toc]]
-
 ## 啥是 WebRTC？为什么选它
 
 WebRTC 是一个点对点实时通信技术，直接摘抄 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API)

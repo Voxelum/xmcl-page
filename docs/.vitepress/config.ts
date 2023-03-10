@@ -3,6 +3,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "X Minecraft Launcher",
+  lastUpdated: true,
+  cleanUrls: true,
   vite: {
     publicDir: resolve(__dirname, '../../public')
   },
@@ -132,7 +134,7 @@ export default defineConfig({
           }
         ],
         footer: {
-          message: '本文档遵循 MIT 协议.',
+          message: 'Released under the MIT License.',
           copyright: 'Copyright © 2022-present CI010'
         },
         editLink: {
@@ -190,8 +192,14 @@ export default defineConfig({
           }
         ],
         outline: {
-          label: '📚 本页包含了'
+          label: '📚 本页包含了',
+          level: [2, 3],
         },
+        docFooter: {
+          prev: "上一篇",
+          next: "下一篇"
+        },
+        lastUpdatedText: "上次更新",
         footer: {
           message: '本文档遵循 MIT 协议.',
           copyright: 'Copyright © 2022-present CI010'
