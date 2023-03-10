@@ -9,6 +9,7 @@ keywords: >-
   minecraft launcher,curseforge launcher,twitch
   launcher,tlauncher,multimc,curseforge,modrinth,minecraftforge,fabricmc
 repository: Source Code Repository
+docs: Documentation
 intro:
   first: >-
     <p class="leading-title"> An <span class="text-[rgb(61,239,233)]">Open

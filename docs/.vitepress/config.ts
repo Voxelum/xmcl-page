@@ -3,7 +3,9 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "X Minecraft Launcher",
-  lang: 'zh-CN',
+  vite: {
+    publicDir: resolve(__dirname, '../../public')
+  },
   head: [
     [
       'link',
@@ -78,21 +80,34 @@ export default defineConfig({
       }
     ],
   ],
-  vite: {
-    publicDir: resolve(__dirname, '../../public')
-  },
   // shared properties and other top-level stuff...
   locales: {
     en: {
       label: 'English',
       lang: 'en-US',
+      head: [
+        [
+          'description',
+          {
+            name: 'description',
+            content: 'X Minecraft Launcher official document.'
+          },
+        ],
+        [
+          'keywords',
+          {
+            name: 'keywords',
+            content: 'X Minecraft Launcher document,xmcl,docs'
+          }
+        ]
+      ],
       themeConfig: {
         socialLinks: [
           { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
           { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' }
         ],
         nav: [
-          { text: 'Official Site', link: 'https://xmcl.app' },
+          { text: 'Official Site', link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' },
         ],
         sidebar: [
           {
@@ -128,13 +143,29 @@ export default defineConfig({
     zh: {
       label: '简体中文',
       lang: 'zh-CN',
+      head: [
+        [
+          'description',
+          {
+            name: 'description',
+            content: 'X Minecraft Launcher 官方文档'
+          },
+        ],
+        [
+          'keywords',
+          {
+            name: 'keywords',
+            content: 'X Minecraft Launcher 文档,xmcl,文档'
+          }
+        ]
+      ],
       themeConfig: {
         socialLinks: [
           { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
           { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' }
         ],
         nav: [
-          { text: '官方网站', link: 'https://xmcl.app' },
+          { text: '官方网站', link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' },
         ],
         sidebar: [
           {

@@ -14,6 +14,10 @@
           <i class="discord square icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">Discord</p>
         </a>
+        <a class="item" :href="docUrl">
+          <i class="book icon m-0 sm:mr-2"></i>
+          <p class="sm:block hidden">{{ t("docs") }}</p>
+        </a>
         <router-link :to="`/${locale}/changelogs`" class="item">
           <i class="history icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">{{ t('fullChangelog') }}</p>
@@ -114,6 +118,8 @@ const mapping = reactive({
   ['azure-ms']: computed(() => t("azure-ms-source")),
   ['github']: computed(() => t("github-source")),
 })
+
+const docUrl = computed(() => (import.meta.env.DEV ? 'http://localhost:9000/' : 'https://docs.xmcl.app/') + locale.value + '/')
 
 
 </script>

@@ -7,6 +7,7 @@ title:
   changelog: 最近更新
 description: 极简、功能驱动的 Minecraft 启动器
 keywords: minecraft,启动器,curseforge,模组,hmcl,multimc,modrinth,minecraftforge,fabricmc
+docs: 文档
 intro:
   first: >-
     <p class="leading-title"> 一个 <span class="text-[rgb(61,239,233)]">开源的</span>

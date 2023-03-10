@@ -8,6 +8,8 @@
 
 因为 `APPX` 格式的旧版本启动器证书过期了，从旧版本升级到新版时会要求卸载旧版本。这种情况下请备份你的 XMCL 数据文件夹。
 
+假如 `foo` 是你的用户名：
+
 ::: code-group
 ```[Windows (APPX)]
 C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
@@ -18,7 +20,7 @@ C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 
 ::: code-group
 ```[Windows (APPX)]
-C:\Users\foo\AppData\Local\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+C:\Users\foo\AppData\Local\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
 :::
 
