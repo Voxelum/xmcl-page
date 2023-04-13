@@ -1,0 +1,75 @@
+import { DefaultTheme, LocaleConfig } from 'vitepress'
+import sidebar from './core/sidebar.json'
+
+for (const bar of sidebar) {
+    bar.link = '/en/core/' + bar.link
+    for (let i of bar.items) {
+        i.link = '/en/core/' + i.link
+    }
+}
+
+const theme: LocaleConfig<DefaultTheme.Config>[string] = {
+    label: 'English',
+    lang: 'en-US',
+    head: [
+        [
+            'description',
+            {
+                name: 'description',
+                content: 'X Minecraft Launcher official document.'
+            },
+        ],
+        [
+            'keywords',
+            {
+                name: 'keywords',
+                content: 'X Minecraft Launcher document,xmcl,docs'
+            }
+        ]
+    ],
+    themeConfig: {
+        socialLinks: [
+            { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
+            { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' }
+        ],
+        nav: [
+            { text: 'Guide', link: '/en/' },
+            { text: 'Core API Document', link: '/en/core/' },
+            { text: 'Official Site', link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' },
+        ],
+        sidebar: {
+            '/en/core/': sidebar,
+            '/en/': [
+                {
+                    text: 'Guide',
+                    items: [
+                        { text: 'Installation Guide', link: '/en/guide/install' },
+                        { text: 'Upgrade Guide', link: '/en/guide/update' },
+                        { text: 'Data Managment', link: '/en/guide/manage' },
+                        { text: 'Appearance Guide', link: '/en/guide/appearance' },
+                        { text: 'Multiplayer Guide', link: '/en/guide/p2p' },
+                        { text: 'FAQ', link: '/en/faq/' },
+                    ]
+                },
+                {
+                    text: 'Protocol',
+                    items: [
+                        { text: 'P2P Protocol', link: '/en/protocol/p2p' },
+                        { text: 'Instance Data Schema', link: '/en/protocol/instance' },
+                        { text: 'Global Setting Schema', link: '/en/protocol/setting' },
+                        { text: 'User Data Schema', link: '/en/protocol/user' },
+                    ]
+                }
+            ]
+        },
+        footer: {
+            message: 'Released under the MIT License.',
+            copyright: 'Copyright © 2022-present CI010'
+        },
+        editLink: {
+            pattern: 'https://github.com/voxelum/xmcl-page/edit/main/docs/:path'
+        }
+    }
+}
+
+export default theme;

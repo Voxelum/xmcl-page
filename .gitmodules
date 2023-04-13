@@ -1,0 +1,5 @@
+[submodule "docs/en/core"]
+	path = docs/en/core
+	url = https://github.com/Voxelum/minecraft-launcher-core-node
+	branch = gh-pages
+	depth = 1

@@ -12,11 +12,10 @@ XMCL data is divided into two parts:
 The cache related to XMCL itself is stored in the system appdata path, which is different on different platforms.
 
 ::: code-group
-```[Windows]sh
+```cmd [Windows]
 %AppData%\xmcl
 ```
-```[Windows (APPX/appinstaller)]sh
-# Version < 0.34
+```cmd [Windows (APPX/appinstaller)]
 %LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 # Version >= 0.34
 %LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl

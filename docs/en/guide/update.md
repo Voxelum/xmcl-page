@@ -37,7 +37,7 @@ The APPX update should also open a folder, where there is a downloaded `xmcl.app
 This situation does not actually require backup, because only `APPX` will clear XMCL's data files. Of course, you can back up if you want to, and the data files will be located in the following locations:
 
 ::: code-group
-```[Windows]
+```cmd [Windows]
 %AppData%\xmcl
 ```
 ```sh [macOS]

@@ -1,10 +1,10 @@
 # Java 数据缓存
 
-XMCL 检查过、找到的 java 都会缓存在 JSON 文件中，这个 JSON 文件会保存在 [xmcl 数据目录下](/zh/guide/manage#xmcl-缓存及数据库)。
+XMCL 检查过、找到的 java 都会缓存在 JSON 文件中，这个 JSON 文件会保存在 [xmcl 数据目录下](../guide/manage#xmcl-缓存及数据库)。
 
 ```sh
 xmcl数据目录
-└─ java.json # java 缓存文件
+└─ 📜java.json # java 缓存文件
 ```
 
 ## Java 缓存 JSON 格式

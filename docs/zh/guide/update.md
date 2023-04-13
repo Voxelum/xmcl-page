@@ -10,19 +10,15 @@
 
 假如 `foo` 是你的用户名：
 
-::: code-group
-```[Windows (APPX)]
+```cmd [Windows (APPX)]
 %LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
 ```
-:::
 
 你可以把它复制出来，放到桌面上。重装后 XMCL 新版的文件路径应该在
 
-::: code-group
-```[Windows (APPX)]
+```cmd [Windows (APPX)]
 %LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
-:::
 
 把你备份的文件重新放进去就好了。
 
@@ -35,7 +31,7 @@ APPX 更新应该会同时打开一个文件夹，其中会有下载好的 `xmcl
 这种情况其实不需要备份，因为只有 `APPX` 才会清理掉 XMCL 的数据文件。当然你想备份也可以，数据文件会放在如下位置：
 
 ::: code-group
-```[Windows]
+```cmd [Windows]
 %AppData%\xmcl
 ```
 ```sh [macOS]

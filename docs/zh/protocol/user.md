@@ -2,7 +2,7 @@
 
 > 施工中
 
-用户数据存储在 [xmcl 数据目录下](/zh/guide/manage#xmcl-缓存及数据库)。
+用户数据存储在 [xmcl 数据目录下](../guide/manage#xmcl-缓存及数据库)。
 
 ```sh
 xmcl数据目录

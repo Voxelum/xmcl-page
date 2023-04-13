@@ -7,7 +7,8 @@
     "build": "vite-ssg build",
     "docs:dev": "vitepress dev docs --port 9000",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "translate": "tsx scripts/translate.ts"
   },
   "browserslist": [
     "> 1%",
