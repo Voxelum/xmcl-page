@@ -15,7 +15,9 @@ jobs:
   deploy-docs:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.25.0
