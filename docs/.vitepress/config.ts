@@ -8,7 +8,10 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
   vite: {
-    publicDir: resolve(__dirname, '../../public')
+    publicDir: resolve(__dirname, '../../public'),
+    optimizeDeps: {
+      exclude: ['svg'],
+    }  
   },
   head: [
     [

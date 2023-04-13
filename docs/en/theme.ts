@@ -1,5 +1,6 @@
 import { DefaultTheme, LocaleConfig } from 'vitepress'
 import sidebar from './core/sidebar.json'
+import svg from '../../public/globe.txt'
 
 for (const bar of sidebar) {
     bar.link = '/en/core/' + bar.link
@@ -30,12 +31,16 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     themeConfig: {
         socialLinks: [
             { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
-            { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' }
+            { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' },
+            { icon: { svg }, link:  process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' }
         ],
+        outline: {
+            label: '📚 On this page',
+            level: [2, 3],
+        },
         nav: [
             { text: 'Guide', link: '/en/' },
             { text: 'Core API Document', link: '/en/core/' },
-            { text: 'Official Site', link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' },
         ],
         sidebar: {
             '/en/core/': sidebar,

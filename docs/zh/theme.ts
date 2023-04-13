@@ -1,4 +1,5 @@
 import { DefaultTheme, LocaleConfig } from 'vitepress'
+import svg from '../../public/globe.txt'
 
 const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     label: '简体中文',
@@ -22,10 +23,12 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     themeConfig: {
         socialLinks: [
             { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
-            { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' }
+            { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' },
+            { icon: { svg }, link:  process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' }
         ],
         nav: [
-            { text: '官方网站', link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' },
+            { text: '指南', link: '/zh/' },
+            { text: '核心 API 文档 (英文)', link: '/en/core/' },
         ],
         sidebar: [
             {
