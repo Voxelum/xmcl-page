@@ -26,9 +26,13 @@ pnpm run build
 
 ## I18n of website
 
-Add a new locale file under the `locales/` folder.
+To localize the official website, add a new locale file under the `locales/` folder.
 
 ## Develop official document
+
+Make sure you clone the repo with `--recurse-submodules`.
+
+> If you didn't do that, please run `git submodule init` & `git submodule update
 
 Install by pnpm
 
@@ -53,3 +57,5 @@ pnpm run docs:build
 The documents are majorly written in markdown. The files should be placed under `docs/` folder.
 
 We use vitepress as docs generator. You can refer the vitepress document for writing.
+
+To localize the document, add new locale folder under `/docs` folder.
