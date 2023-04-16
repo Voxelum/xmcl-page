@@ -11,7 +11,7 @@ export default defineConfig({
     publicDir: resolve(__dirname, '../../public'),
     optimizeDeps: {
       exclude: ['svg'],
-    }  
+    },
   },
   head: [
     [
@@ -94,5 +94,8 @@ export default defineConfig({
   },
   themeConfig: {
     i18nRouting: true,
+    search: {
+      provider: 'local'
+    },
   },
 })

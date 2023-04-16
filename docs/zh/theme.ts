@@ -21,10 +21,29 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
         ]
     ],
     themeConfig: {
+        search: {
+            provider: 'local',
+            options: {
+                translations: {
+                    button: {
+                        buttonText: '搜索',
+                        buttonAriaLabel: '搜索'
+                    },
+                    modal: {
+                        noResultsText: '无法找到相关结果',
+                        resetButtonTitle: '清除查询条件',
+                        footer: {
+                            selectText: '选择',
+                            navigateText: '切换'
+                        }
+                    }
+                }
+            }
+        },
         socialLinks: [
             { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
             { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' },
-            { icon: { svg }, link:  process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' }
+            { icon: { svg }, link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' }
         ],
         nav: [
             { text: '指南', link: '/zh/' },

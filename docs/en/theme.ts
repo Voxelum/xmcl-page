@@ -73,8 +73,11 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
         },
         editLink: {
             pattern: 'https://github.com/voxelum/xmcl-page/edit/main/docs/:path'
-        }
-    }
+        },
+        search: {
+            provider: 'local'
+        },
+    },
 }
 
 export default theme;
