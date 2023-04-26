@@ -2,8 +2,8 @@
     "cleanUrls": true,
     "rewrites": [
         {
-            "source": "/minecraft-core",
-            "destination": "https://voxelum.github.io/minecraft-launcher-core-node/"
+            "source": "/docx",
+            "destination": "https://docs.xmcl.app"
         }
     ],
     "headers": [
