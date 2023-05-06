@@ -1,6 +1,4 @@
 import { defineConfig } from 'vite'
-// import fetch from 'node-fetch'
-// import 'vite-ssg'
 import Layouts from 'vite-plugin-vue-layouts'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -35,8 +33,7 @@ export default defineConfig({
             },
             async load(id) {
                 if (id === 'virtual:latest-release') {
-                    const fetch = await import('node-fetch')
-                    const resp = await fetch.default('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases?per_page=5')
+                    const resp = await fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases?per_page=5')
                     const releases = await resp.json()
 
                     const filteredReleases = JSON.stringify((releases as any[]).map((r: any) => ({
