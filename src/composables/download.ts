@@ -42,25 +42,36 @@ export const useArtifactsStore = defineStore('artifacts', () => {
   const winAppx = computed(() => getUrl(a => a.name.endsWith('.appx') && a.name.indexOf('unsigned') === -1))
   const macZip = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1))
   const macDmg = computed(() => getUrl(a => a.name.endsWith('.dmg')))
-  const deb = computed(() => getUrl(a => a.name.endsWith('.deb')))
+  const macZipArm64 = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1 && a.name.indexOf('arm64') !== -1))
+  const deb = computed(() => getUrl(a => a.name.endsWith('.deb') && a.name.indexOf('arm64') === -1))
+  const debArm64 = computed(() => getUrl(a => a.name.endsWith('.deb') && a.name.indexOf('arm64') !== -1))
   const snap = computed(() => getUrl(a => a.name.endsWith('.snap')))
-  const appImage = computed(() => getUrl(a => a.name.endsWith('.AppImage')))
-  const tarxz = computed(() => getUrl(a => a.name.endsWith('.tar.xz')))
-  const rpm = computed(() => getUrl(a => a.name.endsWith('.rpm')))
-  const linuxZip = computed(() => getUrl(a => a.name.endsWith('.zip') && a.name.indexOf('darwin') === -1 && a.name.indexOf('win') === -1))
+  const appImage = computed(() => getUrl(a => a.name.endsWith('.AppImage') && a.name.indexOf('arm64') === -1))
+  const appImageArm64 = computed(() => getUrl(a => a.name.endsWith('.AppImage') && a.name.indexOf('arm64') !== -1))
+  const tarxz = computed(() => getUrl(a => a.name.endsWith('.tar.xz') && a.name.indexOf('arm64') === -1))
+  const tarxzArm64 = computed(() => getUrl(a => a.name.endsWith('.tar.xz') && a.name.indexOf('arm64') !== -1))
+
+  const rpm = computed(() => getUrl(a => a.name.endsWith('.rpm') && a.name.indexOf('aarch64') === -1))
+  const rpmAArch64 = computed(() => getUrl(a => a.name.endsWith('.rpm') && a.name.indexOf('aarch64') !== -1))
+  // const linuxZip = computed(() => getUrl(a => a.name.endsWith('.zip') && a.name.indexOf('darwin') === -1 && a.name.indexOf('win') === -1))
 
   return {
     winZip32,
+    macZipArm64,
     winWeb,
     winZip,
     winAppx,
     macZip,
     macDmg,
     deb,
+    debArm64,
+    appImageArm64,
+    rpmAArch64,
     tarxz,
+    tarxzArm64,
     snap,
     appImage,
-    linuxZip,
+    // linuxZip,
     rpm,
     refreshing: githubStore.refreshing
   }
