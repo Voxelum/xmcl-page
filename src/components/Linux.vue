@@ -26,7 +26,7 @@
           <i class="hdd icon"></i>
           <span>{{ t("download-rpm") }}</span>
         </a>
-        <a class="ui basic inverted grey left pointing label" :href="artifacts.rpmAArch64"
+        <a class="ui white left pointing label" :href="artifacts.rpmAArch64"
           @click="trackDownload('linux', 'rpm-aarch64')">
           AArch64
         </a>
