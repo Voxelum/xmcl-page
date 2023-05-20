@@ -1,63 +1,60 @@
-# Privacy Policy for xmcl
+# X Minecraft Launcher Privacy Terms
 
-At xmcl, accessible from https://xmcl.app and X Minecraft Launcher App (XMCL), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by xmcl and how we use it.
+## 1. Introduction
 
-If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+Thank you for using the X Minecraft Launcher ("the Launcher"), developed by XMCL developer team ("the Organization"). This document outlines the privacy terms and practices governing the collection, use, and protection of certain information when you use the Launcher. By using the Launcher, you agree to the terms outlined in this document.
 
-This Privacy Policy applies only to our online activities in app and is valid for visitors to our website and app with regards to the information that they shared and/or collect in XMCL. This policy is not applicable to any information collected offline or via channels other than this website. Our Privacy Policy was created with the help of the <a href="https://www.privacypolicygenerator.info">Free Privacy Policy Generator</a>.
+## 2. Information Collection and Use
 
-## Consent
+### 2.1. Usage Information
 
-By using our website and the launcher app, you hereby consent to our Privacy Policy and agree to its terms.
+The Launcher collects the following usage information:
 
-## Information we collect
+- Minecraft game start event
+- Minecraft game exit event
+- User login event
 
-The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.
+### 2.2. Additional Information
 
-If you contact us directly, we may receive additional information about you such as your name, email address, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.
+In addition to the usage information mentioned above, the Launcher also collects the following data:
 
-## How we use your information
+- Minecraft startup arguments
+- Game exit code
+- User login service name
 
-We use the information we collect in various ways, including to:
+### 2.3. Device Identification
 
-- Provide, operate, and maintain the launcher app
-- Improve, personalize, and expand the launcher app
-- Understand and analyze how you use our website and launcher
-- Develop new products, services, features, and functionality
+The Launcher generates a unique ID for your device. This ID will be used to identify your device as a single user. No personally identifiable information is associated with this device ID.
 
-## Log Files
+### 2.4. Error Reporting
 
-XMCL follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+The Launcher collects unexpected errors and their associated error stacks for the purpose of identifying and resolving issues. This information is used to improve the stability and performance of the Launcher and is not used for any other purpose.
 
-## Advertising Partners Privacy Policies
+## 3. Data Sharing and Disclosure
 
-You may consult this list to find the Privacy Policy for each of the advertising partners of xmcl.
+The Organization may share the collected information in the following circumstances:
 
-Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on xmcl, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
+- With contributors and maintainers of the Launcher for the purpose of improving the software and providing support
+- When required by applicable law or in response to a legal request
+- To protect the rights, property, or safety of the Organization, its users, or others
+- As part of an aggregated and anonymized dataset that does not identify individual users
 
-Note that XMCL has no access to or control over these cookies that are used by third-party advertisers.
+## 4. Data Security
 
-## Third Party Privacy Policies
+The Organization takes reasonable measures to protect the collected information from unauthorized access, use, or disclosure. However, please note that no method of transmission over the internet or electronic storage is 100% secure.
 
-XMCL's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. 
+## 5. Third-Party Services
 
-You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
+The Launcher may integrate with or provide links to third-party services or websites. The Organization is not responsible for the privacy practices or content of those third parties. We encourage you to review the privacy policies of those third parties before providing any personal information.
 
-## CCPA Privacy Rights (Do Not Sell My Personal Information)
+## 6. Children's Privacy
 
-Under the CCPA, among other rights, California consumers have the right to:
-Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.
-Request that a business delete any personal data about the consumer that a business has collected.
-Request that a business that sells a consumer's personal data, not sell the consumer's personal data.
-If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+The Launcher is not intended for use by individuals under the age of 13. The Organization does not knowingly collect personal information from children under 13. If you believe we have collected personal information from a child under 13, please contact us immediately.
 
-## GDPR Data Protection Rights
+## 7. Changes to this Privacy Terms
 
-We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
-The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.
-The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.
-The right to erasure – You have the right to request that we erase your personal data, under certain conditions.
-The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.
-The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.
-The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.
-If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+The Organization reserves the right to update or modify this privacy terms document at any time. We will notify you of any material changes by posting the updated version on our website or through other communication channels.
+
+## 8. Contact Us
+
+If you have any questions or concerns about this privacy terms document or our privacy practices, please contact us at [Contact Email Address].
