@@ -1,101 +1,100 @@
-lang: English
+lang: Українська
 title:
-  index: X Minecraft Launcher - A fully featured Minecraft launcher
-  auth: X Minecraft Launcher - Authenticate your account
-  privacy: X Minecraft Launcher - A fully featured Minecraft launcher
-  changelog: Changelogs
-description: Empower Your Minecraft Experience with modern launcher
+  index: X Minecraft Launcher - Повнофункціональна програма запуску Minecraft
+  auth: X Minecraft Launcher - Автентифікуйте свій обліковий запис
+  privacy: X Minecraft Launcher - Повнофункціональна програма запуску Minecraft
+  changelog: Журнали змін
+description: Розширте свій досвід Minecraft за допомогою сучасної панелі запуску
 keywords: >-
   minecraft launcher,curseforge launcher,twitch
   launcher,tlauncher,multimc,curseforge,modrinth,minecraftforge,fabricmc
-repository: Source Code Repository
-docs: Documentation
+repository: Репозиторій вихідного коду
+docs: Документація
 intro:
   first: >-
-    <p class="leading-title"> An <span class="text-[rgb(61,239,233)]">Open
-    Source</span> Minecraft Launcher with <span
-    class="text-[rgb(107,217,104)]">Modern</span> UX. </p>
+    <p class="leading-title">Minecraft лаунчер <span class="text-[rgb(61,239,233)]">Відкритим
+    кодом</span> з <spanclass="text-[rgb(107,217,104)]">Сучасний</span> UX. </p>
   second: >-
-    Provide a <span class="text-yellow-300">Disk Efficient</span> way to manage
-    all your <span class="text-amber-600">Mods</span>
+    Забезпечте спосіб<span class="text-yellow-300">дисковий ефективний</span> керування всіма 
+    своїми <span class="text-amber-600">Модами</span>
   description: >-
-    X Minecraft Launcher (XMCL) is a modern Minecraft launcher that lets you
-    manage your massive resources like modpacks, resource packs, mods, shader
-    packs... It also has integration with Minecraft Forge, Fabric, Quilt, CurseForge and
+    X Minecraft Launcher (XMCL) — це сучасна програма запуску Minecraft, яка дозволяє вам
+    керуйте своїми величезними ресурсами, такими як пакети модів, пакети ресурсів, моди, шейдери
+    пакети... Він також має інтеграцію з Minecraft Forge, Fabric, Quilt, CurseForge та
     Modrinth.
 launcher:
   manage:
-    intro: Manage your Minecraft effectively.
-  description: A Simple, Open Sources, and Function Orientated Minecraft Launcher
-download: Installer
+    intro: Ефективно керуйте своїм Minecraft.
+  description: Простий, відкритий і функціонально орієнтований засіб запуску Minecraft
+download: Інсталятор
 downloadFor:
-  windows: 'Download For Windows:'
-  mac: 'Download For Mac:'
-  linux: 'Download For Linux:'
-author: Contact Author
+  windows: 'Встановити для Windows:'
+  mac: 'Встановити для Mac:'
+  linux: 'Встановити для Linux:'
+author: Зв'язатися з автором
 download-zip: Zip (64 bits)
 download-zip-32: Zip (32 bits)
-download-appx: AppX Package
-download-appinstaller: App Installer
-download-portable: Portable
+download-appx: AppX Пакет
+download-appinstaller: App Інсталятор
+download-portable: Portable(портативний)
 download-dmg: DMG
 download-snap: Snap
 download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
-azure-source: Download From Azure
-azure-ms-source: Download From Azure Microsoft CDN
-baidu-source: Download From Baidu CDN
-github-source: Download From Github
-auto-source: Auto Detect The Download Source
-prerelease: Prerelease
-authSuccess: Succeed!
+azure-source: Завантажити з Azure
+azure-ms-source: Завантажити з Azure Microsoft CDN
+baidu-source: Завантажити з Baidu CDN
+github-source: Завантажити з Github
+auto-source: Автоматичне визначення джерела завантаження
+prerelease: Пре-реліз
+authSuccess: Успішно!
 authSuccessTitle: >-
-  Authorization was successful. You will be redirected back to the
-  Launcher!
+  Авторизація пройшла успішно. Ви будете перенаправлені назад до
+  !
 redirectHelperTitle: >-
-  If you aren't redirected, you can try to click Open In App button to manually
-  redirect.
+  Якщо вас не буде перенаправлено, ви можете спробувати натиснути кнопку
+  «Відкрити в програмі», щоб вручну перенаправлення.
 redirectHelperMessage: >-
-  It will create a popup and ask you to open the launcher. If it still
-  doesn't work, you can try to drag the button to the launcher window!
-notWork: Doesn't Work?
-openInAppButton: Open In Launcher
-nothingWork: If none of above works, you might want to re-download the latest Launcher
+  Буде створено спливаюче вікно з проханням відкрити панель запуску. Якщо все ще
+  не працює, можете спробувати перетягнути кнопку у вікно запуску!
+notWork: Не працює?
+openInAppButton: Відкрити в панелі запуску
+nothingWork: Якщо нічого з вищезазначеного не працює, ви можете повторно завантажити останню версію програми запуску
 gameInstall:
-  title: No more worry about the <span class="text-green-400"> Game Install</span>
+  title: Більше не турбуйтеся про <span class="text-green-400"> Встановлення гри</span>
   description: >-
-    XMCL supports installation of vanilla Minecraft, Minecraft Forge, Fabric, and
-    even Optifine All in One! You can install them in a single place within the
-    Launcher. It also supports the third party mirror link BMCL API. You can even
-    customize your own mirror in the launcher.
+    XMCL підтримує встановлення ванільних Minecraft, Minecraft Forge, Fabric і
+    навіть Optifine ВСЕ В ОДНОМУ! Ви можете встановити їх в одному місці в межах
+    Пускач. Він також підтримує API стороннього дзеркального посилання BMCL. Можна навіть
+    налаштуйте власне дзеркало в панелі запуску.
 optimalDisk:
   title: >-
-    <span class="text-yellow-300">Optimal</span> disk space with <span
-    class="text-red-700">Massive Resources</span>
+    <span class="text-yellow-300">Оптимальний</span> дисковий простір з <span
+    class="text-red-700">Масивними Ресурсами</span>
   description: >-
-    XMCL will store all the mods, resource packs, shader packs and modpacks to a
-    single store location. While you try to use any known resource, it will use
-    hard link to install the resource to the instance without copying. It means
-    you will never see any duplicated copy in /mods folder anymore.
+    XMCL зберігатиме всі моди, пакети ресурсів, пакети шейдерів і пакети модів у a
+    розташування єдиного магазину. Якщо ви спробуєте використати будь-який відомий ресурс, він буде використаний
+    жорстке посилання для встановлення ресурсу на екземпляр без копіювання. Це означає
+    ви більше ніколи не побачите жодної дубльованої копії в папці /mods.
 cleanWorkspace:
   title: >-
-    Keep your workspace <span class="text-sky-400">Clean</span> with
-    multi-instances
+    Зберігайте своє робоче місце <span class="text-sky-400">Очищуйте</span> з
+    багатоекземплярами
   description: >-
-    XMCL has built in support of multi-instances. You can create multiple
-    instances easily. So you don't need to be worried about the mixture of the
-    different launch settings.
+    XMCL має вбудовану підтримку кількох екземплярів. Ви можете створити кілька
+    примірники легко. Тож вам не потрібно турбуватися про суміш
+    різні параметри запуску.
 communityIntegration:
-  title: Integrated with <span class="text-emerald-700">Multiple Communities</span>
+  title: Інтегровано з <span class="text-emerald-700">Багатою Спільнотою</span>
   description: >-
-    XMCL built in supports with Curseforge & Modrinth. It also provides the ability
-    to support custom user accounts/skin systems like blessing skin.
+    Вбудований XMCL підтримує Curseforge & Modrinth. Це також забезпечує здатність
+    для підтримки користувальницьких облікових записів користувачів/систем скінів, як-от Blessing skin.
 download-tarxz: Tar.xz
-download-linuxZip: Zip
-joinPeer: Join {inviter}'s Party
+download-linuxZip: Zip(Архів)
+joinPeer: Приєднуйтесь {inviter} Вечірки
 joinPeerDescription: >-
-  {inviter} has invited you to join their group {group} to play Minecraft together!
-  You will be redirected back to the Launcher!
-fullChangelog: What's New?
-privacy: Software Privacy
+  {inviter} запросив вас приєднатися до їхньої групи {group}, щоб разом грати в Minecraft!
+  Вас буде перенаправлено назад до панелі запуску!
+fullChangelog: Що нового?
+privacy: Конфіденційність програмного забезпечення
