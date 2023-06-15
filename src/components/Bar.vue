@@ -61,6 +61,9 @@
                 <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
                 <div class="item" value="fr" @click="setLocale('fr')">French</div>
                 </MenuItem>
+                <MenuItem class="cursor-pointer hover:bg-[rgba(0,0,0,0.1)]">
+                <div class="item" value="fr" @click="setLocale('uk')">Українська мова</div>
+                </MenuItem>
               </div>
             </MenuItems>
           </transition>
