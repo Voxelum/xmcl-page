@@ -1,0 +1,100 @@
+lang: Українська
+title:
+  index: X Minecraft Launcher - Повнофункціональна програма запуску Minecraft
+  auth: X Minecraft Launcher - Автентифікуйте свій обліковий запис
+  privacy: X Minecraft Launcher - Повнофункціональна програма запуску Minecraft
+  changelog: Журнали змін
+description: Розширте свій досвід Minecraft за допомогою сучасної панелі запуску
+keywords: >-
+  minecraft launcher,curseforge launcher,twitch
+  launcher,tlauncher,multimc,curseforge,modrinth,minecraftforge,fabricmc
+repository: Репозиторій вихідного коду
+docs: Документація
+intro:
+  first: >-
+    <p class="leading-title">Minecraft лаунчер <span class="text-[rgb(61,239,233)]">Відкритим
+    кодом</span> з <spanclass="text-[rgb(107,217,104)]">Сучасний</span> UX. </p>
+  second: >-
+    Забезпечте спосіб<span class="text-yellow-300">дисковий ефективний</span> керування всіма 
+    своїми <span class="text-amber-600">Модами</span>
+  description: >-
+    X Minecraft Launcher (XMCL) — це сучасна програма запуску Minecraft, яка дозволяє вам
+    керуйте своїми величезними ресурсами, такими як пакети модів, пакети ресурсів, моди, шейдери
+    пакети... Він також має інтеграцію з Minecraft Forge, Fabric, Quilt, CurseForge та
+    Modrinth.
+launcher:
+  manage:
+    intro: Ефективно керуйте своїм Minecraft.
+  description: Простий, відкритий і функціонально орієнтований засіб запуску Minecraft
+download: Інсталятор
+downloadFor:
+  windows: 'Встановити для Windows:'
+  mac: 'Встановити для Mac:'
+  linux: 'Встановити для Linux:'
+author: Зв'язатися з автором
+download-zip: Zip (64 bits)
+download-zip-32: Zip (32 bits)
+download-appx: AppX Пакет
+download-appinstaller: App Інсталятор
+download-portable: Portable(портативний)
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+azure-source: Завантажити з Azure
+azure-ms-source: Завантажити з Azure Microsoft CDN
+baidu-source: Завантажити з Baidu CDN
+github-source: Завантажити з Github
+auto-source: Автоматичне визначення джерела завантаження
+prerelease: Пре-реліз
+authSuccess: Успішно!
+authSuccessTitle: >-
+  Авторизація пройшла успішно. Ви будете перенаправлені назад до
+  !
+redirectHelperTitle: >-
+  Якщо вас не буде перенаправлено, ви можете спробувати натиснути кнопку
+  «Відкрити в програмі», щоб вручну перенаправлення.
+redirectHelperMessage: >-
+  Буде створено спливаюче вікно з проханням відкрити панель запуску. Якщо все ще
+  не працює, можете спробувати перетягнути кнопку у вікно запуску!
+notWork: Не працює?
+openInAppButton: Відкрити в панелі запуску
+nothingWork: Якщо нічого з вищезазначеного не працює, ви можете повторно завантажити останню версію програми запуску
+gameInstall:
+  title: Більше не турбуйтеся про <span class="text-green-400"> Встановлення гри</span>
+  description: >-
+    XMCL підтримує встановлення ванільних Minecraft, Minecraft Forge, Fabric і
+    навіть Optifine ВСЕ В ОДНОМУ! Ви можете встановити їх в одному місці в межах
+    Пускач. Він також підтримує API стороннього дзеркального посилання BMCL. Можна навіть
+    налаштуйте власне дзеркало в панелі запуску.
+optimalDisk:
+  title: >-
+    <span class="text-yellow-300">Оптимальний</span> дисковий простір з <span
+    class="text-red-700">Масивними Ресурсами</span>
+  description: >-
+    XMCL зберігатиме всі моди, пакети ресурсів, пакети шейдерів і пакети модів у a
+    розташування єдиного магазину. Якщо ви спробуєте використати будь-який відомий ресурс, він буде використаний
+    жорстке посилання для встановлення ресурсу на екземпляр без копіювання. Це означає
+    ви більше ніколи не побачите жодної дубльованої копії в папці /mods.
+cleanWorkspace:
+  title: >-
+    Зберігайте своє робоче місце <span class="text-sky-400">Очищуйте</span> з
+    багатоекземплярами
+  description: >-
+    XMCL має вбудовану підтримку кількох екземплярів. Ви можете створити кілька
+    примірники легко. Тож вам не потрібно турбуватися про суміш
+    різні параметри запуску.
+communityIntegration:
+  title: Інтегровано з <span class="text-emerald-700">Багатою Спільнотою</span>
+  description: >-
+    Вбудований XMCL підтримує Curseforge & Modrinth. Це також забезпечує здатність
+    для підтримки користувальницьких облікових записів користувачів/систем скінів, як-от Blessing skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip(Архів)
+joinPeer: Приєднуйтесь {inviter} Вечірки
+joinPeerDescription: >-
+  {inviter} запросив вас приєднатися до їхньої групи {group}, щоб разом грати в Minecraft!
+  Вас буде перенаправлено назад до панелі запуску!
+fullChangelog: Що нового?
+privacy: Конфіденційність програмного забезпечення
