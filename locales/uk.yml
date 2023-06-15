@@ -13,7 +13,7 @@ docs: Документація
 intro:
   first: >-
     <p class="leading-title">Minecraft лаунчер <span class="text-[rgb(61,239,233)]">Відкритим
-    кодом</span> з <spanclass="text-[rgb(107,217,104)]">Сучасний</span> UX. </p>
+    кодом</span> з <span class="text-[rgb(107,217,104)]">Сучасний</span> UX. </p>
   second: >-
     Забезпечте спосіб<span class="text-yellow-300">дисковий ефективний</span> керування всіма 
     своїми <span class="text-amber-600">Модами</span>

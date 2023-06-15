@@ -33,6 +33,9 @@ export default defineComponent({
       if (locale.startsWith('ru')) {
         return 'ru'
       }
+      if (locale.startsWith('uk')) {
+        return 'uk'
+      }
       return 'en'
     }
 

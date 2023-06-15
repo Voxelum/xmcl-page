@@ -4,9 +4,9 @@ import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Markdown from 'vite-plugin-md'
+import Markdown from 'vite-plugin-vue-markdown'
 import WindiCSS from 'vite-plugin-windicss'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { resolve } from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
 // @ts-ignore
@@ -34,7 +34,7 @@ export default defineConfig({
             async load(id) {
                 if (id === 'virtual:latest-release') {
                     const resp = await fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases?per_page=5')
-                    const releases = await resp.json()
+                    const releases = await resp.json().then(v => v instanceof Array ? v : [])
 
                     const filteredReleases = JSON.stringify((releases as any[]).map((r: any) => ({
                         assets: r.assets.map((a: any) => ({ name: a.name, browser_download_url: a.browser_download_url })),
@@ -105,24 +105,10 @@ export default defineConfig({
             wrapperClasses: markdownWrapperClasses,
             markdownItOptions: {
                 html: true,
+                linkify: true,
+                typographer: true,
             },
             headEnabled: true,
-            markdownItSetup(md) {
-                md.renderer.rules.table = (token, idx, options, env, self) => {
-                    console.log(`render table`)
-                    console.log(token)
-                    return 'hllo'
-                }
-                // https://prismjs.com/
-                // md.use(Prism)
-                // md.use(LinkAttributes, {
-                //     pattern: /^https?:\/\//,
-                //     attrs: {
-                //         target: '_blank',
-                //         rel: 'noopener',
-                //     },
-                // })
-            },
         }),
 
         // https://github.com/antfu/vite-plugin-pwa
@@ -140,6 +126,8 @@ export default defineConfig({
         VueI18n({
             runtimeOnly: true,
             compositionOnly: true,
+            strictMessage: false,
+            fullInstall: true,
             include: [resolve(__dirname, 'locales/**')],
         }),
 
@@ -177,6 +165,14 @@ export default defineConfig({
         ],
         exclude: [
             'vue-demi',
+        ],
+    },
+
+    ssr: {
+        // TODO: workaround until they support native ESM
+        noExternal: [
+            'workbox-window',
+            /vue-i18n/,
         ],
     },
 })
