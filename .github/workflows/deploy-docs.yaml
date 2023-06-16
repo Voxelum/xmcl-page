@@ -16,11 +16,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
         with:
-          repository: voxelum/minecraft-launcher-core-node
-          path: docs/en/core
-          ref: 'gh-pages'
+          submodules: true
+      # - uses: actions/checkout@v3
+      #   with:
+      #     repository: voxelum/minecraft-launcher-core-node
+      #     path: docs/en/core
+      #     ref: 'gh-pages'
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 8.2.0
