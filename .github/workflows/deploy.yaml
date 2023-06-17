@@ -32,6 +32,8 @@ jobs:
         run: "pnpm i"
       - name: "Build"
         run: "pnpm run build"
+        env:
+          DEV: false
       - uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
