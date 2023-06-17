@@ -122,7 +122,7 @@ const mapping = reactive({
   ['github']: computed(() => t("github-source")),
 })
 
-const docUrl = computed(() => (import.meta.env.DEV ? 'http://localhost:9000/' : 'https://docs.xmcl.app/') + locale.value + '/')
+const docUrl = computed(() => ((import.meta.env.PROD || import.meta.env.SSR) ? 'https://docs.xmcl.app/' : 'http://localhost:9000/') + locale.value + '/')
 
 
 </script>
