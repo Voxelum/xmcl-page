@@ -9,6 +9,7 @@ import WindiCSS from 'vite-plugin-windicss'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { resolve } from 'path'
 import { VitePWA } from 'vite-plugin-pwa'
+import generateSitemap from 'vite-ssg-sitemap'
 // @ts-ignore
 import LinkAttributes from 'markdown-it-link-attributes'
 
@@ -153,7 +154,10 @@ export default defineConfig({
                 html = html.replace(`lang="en"`, `lang="${context.initialState.locale}"`)
             }
             return html
-        }
+        },
+        onFinished() {
+            generateSitemap()
+        },
     },
 
     optimizeDeps: {
