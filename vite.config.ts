@@ -156,7 +156,9 @@ export default defineConfig({
             return html
         },
         onFinished() {
-            generateSitemap()
+            generateSitemap({
+                hostname: 'https://xmcl.app'
+            })
         },
     },
 
