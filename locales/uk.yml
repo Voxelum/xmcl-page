@@ -92,7 +92,7 @@ communityIntegration:
     для підтримки користувацьких облікових записів користувачів/систем скінів, як-від Blessing skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip(Архів)
-joinPeer: Приєднуйтесь до: {inviter} Вечірки
+joinPeer: 'Приєднуйтесь до: {inviter} Вечірки'
 joinPeerDescription: >-
   {inviter} запросив вас приєднатися до їхньої групи {group}, щоб разом грати в Minecraft!
   Вас буде перенаправлено назад до панель запуску!
