@@ -12,17 +12,17 @@ keywords: >-
 repository: Code Source
 intro:
   first: >-
-    <p class="leading-title"> Un Launcher Minecraft <span class="text-[rgb(61,239,233)]">Open
-    Source</span> avec une interface <span
+    <p class="leading-title"> Launcher Minecraft <span
+    class="text-[rgb(61,239,233)]">Open Source</span> avec interface <span
     class="text-[rgb(107,217,104)]">Moderne</span>.</p>
   second: >-
     Gérez tous vos <span class="text-amber-600">Mods</span> en économisant
     l'<span class="text-yellow-300">Espace Disque</span>
   description: >-
-    X Minecraft Launcher (XMCL) est un lanceur Minecraft moderne qui vous permet de
-    gérer vos ressources massives comme les modpacks, les packs de ressources, les mods, les
-    shader packs... Il a également une intégration avec Forge, Fabric, Quilt, CurseForge et
-    Modrinth.
+    X Minecraft Launcher (XMCL) est un lanceur Minecraft moderne qui vous permet
+    de gérer vos ressources massives comme les modpacks, les packs de
+    ressources, les mods, les shader packs... Il a également une intégration
+    avec Forge, Fabric, Quilt, CurseForge et Modrinth.
 launcher:
   manage:
     intro: Gérez Minecraft efficacement.
@@ -50,52 +50,58 @@ github-source: Télécharger de Github
 auto-source: Auto-Détecter La Source de Téléchargement
 prerelease: Pré-version
 authSuccess: Succès !
-authSuccessTitle: >-
-  L'autorisation a réussi. Vous serez redirigé vers le Launcher
-  Minecraft !
+authSuccessTitle: L'autorisation a réussi. Vous serez redirigé vers le Launcher Minecraft !
 redirectHelperTitle: >-
-  Si vous n'êtes pas redirigé, vous pouvez essayer de cliquer sur le bouton Ouvrir dans
-  l'Application pour être manuellement redirigé.
+  Si vous n'êtes pas redirigé, vous pouvez essayer de cliquer sur le bouton
+  Ouvrir dans l'Application pour être manuellement redirigé.
 redirectHelperMessage: >-
-  Une fenêtre contextuelle vous demandera d'ouvrir le launcher. Si cela ne marche pas
-  non plus, vous pouvez essayer de faire glisser le bouton vers la fenêtre du launcher !
+  Une fenêtre contextuelle vous demandera d'ouvrir le launcher. Si cela ne
+  marche pas non plus, vous pouvez essayer de faire glisser le bouton vers la
+  fenêtre du launcher !
 notWork: Marche Pas ?
 openInAppButton: Ouvrir dans le Launcher
-nothingWork: Si rien ne fonctionne, essayez peut-être de télécharger à nouveau la dernière version du launcher
+nothingWork: >-
+  Si rien ne fonctionne, essayez peut-être de télécharger à nouveau la dernière
+  version du launcher
 gameInstall:
-  title: Aucune inquiétude pour l'<span class="text-green-400">Installation du Jeu</span>
+  title: >-
+    Aucune inquiétude pour l'<span class="text-green-400">Installation du
+    Jeu</span>
   description: >-
     XMCL prend en charge l'installation de Minecraft vanilla, Forge, Fabric et
-    même Optifine tout en un ! Vous pouvez les installer à un seul endroit dans le
-    Launcher. Il prend également en charge l'API mirror link tierce BMCL. Vous pouvez
-    même personnaliser votre propre mirror dans le launcher.
+    même Optifine tout en un ! Vous pouvez les installer à un seul endroit dans
+    le Launcher. Il prend également en charge l'API mirror link tierce BMCL.
+    Vous pouvez même personnaliser votre propre mirror dans le launcher.
 optimalDisk:
   title: >-
-    Espace disque <span class="text-yellow-300">Optimal</span> même avec des <span
-    class="text-red-700">Resources Massives</span>
+    Espace disque <span class="text-yellow-300">Optimal</span> même avec des
+    <span class="text-red-700">Resources Massives</span>
   description: >-
-    XMCL stockera tous les mods, packs de ressources, shader packs et modpacks dans un
-    emplacement de stockage unique. Pendant que vous essayez d'utiliser une ressource connue,
-    elle utilisera hard link pour installer la ressource sur l'instance sans copier. Ça veut dire
-    vous ne verrez plus jamais de copies dupliquées dans le dossier /mods.
+    XMCL stockera tous les mods, packs de ressources, shader packs et modpacks
+    dans un emplacement de stockage unique. Pendant que vous essayez d'utiliser
+    une ressource connue, elle utilisera hard link pour installer la ressource
+    sur l'instance sans copier. Ça veut dire vous ne verrez plus jamais de
+    copies dupliquées dans le dossier /mods.
 cleanWorkspace:
   title: >-
     Gardez votre espace de travail <span class="text-sky-400">propre</span> avec
     les multi-instances
   description: >-
-    XMCL a une prise en charge intégrée des multi-instances. Vous pouvez créer plusieurs
-    instances facilement. Vous n'avez donc pas à vous soucier de paramètres de
-    lancement différents.
+    XMCL a une prise en charge intégrée des multi-instances. Vous pouvez créer
+    plusieurs instances facilement. Vous n'avez donc pas à vous soucier de
+    paramètres de lancement différents.
 communityIntegration:
   title: Intégré avec <span class="text-emerald-700">Plusieurs Communautés</span>
   description: >-
-    XMCL offre une prise en charge intégrée avec Curseforge & Modrinth. Il offre également la possibilité de
-    prendre en charge des systèmes de comptes utilisateur / skins personnalisés comme blessing skin.
+    XMCL offre une prise en charge intégrée avec Curseforge & Modrinth. Il offre
+    également la possibilité de prendre en charge des systèmes de comptes
+    utilisateur / skins personnalisés comme blessing skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Rejoignez le Groupe de {inviter}
 joinPeerDescription: >-
-  {inviter} vous invite à rejoindre leur groupe {group} pour jouer ensemble à Minecraft !
-  Vous serez redirigé vers le Launcher !
+  {inviter} vous invite à rejoindre leur groupe {group} pour jouer ensemble à
+  Minecraft ! Vous serez redirigé vers le Launcher !
 fullChangelog: Quoi de Nouveau ?
 privacy: Confidentialité du Logiciel
+docs: Documentation
