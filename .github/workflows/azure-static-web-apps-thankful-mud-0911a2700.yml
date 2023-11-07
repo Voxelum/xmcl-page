@@ -17,8 +17,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: true
+          submodules: false
           lfs: false
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 8.2.0
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+          # cache: 'pnpm'
+      - name: "Install"
+        run: "pnpm i"
+      - name: "Build"
+        run: "pnpm run build"
+        env:
+          DEV: false
+          PROD: true
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
