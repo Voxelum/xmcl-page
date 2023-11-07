@@ -117,7 +117,7 @@ export default defineConfig({
             registerType: 'autoUpdate',
             includeAssets: ['favicon.svg', 'robots.txt'],
             workbox: {
-                globIgnores: ["**\/node_modules\/**\/*", "zh.html", "en.html", "ru.html", "index.html"],
+                globIgnores: ["**\/node_modules\/**\/*", "zh.html", "en.html", "ru.html", "index.html", "**\/changelogs\/**"],
                 globPatterns: ["**\/*.{js,css,html}"]
             },
             manifest: false,
