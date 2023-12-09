@@ -26,6 +26,9 @@
             <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank" class="relative">
               <img src="../assets/forge.png" class="h-15" />
             </a>
+            <a href="https://neoforged.net/" target="_blank" class="relative">
+              <img src="../assets/neoforged.png" class="h-15" />
+            </a>
             <a href="http://curseforge.com/minecraft" target="_blank" class="relative rounded">
               <curseforge-icon class="h-15 w-15" />
             </a>
