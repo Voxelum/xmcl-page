@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    '[id]': typeof import('./components/[id].vue')['default']
     Bar: typeof import('./components/Bar.vue')['default']
     CentraProjectTree: typeof import('./components/CentraProjectTree.vue')['default']
     CurseforgeIcon: typeof import('./components/CurseforgeIcon.vue')['default']
@@ -17,6 +18,7 @@ declare module 'vue' {
     Mac: typeof import('./components/Mac.vue')['default']
     ModrinthIcon: typeof import('./components/ModrinthIcon.vue')['default']
     PackageFileIcon: typeof import('./components/PackageFileIcon.vue')['default']
+    PrebuildDownloads: typeof import('./components/PrebuildDownloads.vue')['default']
     PrivacyContent: typeof import('./components/PrivacyContent.md')['default']
     QuiltIcon: typeof import('./components/QuiltIcon.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

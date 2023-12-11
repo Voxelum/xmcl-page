@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full text-gray-200">
+  <div class="h-full text-gray-200 overflow-auto">
     <Bar />
     <router-view />
   </div>

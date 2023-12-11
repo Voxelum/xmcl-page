@@ -1,6 +1,6 @@
 <template>
   <div mac class="flex flex-col">
-    <h1 v-if="title" class="ui inverted header" style="line-height: 1.4; font-size: 3em">
+    <h1 v-if="title" class="ui inverted section-header" style="line-height: 1.4; font-size: 3em">
       <div id="downloadFor" style="font-size: 0.45em">{{ t("downloadFor.mac") }}</div>
     </h1>
     <div class="ui hidden divider" style="padding: 0 0"></div>
