@@ -1,6 +1,6 @@
 <template>
   <div win class="flex flex-col">
-    <h1 v-if="title" class="ui inverted header" style="line-height: 1.4; font-size: 3em">
+    <h1 v-if="title" class="ui inverted section-header" style="line-height: 1.4; font-size: 3em">
       <div style="font-size: 0.45em">{{ t('downloadFor.windows') }}</div>
     </h1>
     <div class="flex gap-2 flex-wrap"

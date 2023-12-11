@@ -7,7 +7,7 @@
         <!-- <i class="ui inverted large teal linkify icon"></i> -->
         <img :src="logo" width="132" height="132" />
       </div>
-      <h1 class="ui inverted header" style="line-height: 1.4;">
+      <h1 class="ui inverted section-header" style="line-height: 1.4;">
         <div style="font-size: 1.25em">{{ t("authSuccess") }}</div>
         <div class="ui grey text"
           style="font-size: 0.55em; color: rgb(222 222 222); font-weight: 100; padding-top: 10px">{{
@@ -19,7 +19,7 @@
         <div class="ui icon positive large message">
           <i style="position: absolute" class="cat icon"></i>
           <div class="content">
-            <div class="header">{{ t("redirectHelperTitle") }}</div>
+            <div class="section-header">{{ t("redirectHelperTitle") }}</div>
             <p>{{ t("redirectHelperMessage") }}</p>
             <button class="ui teal right labeled icon button" @click="openApp" draggable="true"
               @dragstart="onDragStart">

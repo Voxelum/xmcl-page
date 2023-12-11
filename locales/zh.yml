@@ -77,3 +77,11 @@ joinPeer: 和 {inviter} 一起玩
 joinPeerDescription: '{inviter} 邀请你加入 Minecraft 联机群组 {group}，浏览器将自动打开启动器并加入群组。'
 fullChangelog: 更新日志
 privacy: 隐私协议
+prebuild:
+  history: 构建历史
+  download: 下载快照预构建
+  downloadDescription: |-
+    预构建是开发过程中生成的工件。
+    它可能不稳定。
+    使用它需要您自担风险！
+  entryHint: 在找快照版下载？

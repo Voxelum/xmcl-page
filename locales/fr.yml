@@ -105,3 +105,8 @@ joinPeerDescription: >-
 fullChangelog: Quoi de Nouveau ?
 privacy: Confidentialité du Logiciel
 docs: Documentation
+prebuild:
+  history: Construire l'historique
+  download: Télécharger les versions préliminaires
+  downloadDescription: "La pré-construction correspond aux artefacts générés pendant le processus de développement. \nCela pourrait être instable. \nUtilisez-le à vos propres risques\_!"
+  entryHint: "Des artefacts préconstruits\_?"

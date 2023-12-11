@@ -17,7 +17,9 @@
             </a>
           </div>
 
-          <component :is="platformDownload" class="mt-10 w-full mb-10" :organized="true" />
+          <component :is="platformDownload" class="mt-10 w-full mb-5" :organized="true" />
+
+          <a class="ui link cursor-pointer self-center font-medium italic" @click="push('/prebuild')">{{ t('prebuild.entryHint') }}</a>
 
           <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
             <a href="https://fabricmc.net/" target="_blank">
@@ -25,6 +27,9 @@
             </a>
             <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank" class="relative">
               <img src="../assets/forge.png" class="h-15" />
+            </a>
+            <a href="https://neoforged.net/" target="_blank" class="relative">
+              <img src="../assets/neoforged.png" class="h-15" />
             </a>
             <a href="http://curseforge.com/minecraft" target="_blank" class="relative rounded">
               <curseforge-icon class="h-15 w-15" />
@@ -191,6 +196,7 @@ const platformDownload = computed(() => {
 onMounted(() => {
   github.refresh()
 })
+const { push } = useRouter()
 
 </script>
 
