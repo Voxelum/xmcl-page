@@ -9,3 +9,23 @@ declare module 'virtual:latest-release' {
 
   export default releases
 }
+
+declare module 'virtual:prebuilds' {
+  type WorkflowRun = {
+    name: string;
+    display_title: string
+    status: string;
+    created_at: string;
+    run_number: number;
+    id: number;
+    // Add more properties as needed
+  };
+
+
+  declare const releases: {
+    total_count: number;
+    workflow_runs: WorkflowRun[];
+  } | undefined;
+
+  export default releases
+}

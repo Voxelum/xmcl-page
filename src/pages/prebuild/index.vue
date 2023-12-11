@@ -16,7 +16,7 @@
             {{ t('prebuild.history') }}
         </h4>
         <div class="ui selection large inverted list px-60">
-            <div class="item " v-for="item of state" @click="selected = item">
+            <div class="item " v-for="item of runs" @click="selected = item">
                 <object class="ui avatar image self-center object-center">
                     <i v-if="item.status === 'completed'" class="check circle icon text-green-400"></i>
                 </object>
@@ -30,9 +30,9 @@
     </div>
 </template>
 <script setup lang="ts">
-const owner: string = 'voxelum';
-const repo: string = 'x-minecraft-launcher';
-const workflowId: string = '1220495';
+
+import prebuilds from 'virtual:prebuilds'
+
 const { t } = useI18n()
 useHead({
     title: computed(() => t('title.auth')),
@@ -72,22 +72,31 @@ type WorkflowRun = {
 
 const { } = useRouter()
 
+
 async function getRuns(): Promise<WorkflowRun[]> {
-    const runResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/workflows/${workflowId}/runs`, {
+    console.log(import.meta.env.VITE_GITHUB_TOKEN)
+    const runResponse = await fetch(`https://api.github.com/repos/voxelum/x-minecraft-launcher/actions/workflows/1220495/runs`, {
         headers: {
             Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
         },
     });
 
-    const runData: { workflow_runs: WorkflowRun[] } = await runResponse.json();
-    return runData.workflow_runs.filter(r => r.status !== 'in_progress').sort((a, b) => a.created_at > b.created_at ? -1 : 1);
+    return processData(await runResponse.json() as any)
 }
 
 const { state } = useAsyncState(getRuns, [], {
     shallow: true
 })
 
-const selected = ref(state.value[0])
+const processData = (data: { workflow_runs: WorkflowRun[] }) => {
+    return data.workflow_runs.filter(r => r.status !== 'in_progress').sort((a, b) => a.created_at > b.created_at ? -1 : 1);
+}
+
+const runs = computed(() => {
+    return state.value || (prebuilds ? processData(prebuilds) : [])
+})
+
+const selected = ref(runs.value[0])
 
 watch(selected, (val) => {
     if (val) {

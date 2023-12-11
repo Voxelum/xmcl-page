@@ -46,6 +46,29 @@ export default defineConfig({
                 }
             }
         },
+        {
+            name: 'prebuilds',
+            resolveId(id) {
+                if (id === 'virtual:prebuilds') {
+                    return id
+                }
+            },
+            async load(id) {
+                if (id === 'virtual:prebuilds') {
+                    try {
+                        const resp = await fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/actions/workflows/1220495/runs', {
+                            headers: {
+                                Authorization: `token ${process.env.VITE_GITHUB_TOKEN}`,
+                            },
+                        })
+                        const releases = await resp.text()
+                        return `export default ${releases}`
+                    } catch {
+                        return `export default undefined`
+                    }
+                }
+            }
+        },
         Vue({
             include: [/\.vue$/, /\.md$/],
         }),
