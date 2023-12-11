@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --port 3333 --open --host",
-    "build": "vite-ssg build",
+    "build": "tsx prepare.ts && vite-ssg build",
     "docs:dev": "vitepress dev docs --port 9000",
     "docs:build": "tsx scripts/docs.ts",
     "docs:preview": "vitepress preview docs",

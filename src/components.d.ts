@@ -7,7 +7,6 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    '[id]': typeof import('./components/[id].vue')['default']
     Bar: typeof import('./components/Bar.vue')['default']
     CentraProjectTree: typeof import('./components/CentraProjectTree.vue')['default']
     CurseforgeIcon: typeof import('./components/CurseforgeIcon.vue')['default']
