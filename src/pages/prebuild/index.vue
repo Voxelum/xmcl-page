@@ -84,7 +84,7 @@ async function getRuns(): Promise<WorkflowRun[]> {
     return processData(await runResponse.json() as any)
 }
 
-const { state } = useAsyncState(getRuns, [], {
+const { state, isReady } = useAsyncState(getRuns, [], {
     shallow: true
 })
 
@@ -93,7 +93,7 @@ const processData = (data: { workflow_runs: WorkflowRun[] }) => {
 }
 
 const runs = computed(() => {
-    return state.value || (prebuilds ? processData(prebuilds) : [])
+    return (isReady.value && state.value) || (prebuilds ? processData(prebuilds) : [])
 })
 
 const selected = ref(runs.value[0])
