@@ -29,4 +29,8 @@ features:
     title: Data format of XMCL
     details: How does XMCL store data?
     link: /en/guide/manage
+  - icon: 🌐
+    title: I18n
+    details: How to translate launcher to your language?
+    link: /en/guide/i18n
 ---

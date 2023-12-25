@@ -1,8 +1,8 @@
 import { DefaultTheme, LocaleConfig } from 'vitepress'
-import sidebar from './core/sidebar.json'
+import coreSidebar from './core/sidebar.json'
 import svg from '../../public/globe.txt'
 
-for (const bar of sidebar) {
+for (const bar of coreSidebar) {
     bar.link = '/en/core/' + bar.link
     for (let i of bar.items) {
         i.link = '/en/core/' + i.link
@@ -43,7 +43,8 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
             { text: 'Core API Document', link: '/en/core/' },
         ],
         sidebar: {
-            '/en/core/': sidebar,
+            '/en/core/': coreSidebar,
+            '/en/blogs/': [],
             '/en/': [
                 {
                     text: 'Guide',
@@ -53,7 +54,7 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
                         { text: 'Data Managment', link: '/en/guide/manage' },
                         { text: 'Appearance Guide', link: '/en/guide/appearance' },
                         { text: 'Multiplayer Guide', link: '/en/guide/p2p' },
-                        { text: 'FAQ', link: '/en/faq/' },
+                        { text: 'I18n Guide', link: '/en/guide/i18n' },
                     ]
                 },
                 {
