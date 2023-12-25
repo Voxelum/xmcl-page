@@ -35,7 +35,7 @@ Vous trouverez ici quelques fichiers "json" utilisés pour stocker diverses conf
 - [Données utilisateur](../protocol/user.md). Stocke les comptes des utilisateurs, les liens de skin, etc. Stocké dans le fichier `/user.json`.
 - [Paramètres globaux](../protocol/setting.md). Paramètres globaux, tels que la langue, l'URL du proxy, le node de téléchargement, etc. Stockés dans le fichier `/settings.json`.
 - [Cache d'instance](../protocol/instance.md). Enregistre le dernier chemin d'instance sélectionné et les chemins de toutes les instances connues. Stocké dans le fichier `/instances.json`.
-- [Cache Java](../protocole/java.md). Enregistre les chemins Java détectés, les informations de version, etc. Stocké dans le fichier `/java.json`.
+<!-- - [Cache Java](../protocole/java.md). Enregistre les chemins Java détectés, les informations de version, etc. Stocké dans le fichier `/java.json`. -->
 - [Base de données des ressources](../protocol/resources.md). Métadonnées pour les fichiers de ressources, telles que les informations de mod analysés. Stocké au format `leveldb`, dans le dossier `/resources-v2`.
 - [Journaux](../protocol/logs.md). Journaux historiques XMCL. Stocké dans le dossier `/logs`.
 
