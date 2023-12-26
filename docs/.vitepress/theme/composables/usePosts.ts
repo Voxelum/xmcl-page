@@ -13,9 +13,6 @@ export default () => {
 
   const path = route.path
 
-  console.log(allPosts.value)
-  console.log(allPosts.value.map(p => `${site.value.base}en/blog${p.href}`))
-  console.log(route.path)
   function findCurrentIndex() {
     return allPosts.value.findIndex(p => `${site.value.base}en/blog${p.href}` === route.path)
   }
