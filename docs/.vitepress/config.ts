@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vitepress'
 import en from '../en/theme'
 import zh from '../zh/theme'
+import Unocss from 'unocss/vite'
 
 export default defineConfig({
   title: "X Minecraft Launcher",
@@ -9,6 +10,11 @@ export default defineConfig({
   cleanUrls: true,
   vite: {
     publicDir: resolve(__dirname, '../../public'),
+    plugins: [
+      Unocss({
+        configFile: '../unocss.config.ts',
+      }),
+    ],
     optimizeDeps: {
       exclude: ['svg'],
     },

@@ -26,7 +26,7 @@ const navTo = (ver: string) => {
     push({ hash: `#${ver}` })
 }
 
-const versions = Object.values(import.meta.globEager('./*.md')).map((r: any) => {
+const versions = Object.values(import.meta.glob('./*.md', { eager: true })).map((r: any) => {
     return r
 }).reverse()
 

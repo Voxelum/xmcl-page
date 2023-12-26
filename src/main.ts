@@ -30,5 +30,5 @@ export const createApp = ViteSSG(App, {
         return { x: 0, y: 0 }
     }
 }, (ctx) => {
-    Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
+    Object.values(import.meta.glob('./modules/*.ts', { eager: true })).map(i => i.install?.(ctx))
 })

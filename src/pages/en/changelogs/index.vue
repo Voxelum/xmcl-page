@@ -26,7 +26,7 @@ const navTo = (ver: string) => {
     push({ hash: `#${ver}` })
 }
 
-const versions = Object.values(import.meta.globEager('./*.md')).reverse()
+const versions = Object.values(import.meta.glob('./*.md', { eager: true })).reverse()
 
 onMounted(() => {
     const body = document.getElementsByClassName('markdown-body')

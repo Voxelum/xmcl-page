@@ -32,7 +32,7 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
         socialLinks: [
             { icon: 'github', link: 'https://github.com/voxelum/x-minecraft-launcher' },
             { icon: 'discord', link: 'https://discord.gg/W5XVwYY7GQ' },
-            { icon: { svg }, link:  process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' }
+            { icon: { svg }, link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' }
         ],
         outline: {
             label: '📚 On this page',
@@ -41,10 +41,11 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
         nav: [
             { text: 'Guide', link: '/en/' },
             { text: 'Core API Document', link: '/en/core/' },
+            { text: 'Blogs', link: '/en/blog/' },
         ],
         sidebar: {
             '/en/core/': coreSidebar,
-            '/en/blogs/': [],
+            '/en/blog/': [],
             '/en/': [
                 {
                     text: 'Guide',
@@ -67,6 +68,10 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
                     ]
                 }
             ]
+        },
+        blog: {
+            title: 'The Blogs',
+            description: 'Write something about the X Minecraft Launcher journey.',
         },
         footer: {
             message: 'Released under the MIT License.',

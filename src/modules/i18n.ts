@@ -13,7 +13,7 @@ const localesMap = Object.fromEntries(
 
 const messages = Object.fromEntries(
   Object.entries(
-    import.meta.globEager('../../locales/*.y(a)?ml'))
+    import.meta.glob('../../locales/*.y(a)?ml', { eager: true }))
     .map(([key, value]) => {
       const yaml = key.endsWith('.yaml')
       return [key.slice(14, yaml ? -5 : -4), value.default]
