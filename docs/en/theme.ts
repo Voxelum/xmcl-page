@@ -1,6 +1,8 @@
 import { DefaultTheme, LocaleConfig } from 'vitepress'
 import coreSidebar from './core/sidebar.json'
 import svg from '../../public/globe.txt'
+import { readdirSync } from 'fs'
+import { join } from 'path'
 
 for (const bar of coreSidebar) {
     bar.link = '/en/core/' + bar.link
@@ -8,6 +10,8 @@ for (const bar of coreSidebar) {
         i.link = '/en/core/' + i.link
     }
 }
+
+const files = readdirSync(join(__dirname, './changelogs')).filter(f => f.endsWith('.md') && !f.startsWith('index')).map(f => f.slice(0, -3))
 
 const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     label: 'English',
@@ -42,10 +46,12 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
             { text: 'Guide', link: '/en/' },
             { text: 'Core API Document', link: '/en/core/' },
             { text: 'Blogs', link: '/en/blog/' },
+            { text: 'Changelogs', link: '/en/changelogs/' },
         ],
         sidebar: {
             '/en/core/': coreSidebar,
             '/en/blog/': [],
+            '/en/changelogs/': [],
             '/en/': [
                 {
                     text: 'Guide',
@@ -66,6 +72,10 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
                         { text: 'Global Setting Schema', link: '/en/protocol/setting' },
                         { text: 'User Data Schema', link: '/en/protocol/user' },
                     ]
+                },
+                {
+                    text: 'Changelogs',
+                    items: files.map(f => ({ text: f, link: `/en/changelogs/${f}` }))
                 }
             ]
         },

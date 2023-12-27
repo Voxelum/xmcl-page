@@ -1,5 +1,9 @@
 import { DefaultTheme, LocaleConfig } from 'vitepress'
 import svg from '../../public/globe.txt'
+import { readdirSync } from 'fs';
+import { join } from 'path';
+
+const files = readdirSync(join(__dirname, './changelogs')).filter(f => f.endsWith('.md') && !f.startsWith('index')).map(f => f.slice(0, -3)).reverse()
 
 const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     label: '简体中文',
@@ -48,6 +52,7 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
         nav: [
             { text: '指南', link: '/zh/' },
             { text: '核心 API 文档 (英文)', link: '/en/core/' },
+            { text: '更新日志', link: '/zh/changelogs/' },
         ],
         sidebar: [
             {
@@ -69,6 +74,10 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
                     { text: '全局设置数据格式', link: '/zh/protocol/setting' },
                     { text: '用户数据格式', link: '/zh/protocol/user' },
                 ]
+            },
+            {
+                text: '更新日志',
+                items: files.map(f => ({ text: f, link: `/zh/changelogs/${f}` }))
             }
         ],
         outline: {

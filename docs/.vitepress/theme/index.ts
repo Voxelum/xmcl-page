@@ -18,5 +18,6 @@ export default {
     app.component('PostIcon', PostIcon)
     app.component('PostAuthor', PostAuthor)
     app.component('AuthorDetail', AuthorDetail)
+    app.component('changelog', app.component('doc')!)
   },
 }
