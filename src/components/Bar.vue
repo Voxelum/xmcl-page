@@ -18,10 +18,10 @@
           <i class="book icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">{{ t("docs") }}</p>
         </a>
-        <router-link :to="`/${locale}/changelogs`" class="item">
+        <a :href="changelogUrl" class="item">
           <i class="history icon m-0 sm:mr-2"></i>
           <p class="sm:block hidden">{{ t('fullChangelog') }}</p>
-        </router-link>
+        </a>
 
         <!-- <div class="right menu">
           <div class="item"></div>
@@ -124,6 +124,10 @@ const mapping = reactive({
 
 // const docUrl = computed(() => ((import.meta.env.PROD || import.meta.env.SSR) ? 'https://docs.xmcl.app/' : 'http://localhost:9000/') + locale.value + '/')
 const docUrl = 'https://docs.xmcl.app/'
+const changelogUrl = computed(() => {
+  const l = locale.value.startsWith('zh') ? 'zh' : 'en'
+  return `https://docs.xmcl.app/${l}/changelogs`
+})
 
 
 </script>

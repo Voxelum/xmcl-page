@@ -1,4 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
+// @ts-expect-error
+import Doc from 'vitepress/dist/client/theme-default/components/VPDoc.vue'
 import 'uno.css'
 import './common.css'
 import type { App } from 'vue'
@@ -18,6 +20,6 @@ export default {
     app.component('PostIcon', PostIcon)
     app.component('PostAuthor', PostAuthor)
     app.component('AuthorDetail', AuthorDetail)
-    app.component('changelog', app.component('doc')!)
+    app.component('changelog', Doc)
   },
 }

@@ -11,7 +11,7 @@ for (const bar of coreSidebar) {
     }
 }
 
-const files = readdirSync(join(__dirname, './changelogs')).filter(f => f.endsWith('.md') && !f.startsWith('index')).map(f => f.slice(0, -3))
+const files = readdirSync(join(__dirname, './changelogs')).filter(f => f.endsWith('.md') && !f.startsWith('index')).map(f => f.slice(0, -3)).reverse()
 
 const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     label: 'English',
@@ -43,15 +43,20 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
             level: [2, 3],
         },
         nav: [
-            { text: 'Guide', link: '/en/' },
-            { text: 'Core API Document', link: '/en/core/' },
-            { text: 'Blogs', link: '/en/blog/' },
-            { text: 'Changelogs', link: '/en/changelogs/' },
+            { text: 'Guide', link: '/en/guide/install', activeMatch: '/en/guide/(.+)?' },
+            { text: 'Core API Document', link: '/en/core/', activeMatch: '/en/core/(.+)?' },
+            { text: 'Blogs', link: '/en/blog/', activeMatch: '/en/blog/(.+)?' },
+            { text: 'Changelogs', link: `/en/changelogs/${files[0]}`, activeMatch: '/en/changelogs/(.+)?' },
         ],
         sidebar: {
             '/en/core/': coreSidebar,
             '/en/blog/': [],
-            '/en/changelogs/': [],
+            '/en/changelogs/': [
+                {
+                    text: 'Changelogs',
+                    items: files.map(f => ({ text: f, link: `/en/changelogs/${f}` }))
+                }
+            ],
             '/en/': [
                 {
                     text: 'Guide',
@@ -73,10 +78,6 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
                         { text: 'User Data Schema', link: '/en/protocol/user' },
                     ]
                 },
-                {
-                    text: 'Changelogs',
-                    items: files.map(f => ({ text: f, link: `/en/changelogs/${f}` }))
-                }
             ]
         },
         blog: {

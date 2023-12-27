@@ -50,36 +50,38 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
             { icon: { svg }, link: process.env.NODE_ENV === 'development' ? 'http://localhost:3333' : 'https://xmcl.app' }
         ],
         nav: [
-            { text: '指南', link: '/zh/' },
+            { text: '指南', link: '/zh/guide/install', activeMatch: '/zh/guide/(.+)?' },
             { text: '核心 API 文档 (英文)', link: '/en/core/' },
-            { text: '更新日志', link: '/zh/changelogs/' },
+            { text: '更新日志', link: `/zh/changelogs/${files[0]}`, activeMatch: '/zh/changelogs/(.+)?' },
         ],
-        sidebar: [
-            {
-                text: '指南',
-                items: [
-                    { text: '安装指南', link: '/zh/guide/install' },
-                    { text: '更新指南', link: '/zh/guide/update' },
-                    { text: '数据管理指南', link: '/zh/guide/manage' },
-                    { text: '外观指南', link: '/zh/guide/appearance' },
-                    { text: '联机指南', link: '/zh/guide/p2p' },
-                    { text: '常见问题', link: '/zh/faq/' },
-                ]
-            },
-            {
-                text: '协议',
-                items: [
-                    { text: 'P2P 联机协议', link: '/zh/protocol/p2p' },
-                    { text: '实例数据格式', link: '/zh/protocol/instance' },
-                    { text: '全局设置数据格式', link: '/zh/protocol/setting' },
-                    { text: '用户数据格式', link: '/zh/protocol/user' },
-                ]
-            },
-            {
+        sidebar: {
+            '/zh/changelogs/': [{
                 text: '更新日志',
                 items: files.map(f => ({ text: f, link: `/zh/changelogs/${f}` }))
-            }
-        ],
+            }],
+            '/zh/': [
+                {
+                    text: '指南',
+                    items: [
+                        { text: '安装指南', link: '/zh/guide/install' },
+                        { text: '更新指南', link: '/zh/guide/update' },
+                        { text: '数据管理指南', link: '/zh/guide/manage' },
+                        { text: '外观指南', link: '/zh/guide/appearance' },
+                        { text: '联机指南', link: '/zh/guide/p2p' },
+                        { text: '常见问题', link: '/zh/faq/' },
+                    ]
+                },
+                {
+                    text: '协议',
+                    items: [
+                        { text: 'P2P 联机协议', link: '/zh/protocol/p2p' },
+                        { text: '实例数据格式', link: '/zh/protocol/instance' },
+                        { text: '全局设置数据格式', link: '/zh/protocol/setting' },
+                        { text: '用户数据格式', link: '/zh/protocol/user' },
+                    ]
+                },
+            ],
+        },
         outline: {
             label: '📚 本页包含了',
             level: [2, 3],
