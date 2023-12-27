@@ -103,7 +103,7 @@
 </template>
 
 <script lang=ts setup>
-import { useDownloadStore } from "~/composables";
+import { useDownloadStore, useGithubInfoStore } from "~/composables";
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 
 const download = useDownloadStore()
@@ -114,6 +114,7 @@ const { push } = useRouter()
 function setLocale(newLocale: string) {
   locale.value = newLocale
 }
+const github = useGithubInfoStore()
 
 const mapping = reactive({
   ['auto']: computed(() => t("auto-source")),
@@ -126,7 +127,8 @@ const mapping = reactive({
 const docUrl = 'https://docs.xmcl.app/'
 const changelogUrl = computed(() => {
   const l = locale.value.startsWith('zh') ? 'zh' : 'en'
-  return `https://docs.xmcl.app/${l}/changelogs`
+  const ver = github.latestVersion
+  return `https://docs.xmcl.app/${l}/changelogs/${ver.startsWith('v') ? ver.slice(1) : ver}`
 })
 
 

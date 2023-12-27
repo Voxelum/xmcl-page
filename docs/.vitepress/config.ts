@@ -8,6 +8,16 @@ export default defineConfig({
   title: "X Minecraft Launcher",
   lastUpdated: true,
   cleanUrls: true,
+  description: 'X Minecraft Launcher official document.',
+  head: [
+    [
+      'keywords',
+      {
+        name: 'keywords',
+        content: 'minecraft,launcher,xmcl,docs,document'
+      }
+    ],
+  ],
   vite: {
     publicDir: resolve(__dirname, '../../public'),
     plugins: [
