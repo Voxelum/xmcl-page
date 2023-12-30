@@ -1,6 +1,7 @@
 ---
 date: 2023-12-18
-title: Telemtry exception without sourcemap
+title: "Optimizing X Minecraft Launcher: Using Azure Application Insights and Azure Storage for Secure Sourcemap Management"
+description: Optimize X Minecraft Launcher with Azure Application Insights and Azure Storage. Learn sourcemap best practices, enhance performance monitoring, and secure production artifacts.
 category: Article
 ---
 
