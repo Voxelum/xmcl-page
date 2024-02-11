@@ -5,20 +5,6 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     label: 'Français',
     lang: 'fr-FR',
     head: [
-        [
-            'description',
-            {
-                name: 'description',
-                content: 'Documentation officielle de X Minecraft Launcher'
-            },
-        ],
-        [
-            'keywords',
-            {
-                name: 'keywords',
-                content: 'X Minecraft Launcher document,xmcl,docs'
-            }
-        ]
     ],
     themeConfig: {
         search: {

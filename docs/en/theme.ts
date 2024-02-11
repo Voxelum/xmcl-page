@@ -17,20 +17,6 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
     label: 'English',
     lang: 'en-US',
     head: [
-        [
-            'description',
-            {
-                name: 'description',
-                content: 'X Minecraft Launcher official document.'
-            },
-        ],
-        [
-            'keywords',
-            {
-                name: 'keywords',
-                content: 'X Minecraft Launcher document,xmcl,docs'
-            }
-        ]
     ],
     themeConfig: {
         socialLinks: [
