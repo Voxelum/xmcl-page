@@ -57,7 +57,7 @@
     "vite-plugin-windicss": "^1.9.3",
     "vite-ssg": "^0.23.5",
     "vite-ssg-sitemap": "^0.6.1",
-    "vitepress": "1.0.0-rc.32",
+    "vitepress": "1.0.0-rc.42",
     "windicss": "^3.5.6"
   }
 }

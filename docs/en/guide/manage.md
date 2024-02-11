@@ -16,8 +16,9 @@ The cache related to XMCL itself is stored in the system appdata path, which is 
 %AppData%\xmcl
 ```
 ```cmd [Windows (APPX/appinstaller)]
+# Version < 0.34
 %LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
-# Version >= 0.34
+# Version >= 0.34 and < 0.40
 %LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
 ```sh [macOS]
@@ -46,10 +47,16 @@ Here you will find some `json` files used to store various configurations, and t
 I believe you are very familiar with the directory structure of Minecraft data.
 The data directory of XMCL is slightly different from that of Minecraft:
 
-<script setup>
-import CentraProjectTree from '../../../src/components/CentraProjectTree.vue'
-</script>
-
-<CentraProjectTree />
+```sh
+"Public Data folder"
+└─ 📂mods # Shared mods folder for all instances
+  └─ modA.jar # A specific mod file, instance might link mods from it.
+├─ 📂resourcepacks # Shared resourcepacks folder for all instances
+├─ 📂shaderpacks # Shared shaderpacks folder for all instances
+├─ 📂versions # Shared versions folder for all instances
+├─ 📂assets # Shared assets folder for all instances
+├─ 📂libraries # Shared libraries folder for all instances
+└─ 📂instances # Contains the instances created by XMCL
+```
 
 Most of the content is actually the same as Minecraft, among which the `instances` folder contains all instance files.

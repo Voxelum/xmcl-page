@@ -16,7 +16,7 @@ XMCL 的数据分为2个部分
 ```cmd [Windows (APPX/appinstaller)]
 # 版本 < 0.34
 %LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
-# 版本 >= 0.34
+# 版本 >= 0.34 并且 < 0.40
 %LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
 ```sh [macOS]
