@@ -68,6 +68,7 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
                         { text: '数据管理指南', link: '/zh/guide/manage' },
                         { text: '外观指南', link: '/zh/guide/appearance' },
                         { text: '联机指南', link: '/zh/guide/p2p' },
+                        { text: 'AppX 迁移指南', link: '/zh/guide/appx-migrate' },
                         { text: '常见问题', link: '/zh/faq/' },
                     ]
                 },

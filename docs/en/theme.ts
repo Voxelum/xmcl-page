@@ -66,6 +66,7 @@ const theme: LocaleConfig<DefaultTheme.Config>[string] = {
                         { text: 'Data Managment', link: '/en/guide/manage' },
                         { text: 'Appearance Guide', link: '/en/guide/appearance' },
                         { text: 'Multiplayer Guide', link: '/en/guide/p2p' },
+                        { text: 'AppX Migration Guide', link: '/en/guide/appx-migrate' },
                         { text: 'I18n Guide', link: '/en/guide/i18n' },
                     ]
                 },
