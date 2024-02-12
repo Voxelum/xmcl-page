@@ -37,9 +37,11 @@ export const useArtifactsStore = defineStore('artifacts', () => {
 
 
   const winZip32 = computed(() => getUrl(a => a.name.endsWith('win32-ia32.zip')))
-  const winWeb = computed(() => getUrl(a => a.name.endsWith('.appinstaller')))
+  const winWeb = computed(() => '')
+  // const winWeb = computed(() => getUrl(a => a.name.endsWith('.appinstaller')))
   const winZip = computed(() => getUrl(a => a.name.endsWith('win32-x64.zip')))
-  const winAppx = computed(() => getUrl(a => a.name.endsWith('.appx') && a.name.indexOf('unsigned') === -1))
+  // const winAppx = computed(() => getUrl(a => a.name.endsWith('.appx') && a.name.indexOf('unsigned') === -1))
+  const winAppx = computed(() => '')
   const macZip = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1))
   const macDmg = computed(() => getUrl(a => a.name.endsWith('.dmg')))
   const macZipArm64 = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1 && a.name.indexOf('arm64') !== -1))
