@@ -2,15 +2,16 @@ name: "Deploy"
 on:
   push:
     branches:
-      - "*"
+      - "docs-reload"
+      - "master"
     paths:
       - .github/workflows/deploy.yaml
       - src/**
+      - .vitepress/**
       - locales/**
       - public/**
       - vite.config.ts
       - vercel.json
-      - windi.config.ts
       - package.json
   workflow_dispatch:
 
@@ -18,7 +19,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          repository: voxelum/minecraft-launcher-core-node
+          path: src/en/core
+          ref: 'gh-pages'
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 8.2.0
@@ -34,13 +40,7 @@ jobs:
           DEV: false
           PROD: true
           VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
-      - uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod ./dist'
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
-      - name: Build And Deploy
+      - name: Deploy Azure
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -49,8 +49,15 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/dist" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "" # Built app content directory - optional
+          app_location: ".vitepress/dist" # App source code path
+          api_location: "api" # Api source code path - optional
+          config_file_location: "."
+          skip_app_build: true
+          skip_api_build: true
           ###### End of Repository/Build Configurations ######
-  
+      - uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-args: '--prod ./.vitepress/dist'
+          vercel-org-id: ${{ secrets.ORG_ID }}
+          vercel-project-id: ${{ secrets.PROJECT_ID }}

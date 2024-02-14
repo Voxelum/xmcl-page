@@ -1,33 +1,57 @@
-lang: Français
-title:
-  index: X Minecraft Launcher - Un launcher Minecraft complet
-  auth: X Minecraft Launcher - Authentifiez votre compte
-  privacy: X Minecraft Launcher - Un launcher Minecraft complet
-  changelog: Additions
-description: Un launcher moderne pour améliorer votre expérience Minecraft
-keywords: >-
-  minecraft launcher,curseforge launcher,twitch
-  launcher,tlauncher,multimc,curseforge,modrinth,minecraftforge,fabricmc,
-  launcher gratuit,az launcher,launcher gratuit minecraft
 repository: Code Source
+label: Français
 intro:
-  first: >-
-    <p class="leading-title"> Launcher Minecraft <span
-    class="text-[rgb(61,239,233)]">Open Source</span> avec interface <span
-    class="text-[rgb(107,217,104)]">Moderne</span>.</p>
-  second: >-
-    Gérez tous vos <span class="text-amber-600">Mods</span> en économisant
-    l'<span class="text-yellow-300">Espace Disque</span>
+  first:
+    body: Launcher Minecraft {openSource} avec interface {modernUx}.
+    openSource: Open Source
+    modernUx: Modern UX
+  second:
+    body: Gérez tous vos {mods} en économisant l'{diskEfficient}
+    diskEfficient: Disk Efficient
+    mods: Mods
   description: >-
     X Minecraft Launcher (XMCL) est un lanceur Minecraft moderne qui vous permet
     de gérer vos ressources massives comme les modpacks, les packs de
     ressources, les mods, les shader packs... Il a également une intégration
     avec Forge, Fabric, Quilt, CurseForge et Modrinth.
+search: 
+  button:
+    buttonText: rechercher qqch
+    buttonAriaLabel: rechercher qqch
+  modal:
+    noResultsText: Aucun résultat n'a pu être trouvé
+    resetButtonTitle: Effacer les critères de recherche
+    displayDetails: Afficher les détails
+    footer:
+      selectText: Sélectionner
+      navigateText: Naviguer
+      closeText: Fermer
+guide: Guide
+protocol: Protocole
+docFooter:
+  prev: Précédent
+  next: Suivant
+lastUpdatedText: Dernière mise à jour
+editLink: Modifier cette page
+outline: Dans cette page
+darkModeSwitchLabel: Thème
+darkModeSwitchTitle: Basculer vers le mode sombre
+lightModeSwitchTitle: Basculer vers le mode clair
+sidebarMenuLabel: Menu
+returnToTopLabel: Retour en haut
+langMenuLabel: Langue
+coreDocument: Document API de base (Anglais)
+changelogs: Journal des modifications
+notFound:
+  title: Page non trouvée
+  quote: "Il n'y a rien ici"
+  linkLabel: Retour à l'accueil
+  linkText: Retour à l'accueil
+  code: 404
 launcher:
   manage:
     intro: Gérez Minecraft efficacement.
   description: Un Launcher Minecraft Simple, Open Source et Plein de Fonctionnalités
-download: Installeur
 downloadFor:
   windows: 'Télécharger pour Windows :'
   mac: 'Télécharger pour Mac:'
@@ -45,10 +69,8 @@ download-deb: Deb
 download-rpm: RPM
 azure-source: Télécharger d'Azure
 azure-ms-source: Télécharger du Azure Microsoft CDN
-baidu-source: Télécharger de Baidu CDN
 github-source: Télécharger de Github
 auto-source: Auto-Détecter La Source de Téléchargement
-prerelease: Pré-version
 authSuccess: Succès !
 authSuccessTitle: L'autorisation a réussi. Vous serez redirigé vers le Launcher Minecraft !
 redirectHelperTitle: >-
@@ -64,9 +86,9 @@ nothingWork: >-
   Si rien ne fonctionne, essayez peut-être de télécharger à nouveau la dernière
   version du launcher
 gameInstall:
-  title: >-
-    Aucune inquiétude pour l'<span class="text-green-400">Installation du
-    Jeu</span>
+  title: 
+    body: Aucune inquiétude pour l'{gameInstall}
+    gameInstall: Installation duJeu
   description: >-
     XMCL prend en charge l'installation de Minecraft vanilla, Forge, Fabric et
     même Optifine tout en un ! Vous pouvez les installer à un seul endroit dans
@@ -74,8 +96,9 @@ gameInstall:
     Vous pouvez même personnaliser votre propre mirror dans le launcher.
 optimalDisk:
   title: >-
-    Espace disque <span class="text-yellow-300">Optimal</span> même avec des
-    <span class="text-red-700">Resources Massives</span>
+    body: Espace disque {optimal} même avec des {massiveResources}
+    optimal: Optimal
+    massiveResources: Massive Resources
   description: >-
     XMCL stockera tous les mods, packs de ressources, shader packs et modpacks
     dans un emplacement de stockage unique. Pendant que vous essayez d'utiliser
@@ -83,15 +106,17 @@ optimalDisk:
     sur l'instance sans copier. Ça veut dire vous ne verrez plus jamais de
     copies dupliquées dans le dossier /mods.
 cleanWorkspace:
-  title: >-
-    Gardez votre espace de travail <span class="text-sky-400">propre</span> avec
-    les multi-instances
+  title:
+    body: Gardez votre espace de travail {clean} avec les multi-instances
+    clean: propre
   description: >-
     XMCL a une prise en charge intégrée des multi-instances. Vous pouvez créer
     plusieurs instances facilement. Vous n'avez donc pas à vous soucier de
     paramètres de lancement différents.
 communityIntegration:
-  title: Intégré avec <span class="text-emerald-700">Plusieurs Communautés</span>
+  title:
+    body: Intégré avec {multipleCommunities}
+    multipleCommunities: Plusieurs Communautés
   description: >-
     XMCL offre une prise en charge intégrée avec Curseforge & Modrinth. Il offre
     également la possibilité de prendre en charge des systèmes de comptes
@@ -104,7 +129,6 @@ joinPeerDescription: >-
   Minecraft ! Vous serez redirigé vers le Launcher !
 fullChangelog: Quoi de Nouveau ?
 privacy: Confidentialité du Logiciel
-docs: Documentation
 prebuild:
   history: Construire l'historique
   download: Télécharger les versions préliminaires

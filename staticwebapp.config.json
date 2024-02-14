@@ -1,0 +1,15 @@
+{
+  "navigationFallback": {
+    "rewrite": "/en/"
+  },
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/",
+      "rewrite": "/api/lookup"
+    }
+  ],
+  "platform": {
+    "apiRuntime": "node:16"
+  }
+}
