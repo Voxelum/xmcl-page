@@ -1,29 +1,26 @@
-lang: Русский
 repository: Репозиторий исходного кода
-title:
-  index: X Minecraft Launcher - A fully featured Minecraft launcher
-  auth: X Minecraft Launcher - Authenticate your account
-  privacy: X Minecraft Launcher - A fully featured Minecraft launcher
-description: Empower Your Minecraft Experience with modern launcher
-keywords: >-
-  minecraft launcher,curseforge launcher,twitch
-  launcher,tlauncher,multimc,curseforge,modrinth,minecraftforge,fabricmc
+label: Русский
 launcher:
-  first: >-
-    <p class="leading-title"> An <span class="text-[rgb(61,239,233)]">Open
-    Source</span> Minecraft Launcher with <span
-    class="text-[rgb(107,217,104)]">Modern</span> UX. </p>
-  second: >-
-    Provide a <span class="text-yellow-300">Disk Efficient</span> way to manage
-    all your <span class="text-amber-600">Mods</span>
+  first:
+    body: Minecraft Launcher с {openSource} и {modernUx}.
+    openSource: открытым исходным кодом
+    modernUx: современным UX
+  second:
+    body: Обеспечьте {diskEfficient} способ управления всеми вашими {mods}!
+    diskEfficient: дисковый эффективный
+    mods: Mods
   description: >-
     Простой, с открытым исходным кодом и ориентированный на выполнение функций
     Minecraft Launcher
-download: Монтажник
 downloadFor:
   windows: 'Скачать Для Windows:'
   mac: 'Скачать для Mac:'
   linux: 'Скачать для Linux:'
+guide: Путеводитель
+protocol: Протокол
+changelogs: Changelogs
+outline: На этой странице
+coreDocument: Основной документ
 author: Связаться с автором
 download-zip: Zip (64 bits)
 download-zip-32: Zip (32 bits)
@@ -36,10 +33,8 @@ download-deb: Deb
 download-rpm: RPM
 azure-source: Скачать из Azure
 azure-ms-source: Загрузка из Azure Microsoft CDN
-baidu-source: Download From Baidu CDN
 github-source: Загрузить с Github
 auto-source: Автоматическое определение источника загрузки
-prerelease: Предварительная версия
 authSuccess: Преуспеть!
 authSuccessTitle: >-
   Авторизация прошла успешно. Вы будете перенаправлены обратно в Minecraft
@@ -56,31 +51,36 @@ nothingWork: >-
   Если ничего из вышеперечисленного не работает, возможно, вы захотите повторно
   загрузить последнюю версию Launcher
 gameInstall:
-  title: No worry about the <span class="text-green-400"> Game Install</span>
+  title:
+    body: Больше не нужно беспокоиться о {gameInstall}
+    gameInstall: Установка игры
   description: >-
     XMCL supports to install the vanilla Minecraft, Minecraft Forge, Fabric, and
     even Optifine All in One! You can install them in a single place within the
     Launcher. It also support third party mirror link BMCL API. You can even
     customize your own mirror in launcher.
 optimalDisk:
-  title: >-
-    <span class="text-yellow-300">Optimal</span> disk space with <span
-    class="text-red-700">Massive Resources</span>
+  title:
+    body: "{optimal} дисковое пространство с {massiveResources}"
+    optimal: Оптимальное
+    massiveResources: Массивные ресурсы
   description: >-
     XMCL will store all the mods, resource packs, shader packs, modpacks to a
     single store location. While you try to use any known resource, it will use
     hard link to install the resource to the instance without copying. It means
     you will never see any duplicated copy in /mods folder anymore.
 cleanWorkspace:
-  title: >-
-    Keep your workspace <span class="text-sky-400">Clean</span> with
-    multi-instances
+  title:
+    body: Сохраняйте рабочее пространство {clean} с помощью мультиинстанций
+    clean: чистым
   description: >-
     XMCL has builtin support of multi-instances. You can create multiple
     instances easily. So you don't need to be worried about the mixture of the
     different launch settings.
 communityIntegration:
-  title: Integrated with <span class="text-emerald-700">Multiple Communities</span>
+  title: 
+    body: Интеграция с {multipleCommunities}
+    multipleCommunities: многочисленными сообществами
   description: >-
     XMCL builtin supports with Curseforge, Modrinth. It also provides ability to
     support custom user account/skin system like blessing skin.

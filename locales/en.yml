@@ -1,33 +1,28 @@
-lang: English
-title:
-  index: X Minecraft Launcher - A fully featured Minecraft launcher
-  auth: X Minecraft Launcher - Authenticate your account
-  privacy: X Minecraft Launcher - A fully featured Minecraft launcher
-  changelog: Changelogs
-description: Empower Your Minecraft Experience with modern launcher
-keywords: >-
-  minecraft launcher,curseforge launcher,twitch
-  launcher,tlauncher,multimc,curseforge,modrinth,minecraftforge,fabricmc
 repository: Source Code Repository
-docs: Documentation
 intro:
-  first: >-
-    <p class="leading-title"> An <span class="text-[rgb(61,239,233)]">Open
-    Source</span> Minecraft Launcher with <span
-    class="text-[rgb(107,217,104)]">Modern</span> UX. </p>
-  second: >-
-    Provide a <span class="text-yellow-300">Disk Efficient</span> way to manage
-    all your <span class="text-amber-600">Mods</span>
+  first:
+    body: An {openSource} Minecraft Launcher with {modernUx} UX.
+    openSource: Open Source
+    modernUx: Modern
+  second:
+    body: Provide a {diskEfficient} way to manage all your {mods}!
+    diskEfficient: Disk Efficient
+    mods: Mods
   description: >-
     X Minecraft Launcher (XMCL) is a modern Minecraft launcher that lets you
     manage your massive resources like modpacks, resource packs, mods, shader
     packs... It also has integration with Minecraft Forge, Fabric, Quilt,
     CurseForge and Modrinth.
+label: English
+guide: Guide
+protocol: Protocol
+changelogs: Changelogs
+outline: On this page
+coreDocument: Core Document
 launcher:
   manage:
     intro: Manage your Minecraft effectively.
   description: A Simple, Open Sources, and Function Orientated Minecraft Launcher
-download: Installer
 downloadFor:
   windows: 'Download For Windows:'
   mac: 'Download For Mac:'
@@ -45,10 +40,8 @@ download-deb: Deb
 download-rpm: RPM
 azure-source: Download From Azure
 azure-ms-source: Download From Azure Microsoft CDN
-baidu-source: Download From Baidu CDN
 github-source: Download From Github
 auto-source: Auto Detect The Download Source
-prerelease: Prerelease
 authSuccess: Succeed!
 authSuccessTitle: Authorization was successful. You will be redirected back to the Launcher!
 redirectHelperTitle: >-
@@ -61,31 +54,36 @@ notWork: Doesn't Work?
 openInAppButton: Open In Launcher
 nothingWork: If none of above works, you might want to re-download the latest Launcher
 gameInstall:
-  title: No more worry about the <span class="text-green-400"> Game Install</span>
+  title:
+    body: No more worry about the {gameInstall}
+    gameInstall: Game Install
   description: >-
     XMCL supports installation of vanilla Minecraft, Minecraft Forge, Fabric,
     and even Optifine All in One! You can install them in a single place within
     the Launcher. It also supports the third party mirror link BMCL API. You can
     even customize your own mirror in the launcher.
 optimalDisk:
-  title: >-
-    <span class="text-yellow-300">Optimal</span> disk space with <span
-    class="text-red-700">Massive Resources</span>
+  title:
+    body: "{optimal} disk space with {massiveResources}"
+    optimal: Optimal
+    massiveResources: Massive Resources
   description: >-
     XMCL will store all the mods, resource packs, shader packs and modpacks to a
     single store location. While you try to use any known resource, it will use
     hard link to install the resource to the instance without copying. It means
     you will never see any duplicated copy in /mods folder anymore.
 cleanWorkspace:
-  title: >-
-    Keep your workspace <span class="text-sky-400">Clean</span> with
-    multi-instances
+  title:
+    body: Keep your workspace {clean} with multi-instances
+    clean: Clean
   description: >-
     XMCL has built in support of multi-instances. You can create multiple
     instances easily. So you don't need to be worried about the mixture of the
     different launch settings.
 communityIntegration:
-  title: Integrated with <span class="text-emerald-700">Multiple Communities</span>
+  title: 
+    body: Integrated with {multipleCommunities}
+    multipleCommunities: Multiple Communities
   description: >-
     XMCL built in supports with Curseforge & Modrinth. It also provides the
     ability to support custom user accounts/skin systems like blessing skin.
