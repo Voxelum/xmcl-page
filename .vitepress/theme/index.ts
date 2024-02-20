@@ -1,37 +1,28 @@
-import DefaultTheme from 'vitepress/theme'
+import { SpeedInsights } from "@vercel/speed-insights/vue"
 import 'uno.css'
-import { EnhanceAppContext, useData } from 'vitepress'
+import { EnhanceAppContext, useRouter } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
+import { useData } from 'vitepress'
 // @ts-expect-error
 import Doc from 'vitepress/dist/client/theme-default/components/VPDoc.vue'
-import './styles/index.css'
+import { defineComponent, h, provide, watchEffect } from 'vue'
+import AppAuth from './components/AppAuth.vue'
+import AppPrebuilds from './components/AppPrebuilds.vue'
+import AppWelcome from './components/AppWelcome.vue'
 import AuthorDetail from './components/BlogAuthorDetail.vue'
 import Post from './components/BlogPost.vue'
 import PostAuthor from './components/BlogPostAuthor.vue'
 import PostDetail from './components/BlogPostDetail.vue'
 import PostIcon from './components/BlogPostIcon.vue'
 import Posts from './components/BlogPosts.vue'
-import AppWelcome from './components/AppWelcome.vue'
-import AppPrebuilds from './components/AppPrebuilds.vue'
-import AppAuth from './components/AppAuth.vue'
 import { i18n } from './modules/i18n'
-import { computed, provide, watch } from 'vue'
+import './styles/index.css'
 
 export default {
-  ...DefaultTheme,
-  enhanceApp({ app, router, siteData }: EnhanceAppContext) {
-    app.use(i18n)
-    app.component('Posts', Posts)
-    app.component('Post', Post)
-    app.component('PostDetail', PostDetail)
-    app.component('PostIcon', PostIcon)
-    app.component('PostAuthor', PostAuthor)
-    app.component('AuthorDetail', AuthorDetail)
-    app.component('welcome', AppWelcome)
-    app.component('prebuilds', AppPrebuilds)
-    app.component('changelog', Doc)
-    app.component('auth', AppAuth)
-
+  extends: DefaultTheme,
+  Layout: defineComponent((props, { slots }) => {
     if (!import.meta.env.SSR) {
+      const router = useRouter()
       const promise = import('@microsoft/applicationinsights-web').then(({ ApplicationInsights }) => {
         const appInsights = new ApplicationInsights({
           config: {
@@ -49,8 +40,27 @@ export default {
           app.trackEvent({ name: 'download', properties: { platform, type } })
         })
       }
-
       provide('telemetry', trackDownload)
+
+      const { lang } = useData()
+      watchEffect(() => {
+        document.cookie = `nf_lang=${lang.value}; expires=Mon, 1 Jan 2030 00:00:00 UTC; path=/`
+      })
     }
+
+    return () => [h(DefaultTheme.Layout, props), h(SpeedInsights)]
+  }),
+  enhanceApp({ app }: EnhanceAppContext) {
+    app.use(i18n)
+    app.component('Posts', Posts)
+    app.component('Post', Post)
+    app.component('PostDetail', PostDetail)
+    app.component('PostIcon', PostIcon)
+    app.component('PostAuthor', PostAuthor)
+    app.component('AuthorDetail', AuthorDetail)
+    app.component('welcome', AppWelcome)
+    app.component('prebuilds', AppPrebuilds)
+    app.component('changelog', Doc)
+    app.component('auth', AppAuth)
   },
 }

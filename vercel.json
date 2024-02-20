@@ -28,29 +28,7 @@
         "has": [
           {
             "type": "header",
-            "key": "Accept-Language",
-            "value": ".*zh.*(en)?.*"
-          }
-        ],
-        "destination": "/zh/"
-      },
-      {
-        "source": "/",
-        "has": [
-          {
-            "type": "header",
             "key": "accept-language",
-            "value": ".*en.*(zh)?.*"
-          }
-        ],
-        "destination": "/en/"
-      },
-      {
-        "source": "/",
-        "has": [
-          {
-            "type": "header",
-            "key": "Accept-Language",
             "value": ".*en.*(zh)?.*"
           }
         ],
@@ -62,11 +40,6 @@
           {
             "type": "header",
             "key": "accept-language",
-            "value": ".*(zh)|(en).*"
-          },
-          {
-            "type": "header",
-            "key": "Accept-Language",
             "value": ".*(zh)|(en).*"
           }
         ],
@@ -78,13 +51,54 @@
           {
             "type": "header",
             "key": "accept-language"
-          },
-          {
-            "type": "header",
-            "key": "Accept-Language"
           }
         ],
         "destination": "/en/"
+      },
+      
+
+      {
+        "source": "/auth",
+        "has": [
+          {
+            "type": "header",
+            "key": "accept-language",
+            "value": ".*zh.*(en)?.*"
+          }
+        ],
+        "destination": "/zh/auth"
+      },
+      {
+        "source": "/auth",
+        "has": [
+          {
+            "type": "header",
+            "key": "accept-language",
+            "value": ".*en.*(zh)?.*"
+          }
+        ],
+        "destination": "/en/auth"
+      },
+      {
+        "source": "/auth",
+        "missing": [
+          {
+            "type": "header",
+            "key": "accept-language",
+            "value": ".*(zh)|(en).*"
+          }
+        ],
+        "destination": "/en/auth"
+      },
+      {
+        "source": "/auth",
+        "missing": [
+          {
+            "type": "header",
+            "key": "accept-language"
+          }
+        ],
+        "destination": "/en/auth"
       }
     ]
 }

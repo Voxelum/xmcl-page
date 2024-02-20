@@ -1,6 +1,7 @@
 module.exports = async function (context, req) {
   // select language based on req.headers
   const acceptLang = req.headers['accept-language'];
+  const url = new URL(req.url);
 
   const availableLanguages = ['en', 'fr', 'ru', 'uk', 'zh', 'de'];
   const lang = !acceptLang ? 'en' : acceptLang.split(',').map(lang => {
@@ -14,7 +15,7 @@ module.exports = async function (context, req) {
   context.res = {
     status: 301,
     headers: {
-      "location": `/${lang}` // this would be something like "/fr"
+      "location": `/${lang}${url.pathname}` // this would be something like "/fr"
     }
   };
 };

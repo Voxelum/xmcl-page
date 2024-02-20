@@ -7,6 +7,10 @@
     {
       "route": "/",
       "rewrite": "/api/lookup"
+    },
+    {
+      "route": "/auth",
+      "rewrite": "/api/lookup"
     }
   ],
   "platform": {
