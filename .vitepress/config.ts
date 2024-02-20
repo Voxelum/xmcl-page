@@ -41,6 +41,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     },
   },
   head: [
+    ['link', { rel: 'icon', href: '/favicon.svg' }]
   ],
   // shared properties and other top-level stuff...
   locales: {
