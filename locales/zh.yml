@@ -12,6 +12,7 @@ search:
       selectText: "选择"
       navigateText: "切换"
       closeText: "关闭"
+footer: Minecraft, 启动！
 docFooter:
   prev: "上一篇"
   next: "下一篇"

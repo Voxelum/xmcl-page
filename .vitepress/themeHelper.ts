@@ -1,6 +1,7 @@
-import { readFileSync, readdirSync } from "fs";
+import { existsSync, readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import { DefaultTheme, LocaleConfig } from "vitepress";
+import { parse } from 'yaml';
 
 export function loadSidebarSection(location: string, locale: string, type: string) {
     try {
@@ -22,8 +23,6 @@ export function loadSidebarSection(location: string, locale: string, type: strin
     }
 }
 
-import { parse } from 'yaml';
-
 function getChangelogsFiles(location: string) {
     try {
         return readdirSync(join(location, './changelogs')).filter(f => f.endsWith('.md') && !f.startsWith('index')).map(f => f.slice(0, -3)).reverse()
@@ -32,21 +31,27 @@ function getChangelogsFiles(location: string) {
     }
 }
 
-export function loadTheme(location: string, locale: string, coreSidebar?: DefaultTheme.SidebarItem[]) {
+export function loadTheme(location: string, locale: string) {
     const localeFile = join(__dirname, '..', 'locales', locale + '.yml')
     const localeMessages = parse(readFileSync(localeFile, 'utf-8'))
 
     const sidebar: DefaultTheme.SidebarMulti = {
     }
-    if (coreSidebar) {
-        for (const bar of coreSidebar) {
-            bar.link = '/en/core/' + bar.link
-            for (let i of bar.items!) {
-                i.link = '/en/core/' + i.link
+
+    const coreSidebarPath = join(location, 'core', 'sidebar.json')
+    if (existsSync(coreSidebarPath)) {
+        const coreSidebar = JSON.parse(readFileSync(coreSidebarPath, 'utf-8')) as DefaultTheme.SidebarItem[]
+        if (coreSidebar) {
+            for (const bar of coreSidebar) {
+                bar.link = '/en/core/' + bar.link
+                for (let i of bar.items!) {
+                    i.link = '/en/core/' + i.link
+                }
             }
+            sidebar[`/en/core/`] = coreSidebar
         }
-        sidebar[`/en/core/`] = coreSidebar
     }
+
     const nav: DefaultTheme.NavItem[] = [
         { text: '🧭 ' + localeMessages.guide, link: `/${locale}/guide/install`, activeMatch: `/${locale}/guide/(.+)?` },
         { text: '📖 ' + localeMessages.coreDocument, link: '/en/core/' },
@@ -56,7 +61,7 @@ export function loadTheme(location: string, locale: string, coreSidebar?: Defaul
     const protocolSection = loadSidebarSection(location, locale, 'protocol')
     const changelogFiles = getChangelogsFiles(location)
 
-    const commonSidebar = []
+    const commonSidebar: DefaultTheme.SidebarItem[] = []
     if (guideSection.length > 0) {
         commonSidebar.push({
             text: '🧭 ' + localeMessages.guide,
@@ -120,7 +125,7 @@ export function loadTheme(location: string, locale: string, coreSidebar?: Defaul
             lastUpdatedText: localeMessages.lastUpdatedText,
             footer: {
                 message: localeMessages.footer,
-                copyright: 'Copyright © 2022-present CI010'
+                copyright: `Copyright © 2022-${new Date().getFullYear()} CI010`
             },
             editLink: {
                 text: localeMessages.editLink,

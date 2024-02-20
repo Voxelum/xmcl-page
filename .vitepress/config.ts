@@ -1,14 +1,18 @@
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
-import { resolve } from 'path'
+import { readdirSync } from 'fs'
+import { join, resolve } from 'path'
 import Unocss from 'unocss/vite'
-import { defineConfigWithTheme } from 'vitepress'
+import { LocaleConfig, defineConfigWithTheme } from 'vitepress'
 import { DefaultTheme } from 'vitepress/theme'
-import en from '../src/en/theme'
-import fr from '../src/fr/theme'
-import zh from '../src/zh/theme'
-import de from '../src/de/theme'
-import ru from '../src/ru/theme'
-import uk from '../src/uk/theme'
+import { loadTheme } from './themeHelper'
+
+const src = resolve(__dirname, '../src')
+const files = readdirSync(src)
+const locales = files.filter(f => f !== 'assets' && !f.endsWith('.md'))
+const localeConfig: LocaleConfig<DefaultTheme.Config> = {}
+for (const locale of locales) {
+  localeConfig[locale] = loadTheme(resolve(src, locale), locale)
+}
 
 export default defineConfigWithTheme<DefaultTheme.Config>({
   title: "X Minecraft Launcher",
@@ -44,12 +48,5 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     ['link', { rel: 'icon', href: '/favicon.svg' }]
   ],
   // shared properties and other top-level stuff...
-  locales: {
-    en,
-    zh,
-    fr,
-    de,
-    ru,
-    uk,
-  },
+  locales: localeConfig,
 })
