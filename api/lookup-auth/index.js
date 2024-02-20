@@ -14,7 +14,7 @@ module.exports = async function (context, req) {
   context.res = {
     status: 301,
     headers: {
-      "location": `/${lang}` // this would be something like "/fr"
+      "location": `/${lang}/auth` // this would be something like "/fr"
     }
   };
 };

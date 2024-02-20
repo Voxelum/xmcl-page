@@ -10,7 +10,7 @@
     },
     {
       "route": "/auth",
-      "rewrite": "/api/lookup?to=auth"
+      "rewrite": "/api/lookup-auth"
     }
   ],
   "platform": {
