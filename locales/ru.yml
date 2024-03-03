@@ -1,30 +1,38 @@
-repository: Репозиторий исходного кода
-label: Русский
-launcher:
+repository: Репозиторий с исходным кодом
+intro:
   first:
-    body: Minecraft Launcher с {openSource} и {modernUx}.
-    openSource: открытым исходным кодом
-    modernUx: современным UX
+    body: Лаунчер Minecraft с {openSource} и {modernUx} интерфейсом.
+    openSource: открытым кодом
+    modernUx: современным
   second:
-    body: Обеспечьте {diskEfficient} способ управления всеми вашими {mods}!
-    diskEfficient: дисковый эффективный
-    mods: Mods
+    body: {diskEfficient} при управлении {mods}!
+    diskEfficient: Экономьте место
+    mods: модами
   description: >-
-    Простой, с открытым исходным кодом и ориентированный на выполнение функций
-    Minecraft Launcher
+    X Minecraft Launcher (XMCL) - современный лаунчер Minecraft,
+    который позволяет управлять огромной массой файлов, такой как
+    модпаки, ресурспаки, моды и шейдеры... В нём также есть
+    интеграция с Minecraft Forge, Fabric, Quilt, CurseForge
+    и Modrinth.
+label: Русский
+guide: Гайд
+protocol: Протокол
+changelogs: Список изменений
+outline: На этой странице
+coreDocument: Документация о ядре
+launcher:
+  manage:
+    intro: Эффективно управляй своим Minecraft
+  description: Простой, Открытый Лаунчер, Который Ориентирован на Функциональность
 downloadFor:
   windows: 'Скачать Для Windows:'
-  mac: 'Скачать для Mac:'
+  mac: 'Скачать Для Mac:'
   linux: 'Скачать для Linux:'
-guide: Путеводитель
-protocol: Протокол
-changelogs: Changelogs
-outline: На этой странице
-coreDocument: Основной документ
 author: Связаться с автором
-download-zip: Zip (64 bits)
-download-zip-32: Zip (32 bits)
-download-web: Веб-установщик
+download-zip: Zip (64 бита)
+download-zip-32: Zip (32 бита)
+download-appx: Пакет AppX
+download-appinstaller: App Installer
 download-portable: Портативный
 download-dmg: DMG
 download-snap: Snap
@@ -32,64 +40,67 @@ download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
 azure-source: Скачать из Azure
-azure-ms-source: Загрузка из Azure Microsoft CDN
-github-source: Загрузить с Github
-auto-source: Автоматическое определение источника загрузки
-authSuccess: Преуспеть!
+azure-ms-source: Скачать из Azure Microsoft CDN
+github-source: Скачать с Github
+auto-source: Автоматически определить источник загрузки
+authSuccess: Успешно!
 authSuccessTitle: >-
-  Авторизация прошла успешно. Вы будете перенаправлены обратно в Minecraft
-  Launcher!
+  Авторизация прошла успешно. Вы будете перенаправлены обратно в Лаунчер!
 redirectHelperTitle: >-
-  Если вы не перенаправляетесь, вы можете попробовать нажать кнопку Открыть в
-  приложении, чтобы вручную перенаправить.
+  Если вас не перенаправило, вы можете попробовать нажать кнопку Открыть в
+  приложении, чтобы перейти вручную.
 redirectHelperMessage: >-
-  Появится всплывающее окно с просьбой открыть пусковую установку. Если это не
-  сработает вы можете попробовать перетащить кнопку в окно пусковой установки!
-notWork: Не работает?
-openInAppButton: Открыть в программе Launcher
+  Появится всплывающее окно и спросит открыть ли лаунчер. Если не
+  получится, вы можете попробовать перетащить кнопку в окно лаунчера!
+notWork: Не Работает?
+openInAppButton: Открыть в Лаунчере
 nothingWork: >-
-  Если ничего из вышеперечисленного не работает, возможно, вы захотите повторно
-  загрузить последнюю версию Launcher
+  Если ничего из вышеперечисленного не помогло, возможно,
+  вам стоит заново загрузить последнюю версию лаунчера
 gameInstall:
   title:
     body: Больше не нужно беспокоиться о {gameInstall}
-    gameInstall: Установка игры
+    gameInstall: Установке Игры
   description: >-
-    XMCL supports to install the vanilla Minecraft, Minecraft Forge, Fabric, and
-    even Optifine All in One! You can install them in a single place within the
-    Launcher. It also support third party mirror link BMCL API. You can even
-    customize your own mirror in launcher.
+    XMCL поддерживает установку ванильного Minecraft, Minecraft Forge, Fabric, и
+    даже Optifine в одном! Вы можете установить их в одном месте в лаунчере.
+    Он также поддерживает сторонке зеркало BMCL API. Вы даже можете поставить
+    своё собственное зеркало в лаунчере.
 optimalDisk:
   title:
-    body: "{optimal} дисковое пространство с {massiveResources}"
-    optimal: Оптимальное
-    massiveResources: Массивные ресурсы
+    body: "{optimal} затраты места при {massiveResources}"
+    optimal: Минимальные
+    massiveResources: Большом Количестве Файлов
   description: >-
-    XMCL will store all the mods, resource packs, shader packs, modpacks to a
-    single store location. While you try to use any known resource, it will use
-    hard link to install the resource to the instance without copying. It means
-    you will never see any duplicated copy in /mods folder anymore.
+    XMCL будет хранить все моды, ресурспаки, шейдеры, модпаки в одном
+    хранилище. Когда вы будете использовать любой уже доступный файл, он будет использовать
+    hard link, чтобы установить без копирования. Это значит
+    вы никогда не увидите дубликаты в /mods.
 cleanWorkspace:
   title:
-    body: Сохраняйте рабочее пространство {clean} с помощью мультиинстанций
+    body: Сохраняйте пространство {clean} с помощью нескольких инстанций
     clean: чистым
   description: >-
-    XMCL has builtin support of multi-instances. You can create multiple
-    instances easily. So you don't need to be worried about the mixture of the
-    different launch settings.
+    У XMCL есть встроенная поддержка нескольких инстанций. Вы можете создать их
+    легко. Поэтому вам не нужно беспокоиться о смешивании различных настроек
+    для запуска.
 communityIntegration:
   title: 
     body: Интеграция с {multipleCommunities}
     multipleCommunities: многочисленными сообществами
   description: >-
-    XMCL builtin supports with Curseforge, Modrinth. It also provides ability to
-    support custom user account/skin system like blessing skin.
-privacy: Software Privacy
+    XMCL из коробки поддерживает Curseforge, Modrinth. Он также поддерживает
+    пользовательские системы аккаунтов/скинов таких как blessing skin.
+joinPeer: Присоединитесь к Тусовке {inviter}
+joinPeerDescription: >-
+  {inviter} пригласил вас присоединиться к его группе {group}, чтобы вместе
+  поиграть в Minecraft! Вас перенаправит обратно в Лаунчер!
+fullChangelog: Что нового?
+privacy: Приватность
 prebuild:
-  history: История сборки
-  download: Загрузить предварительные сборки
+  history: История сборок
+  download: Скачать готовые сборки
   downloadDescription: |-
-    Prebuild — это артефакты, созданные в процессе разработки. 
-    Это может быть нестабильно. 
+    Готовая сборка — это артефакт, созданный в процессе разработки. Он может быть нестабильным. 
     Используйте его на свой страх и риск!
-  entryHint: Предварительно построенные артефакты?
+  entryHint: Готовые сборки?
