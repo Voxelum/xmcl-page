@@ -5,6 +5,7 @@ import Unocss from 'unocss/vite'
 import { LocaleConfig, defineConfigWithTheme } from 'vitepress'
 import { DefaultTheme } from 'vitepress/theme'
 import { loadTheme } from './themeHelper'
+import { imagetools } from 'vite-imagetools'
 
 const src = resolve(__dirname, '../src')
 const files = readdirSync(src)
@@ -26,6 +27,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
   vite: {
     publicDir: resolve(__dirname, '../public'),
     plugins: [
+      imagetools(),
       Unocss({
         configFile: resolve(__dirname, '../unocss.config.ts'),
         safelist: ['text-[rgb(208,208,208)]', 'text-green-400', 'text-yellow-300', 'text-sky-400', 'text-[rgb(61,239,233)]', 'text-[rgb(107,217,104)]', 'text-amber-600', 'text-emerald-700', 'text-red-700'],

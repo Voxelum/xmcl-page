@@ -29,10 +29,11 @@ downloadFor:
   mac: 'Скачать Для Mac:'
   linux: 'Скачать Для Linux:'
 author: Связаться с автором
-download-zip: Zip (64 бита)
+download-zip: Zip
 download-zip-32: Zip (32 бита)
 download-appx: Пакет AppX
 download-appinstaller: App Installer
+download-web: Веб-установщик
 download-portable: Портативный
 download-dmg: DMG
 download-snap: Snap
@@ -85,7 +86,7 @@ cleanWorkspace:
     их. Поэтому тебе не нужно беспокоиться о смешивании различных настроек
     для запуска.
 communityIntegration:
-  title: 
+  title:
     body: Интеграция с {multipleCommunities}
     multipleCommunities: многочисленными сообществами
   description: >-

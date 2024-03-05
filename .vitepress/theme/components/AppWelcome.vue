@@ -7,15 +7,18 @@
                         <template v-slot:openSource>
                             <span class="text-[rgb(61,239,233)]">{{ t('intro.first.openSource') }}</span>
                         </template>
+
                         <template v-slot:modernUx>
                             <span class="text-[rgb(107,217,104)]">{{ t('intro.first.modernUx') }}</span>
                         </template>
                     </i18n-t>
                     <p class="leading-title">
                         <i18n-t keypath="intro.second.body" tag="span">
+
                             <template v-slot:disk-efficient>
                                 <span class="text-yellow-300">{{ t('intro.second.diskEfficient') }}</span>
                             </template>
+
                             <template v-slot:mods>
                                 <span class="text-amber-600">{{ t('intro.second.mods') }}</span>
                             </template>
@@ -24,10 +27,10 @@
                             class="max-h-10  inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2" />! -->
                     </p>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                        t('intro.description')
-                    }}</p>
+                                t('intro.description')
+                            }}</p>
                     <div class="w-full flex justify-center mt-10 gap-2">
-                        <a class="ui version inverted basic label" target="_blank"
+                        <a class="ui version inverted basic label text-sm" target="_blank"
                             href="https://github.com/voxelum/x-minecraft-launcher/releases">
                             <span>{{ data.latestVersion }}</span>
                         </a>
@@ -36,21 +39,21 @@
                     <component :is="platformDownload" class="mt-10 w-full mb-5" :organized="true" />
 
                     <a class="ui link cursor-pointer self-center font-medium italic" :href="prebuildsUrl">{{
-                        t('prebuild.entryHint') }}</a>
+                                t('prebuild.entryHint') }}</a>
 
                     <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
                         <a href="https://fabricmc.net/" target="_blank">
-                            <img src="../assets/fabric.png" class="h-15" />
+                            <AppPicture decoding="async" :value="fabricPicture" class="h-15 w-15" alt="fabric" />
                         </a>
                         <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank"
                             class="relative">
-                            <img src="../assets/forge.png" class="h-15" />
+                            <AppPicture decoding="async" :value="forgePicture" class="h-15 w-15" alt="forge" />
                         </a>
                         <a href="https://neoforged.net/" target="_blank" class="relative">
-                            <img src="../assets/neoforged.png" class="h-15" />
+                            <AppPicture decoding="async" :value="neoforgedPicture" class="h-15 w-15" alt="neoforged" />
                         </a>
                         <a href="http://curseforge.com/minecraft" target="_blank" class="relative rounded">
-                            <curseforge-icon class="h-15 w-15" />
+                            <curseforge-icon class="h-15 w-15" alt="" />
                         </a>
                         <a href="https://modrinth.com/" target="_blank">
                             <modrinth-icon class="h-15 w-15" />
@@ -63,7 +66,7 @@
                 <div class="lg:w-1/2 side-image-container">
                     <div
                         class="bg-yellow-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
-                        <img src="../assets/home.png" class="rounded-xl" />
+                        <AppPicture decoding="async" :value="homePicture" alt="Launcher home page screenshot" />
                     </div>
                 </div>
             </div>
@@ -74,22 +77,25 @@
                 <div class="lg:w-1/2 side-image-container">
                     <div
                         class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
-                        <picture class="rounded-xl relative">
-                            <img src="../assets/install.png" />
-                            <img class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverInstall }" src="../assets/install-2.png" />
-                        </picture>
+                        <div class="rounded-xl relative">
+                            <AppPicture :value="installPicture" loading="lazy" decoding="async"
+                                alt="Install Minecraft process screenshots" />
+                            <AppPicture class="absolute left-0 top-0 transition-all duration-300"
+                                :class="{ 'opacity-0': !hoverInstall }" :value="install2Picture" loading="lazy"
+                                decoding="async" alt="Install Minecraft process screenshots" />
+                        </div>
                     </div>
                 </div>
                 <div class="description-part lg:w-1/2">
-                    <i18n-t class="leading-title" keypath="gameInstall.title.body" tag="p" @mouseenter="hoverInstall = true"
-                        @mouseleave="hoverInstall = false">
+                    <i18n-t class="leading-title" keypath="gameInstall.title.body" tag="p"
+                        @mouseenter="hoverInstall = true" @mouseleave="hoverInstall = false">
+
                         <template v-slot:gameInstall>
                             <span class="text-green-400"> {{ t('gameInstall.title.gameInstall') }}</span>
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                        t('gameInstall.description') }}</p>
+                                t('gameInstall.description') }}</p>
                     <div class="flex flex-col items-start w-full mt-3 text-gray-400">
                         <a href="https://bmclapidoc.bangbang93.com/" class="text-lg" target="_blank">> BMCL API</a>
                     </div>
@@ -102,17 +108,21 @@
                 <div class="description-part lg:w-1/2">
                     <i18n-t tag="p" class="leading-title" keypath="optimalDisk.title.body"
                         @mouseenter="hoverResource = true" @mouseleave="hoverResource = false">
+
                         <template v-slot:optimal>
-                            <span class="dark:text-yellow-300 text-yello-600"> {{ t('optimalDisk.title.optimal') }} </span>
+                            <span class="dark:text-yellow-300 text-yello-600"> {{ t('optimalDisk.title.optimal') }}
+                            </span>
                         </template>
+
                         <template v-slot:massiveResources>
                             <span class="text-red-700">{{ t('optimalDisk.title.massiveResources') }}</span>
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                        t('optimalDisk.description') }}</p>
+                                t('optimalDisk.description') }}</p>
                     <div class="flex flex-col items-start w-full mt-3 text-gray-400">
-                        <a href="https://en.wikipedia.org/wiki/Hard_link" class="text-lg" target="_blank">> Hard link</a>
+                        <a href="https://en.wikipedia.org/wiki/Hard_link" class="text-lg" target="_blank">> Hard
+                            link</a>
                         <a href="https://en.wikipedia.org/wiki/Symbolic_link" class="text-lg" target="_blank">> Symbolic
                             link</a>
                     </div>
@@ -120,11 +130,13 @@
                 <div class="lg:w-1/2 side-image-container">
                     <div
                         class="bg-red-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
-                        <picture class="rounded-xl relative">
-                            <img src="../assets/mods.png" />
-                            <img class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverResource }" src="../assets/resourcePack.png" />
-                        </picture>
+                        <div class="rounded-xl relative">
+                            <AppPicture :value="modsPicture" loading="lazy" decoding="async"
+                                alt="Mods page screenshot" />
+                            <AppPicture class="absolute left-0 top-0 transition-all duration-300"
+                                :class="{ 'opacity-0': !hoverResource }" :value="resourcePackPicture" loading="lazy"
+                                decoding="async" alt="Resource packs page screenshot" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -135,22 +147,25 @@
                 <div class="lg:w-1/2 side-image-container">
                     <div
                         class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
-                        <picture class="rounded-xl relative">
-                            <img src="../assets/instances.png" />
-                            <img class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverInstance }" src="../assets/instances-create.png" />
-                        </picture>
+                        <div class="rounded-xl relative">
+                            <AppPicture :value="instancesPicture" loading="lazy" decoding="async"
+                                alt="Instance manage page screenshot" />
+                            <AppPicture class="absolute left-0 top-0 transition-all duration-300"
+                                :class="{ 'opacity-0': !hoverInstance }" :value="instancesCreatePicture" loading="lazy"
+                                decoding="async" alt="Instance creation dialog screenshot" />
+                        </div>
                     </div>
                 </div>
                 <div class="description-part lg:w-1/2">
                     <i18n-t tag="p" class="leading-title" keypath="cleanWorkspace.title.body"
                         @mouseenter="hoverInstance = true" @mouseleave="hoverInstance = false">
+
                         <template v-slot:clean>
                             <span class="text-[rgb(61,239,233)]">{{ t('cleanWorkspace.title.clean') }}</span>
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                        t('cleanWorkspace.description') }}</p>
+                                t('cleanWorkspace.description') }}</p>
                 </div>
             </div>
         </div>
@@ -160,12 +175,14 @@
                 <div class="description-part lg:w-1/2">
                     <i18n-t class="leading-title" keypath="communityIntegration.title.body" tag="p"
                         @mouseenter="hoverCommunity = true" @mouseleave="hoverCommunity = false">
+
                         <template v-slot:multipleCommunities>
-                            <span class="text-emerald-700">{{ t('communityIntegration.title.multipleCommunities') }}</span>
+                            <span class="text-emerald-700">{{ t('communityIntegration.title.multipleCommunities')
+                                }}</span>
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                        t('communityIntegration.description') }}</p>
+                                t('communityIntegration.description') }}</p>
                     <div class="flex flex-col w-full mt-3 text-gray-400 items-start">
                         <a href="https://curseforge.com/minecraft/" class="text-lg" target="_blank">> Curseforge</a>
                         <a href="https://modrinth.com/" class="text-lg" target="_blank">> Modrinth</a>
@@ -176,18 +193,21 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 side-image-container">
-                    <div class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
-                        <picture class="rounded-xl relative">
-                            <img src="../assets/modrinth.png" />
-                            <img class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverCommunity }" src="../assets/curseforge.png" />
-                        </picture>
+                    <div
+                        class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
+                        <div class="rounded-xl relative">
+                            <AppPicture :value="modrinthPicture" loading="lazy" decoding="async"
+                                alt="Modrinth page screenshot" />
+                            <AppPicture class="absolute left-0 top-0 transition-all duration-300"
+                                :class="{ 'opacity-0': !hoverCommunity }" :value="curseforgePicture" loading="lazy"
+                                decoding="async" alt="Curseforge page screenshot" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section intro min-h-100vh">
+        <div class="section intro min-h-100vh mb-10">
             <div class="flex flex-col justify-center min-h-100vh px-10 sm:px-40">
                 <win32 title />
                 <mac title />
@@ -196,20 +216,16 @@
         </div>
     </div>
 </template>
-  
+
 <script lang=ts setup>
 import 'uno.css'
 import { useData, useRoute } from 'vitepress';
-import { computed, ref, watch } from 'vue';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { data } from '../composables/latest.data';
 import { usePlatform } from '../composables/usePlatform';
 import '../styles/button.min.css';
-import '../styles/container.min.css';
 import '../styles/label.min.css';
-import '../styles/loader.min.css';
-import '../styles/transition.min.css';
-import '../styles/icon.min.css';
 import CurseforgeIcon from './CurseforgeIcon.vue';
 import Linux from './Linux.vue';
 import Mac from './Mac.vue';
@@ -219,6 +235,20 @@ import Win32 from './Win32.vue';
 import { useI18nSync } from '../composables/useI18nSync';
 import { useGFW } from '../composables/useGFW';
 import { onMounted } from 'vue';
+import AppPicture from './AppPicture.vue';
+
+import homePicture from '../assets/home.png?w=200;400;800&format=avif;webp;jpg&as=picture'
+import installPicture from '../assets/install.png?w=200;400;800&format=avif;webp;jpg&as=picture'
+import install2Picture from '../assets/install-2.png?w=200;400;800&format=avif;webp;jpg&as=picture'
+import modsPicture from "../assets/mods.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import resourcePackPicture from "../assets/resourcePack.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import instancesPicture from "../assets/instances.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import instancesCreatePicture from "../assets/instances-create.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import modrinthPicture from "../assets/modrinth.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import curseforgePicture from "../assets/curseforge.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import fabricPicture from "../assets/fabric.png?w=60&format=avif;webp;jpg&as=picture"
+import forgePicture from "../assets/forge.png?w=60&format=avif;webp;jpg&as=picture"
+import neoforgedPicture from "../assets/neoforged.png?w=60&format=avif;webp;jpg&as=picture"
 
 const { t, locale } = useI18n()
 const { site } = useData()
@@ -249,9 +279,10 @@ const platformDownload = computed(() => {
 })
 
 </script>
-  
-  
-  <!-- Add "scoped" attribute to limit CSS to this component only -->
+
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 .top {
     top: 20%;
@@ -316,5 +347,13 @@ const platformDownload = computed(() => {
 .transition-list-leave-to {
     opacity: 0 !important;
     transform: translateY(40px) scale(75%);
+}
+</style>
+
+<style>
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>

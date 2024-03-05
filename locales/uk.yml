@@ -28,7 +28,7 @@ changelogs: журнали змін
 outline: На цій сторінці
 coreDocument: Основний документ
 author: Зв'язатися з автором
-download-zip: Zip (64 bits)
+download-zip: Zip
 download-zip-32: Zip (32 bits)
 download-appx: AppX Пакет
 download-appinstaller: App Інсталятор
@@ -66,7 +66,7 @@ gameInstall:
     Можна навіть налаштувати власне дзеркало в панелі запуску.
 optimalDisk:
   title:
-    body: "{optimal} дисковий простір з {massiveResources}"
+    body: '{optimal} дисковий простір з {massiveResources}'
     optimal: Оптимальний
     massiveResources: Масивними Ресурсами
   description: >-
@@ -84,7 +84,7 @@ cleanWorkspace:
     примірники легко. Тож вам не потрібно турбуватися про суміш різні параметри
     запуску.
 communityIntegration:
-  title: 
+  title:
     body: Об'єднуйтесь з {multipleCommunities}
     multipleCommunities: Багатою Спільнотою
   description: >-

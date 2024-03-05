@@ -14,7 +14,7 @@ intro:
     de gérer vos ressources massives comme les modpacks, les packs de
     ressources, les mods, les shader packs... Il a également une intégration
     avec Forge, Fabric, Quilt, CurseForge et Modrinth.
-search: 
+search:
   button:
     buttonText: rechercher qqch
     buttonAriaLabel: rechercher qqch
@@ -44,7 +44,7 @@ coreDocument: Document API de base (Anglais)
 changelogs: Journal des modifications
 notFound:
   title: Page non trouvée
-  quote: "Il n'y a rien ici"
+  quote: Il n'y a rien ici
   linkLabel: Retour à l'accueil
   linkText: Retour à l'accueil
   code: 404
@@ -57,7 +57,7 @@ downloadFor:
   mac: 'Télécharger pour Mac:'
   linux: 'Télécharger pour Linux:'
 author: Contacter l'Auteur
-download-zip: Zip (64 bits)
+download-zip: Zip
 download-zip-32: Zip (32 bits)
 download-appx: Package AppX
 download-appinstaller: App Installer
@@ -86,7 +86,7 @@ nothingWork: >-
   Si rien ne fonctionne, essayez peut-être de télécharger à nouveau la dernière
   version du launcher
 gameInstall:
-  title: 
+  title:
     body: Aucune inquiétude pour l'{gameInstall}
     gameInstall: Installation duJeu
   description: >-
@@ -96,9 +96,8 @@ gameInstall:
     Vous pouvez même personnaliser votre propre mirror dans le launcher.
 optimalDisk:
   title: >-
-    body: Espace disque {optimal} même avec des {massiveResources}
-    optimal: Optimal
-    massiveResources: Massive Resources
+    body: Espace disque {optimal} même avec des {massiveResources} optimal:
+    Optimal massiveResources: Massive Resources
   description: >-
     XMCL stockera tous les mods, packs de ressources, shader packs et modpacks
     dans un emplacement de stockage unique. Pendant que vous essayez d'utiliser
