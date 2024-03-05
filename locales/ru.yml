@@ -5,7 +5,7 @@ intro:
     openSource: открытым кодом
     modernUx: современным
   second:
-    body: {diskEfficient} при управлении {mods}!
+    body: "{diskEfficient} при управлении {mods}!"
     diskEfficient: Экономьте место
     mods: модами
   description: >-
