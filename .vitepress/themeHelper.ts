@@ -95,6 +95,11 @@ export function loadTheme(location: string, locale: string) {
         label: localeMessages.label,
         lang: locale,
         head: [
+            ['meta', { property: 'og:type', content: 'website' }],
+            ['meta', { property: 'og:site_name', content: 'X Minecraft Launcher' }],
+            ['meta', { property: 'og:locale', content: locale }],
+            ['meta', { property: 'og:image', content: 'https://xmcl.app/favicon.svg' }],
+            ['meta', { property: 'og:url', content: 'https://xmcl.app/' + locale + '/' }],
         ],
         themeConfig: {
             logo: '/logo.svg',

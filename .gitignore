@@ -27,3 +27,4 @@ yarn-error.log*
 .vercel
 **/.vitepress/cache/**
 **/.vitepress/dist/**
+**/.vitepress/.temp/**
