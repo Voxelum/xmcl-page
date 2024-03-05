@@ -10,6 +10,7 @@
     style="enable-background:new -2017 853 43 23; max-height: 60px;"
     xml:space="preserve"
   >
+    <title>curseforge</title>
     <circle fill="rgb(236, 111, 33)" cx="-1993" cy="860" r="5"/> 
     <circle fill="rgb(236, 111, 33)" cx="-1993" cy="863" r="7"/> 
     <path

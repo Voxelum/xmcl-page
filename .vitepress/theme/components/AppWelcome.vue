@@ -43,17 +43,17 @@
 
                     <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
                         <a href="https://fabricmc.net/" target="_blank">
-                            <img src="../assets/fabric.png" class="h-15" />
+                            <AppPicture :value="fabricPicture" class="h-15 w-15" alt="fabric" />
                         </a>
                         <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank"
                             class="relative">
-                            <img src="../assets/forge.png" class="h-15" />
+                            <AppPicture :value="forgePicture" class="h-15 w-15" alt="forge" />
                         </a>
                         <a href="https://neoforged.net/" target="_blank" class="relative">
-                            <img src="../assets/neoforged.png" class="h-15" />
+                            <AppPicture :value="neoforgedPicture" class="h-15 w-15" alt="neoforged" />
                         </a>
                         <a href="http://curseforge.com/minecraft" target="_blank" class="relative rounded">
-                            <curseforge-icon class="h-15 w-15" />
+                            <curseforge-icon class="h-15 w-15" alt="" />
                         </a>
                         <a href="https://modrinth.com/" target="_blank">
                             <modrinth-icon class="h-15 w-15" />
@@ -66,7 +66,7 @@
                 <div class="lg:w-1/2 side-image-container">
                     <div
                         class="bg-yellow-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
-                        <AppPicture :value="homePicture" />
+                        <AppPicture :value="homePicture" alt="Launcher home page screenshot" />
                     </div>
                 </div>
             </div>
@@ -78,9 +78,10 @@
                     <div
                         class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="installPicture" />
+                            <AppPicture :value="installPicture" alt="Install Minecraft process screenshots" />
                             <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverInstall }" :value="install2Picture" />
+                                :class="{ 'opacity-0': !hoverInstall }" :value="install2Picture"
+                                alt="Install Minecraft process screenshots" />
                         </div>
                     </div>
                 </div>
@@ -129,9 +130,10 @@
                     <div
                         class="bg-red-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="modsPicture" />
+                            <AppPicture :value="modsPicture" alt="Mods page screenshot" />
                             <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverResource }" :value="resourcePackPicture" />
+                                :class="{ 'opacity-0': !hoverResource }" :value="resourcePackPicture"
+                                alt="Resource packs page screenshot" />
                         </div>
                     </div>
                 </div>
@@ -144,9 +146,10 @@
                     <div
                         class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="instancesPicture" />
+                            <AppPicture :value="instancesPicture" alt="Instance manage page screenshot" />
                             <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverInstance }" :value="instancesCreatePicture" />
+                                :class="{ 'opacity-0': !hoverInstance }" :value="instancesCreatePicture"
+                                alt="Instance creation dialog screenshot" />
                         </div>
                     </div>
                 </div>
@@ -190,9 +193,10 @@
                     <div
                         class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="modrinthPicture" />
+                            <AppPicture :value="modrinthPicture" alt="Modrinth page screenshot" />
                             <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverCommunity }" :value="curseforgePicture" />
+                                :class="{ 'opacity-0': !hoverCommunity }" :value="curseforgePicture"
+                                alt="Curseforge page screenshot" />
                         </div>
                     </div>
                 </div>
@@ -242,6 +246,9 @@ import instancesPicture from "../assets/instances.png?w=800&format=avif;webp;jpg
 import instancesCreatePicture from "../assets/instances-create.png?w=800&format=avif;webp;jpg&as=picture"
 import modrinthPicture from "../assets/modrinth.png?w=800&format=avif;webp;jpg&as=picture"
 import curseforgePicture from "../assets/curseforge.png?w=800&format=avif;webp;jpg&as=picture"
+import fabricPicture from "../assets/fabric.png?w=60&format=avif;webp;jpg&as=picture"
+import forgePicture from "../assets/forge.png?w=60&format=avif;webp;jpg&as=picture"
+import neoforgedPicture from "../assets/neoforged.png?w=60&format=avif;webp;jpg&as=picture"
 
 const { t, locale } = useI18n()
 const { site } = useData()
