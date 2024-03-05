@@ -30,7 +30,7 @@
                                 t('intro.description')
                             }}</p>
                     <div class="w-full flex justify-center mt-10 gap-2">
-                        <a class="ui version inverted basic label" target="_blank"
+                        <a class="ui version inverted basic label text-sm" target="_blank"
                             href="https://github.com/voxelum/x-minecraft-launcher/releases">
                             <span>{{ data.latestVersion }}</span>
                         </a>
@@ -43,14 +43,14 @@
 
                     <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
                         <a href="https://fabricmc.net/" target="_blank">
-                            <AppPicture :value="fabricPicture" class="h-15 w-15" alt="fabric" />
+                            <AppPicture decoding="async" :value="fabricPicture" class="h-15 w-15" alt="fabric" />
                         </a>
                         <a href="https://files.minecraftforge.net/net/minecraftforge/forge/" target="_blank"
                             class="relative">
-                            <AppPicture :value="forgePicture" class="h-15 w-15" alt="forge" />
+                            <AppPicture decoding="async" :value="forgePicture" class="h-15 w-15" alt="forge" />
                         </a>
                         <a href="https://neoforged.net/" target="_blank" class="relative">
-                            <AppPicture :value="neoforgedPicture" class="h-15 w-15" alt="neoforged" />
+                            <AppPicture decoding="async" :value="neoforgedPicture" class="h-15 w-15" alt="neoforged" />
                         </a>
                         <a href="http://curseforge.com/minecraft" target="_blank" class="relative rounded">
                             <curseforge-icon class="h-15 w-15" alt="" />
@@ -66,7 +66,7 @@
                 <div class="lg:w-1/2 side-image-container">
                     <div
                         class="bg-yellow-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
-                        <AppPicture :value="homePicture" alt="Launcher home page screenshot" />
+                        <AppPicture decoding="async" :value="homePicture" alt="Launcher home page screenshot" />
                     </div>
                 </div>
             </div>
@@ -78,10 +78,11 @@
                     <div
                         class="bg-orange-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="installPicture" alt="Install Minecraft process screenshots" />
-                            <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverInstall }" :value="install2Picture"
+                            <AppPicture :value="installPicture" loading="lazy" decoding="async"
                                 alt="Install Minecraft process screenshots" />
+                            <AppPicture class="absolute left-0 top-0 transition-all duration-300"
+                                :class="{ 'opacity-0': !hoverInstall }" :value="install2Picture" loading="lazy"
+                                decoding="async" alt="Install Minecraft process screenshots" />
                         </div>
                     </div>
                 </div>
@@ -130,10 +131,11 @@
                     <div
                         class="bg-red-400 lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="modsPicture" alt="Mods page screenshot" />
+                            <AppPicture :value="modsPicture" loading="lazy" decoding="async"
+                                alt="Mods page screenshot" />
                             <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverResource }" :value="resourcePackPicture"
-                                alt="Resource packs page screenshot" />
+                                :class="{ 'opacity-0': !hoverResource }" :value="resourcePackPicture" loading="lazy"
+                                decoding="async" alt="Resource packs page screenshot" />
                         </div>
                     </div>
                 </div>
@@ -146,10 +148,11 @@
                     <div
                         class="bg-pink-300 lg:p-15 sm:p-5 rounded-2xl lg:absolute -left-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="instancesPicture" alt="Instance manage page screenshot" />
+                            <AppPicture :value="instancesPicture" loading="lazy" decoding="async"
+                                alt="Instance manage page screenshot" />
                             <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverInstance }" :value="instancesCreatePicture"
-                                alt="Instance creation dialog screenshot" />
+                                :class="{ 'opacity-0': !hoverInstance }" :value="instancesCreatePicture" loading="lazy"
+                                decoding="async" alt="Instance creation dialog screenshot" />
                         </div>
                     </div>
                 </div>
@@ -193,17 +196,18 @@
                     <div
                         class="bg-white lg:p-15 sm:p-5 rounded-2xl lg:absolute -right-10 lg:min-h-70vh flex items-center">
                         <div class="rounded-xl relative">
-                            <AppPicture :value="modrinthPicture" alt="Modrinth page screenshot" />
+                            <AppPicture :value="modrinthPicture" loading="lazy" decoding="async"
+                                alt="Modrinth page screenshot" />
                             <AppPicture class="absolute left-0 top-0 transition-all duration-300"
-                                :class="{ 'opacity-0': !hoverCommunity }" :value="curseforgePicture"
-                                alt="Curseforge page screenshot" />
+                                :class="{ 'opacity-0': !hoverCommunity }" :value="curseforgePicture" loading="lazy"
+                                decoding="async" alt="Curseforge page screenshot" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="section intro min-h-100vh">
+        <div class="section intro min-h-100vh mb-10">
             <div class="flex flex-col justify-center min-h-100vh px-10 sm:px-40">
                 <win32 title />
                 <mac title />
@@ -216,12 +220,11 @@
 <script lang=ts setup>
 import 'uno.css'
 import { useData, useRoute } from 'vitepress';
-import { computed, ref, watch } from 'vue';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { data } from '../composables/latest.data';
 import { usePlatform } from '../composables/usePlatform';
 import '../styles/button.min.css';
-import '../styles/container.min.css';
 import '../styles/label.min.css';
 import CurseforgeIcon from './CurseforgeIcon.vue';
 import Linux from './Linux.vue';
@@ -345,14 +348,12 @@ const platformDownload = computed(() => {
     opacity: 0 !important;
     transform: translateY(40px) scale(75%);
 }
-
 </style>
-<style>
 
+<style>
 .icon {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 </style>
