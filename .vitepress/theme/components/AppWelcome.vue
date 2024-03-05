@@ -223,9 +223,6 @@ import { usePlatform } from '../composables/usePlatform';
 import '../styles/button.min.css';
 import '../styles/container.min.css';
 import '../styles/label.min.css';
-import '../styles/loader.min.css';
-import '../styles/transition.min.css';
-import '../styles/icon.min.css';
 import CurseforgeIcon from './CurseforgeIcon.vue';
 import Linux from './Linux.vue';
 import Mac from './Mac.vue';
@@ -237,15 +234,15 @@ import { useGFW } from '../composables/useGFW';
 import { onMounted } from 'vue';
 import AppPicture from './AppPicture.vue';
 
-import homePicture from '../assets/home.png?w=800&format=avif;webp;jpg&as=picture'
-import installPicture from '../assets/install.png?w=800&format=avif;webp;jpg&as=picture'
-import install2Picture from '../assets/install-2.png?w=800&format=avif;webp;jpg&as=picture'
-import modsPicture from "../assets/mods.png?w=800&format=avif;webp;jpg&as=picture"
-import resourcePackPicture from "../assets/resourcePack.png?w=800&format=avif;webp;jpg&as=picture"
-import instancesPicture from "../assets/instances.png?w=800&format=avif;webp;jpg&as=picture"
-import instancesCreatePicture from "../assets/instances-create.png?w=800&format=avif;webp;jpg&as=picture"
-import modrinthPicture from "../assets/modrinth.png?w=800&format=avif;webp;jpg&as=picture"
-import curseforgePicture from "../assets/curseforge.png?w=800&format=avif;webp;jpg&as=picture"
+import homePicture from '../assets/home.png?w=200;400;800&format=avif;webp;jpg&as=picture'
+import installPicture from '../assets/install.png?w=200;400;800&format=avif;webp;jpg&as=picture'
+import install2Picture from '../assets/install-2.png?w=200;400;800&format=avif;webp;jpg&as=picture'
+import modsPicture from "../assets/mods.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import resourcePackPicture from "../assets/resourcePack.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import instancesPicture from "../assets/instances.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import instancesCreatePicture from "../assets/instances-create.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import modrinthPicture from "../assets/modrinth.png?w=200;400;800&format=avif;webp;jpg&as=picture"
+import curseforgePicture from "../assets/curseforge.png?w=200;400;800&format=avif;webp;jpg&as=picture"
 import fabricPicture from "../assets/fabric.png?w=60&format=avif;webp;jpg&as=picture"
 import forgePicture from "../assets/forge.png?w=60&format=avif;webp;jpg&as=picture"
 import neoforgedPicture from "../assets/neoforged.png?w=60&format=avif;webp;jpg&as=picture"
@@ -348,4 +345,14 @@ const platformDownload = computed(() => {
     opacity: 0 !important;
     transform: translateY(40px) scale(75%);
 }
+
+</style>
+<style>
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 </style>

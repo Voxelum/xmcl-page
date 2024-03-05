@@ -22,7 +22,7 @@ changelogs: Changelogs
 outline: На этой странице
 coreDocument: Основной документ
 author: Связаться с автором
-download-zip: Zip (64 bits)
+download-zip: Zip
 download-zip-32: Zip (32 bits)
 download-web: Веб-установщик
 download-portable: Портативный
@@ -61,7 +61,7 @@ gameInstall:
     customize your own mirror in launcher.
 optimalDisk:
   title:
-    body: "{optimal} дисковое пространство с {massiveResources}"
+    body: '{optimal} дисковое пространство с {massiveResources}'
     optimal: Оптимальное
     massiveResources: Массивные ресурсы
   description: >-
@@ -78,7 +78,7 @@ cleanWorkspace:
     instances easily. So you don't need to be worried about the mixture of the
     different launch settings.
 communityIntegration:
-  title: 
+  title:
     body: Интеграция с {multipleCommunities}
     multipleCommunities: многочисленными сообществами
   description: >-

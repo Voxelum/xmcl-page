@@ -26,7 +26,7 @@ downloadFor:
   mac: 'Für Mac herunterladen:'
   linux: 'Für Linux herunterladen:'
 author: Kontakt Autor
-download-zip: Zip (64 bits)
+download-zip: Zip
 download-zip-32: Zip (32 bits)
 download-appx: AppX Package
 download-appinstaller: App Installer

@@ -28,7 +28,7 @@ downloadFor:
   mac: 'Download For Mac:'
   linux: 'Download For Linux:'
 author: Contact Author
-download-zip: Zip (64 bits)
+download-zip: Zip
 download-zip-32: Zip (32 bits)
 download-appx: AppX Package
 download-appinstaller: App Installer
@@ -64,7 +64,7 @@ gameInstall:
     even customize your own mirror in the launcher.
 optimalDisk:
   title:
-    body: "{optimal} disk space with {massiveResources}"
+    body: '{optimal} disk space with {massiveResources}'
     optimal: Optimal
     massiveResources: Massive Resources
   description: >-
@@ -81,7 +81,7 @@ cleanWorkspace:
     instances easily. So you don't need to be worried about the mixture of the
     different launch settings.
 communityIntegration:
-  title: 
+  title:
     body: Integrated with {multipleCommunities}
     multipleCommunities: Multiple Communities
   description: >-

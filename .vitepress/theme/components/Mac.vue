@@ -11,7 +11,9 @@
       <a dmg class="ui huge inverted download labeled icon positive button w-full"
         :class="{ disabled: !artifacts.macDmg, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
         :href="artifacts.macDmg" @click="trackDownload('mac', 'dmg')">
-        <i class="hdd icon"></i>
+        <i class="icon">
+          <div class="i-fa6-solid:hard-drive" />
+        </i>
         <span>{{ t("download-dmg") }}</span>
       </a>
 
@@ -19,8 +21,10 @@
         <a mac-zip class="ui huge inverted download labeled icon brown button w-full"
           :class="{ disabled: !artifacts.macZip, ' md:w-auto': !organized, 'md:w-[45%]': organized }"
           :href="artifacts.macZip" @click="trackDownload('mac', 'zip')">
-          <i class="box icon"></i>
-          <span>{{ t("download-zip") }}</span>
+          <i class="box icon">
+            <div class="i-fa6-solid:box" />
+          </i>
+          <span>{{ t("download-zip") }} (x64)</span>
         </a>
         <a class="ui huge left pointing brown inverted label" :href="artifacts.macZipArm64"
           @click="trackDownload('mac', 'zip-arm64')">
@@ -40,6 +44,6 @@ const { title, organized } = defineProps({ title: Boolean, organized: Boolean })
 
 const artifacts = useDownloads()
 const { t } = useI18n()
-const { trackDownload } = inject('telemtry', {  trackDownload: (category: string, action: string) => {} })
+const { trackDownload } = inject('telemtry', { trackDownload: (category: string, action: string) => { } })
 
 </script>
