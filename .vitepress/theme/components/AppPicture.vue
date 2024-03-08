@@ -14,9 +14,7 @@ export interface Picture {
         w: number
     }
     sources: {
-        [format: string]: Array<{
-            src: string
-        }>
+        [format: string]: string
     }
 }
 defineProps<{ value: Picture; alt?: string }>()

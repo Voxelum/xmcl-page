@@ -97,7 +97,7 @@ export function loadTheme(location: string, locale: string) {
         head: [
         ],
         themeConfig: {
-            logo: '/logo.svg',
+            logo: { src: '/logo.svg', alt: 'X Minecraft Launcher', width: '24', height: '24' },
             logoLink: `/${locale}/`,
             search: {
                 provider: 'local',

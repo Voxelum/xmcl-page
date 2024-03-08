@@ -214,38 +214,37 @@
 </template>
 
 <script lang=ts setup>
-import 'uno.css'
+import 'uno.css';
 import { useData, useRoute } from 'vitepress';
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { data } from '../composables/latest.data';
+import { useGFW } from '../composables/useGFW';
+import { useI18nSync } from '../composables/useI18nSync';
 import { usePlatform } from '../composables/usePlatform';
 import '../styles/button.min.css';
 import '../styles/container.min.css';
 import '../styles/label.min.css';
+import AppPicture from './AppPicture.vue';
 import CurseforgeIcon from './CurseforgeIcon.vue';
 import Linux from './Linux.vue';
 import Mac from './Mac.vue';
 import ModrinthIcon from './ModrinthIcon.vue';
 import QuiltIcon from './QuiltIcon.vue';
 import Win32 from './Win32.vue';
-import { useI18nSync } from '../composables/useI18nSync';
-import { useGFW } from '../composables/useGFW';
-import { onMounted } from 'vue';
-import AppPicture from './AppPicture.vue';
 
-import homePicture from '../assets/home.png?w=200;400;800&format=avif;webp;jpg&as=picture'
-import installPicture from '../assets/install.png?w=200;400;800&format=avif;webp;jpg&as=picture'
-import install2Picture from '../assets/install-2.png?w=200;400;800&format=avif;webp;jpg&as=picture'
-import modsPicture from "../assets/mods.png?w=200;400;800&format=avif;webp;jpg&as=picture"
-import resourcePackPicture from "../assets/resourcePack.png?w=200;400;800&format=avif;webp;jpg&as=picture"
-import instancesPicture from "../assets/instances.png?w=200;400;800&format=avif;webp;jpg&as=picture"
-import instancesCreatePicture from "../assets/instances-create.png?w=200;400;800&format=avif;webp;jpg&as=picture"
-import modrinthPicture from "../assets/modrinth.png?w=200;400;800&format=avif;webp;jpg&as=picture"
-import curseforgePicture from "../assets/curseforge.png?w=200;400;800&format=avif;webp;jpg&as=picture"
-import fabricPicture from "../assets/fabric.png?w=60&format=avif;webp;jpg&as=picture"
-import forgePicture from "../assets/forge.png?w=60&format=avif;webp;jpg&as=picture"
-import neoforgedPicture from "../assets/neoforged.png?w=60&format=avif;webp;jpg&as=picture"
+import curseforgePicture from "../assets/curseforge.png?w=200;400;800&format=avif;webp;jpg&as=picture";
+import fabricPicture from "../assets/fabric.png?w=60&format=avif;webp;jpg&as=picture";
+import forgePicture from "../assets/forge.png?w=60&format=avif;webp;jpg&as=picture";
+import homePicture from '../assets/home.png?w=200;400;800&format=avif;webp;jpg&as=picture';
+import install2Picture from '../assets/install-2.png?w=200;400;800&format=avif;webp;jpg&as=picture';
+import installPicture from '../assets/install.png?w=200;400;800&format=avif;webp;jpg&as=picture';
+import instancesCreatePicture from "../assets/instances-create.png?w=200;400;800&format=avif;webp;jpg&as=picture";
+import instancesPicture from "../assets/instances.png?w=200;400;800&format=avif;webp;jpg&as=picture";
+import modrinthPicture from "../assets/modrinth.png?w=200;400;800&format=avif;webp;jpg&as=picture";
+import modsPicture from "../assets/mods.png?w=200;400;800&format=avif;webp;jpg&as=picture";
+import neoforgedPicture from "../assets/neoforged.png?w=60&format=avif;webp;jpg&as=picture";
+import resourcePackPicture from "../assets/resourcePack.png?w=200;400;800&format=avif;webp;jpg&as=picture";
 
 const { t, locale } = useI18n()
 const { site } = useData()

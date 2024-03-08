@@ -30,11 +30,6 @@ C-1987.4,866.2-1988.1,867.6-1988.9,868.1z"
   </svg>
 </template>
 
-<script>
-export default {
-}
-</script>
-
 <style>
 #curseforge-icon .st0 {
   @apply fill-[rgb(76,76,76)];
