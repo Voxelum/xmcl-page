@@ -1,4 +1,4 @@
-repository: Репозиторий исходного кода
+repository: Репозиторий с исходным кодом
 intro:
   first:
     body: Лаунчер для Minecraft с {openSource} и {modernUx} интерфейсом.
@@ -97,7 +97,7 @@ joinPeerDescription: >-
 fullChangelog: Что нового?
 privacy: Конфиденциальность программного обеспечения
 prebuild:
-  history: История сборки
+  history: История сборок
   download: Скачать предварительные сборки
   downloadDescription: >-
     Предварительные сборки — это артефакты, созданные в процессе разработки.
