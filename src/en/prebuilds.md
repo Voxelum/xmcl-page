@@ -1,5 +1,5 @@
 ---
 layout: prebuilds
-description: Empower Your Minecraft Experience with modern launcher
-title: X Minecraft Launcher - A fully featured Minecraft launcher
+description: Download XMCL Prebuilds if you want some latest features and cannot wait for the next release!
+title: X Minecraft Launcher - Download XMCL Prebuilds
 ---
