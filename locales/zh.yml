@@ -12,7 +12,7 @@ search:
       selectText: 选择
       navigateText: 切换
       closeText: 关闭
-footer: Minecraft, 启动！
+footer: Minecraft，启动！
 docFooter:
   prev: 上一篇
   next: 下一篇
@@ -45,22 +45,22 @@ intro:
     diskEfficient: 磁盘空间最优的
     mods: 模组
   description: >-
-    X Minecraft Launcher (XMCL) 是一个方便你管理大量的整合包，模组，资源包，光影包的的现代化启动器。它对 Minecraft
-    Forge，Fabric，Quilt，Curseforge 和 Modrinth 都有内置支持。
+    X Minecraft Launcher (XMCL) 是一个便于你管理海量整合包、模组、资源包、光影包的现代化启动器。它还内置支持 Minecraft
+    Forge、Fabric、Quilt、CurseForge 和 Modrinth。
 launcher:
   manage:
-    intro: Manage your Minecraft effectively.
+    intro: 有效管理你的 Minecraft
   description: 一个简洁，开源，功能驱动的 Minecraft 启动器
 downloadFor:
-  windows: '下载 Windows 版:'
-  mac: '下载 Mac 版:'
-  linux: '下载 Linux 版:'
+  windows: '下载 Windows 版：'
+  mac: '下载 Mac 版：'
+  linux: '下载 Linux 版：'
 author: 联系作者
 download-zip: 压缩包
-download-zip-32: 压缩包 (x32)
+download-zip-32: 压缩包 (x86)
 download-appx: AppX 安装包
 download-appinstaller: 在线安装包
-download-portable: 绿色版
+download-portable: 便携版
 download-dmg: DMG
 download-snap: Snap
 download-appimage: AppImage
@@ -72,39 +72,39 @@ github-source: 从 Github 下载
 auto-source: 根据网络决定下载源
 authSuccess: 验证成功
 authSuccessTitle: 验证成功。你将跳转回启动器界面完成登录！
-redirectHelperTitle: 如果你没有被自动跳转，你可以尝试点击下面的按钮来手动跳转
-redirectHelperMessage: 浏览器会弹出窗口询问是否打开启动器，请选择允许。如果没有弹窗，可以尝试将这个按钮拖入启动器界面的中！
-notWork: 无法跳转?
+redirectHelperTitle: 如果你没有被自动跳转，你可以尝试点击下面的按钮来手动跳转。
+redirectHelperMessage: 浏览器会弹出窗口询问是否打开启动器，请选择允许。如果没有弹窗，可以尝试将这个按钮拖入启动器的界面中！
+notWork: 无法跳转？
 openInAppButton: 在启动器中打开
-nothingWork: 如果上述方法都不顶用，请你尝试重新下载安装最新的启动器吧
+nothingWork: 如果这些方法不起作用，请重新下载最新的启动器。
 gameInstall:
   title:
     body: 轻松处理所有 {gameInstall}
     gameInstall: 游戏安装
   description: >-
-    XMCL 支持安装原版 Minecraft, Minecraft Forge, Fabric, 甚至
-    Optifine！你可以在一个界面处理所有基本的游戏安装。它同样支持第三方镜像，如 BMCL API。
+    XMCL 支持安装原版 Minecraft、Minecraft Forge、Fabric, 甚至
+    Optifine！你可以在单个界面处理所有基本的游戏安装。它同样支持第三方镜像源，如 BMCL API。
 optimalDisk:
   title:
     body: 磁盘空间 {optimal} 选，轻松处理 {massiveResources}
     optimal: 最优
     massiveResources: 大量资源
   description: >-
-    XMCL 会在统一的地方存储所有安装过的模组，资源包，光影包，整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。所以在
-    /mods 文件夹中不会存在任何副本文件。
+    XMCL 会在统一位置存储所有模组、资源包、光影包、整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。所以
+    副本文件不会被存放在 /mods 文件夹中。
 cleanWorkspace:
   title:
     body: 多实例，保证你的启动配置 {clean}
     clean: 干净整洁
-  description: XMCL 内置支持多实例。你可以通过创建不同的实例来进行版本隔离，这能确保你每个启动配置完全不会互相影响。
+  description: XMCL 内置支持多实例。你可以通过创建不同的实例来进行版本隔离，这能确保你每个启动配置不会互相产生影响。
 communityIntegration:
   title:
     body: 有效集成 {multipleCommunities}
     multipleCommunities: 知名第三方社区
   description: >-
-    XMCL 目前支持 Curseforge, Modrinth，可以在启动器内访问并下载资源。启动器同样支持了自定义用户账号系统，如 blessing
+    XMCL 目前支持 Curseforge 和 Modrinth，可以在启动器内访问并下载资源。启动器同样支持了自定义账号皮肤系统，如 blessing
     skin。
-download-tarxz: 压缩包 (.tar.xz)
+download-tarxz: 压缩包 (tar.xz)
 download-linuxZip: 压缩包 (zip)
 joinPeer: 和 {inviter} 一起玩
 joinPeerDescription: '{inviter} 邀请你加入 Minecraft 联机群组 {group}，浏览器将自动打开启动器并加入群组。'
