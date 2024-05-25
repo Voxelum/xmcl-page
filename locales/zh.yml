@@ -5,7 +5,7 @@ search:
     buttonText: 搜索
     buttonAriaLabel: 搜索
   modal:
-    noResultsText: 无法找到相关结果
+    noResultsText: 未找到相关结果
     resetButtonTitle: 清除查询条件
     displayDetails: 显示详情
     footer:
@@ -22,10 +22,10 @@ notFound:
   linkLabel: 返回首页
   linkText: 返回首页
   code: '404'
-outline: 本页包含了
+outline: 本页包含
 darkModeSwitchLabel: 颜色主题
-darkModeSwitchTitle: 切换到暗色
-lightModeSwitchTitle: 切换到亮色
+darkModeSwitchTitle: 切换至暗色
+lightModeSwitchTitle: 切换至亮色
 sidebarMenuLabel: 目录
 returnToTopLabel: 返回顶部
 langMenuLabel: 语言
@@ -41,16 +41,16 @@ intro:
     openSource: 开源的
     modernUx: 现代化
   second:
-    body: 提供一种 {diskEfficient} 的方式来管理你所有的 {mods}!
-    diskEfficient: 磁盘空间最优的
+    body: 提供一种 {diskEfficient} 的方式来管理你的所有 {mods}!
+    diskEfficient: 磁盘空间最优
     mods: 模组
   description: >-
-    X Minecraft Launcher (XMCL) 是一个便于你管理海量整合包、模组、资源包、光影包的现代化启动器。它还内置支持 Minecraft
+    X Minecraft Launcher (XMCL) 是一个便于你管理多种整合包、模组、资源包、光影包的现代化启动器。它还支持 Minecraft
     Forge、Fabric、Quilt、CurseForge 和 Modrinth。
 launcher:
   manage:
-    intro: 有效管理你的 Minecraft
-  description: 一个简洁，开源，功能驱动的 Minecraft 启动器
+    intro: 有效管理你的 Minecraft.
+  description: 一个简洁、开源、面向功能的 Minecraft 启动器
 downloadFor:
   windows: '下载 Windows 版：'
   mac: '下载 Mac 版：'
@@ -71,9 +71,9 @@ azure-ms-source: 从 Azure 微软 CDN 下载
 github-source: 从 Github 下载
 auto-source: 根据网络决定下载源
 authSuccess: 验证成功
-authSuccessTitle: 验证成功。你将跳转回启动器界面完成登录！
+authSuccessTitle: 验证成功。你将跳转回启动器完成登录！
 redirectHelperTitle: 如果你没有被自动跳转，你可以尝试点击下面的按钮来手动跳转。
-redirectHelperMessage: 浏览器会弹出窗口询问是否打开启动器，请选择允许。如果没有弹窗，可以尝试将这个按钮拖入启动器的界面中！
+redirectHelperMessage: 浏览器会弹窗询问是否打开启动器，请选择允许。如果没有弹窗，可以尝试将这个按钮拖入启动器界面！
 notWork: 无法跳转？
 openInAppButton: 在启动器中打开
 nothingWork: 如果这些方法不起作用，请重新下载最新的启动器。
@@ -82,28 +82,27 @@ gameInstall:
     body: 轻松处理所有 {gameInstall}
     gameInstall: 游戏安装
   description: >-
-    XMCL 支持安装原版 Minecraft、Minecraft Forge、Fabric, 甚至
-    Optifine！你可以在单个界面处理所有基本的游戏安装。它同样支持第三方镜像源，如 BMCL API。
+    XMCL 支持安装原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
+    你可以在单个界面处理所有基本的游戏安装。它同样支持第三方镜像源，如 BMCL API。
 optimalDisk:
   title:
     body: 磁盘空间 {optimal} 选，轻松处理 {massiveResources}
     optimal: 最优
     massiveResources: 大量资源
   description: >-
-    XMCL 会在统一位置存储所有模组、资源包、光影包、整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。所以
-    副本文件不会被存放在 /mods 文件夹中。
+    XMCL 会在统一位置存储所有模组、资源包、光影包、整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。
+    所以副本文件不会被存放在 /mods 文件夹中。
 cleanWorkspace:
   title:
     body: 多实例，保证你的启动配置 {clean}
     clean: 干净整洁
-  description: XMCL 内置支持多实例。你可以通过创建不同的实例来进行版本隔离，这能确保你每个启动配置不会互相产生影响。
+  description: XMCL 支持多实例。你可以通过创建不同的实例来进行版本隔离，这能确保你每个启动配置不会互相产生影响。
 communityIntegration:
   title:
     body: 有效集成 {multipleCommunities}
     multipleCommunities: 知名第三方社区
   description: >-
-    XMCL 目前支持 Curseforge 和 Modrinth，可以在启动器内访问并下载资源。启动器同样支持了自定义账号皮肤系统，如 blessing
-    skin。
+    XMCL 目前支持 CurseForge 和 Modrinth，可以在启动器内访问并下载资源。启动器同样支持自定义的账号皮肤系统，如 blessin skin。
 download-tarxz: 压缩包 (tar.xz)
 download-linuxZip: 压缩包 (zip)
 joinPeer: 和 {inviter} 一起玩
@@ -113,7 +112,7 @@ prebuild:
   history: 构建历史
   download: 下载快照预构建
   downloadDescription: |-
-    预构建是开发过程中生成的工件。
+    预构建是在开发过程中生成的工件。
     它可能不稳定。
-    使用它需要您自担风险！
+    请自行承担使用风险！
   entryHint: 在找快照版下载？
