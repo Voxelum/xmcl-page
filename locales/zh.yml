@@ -31,7 +31,7 @@ returnToTopLabel: 返回顶部
 langMenuLabel: 语言
 lastUpdatedText: 上次更新
 guide: 指南
-coreDocument: 核心 API 文档 (英文)
+coreDocument: 核心文档 (英文)
 protocol: 协议
 editLink: 在 GitHub 上编辑此页
 changelogs: 更新日志
@@ -59,7 +59,7 @@ author: 联系作者
 download-zip: 压缩包
 download-zip-32: 压缩包 (x86)
 download-appx: AppX 安装包
-download-appinstaller: 在线安装包
+download-appinstaller: 应用安装程序
 download-portable: 便携版
 download-dmg: DMG
 download-snap: Snap
@@ -72,7 +72,7 @@ github-source: 从 Github 下载
 auto-source: 根据网络决定下载源
 authSuccess: 验证成功
 authSuccessTitle: 验证成功。你将跳转回启动器完成登录！
-redirectHelperTitle: 如果你没有被自动跳转，你可以尝试点击下面的按钮来手动跳转。
+redirectHelperTitle: 如果你没有被自动跳转，可以尝试点击下面的按钮来手动跳转。
 redirectHelperMessage: 浏览器会弹窗询问是否打开启动器，请选择允许。如果没有弹窗，可以尝试将这个按钮拖入启动器界面！
 notWork: 无法跳转？
 openInAppButton: 在启动器中打开
