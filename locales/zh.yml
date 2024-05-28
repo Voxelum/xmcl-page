@@ -37,19 +37,19 @@ editLink: 在 GitHub 上编辑此页
 changelogs: 更新日志
 intro:
   first:
-    body: 一个 {openSource} 启动器，拥有 {modernUx} 的 UX.
+    body: 一个 {openSource} 启动器，拥有 {modernUx} 的 界面.
     openSource: 开源的
     modernUx: 现代化
   second:
     body: 提供一种 {diskEfficient} 的方式来管理你所有的 {mods}!
-    diskEfficient: 磁盘空间最优的
+    diskEfficient: 节省存储空间
     mods: 模组
   description: >-
-    X Minecraft Launcher (XMCL) 是一个方便你管理大量的整合包，模组，资源包，光影包的的现代化启动器。它对 Minecraft
+    X Minecraft Launcher (XMCL) 是一个方便你管理大量的整合包，模组，资源包，光影的现代化启动器。它对 Minecraft
     Forge，Fabric，Quilt，Curseforge 和 Modrinth 都有内置支持。
 launcher:
   manage:
-    intro: Manage your Minecraft effectively.
+    intro: 高效管理你的 Minecraft
   description: 一个简洁，开源，功能驱动的 Minecraft 启动器
 downloadFor:
   windows: '下载 Windows 版:'
@@ -57,19 +57,19 @@ downloadFor:
   linux: '下载 Linux 版:'
 author: 联系作者
 download-zip: 压缩包
-download-zip-32: 压缩包 (x32)
+download-zip-32: 压缩包 (32位)
 download-appx: AppX 安装包
 download-appinstaller: 在线安装包
-download-portable: 绿色版
-download-dmg: DMG
-download-snap: Snap
+download-portable: 免安装版
+download-dmg: DMG 安装包
+download-snap: Snap 源
 download-appimage: AppImage
-download-deb: Deb
-download-rpm: RPM
+download-deb: DEB 安装包
+download-rpm: RPM 安装包
 azure-source: 从 Azure CDN 下载
 azure-ms-source: 从 Azure 微软 CDN 下载
 github-source: 从 Github 下载
-auto-source: 根据网络决定下载源
+auto-source: 视网络情况决定下载源
 authSuccess: 验证成功
 authSuccessTitle: 验证成功。你将跳转回启动器界面完成登录！
 redirectHelperTitle: 如果你没有被自动跳转，你可以尝试点击下面的按钮来手动跳转
@@ -79,19 +79,19 @@ openInAppButton: 在启动器中打开
 nothingWork: 如果上述方法都不顶用，请你尝试重新下载安装最新的启动器吧
 gameInstall:
   title:
-    body: 轻松处理所有 {gameInstall}
+    body: 处理所有 {gameInstall} 简单快速
     gameInstall: 游戏安装
   description: >-
     XMCL 支持安装原版 Minecraft, Minecraft Forge, Fabric, 甚至
     Optifine！你可以在一个界面处理所有基本的游戏安装。它同样支持第三方镜像，如 BMCL API。
 optimalDisk:
   title:
-    body: 磁盘空间 {optimal} 选，轻松处理 {massiveResources}
-    optimal: 最优
+    body:  {optimal} 存储空间，轻松处理 {massiveResources}
+    optimal: 节省
     massiveResources: 大量资源
   description: >-
-    XMCL 会在统一的地方存储所有安装过的模组，资源包，光影包，整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。所以在
-    /mods 文件夹中不会存在任何副本文件。
+    XMCL 会集中存储所有安装过的模组，资源包，光影包，整合包。当你尝试安装任何以前下载过的资源，启动器会复用它们，这样就可以节省存储空间。所以在
+    /mods 等文件夹中不会存在任何重复文件。
 cleanWorkspace:
   title:
     body: 多实例，保证你的启动配置 {clean}
@@ -104,8 +104,8 @@ communityIntegration:
   description: >-
     XMCL 目前支持 Curseforge, Modrinth，可以在启动器内访问并下载资源。启动器同样支持了自定义用户账号系统，如 blessing
     skin。
-download-tarxz: 压缩包 (.tar.xz)
-download-linuxZip: 压缩包 (zip)
+download-tarxz: TAR.XZ 归档
+download-linuxZip: ZIP 归档
 joinPeer: 和 {inviter} 一起玩
 joinPeerDescription: '{inviter} 邀请你加入 Minecraft 联机群组 {group}，浏览器将自动打开启动器并加入群组。'
 privacy: 隐私协议
