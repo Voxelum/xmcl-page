@@ -37,7 +37,7 @@
         <i class="icon">
           <div class="i-fa6-solid:box " />
         </i>
-        <span>{{ t("download-zip") }} (x32)</span>
+        <span>{{ t("download-zip") }} (x86)</span>
       </a>
     </div>
   </div>
