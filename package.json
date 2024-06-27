@@ -18,7 +18,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@microsoft/applicationinsights-web": "^3.0.7",
+    "@microsoft/applicationinsights-web": "^3.1.0",
     "@vercel/speed-insights": "^1.0.10",
     "@vueuse/core": "^10.1.2",
     "gray-matter": "^4.0.3",

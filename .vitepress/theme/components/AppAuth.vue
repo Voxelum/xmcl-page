@@ -32,7 +32,7 @@
           t("nothingWork")
         }}</div>
         <div class="w-full flex justify-center mt-10">
-          <a class="ui version basic label" :class="{ inverted: isDark }" target="_blank"
+          <a class="ui version basic label text-sm" :class="{ inverted: isDark }" target="_blank"
             href="https://github.com/voxelum/x-minecraft-launcher/releases">{{ data.latestVersion }}</a>
         </div>
         <div class="flex item-center w-full justify-center mb-20 mt-10">
