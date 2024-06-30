@@ -15,7 +15,7 @@
                     <p class="leading-title">
                         <i18n-t keypath="intro.second.body" tag="span">
 
-                            <template v-slot:disk-efficient>
+                            <template v-slot:diskEfficient>
                                 <span class="text-yellow-300">{{ t('intro.second.diskEfficient') }}</span>
                             </template>
 
