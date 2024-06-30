@@ -1,0 +1,118 @@
+repository: 倉庫地址
+label: 繁體中文
+search:
+  button:
+    buttonText: 搜尋
+    buttonAriaLabel: 搜尋
+  modal:
+    noResultsText: 未找到相關結果
+    resetButtonTitle: 清除搜尋條件
+    displayDetails: 顯示詳細資訊
+    footer:
+      selectText: 選擇
+      navigateText: 切換
+      closeText: 關閉
+footer: Minecraft，啟動！
+docFooter:
+  prev: 上一篇
+  next: 下一篇
+notFound:
+  title: 找不到頁面
+  quote: 這裡什麼都沒有
+  linkLabel: 返回首頁
+  linkText: 返回首頁
+  code: '404'
+outline: 本頁包含
+darkModeSwitchLabel: 顏色主題
+darkModeSwitchTitle: 切換至暗色
+lightModeSwitchTitle: 切換至亮色
+sidebarMenuLabel: 目錄
+returnToTopLabel: 返回頂部
+langMenuLabel: 語言
+lastUpdatedText: 上次更新
+guide: 指南
+coreDocument: 核心文件（英文）
+protocol: 協議
+editLink: 在 GitHub 上編輯此頁
+changelogs: 更新日誌
+intro:
+  first:
+    body: 一個 {openSource} 啟動器，擁有 {modernUx} 的 UX.
+    openSource: 開源
+    modernUx: 現代化
+  second:
+    body: 提供一種 {diskEfficient} 的方式來管理你的所有 {mods}!
+    diskEfficient: 磁碟空間最佳化
+    mods: 模組
+  description: >-
+    X Minecraft Launcher (XMCL) 是一個方便你管理多種整合包、模組、資源包、光影包的現代化啟動器。它同時支援 Minecraft Forge、
+    Fabric、Quilt、CurseForge 以及 Modrinth。
+launcher:
+  manage:
+    intro: 有效管理你的 Minecraft.
+  description: 一個簡潔、開源、功能型的 Minecraft 啟動器
+downloadFor:
+  windows: '下載 Windows 版本：'
+  mac: '下載 Mac 版本：'
+  linux: '下載 Linux 版本：'
+author: 聯絡作者
+download-zip: 壓縮包
+download-zip-32: 壓縮包 (x86)
+download-appx: AppX 安裝包
+download-appinstaller: 應用程式安裝程式
+download-portable: 便攜版
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+azure-source: 從 Azure CDN 下載
+azure-ms-source: 從 Azure 微軟 CDN 下載
+github-source: 從 Github 下載
+auto-source: 根據網路決定下載源
+authSuccess: 驗證成功
+authSuccessTitle: 驗證成功。你將跳轉回啟動器完成登入！
+redirectHelperTitle: 如果你沒有被自動跳轉，可以嘗試點擊下面的按鈕來手動跳轉。
+redirectHelperMessage: 瀏覽器會彈窗詢問是否開啟啟動器，請選擇允許。如果沒有彈窗，可以嘗試將這個按鈕拖入啟動器介面！
+notWork: 無法跳轉？
+openInAppButton: 在啟動器中開啟
+nothingWork: 如果這些方法不起作用，請重新下載最新版啟動器。
+gameInstall:
+  title:
+    body: 輕鬆處理所有 {gameInstall}
+    gameInstall: 遊戲安裝
+  description: >-
+    XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
+    你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方鏡像源，如 BMCL API。
+optimalDisk:
+  title:
+    body: 磁碟空間 {optimal} 選，輕鬆處理 {massiveResources}
+    optimal: 最佳化
+    massiveResources: 大量資源
+  description: >-
+    XMCL 會在統一位置儲存所有模組、資源包、光影包、整合包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。
+    所以副本檔案不會被存放在 /mods 資料夾中。
+cleanWorkspace:
+  title:
+    body: 多實例，保證你的啟動配置 {clean}
+    clean: 乾淨整潔
+  description: XMCL 支援多實例。你可以透過建立不同的實例來進行版本隔離，這能確保你每個啟動配置不會互相產生影響。
+communityIntegration:
+  title:
+    body: 有效集成 {multipleCommunities}
+    multipleCommunities: 知名第三方社群
+  description: >-
+    XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如 Blessin Skin。
+download-tarxz: 壓縮包 (tar.xz)
+download-linuxZip: 壓縮包 (zip)
+joinPeer: 和 {inviter} 一起玩
+joinPeerDescription: '{inviter} 邀請你加入 Minecraft 聯機群組 {group}，瀏覽器將自動開啟啟動器並加入群組。'
+privacy: 隱私協議
+prebuild:
+  history: 構建歷史
+  download: 下載快照預構建
+  downloadDescription: |-
+    預構建是在開發過程中生成的工件。
+    它可能不穩定。
+    請自行承擔使用風險！
+  entryHint: 在找快照版下載？

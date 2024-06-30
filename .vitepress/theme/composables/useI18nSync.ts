@@ -7,9 +7,12 @@ export function useI18nSync() {
     const { lang } = useData()
 
     watch(lang, (l) => {
-        const currentLocale = l.split('-')?.[0] ?? 'en'
-        if (messages.value[currentLocale]) {
-            locale.value = currentLocale
-        }
+        console.log(l)
+        const shortenLocale = l.split('-')?.[0] ?? 'en'
+        const realLocale = messages.value[l] ? l :
+            messages.value[shortenLocale]
+                ? shortenLocale
+                : 'en'
+        locale.value = realLocale
     }, { immediate: true })
 }
