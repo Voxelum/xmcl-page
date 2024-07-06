@@ -37,15 +37,15 @@ editLink: 在 GitHub 上編輯此頁
 changelogs: 更新日誌
 intro:
   first:
-    body: 一個 {openSource} 啟動器，擁有 {modernUx} 的 UX.
+    body: 一個 {openSource} 啟動器，擁有 {modernUx} 的使用者體驗.
     openSource: 開源
     modernUx: 現代化
   second:
     body: 提供一種 {diskEfficient} 的方式來管理你的所有 {mods}!
-    diskEfficient: 磁碟空間最佳化
-    mods: 模組
+    diskEfficient: 磁碟空間最優選
+    mods: 模組包
   description: >-
-    X Minecraft Launcher (XMCL) 是一個方便你管理多種整合包、模組、資源包、光影包的現代化啟動器。它同時支援 Minecraft Forge、
+    X Minecraft Launcher (XMCL) 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft Forge、
     Fabric、Quilt、CurseForge 以及 Modrinth。
 launcher:
   manage:
@@ -56,8 +56,8 @@ downloadFor:
   mac: '下載 Mac 版本：'
   linux: '下載 Linux 版本：'
 author: 聯絡作者
-download-zip: 壓縮包
-download-zip-32: 壓縮包 (x86)
+download-zip: 壓縮檔
+download-zip-32: 壓縮檔 (x86)
 download-appx: AppX 安裝包
 download-appinstaller: 應用程式安裝程式
 download-portable: 便攜版
@@ -83,28 +83,28 @@ gameInstall:
     gameInstall: 遊戲安裝
   description: >-
     XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
-    你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方鏡像源，如 BMCL API。
+    你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方 BMCL API。
 optimalDisk:
   title:
     body: 磁碟空間 {optimal} 選，輕鬆處理 {massiveResources}
-    optimal: 最佳化
+    optimal: 最優選
     massiveResources: 大量資源
   description: >-
-    XMCL 會在統一位置儲存所有模組、資源包、光影包、整合包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。
+    XMCL 會在統一位置儲存所有模組、資源包、光影包、模組包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。
     所以副本檔案不會被存放在 /mods 資料夾中。
 cleanWorkspace:
   title:
-    body: 多實例，保證你的啟動配置 {clean}
-    clean: 乾淨整潔
+    body: 多版本實例，讓你的各版本 Minecraft {clean}
+    clean: 不再衝突
   description: XMCL 支援多實例。你可以透過建立不同的實例來進行版本隔離，這能確保你每個啟動配置不會互相產生影響。
 communityIntegration:
   title:
-    body: 有效集成 {multipleCommunities}
-    multipleCommunities: 知名第三方社群
+    body: 支援 {multipleCommunities}
+    multipleCommunities: 各種第三方模組網站
   description: >-
     XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如 Blessin Skin。
-download-tarxz: 壓縮包 (tar.xz)
-download-linuxZip: 壓縮包 (zip)
+download-tarxz: 壓縮檔 (tar.xz)
+download-linuxZip: 壓縮檔 (zip)
 joinPeer: 和 {inviter} 一起玩
 joinPeerDescription: '{inviter} 邀請你加入 Minecraft 聯機群組 {group}，瀏覽器將自動開啟啟動器並加入群組。'
 privacy: 隱私協議
