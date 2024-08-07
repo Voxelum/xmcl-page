@@ -1,8 +1,10 @@
+
+
 # Guide d'Apparence
 
 > Rédaction en cours
 
-## Palette de couleurs et Thèmes
+## Palette de Couleurs et Thèmes
 
 XMCL prend en charge les couleurs personnalisées, notamment :
 
