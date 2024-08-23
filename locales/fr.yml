@@ -1,61 +1,32 @@
-repository: Code Source
-label: Français
+repository: Dépôt du code source
 intro:
   first:
-    body: Launcher Minecraft {openSource} avec interface {modernUx}.
+    body: Un launcher Minecraft {openSource} avec une interface {modernUx}.
     openSource: Open Source
-    modernUx: Modern UX
+    modernUx: UX Moderne
   second:
-    body: Gérez tous vos {mods} en économisant l'{diskEfficient}
-    diskEfficient: Disk Efficient
+    body: Un {diskEfficient} de gérer tous vos {mods} !
+    diskEfficient: Moyen Efficace
     mods: Mods
   description: >-
-    X Minecraft Launcher (XMCL) est un lanceur Minecraft moderne qui vous permet
-    de gérer vos ressources massives comme les modpacks, les packs de
-    ressources, les mods, les shader packs... Il a également une intégration
-    avec Forge, Fabric, Quilt, CurseForge et Modrinth.
-search:
-  button:
-    buttonText: rechercher qqch
-    buttonAriaLabel: rechercher qqch
-  modal:
-    noResultsText: Aucun résultat n'a pu être trouvé
-    resetButtonTitle: Effacer les critères de recherche
-    displayDetails: Afficher les détails
-    footer:
-      selectText: Sélectionner
-      navigateText: Naviguer
-      closeText: Fermer
+    X Minecraft Launcher (XMCL) est un launcher Minecraft moderne permettant de gérer 
+    de très grands volumes de données comme des modpacks, des packs de textures, 
+    des mods et même des packs de shaders... Il est conçu pour fonctionner avec Forge, 
+    Fabric, Quilt ainsi que CurseForge, Modrinth et FeedTheBeast (FTB).
+label: Français
 guide: Guide
 protocol: Protocole
-docFooter:
-  prev: Précédent
-  next: Suivant
-lastUpdatedText: Dernière mise à jour
-editLink: Modifier cette page
-outline: Dans cette page
-darkModeSwitchLabel: Thème
-darkModeSwitchTitle: Basculer vers le mode sombre
-lightModeSwitchTitle: Basculer vers le mode clair
-sidebarMenuLabel: Menu
-returnToTopLabel: Retour en haut
-langMenuLabel: Langue
-coreDocument: Document API de base (Anglais)
-changelogs: Journal des modifications
-notFound:
-  title: Page non trouvée
-  quote: Il n'y a rien ici
-  linkLabel: Retour à l'accueil
-  linkText: Retour à l'accueil
-  code: 404
+changelogs: Journal des Modifications
+outline: Sur cette page
+coreDocument: Documentation du Cœur
 launcher:
   manage:
-    intro: Gérez Minecraft efficacement.
-  description: Un Launcher Minecraft Simple, Open Source et Plein de Fonctionnalités
+    intro: Gérez votre Minecraft efficacement.
+  description: Un Launcher Minecraft Simple, Open Source et Riche en Fonctionnalités
 downloadFor:
-  windows: 'Télécharger pour Windows :'
-  mac: 'Télécharger pour Mac:'
-  linux: 'Télécharger pour Linux:'
+  windows: 'Téléchargement pour Windows :'
+  mac: 'Téléchargement pour Mac :'
+  linux: 'Téléchargement pour Linux :'
 author: Contacter l'Auteur
 download-zip: Zip
 download-zip-32: Zip (32 bits)
@@ -67,69 +38,67 @@ download-snap: Snap
 download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
-azure-source: Télécharger d'Azure
-azure-ms-source: Télécharger du Azure Microsoft CDN
-github-source: Télécharger de Github
-auto-source: Auto-Détecter La Source de Téléchargement
+azure-source: Télécharger sur les serveurs Azure
+azure-ms-source: Télécharger sur les CDN Azure de Microsoft 
+github-source: Télécharger sur Github
+auto-source: Détection Automatique de la source de téléchargement
 authSuccess: Succès !
-authSuccessTitle: L'autorisation a réussi. Vous serez redirigé vers le Launcher Minecraft !
+authSuccessTitle: Autorisation exécutée avec succès. Vous allez être redirigé vers le Launcher !
 redirectHelperTitle: >-
-  Si vous n'êtes pas redirigé, vous pouvez essayer de cliquer sur le bouton
-  Ouvrir dans l'Application pour être manuellement redirigé.
+  Si vous n'êtes pas redirigé, essayez de cliquer sur le bouton
+  « Ouvrir dans l'Application » pour être manuellement redirigé.
 redirectHelperMessage: >-
   Une fenêtre contextuelle vous demandera d'ouvrir le launcher. Si cela ne
-  marche pas non plus, vous pouvez essayer de faire glisser le bouton vers la
-  fenêtre du launcher !
-notWork: Marche Pas ?
+  marche pas non plus, vous pouvez essayer de faire glisser le bouton sur la fenêtre du launcher !
+notWork: Ça ne marche pas ?
 openInAppButton: Ouvrir dans le Launcher
-nothingWork: >-
-  Si rien ne fonctionne, essayez peut-être de télécharger à nouveau la dernière
-  version du launcher
+nothingWork: Si rien ne fonctionne, essayez de télécharger à nouveau la dernière version du launcher
 gameInstall:
   title:
-    body: Aucune inquiétude pour l'{gameInstall}
-    gameInstall: Installation duJeu
+    body: Plus d'inquiétude lors de votre choix de {gameInstall}
+    gameInstall: Versions de Minecraft
   description: >-
-    XMCL prend en charge l'installation de Minecraft vanilla, Forge, Fabric et
-    même Optifine tout en un ! Vous pouvez les installer à un seul endroit dans
-    le Launcher. Il prend également en charge l'API mirror link tierce BMCL.
+    XMCL prend entièrement en charge l'installation des versions vanilla, Forge, Fabric et
+    même Optifine de Minecraft ! Ils sont tous regrouper au même endroit dans
+    le Launcher. Il prend également en charge le lien miroir tiers BMCL API.
     Vous pouvez même personnaliser votre propre mirror dans le launcher.
 optimalDisk:
-  title: >-
-    body: Espace disque {optimal} même avec des {massiveResources} optimal:
-    Optimal massiveResources: Massive Resources
+  title:
+    body: Espace disque {optimal} même avec les {massiveResources} 
+    optimal: Optimisé
+    massiveResources: Ressources Volumineuses
   description: >-
-    XMCL stockera tous les mods, packs de ressources, shader packs et modpacks
-    dans un emplacement de stockage unique. Pendant que vous essayez d'utiliser
-    une ressource connue, elle utilisera hard link pour installer la ressource
-    sur l'instance sans copier. Ça veut dire vous ne verrez plus jamais de
-    copies dupliquées dans le dossier /mods.
+    XMCL stockera tous les mods, packs de textures, packs de shaders et modpacks
+    dans un emplacement de stockage unique. Lorsque vous essayez d'utiliser une 
+    ressource déjà existante, il utilisera un lien direct pour utiliser la ressource
+    dans l'instance choisie sans avoir à la copier. Cela signifie que vous ne verrez plus de mods dupliqués dans le dossier /mods.
 cleanWorkspace:
   title:
-    body: Gardez votre espace de travail {clean} avec les multi-instances
-    clean: propre
+    body: Gardez votre espace de travail {clean} avec différentes instances
+    clean: Propre
   description: >-
-    XMCL a une prise en charge intégrée des multi-instances. Vous pouvez créer
-    plusieurs instances facilement. Vous n'avez donc pas à vous soucier de
-    paramètres de lancement différents.
+    XMCL peut gérer l'utilisation de plusieurs instances. Vous pouvez ainsi créer
+    plusieurs instances facilement. Vous n'avez donc plus à vous soucier d'utiliser
+    différents paramètres de lancement.
 communityIntegration:
   title:
-    body: Intégré avec {multipleCommunities}
-    multipleCommunities: Plusieurs Communautés
+    body: Une intégration {multipleCommunities}
+    multipleCommunities: Multicommunautaire
   description: >-
-    XMCL offre une prise en charge intégrée avec Curseforge & Modrinth. Il offre
-    également la possibilité de prendre en charge des systèmes de comptes
-    utilisateur / skins personnalisés comme blessing skin.
+    XMCL prend en charge Curseforge, Modrinth et FeedTheBeast (FTB). Il offre également le support 
+    des comptes utilisateurs/skins personnalisés comme « Blessing Skin ».
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: Rejoignez le Groupe de {inviter}
+joinPeer: Rejoidre la partie de {inviter}
 joinPeerDescription: >-
   {inviter} vous invite à rejoindre leur groupe {group} pour jouer ensemble à
   Minecraft ! Vous serez redirigé vers le Launcher !
-fullChangelog: Quoi de Nouveau ?
-privacy: Confidentialité du Logiciel
+fullChangelog: Quoi de Neuf ?
+privacy: Protection de la Vie Privée
 prebuild:
-  history: Construire l'historique
-  download: Télécharger les versions préliminaires
-  downloadDescription: "La pré-construction correspond aux artefacts générés pendant le processus de développement. \nCela pourrait être instable. \nUtilisez-le à vos propres risques\_!"
-  entryHint: "Des artefacts préconstruits\_?"
+  history: Historique des Compilations
+  download: Télécharger une Pré-Compilation
+  downloadDescription: >-
+    Les versions « Pré-Compilation » (ou Prebuild) est le produit obtenu au cours du processus de 
+    développement. Ils peuvent être instables. Utilisez-les à vos risques et périls !
+  entryHint: Artefacts de Pré-Compilation ?
