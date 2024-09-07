@@ -2,7 +2,7 @@
 
 > Работа продолжается
 
-Пользовательские данные хранятся в [xmcl data directory](/en/guide/manage#xmcl-cache-and-database).
+Пользовательские данные хранятся в [каталог данных xmcl](/ru/guide/manage#xmcl-cache-and-database).
 
 ```sh
 xmcl data directory

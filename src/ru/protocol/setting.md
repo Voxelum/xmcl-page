@@ -2,7 +2,7 @@
 
 > В разработке
 
-Глобальные данные хранятся в [xmcl data directory](/en/guide/manage#xmcl-cache-and-database).
+Глобальные данные хранятся в [каталог данных xmcl](/ru/guide/manage#xmcl-cache-and-database).
 
 ```sh
 xmcl data directory
