@@ -1,0 +1,205 @@
+<<<<<<< HEAD
+repository: Quellcode-Repository
+label: Germeny
+intro:
+  first:
+    body: Eine {openSource} Minecraft Launcher mit {modernUx} UX.
+    openSource: Öffnen Sie Quelle
+    modernUx: Modern
+  second:
+    body: Bereitstellung einer {diskEfficient} zur Verwaltung alle Ihre {mods}!
+    diskEfficient: Disk Efficient
+    mods: Mods
+  description: >-
+    X Minecraft Launcher (XMCL) ist ein moderner Minecraft Launcher, mit dem Sie
+    Ressourcen wie Modpacks, Ressourcenpakete, Mods, Shader-Pakete packs... Es
+    hat auch Integration mit Minecraft Forge, Fabric, Quilt, CurseForge und
+    Modrinth.
+guide: Guide
+protocol: Protocol
+changelogs: Changelogs
+=======
+lang: Deutsch
+title:
+  index: X Minecraft Launcher - Ein voll ausgestatteter Minecraft Launcher
+  auth: X Minecraft Launcher - Authentifiziere dein Konto
+  privacy: X Minecraft Launcher - Ein voll ausgestatteter Minecraft Launcher
+  changelog: Änderungsprotokolle
+description: Verbessern Sie Ihr Minecraft-Erlebnis mit einem modernen Launcher
+keywords: >-
+  minecraft launcher,curseforge launcher,twitch
+  launcher,tlauncher,multimc,curseforge,modrinth,minecraftforge,fabricmc
+repository: Quellcode-Repository
+docs: Dokumentation
+intro:
+  first: >-
+    <p class="leading-title"> Eine <span class="text-[rgb(61,239,233)]">Öffnen Sie
+    Quelle</span> Minecraft Launcher mit <span
+    class="text-[rgb(107,217,104)]">Modern</span> UX. </p>
+  second: >-
+    Bereitstellung einer <span class="text-yellow-300">Disk Efficient</span> zur Verwaltung
+    alle Ihre <span class="text-amber-600">Mods</span>
+  description: >-
+    X Minecraft Launcher (XMCL) ist ein moderner Minecraft Launcher, mit dem Sie
+    Ressourcen wie Modpacks, Ressourcenpakete, Mods, Shader-Pakete
+    packs... Es hat auch Integration mit Minecraft Forge, Fabric, Quilt, CurseForge und
+    Modrinth.
+>>>>>>> 6a1608f4e85f493d6283297ff0013ae2fd585c03
+launcher:
+  manage:
+    intro: Verwalte dein Minecraft effektiv.
+  description: Ein einfacher, quelloffener und funktionsorientierter Minecraft Launcher
+<<<<<<< HEAD
+=======
+download: Installateur
+>>>>>>> 6a1608f4e85f493d6283297ff0013ae2fd585c03
+downloadFor:
+  windows: 'Für Windows herunterladen:'
+  mac: 'Für Mac herunterladen:'
+  linux: 'Für Linux herunterladen:'
+author: Kontakt Autor
+<<<<<<< HEAD
+download-zip: Zip
+=======
+download-zip: Zip (64 bits)
+>>>>>>> 6a1608f4e85f493d6283297ff0013ae2fd585c03
+download-zip-32: Zip (32 bits)
+download-appx: AppX Package
+download-appinstaller: App Installer
+download-portable: Tragbar
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+azure-source: Herunterladen von Azure
+azure-ms-source: Herunterladen von Azure Microsoft CDN
+<<<<<<< HEAD
+github-source: Von Github herunterladen
+auto-source: Automatische Erkennung der Download-Quelle
+authSuccess: Erfolgreich sein
+authSuccessTitle: Die Autorisierung war erfolgreich. Sie werden zurück zum Launcher!
+redirectHelperTitle: >-
+  Wenn Sie nicht weitergeleitet werden, können Sie versuchen, auf die
+  Schaltfläche In App öffnen zu klicken, um manuell weiterzuleiten.
+redirectHelperMessage: >-
+  Es wird ein Popup-Fenster angezeigt, in dem Sie aufgefordert werden, den
+  Launcher zu öffnen. Wenn es immer noch nicht funktioniert, können Sie
+  versuchen, die Schaltfläche in das Startfenster zu ziehen!
+notWork: Funktioniert nicht?
+openInAppButton: Im Launcher öffnen
+nothingWork: >-
+  Wenn nichts davon funktioniert, sollten Sie den neuesten Launcher erneut
+  herunterladen
+gameInstall:
+  title:
+    body: Keine Sorgen mehr über die {gameInstall}
+    gameInstall: Spiel installieren
+  description: >-
+    XMCL unterstützt die Installation von Vanilla Minecraft, Minecraft Forge,
+    Fabric und sogar Optifine All in One! Du kannst sie an einem einzigen Ort
+    innerhalb des Launcher installieren. Es unterstützt auch die Third Party
+    Mirror Link BMCL API. Du kannst sogar Ihren eigenen Mirror im Launcher
+    anpassen.
+optimalDisk:
+  title:
+    body: '{optimal} Speicherplatz mit {massiveResources}'
+    optimal: Optimal
+    massiveResources: Massive Ressourcen
+  description: >-
+    XMCL speichert alle Mods, Resource Packs, Shader Packs und Modpacks an einem
+    einzigen Speicherort. Wenn Sie versuchen, eine bekannte Ressource zu
+    verwenden, wird sie mittels Hardlink verwenden, um die Ressource ohne
+    Kopieren in der Instanz zu installieren. Das bedeutet Sie werden keine
+    doppelten Kopien mehr im /mods Ordner sehen.
+cleanWorkspace:
+  title:
+    body: Halten Sie Ihren Arbeitsbereich {clean} mit mehreren Instanzen
+    clean: Sauber
+  description: >-
+    XMCL hat eine integrierte Unterstützung für mehrere Instanzen. Sie können
+    mehrere Instanzen einfach erstellen. Sie brauchen sich also keine Gedanken
+    über die Mischung der verschiedenen Starteinstellungen.
+communityIntegration:
+  title:
+    body: Integriert mit {multipleCommunities}
+    multipleCommunities: Mehrere Gemeinschaften
+  description: >-
+    Die integrierte XMCL unterstützt Curseforge und Modrinth. Es bietet auch die
+    Möglichkeit benutzerdefinierte Benutzerkonten/Skin-Systeme wie Blessing Skin
+    zu unterstützen.
+=======
+baidu-source: Herunterladen von Baidu CDN
+github-source: Von Github herunterladen
+auto-source: Automatische Erkennung der Download-Quelle
+prerelease: Vorabveröffentlichung
+authSuccess: Erfolgreich sein
+authSuccessTitle: >-
+  Die Autorisierung war erfolgreich. Sie werden zurück zum
+  Launcher!
+redirectHelperTitle: >-
+  Wenn Sie nicht weitergeleitet werden, können Sie versuchen, auf die Schaltfläche In App öffnen zu klicken, um manuell
+  weiterzuleiten.
+redirectHelperMessage: >-
+  Es wird ein Popup-Fenster angezeigt, in dem Sie aufgefordert werden, den Launcher zu öffnen. Wenn es immer noch
+  nicht funktioniert, können Sie versuchen, die Schaltfläche in das Startfenster zu ziehen!
+notWork: Funktioniert nicht?
+openInAppButton: Im Launcher öffnen
+nothingWork: Wenn nichts davon funktioniert, sollten Sie den neuesten Launcher erneut herunterladen
+gameInstall:
+  title: Keine Sorgen mehr über die <span class="text-green-400"> Spiel installieren</span>
+  description: >-
+    XMCL unterstützt die Installation von Vanilla Minecraft, Minecraft Forge, Fabric und
+    sogar Optifine All in One! Du kannst sie an einem einzigen Ort innerhalb des
+    Launcher installieren. Es unterstützt auch die Third Party Mirror Link BMCL API. Du kannst sogar
+    Ihren eigenen Mirror im Launcher anpassen.
+optimalDisk:
+  title: >-
+    <span class="text-yellow-300">Optimal</span> Speicherplatz mit <span
+    class="text-red-700">Massive Ressourcen</span>
+  description: >-
+    XMCL speichert alle Mods, Resource Packs, Shader Packs und Modpacks an einem
+    einzigen Speicherort. Wenn Sie versuchen, eine bekannte Ressource zu verwenden, wird sie mittels
+    Hardlink verwenden, um die Ressource ohne Kopieren in der Instanz zu installieren. Das bedeutet
+    Sie werden keine doppelten Kopien mehr im /mods Ordner sehen.
+cleanWorkspace:
+  title: >-
+    Halten Sie Ihren Arbeitsbereich <span class="text-sky-400">Sauber</span> mit
+    mehreren Instanzen
+  description: >-
+    XMCL hat eine integrierte Unterstützung für mehrere Instanzen. Sie können mehrere
+    Instanzen einfach erstellen. Sie brauchen sich also keine Gedanken über die Mischung der
+    verschiedenen Starteinstellungen.
+communityIntegration:
+  title: Integriert mit <span class="text-emerald-700">Mehrere Gemeinschaften</span>
+  description: >-
+    Die integrierte XMCL unterstützt Curseforge und Modrinth. Es bietet auch die Möglichkeit
+    benutzerdefinierte Benutzerkonten/Skin-Systeme wie Blessing Skin zu unterstützen.
+>>>>>>> 6a1608f4e85f493d6283297ff0013ae2fd585c03
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: Beitreten {inviter}'s Party
+joinPeerDescription: >-
+<<<<<<< HEAD
+  {inviter} hat Sie eingeladen, ihrer Gruppe beizutreten {group} um gemeinsam
+  Minecraft zu spielen! Du wirst zurück zum Launcher weitergeleitet!
+fullChangelog: Was gibt es Neues?
+privacy: Software-Datenschutz
+prebuild:
+  history: Bauverlauf
+  download: Laden Sie Prebuilds herunter
+  downloadDescription: >-
+    Prebuild sind die Artefakte, die während des Entwicklungsprozesses generiert
+    werden. 
+
+    Es könnte instabil sein. 
+
+    Die Nutzung erfolgt auf eigenes Risiko!
+  entryHint: Vorgefertigte Artefakte?
+coreDocument: Kerndokument
+=======
+  {inviter} hat Sie eingeladen, ihrer Gruppe beizutreten {group} um gemeinsam Minecraft zu spielen!
+  Du wirst zurück zum Launcher weitergeleitet!
+fullChangelog: Was gibt es Neues?
+privacy: Software-Datenschutz
+>>>>>>> 6a1608f4e85f493d6283297ff0013ae2fd585c03
