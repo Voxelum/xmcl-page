@@ -11,6 +11,7 @@ export function useDownloads() {
     if (!data.latest) return ''
     if (!data.latest.assets) return ''
     const result = data.latest.assets.find(find)
+    console.log(result)
     if (result) {
       if (result.name.endsWith('.appinstaller')) {
         return 'https://xmcl.blob.core.windows.net/releases/xmcl.appinstaller'
@@ -29,9 +30,9 @@ export function useDownloads() {
 
 
   const winZip32 = computed(() => getUrl(a => a.name.endsWith('win32-ia32.zip')))
-  const winWeb = computed(() => '' ?? getUrl(a => a.name.endsWith('.appinstaller')))
+  const winWeb = computed(() => getUrl(a => a.name.endsWith('.appinstaller')))
   const winZip = computed(() => getUrl(a => a.name.endsWith('win32-x64.zip')))
-  const winAppx = computed(() => '' ?? getUrl(a => a.name.endsWith('.appx')))
+  const winAppx = computed(() => getUrl(a => a.name.endsWith('.appx')))
   const macDmg = computed(() => getUrl(a => a.name.endsWith('.dmg')))
   const macZip = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1 && a.name.indexOf('arm64') === -1))
   const macZipArm64 = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1 && a.name.indexOf('arm64') !== -1))
