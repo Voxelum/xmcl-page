@@ -2,21 +2,21 @@ repository: Quellcode-Repository
 label: Germeny
 intro:
   first:
-    body: Eine {openSource} Minecraft Launcher mit {modernUx} UX.
-    openSource: Öffnen Sie Quelle
+    body: Ein {openSource}er Minecraft Launcher mit {modernUx}er UX.
+    openSource: Quelloffen
     modernUx: Modern
   second:
-    body: Bereitstellung einer {diskEfficient} zur Verwaltung alle Ihre {mods}!
-    diskEfficient: Disk Efficient
+    body: Ein {diskEfficient}er Weg zur Verwaltung aller Ihrer {mods}!
+    diskEfficient: Speichereffizient
     mods: Mods
   description: >-
     X Minecraft Launcher (XMCL) ist ein moderner Minecraft Launcher, mit dem Sie
-    Ressourcen wie Modpacks, Ressourcenpakete, Mods, Shader-Pakete packs... Es
-    hat auch Integration mit Minecraft Forge, Fabric, Quilt, CurseForge und
+    Ressourcen wie Modpacks, Ressourcenpakete, Mods, Shader-Pakete verwalten können... Es
+    hat auch Integrationen mit Forge, Fabric, Quilt, CurseForge und
     Modrinth.
-guide: Guide
-protocol: Protocol
-changelogs: Changelogs
+guide: Anleitung
+protocol: Protokoll
+changelogs: Änderungen
 launcher:
   manage:
     intro: Verwalte dein Minecraft effektiv.
@@ -25,12 +25,12 @@ downloadFor:
   windows: 'Für Windows herunterladen:'
   mac: 'Für Mac herunterladen:'
   linux: 'Für Linux herunterladen:'
-author: Kontakt Autor
+author: Kontakt aufnehmen
 download-zip: Zip
-download-zip-32: Zip (32 bits)
+download-zip-32: Zip (32-bit)
 download-appx: AppX Package
 download-appinstaller: App Installer
-download-portable: Tragbar
+download-portable: Portable
 download-dmg: DMG
 download-snap: Snap
 download-appimage: AppImage
@@ -40,15 +40,15 @@ azure-source: Herunterladen von Azure
 azure-ms-source: Herunterladen von Azure Microsoft CDN
 github-source: Von Github herunterladen
 auto-source: Automatische Erkennung der Download-Quelle
-authSuccess: Erfolgreich sein
-authSuccessTitle: Die Autorisierung war erfolgreich. Sie werden zurück zum Launcher!
+authSuccess: Erfolg!
+authSuccessTitle: Die Autorisierung war erfolgreich. Sie werden zurück zum Launcher gebracht!
 redirectHelperTitle: >-
   Wenn Sie nicht weitergeleitet werden, können Sie versuchen, auf die
-  Schaltfläche In App öffnen zu klicken, um manuell weiterzuleiten.
+  Schaltfläche 'Im Launcher öffnen' zu klicken, um manuell weitergeleitet zu werden.
 redirectHelperMessage: >-
   Es wird ein Popup-Fenster angezeigt, in dem Sie aufgefordert werden, den
   Launcher zu öffnen. Wenn es immer noch nicht funktioniert, können Sie
-  versuchen, die Schaltfläche in das Startfenster zu ziehen!
+  versuchen, die Schaltfläche in das Fenster vom Launcher zu ziehen!
 notWork: Funktioniert nicht?
 openInAppButton: Im Launcher öffnen
 nothingWork: >-
@@ -56,25 +56,24 @@ nothingWork: >-
   herunterladen
 gameInstall:
   title:
-    body: Keine Sorgen mehr über die {gameInstall}
+    body: Keine Sorgen mehr über's {gameInstall}
     gameInstall: Spiel installieren
   description: >-
     XMCL unterstützt die Installation von Vanilla Minecraft, Minecraft Forge,
-    Fabric und sogar Optifine All in One! Du kannst sie an einem einzigen Ort
-    innerhalb des Launcher installieren. Es unterstützt auch die Third Party
-    Mirror Link BMCL API. Du kannst sogar Ihren eigenen Mirror im Launcher
+    Fabric und sogar Optifine! Du kannst sie an einem einzigen Ort
+    innerhalb des Launchers installieren. Es unterstützt auch die Third Party
+    Mirror Link BMCL API. Du kannst sogar deinen eigenen Mirror im Launcher
     anpassen.
 optimalDisk:
   title:
-    body: '{optimal} Speicherplatz mit {massiveResources}'
+    body: '{optimal}er Speicherplatz mit {massiveResources}'
     optimal: Optimal
-    massiveResources: Massive Ressourcen
+    massiveResources: Massiven Ressourcen
   description: >-
     XMCL speichert alle Mods, Resource Packs, Shader Packs und Modpacks an einem
     einzigen Speicherort. Wenn Sie versuchen, eine bekannte Ressource zu
-    verwenden, wird sie mittels Hardlink verwenden, um die Ressource ohne
-    Kopieren in der Instanz zu installieren. Das bedeutet Sie werden keine
-    doppelten Kopien mehr im /mods Ordner sehen.
+    verwenden, wird sie einfach in Ihre Minecraft Installation verlinkt. 
+    Das bedeutet, dass Sie niemals mehrere male eine Resource herunterladen müssen.
 cleanWorkspace:
   title:
     body: Halten Sie Ihren Arbeitsbereich {clean} mit mehreren Instanzen
@@ -82,32 +81,27 @@ cleanWorkspace:
   description: >-
     XMCL hat eine integrierte Unterstützung für mehrere Instanzen. Sie können
     mehrere Instanzen einfach erstellen. Sie brauchen sich also keine Gedanken
-    über die Mischung der verschiedenen Starteinstellungen.
+    über die Mischung der verschiedenen Einstellungen machen.
 communityIntegration:
   title:
     body: Integriert mit {multipleCommunities}
-    multipleCommunities: Mehrere Gemeinschaften
+    multipleCommunities: Mehreren Gemeinschaften
   description: >-
-    Die integrierte XMCL unterstützt Curseforge und Modrinth. Es bietet auch die
-    Möglichkeit benutzerdefinierte Benutzerkonten/Skin-Systeme wie Blessing Skin
-    zu unterstützen.
+    XMCL unterstützt Curseforge und Modrinth. Es unterstützt auch benutzerdefinierte
+    Benutzerkonten/Skin-Systeme wie Blessing Skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: Beitreten {inviter}'s Party
+joinPeer: {inviter}'s Party beitreten
 joinPeerDescription: >-
-  {inviter} hat Sie eingeladen, ihrer Gruppe beizutreten {group} um gemeinsam
+  {inviter} hat dich eingeladen, der Gruppe {group} beizutreten, um gemeinsam
   Minecraft zu spielen! Du wirst zurück zum Launcher weitergeleitet!
-fullChangelog: Was gibt es Neues?
+fullChangelog: Was gibt's Neues?
 privacy: Software-Datenschutz
 prebuild:
   history: Bauverlauf
-  download: Laden Sie Prebuilds herunter
+  download: Prebuilds Herunterladen
   downloadDescription: >-
-    Prebuild sind die Artefakte, die während des Entwicklungsprozesses generiert
-    werden. 
-
-    Es könnte instabil sein. 
-
-    Die Nutzung erfolgt auf eigenes Risiko!
-  entryHint: Vorgefertigte Artefakte?
+    Prebuilds sind Artefakte, die während des Entwicklungsprozesses gebaut
+    werden. Sie könnten instabil sein. Die Nutzung erfolgt auf eigenes Risiko!
+  entryHint: Prebuild Artefakte?
 coreDocument: Kerndokument
