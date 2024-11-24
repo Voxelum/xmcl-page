@@ -10,27 +10,17 @@
     }">
       <a dmg class="ui huge inverted download labeled icon positive button w-full"
         :class="{ disabled: !artifacts.macDmg, 'md:w-auto': !organized, 'md:w-[45%]': organized }"
-        :href="artifacts.macDmg" @click="trackDownload('mac', 'dmg')">
+        :href="artifacts.macDmg" @click="trackDownload('mac', 'x64')">
         <i class="icon">
           <div class="i-fa6-solid:hard-drive" />
         </i>
         <span>{{ t("download-dmg") }}</span>
-      </a>
-
-      <div class="ui labeled button" tabindex="0">
-        <a mac-zip class="ui huge inverted download labeled icon brown button w-full"
-          :class="{ disabled: !artifacts.macZip, ' md:w-auto': !organized, 'md:w-[45%]': organized }"
-          :href="artifacts.macZip" @click="trackDownload('mac', 'zip')">
-          <i class="box icon">
-            <div class="i-fa6-solid:box" />
-          </i>
-          <span>{{ t("download-zip") }} (x64)</span>
-        </a>
-        <a class="ui huge left pointing brown inverted label" :href="artifacts.macZipArm64"
-          @click="trackDownload('mac', 'zip-arm64')">
+        <a class="ui huge left pointing brown inverted label" :href="artifacts.macDmgArm64"
+          :class="{ disabled: !artifacts.macDmgArm64 }"
+          @click="trackDownload('mac', 'arm64')">
           ARM64
         </a>
-      </div>
+      </a>
     </div>
   </div>
 </template>

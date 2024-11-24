@@ -33,9 +33,8 @@ export function useDownloads() {
   const winWeb = computed(() => getUrl(a => a.name.endsWith('.appinstaller')))
   const winZip = computed(() => getUrl(a => a.name.endsWith('win32-x64.zip')))
   const winAppx = computed(() => getUrl(a => a.name.endsWith('.appx')))
-  const macDmg = computed(() => getUrl(a => a.name.endsWith('.dmg')))
-  const macZip = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1 && a.name.indexOf('arm64') === -1))
-  const macZipArm64 = computed(() => getUrl(a => a.name.endsWith('zip') && a.name.indexOf('darwin') !== -1 && a.name.indexOf('arm64') !== -1))
+  const macDmg = computed(() => getUrl(a => a.name.endsWith('.dmg') && a.name.indexOf('arm64') === -1))
+  const macDmgArm64 = computed(() => getUrl(a => a.name.endsWith('.dmg') && a.name.indexOf('arm64') !== -1))
   const deb = computed(() => getUrl(a => a.name.endsWith('.deb') && a.name.indexOf('arm64') === -1))
   const debArm64 = computed(() => getUrl(a => a.name.endsWith('.deb') && a.name.indexOf('arm64') !== -1))
   const snap = computed(() => getUrl(a => a.name.endsWith('.snap')))
@@ -48,11 +47,10 @@ export function useDownloads() {
 
   return reactive({
     winZip32,
-    macZipArm64,
+    macDmgArm64,
     winWeb,
     winZip,
     winAppx,
-    macZip,
     macDmg,
     deb,
     debArm64,
