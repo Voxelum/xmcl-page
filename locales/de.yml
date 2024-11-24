@@ -91,7 +91,7 @@ communityIntegration:
     Benutzerkonten/Skin-Systeme wie Blessing Skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: {inviter}'s Party beitreten
+joinPeer: "{inviter}'s Party beitreten"
 joinPeerDescription: >-
   {inviter} hat dich eingeladen, der Gruppe {group} beizutreten, um gemeinsam
   Minecraft zu spielen! Du wirst zurück zum Launcher weitergeleitet!
