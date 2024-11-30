@@ -27,8 +27,8 @@
                             class="max-h-10  inline-block px-2 max-w-15 sm:max-w-full sm:-mt-4 -mt-2" />! -->
                     </p>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                                t('intro.description')
-                            }}</p>
+                        t('intro.description')
+                        }}</p>
                     <div class="w-full flex justify-center mt-10 gap-2">
                         <a class="ui version inverted basic label text-sm" target="_blank"
                             href="https://github.com/voxelum/x-minecraft-launcher/releases">
@@ -36,10 +36,12 @@
                         </a>
                     </div>
 
-                    <component :is="platformDownload" class="mt-10 w-full mb-5" :organized="true" />
+                    <ClientOnly>
+                        <component :is="platformDownload" class="mt-10 w-full mb-5" :organized="true" />
+                    </ClientOnly>
 
                     <a class="ui link cursor-pointer self-center font-medium italic" :href="prebuildsUrl">{{
-                                t('prebuild.entryHint') }}</a>
+                        t('prebuild.entryHint') }}</a>
 
                     <span class="flex gap-2 items-start w-full mt-5 items-center justify-center">
                         <a href="https://fabricmc.net/" target="_blank">
@@ -95,7 +97,7 @@
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                                t('gameInstall.description') }}</p>
+                        t('gameInstall.description') }}</p>
                     <div class="flex flex-col items-start w-full mt-3 text-gray-400">
                         <a href="https://bmclapidoc.bangbang93.com/" class="text-lg" target="_blank">> BMCL API</a>
                     </div>
@@ -119,7 +121,7 @@
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                                t('optimalDisk.description') }}</p>
+                        t('optimalDisk.description') }}</p>
                     <div class="flex flex-col items-start w-full mt-3 text-gray-400">
                         <a href="https://en.wikipedia.org/wiki/Hard_link" class="text-lg" target="_blank">> Hard
                             link</a>
@@ -165,7 +167,7 @@
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                                t('cleanWorkspace.description') }}</p>
+                        t('cleanWorkspace.description') }}</p>
                 </div>
             </div>
         </div>
@@ -182,7 +184,7 @@
                         </template>
                     </i18n-t>
                     <p class="text-xl dark:text-[rgb(208,208,208)] font-medium mt-5 text-left lg:mr-2 mr-7">{{
-                                t('communityIntegration.description') }}</p>
+                        t('communityIntegration.description') }}</p>
                     <div class="flex flex-col w-full mt-3 text-gray-400 items-start">
                         <a href="https://curseforge.com/minecraft/" class="text-lg" target="_blank">> Curseforge</a>
                         <a href="https://modrinth.com/" class="text-lg" target="_blank">> Modrinth</a>

@@ -3,13 +3,11 @@
         <div class="flex lg:flex-row flex-col gap-4">
             <a :class="{ positive: platform === 'Win32', loading: fetching }"
                 class="ui huge inverted download labeled icon button" @click="onDownload(windowsArtifact)">
-                <i class="windows icon"></i>
                 <span>Windows</span>
             </a>
             <div class="ui labeled button" tabindex="0">
                 <a class="ui huge purple download labeled icon button w-full"
                     :class="{ positive: platform === 'Mac', loading: fetching }" @click="onDownload(macArtifact)">
-                    <i class="apple icon"></i>
                     <span>MacOS</span>
                 </a>
                 <a class="ui basic inverted green left pointing label" :class="{ disabled: fetching }"
@@ -20,7 +18,6 @@
             <div class="ui labeled button" tabindex="0">
                 <a :class="{ positive: platform === 'Linux', loading: fetching }"
                     class="ui huge orange download labeled icon button w-full" @click="onDownload(linuxArtifact)">
-                    <i class="linux icon"></i>
                     <span>Linux</span>
                 </a>
                 <a class="ui basic inverted green left pointing label" :class="{ disabled: fetching }"

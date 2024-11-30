@@ -1,7 +1,7 @@
 import platform from 'platform'
 
 export function usePlatform() {
-    if (import.meta.env.SSR) return ''
+    if (import.meta.env.SSR) return undefined
     switch (platform.os?.family) {
         case 'Windows':
             return 'Win32'
@@ -14,5 +14,5 @@ export function usePlatform() {
         case 'Red Hat':
             return 'Linux'
     }
-    return 'Win32'
+    return undefined
 }

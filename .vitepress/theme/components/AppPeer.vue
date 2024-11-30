@@ -11,7 +11,7 @@
         <div style="font-size: 1.25em">{{ t("joinPeer", { inviter }) }}</div>
         <div class="ui grey text"
           style="font-size: 0.55em; color: rgb(222 222 222); font-weight: 100; padding-top: 10px">{{
-          t("joinPeerDescription", { inviter, group })
+            t("joinPeerDescription", { inviter, group })
           }}</div>
       </h1>
       <div class="ui horizontal inverted divider" style="margin-bottom: 40px;">{{ t("notWork") }}</div>
@@ -29,14 +29,16 @@
           </div>
         </div>
         <div style="color: rgb(222 222 222);  line-height: 1.4; font-size: 1.4rem; padding-top: 10px">{{
-        t("nothingWork")
-        }}</div>
+          t("nothingWork")
+          }}</div>
         <div class="w-full flex justify-center mt-10">
           <a class="ui version inverted basic label" target="_blank"
             href="https://github.com/voxelum/x-minecraft-launcher/releases">{{ github.latestVersion }}</a>
         </div>
         <div class="flex item-center w-full justify-center mb-20 mt-10">
-          <component :is="componentByPlatform" />
+          <ClientOnly>
+            <component :is="componentByPlatform" />
+          </ClientOnly>
         </div>
       </div>
     </div>
