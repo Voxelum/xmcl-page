@@ -10,16 +10,16 @@
     }">
       <div class="ui labeled button" tabindex="0">
         <a dmg class="ui huge inverted download labeled icon positive button w-full"
-          :class="{ disabled: !artifacts.macDmgArm64, 'md:w-auto': !organized }"
-          :href="artifacts.macDmgArm64" @click="trackDownload('mac', 'arm64')">
+          :class="{ disabled: !buttonData[0].href, 'md:w-auto': !organized }" :href="buttonData[0].href"
+          @click="buttonData[0].click()">
           <i class="icon">
             <div class="i-fa6-solid:hard-drive" />
           </i>
-          <span>{{ t("download-dmg") }} (M1)</span>
+          <span>{{ buttonData[0].text }}</span>
         </a>
-        <a class="ui basic inverted green left pointing label" :href="artifacts.macDmg"
-          :class="{ disabled: !artifacts.macDmg }" @click="trackDownload('mac', 'x64')">
-          X64
+        <a class="ui basic inverted green left pointing label" :href="buttonData[1].href"
+          :class="{ disabled: !buttonData[1].href }" @click="buttonData[1].click()">
+          {{ buttonData[1].text }}
         </a>
       </div>
     </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script lang=ts setup>
-import { inject } from 'vue';
+import { computed, inject, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useDownloads } from '../composables/useDownloads';
 
@@ -36,5 +36,84 @@ const { title, organized } = defineProps({ title: Boolean, organized: Boolean })
 const artifacts = useDownloads()
 const { t } = useI18n()
 const { trackDownload } = inject('telemtry', { trackDownload: (category: string, action: string) => { } })
+
+async function detectMacArchitecture() {
+  // 方法 1: 使用 navigator.userAgentData (首选)
+  if ('userAgentData' in navigator && navigator.userAgentData) {
+    try {
+      const data = await (navigator.userAgentData as any).getHighEntropyValues(['architecture']);
+      if (data.architecture === 'arm') {
+        return 'arm';
+      } else if (data.architecture === 'x86') {
+        return 'x64';
+      }
+    } catch (error) {
+      console.warn('Failed to get architecture from navigator.userAgentData:', error);
+    }
+  }
+
+  // 方法 2: 使用 navigator.platform 和 navigator.userAgent (回退)
+  const isMac = navigator.platform.toUpperCase().includes('MAC');
+  const isAppleSilicon = navigator.userAgent.includes('Macintosh; ARM');
+
+  if (isMac) {
+    if (isAppleSilicon) {
+      return 'arm';
+    } else {
+      return 'x64';
+    }
+  }
+
+  // 方法 3: 使用 WebAssembly (最后的回退)
+  try {
+    const module = new WebAssembly.Module(new Uint8Array([
+      0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00
+    ]));
+    const instance = new WebAssembly.Instance(module);
+    const isARM = instance.exports instanceof WebAssembly.Instance;
+
+    if (isARM) {
+      return 'arm';
+    } else {
+      return 'x64';
+    }
+  } catch (error) {
+    console.warn('Failed to detect architecture using WebAssembly:', error);
+  }
+
+  // 如果所有方法都失败
+  return '';
+}
+
+const buttonData = computed(() => {
+  if (arch.value !== 'arm') {
+    return [{
+      text: t("download-dmg") + ' (X64)',
+      href: artifacts.macDmgArm64,
+      click: () => trackDownload('mac', 'x64'),
+    }, {
+      text: 'ARM',
+      href: artifacts.macDmg,
+      click: () => trackDownload('mac', 'arm64'),
+    }]
+  }
+  return [{
+    text: t("download-dmg") + ' (ARM)',
+    href: artifacts.macDmgArm64,
+    click: () => trackDownload('mac', 'arm64'),
+  }, {
+    text: 'X64',
+    href: artifacts.macDmg,
+    click: () => trackDownload('mac', 'x64'),
+  }]
+})
+
+
+const arch = ref('')
+onMounted(() => {
+  detectMacArchitecture().then(architecture => {
+    arch.value = architecture;
+  });
+})
 
 </script>
