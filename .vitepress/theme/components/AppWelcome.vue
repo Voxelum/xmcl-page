@@ -275,8 +275,12 @@ const platformDownload = computed(() => {
     switch (platform) {
         case 'Linux': return Linux
         case 'Mac': return Mac
-        default: return Win32
+        default:
     }
+    if (window.navigator.platform.startsWith('Linux')) {
+        return Linux
+    }
+    return Win32
 })
 
 </script>

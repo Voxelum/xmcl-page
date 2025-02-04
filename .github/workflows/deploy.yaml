@@ -27,7 +27,7 @@ jobs:
           ref: 'gh-pages'
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 8.2.0
+          version: 9.3.0
       - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
