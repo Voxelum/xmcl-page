@@ -45,7 +45,7 @@ const { t } = useI18n()
 const { isDark } = useData()
 useI18nSync()
 
-const { state, isReady } = useAsyncState(() => getRuns(import.meta.env.VITE_GITHUB_TOKEN ?? ''), [], {
+const { state, isReady } = useAsyncState(() => getRuns(), [], {
     shallow: true
 })
 
