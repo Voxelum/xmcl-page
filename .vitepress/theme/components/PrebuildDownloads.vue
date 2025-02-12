@@ -127,7 +127,7 @@ const onDownload = async (a?: Artifact) => {
 async function getLatestWorkflowArtifacts(): Promise<Artifact[]> {
     const runId: number = props.id;
 
-    const artifactsResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/runs/${runId}/artifacts`, {
+    const artifactsResponse = await fetch(`https://api.xmcl.app/prebuilds/${runId}`, {
         headers: {
             Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
         },
