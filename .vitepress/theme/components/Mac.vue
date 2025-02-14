@@ -89,11 +89,11 @@ const buttonData = computed(() => {
   if (arch.value !== 'arm') {
     return [{
       text: t("download-dmg") + ' (X64)',
-      href: artifacts.macDmgArm64,
+      href: artifacts.macDmg,
       click: () => trackDownload('mac', 'x64'),
     }, {
       text: 'ARM',
-      href: artifacts.macDmg,
+      href: artifacts.macDmgArm64,
       click: () => trackDownload('mac', 'arm64'),
     }]
   }
