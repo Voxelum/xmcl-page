@@ -3,7 +3,6 @@ import 'uno.css'
 import { EnhanceAppContext, useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
-// @ts-expect-error
 import Doc from 'vitepress/dist/client/theme-default/components/VPDoc.vue'
 import { defineComponent, h, provide, watchEffect } from 'vue'
 import AppAuth from './components/AppAuth.vue'
@@ -16,6 +15,7 @@ import PostDetail from './components/BlogPostDetail.vue'
 import PostIcon from './components/BlogPostIcon.vue'
 import Posts from './components/BlogPosts.vue'
 import { i18n } from './modules/i18n'
+import { MotionPlugin } from '@vueuse/motion'
 import './styles/index.css'
 
 export default {
@@ -52,6 +52,7 @@ export default {
   }),
   enhanceApp({ app }: EnhanceAppContext) {
     app.use(i18n)
+    app.use(MotionPlugin)
     app.component('Posts', Posts)
     app.component('Post', Post)
     app.component('PostDetail', PostDetail)

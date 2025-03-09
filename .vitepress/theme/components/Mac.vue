@@ -9,18 +9,10 @@
       'justify-center': organized
     }">
       <div class="ui labeled button" tabindex="0">
-        <a dmg class="ui huge inverted download labeled icon positive button w-full"
-          :class="{ disabled: !buttonData[0].href, 'md:w-auto': !organized }" :href="buttonData[0].href"
-          @click="buttonData[0].click()">
-          <i class="icon">
-            <div class="i-fa6-solid:hard-drive" />
-          </i>
-          <span>{{ buttonData[0].text }}</span>
-        </a>
-        <a class="ui basic inverted green left pointing label" :href="buttonData[1].href"
-          :class="{ disabled: !buttonData[1].href }" @click="buttonData[1].click()">
-          {{ buttonData[1].text }}
-        </a>
+        <UIButton class="inverted positive" :disabled="!buttonData[0].href" :organized="organized" :href="buttonData[0].href"
+          @click="buttonData[0].click()" :text="buttonData[0].text" :icon="'i-fa6-solid:hard-drive'" />
+        <UILeftPointingButton class="basic inverted green" :href="buttonData[1].href" @click="buttonData[1].click()"
+          :text="buttonData[1].text" />
       </div>
     </div>
   </div>
@@ -30,6 +22,8 @@
 import { computed, inject, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n'
 import { useDownloads } from '../composables/useDownloads';
+import UIButton from './UIButton.vue';
+import UILeftPointingButton from './UILeftPointingButton.vue';
 
 const { title, organized } = defineProps({ title: Boolean, organized: Boolean })
 

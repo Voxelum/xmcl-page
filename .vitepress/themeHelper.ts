@@ -134,7 +134,7 @@ export function loadTheme(location: string, locale: string) {
             },
             editLink: {
                 text: localeMessages.editLink,
-                pattern: 'https://github.com/voxelum/xmcl-page/edit/main/docs/:path'
+                pattern: 'https://github.com/voxelum/xmcl-page/edit/master/src/:path'
             }
         }
     }

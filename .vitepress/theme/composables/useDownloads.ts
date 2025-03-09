@@ -5,16 +5,18 @@ export function useDownloads() {
   const downloadSource = inject('download', ref('auto'))
   const inGFW = inject('gfw', ref(false))
 
-  function getAzureUrl(name: string) { return `https://cdn.xmcl.app/releases/${name}` }
+  function getAzureUrl(name: string) {
+    if (name.endsWith('.appinstaller')) {
+      return 'https://xmcl.blob.core.windows.net/releases/xmcl.appinstaller'
+    }
+    return `https://cdn.xmcl.app/releases/${name}`
+  }
   function getUrl(find: (r: { name: string }) => boolean) {
     if (!data.latest) return ''
     if (!data.latest.assets) return ''
     const result = data.latest.assets.find(find)
     console.log(result)
     if (result) {
-      if (result.name.endsWith('.appinstaller')) {
-        return 'https://xmcl.blob.core.windows.net/releases/xmcl.appinstaller'
-      }
       if (downloadSource.value === 'auto') {
         return inGFW.value ? getAzureUrl(result.name) : result.browser_download_url
       } else if (downloadSource.value === 'azure') {

@@ -7,38 +7,16 @@
       'w-full': organized,
       'justify-center': organized
     }">
-      <a class="ui huge inverted download labeled icon teal button w-full"
-        :class="{ disabled: !artifacts.winWeb, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
-        :href="artifacts.winWeb" @click="trackDownload('win32', 'appinstaller')">
-        <i class="icon">
-          <div class="i-fa6-solid:plane " />
-        </i>
-        <span>{{ t("download-appinstaller") }}</span>
-      </a>
-      <a class="ui huge inverted download labeled icon positive button w-full"
-        :class="{ disabled: !artifacts.winAppx, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
-        :href="artifacts.winAppx" @click="trackDownload('win32', 'appx')">
-        <i class="icon">
-          <div class="i-fa6-solid:rocket " />
-        </i>
-        <span>{{ t('download-appx') }}</span>
-      </a>
-      <a class="ui huge inverted download labeled icon brown button w-full" :disabled="!artifacts.winZip"
-        :class="{ disabled: !artifacts.winZip, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
-        :href="artifacts.winZip" @click="trackDownload('win32', 'zip64')">
-        <i class="icon">
-          <div class="i-fa6-solid:box " />
-        </i>
-        <span>{{ t("download-zip") }} (x64)</span>
-      </a>
-      <a class="ui huge inverted download labeled icon brown button w-full" :disabled="!artifacts.winZip32"
-        :class="{ disabled: !artifacts.winZip32, '2xl:w-[45%]': organized, 'md:w-auto': !organized }"
-        :href="artifacts.winZip32" @click="trackDownload('win32', 'zip32')">
-        <i class="icon">
-          <div class="i-fa6-solid:box " />
-        </i>
-        <span>{{ t("download-zip") }} (x86)</span>
-      </a>
+      <UIButton class="inverted teal" :disabled="!artifacts.winWeb" :organized="organized" :href="artifacts.winWeb"
+        @click="trackDownload('win32', 'appinstaller')" :text="t('download-appinstaller')"
+        :icon="'i-fa6-solid:plane'" />
+      <UIButton class="inverted positive" :disabled="!artifacts.winAppx" :organized="organized"
+        :href="artifacts.winAppx" @click="trackDownload('win32', 'appx')" :text="t('download-appx')"
+        :icon="'i-fa6-solid:rocket'" />
+      <UIButton class="inverted brown" :disabled="!artifacts.winZip" :organized="organized" :href="artifacts.winZip"
+        @click="trackDownload('win32', 'zip64')" :text="t('download-zip') + ' (x64)'" :icon="'i-fa6-solid:box'" />
+      <UIButton class="inverted brown" :disabled="!artifacts.winZip32" :organized="organized" :href="artifacts.winZip32"
+        @click="trackDownload('win32', 'zip32')" :text="t('download-zip') + ' (x86)'" :icon="'i-fa6-solid:box'" />
     </div>
   </div>
 </template>
@@ -47,6 +25,7 @@
 import { inject } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useDownloads } from '../composables/useDownloads';
+import UIButton from './UIButton.vue';
 
 const { title, organized } = defineProps({ title: Boolean, organized: Boolean })
 
@@ -55,6 +34,4 @@ const { trackDownload } = inject('telemtry', { trackDownload: (category: string,
 const { t } = useI18n()
 
 </script>
-<style>
-
-</style>
+<style></style>
