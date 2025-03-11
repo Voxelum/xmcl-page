@@ -9,10 +9,11 @@ intro:
     diskEfficient: Moyen Efficace
     mods: Mods
   description: >-
-    X Minecraft Launcher (XMCL) est un launcher Minecraft moderne permettant de gérer 
-    de très grands volumes de données comme des modpacks, des packs de textures, 
-    des mods et même des packs de shaders... Il est conçu pour fonctionner avec Forge, 
-    Fabric, Quilt ainsi que CurseForge, Modrinth et FeedTheBeast (FTB).
+    X Minecraft Launcher (XMCL) est un launcher Minecraft moderne permettant de
+    gérer  de très grands volumes de données comme des modpacks, des packs de
+    textures,  des mods et même des packs de shaders... Il est conçu pour
+    fonctionner avec Forge,  Fabric, Quilt ainsi que CurseForge, Modrinth et
+    FeedTheBeast (FTB).
 label: Français
 guide: Guide
 protocol: Protocole
@@ -39,54 +40,60 @@ download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
 azure-source: Télécharger sur les serveurs Azure
-azure-ms-source: Télécharger sur les CDN Azure de Microsoft 
+azure-ms-source: Télécharger sur les CDN Azure de Microsoft
 github-source: Télécharger sur Github
 auto-source: Détection Automatique de la source de téléchargement
 authSuccess: Succès !
 authSuccessTitle: Autorisation exécutée avec succès. Vous allez être redirigé vers le Launcher !
 redirectHelperTitle: >-
-  Si vous n'êtes pas redirigé, essayez de cliquer sur le bouton
-  « Ouvrir dans l'Application » pour être manuellement redirigé.
+  Si vous n'êtes pas redirigé, essayez de cliquer sur le bouton « Ouvrir dans
+  l'Application » pour être manuellement redirigé.
 redirectHelperMessage: >-
   Une fenêtre contextuelle vous demandera d'ouvrir le launcher. Si cela ne
-  marche pas non plus, vous pouvez essayer de faire glisser le bouton sur la fenêtre du launcher !
+  marche pas non plus, vous pouvez essayer de faire glisser le bouton sur la
+  fenêtre du launcher !
 notWork: Ça ne marche pas ?
 openInAppButton: Ouvrir dans le Launcher
-nothingWork: Si rien ne fonctionne, essayez de télécharger à nouveau la dernière version du launcher
+nothingWork: >-
+  Si rien ne fonctionne, essayez de télécharger à nouveau la dernière version du
+  launcher
 gameInstall:
   title:
     body: Plus d'inquiétude lors de votre choix de {gameInstall}
     gameInstall: Versions de Minecraft
   description: >-
-    XMCL prend entièrement en charge l'installation des versions vanilla, Forge, Fabric et
-    même Optifine de Minecraft ! Ils sont tous regrouper au même endroit dans
-    le Launcher. Il prend également en charge le lien miroir tiers BMCL API.
-    Vous pouvez même personnaliser votre propre mirror dans le launcher.
+    XMCL prend entièrement en charge l'installation des versions vanilla, Forge,
+    Fabric et même Optifine de Minecraft ! Ils sont tous regrouper au même
+    endroit dans le Launcher. Il prend également en charge le lien miroir tiers
+    BMCL API. Vous pouvez même personnaliser votre propre mirror dans le
+    launcher.
 optimalDisk:
   title:
-    body: Espace disque {optimal} même avec les {massiveResources} 
+    body: Espace disque {optimal} même avec les {massiveResources}
     optimal: Optimisé
     massiveResources: Ressources Volumineuses
   description: >-
     XMCL stockera tous les mods, packs de textures, packs de shaders et modpacks
     dans un emplacement de stockage unique. Lorsque vous essayez d'utiliser une 
-    ressource déjà existante, il utilisera un lien direct pour utiliser la ressource
-    dans l'instance choisie sans avoir à la copier. Cela signifie que vous ne verrez plus de mods dupliqués dans le dossier /mods.
+    ressource déjà existante, il utilisera un lien direct pour utiliser la
+    ressource dans l'instance choisie sans avoir à la copier. Cela signifie que
+    vous ne verrez plus de mods dupliqués dans le dossier /mods.
 cleanWorkspace:
   title:
     body: Gardez votre espace de travail {clean} avec différentes instances
     clean: Propre
   description: >-
-    XMCL peut gérer l'utilisation de plusieurs instances. Vous pouvez ainsi créer
-    plusieurs instances facilement. Vous n'avez donc plus à vous soucier d'utiliser
-    différents paramètres de lancement.
+    XMCL peut gérer l'utilisation de plusieurs instances. Vous pouvez ainsi
+    créer plusieurs instances facilement. Vous n'avez donc plus à vous soucier
+    d'utiliser différents paramètres de lancement.
 communityIntegration:
   title:
     body: Une intégration {multipleCommunities}
     multipleCommunities: Multicommunautaire
   description: >-
-    XMCL prend en charge Curseforge, Modrinth et FeedTheBeast (FTB). Il offre également le support 
-    des comptes utilisateurs/skins personnalisés comme « Blessing Skin ».
+    XMCL prend en charge Curseforge, Modrinth et FeedTheBeast (FTB). Il offre
+    également le support  des comptes utilisateurs/skins personnalisés comme «
+    Blessing Skin ».
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Rejoidre la partie de {inviter}
@@ -99,6 +106,10 @@ prebuild:
   history: Historique des Compilations
   download: Télécharger une Pré-Compilation
   downloadDescription: >-
-    Les versions « Pré-Compilation » (ou Prebuild) est le produit obtenu au cours du processus de 
-    développement. Ils peuvent être instables. Utilisez-les à vos risques et périls !
+    Les versions « Pré-Compilation » (ou Prebuild) est le produit obtenu au
+    cours du processus de  développement. Ils peuvent être instables.
+    Utilisez-les à vos risques et périls !
   entryHint: Artefacts de Pré-Compilation ?
+downloadMacHint:
+  link: installer des instructions
+  content: Pour les utilisateurs de Mac, veuillez suivre le {link} à installer.

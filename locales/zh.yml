@@ -45,16 +45,16 @@ intro:
     diskEfficient: 磁盘空间最优
     mods: 模组
   description: >-
-    X Minecraft Launcher (XMCL) 是一个便于你管理多种整合包、模组、资源包、光影包的现代化启动器。它还支持 Minecraft Forge、
-    Fabric、Quilt、CurseForge 和 Modrinth。
+    X Minecraft Launcher (XMCL) 是一个便于你管理多种整合包、模组、资源包、光影包的现代化启动器。它还支持 Minecraft
+    Forge、 Fabric、Quilt、CurseForge 和 Modrinth。
 launcher:
   manage:
     intro: 有效管理你的 Minecraft.
   description: 一个简洁、开源、功能型的 Minecraft 启动器
 downloadFor:
-  windows: '下载 Windows 版：'
-  mac: '下载 Mac 版：'
-  linux: '下载 Linux 版：'
+  windows: 下载 Windows 版：
+  mac: 下载 Mac 版：
+  linux: 下载 Linux 版：
 author: 联系作者
 download-zip: 压缩包
 download-zip-32: 压缩包 (x86)
@@ -102,7 +102,8 @@ communityIntegration:
     body: 有效集成 {multipleCommunities}
     multipleCommunities: 知名第三方社区
   description: >-
-    XMCL 目前支持 CurseForge 和 Modrinth，可以在启动器内访问并下载资源。启动器同样支持自定义的账号皮肤系统，如 Blessin Skin。
+    XMCL 目前支持 CurseForge 和 Modrinth，可以在启动器内访问并下载资源。启动器同样支持自定义的账号皮肤系统，如 Blessin
+    Skin。
 download-tarxz: 压缩包 (tar.xz)
 download-linuxZip: 压缩包 (zip)
 joinPeer: 和 {inviter} 一起玩
@@ -116,3 +117,6 @@ prebuild:
     它可能不稳定。
     请自行承担使用风险！
   entryHint: 在找快照版下载？
+downloadMacHint:
+  link: 安装指南
+  content: 对于Mac用户，请按照{link}进行安装。

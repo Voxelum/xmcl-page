@@ -102,3 +102,6 @@ prebuild:
     Prebuild is the artifacts generated during development process. It might be
     unstable. Use it with your own risk!
   entryHint: Prebuild artifacts?
+downloadMacHint:
+  content: For Mac users, please follow the {link} to install.
+  link: install instruction

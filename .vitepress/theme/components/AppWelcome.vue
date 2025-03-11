@@ -52,6 +52,16 @@
 
                         <ClientOnly>
                             <component :is="platformDownload" class="mt-10 w-full mb-5" :organized="true" />
+                            <div v-if="platform === 'Mac'"
+                                class="text-center text-gray-400 warning custom-block lg:mx-8 mb-2 pb-4! text-lg!">
+                                <i18n-t keypath="downloadMacHint.content" tag="p">
+                                    <template v-slot:link>
+                                        <a :href="`/${locale}/guide/install#macos`" class="font-bold capitalize">
+                                            {{ t('downloadMacHint.link') }}
+                                        </a>
+                                    </template>
+                                </i18n-t>
+                            </div>
                         </ClientOnly>
 
                         <a class="ui link cursor-pointer self-center font-medium italic" :href="prebuildsUrl">{{

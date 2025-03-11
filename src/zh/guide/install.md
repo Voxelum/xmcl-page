@@ -2,7 +2,11 @@
 
 启动器提供了多种安装格式，其中一些安装格式较为，在这里将着重介绍一下**少见**或**特殊**的格式特性。
 
-## 安装格式
+## Windows
+
+:::info
+Windows 推荐使用 `APPX` 或 `在线安装 (appinstaller)` 安装
+:::
 
 ### APPX
 
@@ -23,6 +27,34 @@ APPX 的自动更新支持 Windows 的**优化传递**，以及**增量更新** 
 ### 在线安装 (appinstaller)
 
 `appinstaller` 本质上和 `APPX` 格式相同，`appinstaller` 本身是个 `XML` 文本文件，里面保存着 `APPX` 的 `URL`。弹出安装界面时会尝试下载 `APPX` 并安装。因此其更新机制和 `APPX` 是相同的。
+
+## MacOS
+
+:::warning
+Mac 用户需要允许安装破解软件。
+由于 XMCL 未签名，您需要在系统设置中允许其运行。
+:::
+
+### DMG
+
+我们仅为 MacOS 用户提供 DMG 格式。DMG 格式是一种磁盘映像格式，可以挂载为虚拟磁盘。打开 DMG 后，将应用程序拖到 `Applications` 文件夹中以进行安装。
+
+但因为 XMCL 没有苹果的代码签名，你需要允许你的苹果系统安装任意来源的应用才能使用，安装后请打开终端输入以下命令：
+
+```sh
+# 允许来自任何来源的软件
+sudo spctl --master-disable
+# 清除隔离属性
+sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+```
+
+如果您将 X Minecraft Launcher.app 安装到其他位置，只需使用该路径替换 `/Applications/X\ Minecraft\ Launcher.app`。
+
+## Linux
+
+:::info
+Linux 的发行版太多了……这里只提一下 `AppImage` 格式，欢迎大家补充
+:::
 
 ### AppImage
 

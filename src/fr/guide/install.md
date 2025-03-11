@@ -2,7 +2,9 @@
 
 Le launcher fournit plusieurs formats d'installation, dont certains sont moins courants. Ici, nous nous concentrerons sur l'introduction des fonctionnalités de format **moins courantes** ou **spéciales**.
 
-## APPX
+## Windows
+
+### APPX
 
 APPX est un format de **package d'installation** fourni par Windows 10 qui permet aux programmes de s'exécuter dans un environnement virtualisé/sandbox. Les programmes installés via APPX s'exécuteront tous dans le bac à sable Windows.
 
@@ -18,9 +20,37 @@ AppX est mis à jour via le mécanisme appinstaller. Selon la stratégie de [mis
 Les mises à jour automatiques d'APPX prennent en charge la **livraison d'optimisation** et les **mises à jour incrémentielles** de Windows - ne mettant à jour que le contenu modifié.
 :::
 
-## Installation en ligne (appinstaller)
+### Installation en ligne (appinstaller)
 
 `appinstaller` est essentiellement le même que le format `APPX`. `appinstaller` lui-même est un fichier texte `XML` qui contient l'`URL` de `APPX`. Lorsque l'interface d'installation s'affiche, elle tente de télécharger `APPX` et de l'installer. Par conséquent, son mécanisme de mise à jour est le même que APPX.
+
+## MacOS
+
+:::warning
+Les utilisateurs de Mac doivent autoriser l'installation de logiciels piratés.
+Étant donné que XMCL n'est pas signé, vous devez autoriser son exécution dans les paramètres du système.
+:::
+
+### DMG
+
+Nous ne fournissons que le format DMG pour les utilisateurs de MacOS. Le format DMG est un format d'image disque qui est monté comme un disque virtuel. Après avoir ouvert le DMG, faites glisser l'application vers le dossier `Applications` pour l'installer.
+
+Pour exécuter l'application, vous devez autoriser le logiciel à s'exécuter dans les paramètres du système.
+
+```sh
+# autoriser les logiciels de n'importe quelle source
+sudo spctl --master-disable
+# effacer l'attribut de quarantaine
+sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+```
+
+Si vous installez `X Minecraft Launcher.app` à un autre endroit, remplacez simplement `/Applications/X\ Minecraft\ Launcher.app` par le chemin d'accès.
+
+## Linux
+
+:::info
+Linux a tellement de distributions qu'il est difficile de fournir une méthode d'installation universelle. Ici, nous ne mentionnons que l'`AppImage`.
+:::
 
 ## AppImage
 

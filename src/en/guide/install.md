@@ -2,7 +2,13 @@
 
 The launcher provides multiple installation formats, some of which are less common. Here we will focus on introducing the **less common** or **special** format features.
 
-## APPX
+## Windows
+
+:::info
+The recommended installation format for Windows users is `APPX` or `Online installation (appinstaller)`.
+:::
+
+### APPX
 
 APPX is an **installation package** format provided by Windows 10 that allows programs to run in a virtualized/sandboxed environment. Programs installed through APPX will all run in the Windows sandbox.
 
@@ -18,11 +24,39 @@ AppX is updated through the appinstaller mechanism. According to the [automatic 
 APPX's automatic updates support Windows' **optimization delivery** and **incremental updates** - only updating changed content.
 :::
 
-## Online installation (appinstaller)
+### Online installation (appinstaller)
 
 `appinstaller` is essentially the same as the `APPX` format. `appinstaller` itself is an `XML` text file that contains the `URL` of the `APPX`. When the installation interface pops up, it will attempt to download the `APPX` and install it. Therefore, its update mechanism is the same as APPX.
 
-## AppImage
+## MacOS
+
+:::warning
+The mac user need to allow cracked software to be installed.
+Since XMCL is not signed, you need to allow it to run in the system settings.
+:::
+
+### DMG
+
+We only provide DMG format for MacOS users. The DMG format is a disk image format that is mounted as a virtual disk. After opening the DMG, drag the application to the `Applications` folder to install it.
+
+To run the application, you need to allow the you can use the following command.
+
+```sh
+# allow software from any source
+sudo spctl --master-disable
+# clear the quarantine attribute
+sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+```
+
+If you install the `X Minecraft Launcher.app` to other place, just use the path to replace the `/Applications/X\ Minecraft\ Launcher.app`.
+
+## Linux
+
+:::info
+Linux has so many distributions that it is difficult to provide a universal installation method. Here we only mention the `AppImage`.
+:::
+
+### AppImage
 
 AppImage is a Linux application format that can run on any Linux desktop without installation. The AppImage file is executable, just double-click or run from the terminal.
 
@@ -46,4 +80,4 @@ As mentioned on the setup page, due to the special file structure of XMCL, it is
 
 Here, it is recommended to choose a new folder as XMCL's `Game Data Directory`.
 
-For more information about the structure of the game data directory, please see the [Data Management Guide](/zh/guide/manage.md#minecraft-related-data).
+For more information about the structure of the game data directory, please see the [Data Management Guide](/en/guide/manage.md#minecraft-related-data).
