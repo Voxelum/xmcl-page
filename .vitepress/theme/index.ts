@@ -17,6 +17,9 @@ import Posts from './components/BlogPosts.vue'
 import { i18n } from './modules/i18n'
 import { MotionPlugin } from '@vueuse/motion'
 import './styles/index.css'
+import AppForgePicture from "./components/AppForgePicture.vue"
+import AppFabricPicture from "./components/AppFabricPicture.vue"
+import AppNeoForgePicture from "./components/AppNeoForgePicture.vue"
 
 export default {
   extends: DefaultTheme,
@@ -63,5 +66,8 @@ export default {
     app.component('prebuilds', AppPrebuilds)
     app.component('changelog', Doc)
     app.component('auth', AppAuth)
+    app.component('AppForgePicture', AppForgePicture)
+    app.component('AppFabricPicture', AppFabricPicture)
+    app.component('AppNeoForgePicture', AppNeoForgePicture)
   },
 }
