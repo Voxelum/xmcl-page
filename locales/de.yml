@@ -1,5 +1,5 @@
 repository: Quellcode-Repository
-label: Germeny
+label: German
 intro:
   first:
     body: Ein {openSource}er Minecraft Launcher mit {modernUx}er UX.
