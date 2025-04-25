@@ -10,22 +10,22 @@
       'w-full': organized,
       'justify-center': organized
     }">
-      <div class="ui labeled button" tabindex="0">
+      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
         <UIButton class="inverted positive" :disabled="!artifacts.deb" :organized="organized" :href="artifacts.deb"
           @click="trackDownload('linux', 'deb')" :text="t('download-deb') + ' (x64)'" :icon="'i-fa6-brands:debian'" />
         <UILeftPointingButton class="basic inverted green" :href="artifacts.debArm64" @click="trackDownload('linux', 'deb-arm64')" text="ARM64" />
       </div>
-      <div class="ui labeled button" tabindex="0">
+      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
         <UIButton class="" :disabled="!artifacts.rpm" :organized="organized" :href="artifacts.rpm"
           @click="trackDownload('linux', 'rpm')" :text="t('download-rpm') + ' (x64)'" :icon="'i-fa6-brands:linux'" />
         <UILeftPointingButton class="white" :href="artifacts.rpmAArch64" @click="trackDownload('linux', 'rpm-aarch64')" text="AArch64" />
       </div>
-      <div class="ui labeled button" tabindex="0">
+      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
         <UIButton class="inverted red" :disabled="!artifacts.appImage" :organized="organized" :href="artifacts.appImage"
           @click="trackDownload('linux', 'appimage')" :text="t('download-appimage') + ' (x64)'" :icon="'i-fa6-solid:hard-drive'" />
         <UILeftPointingButton class="inverted red" :href="artifacts.appImageArm64" @click="trackDownload('linux', 'appimage-arm64')" text="ARM64" />
       </div>
-      <div class="ui labeled button" tabindex="0">
+      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
         <UIButton class="inverted brown" :disabled="!artifacts.tarxz" :organized="organized" :href="artifacts.tarxz"
           @click="trackDownload('linux', 'tar.xz')" :text="t('download-tarxz') + ' (x64)'" :icon="'i-fa6-solid:box'" />
         <UILeftPointingButton class="inverted brown" :href="artifacts.tarxzArm64" @click="trackDownload('linux', 'tar.xz-arm64')" text="ARM64" />

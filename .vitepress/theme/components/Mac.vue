@@ -8,7 +8,7 @@
       'w-full': organized,
       'justify-center': organized
     }">
-      <div class="ui labeled button" tabindex="0">
+      <div class="ui labeled button w-full" tabindex="0">
         <UIButton class="inverted positive" :disabled="!buttonData[0].href" :organized="organized" :href="buttonData[0].href"
           @click="buttonData[0].click()" :text="buttonData[0].text" :icon="'i-fa6-solid:hard-drive'" />
         <UILeftPointingButton class="basic inverted green" :href="buttonData[1].href" @click="buttonData[1].click()"
