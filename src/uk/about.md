@@ -1,4 +1,3 @@
-<!-- filepath: d:\Workspace\xmcl-page\src\uk\about.md -->
 ---
 outline: false
 layout: home

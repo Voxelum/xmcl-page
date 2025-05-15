@@ -15,10 +15,8 @@ export declare const data: {
 }
 
 async function load() {
-  const resp = await fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases?per_page=5')
-  const releases = await resp.json().then(v => v instanceof Array ? v : [])
-
-  const latest: DownloadInfo = releases[0]
+  const resp = await fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/releases/latest')
+  const latest = await resp.json().then(v => v as DownloadInfo)
   const latestVersion = latest ? latest.tag_name : 'unknown'
   const prerelease = latest ? !!latest.prerelease : false
 
@@ -31,7 +29,6 @@ async function load() {
   }
  
   const github = {
-    releases,
     versionWithBuild,
     latest,
     latestVersion,

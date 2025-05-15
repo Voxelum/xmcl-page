@@ -1,4 +1,4 @@
-
+# Contributing
 ### Tech Stack & Some Background
 
 Here we have a overview of the toolchain & runtime of this project

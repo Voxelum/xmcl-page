@@ -1,107 +1,108 @@
-repository: Source Code Repository
+repository: Repozytorium kodu źródłowego
 intro:
   first:
-    body: An {openSource} Minecraft Launcher with {modernUx} UX.
-    openSource: Open Source
-    modernUx: Modern
+    body: "{openSource} launcher Minecraft z {modernUx} interfejsem UX"
+    openSource: "Otwartoźródłowy"
+    modernUx: "Nowoczesnym"
   second:
-    body: Provide a {diskEfficient} way to manage all your {mods}!
-    diskEfficient: Disk Efficient
-    mods: Mods
+    body: "Zapewnia {diskEfficient} sposób zarządzania wszystkimi twoimi {mods}!"
+    diskEfficient: "Wydajny dyskowy"
+    mods: "Modami"
   description: >-
-    X Minecraft Launcher (XMCL) is a modern Minecraft launcher that lets you
-    manage your massive resources like modpacks, resource packs, mods, shader
-    packs... It also has integration with Minecraft Forge, Fabric, Quilt,
-    CurseForge and Modrinth.
-label: English
-guide: Guide
-protocol: Protocol
-changelogs: Changelogs
-outline: On this page
-coreDocument: Core Document
+    X Minecraft Launcher (XMCL) to nowoczesny launcher Minecraft, który pozwala
+    zarządzać ogromnymi zasobami, takimi jak paczki modów, paczki zasobów, mody,
+    shadery... Posiada również integrację z Minecraft Forge, Fabric, Quilt,
+    CurseForge i Modrinth.
+label: Polski
+guide: Przewodnik
+protocol: Protokół
+changelogs: Historia zmian
+outline: Na tej stronie
+coreDocument: Dokumentacja główna
 launcher:
   manage:
-    intro: Manage your Minecraft effectively.
-  description: A Simple, Open Sources, and Function Orientated Minecraft Launcher
+    intro: Zarządzaj swoim Minecraft efektywnie.
+  description: Prosty, otwarty i funkcjonalny launcher Minecraft
 downloadFor:
-  windows: 'Download For Windows:'
-  mac: 'Download For Mac:'
-  linux: 'Download For Linux:'
-author: Contact Author
+  windows: 'Pobierz dla Windows:'
+  mac: 'Pobierz dla Mac:'
+  linux: 'Pobierz dla Linux:'
+author: Kontakt z autorem
 download-zip: Zip
-download-zip-32: Zip (32 bits)
-download-appx: AppX Package
-download-appinstaller: App Installer
-download-portable: Portable
+download-zip-32: Zip (32 bity)
+download-appx: Pakiet AppX
+download-appinstaller: Instalator aplikacji
+download-portable: Wersja przenośna
 download-dmg: DMG
 download-snap: Snap
 download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
-azure-source: Download From Azure
-azure-ms-source: Download From Azure Microsoft CDN
-github-source: Download From Github
-auto-source: Auto Detect The Download Source
-authSuccess: Succeed!
-authSuccessTitle: Authorization was successful. You will be redirected back to the Launcher!
+azure-source: Pobierz z Azure
+azure-ms-source: Pobierz z Azure Microsoft CDN
+github-source: Pobierz z Github
+auto-source: Automatyczne wykrywanie źródła pobierania
+authSuccess: Udało się!
+authSuccessTitle: Autoryzacja przebiegła pomyślnie. Zostaniesz przekierowany z powrotem do launchera!
 redirectHelperTitle: >-
-  If you aren't redirected, you can try to click Open In App button to manually
-  redirect.
+  Jeśli nie zostałeś przekierowany, możesz spróbować kliknąć przycisk Otwórz w aplikacji,
+  aby przekierować ręcznie.
 redirectHelperMessage: >-
-  It will create a popup and ask you to open the launcher. If it still doesn't
-  work, you can try to drag the button to the launcher window!
-notWork: Doesn't Work?
-openInAppButton: Open In Launcher
-nothingWork: If none of above works, you might want to re-download the latest Launcher
+  Pojawi się okienko pop-up z prośbą o otwarcie launchera. Jeśli nadal nie działa,
+  możesz spróbować przeciągnąć przycisk do okna launchera!
+notWork: Nie działa?
+openInAppButton: Otwórz w launcherze
+nothingWork: Jeśli żadna z powyższych metod nie działa, może warto ponownie pobrać najnowszy launcher
 gameInstall:
   title:
-    body: No more worry about the {gameInstall}
-    gameInstall: Game Install
+    body: Koniec z problemami związanymi z {gameInstall}
+    gameInstall: "Instalacją gry"
   description: >-
-    XMCL supports installation of vanilla Minecraft, Minecraft Forge, Fabric,
-    and even Optifine All in One! You can install them in a single place within
-    the Launcher. It also supports the third party mirror link BMCL API. You can
-    even customize your own mirror in the launcher.
+    XMCL obsługuje instalację czystego Minecraft, Minecraft Forge, Fabric,
+    a nawet Optifine - wszystko w jednym! Możesz je zainstalować w jednym miejscu
+    w launcherze. Obsługuje również linki lustrzane innych firm, takie jak BMCL API.
+    Możesz nawet dostosować własne lustro w launcherze.
 optimalDisk:
   title:
-    body: '{optimal} disk space with {massiveResources}'
-    optimal: Optimal
-    massiveResources: Massive Resources
+    body: "{optimal} przestrzeń dyskowa z {massiveResources}"
+    optimal: "Optymalna"
+    massiveResources: "Masowymi zasobami"
   description: >-
-    XMCL will store all the mods, resource packs, shader packs and modpacks to a
-    single store location. While you try to use any known resource, it will use
-    hard link to install the resource to the instance without copying. It means
-    you will never see any duplicated copy in /mods folder anymore.
+    XMCL przechowuje wszystkie mody, paczki zasobów, shadery i paczki modów
+    w jednej lokalizacji. Kiedy próbujesz użyć znanego zasobu, użyje twardego
+    linku, aby zainstalować zasób w instancji bez kopiowania. To oznacza, że
+    nigdy więcej nie zobaczysz zduplikowanych kopii w folderze /mods.
 cleanWorkspace:
   title:
-    body: Keep your workspace {clean} with multi-instances
-    clean: Clean
+    body: "Utrzymuj swój obszar roboczy {clean} dzięki wielu instancjom"
+    clean: "Czysty"
   description: >-
-    XMCL has built in support of multi-instances. You can create multiple
-    instances easily. So you don't need to be worried about the mixture of the
-    different launch settings.
+    XMCL ma wbudowane wsparcie dla wielu instancji. Możesz łatwo tworzyć wiele
+    instancji. Dzięki temu nie musisz się martwić o mieszanie różnych ustawień
+    uruchamiania.
 communityIntegration:
   title:
-    body: Integrated with {multipleCommunities}
-    multipleCommunities: Multiple Communities
+    body: "Integracja z {multipleCommunities}"
+    multipleCommunities: "Wieloma społecznościami"
   description: >-
-    XMCL built in supports with Curseforge & Modrinth. It also provides the
-    ability to support custom user accounts/skin systems like blessing skin.
+    XMCL ma wbudowane wsparcie dla Curseforge i Modrinth. Zapewnia również
+    możliwość obsługi niestandardowych kont użytkowników/systemów skinów,
+    takich jak Blessing Skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: Join {inviter}'s Party
+joinPeer: Dołącz do grupy {inviter}
 joinPeerDescription: >-
-  {inviter} has invited you to join their group {group} to play Minecraft
-  together! You will be redirected back to the Launcher!
-fullChangelog: What's New?
-privacy: Software Privacy
+  {inviter} zaprosił cię do dołączenia do grupy {group}, aby razem grać w Minecraft!
+  Zostaniesz przekierowany z powrotem do launchera!
+fullChangelog: Co nowego?
+privacy: Polityka prywatności
 prebuild:
-  history: Build History
-  download: Download Prebuilds
+  history: Historia buildów
+  download: Pobierz wersje prebuild
   downloadDescription: >-
-    Prebuild is the artifacts generated during development process. It might be
-    unstable. Use it with your own risk!
-  entryHint: Prebuild artifacts?
+    Prebuild to artefakty generowane podczas procesu rozwoju. Mogą być niestabilne.
+    Używasz na własne ryzyko!
+  entryHint: Artefakty Prebuild?
 downloadMacHint:
-  content: For Mac users, please follow the {link} to install.
-  link: install instruction
+  content: Dla użytkowników Mac, proszę postępować zgodnie z {link}, aby zainstalować.
+  link: instrukcją instalacji

@@ -1,107 +1,99 @@
-repository: Source Code Repository
+repository: ソースコードリポジトリ
 intro:
   first:
-    body: An {openSource} Minecraft Launcher with {modernUx} UX.
-    openSource: Open Source
-    modernUx: Modern
+    body: "{modernUx}なUXを備えた{openSource} Minecraftランチャー"
+    openSource: "オープンソース"
+    modernUx: "モダン"
   second:
-    body: Provide a {diskEfficient} way to manage all your {mods}!
-    diskEfficient: Disk Efficient
-    mods: Mods
+    body: "すべての{mods}を管理するための{diskEfficient}な方法を提供します！"
+    diskEfficient: "ディスク効率的"
+    mods: "MOD"
   description: >-
-    X Minecraft Launcher (XMCL) is a modern Minecraft launcher that lets you
-    manage your massive resources like modpacks, resource packs, mods, shader
-    packs... It also has integration with Minecraft Forge, Fabric, Quilt,
-    CurseForge and Modrinth.
-label: English
-guide: Guide
-protocol: Protocol
-changelogs: Changelogs
-outline: On this page
-coreDocument: Core Document
+    X Minecraft Launcher (XMCL)は、MODパック、リソースパック、MOD、シェーダーパックなどの大量のリソースを
+    管理できる現代的なMinecraftランチャーです。また、Minecraft Forge、Fabric、Quilt、
+    CurseForge、Modrinthとの連携も備えています。
+label: 日本語
+guide: ガイド
+protocol: プロトコル
+changelogs: 変更履歴
+outline: このページについて
+coreDocument: コアドキュメント
 launcher:
   manage:
-    intro: Manage your Minecraft effectively.
-  description: A Simple, Open Sources, and Function Orientated Minecraft Launcher
+    intro: Minecraftを効率的に管理します。
+  description: シンプル、オープンソース、機能重視のMinecraftランチャー
 downloadFor:
-  windows: 'Download For Windows:'
-  mac: 'Download For Mac:'
-  linux: 'Download For Linux:'
-author: Contact Author
+  windows: 'Windows版のダウンロード:'
+  mac: 'Mac版のダウンロード:'
+  linux: 'Linux版のダウンロード:'
+author: 作者に連絡
 download-zip: Zip
-download-zip-32: Zip (32 bits)
-download-appx: AppX Package
-download-appinstaller: App Installer
-download-portable: Portable
+download-zip-32: Zip (32ビット)
+download-appx: AppXパッケージ
+download-appinstaller: アプリインストーラー
+download-portable: ポータブル版
 download-dmg: DMG
 download-snap: Snap
 download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
-azure-source: Download From Azure
-azure-ms-source: Download From Azure Microsoft CDN
-github-source: Download From Github
-auto-source: Auto Detect The Download Source
-authSuccess: Succeed!
-authSuccessTitle: Authorization was successful. You will be redirected back to the Launcher!
+azure-source: Azureからダウンロード
+azure-ms-source: Azure Microsoft CDNからダウンロード
+github-source: Githubからダウンロード
+auto-source: ダウンロードソースを自動検出
+authSuccess: 成功！
+authSuccessTitle: 認証が成功しました。ランチャーに戻ります！
 redirectHelperTitle: >-
-  If you aren't redirected, you can try to click Open In App button to manually
-  redirect.
+  リダイレクトされない場合は、「アプリで開く」ボタンをクリックして手動でリダイレクトしてみてください。
 redirectHelperMessage: >-
-  It will create a popup and ask you to open the launcher. If it still doesn't
-  work, you can try to drag the button to the launcher window!
-notWork: Doesn't Work?
-openInAppButton: Open In Launcher
-nothingWork: If none of above works, you might want to re-download the latest Launcher
+  ポップアップが表示され、ランチャーを開くように要求されます。それでも機能しない場合は、
+  ボタンをランチャーウィンドウにドラッグしてみてください！
+notWork: 動作しませんか？
+openInAppButton: ランチャーで開く
+nothingWork: 上記のどれも機能しない場合は、最新のランチャーを再ダウンロードしてみてください
 gameInstall:
   title:
-    body: No more worry about the {gameInstall}
-    gameInstall: Game Install
+    body: "{gameInstall}について心配する必要はもうありません"
+    gameInstall: "ゲームのインストール"
   description: >-
-    XMCL supports installation of vanilla Minecraft, Minecraft Forge, Fabric,
-    and even Optifine All in One! You can install them in a single place within
-    the Launcher. It also supports the third party mirror link BMCL API. You can
-    even customize your own mirror in the launcher.
+    XMCLは、バニラMinecraft、Minecraft Forge、Fabric、さらにOptifineのインストールをサポートしています！
+    ランチャー内の1つの場所ですべてをインストールできます。また、サードパーティのミラーリンクBMCL APIもサポートしています。
+    ランチャーで独自のミラーをカスタマイズすることもできます。
 optimalDisk:
   title:
-    body: '{optimal} disk space with {massiveResources}'
-    optimal: Optimal
-    massiveResources: Massive Resources
+    body: "{massiveResources}でも{optimal}なディスク容量"
+    optimal: "最適化された"
+    massiveResources: "大量のリソース"
   description: >-
-    XMCL will store all the mods, resource packs, shader packs and modpacks to a
-    single store location. While you try to use any known resource, it will use
-    hard link to install the resource to the instance without copying. It means
-    you will never see any duplicated copy in /mods folder anymore.
+    XMCLはすべてのMOD、リソースパック、シェーダーパック、MODパックを単一の保存場所に保存します。
+    既知のリソースを使用しようとすると、コピーせずにハードリンクを使用してインスタンスにリソースをインストールします。
+    これにより、/modsフォルダに重複したコピーが表示されなくなります。
 cleanWorkspace:
   title:
-    body: Keep your workspace {clean} with multi-instances
-    clean: Clean
+    body: "マルチインスタンスでワークスペースを{clean}に保つ"
+    clean: "クリーン"
   description: >-
-    XMCL has built in support of multi-instances. You can create multiple
-    instances easily. So you don't need to be worried about the mixture of the
-    different launch settings.
+    XMCLにはマルチインスタンスのサポートが組み込まれています。複数のインスタンスを簡単に作成できます。
+    異なる起動設定の混在について心配する必要はありません。
 communityIntegration:
   title:
-    body: Integrated with {multipleCommunities}
-    multipleCommunities: Multiple Communities
+    body: "{multipleCommunities}との統合"
+    multipleCommunities: "複数のコミュニティ"
   description: >-
-    XMCL built in supports with Curseforge & Modrinth. It also provides the
-    ability to support custom user accounts/skin systems like blessing skin.
+    XMCLはCurseforgeとModrinthをサポートしています。また、Blessing Skinのようなカスタムユーザーアカウント/スキンシステムをサポートする機能も提供しています。
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: Join {inviter}'s Party
+joinPeer: "{inviter}のパーティに参加"
 joinPeerDescription: >-
-  {inviter} has invited you to join their group {group} to play Minecraft
-  together! You will be redirected back to the Launcher!
-fullChangelog: What's New?
-privacy: Software Privacy
+  {inviter}があなたをグループ{group}に招待して、一緒にMinecraftをプレイしています！ランチャーに戻ります！
+fullChangelog: 新機能は？
+privacy: ソフトウェアプライバシー
 prebuild:
-  history: Build History
-  download: Download Prebuilds
+  history: ビルド履歴
+  download: プレビルドをダウンロード
   downloadDescription: >-
-    Prebuild is the artifacts generated during development process. It might be
-    unstable. Use it with your own risk!
-  entryHint: Prebuild artifacts?
+    プレビルドは開発プロセス中に生成されたアーティファクトです。不安定な可能性があります。自己責任で使用してください！
+  entryHint: プレビルドアーティファクト？
 downloadMacHint:
-  content: For Mac users, please follow the {link} to install.
-  link: install instruction
+  content: Macユーザーの場合は、{link}に従ってインストールしてください。
+  link: インストール手順

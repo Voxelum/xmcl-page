@@ -1,3 +1,5 @@
+# Mitwirken
+
 ### Tech-Stack & Hintergrundinformationen
 
 Hier ist ein Überblick über die Toolchain & Laufzeitumgebung des Projekts.

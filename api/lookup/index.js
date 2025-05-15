@@ -2,7 +2,7 @@ module.exports = async function (context, req) {
   // select language based on req.headers
   const acceptLang = req.headers['accept-language'];
 
-  const availableLanguages = ['en', 'fr', 'ru', 'zh-TW', 'uk', 'zh', 'de'];
+  const availableLanguages = ['de', 'en', 'fr', 'jp', 'kk', 'pl', 'ru', 'uk', 'zh-TW', 'zh'];
   const lang = !acceptLang ? 'en' : acceptLang.split(',').map(lang => {
     const [locale, q] = lang.split(';q=');
     return {

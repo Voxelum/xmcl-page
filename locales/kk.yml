@@ -1,0 +1,111 @@
+repository: Бастапқы кодтар репозиторийі
+intro:
+  first:
+    body: "{modernUx} интерфейсі бар {openSource} Minecraft лаунчері"
+    openSource: "Ашық бастапқы"
+    modernUx: "Заманауи"
+  second:
+    body: "Барлық {mods} басқарудың {diskEfficient} жолын ұсынады!"
+    diskEfficient: "Диск үнемдейтін"
+    mods: "Модтарыңызды"
+  description: >-
+    X Minecraft Launcher (XMCL) - бұл мод жинақтары, ресурс жинақтары,
+    модтар, шейдер жинақтары сияқты қолданыстағы ресурстарыңызды
+    басқаруға мүмкіндік беретін заманауи Minecraft лаунчері.
+    Сондай-ақ, Minecraft Forge, Fabric, Quilt, CurseForge және 
+    Modrinth интеграциясы бар.
+label: Қазақша
+guide: Нұсқаулық
+protocol: Протокол
+changelogs: Өзгерістер тарихы
+outline: Бұл беттегі
+coreDocument: Негізгі құжаттама
+launcher:
+  manage:
+    intro: Minecraft ойынын тиімді басқарыңыз.
+  description: Қарапайым, ашық бастапқы және функционалды Minecraft лаунчері
+downloadFor:
+  windows: 'Windows нұсқасын жүктеу:'
+  mac: 'Mac нұсқасын жүктеу:'
+  linux: 'Linux нұсқасын жүктеу:'
+author: Авторға хабарласу
+download-zip: Zip
+download-zip-32: Zip (32 бит)
+download-appx: AppX пакеті
+download-appinstaller: Қолданба орнатушысы
+download-portable: Портативті
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+azure-source: Azure-дан жүктеу
+azure-ms-source: Azure Microsoft CDN-нан жүктеу
+github-source: Github-дан жүктеу
+auto-source: Жүктеу көзін автоматты анықтау
+authSuccess: Сәтті!
+authSuccessTitle: Авторизация сәтті аяқталды. Сіз лаунчерге қайтарыласыз!
+redirectHelperTitle: >-
+  Егер қайта бағыттау болмаса, қолмен қайта бағыттау үшін "Қолданбада ашу"
+  батырмасын басыңыз.
+redirectHelperMessage: >-
+  Лаунчерді ашу сұратылған қалқыма терезе пайда болады. Егер бұл
+  жұмыс істемесе, батырманы лаунчер терезесіне сүйреуге тырысыңыз!
+notWork: Жұмыс істемейді ме?
+openInAppButton: Лаунчерде ашу
+nothingWork: Егер жоғарыдағы ешбір әдіс жұмыс істемесе, соңғы лаунчерді қайта жүктеп көріңіз
+gameInstall:
+  title:
+    body: "{gameInstall} туралы енді уайымдамаңыз"
+    gameInstall: "Ойын орнату"
+  description: >-
+    XMCL ваниль Minecraft, Minecraft Forge, Fabric,
+    тіпті Optifine орнатуды қолдайды - бәрі бір жерде! Оларды лаунчер
+    ішінде бір жерден орната аласыз. Сондай-ақ BMCL API сияқты үшінші
+    жақ айна сілтемелерін қолдайды. Тіпті лаунчерде өзіңіздің айнаңызды
+    теңшей аласыз.
+optimalDisk:
+  title:
+    body: "{massiveResources} бар {optimal} диск кеңістігі"
+    optimal: "Оңтайландырылған"
+    massiveResources: "Көп ресурстар"
+  description: >-
+    XMCL барлық модтар, ресурс жинақтары, шейдер жинақтары мен мод
+    жинақтарын бір сақтау орнына сақтайды. Кез келген белгілі ресурсты
+    пайдалануға тырысқанда, ол ресурсты көшірмей инстанцияға орнату
+    үшін қатты сілтемені қолданады. Бұл енді /mods қалтасында қайталанған
+    көшірмелерді көрмейтініңізді білдіреді.
+cleanWorkspace:
+  title:
+    body: "Көп инстанциялар арқылы жұмыс кеңістігіңізді {clean} ұстаңыз"
+    clean: "Таза"
+  description: >-
+    XMCL көп инстанцияларды қолдауды қамтиды. Бірнеше инстанцияларды
+    оңай жасай аласыз. Осылайша, әртүрлі іске қосу параметрлерінің
+    араласуы туралы уайымдамауыңыз керек.
+communityIntegration:
+  title:
+    body: "{multipleCommunities} интеграцияланған"
+    multipleCommunities: "Бірнеше қауымдастықтармен"
+  description: >-
+    XMCL Curseforge және Modrinth-ты қолдауды кіріктіреді.
+    Сондай-ақ, blessing skin сияқты теңшелетін пайдаланушы
+    тіркелгілерін/скин жүйелерін қолдау мүмкіндігін ұсынады.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: "{inviter} партиясына қосылыңыз"
+joinPeerDescription: >-
+  {inviter} сізді {group} тобына қосылып, бірге Minecraft ойнауға шақырды!
+  Сіз лаунчерге қайтарыласыз!
+fullChangelog: Жаңа не бар?
+privacy: Бағдарлама құпиялығы
+prebuild:
+  history: Құрастыру тарихы
+  download: Алдын ала құрастыруларды жүктеу
+  downloadDescription: >-
+    Prebuild - бұл әзірлеу процесінде жасалған артефактілер. Олар
+    тұрақсыз болуы мүмкін. Өз жауапкершілігіңізге қолданыңыз!
+  entryHint: Prebuild артефактілері?
+downloadMacHint:
+  content: Mac қолданушылары үшін орнату үшін {link} орындаңыз.
+  link: орнату нұсқауларын
