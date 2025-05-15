@@ -2,31 +2,39 @@ import { computed, inject, reactive, ref } from "vue"
 import { data } from './latest.data'
 
 export function useDownloads() {
-  const downloadSource = inject('download', ref('auto'))
   const inGFW = inject('gfw', ref(false))
 
-  function getAzureUrl(name: string) {
-    if (name.endsWith('.appinstaller')) {
-      return 'https://xmcl.blob.core.windows.net/releases/xmcl.appinstaller'
-    }
-    return `https://cdn.xmcl.app/releases/${name}`
+
+  function getProxiedUrl(url: string) {
+    const proxies = [
+      'https://gh-proxy.com',
+      'https://gitproxy.click',
+      'https://github.moeyy.xyz',
+      'https://ghfile.geekertao.top',
+      'https://github.proxy.class3.fun',
+      'https://github-proxy.lixxing.top',
+      'https://github.tbedu.top',
+      'https://hub.gitmirror.com',
+      'https://gh-proxy.net',
+      'https://gh-proxy.cijhn.workers.dev',
+    ]
+    const randomPick = Math.floor(Math.random() * proxies.length)
+    const proxy = proxies[randomPick]
+    return `${proxy}/${url}`
   }
+
   function getUrl(find: (r: { name: string }) => boolean) {
     if (!data.latest) return ''
     if (!data.latest.assets) return ''
     const result = data.latest.assets.find(find)
-    console.log(result)
+    if (result && result.name.endsWith('.appinstaller')) {
+      return 'https://xmcl.blob.core.windows.net/releases/xmcl.appinstaller'
+    }
     if (result) {
-      if (downloadSource.value === 'auto') {
-        return inGFW.value ? getAzureUrl(result.name) : result.browser_download_url
-      } else if (downloadSource.value === 'azure') {
-        return getAzureUrl(result.name)
-      }
-      return result.browser_download_url
+      return inGFW.value ? getProxiedUrl(result.browser_download_url) : result.browser_download_url
     }
     return ''
   }
-
 
   const winZip32 = computed(() => getUrl(a => a.name.endsWith('win32-ia32.zip')))
   const winWeb = computed(() => getUrl(a => a.name.endsWith('.appinstaller')))
