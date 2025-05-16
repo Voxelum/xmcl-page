@@ -99,3 +99,54 @@ Si vous souhaitez aider à la traduction, veuillez suivre [Débuter avec la loca
 </a>
 
 ### Remerciements spéciaux
+
+<div style="display: flex; align-items: center; gap: 10px;">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/86590991?v=4">
+
+[BANER](https://github.com/BANSAFAn), qui m'aide beaucoup dans la communauté RU/UK.
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px;">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/119564588?v=4">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/155435591?v=4">
+
+[GodLeaveMe](https://github.com/GodLeaveMe), [v1mkss](https://github.com/v1mkss), maintenant le registre de paquets AUR.
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px;">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/52188337?v=4">
+
+[0xc0000142](https://github.com/0xc0000142), maintient le winget.
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px;">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/109208530?v=4">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/86590991?v=4">
+
+[Marmur2020](https://github.com/Marmur2020) & [BANSAFAn](https://github.com/BANSAFAn), ont complètement traduit la langue ukrainienne !
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px;">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/7201687?v=4">
+
+[vanja-san](https://github.com/vanja-san), a fourni la langue russe !
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px;">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/37006668?v=4">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/11472320?v=4">
+
+[lukechu10](https://github.com/lukechu10) & [HoldYourWaffle](https://github.com/HoldYourWaffle) m'aident sur le cœur du lanceur.
+</div>
+
+<div style="display: flex; align-items: center; gap: 10px;">
+<img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/25716486?v=4">
+
+[laolarou726](https://github.com/laolarou726), qui aide beaucoup sur la conception du lanceur.
+</div>
+
+Les contributeurs du projet historique :
+
+[Yricky](https://github.com/Yricky), [Jin](https://github.com/Indexyz), [LG](https://github.com/LasmGratel), [Phoebe](https://github.com/PhoebezZ), [Sumeng Wang](https://github.com/darkkingwsm), [Luca](https://github.com/LucaIsGenius), [Charles Tang](https://github.com/CharlesQT)
+
+</div>
