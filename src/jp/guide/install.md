@@ -80,4 +80,4 @@ AppImage は、インストールなしで任意の Linux デスクトップ上�
 
 ここでは、新しいフォルダを XMCL の `ゲームデータディレクトリ` として選択することをお勧めします。
 
-ゲームデータディレクトリの構造についての詳細は、[データ管理ガイド](/jp/guide/manage.md#minecraft-related-data) を参照してください。
+ゲームデータディレクトリの構造についての詳細は、[データ管理ガイド](/en/guide/manage.md#minecraft-related-data) を参照してください。

@@ -1,4 +1,3 @@
-<!-- filepath: d:\Workspace\xmcl-page\src\kz\about.md -->
 ---
 outline: false
 layout: home
@@ -11,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Жүктеу
-      link: /kz/
+      link: /kk/
     - theme: alt
       text: GitHub
       link: https://github.com/voxelum/x-minecraft-launcher
@@ -75,9 +74,9 @@ brew install --cask --no-quarantine voxelum/xmcl
 
 ### Үлес қосқыңыз келе ме?
 
-Егер функцияларды қосқыңыз немесе қателерді түзеткіңіз келсе, [Үлес қосу](/kz/guide/contributing) бөлімін қараңыз
+Егер функцияларды қосқыңыз немесе қателерді түзеткіңіз келсе, [Үлес қосу](/kk/guide/contributing) бөлімін қараңыз
 
-Егер аудармаға көмектескіңіз келсе, [Жерсіндіруді бастау](/kz/guide/i18n) нұсқауларын орындаңыз.
+Егер аудармаға көмектескіңіз келсе, [Жерсіндіруді бастау](/en/guide/i18n) нұсқауларын орындаңыз.
 
 
 ## Демеушілер

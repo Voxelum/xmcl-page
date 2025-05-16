@@ -80,4 +80,4 @@ Jak wspomniano na stronie konfiguracji, ze względu na specjalną strukturę pli
 
 W tym miejscu zaleca się wybranie nowego folderu jako `Katalogu danych gry` XMCL.
 
-Aby uzyskać więcej informacji na temat struktury katalogu danych gry, zobacz [Przewodnik zarządzania danymi](/pl/guide/manage.md#minecraft-related-data).
+Aby uzyskać więcej informacji na temat struktury katalogu danych gry, zobacz [Przewodnik zarządzania danymi](/en/guide/manage.md#minecraft-related-data).

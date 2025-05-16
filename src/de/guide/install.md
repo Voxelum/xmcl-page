@@ -80,4 +80,4 @@ Wie auf der Einrichtungsseite erwähnt, wird aufgrund der speziellen Dateistrukt
 
 Hier wird empfohlen, einen neuen Ordner als XMCL-`Spieldatenverzeichnis` zu wählen.
 
-Weitere Informationen zur Struktur des Spieldatenverzeichnisses finden Sie im [Datenmanagement-Leitfaden](/de/guide/manage.md#minecraft-related-data).
+Weitere Informationen zur Struktur des Spieldatenverzeichnisses finden Sie im [Datenmanagement-Leitfaden](/en/guide/manage.md#minecraft-related-data).

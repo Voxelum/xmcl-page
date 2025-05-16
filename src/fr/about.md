@@ -76,7 +76,7 @@ brew install --cask --no-quarantine voxelum/xmcl
 
 Si vous voulez ajouter des fonctionnalités ou corriger des bugs, consultez [Contribuer](/fr/guide/contributing)
 
-Si vous souhaitez aider à la traduction, veuillez suivre [Débuter avec la localisation](/fr/guide/i18n).
+Si vous souhaitez aider à la traduction, veuillez suivre [Débuter avec la localisation](/en/guide/i18n).
 
 
 ## Parrainage

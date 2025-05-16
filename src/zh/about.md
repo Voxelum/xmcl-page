@@ -75,7 +75,7 @@ brew install --cask --no-quarantine voxelum/xmcl
 
 如果你想要添加功能或修复 bug，请查看 [参与贡献](/zh/guide/contributing)
 
-如果你想要帮助翻译，请按照 [本地化入门](/zh/guide/i18n) 进行。
+如果你想要帮助翻译，请按照 [本地化入门](/en/guide/i18n) 进行。
 
 
 ## 赞助
