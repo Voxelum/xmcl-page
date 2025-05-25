@@ -45,6 +45,10 @@ const { t } = useI18n()
 const { isDark } = useData()
 useI18nSync()
 
+watch(isDark, (val) => {
+    console.log('isDark', val)
+}, { immediate: true })
+
 const { state, isReady } = useAsyncState(() => getRuns(import.meta.env.VITE_GITHUB_TOKEN ?? ''), [], {
     shallow: true
 })

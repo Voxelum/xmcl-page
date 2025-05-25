@@ -10,12 +10,16 @@ export type WorkflowRun = {
 };
 
 export async function getRuns(token: string): Promise<WorkflowRun[]> {
+    console.log('Fetching runs');
     const runResponse = await fetch(`https://api.github.com/repos/voxelum/x-minecraft-launcher/actions/workflows/1220495/runs`, {
         headers: token ? {
             Authorization: `token ${token}`,
         } : {},
+    }).then((runResponse) => runResponse.json()).then(processData).catch((e) => {
+        console.error('Failed to fetch runs', e);
+        return [];
     });
-    return processData(await runResponse.json() as any)
+    return runResponse
 }
 
 const processData = (data: { workflow_runs: WorkflowRun[] }) => {

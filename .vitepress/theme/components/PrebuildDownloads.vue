@@ -80,7 +80,10 @@ const getPercentage = (v: number) => {
 const fetching = ref(false)
 const downloadProgress = ref(0)
 const onDownload = async (a?: Artifact) => {
-    if (!a) return
+    if (!a) {
+        console.error('Artifact not found')
+        return
+    }
     if (fetching.value) return
     fetching.value = true
     try {
@@ -134,6 +137,8 @@ async function getLatestWorkflowArtifacts(): Promise<Artifact[]> {
     });
 
     const runData: { artifacts: Artifact[] } = await artifactsResponse.json();
+
+    console.log('Artifacts:', runData.artifacts)
     return runData.artifacts
 }
 
