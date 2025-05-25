@@ -15,18 +15,20 @@
         <h4 class="ui header text-xl px-60">
             {{ t('prebuild.history') }}
         </h4>
-        <div class="ui selection large list !px-60" :class="{ inverted: isDark }">
-            <div class="item" v-for="item of runs" @click="selected = item">
-                <object class="ui avatar image self-center object-center">
-                    <i v-if="item.status === 'completed'" class="check circle icon text-green-400"></i>
-                </object>
-                <div class="content">
-                    <a class="header">{{ item.display_title }}</a>
-                    <div class="description">#{{ item.run_number }} {{ new
-                        Date(item.created_at).toLocaleDateString() }}</div>
+        <ClientOnly>
+            <div class="ui selection large list !px-60" :class="{ inverted: isDark }">
+                <div class="item" v-for="item of runs" @click="selected = item">
+                    <object class="ui avatar image self-center object-center">
+                        <i v-if="item.status === 'completed'" class="check circle icon text-green-400"></i>
+                    </object>
+                    <div class="content">
+                        <a class="header">{{ item.display_title }}</a>
+                        <div class="description">#{{ item.run_number }} {{ new
+                            Date(item.created_at).toLocaleDateString() }}</div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </ClientOnly>
     </div>
 </template>
 <script setup lang="ts">
