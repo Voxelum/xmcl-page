@@ -28,6 +28,22 @@ APPX 的自动更新支持 Windows 的**优化传递**，以及**增量更新** 
 
 `appinstaller` 本质上和 `APPX` 格式相同，`appinstaller` 本身是个 `XML` 文本文件，里面保存着 `APPX` 的 `URL`。弹出安装界面时会尝试下载 `APPX` 并安装。因此其更新机制和 `APPX` 是相同的。
 
+### Windows 7/8
+
+由[龙腾](https://github.com/longteng-H)([bilibili](https://space.bilibili.com/1030667057))发现并提供的解决方案
+
+:::details 如何在win10以下系统运行 XMCL
+默认情况下xmcl不支持原生win7运行，通过安装VxKex 扩展内核以补全所需运行库来运行，这对已然处于旧系统的用户提供了一个解决方案（注：此方式同样适用于一些无法在老系统上正常运行的软件）
+
+1. 下载并安装 [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT) 扩展内核. 此处提供的是国内的一个分支 ([蓝奏云](https://geekerz.lanzoue.com/b0ra5olfi), [百度网盘](https://pan.baidu.com/s/1w0JUk4JpoKiZQVi2LMoqwA?pwd=0000))
+2. 找到 X Minecraft Launcher.exe，并给其启用 VxKex。如果不会请参考视频
+[【让 Win7 强行兼容 Win10 应用？VxKex 扩展内核安装体验】]( https://www.bilibili.com/video/BV1SedHYsE6b/?share_source=copy_web&vd_source=bcfefb5f9c9518f3326b2f5096fea0fc)
+![](https://raw.githubusercontent.com/longteng-H/longteng_H/refs/heads/main/PixPin_2025-05-17_00-22-13.png)
+勾选[为此程序启用VxKex NEXT]和[报告其他版本的Windows]，应用，确定
+
+此时xmcl即可在win7上正常运行，除联机外，其他功能均正常
+:::
+
 ## MacOS
 
 :::warning

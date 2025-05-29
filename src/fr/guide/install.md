@@ -24,6 +24,21 @@ Les mises à jour automatiques d'APPX prennent en charge la **livraison d'optimi
 
 `appinstaller` est essentiellement le même que le format `APPX`. `appinstaller` lui-même est un fichier texte `XML` qui contient l'`URL` de `APPX`. Lorsque l'interface d'installation s'affiche, elle tente de télécharger `APPX` et de l'installer. Par conséquent, son mécanisme de mise à jour est le même que APPX.
 
+### Windows 7/8
+
+Solution découverte et fournie par [longteng](https://github.com/longteng-H)([bilibili](https://space.bilibili.com/1030667057))
+
+:::details Comment exécuter XMCL sur les systèmes Windows inférieurs à Windows 10
+Par défaut, XMCL ne prend pas en charge le fonctionnement natif de Windows 7. En installant le noyau étendu VxKex pour compléter les bibliothèques d'exécution requises, cela fournit une solution pour les utilisateurs qui sont encore sur des systèmes hérités. (Note : Cette méthode est également applicable à certains logiciels qui ne peuvent pas fonctionner normalement sur des systèmes plus anciens)
+
+1. Téléchargez et installez le noyau étendu [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT). Il s'agit d'une branche domestique fournie ici.
+2. Trouvez X Minecraft Launcher.exe et activez VxKex pour celui-ci. Si vous ne savez pas comment faire, veuillez vous référer au tutoriel vidéo : [Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8).
+
+Cochez à la fois "Activer VxKex NEXT pour ce programme" et "Signaler d'autres versions de Windows", puis appliquez et confirmez.
+
+À ce stade, XMCL peut fonctionner normalement sur Windows 7, et toutes les fonctions sauf le multijoueur fonctionnent normalement.
+:::
+
 ## MacOS
 
 :::warning
