@@ -1,0 +1,105 @@
+repository: 소스 코드 리포지터리
+intro:
+  first:
+    body: '{openSource} {modernUx} UX를 가지고 있는 마인크래프트 런처'
+    openSource: 오픈소스,
+    modernUx: 모던한 
+  second:
+    body: 모든 {mods}를 {diskEfficient} 관리할 수 있는 방법
+    diskEfficient: 효율적으로
+    mods: 모드
+  description: >-
+    X Minecraft Launcher(XMCL)는 모드팩, 리소스 팩, 모드, 셰이더 팩 등 
+    방대한 리소스를 관리할 수 있는 현대적인 마인크래프트 런처입니다. 
+    또한 마인크래프트 Forge, Quilt CurseForge, Modrinth와 통합됩니다.
+label: 한국어
+guide: 가이드
+protocol: 프로토콜
+changelogs: 변경 사항
+outline: 이 페이지에서
+coreDocument: 핵심 문서
+launcher:
+  manage:
+    intro: 마인크래프트를 효과적으로 관리하세요.
+  description: 간단하고 오픈 소스이며 기능 지향적인 마인크래프트 런처
+downloadFor:
+  windows: '윈도우용 다운로드:'
+  mac: '맥용 다운로드:'
+  linux: '리눅스용 다운로드:'
+author: 작성자에게 문의
+download-zip: 압축파일(Zip)
+download-zip-32: 압축파일(32비트)
+download-appx: AppX 패키지
+download-appinstaller: 앱 설치 프로그램
+download-portable: 포터블
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+azure-source: Azure에서 다운로드
+azure-ms-source: Azure Microsoft CDN에서 다운로드
+github-source: Github에서 다운로드
+auto-source: 다운로드 소스 자동 감지
+authSuccess: 성공!
+authSuccessTitle: 승인이 성공했습니다. 런처로 다시 리디렉션됩니다!
+redirectHelperTitle: >-
+  리디렉션되지 않는 경우, ‘앱에서 열기’ 버튼을 클릭하여 수동으로
+  리디렉션해 볼 수 있습니다.
+redirectHelperMessage: >-
+  팝업이 생성되어 런처를 열도록 요청할 것입니다. 그래도 작동하지 않으면
+  버튼을 런처 창으로 드래그해 보세요!
+notWork: 작동하지 않나요?
+openInAppButton: 런처에서 열기
+nothingWork: 위의 방법이 모두 작동하지 않으면 최신 런처를 다시 다운로드하는 것이 좋습니다.
+gameInstall:
+  title:
+    body: '{gameInstall}에 대한 걱정 끝'
+    gameInstall: 게임 설치
+  description: >-
+    XMCL은 기본 마인크래프트, 마인크래프트 Forge, Fabric,
+    심지어 Optifine 올인원까지 설치할 수 있습니다! 런처 내에서
+    한 곳에서 모두 설치할 수 있습니다. 또한 제3자 미러 링크 BMCL API를 지원합니다.
+    런처에서 직접 미러를 커스터마이징할 수도 있습니다.
+optimalDisk:
+  title:
+    body: 디스크 공간을 {optimal} 사용하여 {massiveResources} 관리
+    optimal: 최적화로
+    massiveResources: 방대한 리소스를
+  description: >-
+    XMCL은 모든 모드, 리소스 팩, 셰이더 팩 및 모드팩을 하나의 저장소에 보관합니다.
+    사용자가 어떤 리소스를 사용하려고 할 때, XMCL은 하드 링크를 이용해 
+    인스턴스에 리소스를 설치하며, 복사하지 않습니다.
+    즉, 이제 /mods 폴더에서 중복된 복사본을 더 이상 볼 수 없게 됩니다.
+cleanWorkspace:
+  title:
+    body: 멀티 인스턴스로 {clean} 작업 공간 유지
+    clean: 깨끗한
+  description: >-
+    XMCL은 멀티 인스턴스를 기본적으로 지원합니다.
+    여러 개의 인스턴스를 쉽게 생성할 수 있어, 서로 다른 런처 설정이 섞일까 걱정할 필요가 없습니다.
+communityIntegration:
+  title:
+    body: '{multipleCommunities}와 함께 즐기세요'
+    multipleCommunities: 여러 커뮤니티
+  description: >-
+    XMCL은 CurseForge와 Modrinth를 기본적으로 지원합니다.
+    또한, 사용자 지정 계정이나 스킨 시스템(예: Blessing Skin)도 지원할 수 있는 기능을 제공합니다.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: '{inviter}의 파티에 참가'
+joinPeerDescription: >-
+  {inviter}님이 {group} 그룹으로 초대했습니다!
+  함께 마인크래프트를 즐기고 싶다면 런처로 돌아가세요!
+fullChangelog: 무엇이 새로워졌나요?
+privacy: 개인정보 처리방침
+prebuild:
+  history: Prebuild 기록
+  download: Prebuild 다운로드
+  downloadDescription: >-
+    Prebuild는 개발 과정에서 생성된 아티팩트입니다.
+    안정적이지 않을 수 있으므로, 사용 시 주의하세요!
+  entryHint: 사전 빌드된 아티팩트
+downloadMacHint:
+  content: Mac 사용자는 {link}에서 설치 방법을 확인하세요.
+  link: 여기
