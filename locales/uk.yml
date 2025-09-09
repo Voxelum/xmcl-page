@@ -1,5 +1,5 @@
 repository: Репозиторій вихідного коду
-label: Украинский
+label: Українська
 intro:
   first:
     body: Minecraft лаунчер з {openSource} та з {modernUx} UX.
