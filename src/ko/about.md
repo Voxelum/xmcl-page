@@ -111,6 +111,7 @@ brew install --cask --no-quarantine voxelum/xmcl
 <img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/155435591?v=4">
 
 [GodLeaveMe](https://github.com/GodLeaveMe), [v1mkss](https://github.com/v1mkss), AUR 패키지 레지스트리의 유지보수.
+</div>
 
 <div style="display: flex; align-items: center; gap: 10px;">
 <img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/52188337?v=4">
