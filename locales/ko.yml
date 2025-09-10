@@ -1,8 +1,8 @@
 repository: 소스 코드 리포지터리
 intro:
   first:
-    body: '{openSource} {modernUx} UX를 가지고 있는 마인크래프트 런처'
-    openSource: 오픈소스,
+    body: '{openSource}, {modernUx} UX를 가지고 있는 마인크래프트 런처'
+    openSource: 오픈소스
     modernUx: 모던한 
   second:
     body: 모든 {mods}를 {diskEfficient} 관리할 수 있는 방법
