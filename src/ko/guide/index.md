@@ -2,18 +2,18 @@
 layout: home
 
 hero:
-  name: XMCL official documentation
-  text: I hope you can find answers to any questions about XMCL here
-  tagline: If you can't ...... you are more than welcome to send PR to improvement the documentation!
+  name: XMCL 공식 문서
+  text: 여기에서 XMCL과        관련된 모든 질문에           대한 답을 찾으실 수    있을 거예요.
+  tagline: 혹시 찾지 못하셨다면..... 문서 개선을 위해 PR을 보내주세요! 언제든 환영합니다!
   image:
     src: /logo.png
     alt: X Minecraft Launcher
   actions:
     - theme: brand
-      text: Installation guide
-      link: /en/guide/install
+      text: 설치 가이드
+      link: /ko/guide/install
     - theme: alt
-      text: GitHub address
+      text: GitHub 주소
       link: https://github.com/voxelum/x-minecraft-launcher
 
 features:

@@ -1,4 +1,4 @@
-# 기여
+# 기여하기
 ### 기술 스택 및 배경지식
 
 이 프로젝트의 툴체인 및 런타임 개요는 다음과 같습니다.
@@ -27,7 +27,7 @@
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Voxelum/x-minecraft-launcher) 상세 설계를 위한 것입니다. 90%의 사례를 포함해야 합니다!
 
-## 기여
+## 기여하기
 
 프로젝트를 열 때 VSCode 사용을 적극 권장합니다.
 
@@ -72,7 +72,7 @@ pnpm install
 
 `xmcl-electron-app` 디렉터리 아래에 `.env` 파일을 생성하여 `CURSEFORGE_API_KEY`를 설정해야 합니다. 이 `.env` 파일은 `.gitignore` 파일에 추가됩니다.
 
-:::warning REMEMBER
+:::warning 기억해두기
 **CURSEFORGE API 키를 절대 유출하지 마십시오**
 :::
 

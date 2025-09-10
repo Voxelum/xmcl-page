@@ -1,8 +1,8 @@
-# Global Settings
+# 전체 설정
 
 > 공사중
 
-Global data is stored in [xmcl data directory](/en/guide/manage#xmcl-cache-and-database).
+전체 데이터는 [테이터 관리](/en/guide/manage#xmcl-cache-and-database)에 있어요.
 
 ```sh
 xmcl data directory
