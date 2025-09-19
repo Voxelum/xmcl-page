@@ -1,12 +1,12 @@
 repository: 소스 코드 리포지터리
 intro:
   first:
-    body: '{openSource} {modernUx} UX를 가지고 있는 마인크래프트 런처'
-    openSource: 오픈소스,
+    body: '{openSource}, {modernUx} UX를 가지고 있는 마인크래프트 런처'
+    openSource: 오픈소스
     modernUx: 모던한 
   second:
-    body: 모든 {mods}를 {diskEfficient} 관리할 수 있는 방법
-    diskEfficient: 효율적으로
+    body: 모든 {mods}를 {diskEfficient}으로 관리할 수 있는 방법
+    diskEfficient: 효율적
     mods: 모드
   description: >-
     X Minecraft Launcher(XMCL)는 모드팩, 리소스 팩, 모드, 셰이더 팩 등 
@@ -23,9 +23,9 @@ launcher:
     intro: 마인크래프트를 효과적으로 관리하세요.
   description: 간단하고 오픈 소스이며 기능 지향적인 마인크래프트 런처
 downloadFor:
-  windows: '윈도우용 다운로드:'
-  mac: '맥용 다운로드:'
-  linux: '리눅스용 다운로드:'
+  windows: 'Windows용 다운로드:'
+  mac: 'Mac용 다운로드:'
+  linux: 'Linux용 다운로드:'
 author: 작성자에게 문의
 download-zip: 압축파일(Zip)
 download-zip-32: 압축파일(32비트)
@@ -63,9 +63,9 @@ gameInstall:
     런처에서 직접 미러를 커스터마이징할 수도 있습니다.
 optimalDisk:
   title:
-    body: 디스크 공간을 {optimal} 사용하여 {massiveResources} 관리
-    optimal: 최적화로
-    massiveResources: 방대한 리소스를
+    body: 디스크 공간을 {optimal}로 사용하여 {massiveResources}를 관리
+    optimal: 최적화
+    massiveResources: 방대한 리소스
   description: >-
     XMCL은 모든 모드, 리소스 팩, 셰이더 팩 및 모드팩을 하나의 저장소에 보관합니다.
     사용자가 어떤 리소스를 사용하려고 할 때, XMCL은 하드 링크를 이용해 

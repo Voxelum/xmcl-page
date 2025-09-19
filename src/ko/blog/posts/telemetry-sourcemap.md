@@ -1,8 +1,9 @@
 ---
 date: 2023-12-18
 title: "X Minecraft Launcher 최적화: Azure Application Insights 및 Azure Storage를 활용한 안전한 소스 관리"
-description: X X Minecraft Launcher를 Azure Application Insights와 Azure Storage로 최적화해보세요. 소스맵 활용법을 배우고, 성능 모니터링을 강화하며, 프로덕션에서 사용하는 파일을 안전하게 관리하는 방법도 함께 소개합니다.
+description: X Minecraft Launcher를 Azure Application Insights와 Azure Storage로 최적화해보세요. 소스맵 활용법을 배우고, 성능 모니터링을 강화하며, 프로덕션에서 사용하는 파일을 안전하게 관리하는 방법도 함께 소개합니다.
 category: Article
+author: "Unknown"
 ---
 
 Azure Storage Blob에 소스맵 구성을 사용하여 Electron에서 Azure Application Insights를 활용하세요.

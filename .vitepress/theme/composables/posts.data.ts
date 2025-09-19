@@ -14,6 +14,7 @@ export interface Post {
   title: string
   author: string
   href: string
+  locale: string
   date: {
     time: number
     string: string
@@ -29,10 +30,22 @@ export { data }
 async function load(): Promise<Post[]>
 async function load() {
   md = md || (await createMarkdownRenderer(process.cwd()))
-  return fs
-    .readdirSync(dir)
-    .map(file => getPost(file, dir))
-    .sort((a, b) => b.date.time - a.date.time)
+  const srcRoot = path.resolve(process.cwd(), 'src')
+  const locales = fs
+    .readdirSync(srcRoot, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name)
+    .filter(name => fs.existsSync(path.join(srcRoot, name, 'blog', 'posts')))
+
+  const posts: Post[] = []
+  for (const locale of locales) {
+    const postDir = path.join(srcRoot, locale, 'blog', 'posts')
+    const files = fs.readdirSync(postDir).filter(f => f.endsWith('.md'))
+    for (const file of files) {
+      posts.push(getPost(file, postDir, locale))
+    }
+  }
+  return posts.sort((a, b) => b.date.time - a.date.time)
 }
 
 export default {
@@ -42,7 +55,7 @@ export default {
 
 const cache = new Map()
 
-function getPost(file: string, postDir: string): Post {
+function getPost(file: string, postDir: string, locale: string): Post {
   const fullPath = path.join(postDir, file)
   const timestamp = fs.statSync(fullPath).mtimeMs
 
@@ -52,7 +65,8 @@ function getPost(file: string, postDir: string): Post {
     title: data.title,
     author: data.author ? data.author : 'Unknown',
     href: `/posts/${file.replace(/\.md$/, '')}`,
-    date: formatDate(data.date),
+    locale,
+    date: safeFormatDate(data.date, timestamp),
     excerpt: excerpt && md.render(excerpt),
     data,
   }
@@ -64,12 +78,8 @@ function getPost(file: string, postDir: string): Post {
   return post
 }
 
-function formatDate(date: string | Date): Post['date'] {
-  if (!(date instanceof Date))
-    date = new Date(date)
-
+function formatDate(date: Date): Post['date'] {
   date.setUTCHours(12)
-
   return {
     time: +date,
     string: date.toLocaleDateString('en-US', {
@@ -79,4 +89,19 @@ function formatDate(date: string | Date): Post['date'] {
     }),
     since: formatDistance(date, new Date(), { addSuffix: true }),
   }
+}
+
+function safeFormatDate(raw: unknown, fallbackTimestamp: number): Post['date'] {
+  let d: Date
+  if (raw instanceof Date) {
+    d = raw
+  } else if (typeof raw === 'string' && raw.trim().length > 0) {
+    const parsed = new Date(raw)
+    d = isNaN(+parsed) ? new Date(fallbackTimestamp) : parsed
+  } else if (typeof raw === 'number' && !isNaN(raw)) {
+    d = new Date(raw)
+  } else {
+    d = new Date(fallbackTimestamp)
+  }
+  return formatDate(d)
 }

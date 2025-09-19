@@ -3,7 +3,7 @@ outline: false
 layout: home
 hero:
   name: X Minecraft Launcher
-  text: 마인크래프트 런처에 대한 다양한 경험을 발견해보세요.
+  text: 마인크래프트 런처에<br>대한 다양한 경험을<br>발견해보세요.
   image:
     src: /logo.png
     alt: X Minecraft Launcher
@@ -14,7 +14,7 @@ hero:
     - theme: alt
       text: GitHub
       link: https://github.com/voxelum/x-minecraft-launcher
-    - text: MIT License
+    - text: MIT 라이선스
       link: https://github.com/Voxelum/x-minecraft-launcher/blob/master/LICENSE
       theme: alt
 features:
@@ -74,7 +74,7 @@ brew install --cask --no-quarantine voxelum/xmcl
 
 ### 기여하고 싶으신가요?
 
-기능 추가나 버그 수정을 원한다면 다음을 확인하세요: [기여](/ko/guide/contributing)
+기능 추가나 버그 수정을 원한다면 다음을 확인하세요: [기여하기](/ko/guide/contributing)
 
 번역에 도움을 주고 싶으시다면, 다음을 따라주세요 [현지화 시작하기](/ko/guide/i18n).
 
@@ -111,6 +111,7 @@ brew install --cask --no-quarantine voxelum/xmcl
 <img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/155435591?v=4">
 
 [GodLeaveMe](https://github.com/GodLeaveMe), [v1mkss](https://github.com/v1mkss), AUR 패키지 레지스트리의 유지보수.
+</div>
 
 <div style="display: flex; align-items: center; gap: 10px;">
 <img width="32" height="32" style="border-radius: 100%" src="https://avatars.githubusercontent.com/u/52188337?v=4">
