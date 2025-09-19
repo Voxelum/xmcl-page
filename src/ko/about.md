@@ -3,7 +3,7 @@ outline: false
 layout: home
 hero:
   name: X Minecraft Launcher
-  text: 마인크래프트 런처에 대한 다양한 경험을     발견해보세요.
+  text: 마인크래프트 런처에<br>대한 다양한 경험을<br>발견해보세요.
   image:
     src: /logo.png
     alt: X Minecraft Launcher
