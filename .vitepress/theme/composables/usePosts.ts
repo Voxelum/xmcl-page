@@ -13,13 +13,20 @@ export default () => {
 
   const path = route.path
 
+  const pathWithoutBase = route.path.replace(site.value.base, "")
+  const segments = pathWithoutBase.split('/').filter(Boolean)
+  const currentLocale = segments[0]
+
+  const localePosts = computed(() => allPosts.value.filter(p => p.locale === currentLocale))
+
   function findCurrentIndex() {
-    return allPosts.value.findIndex(p => `${site.value.base}en/blog${p.href}` === route.path)
+    const blogRelative = pathWithoutBase.replace(/^([^/]+)\/(blog\/.*)$/, "$2")
+    return localePosts.value.findIndex(p => `blog${p.href}` === blogRelative)
   }
 
-  const currentPost = computed(() => allPosts.value[findCurrentIndex()])
-  const nextPost = computed(() => allPosts.value[findCurrentIndex() - 1])
-  const prevPost = computed(() => allPosts.value[findCurrentIndex() + 1])
+  const currentPost = computed(() => localePosts.value[findCurrentIndex()])
+  const nextPost = computed(() => localePosts.value[findCurrentIndex() - 1])
+  const prevPost = computed(() => localePosts.value[findCurrentIndex() + 1])
 
-  return { allPosts, currentPost, nextPost, prevPost, path }
+  return { allPosts: localePosts as unknown as Ref<Post[]>, currentPost, nextPost, prevPost, path }
 }

@@ -11,7 +11,7 @@ const props = defineProps<{
 }>()
 const { site } = useData()
 const { findByName } = useAuthors()
-const href = computed(() => `${site.value.base}en/blog${props.post.href}`)
+const href = computed(() => `${site.value.base}${props.post.locale}/blog${props.post.href}`)
 const author = findByName(props.post.author)
 </script>
 
