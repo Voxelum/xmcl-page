@@ -98,11 +98,16 @@ fullChangelog: Co nowego?
 privacy: Polityka prywatności
 prebuild:
   history: Historia buildów
+  historyDescription: Poprzednie buildy i wydania
   download: Pobierz wersje prebuild
   downloadDescription: >-
     Prebuild to artefakty generowane podczas procesu rozwoju. Mogą być niestabilne.
     Używasz na własne ryzyko!
   entryHint: Artefakty Prebuild?
+  ready: Gotowy
+  selected: Wybrany
+  selectBuild: Wybierz build
+  downloading: Pobieranie...
 downloadMacHint:
   content: Dla użytkowników Mac, proszę postępować zgodnie z {link}, aby zainstalować.
   link: instrukcją instalacji

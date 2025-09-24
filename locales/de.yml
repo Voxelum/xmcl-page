@@ -99,11 +99,16 @@ fullChangelog: Was gibt's Neues?
 privacy: Software-Datenschutz
 prebuild:
   history: Bauverlauf
+  historyDescription: Frühere Builds und Releases
   download: Prebuilds Herunterladen
   downloadDescription: >-
     Prebuilds sind Artefakte, die während des Entwicklungsprozesses gebaut
     werden. Sie könnten instabil sein. Die Nutzung erfolgt auf eigenes Risiko!
   entryHint: Prebuild Artefakte?
+  ready: Bereit
+  selected: Ausgewählt
+  selectBuild: Build auswählen
+  downloading: Wird heruntergeladen...
 coreDocument: Kerndokument
 downloadMacHint:
   link: Anweisungen installieren

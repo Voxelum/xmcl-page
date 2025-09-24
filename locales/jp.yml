@@ -90,10 +90,15 @@ fullChangelog: 新機能は？
 privacy: ソフトウェアプライバシー
 prebuild:
   history: ビルド履歴
+  historyDescription: 以前のビルドとリリース
   download: プレビルドをダウンロード
   downloadDescription: >-
     プレビルドは開発プロセス中に生成されたアーティファクトです。不安定な可能性があります。自己責任で使用してください！
   entryHint: プレビルドアーティファクト？
+  ready: 準備完了
+  selected: 選択済み
+  selectBuild: ビルドを選択
+  downloading: ダウンロード中...
 downloadMacHint:
   content: Macユーザーの場合は、{link}に従ってインストールしてください。
   link: インストール手順

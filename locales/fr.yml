@@ -104,12 +104,17 @@ fullChangelog: Quoi de Neuf ?
 privacy: Protection de la Vie Privée
 prebuild:
   history: Historique des Compilations
+  historyDescription: Compilations et versions précédentes
   download: Télécharger une Pré-Compilation
   downloadDescription: >-
     Les versions « Pré-Compilation » (ou Prebuild) est le produit obtenu au
     cours du processus de  développement. Ils peuvent être instables.
     Utilisez-les à vos risques et périls !
   entryHint: Artefacts de Pré-Compilation ?
+  ready: Prêt
+  selected: Sélectionné
+  selectBuild: Sélectionner la compilation
+  downloading: Téléchargement...
 downloadMacHint:
   link: installer des instructions
   content: Pour les utilisateurs de Mac, veuillez suivre le {link} à installer.

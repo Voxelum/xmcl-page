@@ -101,11 +101,16 @@ fullChangelog: Жаңа не бар?
 privacy: Бағдарлама құпиялығы
 prebuild:
   history: Құрастыру тарихы
+  historyDescription: Алдыңғы құрастырулар мен шығарылымдар
   download: Алдын ала құрастыруларды жүктеу
   downloadDescription: >-
     Prebuild - бұл әзірлеу процесінде жасалған артефактілер. Олар
     тұрақсыз болуы мүмкін. Өз жауапкершілігіңізге қолданыңыз!
   entryHint: Prebuild артефактілері?
+  ready: Дайын
+  selected: Таңдалған
+  selectBuild: Құрастыруды таңдау
+  downloading: Жүктелуде...
 downloadMacHint:
   content: Mac қолданушылары үшін орнату үшін {link} орындаңыз.
   link: орнату нұсқауларын

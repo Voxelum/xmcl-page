@@ -111,12 +111,17 @@ joinPeerDescription: '{inviter} 邀請你加入 Minecraft 聯機群組 {group}�
 privacy: 隱私協議
 prebuild:
   history: 構建歷史
+  historyDescription: 先前的構建和發布
   download: 下載快照預構建
   downloadDescription: |-
     預構建是在開發過程中生成的工件。
     它可能不穩定。
     請自行承擔使用風險！
   entryHint: 在找快照版下載？
+  ready: 就緒
+  selected: 已選擇
+  selectBuild: 選擇構建
+  downloading: 正在下載...
 downloadMacHint:
   link: 安裝指令
   content: 對於Mac用戶，請按照{link}進行安裝。

@@ -97,11 +97,16 @@ fullChangelog: What's New?
 privacy: Software Privacy
 prebuild:
   history: Build History
+  historyDescription: Previous builds and releases
   download: Download Prebuilds
   downloadDescription: >-
     Prebuild is the artifacts generated during development process. It might be
     unstable. Use it with your own risk!
   entryHint: Prebuild artifacts?
+  ready: Ready
+  selected: Selected
+  selectBuild: Select Build
+  downloading: Downloading...
 downloadMacHint:
   content: For Mac users, please follow the {link} to install.
   link: install instruction
