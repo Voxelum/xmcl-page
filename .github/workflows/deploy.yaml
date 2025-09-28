@@ -56,6 +56,6 @@ jobs:
         uses: amondnet/vercel-action@v41.1.4
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-args: '--prod ./.vitepress/dist'
+          vercel-args: '--prod --archive=tgz ./.vitepress/dist'
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.PROJECT_ID }}

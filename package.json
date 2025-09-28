@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vitepress dev . --port 9000",
     "build": "tsx prepare.ts && tsx scripts/build.ts",
+    "group-changelogs": "tsx scripts/group_changelog.ts",
     "preview": "vitepress preview .",
     "translate": "tsx scripts/translate.ts"
   },
