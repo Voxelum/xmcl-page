@@ -19,6 +19,7 @@ protocol: Protocol
 changelogs: Changelogs
 outline: On this page
 coreDocument: Core Document
+blogs: Blogs
 launcher:
   manage:
     intro: Manage your Minecraft effectively.
