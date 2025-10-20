@@ -2,7 +2,6 @@
 
 이 글은 WebRTC를 통해 로컬 네트워크 간 플레이를 가능하게 하는 마인크래프트 런처 구현에 대해 설명합니다.
 
-## What is WebRTC? Why choose it?
 ## WebRTC란 무엇인가요? 왜 선택해야 할까요? 
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API)에서 말하길:  
