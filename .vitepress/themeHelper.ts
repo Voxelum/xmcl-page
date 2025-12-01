@@ -86,9 +86,9 @@ export function loadTheme(location: string, locale: string) {
         sidebar[`/${locale}/changelogs/`] = changelogsSidebar
         nav.push({ text: '📜 ' + localeMessages.changelogs, link: `/${locale}/changelogs/${changelogFiles[0]}`, activeMatch: `/${locale}/changelogs/(.+)?` })
     }
-    if (locale === 'en') {
+    if (locale === 'en' || locale === 'ko') {
         nav.push(
-            { text: '🪁 Blogs', link: '/en/blog/', activeMatch: '/en/blog/(.+)?' },
+            { text: '🪁 ' + (localeMessages.blogs || 'Blogs'), link: `/${locale}/blog/`, activeMatch: `/${locale}/blog/(.+)?` },
         )
     }
     const theme: LocaleConfig<DefaultTheme.Config>[string] = {
