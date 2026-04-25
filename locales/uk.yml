@@ -2,8 +2,8 @@ repository: Репозиторій вихідного коду
 label: Українська
 intro:
   first:
-    body: Minecraft лаунчер з {openSource} та {modernUx} UX.
-    openSource: відкритим кодом
+    body: Програма запуску Minecraft з {openSource} та {modernUx} UX.
+    openSource: відкритим вихідним кодом
     modernUx: сучасним
   second:
     body: Забезпечує {diskEfficient} керування усіма вашими {mods}!
