@@ -19,17 +19,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           repository: voxelum/minecraft-launcher-core-node
           path: src/en/core
           ref: 'gh-pages'
-      - uses: pnpm/action-setup@v2.0.1
+      - uses: pnpm/action-setup@v4
         with:
           version: 9.3.0
       - name: Use Node.js 20
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 20
       - name: "Install"
@@ -53,9 +53,12 @@ jobs:
           skip_app_build: true
           skip_api_build: true
       - if: always()
-        uses: amondnet/vercel-action@v41.1.4
+        uses: amondnet/vercel-action@v42.3.0
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          # The Vercel deploy API rejects CLI < 47.2.2 since mid-May 2026.
+          # The action's bundled CLI (42.x) is too old, so pin to latest.
+          vercel-version: latest
           vercel-args: '--prod --archive=tgz ./.vitepress/dist'
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.PROJECT_ID }}
