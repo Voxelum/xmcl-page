@@ -1,27 +1,15 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "module": "ESNext",
-      "target": "es2016",
-      "lib": ["DOM", "ESNext"],
-      "strict": true,
-      "esModuleInterop": true,
-      "incremental": false,
-      "skipLibCheck": true,
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "noUnusedLocals": true,
-      "strictNullChecks": true,
-      "jsx": "preserve",
-      "forceConsistentCasingInFileNames": true,
-      "types": [
-        "vite/client",
-        "vitepress/client",
-        "@intlify/unplugin-vue-i18n/messages"
-      ],
-      "paths": {
-      }
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
     },
-    "exclude": ["dist", "node_modules"],
-    "include": [".vitepress/theme"]
-  }
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "src/env.d.ts"],
+  "exclude": ["node_modules", "build"]
+}
