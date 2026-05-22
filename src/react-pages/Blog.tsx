@@ -44,31 +44,25 @@ function useDebounce<T>(value: T, delay: number): T {
 // --- STATIC COMPONENTS ---
 
 // 1. Background - GPU accelerated, Static
-const FloatingOrbs = React.memo(() => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none transform-gpu translate-z-0">
-    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl will-change-transform" />
-    <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl will-change-transform" />
-    <div className="absolute bottom-1/4 left-1/2 w-80 h-80 bg-pink-500/15 rounded-full blur-3xl will-change-transform" />
-  </div>
-));
+const FloatingOrbs = React.memo(() => null);
 
 // 2. Header - PURE COMPONENT (Critical LCP)
 // Removed all animations from text to ensure immediate paint
 const BlogHeader = React.memo(() => {
   const { t } = useTranslation();
   return (
-    <header className="relative border-b border-white/20 bg-white/50 py-10 md:py-16 dark:bg-slate-900/50 contain-layout">
+    <header className="relative border-b border-border bg-card py-10 md:py-16 contain-layout text-foreground">
       <div className="container mx-auto px-4 text-center">
-        <div className="inline-flex items-center gap-2 mb-4 bg-blue-100 dark:bg-blue-900/30 px-4 py-2 rounded-full text-blue-700 dark:text-blue-300 text-sm font-medium">
+        <div className="inline-flex items-center gap-2 mb-4 bg-[#ea4c3c]/10 px-4 py-2 rounded-full text-[#ea4c3c] text-sm font-medium border border-[#ea4c3c]/20">
           <RssSimple className="h-4 w-4" />
           <span>Latest Updates</span>
         </div>
 
-        <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl font-black text-blue-600">
+        <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl font-black text-foreground">
           {t("blog.title")}
         </h1>
 
-        <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           {t("blog.subtitle")}
         </p>
       </div>
@@ -84,20 +78,20 @@ const SearchControls = React.memo(({
   setShowFilters,
   t
 }: any) => (
-  <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-white/60 dark:bg-slate-800/60 p-4 rounded-2xl border border-white/20 contain-content">
+  <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-card p-4 rounded-2xl border border-border contain-content">
     <div className="relative flex-1 max-w-md">
-      <MagnifyingGlass className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+      <MagnifyingGlass className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
       <Input
         placeholder={t("blog.searchPlaceholder")}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="pl-12 h-12 rounded-xl border-0 bg-white dark:bg-slate-700 shadow-sm"
+        className="pl-12 h-12 rounded-xl border border-border bg-background text-foreground focus-visible:ring-[#ea4c3c] shadow-sm"
       />
     </div>
     <Button
       variant={showFilters ? "default" : "outline"}
       onClick={() => setShowFilters(!showFilters)}
-      className="rounded-xl h-12"
+      className={`rounded-xl h-12 transition-all ${showFilters ? "bg-[#ea4c3c] text-white border-0 hover:bg-[#d63e2c]" : "border-border text-foreground hover:bg-[#ea4c3c] hover:border-[#ea4c3c] hover:text-white"}`}
     >
       <FunnelSimple className="mr-2 h-4 w-4" />
       {t("blog.filterByCategory")}
@@ -134,16 +128,13 @@ const PostCard = React.memo(({ post, featured, onClick, index }: {
     >
       <Card
         onClick={onClick}
-        className="group relative cursor-pointer overflow-hidden rounded-2xl border-0 bg-white/80 p-6 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 dark:bg-slate-800/80 h-full flex flex-col"
+        className="group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-[#ea4c3c] hover:-translate-y-2 h-full flex flex-col"
       >
-        <div className="absolute inset-0 bg-blue-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <div className="absolute inset-0 rounded-2xl border-2 border-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ padding: '2px', background: '#3b82f6', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
-
         {featured && (
           <div className="absolute -right-12 -top-12 h-24 w-24 pointer-events-none">
             <div className="absolute bottom-6 right-6">
-              <Badge className="bg-amber-400 text-white shadow-lg">
-                <Sparkle className="mr-1 h-3 w-3" />
+              <Badge className="bg-[#ea4c3c] text-white shadow-lg border-0">
+                <Sparkle className="mr-1 h-3 w-3 animate-pulse" />
                 Featured
               </Badge>
             </div>
@@ -151,11 +142,11 @@ const PostCard = React.memo(({ post, featured, onClick, index }: {
         )}
 
         <div className="relative z-10 flex flex-col h-full">
-          <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-600 dark:text-white">
+          <h3 className="mb-3 text-xl font-bold text-foreground transition-colors group-hover:text-[#ea4c3c]">
             {post.title}
           </h3>
 
-          <p className="mb-4 text-sm text-slate-600 line-clamp-2 dark:text-slate-400 flex-grow">
+          <p className="mb-4 text-sm text-muted-foreground line-clamp-2 flex-grow">
             {post.excerpt}
           </p>
 
@@ -165,25 +156,25 @@ const PostCard = React.memo(({ post, featured, onClick, index }: {
                 <Badge
                   key={tag}
                   variant="secondary"
-                  className="bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300"
+                  className="bg-[#ea4c3c]/10 text-[#ea4c3c] border border-[#ea4c3c]/20"
                 >
                   {tag}
                 </Badge>
               ))}
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex items-center justify-between text-xs text-muted-foreground">
               <div className="flex items-center gap-4">
                 <span className="flex items-center gap-1">
-                  <User className="h-3.5 w-3.5" />
+                  <User className="h-3.5 w-3.5 text-muted-foreground" />
                   {post.author}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Calendar className="h-3.5 w-3.5" />
+                  <Calendar className="h-3.5 w-3.5 text-muted-foreground" />
                   {new Date(post.date).toLocaleDateString()}
                 </span>
               </div>
-              <div className="flex items-center gap-1 text-blue-600 dark:text-blue-400 font-medium group-hover:translate-x-1 transition-transform">
+              <div className="flex items-center gap-1 text-[#ea4c3c] font-medium group-hover:translate-x-1 transition-transform">
                 Read
                 <ArrowRight className="h-4 w-4" />
               </div>
@@ -206,7 +197,7 @@ const PostDetail = ({ post, content, onBack }: { post: any; content: string; onB
         <Button
           variant="ghost"
           onClick={onBack}
-          className="group text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          className="group text-foreground hover:text-[#ea4c3c] hover:bg-accent"
         >
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
           Back
@@ -222,34 +213,34 @@ const PostDetail = ({ post, content, onBack }: { post: any; content: string; onB
         />
       </div>
 
-      <article className="rounded-3xl bg-white/90 p-8 md:p-12 shadow-2xl dark:bg-slate-800/90 border border-white/20">
-        <header className="mb-10 border-b border-slate-200/50 pb-8 dark:border-slate-700/50">
-          <h1 className="mb-6 text-4xl md:text-5xl font-black text-blue-600">
+      <article className="rounded-3xl bg-card p-8 md:p-12 border border-border">
+        <header className="mb-10 border-b border-border pb-8">
+          <h1 className="mb-6 text-4xl md:text-5xl font-black text-foreground">
             {post.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 dark:text-slate-400">
-            <span className="flex items-center gap-2 bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full">
-              <User className="h-4 w-4 text-blue-500" />
+          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+            <span className="flex items-center gap-2 bg-background border border-border px-3 py-1.5 rounded-full">
+              <User className="h-4 w-4 text-[#ea4c3c]" />
               {post.author}
             </span>
-            <span className="flex items-center gap-2 bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full">
-              <Calendar className="h-4 w-4 text-purple-500" />
+            <span className="flex items-center gap-2 bg-background border border-border px-3 py-1.5 rounded-full">
+              <Calendar className="h-4 w-4 text-[#ea4c3c]" />
               {new Date(post.date).toLocaleDateString()}
             </span>
-            <span className="flex items-center gap-2 bg-slate-100 dark:bg-slate-700 px-3 py-1.5 rounded-full">
-              <Clock className="h-4 w-4 text-pink-500" />
+            <span className="flex items-center gap-2 bg-background border border-border px-3 py-1.5 rounded-full">
+              <Clock className="h-4 w-4 text-[#ea4c3c]" />
               {Math.ceil((content?.length || 0) / 1000)} min read
             </span>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
             {post.tags?.map((tag: string) => (
-              <Badge key={tag} className="bg-blue-500 text-white">
+              <Badge key={tag} className="bg-[#ea4c3c] text-white border-0">
                 {tag}
               </Badge>
             ))}
           </div>
         </header>
-        <Suspense fallback={<div className="h-64 animate-pulse bg-slate-100 rounded-xl" />}>
+        <Suspense fallback={<div className="h-64 animate-pulse bg-background rounded-xl border border-border" />}>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <MarkdownRenderer content={displayContent || ""} />
           </div>
@@ -303,7 +294,7 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
   // Detail View Render
   if (id && selectedPost) {
     return (
-      <div className="relative min-h-screen bg-slate-50 dark:bg-slate-950 py-8">
+      <div className="relative min-h-screen bg-background py-8">
         <FloatingOrbs />
         <div className="container relative z-10 mx-auto px-4">
           <PostDetail post={selectedPost} content={postContent || ""} onBack={() => { window.location.hash = ''; }} />
@@ -314,7 +305,7 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
 
   // List View Render
   return (
-    <div className="relative min-h-screen bg-slate-50 dark:bg-slate-950">
+    <div className="relative min-h-screen bg-background">
       <FloatingOrbs />
 
       {/* LCP OPTIMIZATION:
@@ -323,7 +314,7 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
       */}
       <BlogHeader />
 
-      <div className="container relative z-10 mx-auto px-4 py-10">
+      <div className="container relative z-10 mx-auto px-4 py-10 text-foreground">
         {isLoading ? (
            <BlogGridSkeleton />
         ) : (
@@ -344,20 +335,20 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
                   exit={{ opacity: 0, height: 0 }}
                   className="mb-8 overflow-hidden contain-content"
                 >
-                  <div className="flex flex-wrap gap-2 rounded-xl bg-white/60 dark:bg-slate-800/60 p-5 border border-white/20">
+                  <div className="flex flex-wrap gap-2 rounded-xl bg-card p-5 border border-border">
                     {categories.map((tag: string) => (
                       <Button
                         key={tag}
                         variant={selectedTags.includes(tag) ? "default" : "outline"}
                         size="sm"
                         onClick={() => toggleTag(tag)}
-                        className={`rounded-full ${selectedTags.includes(tag) ? "bg-blue-500 border-0" : ""}`}
+                        className={`rounded-full transition-all ${selectedTags.includes(tag) ? "bg-[#ea4c3c] text-white border-0 hover:bg-[#d63e2c]" : "border-border text-foreground hover:bg-[#ea4c3c] hover:border-[#ea4c3c] hover:text-white"}`}
                       >
                         {tag}
                       </Button>
                     ))}
                     {selectedTags.length > 0 && (
-                      <Button variant="ghost" size="sm" onClick={() => setSelectedTags([])} className="text-red-500 hover:text-red-600">
+                      <Button variant="ghost" size="sm" onClick={() => setSelectedTags([])} className="text-[#ea4c3c] hover:text-[#d63e2c] hover:bg-accent">
                         <X className="mr-1 h-3 w-3" /> Clear all
                       </Button>
                     )}
@@ -382,11 +373,11 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
                 </div>
               ) : (
                 <div className="py-20 text-center contain-content">
-                  <FileText className="mx-auto mb-4 h-16 w-16 text-slate-300" />
-                  <h3 className="text-xl font-bold text-slate-600 dark:text-slate-400 mb-2">
+                  <FileText className="mx-auto mb-4 h-16 w-16 text-muted-foreground" />
+                  <h3 className="text-xl font-bold text-muted-foreground mb-2">
                      {t("blog.noPostsFound")}
                   </h3>
-                  <Button variant="link" onClick={() => { setSearchQuery(""); setSelectedTags([]); }} className="text-blue-600">
+                  <Button variant="link" onClick={() => { setSearchQuery(""); setSelectedTags([]); }} className="text-[#ea4c3c] hover:text-[#d63e2c] p-0">
                     {t("common.clearFilters")}
                   </Button>
                 </div>

@@ -326,14 +326,14 @@ export const PackageInfoModal = ({ packageType, onClose }: PackageInfoModalProps
       
       {/* Modal Content */}
       <Card 
-        className="relative p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-900 shadow-2xl animate-scale-in" 
+        className="relative p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-[#1c1c1c] border border-[#2d2d2d] shadow-none animate-scale-in text-white rounded-2xl" 
         onClick={(e) => e.stopPropagation()}
         style={{ position: 'relative', zIndex: 1 }}
       >
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-3">
-            <IconComponent className="w-8 h-8 text-blue-500" />
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            <IconComponent className="w-8 h-8 text-[#ea4c3c]" />
+            <h3 className="text-2xl font-bold text-white">
               {info.title}
             </h3>
           </div>
@@ -341,26 +341,26 @@ export const PackageInfoModal = ({ packageType, onClose }: PackageInfoModalProps
             onClick={onClose}
             variant="ghost"
             size="sm"
-            className="hover:bg-slate-100 dark:hover:bg-slate-800"
+            className="hover:bg-[#121212] text-slate-400 hover:text-white"
           >
             <X className="w-5 h-5" />
           </Button>
         </div>
 
-        <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg">
+        <p className="text-slate-300 mb-6 text-lg">
           {info.description}
         </p>
 
         <div className="space-y-6">
           <div>
-            <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
-              <Info className="w-5 h-5" />
+            <h4 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+              <Info className="w-5 h-5 text-[#ea4c3c]" />
               Особенности
             </h4>
             <ul className="space-y-2">
               {info.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-2 text-slate-600 dark:text-slate-400">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                <li key={index} className="flex items-start gap-2 text-slate-300">
+                  <div className="w-2 h-2 bg-[#ea4c3c] rounded-full mt-2 flex-shrink-0"></div>
                   {feature}
                 </li>
               ))}
@@ -369,12 +369,12 @@ export const PackageInfoModal = ({ packageType, onClose }: PackageInfoModalProps
 
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="text-lg font-semibold text-green-600 dark:text-green-400 mb-3">
+              <h4 className="text-lg font-semibold text-green-400 mb-3">
                 Преимущества
               </h4>
               <ul className="space-y-2">
                 {info.pros.map((pro, index) => (
-                  <li key={index} className="flex items-start gap-2 text-slate-600 dark:text-slate-400">
+                  <li key={index} className="flex items-start gap-2 text-slate-300">
                     <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                     {pro}
                   </li>
@@ -383,12 +383,12 @@ export const PackageInfoModal = ({ packageType, onClose }: PackageInfoModalProps
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-orange-600 dark:text-orange-400 mb-3">
+              <h4 className="text-lg font-semibold text-orange-400 mb-3">
                 Недостатки
               </h4>
               <ul className="space-y-2">
                 {info.cons.map((con, index) => (
-                  <li key={index} className="flex items-start gap-2 text-slate-600 dark:text-slate-400">
+                  <li key={index} className="flex items-start gap-2 text-slate-300">
                     <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                     {con}
                   </li>
@@ -397,35 +397,35 @@ export const PackageInfoModal = ({ packageType, onClose }: PackageInfoModalProps
             </div>
           </div>
 
-          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-            <h4 className="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-2">
+          <div className="bg-[#ea4c3c]/10 border border-[#ea4c3c]/20 p-4 rounded-lg">
+            <h4 className="text-lg font-semibold text-[#ea4c3c] mb-2">
               Когда использовать
             </h4>
-            <p className="text-blue-700 dark:text-blue-300">
+            <p className="text-slate-200">
               {info.whenToUse}
             </p>
           </div>
 
           {/* Installation Commands */}
           {(info as any).installCommand && (
-            <div className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg">
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+            <div className="bg-[#121212] border border-[#2d2d2d] p-4 rounded-lg">
+              <h4 className="text-lg font-semibold text-white mb-2">
                 Команда установки
               </h4>
-              <code className="text-sm font-mono bg-gray-800 dark:bg-gray-900 text-green-400 p-2 rounded block">
+              <code className="text-sm font-mono bg-[#1c1c1c] border border-[#2d2d2d] text-green-400 p-2 rounded block">
                 {(info as any).installCommand}
               </code>
             </div>
           )}
 
           {(info as any).installCommands && (
-            <div className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg">
-              <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">
+            <div className="bg-[#121212] border border-[#2d2d2d] p-4 rounded-lg">
+              <h4 className="text-lg font-semibold text-white mb-2">
                 Команды установки
               </h4>
               <div className="space-y-2">
                 {(info as any).installCommands.map((command: string, index: number) => (
-                  <code key={index} className="text-sm font-mono bg-gray-800 dark:bg-gray-900 text-green-400 p-2 rounded block">
+                  <code key={index} className="text-sm font-mono bg-[#1c1c1c] border border-[#2d2d2d] text-green-400 p-2 rounded block">
                     {command}
                   </code>
                 ))}

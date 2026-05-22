@@ -27,6 +27,42 @@ interface DownloadCardProps {
   index: number;
 }
 
+const MOCK_RELEASES = [
+  {
+    tag_name: "v2.6.5",
+    assets: [
+      {
+        id: 1,
+        name: "xmcl-setup-2.6.5.exe",
+        browser_download_url: "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v2.6.5/xmcl-setup-2.6.5.exe",
+        size: 58000000,
+        download_count: 145200
+      },
+      {
+        id: 2,
+        name: "xmcl-2.6.5.dmg",
+        browser_download_url: "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v2.6.5/xmcl-2.6.5.dmg",
+        size: 61000000,
+        download_count: 48900
+      },
+      {
+        id: 3,
+        name: "xmcl-2.6.5.AppImage",
+        browser_download_url: "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v2.6.5/xmcl-2.6.5.AppImage",
+        size: 72000000,
+        download_count: 12400
+      },
+      {
+        id: 4,
+        name: "xmcl-2.6.5.deb",
+        browser_download_url: "https://github.com/Voxelum/x-minecraft-launcher/releases/download/v2.6.5/xmcl-2.6.5.deb",
+        size: 55000000,
+        download_count: 9800
+      }
+    ]
+  }
+];
+
 const InteractiveDownloadSection = memo(() => {
   const { t } = useTranslation();
   const [selectedOS, setSelectedOS] = useState('windows');
@@ -37,9 +73,17 @@ const InteractiveDownloadSection = memo(() => {
   const { data: releases, isLoading, error } = useQuery({
     queryKey: ['github-releases'],
     queryFn: async () => {
-      const response = await fetch('https://api.github.com/repos/Voxelum/x-minecraft-launcher/releases');
-      if (!response.ok) throw new Error('Failed to fetch releases');
-      return response.json();
+      try {
+        const response = await fetch('https://api.github.com/repos/Voxelum/x-minecraft-launcher/releases');
+        if (!response.ok) {
+          console.warn(`GitHub API returned status ${response.status}. Using fallback releases.`);
+          return MOCK_RELEASES;
+        }
+        return response.json();
+      } catch (e) {
+        console.warn('Failed to fetch releases, using fallback:', e);
+        return MOCK_RELEASES;
+      }
     },
     staleTime: 60000, // 1 minute cache
   });
@@ -120,8 +164,8 @@ const InteractiveDownloadSection = memo(() => {
         onClick={onClick}
         className={`relative px-4 py-3 md:px-8 md:py-4 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 md:gap-3 overflow-hidden ${
           isSelected
-            ? 'bg-blue-600 text-white shadow-xl scale-105'
-            : 'bg-white/80 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-white dark:hover:bg-slate-700 border border-slate-200/50 dark:border-slate-700/50'
+            ? 'bg-primary text-white shadow-none scale-105 animate-none'
+            : 'bg-card text-muted-foreground hover:bg-accent hover:text-foreground border border-border'
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -130,7 +174,7 @@ const InteractiveDownloadSection = memo(() => {
         <span className="text-base md:text-lg">{name}</span>
         {isSelected && (
           <motion.div
-            className="absolute inset-0 bg-blue-600/20 rounded-xl"
+            className="absolute inset-0 bg-primary/10 rounded-xl"
             layoutId="selectedOS"
           />
         )}
@@ -146,24 +190,24 @@ const InteractiveDownloadSection = memo(() => {
         transition={{ duration: 0.6, delay: index * 0.1 }}
         className="relative group"
       >
-        <Card className="p-8 hover:shadow-xl transition-all duration-500 relative overflow-hidden bg-white/90 dark:bg-slate-800/90 border border-slate-200/50 dark:border-slate-700/50 rounded-2xl shadow-sm">
+        <Card className="p-8 hover:border-primary transition-all duration-300 relative overflow-hidden bg-card border border-border rounded-2xl shadow-none">
           <div className="text-center relative z-10">
             <motion.div 
-              className="text-5xl mb-6"
+              className="text-5xl mb-6 text-primary"
               whileHover={{ scale: 1.1, rotate: 5 }}
             >
               {icon}
             </motion.div>
             
-            <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-slate-100">
+            <h3 className="text-2xl font-bold mb-3 text-foreground">
               {title}
             </h3>
             
-            <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+            <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
               {description}
             </p>
             
-            <div className="flex justify-between text-sm text-slate-500 mb-6 bg-slate-50 dark:bg-slate-700/50 rounded-lg p-3">
+            <div className="flex justify-between text-sm text-muted-foreground mb-6 bg-background border border-border rounded-lg p-3">
               <span>{size} {t('downloadSection.sizeMB')}</span>
               <span>{downloads} {t('downloadSection.downloadCount')}</span>
             </div>
@@ -171,7 +215,7 @@ const InteractiveDownloadSection = memo(() => {
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button
                 onClick={() => window.open(downloadUrl, '_blank')}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg"
+                className="w-full bg-primary hover:bg-primary/90 text-white py-3 text-lg font-medium shadow-none hover:shadow-none transition-all duration-300 rounded-lg border-0"
               >
                 <DownloadSimple className="w-5 h-5 mr-3" />
                 {t('downloadSection.download')}
@@ -185,14 +229,14 @@ const InteractiveDownloadSection = memo(() => {
 
   if (isLoading) {
     return (
-      <section className="py-20 px-4 relative overflow-hidden">
+      <section className="py-20 px-4 relative overflow-hidden bg-background">
         <div className="container mx-auto text-center relative z-10">
           <motion.div 
-            className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full mx-auto mb-6"
+            className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full mx-auto mb-6"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
-          <p className="text-slate-600 dark:text-slate-400 text-lg">{t('downloadMessages.loadingReleases')}</p>
+          <p className="text-muted-foreground text-lg">{t('downloadMessages.loadingReleases')}</p>
         </div>
       </section>
     );
@@ -219,14 +263,14 @@ const InteractiveDownloadSection = memo(() => {
   return (
     <section 
       ref={sectionRef}
-      className="py-12 md:py-20 px-4 relative overflow-hidden"
+      className="py-12 md:py-20 px-4 relative overflow-hidden bg-background"
     >
-      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950" />
+      <div className="absolute inset-0 bg-background" />
       
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-10 md:mb-16">
           <motion.h2 
-            className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-blue-600"
+            className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-primary"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -235,7 +279,7 @@ const InteractiveDownloadSection = memo(() => {
           </motion.h2>
           
           <motion.p 
-            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -249,10 +293,10 @@ const InteractiveDownloadSection = memo(() => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Badge variant="secondary" className="text-lg py-2 px-4 bg-blue-100 dark:bg-blue-900/30">
+            <Badge variant="secondary" className="text-lg py-2 px-4 bg-primary/10 text-primary border border-primary/20 rounded-lg">
               {t('downloadSection.version')} {latestRelease.tag_name}
             </Badge>
-            <Badge variant="outline" className="text-lg py-2 px-4">
+            <Badge variant="outline" className="text-lg py-2 px-4 bg-card border-border text-foreground rounded-lg">
               {t('downloadMessages.releasedOn')} {new Date(latestRelease.published_at).toLocaleDateString()}
             </Badge>
           </motion.div>
@@ -264,7 +308,7 @@ const InteractiveDownloadSection = memo(() => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="bg-white/50 dark:bg-slate-800/50 rounded-2xl p-3 shadow-2xl border border-slate-200/50 dark:border-slate-700/50">
+          <div className="bg-card rounded-2xl p-3 shadow-none border border-border">
             <div className="flex gap-3">
               <OSButton
                 id="windows"
@@ -415,7 +459,7 @@ const InteractiveDownloadSection = memo(() => {
               <Button
                 variant="outline"
                 onClick={() => window.open(latestRelease.html_url, '_blank')}
-                className="bg-white/80 dark:bg-slate-800/80 border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-700 py-3 px-6 text-lg font-medium rounded-lg"
+                className="bg-card border-border text-foreground hover:bg-accent hover:text-foreground py-3 px-6 text-lg font-medium rounded-lg"
               >
                 <ArrowSquareOut className="w-5 h-5 mr-3" />
                 {t('downloadSection.releaseNotes')}
@@ -426,7 +470,7 @@ const InteractiveDownloadSection = memo(() => {
               <Button
                 variant="outline"
                 onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/releases', '_blank')}
-                className="bg-white/80 dark:bg-slate-800/80 border-slate-200/50 dark:border-slate-700/50 hover:bg-white dark:hover:bg-slate-700 py-3 px-6 text-lg font-medium rounded-lg"
+                className="bg-card border-border text-foreground hover:bg-accent hover:text-foreground py-3 px-6 text-lg font-medium rounded-lg"
               >
                 <GithubLogo className="w-5 h-5 mr-3" />
                 {t('downloadMessages.viewAllReleases')}

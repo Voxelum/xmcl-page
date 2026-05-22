@@ -114,7 +114,7 @@ export const StaggeredMenu = () => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="relative z-50 flex items-center justify-center w-12 h-12 rounded-full shadow-lg bg-white/80 dark:bg-slate-900/80 border border-white/20 dark:border-white/10 text-slate-700 dark:text-slate-200 hover:shadow-indigo-500/25 transition-all"
+        className="relative z-50 flex items-center justify-center w-12 h-12 rounded-full bg-card border border-border text-foreground transition-all shadow-none hover:bg-accent"
         onClick={toggleMenu}
       >
         <AnimatePresence mode="wait">
@@ -165,7 +165,7 @@ export const StaggeredMenu = () => {
             variants={menuVariants}
             className="absolute top-16 right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 w-[300px] z-50"
           >
-            <div className="overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-950/85 border border-white/40 dark:border-white/10 shadow-2xl ring-1 ring-black/5 dark:ring-white/5">
+            <div className="overflow-hidden rounded-2xl bg-card border border-border shadow-2xl">
               
               <AnimatePresence mode="wait">
                 {view === 'menu' ? (
@@ -190,9 +190,9 @@ export const StaggeredMenu = () => {
                             <Link
                               to={item.href}
                               onClick={closeMenu}
-                              className="group flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-black/5 dark:hover:bg-white/10 hover:text-slate-900 dark:hover:text-white transition-all active:scale-[0.98]"
+                              className="group flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-[#ea4c3c]/10 hover:text-[#ea4c3c] dark:hover:text-white transition-all active:scale-[0.98]"
                             >
-                              <Icon className="w-4 h-4 text-slate-400 group-hover:text-indigo-500 transition-colors" />
+                              <Icon className="w-4 h-4 text-slate-400 group-hover:text-[#ea4c3c] transition-colors" />
                               {t(item.label)}
                             </Link>
                           </motion.div>
@@ -201,7 +201,7 @@ export const StaggeredMenu = () => {
                     </div>
 
                     {/* Divider */}
-                    <div className="h-px bg-slate-200 dark:bg-slate-700 mx-4 my-1" />
+                    <div className="h-px bg-border mx-4 my-1" />
 
                     {/* Social Icons Grid */}
                     <div className="p-3">
@@ -212,7 +212,7 @@ export const StaggeredMenu = () => {
                             href={social.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`flex items-center justify-center aspect-square rounded-2xl ${social.bg} ${social.color} hover:brightness-110 hover:scale-105 active:scale-95 transition-all border border-transparent hover:border-white/20 shadow-sm`}
+                            className="flex items-center justify-center aspect-square rounded-2xl bg-background border border-border text-slate-400 hover:text-[#ea4c3c] hover:border-[#ea4c3c]/30 hover:bg-[#ea4c3c]/5 hover:scale-105 active:scale-95 transition-all shadow-sm"
                             initial={{ opacity: 0, scale: 0.5 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.15 + (idx * 0.05) }}
@@ -224,7 +224,7 @@ export const StaggeredMenu = () => {
                     </div>
 
                     {/* Footer: Settings */}
-                    <div className="bg-slate-50/50 dark:bg-slate-900/50 p-3 flex gap-2 border-t border-slate-200/50 dark:border-slate-800/50">
+                    <div className="bg-background/50 p-3 flex gap-2 border-t border-border">
                        <div className="flex-1">
                           <LanguageTrigger onClick={() => setView('language')} />
                        </div>

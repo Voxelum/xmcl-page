@@ -1,3 +1,8 @@
+import React from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
+import { motion } from 'framer-motion';
+import { Envelope, ChatCircle, Heart, CurrencyDollar, ShareNetwork } from '@phosphor-icons/react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { AppShell } from '@/components/AppShell';
 
 export function ContactContent() {
@@ -208,55 +213,47 @@ export function ContactContent() {
 
   const contacts = [
     {
-      icon: <Envelope className="h-6 w-6" />,
+      icon: <Envelope className="h-6 w-6 text-primary" />,
       title: text.email.title,
       value: text.email.value,
       link: "mailto:cijhn@hotmail.com",
-      description: text.email.description,
-      gradient: "bg-blue-500"
+      description: text.email.description
     },
     {
-      icon: <ChatCircle className="h-6 w-6" />,
+      icon: <ChatCircle className="h-6 w-6 text-primary" />,
       title: text.discord.title,
       value: text.discord.value,
       link: "https://discord.gg/W5XVwYY7GQ",
-      description: text.discord.description,
-      gradient: "bg-indigo-500"
+      description: text.discord.description
     },
     {
-      icon: <Heart className="h-6 w-6" />,
+      icon: <Heart className="h-6 w-6 text-primary" />,
       title: text.kofi.title,
       value: text.kofi.value,
       link: "https://ko-fi.com/ci010",
-      description: text.kofi.description,
-      gradient: "bg-pink-500"
+      description: text.kofi.description
     },
     {
-      icon: <CurrencyDollar className="h-6 w-6" />,
+      icon: <CurrencyDollar className="h-6 w-6 text-primary" />,
       title: text.afdian.title,
       value: text.afdian.value,
       link: "https://afdian.net/@ci010",
-      description: text.afdian.description,
-      gradient: "bg-orange-500"
+      description: text.afdian.description
     },
     {
-      icon: <ShareNetwork className="h-6 w-6" />,
+      icon: <ShareNetwork className="h-6 w-6 text-primary" />,
       title: text.kook.title,
       value: text.kook.value,
       link: "https://kook.top/gqjSHh",
-      description: text.kook.description,
-      gradient: "bg-green-500"
+      description: text.kook.description
     }
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <main className="flex-grow pt-24 md:pt-32 pb-12 md:pb-20 relative overflow-hidden">
         {/* Animated background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full filter blur-[100px] animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-pink-500/20 rounded-full filter blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
+        <div className="absolute inset-0 pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
@@ -267,7 +264,7 @@ export function ContactContent() {
           >
             <div className="text-center mb-8 md:mb-12">
               <motion.h1 
-                className="text-4xl md:text-5xl font-bold mb-6 text-blue-400"
+                className="text-4xl md:text-5xl font-bold mb-6 text-foreground"
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -275,7 +272,7 @@ export function ContactContent() {
                 {text.contactUs}
               </motion.h1>
               <motion.div
-                className="w-24 h-1 bg-blue-500 mx-auto rounded-full"
+                className="w-24 h-1 bg-primary mx-auto rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -283,11 +280,11 @@ export function ContactContent() {
             </div>
             
             <Tabs defaultValue="all" className="w-full">
-              <TabsList className="mb-8 w-full justify-center bg-white/5 border border-white/10">
-                <TabsTrigger value="all" className="data-[state=active]:bg-blue-500">{text.allContacts}</TabsTrigger>
-                <TabsTrigger value="support" className="data-[state=active]:bg-blue-500">{text.support}</TabsTrigger>
-                <TabsTrigger value="community" className="data-[state=active]:bg-blue-500">{text.community}</TabsTrigger>
-                <TabsTrigger value="donate" className="data-[state=active]:bg-blue-500">{text.donate}</TabsTrigger>
+              <TabsList className="mb-8 w-full justify-center bg-card border border-border text-muted-foreground">
+                <TabsTrigger value="all" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">{text.allContacts}</TabsTrigger>
+                <TabsTrigger value="support" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">{text.support}</TabsTrigger>
+                <TabsTrigger value="community" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">{text.community}</TabsTrigger>
+                <TabsTrigger value="donate" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">{text.donate}</TabsTrigger>
               </TabsList>
               
               <TabsContent value="all" className="space-y-6">
@@ -343,11 +340,10 @@ interface ContactCardProps {
   value: string;
   link: string;
   description: string;
-  gradient: string;
   delay?: number;
 }
 
-function ContactCard({ icon, title, value, link, description, gradient, delay = 0 }: ContactCardProps) {
+function ContactCard({ icon, title, value, link, description, delay = 0 }: ContactCardProps) {
   return (
     <motion.a
       href={link}
@@ -360,27 +356,21 @@ function ContactCard({ icon, title, value, link, description, gradient, delay = 
       whileHover={{ y: -5 }}
     >
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-100 transition-opacity duration-300 rounded-xl"
-             style={{ background: 'var(--gradient-from)' }} />
-        
-        <div className="relative p-5 md:p-6 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 group-hover:border-white/20 transition-all duration-300">
+        <div className="relative p-5 md:p-6 bg-card rounded-xl border border-border group-hover:border-primary transition-all duration-300">
           <div className="flex items-start mb-4">
-            <div className={`p-3 rounded-lg ${gradient} text-white mr-4 group-hover:scale-110 transition-transform duration-300`}>
+            <div className="p-3 rounded-lg bg-primary/10 text-primary mr-4 group-hover:scale-110 transition-transform duration-300">
               {icon}
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-semibold mb-1 group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-1 text-foreground group-hover:text-primary transition-colors duration-300">
                 {title}
               </h3>
-              <p className="text-lg font-medium text-white/90 mb-2">{value}</p>
+              <p className="text-lg font-medium text-foreground mb-2">{value}</p>
             </div>
           </div>
-          <p className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-300">
+          <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
             {description}
           </p>
-          
-          {/* Hover effect overlay */}
-          <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-out" />
         </div>
       </div>
     </motion.a>

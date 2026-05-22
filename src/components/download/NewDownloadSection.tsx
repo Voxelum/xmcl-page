@@ -166,8 +166,8 @@ const NewDownloadSection = () => {
   // Loading state
   if (isLoading) {
     return (
-      <section className="min-h-screen flex flex-col items-center justify-center pt-24 md:pt-20">
-        <Spinner className="w-10 h-10 md:w-12 md:h-12 animate-spin text-blue-500 mb-4" />
+      <section className="min-h-screen flex flex-col items-center justify-center pt-24 md:pt-20 bg-[#121212]">
+        <Spinner className="w-10 h-10 md:w-12 md:h-12 animate-spin text-[#ea4c3c] mb-4" />
         <p className="text-slate-400 text-sm md:text-base">{t("downloadMessages.loadingReleases") || "Loading releases..."}</p>
       </section>
     );
@@ -194,7 +194,7 @@ const NewDownloadSection = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-[#121212]">
       <DownloadHero 
         latestRelease={latestRelease} 
         detectedOS={detectedOS}
@@ -208,14 +208,13 @@ const NewDownloadSection = () => {
         />
       </div>
 
-       {/* Footer / All Releases Link */}
-       <div className="py-12 md:py-20 text-center border-t border-slate-900">
+       <div className="py-12 md:py-20 text-center border-t border-[#2d2d2d]">
          <p className="text-slate-400 mb-4 md:mb-6 text-sm md:text-base">{t('downloadMessages.lookingForOlder') || "Looking for older versions?"}</p>
          <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-4">
             <Button
               variant="outline"
               onClick={() => window.open(latestRelease.html_url, "_blank")}
-              className="border-slate-800 hover:bg-slate-900 text-slate-300"
+              className="border-[#2d2d2d] hover:bg-[#1c1c1c] text-slate-300 hover:text-white"
             >
               <ArrowSquareOut className="w-4 h-4 mr-2" />
               {t("downloadMessages.releaseNotes")}
@@ -223,7 +222,7 @@ const NewDownloadSection = () => {
             <Button
               variant="outline"
               onClick={() => window.open("https://github.com/Voxelum/x-minecraft-launcher/releases", "_blank")}
-              className="border-slate-800 hover:bg-slate-900 text-slate-300"
+              className="border-[#2d2d2d] hover:bg-[#1c1c1c] text-slate-300 hover:text-white"
             >
               <GithubLogo className="w-4 h-4 mr-2" />
               {t("downloadMessages.allReleases")}

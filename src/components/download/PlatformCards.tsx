@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from '@/hooks/useTranslation';
 import { Button } from '@/components/ui/button';
-import { Laptop, AppleLogo, Monitor, DownloadSimple, ArrowSquareOut, LinuxLogo } from '@phosphor-icons/react';
+import { Laptop, AppleLogo, DownloadSimple, ArrowSquareOut, LinuxLogo } from '@phosphor-icons/react';
 import type { PlatformAssets, GitHubAsset } from './types';
 
 interface PlatformCardsProps {
@@ -23,14 +23,14 @@ export const PlatformCards: React.FC<PlatformCardsProps> = ({ platformAssets, on
             <Button
               key={asset.id}
               variant="ghost"
-              className="w-full justify-between bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white group/btn h-auto py-2"
+              className="w-full justify-between bg-[#121212] hover:bg-[#121212]/80 text-slate-300 hover:text-white border border-[#2d2d2d] hover:border-[#ea4c3c] group/btn h-auto py-2 px-4 rounded-xl transition-all duration-300"
               onClick={() => onDownload(asset.browser_download_url)}
             >
               <div className="flex flex-col items-start truncate mr-2">
                 <span className="truncate w-full font-medium">{asset.name}</span>
                 <span className="text-xs text-slate-500">{(asset.size / 1024 / 1024).toFixed(1)} MB</span>
               </div>
-              <DownloadSimple className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity shrink-0" />
+              <DownloadSimple className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity shrink-0 text-[#ea4c3c]" />
             </Button>
           ))}
         </div>
@@ -41,21 +41,21 @@ export const PlatformCards: React.FC<PlatformCardsProps> = ({ platformAssets, on
   const renderExternalLink = (name: string, url: string, description: string) => (
     <Button
       variant="ghost"
-      className="w-full justify-between bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white group/btn h-auto py-2"
+      className="w-full justify-between bg-[#121212] hover:bg-[#121212]/80 text-slate-300 hover:text-white border border-[#2d2d2d] hover:border-[#ea4c3c] group/btn h-auto py-2 px-4 rounded-xl transition-all duration-300"
       onClick={() => window.open(url, '_blank')}
     >
         <div className="flex flex-col items-start truncate mr-2">
             <span className="truncate w-full font-medium">{name}</span>
             <span className="text-xs text-slate-500">{description}</span>
         </div>
-        <ArrowSquareOut className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity shrink-0" />
+        <ArrowSquareOut className="w-4 h-4 opacity-0 group-hover/btn:opacity-100 transition-opacity shrink-0 text-[#ea4c3c]" />
     </Button>
   );
 
   return (
-    <section className="py-10 md:py-20 px-4">
+    <section className="py-10 md:py-20 px-4 bg-[#121212]">
       <div className="container mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-16 text-slate-200">
+        <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-16 text-white">
            {t('downloadMessages.otherPlatforms') || 'Other Platforms'}
         </h2>
         
@@ -65,11 +65,10 @@ export const PlatformCards: React.FC<PlatformCardsProps> = ({ platformAssets, on
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="group relative p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 group-hover:border-blue-500/50 transition-colors duration-300"
+            className="group relative p-6 md:p-8 rounded-3xl bg-[#1c1c1c] border border-[#2d2d2d] hover:border-[#ea4c3c] transition-colors duration-300"
           >
-            <div className="absolute inset-0 bg-blue-500/10 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-300" />
             <div className="relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-blue-400">
+              <div className="w-14 h-14 rounded-2xl bg-[#121212] border border-[#2d2d2d] flex items-center justify-center mb-6 text-[#ea4c3c]">
                 <Laptop className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Windows</h3>
@@ -88,11 +87,10 @@ export const PlatformCards: React.FC<PlatformCardsProps> = ({ platformAssets, on
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="group relative p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 group-hover:border-slate-500/50 transition-colors duration-300"
+            className="group relative p-6 md:p-8 rounded-3xl bg-[#1c1c1c] border border-[#2d2d2d] hover:border-[#ea4c3c] transition-colors duration-300"
           >
-            <div className="absolute inset-0 bg-slate-500/10 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-300" />
             <div className="relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-slate-200">
+              <div className="w-14 h-14 rounded-2xl bg-[#121212] border border-[#2d2d2d] flex items-center justify-center mb-6 text-[#ea4c3c]">
                 <AppleLogo className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">macOS</h3>
@@ -111,11 +109,10 @@ export const PlatformCards: React.FC<PlatformCardsProps> = ({ platformAssets, on
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="group relative p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-white/5 group-hover:border-orange-500/50 transition-colors duration-300"
+            className="group relative p-6 md:p-8 rounded-3xl bg-[#1c1c1c] border border-[#2d2d2d] hover:border-[#ea4c3c] transition-colors duration-300"
           >
-            <div className="absolute inset-0 bg-orange-500/10 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-300" />
             <div className="relative z-10">
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 text-orange-400">
+              <div className="w-14 h-14 rounded-2xl bg-[#121212] border border-[#2d2d2d] flex items-center justify-center mb-6 text-[#ea4c3c]">
                 <LinuxLogo className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">Linux</h3>

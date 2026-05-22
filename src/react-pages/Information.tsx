@@ -113,7 +113,7 @@ const ContributorCarousel = ({ contributors }: { contributors: Contributor[] }) 
     <div className="relative group">
       <button
         onClick={() => scroll('left')}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1/2"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-card border border-border text-foreground hover:bg-[#ea4c3c] hover:border-[#ea4c3c] hover:text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all -translate-x-1/2"
       >
         <CaretLeft className="w-5 h-5" />
       </button>
@@ -131,7 +131,7 @@ const ContributorCarousel = ({ contributors }: { contributors: Contributor[] }) 
             rel="noopener noreferrer"
             className="flex-shrink-0 group/item"
           >
-            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-transparent hover:border-indigo-500 transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-indigo-500/20">
+            <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border border-border hover:border-[#ea4c3c] transition-all duration-300 hover:scale-110">
               <img
                 src={contributor.avatar_url}
                 alt={contributor.login}
@@ -151,7 +151,7 @@ const ContributorCarousel = ({ contributors }: { contributors: Contributor[] }) 
 
       <button
         onClick={() => scroll('right')}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-white/90 dark:bg-slate-900/90 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity translate-x-1/2"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 bg-card border border-border text-foreground hover:bg-[#ea4c3c] hover:border-[#ea4c3c] hover:text-white rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all translate-x-1/2"
       >
         <CaretRight className="w-5 h-5" />
       </button>
@@ -193,25 +193,7 @@ const InformationContent: React.FC = () => {
 
   return (
     <>
-      {/* SEO JSON-LD */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "X Minecraft Launcher",
-          "applicationCategory": "GameApplication",
-          "operatingSystem": "Windows, macOS, Linux",
-          "offers": { "@type": "Offer", "price": "0" }
-        })
-      }} />
-      
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0b] transition-colors duration-300 relative overflow-hidden">
-        {/* Background */}
-        <div className="fixed inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[150px]" />
-          <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px]" />
-        </div>
-
+      <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
         <div className="container mx-auto px-4 py-16 md:py-24 max-w-7xl relative z-10">
           
           {/* Hero Section */}
@@ -222,21 +204,20 @@ const InformationContent: React.FC = () => {
             className="text-center mb-16 md:mb-24"
           >
             <div className="relative inline-block mb-8">
-              <div className="absolute inset-0 bg-indigo-500 rounded-3xl blur-3xl opacity-40 scale-150" />
               <img
                 src="https://github.com/Voxelum/x-minecraft-launcher/raw/master/xmcl-electron-app/icons/dark@256x256.png"
                 alt="XMCL Logo"
-                className="w-28 h-28 md:w-36 md:h-36 rounded-3xl shadow-2xl relative z-10 border-4 border-white/20"
+                className="w-28 h-28 md:w-36 md:h-36 rounded-3xl shadow-2xl relative z-10 border-4 border-border"
               />
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-slate-900 dark:text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-foreground">
               X Minecraft Launcher
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               {t('information.launcher_created_by')}{' '}
-              <a href="https://github.com/ci010" target="_blank" rel="noopener noreferrer" className="text-indigo-500 hover:text-indigo-400 font-semibold">
+              <a href="https://github.com/ci010" target="_blank" rel="noopener noreferrer" className="text-[#ea4c3c] hover:text-[#ea4c3c]/85 font-semibold">
                 CI010
               </a>
             </p>
@@ -249,20 +230,20 @@ const InformationContent: React.FC = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="flex flex-wrap justify-center gap-4 mb-10"
               >
-                <div className="flex items-center gap-2 px-5 py-3 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10">
+                <div className="flex items-center gap-2 px-5 py-3 bg-card rounded-2xl border border-border">
                   <Star className="w-5 h-5 text-yellow-500" />
-                  <span className="text-2xl font-bold text-slate-900 dark:text-white">{(repoStats.stargazers_count / 1000).toFixed(1)}K</span>
-                  <span className="text-sm text-slate-500">Stars</span>
+                  <span className="text-2xl font-bold text-foreground">{(repoStats.stargazers_count / 1000).toFixed(1)}K</span>
+                  <span className="text-sm text-muted-foreground">Stars</span>
                 </div>
-                <div className="flex items-center gap-2 px-5 py-3 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10">
-                  <Users className="w-5 h-5 text-indigo-500" />
-                  <span className="text-2xl font-bold text-slate-900 dark:text-white">{contributors.length}+</span>
-                  <span className="text-sm text-slate-500">Contributors</span>
+                <div className="flex items-center gap-2 px-5 py-3 bg-card rounded-2xl border border-border">
+                  <Users className="w-5 h-5 text-[#ea4c3c]" />
+                  <span className="text-2xl font-bold text-foreground">{contributors.length}+</span>
+                  <span className="text-sm text-muted-foreground">Contributors</span>
                 </div>
-                <div className="flex items-center gap-2 px-5 py-3 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10">
+                <div className="flex items-center gap-2 px-5 py-3 bg-card rounded-2xl border border-border">
                   <Code className="w-5 h-5 text-green-500" />
-                  <span className="text-2xl font-bold text-slate-900 dark:text-white">{repoStats.forks_count}</span>
-                  <span className="text-sm text-slate-500">Forks</span>
+                  <span className="text-2xl font-bold text-foreground">{repoStats.forks_count}</span>
+                  <span className="text-sm text-muted-foreground">Forks</span>
                 </div>
               </motion.div>
             )}
@@ -273,7 +254,7 @@ const InformationContent: React.FC = () => {
                 href="https://xmcl.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg hover:bg-indigo-500 transition-all shadow-xl shadow-indigo-500/25 hover:scale-105"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#ea4c3c] text-white rounded-2xl font-bold text-lg hover:bg-[#d63e2c] transition-all hover:scale-105"
               >
                 <DownloadSimple className="w-5 h-5" />
                 Download
@@ -283,7 +264,7 @@ const InformationContent: React.FC = () => {
                 href="https://github.com/Voxelum/x-minecraft-launcher"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white/80 dark:bg-white/10 text-slate-900 dark:text-white rounded-2xl font-bold text-lg hover:bg-white dark:hover:bg-white/20 transition-all border border-slate-200 dark:border-white/10"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-card text-foreground rounded-2xl font-bold text-lg hover:bg-accent transition-all border border-border"
               >
                 <GithubLogo className="w-5 h-5" />
                 GitHub
@@ -299,34 +280,34 @@ const InformationContent: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="mb-16 md:mb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-white">
-              <Lightning className="w-7 h-7 text-yellow-500" />
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-foreground">
+              <Lightning className="w-7 h-7 text-[#ea4c3c]" />
               Quick Install
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="p-5 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10">
+              <div className="p-5 bg-card rounded-2xl border border-border">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-blue-500/10">
-                    <Code className="w-5 h-5 text-blue-500" />
+                  <div className="p-2 rounded-lg bg-[#ea4c3c]/10">
+                    <Code className="w-5 h-5 text-[#ea4c3c]" />
                   </div>
-                  <span className="font-bold text-slate-900 dark:text-white">Windows (Winget)</span>
+                  <span className="font-bold text-foreground">Windows (Winget)</span>
                 </div>
                 <div className="relative">
-                  <div className="bg-slate-900 p-3 rounded-xl font-mono text-sm text-green-400 pr-12 overflow-x-auto">
+                  <div className="bg-background border border-border p-3 rounded-xl font-mono text-sm text-green-600 dark:text-green-400 pr-12 overflow-x-auto">
                     <code>{wingetCommand}</code>
                   </div>
                   <CopyButton text={wingetCommand} />
                 </div>
               </div>
-              <div className="p-5 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10">
+              <div className="p-5 bg-card rounded-2xl border border-border">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded-lg bg-amber-500/10">
-                    <Cpu className="w-5 h-5 text-amber-500" />
+                  <div className="p-2 rounded-lg bg-[#ea4c3c]/10">
+                    <Cpu className="w-5 h-5 text-[#ea4c3c]" />
                   </div>
-                  <span className="font-bold text-slate-900 dark:text-white">macOS (Homebrew)</span>
+                  <span className="font-bold text-foreground">macOS (Homebrew)</span>
                 </div>
                 <div className="relative">
-                  <div className="bg-slate-900 p-3 rounded-xl font-mono text-sm text-green-400 pr-12 overflow-x-auto">
+                  <div className="bg-background border border-border p-3 rounded-xl font-mono text-sm text-green-600 dark:text-green-400 pr-12 overflow-x-auto">
                     <code>{brewCommand}</code>
                   </div>
                   <CopyButton text={brewCommand} />
@@ -343,8 +324,8 @@ const InformationContent: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="mb-16 md:mb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-white">
-              <Sparkle className="w-7 h-7 text-purple-500" />
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-foreground">
+              <Sparkle className="w-7 h-7 text-[#ea4c3c]" />
               {t('information.features.title')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -355,15 +336,15 @@ const InformationContent: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className={`group p-5 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10 hover:border-indigo-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/5
+                  className={`group p-5 bg-card rounded-2xl border border-border hover:border-[#ea4c3c] transition-all duration-300
                     ${feature.size === 'large' ? 'sm:col-span-2' : ''}
                   `}
                 >
-                  <div className={`w-12 h-12 rounded-xl ${feature.gradient} p-2.5 mb-4 group-hover:scale-110 transition-transform`}>
-                    <feature.icon className="w-full h-full text-white" />
+                  <div className="w-12 h-12 rounded-xl bg-[#ea4c3c]/10 p-2.5 mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-full h-full text-[#ea4c3c]" />
                   </div>
-                  <h3 className="font-bold text-slate-900 dark:text-white mb-2 text-lg">{feature.title}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{feature.desc}</p>
+                  <h3 className="font-bold text-foreground mb-2 text-lg">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -377,11 +358,11 @@ const InformationContent: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="mb-16 md:mb-24"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-white">
-              <Users className="w-7 h-7 text-indigo-500" />
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-foreground">
+              <Users className="w-7 h-7 text-[#ea4c3c]" />
               {t('information.contributors.title')}
             </h2>
-            <div className="p-6 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10">
+            <div className="p-6 bg-card rounded-2xl border border-border">
               <ContributorCarousel contributors={contributors} />
             </div>
           </motion.section>
@@ -393,8 +374,8 @@ const InformationContent: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-slate-900 dark:text-white">
-              <Heart className="w-7 h-7 text-pink-500" />
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 text-foreground">
+              <Heart className="w-7 h-7 text-[#ea4c3c]" />
               {t('information.sponsors.title')}
             </h2>
             <div className="grid sm:grid-cols-3 gap-4">
@@ -404,14 +385,14 @@ const InformationContent: React.FC = () => {
                   href={sponsor.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-5 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200/50 dark:border-white/10 hover:border-indigo-500/30 transition-all hover:shadow-xl group"
+                  className="flex items-center gap-4 p-5 bg-card rounded-2xl border border-border hover:border-[#ea4c3c] transition-all group"
                 >
                   <img src={sponsor.logo} alt={sponsor.name} className="w-12 h-12 rounded-xl group-hover:scale-110 transition-transform" />
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-slate-900 dark:text-white truncate">{sponsor.name}</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{sponsor.desc}</p>
+                    <h3 className="font-bold text-foreground truncate">{sponsor.name}</h3>
+                    <p className="text-xs text-muted-foreground truncate">{sponsor.desc}</p>
                   </div>
-                  <ArrowSquareOut className="w-4 h-4 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                  <ArrowSquareOut className="w-4 h-4 text-[#ea4c3c] opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </a>
               ))}
             </div>

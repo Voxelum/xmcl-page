@@ -34,20 +34,14 @@ export const DownloadHero: React.FC<DownloadHeroProps> = ({ latestRelease, detec
   if (!latestRelease) return null;
 
   return (
-    <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 px-4 overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-            <div className="absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-blue-500/20 rounded-full blur-[60px] md:blur-[100px]" />
-            <div className="absolute top-40 right-10 w-60 h-60 md:w-96 md:h-96 bg-purple-500/20 rounded-full blur-[60px] md:blur-[100px]" />
-        </div>
-
+    <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 px-4 overflow-hidden bg-[#121212]">
       <div className="container mx-auto relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Badge className="mb-4 md:mb-6 py-1.5 px-3 md:py-2 md:px-4 bg-slate-800/50 hover:bg-slate-800/50 border-slate-700/50 text-blue-300 text-xs md:text-sm">
+          <Badge className="mb-4 md:mb-6 py-1.5 px-3 md:py-2 md:px-4 bg-[#ea4c3c]/10 border border-[#ea4c3c]/20 hover:bg-[#ea4c3c]/10 text-[#ea4c3c] text-xs md:text-sm">
             {t('downloadMessages.version')} {latestRelease.tag_name}
           </Badge>
           
@@ -65,7 +59,7 @@ export const DownloadHero: React.FC<DownloadHeroProps> = ({ latestRelease, detec
             <Button 
               size="lg" 
               onClick={onDownload}
-              className="h-14 px-8 md:h-16 md:px-10 text-base md:text-lg bg-blue-600 hover:bg-blue-500 shadow-xl shadow-blue-500/20 rounded-2xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto"
+              className="h-14 px-8 md:h-16 md:px-10 text-base md:text-lg bg-[#ea4c3c] hover:bg-[#d63e2c] border-0 shadow-none rounded-xl transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-white font-bold"
             >
               {getOSIcon()}
               {t('downloadMessages.download')} {getOSName()}

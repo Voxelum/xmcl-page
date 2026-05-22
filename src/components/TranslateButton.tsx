@@ -149,9 +149,9 @@ export function TranslateButton({
       <Button
         variant="outline"
         disabled
-        className="rounded-xl bg-white/60 dark:bg-slate-800/60 border-white/20"
+        className="rounded-xl bg-[#1c1c1c] border-[#2d2d2d] text-white"
       >
-        <Spinner className="mr-2 h-4 w-4 animate-spin" />
+        <Spinner className="mr-2 h-4 w-4 animate-spin text-[#ea4c3c]" />
         {t('translate.translating', 'Translating...')}
       </Button>
     );
@@ -163,14 +163,14 @@ export function TranslateButton({
         <Button
           variant="outline"
           onClick={onReset}
-          className="rounded-xl bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 hover:bg-green-100 dark:hover:bg-green-900/30"
+          className="rounded-xl bg-[#1c1c1c] border-[#2d2d2d] text-[#ea4c3c] hover:bg-[#2d2d2d] hover:text-white"
         >
-          <ArrowCounterClockwise className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-          <span className="text-green-700 dark:text-green-300">
+          <ArrowCounterClockwise className="mr-2 h-4 w-4 text-[#ea4c3c]" />
+          <span className="text-[#ea4c3c]">
             {t('translate.showOriginal', 'Show Original')}
           </span>
           {currentLangName && (
-            <span className="ml-2 text-xs text-green-600/70 dark:text-green-400/70">
+            <span className="ml-2 text-xs text-slate-400">
               ({currentLangName})
             </span>
           )}
@@ -185,7 +185,7 @@ export function TranslateButton({
         <DropdownMenuTrigger asChild>
           <Button
             variant="outline"
-            className="rounded-xl bg-white/60 dark:bg-slate-800/60 border-white/20 hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all"
+            className="rounded-xl bg-[#1c1c1c] border-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white transition-all text-slate-400"
           >
             <Translate className="mr-2 h-4 w-4" />
             {t('translate.button', 'Translate')}
@@ -193,9 +193,9 @@ export function TranslateButton({
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="start"
-          className="w-56 max-h-80 overflow-y-auto bg-white/95 dark:bg-slate-900/95 border-white/20 rounded-xl shadow-2xl"
+          className="w-56 max-h-80 overflow-y-auto bg-[#1c1c1c] border-[#2d2d2d] rounded-xl shadow-none"
         >
-          <div className="px-2 py-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+          <div className="px-2 py-1.5 text-xs text-slate-400 font-medium">
             {t('translate.selectLanguage', 'Select language')}
           </div>
           <DropdownMenuSeparator />
@@ -206,10 +206,10 @@ export function TranslateButton({
                 onTranslate(lang.code);
                 setIsOpen(false);
               }}
-              className="flex items-center justify-between cursor-pointer hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-lg mx-1"
+              className="flex items-center justify-between cursor-pointer hover:bg-[#2d2d2d] hover:text-white rounded-lg mx-1 text-slate-300"
             >
               <span className="font-medium">{lang.nativeName}</span>
-              <span className="text-xs text-slate-400">{lang.name}</span>
+              <span className="text-xs text-slate-500">{lang.name}</span>
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>

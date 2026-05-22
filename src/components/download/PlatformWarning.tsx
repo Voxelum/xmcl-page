@@ -46,30 +46,30 @@ export const PlatformWarning = ({ detectedOS, selectedOS, onContinue, onCancel }
       
       {/* Modal Content */}
       <Card 
-        className="relative p-8 max-w-md w-full bg-white dark:bg-slate-900 border border-orange-200 dark:border-orange-800 shadow-2xl" 
+        className="relative p-8 max-w-md w-full bg-[#1c1c1c] border border-[#2d2d2d] shadow-2xl rounded-2xl" 
         onClick={(e) => e.stopPropagation()}
         style={{ position: 'relative', zIndex: 1 }}
       >
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
-              <Warning className="w-8 h-8 text-orange-500" />
+              <Warning className="w-8 h-8 text-[#ea4c3c]" />
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+              <h3 className="text-xl font-bold text-white mb-2">
                 Предупреждение о платформе
               </h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-4">
-                Мы обнаружили, что вы используете <span className="font-semibold text-blue-600 dark:text-blue-400">{detectedOS}</span>, 
-                но выбираете версию для <span className="font-semibold text-orange-600 dark:text-orange-400">{selectedOS}</span>.
+              <p className="text-slate-400 mb-4">
+                Мы обнаружили, что вы используете <span className="font-semibold text-[#ea4c3c]">{detectedOS}</span>, 
+                но выбираете версию для <span className="font-semibold text-[#ea4c3c]">{selectedOS}</span>.
               </p>
-              <p className="text-slate-600 dark:text-slate-400 mb-6">
+              <p className="text-slate-400 mb-6">
                 Пакет для другой операционной системы может не запуститься или работать некорректно.
               </p>
               <div className="flex gap-3">
                 <Button
                   onClick={onCancel}
                   variant="outline"
-                  className="flex-1"
+                  className="flex-1 border-[#2d2d2d] hover:bg-[#121212] text-slate-300 hover:text-white"
                 >
                   <X className="w-4 h-4 mr-2" />
                   Отмена
@@ -77,7 +77,7 @@ export const PlatformWarning = ({ detectedOS, selectedOS, onContinue, onCancel }
                 <Button
                   onClick={onContinue}
                   disabled={!canProceed}
-                  className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
+                  className="flex-1 bg-[#ea4c3c] hover:bg-[#d63e2c] text-white border-0"
                 >
                   {canProceed ? 'Продолжить' : `Ждите ${timeLeft}с`}
                 </Button>

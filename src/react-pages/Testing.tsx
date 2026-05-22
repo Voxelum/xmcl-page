@@ -103,8 +103,8 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className={`group relative overflow-hidden rounded-2xl transition-all duration-300
-        bg-white/70 dark:bg-white/5
-        border ${isSuccess ? 'border-slate-200/50 dark:border-white/10' : 'border-red-500/20'}
+        bg-card
+        border ${isSuccess ? 'border-border' : 'border-red-500/20'}
         hover:shadow-xl hover:shadow-indigo-500/5
         ${isLatestSuccess ? 'ring-2 ring-green-500/30' : ''}
       `}
@@ -130,7 +130,7 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
           {/* Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 mb-2 flex-wrap">
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white truncate">
+              <h3 className="text-lg font-bold text-foreground truncate">
                 {run.display_title}
               </h3>
               <StatusBadge conclusion={run.conclusion} />
@@ -142,12 +142,12 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
               )}
             </div>
 
-            <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400 flex-wrap">
+            <div className="flex items-center gap-4 text-sm text-muted-foreground flex-wrap">
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4" />
                 {formatRelativeTime(run.updated_at)}
               </span>
-              <span className="flex items-center gap-1.5 font-mono text-xs bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-md">
+              <span className="flex items-center gap-1.5 font-mono text-xs bg-accent text-foreground px-2 py-0.5 rounded-md">
                 #{run.run_number}
               </span>
               <span className="flex items-center gap-1.5">
@@ -179,7 +179,7 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
             className={`flex items-center gap-2 rounded-xl transition-all
               ${isExpanded 
                 ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400' 
-                : 'text-slate-500 hover:text-indigo-600'
+                : 'text-muted-foreground hover:text-indigo-600 hover:bg-accent'
               }
             `}
           >
@@ -201,7 +201,7 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
             className="overflow-hidden"
           >
             <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0">
-              <div className="p-4 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-200/50 dark:border-white/10">
+              <div className="p-4 bg-background rounded-xl border border-border">
                 <DownloadArtifacts runId={run.id} platform={selectedPlatform} />
               </div>
             </div>
@@ -234,12 +234,7 @@ const TestingContent = () => {
   const latestSuccessId = runs.find((r: any) => r.conclusion === 'success')?.id;
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-slate-50 dark:bg-[#0a0a0b] transition-colors duration-300">
-      {/* Background */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px]" />
-      </div>
+    <div className="min-h-screen relative overflow-hidden bg-background text-foreground">
 
       <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
 
@@ -255,11 +250,11 @@ const TestingContent = () => {
               Experimental Builds
             </Badge>
 
-            <h1 className="text-4xl md:text-6xl font-black mb-6 text-slate-900 dark:text-white">
+            <h1 className="text-4xl md:text-6xl font-black mb-6 text-foreground">
               {t('testing.title')}
             </h1>
 
-            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {t('testing.subtitle')}
             </p>
           </motion.div>
@@ -272,7 +267,7 @@ const TestingContent = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="max-w-4xl mx-auto mb-10"
         >
-          <div className="flex justify-center gap-3 p-2 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg w-fit mx-auto">
+          <div className="flex justify-center gap-3 p-2 bg-card rounded-2xl border border-border shadow-lg w-fit mx-auto animate-in fade-in duration-300">
             {platforms.map((platform) => (
               <button
                 key={platform.key}
@@ -280,7 +275,7 @@ const TestingContent = () => {
                 className={`flex items-center gap-3 px-6 py-3 rounded-xl font-medium transition-all duration-300
                   ${selectedPlatform === platform.key
                     ? `${platform.color} text-white shadow-lg`
-                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/10'
+                    : 'text-muted-foreground hover:bg-accent hover:text-foreground'
                   }
                 `}
               >
@@ -295,7 +290,7 @@ const TestingContent = () => {
           {/* Builds List */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
                 <Lightning className="w-5 h-5 text-indigo-500" />
                 Recent Builds
               </h2>
@@ -304,7 +299,7 @@ const TestingContent = () => {
             {isLoading ? (
               <div className="space-y-4">
                 {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="h-28 bg-white/50 dark:bg-white/5 rounded-2xl animate-pulse" />
+                  <div key={i} className="h-28 bg-card rounded-2xl border border-border animate-pulse" />
                 ))}
               </div>
             ) : error ? (
@@ -362,9 +357,9 @@ const TestingContent = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="p-5 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10"
+              className="p-5 bg-card rounded-2xl border border-border"
             >
-              <h3 className="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
                 <Terminal className="w-5 h-5 text-indigo-500" />
                 Quick Start
               </h3>
@@ -379,14 +374,14 @@ const TestingContent = () => {
                     <div className={`flex-shrink-0 w-7 h-7 rounded-lg bg-${step.color}-500/20 text-${step.color}-500 flex items-center justify-center font-bold text-sm`}>
                       {step.num}
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 pt-0.5">{step.text}</p>
+                    <p className="text-sm text-muted-foreground pt-0.5">{step.text}</p>
                   </div>
                 ))}
               </div>
 
               <Button
                 variant="outline"
-                className="w-full mt-5 gap-2"
+                className="w-full mt-5 gap-2 bg-background border border-border text-foreground hover:bg-accent"
                 onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/issues', '_blank')}
               >
                 Report Issue

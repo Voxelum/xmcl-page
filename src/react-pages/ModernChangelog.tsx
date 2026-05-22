@@ -14,6 +14,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { AppShell } from '@/components/AppShell';
 import { motion, AnimatePresence } from 'framer-motion';
+import MarkdownRenderer from '@/components/MarkdownRenderer';
 
 // --- Types ---
 interface Asset {
@@ -87,7 +88,7 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
       className="group relative"
     >
       {/* Timeline connector */}
-      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-indigo-500/30 hidden md:block" style={{ left: '23px' }} />
+      <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-primary/30 hidden md:block" style={{ left: '23px' }} />
       
       {/* Timeline dot */}
       <div className="absolute left-0 top-6 z-10 hidden md:flex items-center justify-center">
@@ -96,10 +97,10 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
             ? 'bg-green-500 shadow-lg shadow-green-500/30'
             : 'bg-amber-500 shadow-lg shadow-amber-500/30'
           }
-          ${isFirst ? 'scale-110 ring-4 ring-white/20' : ''}
+          ${isFirst ? 'scale-110 ring-4 ring-primary/20' : ''}
         `}>
           {isFirst && (
-            <div className="absolute inset-0 rounded-2xl animate-ping bg-white/20" />
+            <div className="absolute inset-0 rounded-2xl animate-ping bg-primary/20" />
           )}
           {isStable ? (
             <Rocket className="w-5 h-5 text-white" />
@@ -113,23 +114,22 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
       <div className="md:ml-20">
         <Card 
           className={`relative overflow-hidden transition-all duration-300 cursor-pointer
-            bg-white/80 dark:bg-white/[0.03]
-            border-slate-200/50 dark:border-white/10
-            hover:border-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/5
-            ${isExpanded ? 'ring-2 ring-indigo-500/20' : ''}
-            ${isFirst ? 'ring-2 ring-indigo-500/30 shadow-xl shadow-indigo-500/10' : ''}
+            bg-card border-border
+            hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5
+            ${isExpanded ? 'ring-2 ring-primary/20' : ''}
+            ${isFirst ? 'ring-2 ring-primary/30 shadow-xl shadow-primary/10' : ''}
           `}
           onClick={() => setIsExpanded(!isExpanded)}
         >
           {/* Latest badge */}
           {isFirst && (
-            <div className="absolute top-0 right-0 px-4 py-1.5 bg-indigo-600 text-white text-xs font-bold rounded-bl-xl">
+            <div className="absolute top-0 right-0 px-4 py-1.5 bg-primary text-primary-foreground text-xs font-bold rounded-bl-xl">
               LATEST
             </div>
           )}
 
           {/* Glow effect */}
-          <div className="absolute inset-0 bg-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           <div className="relative p-5 md:p-6">
             {/* Header - Always visible */}
@@ -137,7 +137,7 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
               <div className="flex-1 min-w-0">
                 {/* Title and badges row */}
                 <div className="flex items-center gap-3 flex-wrap mb-3">
-                  <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white truncate">
+                  <h2 className="text-xl md:text-2xl font-bold text-foreground truncate">
                     {release.name || release.tag_name}
                   </h2>
                   {isStable ? (
@@ -154,12 +154,12 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
                 </div>
 
                 {/* Meta info */}
-                <div className="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400 flex-wrap">
+                <div className="flex items-center gap-4 text-sm text-muted-foreground flex-wrap">
                   <span className="flex items-center gap-1.5">
                     <Clock className="w-4 h-4" />
                     {formatRelativeTime(release.published_at)}
                   </span>
-                  <span className="flex items-center gap-1.5 font-mono text-xs bg-slate-100 dark:bg-white/5 px-2 py-0.5 rounded-md">
+                  <span className="flex items-center gap-1.5 font-mono text-xs bg-muted px-2 py-0.5 rounded-md">
                     <Tag className="w-3 h-3" />
                     {release.tag_name}
                   </span>
@@ -178,7 +178,7 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
                   variant="ghost"
                   size="icon"
                   onClick={handleCopy}
-                  className="h-9 w-9 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500/20"
+                  className="h-9 w-9 rounded-xl text-muted-foreground hover:text-primary hover:bg-primary/10"
                   title="Copy link"
                 >
                   {copied ? <Check className="w-4 h-4 text-green-500" /> : <Copy className="w-4 h-4" />}
@@ -187,14 +187,14 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
                   variant="ghost"
                   size="icon"
                   onClick={() => window.open(release.html_url, '_blank')}
-                  className="h-9 w-9 rounded-xl text-slate-400 hover:text-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500/20"
+                  className="h-9 w-9 rounded-xl text-muted-foreground hover:text-primary hover:bg-primary/10"
                 >
                   <GithubLogo className="w-4 h-4" />
                 </Button>
                 <Button
                   variant="ghost"
                   size="icon"
-                  className={`h-9 w-9 rounded-xl transition-all ${isExpanded ? 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600' : 'text-slate-400'}`}
+                  className={`h-9 w-9 rounded-xl transition-all ${isExpanded ? 'bg-primary/10 text-primary' : 'text-muted-foreground'}`}
                 >
                   <CaretDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
                 </Button>
@@ -211,11 +211,11 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="pt-5 mt-5 border-t border-slate-200 dark:border-white/10">
+                  <div className="pt-5 mt-5 border-t border-border">
                     {/* Quick download section */}
                     {release.assets.length > 0 && (
-                      <div className="mb-5 p-4 bg-slate-50 dark:bg-white/5 rounded-xl">
-                        <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3 flex items-center gap-2">
+                      <div className="mb-5 p-4 bg-muted rounded-xl">
+                        <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                           <Package className="w-4 h-4" />
                           Quick Download
                         </h4>
@@ -225,31 +225,22 @@ const ReleaseCard = React.memo(({ release, index, isFirst }: { release: Release;
                               key={i}
                               href={asset.browser_download_url}
                               onClick={e => e.stopPropagation()}
-                              className="inline-flex items-center gap-2 px-3 py-1.5 bg-white dark:bg-white/10 rounded-lg text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-500/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors border border-slate-200 dark:border-white/10"
+                              className="inline-flex items-center gap-2 px-3 py-1.5 bg-card rounded-lg text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-colors border border-border"
                             >
                               <DownloadSimple className="w-3.5 h-3.5" />
                               {asset.name.length > 30 ? asset.name.slice(0, 27) + '...' : asset.name}
                             </a>
                           ))}
                           {release.assets.length > 4 && (
-                            <span className="text-xs text-slate-400 self-center">+{release.assets.length - 4} more</span>
+                            <span className="text-xs text-muted-foreground self-center">+{release.assets.length - 4} more</span>
                           )}
                         </div>
                       </div>
                     )}
 
                     {/* Changelog content */}
-                    <div className={`prose dark:prose-invert prose-sm max-w-none
-                      prose-headings:text-indigo-900 dark:prose-headings:text-indigo-100 prose-headings:font-bold
-                      prose-a:text-indigo-600 dark:prose-a:text-indigo-400 prose-a:no-underline hover:prose-a:underline
-                      prose-ul:list-disc prose-ul:pl-5
-                      prose-li:text-slate-600 dark:prose-li:text-slate-300
-                      prose-code:bg-slate-100 dark:prose-code:bg-black/30 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:text-indigo-600 dark:prose-code:text-indigo-300 prose-code:font-mono prose-code:text-[0.85em] prose-code:before:content-none prose-code:after:content-none
-                      text-slate-600 dark:text-slate-300 leading-relaxed
-                    `}>
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {cleanBody || '*No changelog provided*'}
-                      </ReactMarkdown>
+                    <div className="prose-sm">
+                      <MarkdownRenderer content={cleanBody || '*No changelog provided*'} />
                     </div>
                   </div>
                 </motion.div>
@@ -267,12 +258,12 @@ const LoadingState = () => (
   <div className="space-y-6 max-w-4xl mx-auto mt-8">
     {[1, 2, 3, 4].map((i) => (
       <div key={i} className="flex gap-6">
-        <div className="hidden md:block w-12 h-12 rounded-2xl bg-slate-200 dark:bg-slate-800 animate-pulse flex-shrink-0" />
-        <Card className="flex-1 p-6 bg-white/50 dark:bg-white/5 border-transparent">
-          <div className="h-7 w-2/3 bg-slate-200 dark:bg-slate-800 rounded animate-pulse mb-4" />
+        <div className="hidden md:block w-12 h-12 rounded-2xl bg-muted animate-pulse flex-shrink-0" />
+        <Card className="flex-1 p-6 bg-card border border-border">
+          <div className="h-7 w-2/3 bg-muted rounded animate-pulse mb-4" />
           <div className="flex gap-4">
-            <div className="h-5 w-24 bg-slate-200 dark:bg-slate-800 rounded animate-pulse" />
-            <div className="h-5 w-20 bg-slate-200 dark:bg-slate-800 rounded animate-pulse" />
+            <div className="h-5 w-24 bg-muted rounded animate-pulse" />
+            <div className="h-5 w-20 bg-muted rounded animate-pulse" />
           </div>
         </Card>
       </div>
@@ -360,14 +351,7 @@ const ModernChangelogContent: React.FC = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-slate-50 dark:bg-[#0a0a0b] text-foreground transition-colors duration-500 overflow-x-hidden">
-        
-        {/* Ambient Background - decorative only, no blur */}
-        <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-          <div className="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full" />
-          <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] bg-purple-500/5 dark:bg-purple-500/10 rounded-full" />
-          <div className="absolute bottom-[-10%] left-[30%] w-[500px] h-[500px] bg-green-500/5 dark:bg-green-500/10 rounded-full" />
-        </div>
+      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
 
         <main className="container mx-auto px-4 pb-32 relative z-10">
           
@@ -378,16 +362,16 @@ const ModernChangelogContent: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Badge variant="secondary" className="mb-6 px-4 py-1.5 rounded-full bg-white/50 dark:bg-white/10 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-white/10 shadow-sm">
+              <Badge variant="secondary" className="mb-6 px-4 py-1.5 rounded-full bg-card text-primary border border-border shadow-sm">
                 <Sparkle className="w-3.5 h-3.5 mr-2 fill-current" />
                 <span>What's New</span>
               </Badge>
               
-              <h1 className="text-4xl md:text-6xl font-black mb-6 text-slate-900 dark:text-white">
+              <h1 className="text-4xl md:text-6xl font-black mb-6 text-foreground">
                 {t('changelog.title') || "Changelog"}
               </h1>
               
-              <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 {t('changelog.subtitle') || "Track every update, improvement, and fix. Click on any release to see the full details."}
               </p>
             </motion.div>
@@ -400,21 +384,21 @@ const ModernChangelogContent: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="max-w-4xl mx-auto mb-10"
           >
-            <div suppressHydrationWarning className="flex flex-col sm:flex-row gap-3 p-3 bg-white/70 dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg shadow-slate-200/50 dark:shadow-none">
+            <div suppressHydrationWarning className="flex flex-col sm:flex-row gap-3 p-3 bg-card rounded-2xl border border-border shadow-lg">
               {/* Search */}
               <div className="relative flex-1 group">
-                <MagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 group-focus-within:text-indigo-500 transition-colors" />
+                <MagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
                 <input
                   type="text"
                   placeholder="Search releases..."
-                  className="w-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl pl-10 h-11 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500/50 placeholder:text-slate-400 dark:placeholder:text-slate-500 text-slate-900 dark:text-slate-200"
+                  className="w-full bg-background border border-border rounded-xl pl-10 h-11 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary placeholder:text-muted-foreground text-foreground"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
               
               {/* Filter buttons */}
-              <div className="flex gap-1 p-1 bg-slate-100 dark:bg-white/5 rounded-xl">
+              <div className="flex gap-1 p-1 bg-muted rounded-xl">
                 {([
                   { key: 'all', label: 'All', icon: null },
                   { key: 'stable', label: 'Stable', icon: Check },
@@ -424,8 +408,8 @@ const ModernChangelogContent: React.FC = () => {
                     onClick={() => setFilter(f.key)}
                     className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       filter === f.key
-                        ? 'bg-white dark:bg-indigo-600 text-indigo-600 dark:text-white shadow-md'
-                        : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/10'
+                        ? 'bg-primary text-primary-foreground shadow-md'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-background'
                     }`}
                   >
                     {f.icon && <f.icon className="w-3.5 h-3.5" />}
@@ -464,9 +448,9 @@ const ModernChangelogContent: React.FC = () => {
                       animate={{ opacity: 1 }}
                       className="text-center py-20"
                     >
-                      <Info className="w-16 h-16 mx-auto mb-6 text-slate-300 dark:text-slate-700" />
-                      <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">No releases found</h3>
-                      <p className="text-slate-500 dark:text-slate-400">Try adjusting your filters or search query</p>
+                      <Info className="w-16 h-16 mx-auto mb-6 text-muted-foreground" />
+                      <h3 className="text-xl font-semibold text-foreground mb-2">No releases found</h3>
+                      <p className="text-muted-foreground">Try adjusting your filters or search query</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -474,7 +458,7 @@ const ModernChangelogContent: React.FC = () => {
                 {/* Load More trigger */}
                 <div ref={loadMoreRef} className="h-20 flex items-center justify-center">
                   {isFetchingNextPage && (
-                    <div className="flex items-center gap-3 text-indigo-500 font-medium">
+                    <div className="flex items-center gap-3 text-primary font-medium">
                       <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
                       Loading more...
                     </div>
@@ -493,7 +477,7 @@ const ModernChangelogContent: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               onClick={scrollToTop}
-              className="fixed bottom-8 right-8 p-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl shadow-xl shadow-indigo-500/30 transition-colors z-50"
+              className="fixed bottom-8 right-8 p-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl shadow-xl shadow-primary/30 transition-colors z-50"
             >
               <ArrowUp className="w-5 h-5" />
             </motion.button>

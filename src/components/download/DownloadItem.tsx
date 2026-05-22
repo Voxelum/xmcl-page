@@ -47,7 +47,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-slate-800/50 border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 hover:scale-[1.02]">
+    <div className="group relative overflow-hidden rounded-2xl bg-[#1c1c1c] border border-[#2d2d2d] hover:border-[#ea4c3c] transition-all duration-300">
       <div className="p-6 flex items-center gap-6 flex-wrap sm:flex-nowrap">
         <PackageIcon type={packageType} gradient={gradient} />
 
@@ -112,7 +112,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
         <Button
           onClick={handleAction}
           size="lg"
-          className={`${gradient} hover:opacity-90 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 px-8 whitespace-nowrap`}
+          className="bg-[#ea4c3c] hover:bg-[#d63e2c] text-white font-semibold transition-all duration-300 px-8 whitespace-nowrap rounded-xl border-0"
         >
           {isCommand ? (
             copied ? (
@@ -135,9 +135,6 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
         </Button>
       </div>
 
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-        <div className="absolute inset-0 bg-blue-500/20 animate-pulse" />
-      </div>
     </div>
   );
 };

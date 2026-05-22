@@ -50,13 +50,7 @@ function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue;
 }
 
-const FloatingOrbs = React.memo(() => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none transform-gpu">
-    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl animate-blob will-change-transform" />
-    <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl animate-blob animation-delay-2000 will-change-transform" />
-    <div className="absolute bottom-1/4 left-1/2 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl animate-blob animation-delay-4000 will-change-transform" />
-  </div>
-));
+const FloatingOrbs = React.memo(() => null);
 
 // Скелетон только для сетки контента, без отступов для хедера
 const GuideGridSkeleton = () => (
@@ -71,9 +65,9 @@ const GuideGridSkeleton = () => (
 );
 
 const difficultyStyles: Record<string, { bg: string; text: string }> = {
-  beginner: { bg: "bg-green-400", text: "text-white" },
-  intermediate: { bg: "bg-yellow-400", text: "text-white" },
-  advanced: { bg: "bg-red-400", text: "text-white" },
+  beginner: { bg: "bg-green-500/10 border border-green-500/20 text-green-400", text: "text-green-400" },
+  intermediate: { bg: "bg-amber-500/10 border border-amber-500/20 text-amber-400", text: "text-amber-400" },
+  advanced: { bg: "bg-red-500/10 border border-red-500/20 text-red-400", text: "text-red-400" },
 };
 
 const GuideCard = React.memo(({ post, featured, onClick, index }: {
@@ -82,7 +76,7 @@ const GuideCard = React.memo(({ post, featured, onClick, index }: {
   onClick: () => void;
   index: number;
 }) => {
-  const diffStyle = difficultyStyles[post.difficulty || ""] || { bg: "bg-slate-400", text: "text-white" };
+  const diffStyle = difficultyStyles[post.difficulty || ""] || { bg: "bg-slate-400", text: "text-foreground" };
 
   return (
     <motion.div
@@ -93,31 +87,28 @@ const GuideCard = React.memo(({ post, featured, onClick, index }: {
     >
       <Card
         onClick={onClick}
-        className="group relative cursor-pointer overflow-hidden rounded-2xl border-0 bg-white/80 p-6 shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 dark:bg-slate-800/80 h-full flex flex-col"
+        className="group relative cursor-pointer overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-[#ea4c3c] hover:-translate-y-2 h-full flex flex-col"
       >
-        <div className="absolute inset-0 bg-emerald-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ padding: '2px', background: '#10b981', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
-
         <div className="relative z-10 flex flex-col h-full">
           <div className="mb-4 flex items-center justify-between">
             {featured && (
-              <Badge className="bg-amber-400 text-white shadow-lg">
+              <Badge className="bg-[#ea4c3c] text-white shadow-lg border-0">
                 <Star className="mr-1 h-3 w-3 fill-current" />
                 Featured
               </Badge>
             )}
             {post.difficulty && (
-              <Badge className={`bg-amber-400 ${diffStyle.text}`}>
+              <Badge className={`${diffStyle.bg} border-0`}>
                 {post.difficulty}
               </Badge>
             )}
           </div>
 
-          <h3 className="mb-3 text-xl font-bold text-slate-900 transition-colors group-hover:text-emerald-600 dark:text-white">
+          <h3 className="mb-3 text-xl font-bold text-foreground transition-colors group-hover:text-[#ea4c3c]">
             {post.title}
           </h3>
 
-          <p className="mb-4 text-sm text-slate-600 line-clamp-2 dark:text-slate-400 flex-grow">
+          <p className="mb-4 text-sm text-muted-foreground line-clamp-2 flex-grow">
             {post.excerpt}
           </p>
 
@@ -127,25 +118,25 @@ const GuideCard = React.memo(({ post, featured, onClick, index }: {
                 <Badge
                   key={tag}
                   variant="outline"
-                  className="border-emerald-200 text-emerald-700 dark:border-emerald-700 dark:text-emerald-400"
+                  className="bg-[#ea4c3c]/10 text-[#ea4c3c] border border-[#ea4c3c]/20"
                 >
                   {tag}
                 </Badge>
               ))}
             </div>
 
-            <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+            <div className="flex items-center justify-between text-xs text-muted-foreground">
               <div className="flex items-center gap-4">
                 <span className="flex items-center gap-1">
-                  <User className="h-3.5 w-3.5" />
+                  <User className="h-3.5 w-3.5 text-muted-foreground" />
                   {post.author}
                 </span>
                 <span className="flex items-center gap-1">
-                  <Clock className="h-3.5 w-3.5" />
+                  <Clock className="h-3.5 w-3.5 text-muted-foreground" />
                   {post.readTime || "5 min"}
                 </span>
               </div>
-              <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium group-hover:translate-x-1 transition-transform">
+              <div className="flex items-center gap-1 text-[#ea4c3c] font-medium group-hover:translate-x-1 transition-transform">
                 Read
                 <ArrowRight className="h-4 w-4" />
               </div>
@@ -172,7 +163,7 @@ const GuideDetail = ({ post, content, onBack }: {
         <Button
           variant="ghost"
           onClick={onBack}
-          className="group text-emerald-600 hover:text-emerald-700 dark:text-emerald-400"
+          className="group text-foreground hover:text-[#ea4c3c] hover:bg-accent"
         >
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
           Back
@@ -188,15 +179,15 @@ const GuideDetail = ({ post, content, onBack }: {
         />
       </div>
 
-      <article className="rounded-3xl bg-white/90 p-6 md:p-12 shadow-2xl dark:bg-slate-800/90 border border-white/20">
-        <header className="mb-10 border-b border-slate-200/50 pb-8 dark:border-slate-700/50">
-          <h1 className="mb-6 text-4xl md:text-5xl font-black text-emerald-600">
+      <article className="rounded-3xl bg-card p-6 md:p-12 border border-border">
+        <header className="mb-10 border-b border-border pb-8">
+          <h1 className="mb-6 text-4xl md:text-5xl font-black text-foreground">
             {post.title}
           </h1>
           {/* ... badges ... */}
         </header>
 
-        <Suspense fallback={<div className="h-64 animate-pulse bg-slate-100 rounded-xl" />}>
+        <Suspense fallback={<div className="h-64 animate-pulse bg-background rounded-xl border border-border" />}>
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <MarkdownRenderer content={displayContent} />
           </div>
@@ -266,7 +257,7 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
   // Если открыт детальный пост - рендерим его
   if (id && selectedPost && guideContent) {
     return (
-      <div className="relative min-h-screen bg-emerald-50/50 dark:bg-slate-950 py-8">
+      <div className="relative min-h-screen bg-background py-8">
         <FloatingOrbs />
         <div className="container relative z-10 mx-auto px-4">
           <GuideDetail
@@ -281,30 +272,30 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
 
   // Основной список
   return (
-    <div className="relative min-h-screen bg-emerald-50/50 dark:bg-slate-950">
+    <div className="relative min-h-screen bg-background text-foreground">
       <FloatingOrbs />
 
       {/* --- LCP OPTIMIZATION --- */}
       {/* Хедер рендерится ВСЕГДА, даже если isLoading=true. */}
       {/* Это позволяет тексту (subtitle) появиться мгновенно. */}
-      <header className="relative border-b border-white/20 bg-white/50 py-10 md:py-16 dark:bg-slate-900/50">
+      <header className="relative border-b border-border bg-card py-10 md:py-16">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-6 inline-flex items-center justify-center animate-in fade-in zoom-in duration-500">
-            <div className="rounded-2xl bg-emerald-500 p-4 shadow-lg shadow-emerald-500/25">
+            <div className="rounded-2xl bg-[#ea4c3c] p-4 shadow-lg shadow-[#ea4c3c]/10">
               <GraduationCap className="h-10 w-10 text-white" />
             </div>
           </div>
 
-          <div className="mb-4 inline-flex items-center gap-2 bg-emerald-100 dark:bg-emerald-900/30 px-4 py-2 rounded-full text-emerald-700 dark:text-emerald-300 text-sm font-medium">
+          <div className="mb-4 inline-flex items-center gap-2 bg-[#ea4c3c]/10 px-4 py-2 rounded-full text-[#ea4c3c] text-sm font-medium border border-[#ea4c3c]/20">
             <Sparkle className="h-4 w-4" />
             Learn & Discover
           </div>
 
-          <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl font-black text-emerald-600">
+          <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl font-black text-foreground">
             {t("guide.title")}
           </h1>
 
-          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {t("guide.subtitle")}
           </p>
         </div>
@@ -316,21 +307,21 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
           <GuideGridSkeleton />
         ) : (
           <>
-            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-white/60 dark:bg-slate-800/60 p-4 rounded-2xl border border-white/20">
+            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between bg-card p-4 rounded-2xl border border-border">
               <div className="relative flex-1 max-w-md">
-                <MagnifyingGlass className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+                <MagnifyingGlass className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   placeholder={t("guide.searchPlaceholder")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-12 h-12 rounded-xl border-0 bg-white dark:bg-slate-700 shadow-sm"
+                  className="pl-12 h-12 rounded-xl border border-border bg-background text-foreground focus-visible:ring-[#ea4c3c] shadow-sm"
                 />
               </div>
 
               <Button
                 variant={showFilters ? "default" : "outline"}
                 onClick={() => setShowFilters(!showFilters)}
-                className={`rounded-xl h-12 ${showFilters ? "bg-emerald-600 hover:bg-emerald-700" : ""}`}
+                className={`rounded-xl h-12 transition-all ${showFilters ? "bg-[#ea4c3c] text-white border-0 hover:bg-[#d63e2c]" : "border-border text-foreground hover:bg-[#ea4c3c] hover:border-[#ea4c3c] hover:text-white"}`}
               >
                 <FunnelSimple className="mr-2 h-4 w-4" />
                 Filter by tag
@@ -345,14 +336,14 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
                   exit={{ opacity: 0, height: 0 }}
                   className="mb-8 overflow-hidden"
                 >
-                  <div className="flex flex-wrap gap-2 rounded-xl bg-white/60 dark:bg-slate-800/60 p-5 border border-white/20">
+                  <div className="flex flex-wrap gap-2 rounded-xl bg-card p-5 border border-border">
                     {categories.map((tag) => (
                       <Button
                         key={tag}
                         variant={selectedTags.includes(tag) ? "default" : "outline"}
                         size="sm"
                         onClick={() => toggleTag(tag)}
-                        className={`rounded-full ${selectedTags.includes(tag) ? "bg-emerald-500 border-0" : ""}`}
+                        className={`rounded-full transition-all ${selectedTags.includes(tag) ? "bg-[#ea4c3c] text-white border-0 hover:bg-[#d63e2c]" : "border-border text-foreground hover:bg-[#ea4c3c] hover:border-[#ea4c3c] hover:text-white"}`}
                       >
                         {tag}
                       </Button>
@@ -362,7 +353,7 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
                         variant="ghost"
                         size="sm"
                         onClick={() => setSelectedTags([])}
-                        className="text-red-500 hover:text-red-600"
+                        className="text-[#ea4c3c] hover:text-[#d63e2c] hover:bg-accent"
                       >
                         <X className="mr-1 h-3 w-3" />
                         Clear all
@@ -387,14 +378,14 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
               </div>
             ) : (
               <div className="py-20 text-center">
-                <BookOpen className="mx-auto mb-4 h-16 w-16 text-slate-300" />
-                <h3 className="text-xl font-bold text-slate-600 dark:text-slate-400 mb-2">
+                <BookOpen className="mx-auto mb-4 h-16 w-16 text-muted-foreground" />
+                <h3 className="text-xl font-bold text-muted-foreground mb-2">
                   {t("guide.noGuidesFound")}
                 </h3>
                 <Button
                   variant="link"
                   onClick={() => { setSearchQuery(""); setSelectedTags([]); }}
-                  className="text-emerald-600"
+                  className="text-[#ea4c3c] hover:text-[#d63e2c] p-0"
                 >
                   {t("common.clearFilters")}
                 </Button>

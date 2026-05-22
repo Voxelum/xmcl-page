@@ -89,10 +89,10 @@ export const LanguageTrigger = ({ onClick }: { onClick?: () => void }) => {
   return (
     <button
       onClick={onClick}
-      className="group relative w-full h-10 flex items-center justify-between gap-2 overflow-hidden rounded-xl bg-black/5 dark:bg-white/10 px-3 text-slate-700 dark:text-slate-200 transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/15 border border-transparent dark:border-white/5 text-sm font-medium"
+      className="group relative w-full h-10 flex items-center justify-between gap-2 overflow-hidden rounded-xl bg-card px-3 text-foreground transition-all duration-300 hover:bg-accent border border-border text-sm font-medium"
     >
       <div className="flex items-center gap-2">
-        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/50 dark:bg-black/20 text-slate-600 dark:text-slate-300">
+        <div className="flex items-center justify-center w-6 h-6 rounded-full bg-background text-muted-foreground">
           {autoTranslateLanguage ? <Sparkle className="h-3.5 w-3.5 text-yellow-500" /> : <Globe className="h-3.5 w-3.5" />}
         </div>
         <span className="truncate">
@@ -172,16 +172,16 @@ export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose
       <div className="flex items-center gap-2 p-3 border-b border-black/5 dark:border-white/5">
         <button
           onClick={onBack}
-          className="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors"
+          className="p-1.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-slate-400 hover:text-foreground dark:hover:text-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
         </button>
-        <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 flex-1">
+        <span className="text-sm font-semibold text-foreground flex-1">
           {t("ui.changeLanguage", "Change language")}
         </span>
         <button
           onClick={onClose}
-          className="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 transition-colors"
+          className="p-1.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 text-slate-400 hover:text-foreground dark:hover:text-white transition-colors"
         >
           <X className="w-4 h-4" />
         </button>
@@ -195,7 +195,7 @@ export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose
             placeholder={t("language.searchPlaceholder", "Search...")}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="h-9 border-none bg-black/5 pl-9 pr-4 text-sm rounded-lg focus-visible:ring-1 focus-visible:ring-indigo-500/50 dark:bg-white/5 dark:text-slate-200"
+            className="h-9 border-none bg-black/5 pl-9 pr-4 text-sm rounded-lg focus-visible:ring-1 focus-visible:ring-[#ea4c3c]/50 dark:bg-white/5 text-foreground"
           />
         </div>
       </div>
@@ -206,8 +206,8 @@ export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose
           onClick={() => setActiveTab('manual')}
           className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
             activeTab === 'manual'
-              ? 'bg-indigo-500 text-white shadow-sm shadow-indigo-500/25' 
-              : 'text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800'
+              ? 'bg-[#ea4c3c] text-white shadow-sm shadow-[#ea4c3c]/25' 
+              : 'text-slate-500 hover:bg-black/5 dark:text-slate-400 dark:hover:bg-white/5'
           }`}
         >
           Manual ({languageConfigs.length})
@@ -216,8 +216,8 @@ export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose
           onClick={() => setActiveTab('auto')}
           className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-1.5 ${
             activeTab === 'auto'
-              ? 'bg-gradient-to-r from-yellow-500 to-amber-500 text-white shadow-sm shadow-amber-500/25' 
-              : 'text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800'
+              ? 'bg-[#ea4c3c] text-white shadow-sm shadow-[#ea4c3c]/25' 
+              : 'text-slate-500 hover:bg-black/5 dark:text-slate-400 dark:hover:bg-white/5'
           }`}
         >
           <Sparkle className="w-3 h-3" />
@@ -248,13 +248,13 @@ export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose
                         w-full flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150 text-left
                         ${
                           isSelected
-                            ? "bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300"
-                            : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                            ? "bg-[#ea4c3c]/15 text-[#ea4c3c]"
+                            : "text-slate-600 hover:bg-black/5 dark:text-slate-300 dark:hover:bg-white/5"
                         }
                       `}
                     >
                       <span className="flex-1">{lang.name}</span>
-                      {isSelected && <Check className="h-4 w-4 text-indigo-500" />}
+                      {isSelected && <Check className="h-4 w-4 text-[#ea4c3c]" />}
                     </button>
                   );
                 })
@@ -284,15 +284,15 @@ export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose
                         w-full flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150 text-left
                         ${
                           isSelected
-                            ? "bg-yellow-500/10 text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-300"
-                            : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                            ? "bg-[#ea4c3c]/15 text-[#ea4c3c]"
+                            : "text-slate-600 hover:bg-black/5 dark:text-slate-300 dark:hover:bg-white/5"
                         }
                       `}
                     >
-                      <Sparkle className="h-3 w-3 text-yellow-500 flex-shrink-0" />
+                      <Sparkle className="h-3 w-3 text-[#ea4c3c] flex-shrink-0" />
                       <span className="flex-1">{lang.nativeName}</span>
                       <span className="text-xs text-slate-400">{lang.name}</span>
-                      {isSelected && <Check className="h-4 w-4 flex-shrink-0 text-yellow-500" />}
+                      {isSelected && <Check className="h-4 w-4 flex-shrink-0 text-[#ea4c3c]" />}
                     </button>
                   );
                 })

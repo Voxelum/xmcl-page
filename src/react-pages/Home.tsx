@@ -68,35 +68,7 @@ const Home = () => {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-white dark:bg-slate-950 relative overflow-hidden">
-        {/* Subtle Animated Background */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-3xl"
-            animate={{
-              x: [0, 100, -50, 0],
-              y: [0, -100, 50, 0],
-            }}
-            transition={{
-              duration: 30,
-              ease: "easeInOut"
-            }}
-            style={{ top: '-10%', left: '-10%' }}
-          />
-          <motion.div
-            className="absolute w-[500px] h-[500px] rounded-full bg-purple-500/5 blur-3xl"
-            animate={{
-              x: [0, -100, 50, 0],
-              y: [0, 100, -50, 0],
-            }}
-            transition={{
-              duration: 25,
-              ease: "easeInOut",
-              delay: 5
-            }}
-            style={{ top: '40%', right: '-10%' }}
-          />
-        </div>
+      <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
 
         <Navigation />
 
@@ -110,14 +82,14 @@ const Home = () => {
           >
             {/* Status Badge */}
             <motion.div
-              className="inline-flex items-center gap-3 mb-6 md:mb-8 px-4 md:px-6 py-2 md:py-3 bg-blue-50 dark:bg-blue-950/30 rounded-full border border-blue-200 dark:border-blue-800 shadow-sm"
+              className="inline-flex items-center gap-3 mb-6 md:mb-8 px-4 md:px-6 py-2 md:py-3 bg-[#ea4c3c]/10 rounded-full border border-[#ea4c3c]/20 shadow-sm"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ scale: 1.05 }}
             >
               <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" weight="fill" />
-              <span className="text-sm md:text-base font-semibold text-blue-600 dark:text-blue-400">
+              <span className="text-sm md:text-base font-semibold text-[#ea4c3c]">
                 {t('home.openSourceStatus')}
               </span>
               <GithubLogo className="w-4 h-4 md:w-5 md:h-5 text-slate-600 dark:text-slate-400" />
@@ -125,7 +97,7 @@ const Home = () => {
 
             {/* Main Heading */}
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 md:mb-8 bg-blue-600 leading-tight tracking-tight"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 md:mb-8 text-foreground leading-tight tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -158,7 +130,7 @@ const Home = () => {
                 <Button
                   size="lg"
                   onClick={() => setIsDownloadOpen(true)}
-                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-8 md:px-12 py-5 md:py-6 text-base md:text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl"
+                  className="w-full sm:w-auto bg-[#ea4c3c] hover:bg-[#d63e2c] text-white px-8 md:px-12 py-5 md:py-6 text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
                 >
                   <DownloadSimple className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" weight="bold" />
                   {t('downloadXMCL')}
@@ -175,7 +147,7 @@ const Home = () => {
                   variant="outline"
                   size="lg"
                   onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher', '_blank')}
-                  className="w-full sm:w-auto bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 px-8 md:px-12 py-5 md:py-6 text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 rounded-xl"
+                  className="w-full sm:w-auto bg-card border border-border hover:bg-accent text-foreground px-8 md:px-12 py-5 md:py-6 text-base md:text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
                 >
                   <GithubLogo className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" weight="fill" />
                   {t('home.viewOnGitHub')}
@@ -193,19 +165,19 @@ const Home = () => {
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="flex flex-col items-center gap-2 p-4 md:p-6 bg-white dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
+                  className="flex flex-col items-center gap-2 p-4 md:p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow"
                   whileHover={{ y: -3 }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 + index * 0.1 }}
                 >
-                  <div className="text-blue-600 dark:text-blue-400">
+                  <div className="text-[#ea4c3c]">
                     {stat.icon}
                   </div>
-                  <div className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white">
+                  <div className="text-xl md:text-2xl font-bold text-foreground">
                     {stat.value}
                   </div>
-                  <div className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
+                  <div className="text-xs md:text-sm text-muted-foreground">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -223,7 +195,7 @@ const Home = () => {
           >
             <div className="text-center mb-12 md:mb-20">
               <motion.h2
-                className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 text-blue-600"
+                className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 md:mb-6 text-[#ea4c3c]"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -256,21 +228,21 @@ const Home = () => {
                   whileHover={{ y: -8 }}
                   className="group"
                 >
-                  <Card className="p-6 md:p-8 h-full hover:shadow-2xl transition-all duration-500 relative overflow-hidden bg-white dark:bg-slate-800/90 border-2 border-slate-200 dark:border-slate-700 rounded-2xl group-hover:border-blue-300 dark:group-hover:border-blue-700">
+                  <Card className="p-6 md:p-8 h-full hover:shadow-lg transition-all duration-500 relative overflow-hidden bg-card border border-border rounded-2xl group-hover:border-[#ea4c3c]">
                     <div className="relative z-10">
                       <motion.div
-                        className={`inline-flex items-center justify-center p-4 md:p-5 ${feature.bgColor} rounded-xl text-blue-600 dark:text-blue-400 mb-4 md:mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300`}
+                        className={`inline-flex items-center justify-center p-4 md:p-5 ${feature.bgColor} rounded-xl text-[#ea4c3c] mb-4 md:mb-6 shadow-md group-hover:shadow-lg transition-all duration-300`}
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         {feature.icon}
                       </motion.div>
 
-                      <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-slate-900 dark:text-slate-100">
+                      <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-foreground">
                         {feature.title}
                       </h3>
 
-                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm md:text-base">
+                      <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                         {feature.description}
                       </p>
                     </div>
@@ -316,7 +288,7 @@ const Home = () => {
                 <Button
                   size="lg"
                   onClick={() => setIsDownloadOpen(true)}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 md:px-12 py-5 md:py-6 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl"
+                  className="bg-[#ea4c3c] hover:bg-[#d63e2c] text-white px-10 md:px-12 py-5 md:py-6 text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 rounded-xl"
                 >
                   <DownloadSimple className="w-5 h-5 md:w-6 md:h-6 mr-2" weight="bold" />
                   Download XMCL Now

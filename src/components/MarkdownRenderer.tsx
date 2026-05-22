@@ -17,7 +17,7 @@ interface MarkdownRendererProps {
 const components = {
   h1: ({ children, ...props }: any) => (
     <h1
-      className="mb-6 mt-10 text-4xl font-black text-blue-600 leading-tight"
+      className="mb-6 mt-10 text-4xl font-black text-[#ea4c3c] leading-tight"
       {...props}
     >
       {children}
@@ -25,18 +25,18 @@ const components = {
   ),
   h2: ({ children, ...props }: any) => (
     <h2
-      className="mb-5 mt-10 text-3xl font-bold text-slate-900 dark:text-white border-b-2 border-blue-500/30 pb-3"
+      className="mb-5 mt-10 text-3xl font-bold text-foreground border-b-2 border-primary/30 pb-3"
       {...props}
     >
       <span className="flex items-center gap-3">
-        <span className="w-1 h-8 bg-blue-500 rounded-full" />
+        <span className="w-1 h-8 bg-primary rounded-full" />
         {children}
       </span>
     </h2>
   ),
   h3: ({ children, ...props }: any) => (
     <h3
-      className="mb-4 mt-8 text-2xl font-bold text-slate-800 dark:text-slate-100"
+      className="mb-4 mt-8 text-2xl font-bold text-foreground"
       {...props}
     >
       {children}
@@ -44,7 +44,7 @@ const components = {
   ),
   h4: ({ children, ...props }: any) => (
     <h4
-      className="mb-3 mt-6 text-xl font-semibold text-slate-800 dark:text-slate-200"
+      className="mb-3 mt-6 text-xl font-semibold text-foreground"
       {...props}
     >
       {children}
@@ -52,7 +52,7 @@ const components = {
   ),
   h5: ({ children, ...props }: any) => (
     <h5
-      className="mb-3 mt-5 text-lg font-semibold text-slate-700 dark:text-slate-300"
+      className="mb-3 mt-5 text-lg font-semibold text-muted-foreground"
       {...props}
     >
       {children}
@@ -60,7 +60,7 @@ const components = {
   ),
   h6: ({ children, ...props }: any) => (
     <h6
-      className="mb-2 mt-4 text-base font-semibold text-slate-700 dark:text-slate-300"
+      className="mb-2 mt-4 text-base font-semibold text-muted-foreground"
       {...props}
     >
       {children}
@@ -97,7 +97,7 @@ const components = {
 
     return (
       <p
-        className="mb-5 text-lg leading-relaxed text-slate-700 dark:text-slate-300"
+        className="mb-5 text-lg leading-relaxed text-muted-foreground"
         {...props}
       >
         {children}
@@ -107,7 +107,7 @@ const components = {
   a: ({ children, href, ...props }: any) => (
     <a
       href={href}
-      className="inline-flex items-center gap-1 font-semibold text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 underline decoration-blue-500/40 underline-offset-2 hover:decoration-blue-500 transition-all duration-200"
+      className="inline-flex items-center gap-1 font-semibold text-primary hover:text-primary/90 underline decoration-primary/40 underline-offset-2 hover:decoration-primary transition-all duration-200"
       target="_blank"
       rel="noopener noreferrer"
       {...props}
@@ -120,7 +120,7 @@ const components = {
   ),
   ul: ({ children, ...props }: any) => (
     <ul
-      className="mb-6 ml-2 space-y-3 text-slate-700 dark:text-slate-300"
+      className="mb-6 ml-2 space-y-3 text-muted-foreground"
       {...props}
     >
       {children}
@@ -128,7 +128,7 @@ const components = {
   ),
   ol: ({ children, ...props }: any) => (
     <ol
-      className="mb-6 ml-2 space-y-3 text-slate-700 dark:text-slate-300 list-none counter-reset-item"
+      className="mb-6 ml-2 space-y-3 text-muted-foreground list-none counter-reset-item"
       {...props}
     >
       {children}
@@ -136,16 +136,16 @@ const components = {
   ),
   li: ({ children, ordered, index, ...props }: any) => (
     <li className="flex items-start gap-3 text-lg leading-relaxed" {...props}>
-      <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-blue-500" />
+      <span className="flex-shrink-0 mt-1.5 w-2 h-2 rounded-full bg-primary" />
       <span>{children}</span>
     </li>
   ),
   blockquote: ({ children, ...props }: any) => (
     <blockquote
-      className="my-8 relative pl-6 py-4 pr-4 border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-900/20 rounded-r-xl italic text-slate-700 dark:text-slate-300"
+      className="my-8 relative pl-6 py-4 pr-4 border-l-4 border-primary bg-primary/10 rounded-r-xl italic text-muted-foreground"
       {...props}
     >
-      <span className="absolute -left-3 -top-2 text-4xl text-blue-300 dark:text-blue-700 font-serif">"</span>
+      <span className="absolute -left-3 -top-2 text-4xl text-primary/40 font-serif">"</span>
       {children}
     </blockquote>
   ),
@@ -168,7 +168,7 @@ const components = {
     if (!isBlock) {
       return (
         <code
-          className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-pink-600 dark:text-pink-400 font-mono text-[0.9em] font-medium"
+          className="px-2 py-0.5 rounded-md bg-muted text-primary font-mono text-[0.9em] font-medium"
           {...props}
         >
           {children}
@@ -178,23 +178,23 @@ const components = {
 
     // Block code
     return (
-      <div className="my-8 group shadow-2xl rounded-xl overflow-hidden">
-        <div className="flex items-center justify-between px-4 py-2 bg-slate-900 border-b border-slate-800">
-          <span className="text-xs font-mono text-slate-400 uppercase tracking-wider flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+      <div className="my-8 group shadow-none rounded-xl overflow-hidden border border-border">
+        <div className="flex items-center justify-between px-4 py-2 bg-card border-b border-border">
+          <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-primary"></span>
             {language}
           </span>
-          <div className="flex gap-1.5 bg-slate-800/50 p-1.5 rounded-full">
-            <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+          <div className="flex gap-1.5 bg-muted p-1.5 rounded-full">
+            <span className="w-2.5 h-2.5 rounded-full bg-primary/80" />
+            <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
+            <span className="w-2.5 h-2.5 rounded-full bg-muted-foreground/20" />
           </div>
         </div>
         <SyntaxHighlighter
           style={vscDarkPlus}
           language={language}
           PreTag="div"
-          className="!mt-0 !rounded-none text-sm !bg-[#1e1e1e]"
+          className="!mt-0 !rounded-none text-sm !bg-[#121212]"
           showLineNumbers
           customStyle={{
             margin: 0,
@@ -208,20 +208,20 @@ const components = {
     );
   },
   table: ({ children, ...props }: any) => (
-    <div className="my-8 overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+    <div className="my-8 overflow-x-auto rounded-xl border border-border shadow-none bg-card">
       <table className="w-full border-collapse text-left text-sm" {...props}>
         {children}
       </table>
     </div>
   ),
   thead: ({ children, ...props }: any) => (
-    <thead className="bg-slate-100 dark:bg-slate-800" {...props}>
+    <thead className="bg-muted" {...props}>
       {children}
     </thead>
   ),
   tbody: ({ children, ...props }: any) => (
     <tbody
-      className="divide-y divide-slate-200 dark:divide-slate-700"
+      className="divide-y divide-border"
       {...props}
     >
       {children}
@@ -229,7 +229,7 @@ const components = {
   ),
   tr: ({ children, ...props }: any) => (
     <tr
-      className="transition-colors hover:bg-blue-50/50 dark:hover:bg-slate-800/50"
+      className="transition-colors hover:bg-primary/5"
       {...props}
     >
       {children}
@@ -237,14 +237,14 @@ const components = {
   ),
   th: ({ children, ...props }: any) => (
     <th
-      className="px-5 py-4 font-bold text-slate-900 dark:text-slate-100 uppercase text-xs tracking-wider"
+      className="px-5 py-4 font-bold text-foreground uppercase text-xs tracking-wider"
       {...props}
     >
       {children}
     </th>
   ),
   td: ({ children, ...props }: any) => (
-    <td className="px-5 py-4 text-slate-700 dark:text-slate-300" {...props}>
+    <td className="px-5 py-4 text-muted-foreground" {...props}>
       {children}
     </td>
   ),
@@ -267,9 +267,9 @@ const components = {
   ),
   hr: ({ ...props }: any) => (
     <div className="my-12 flex items-center justify-center gap-3">
-      <span className="flex-1 h-px bg-slate-300 dark:bg-slate-600" />
-      <span className="text-slate-400">✦</span>
-      <span className="flex-1 h-px bg-slate-300 dark:bg-slate-600" />
+      <span className="flex-1 h-px bg-border" />
+      <span className="text-primary">✦</span>
+      <span className="flex-1 h-px bg-border" />
     </div>
   ),
   video: ({ src, ...props }: any) => (
@@ -311,12 +311,12 @@ const components = {
 
       if (alertType) {
         const styles: Record<string, string> = {
-          note: 'border-blue-500 bg-blue-50/80 dark:bg-blue-900/20',
-          info: 'border-blue-500 bg-blue-50/80 dark:bg-blue-900/20',
-          tip: 'border-green-500 bg-green-50/80 dark:bg-green-900/20',
-          warning: 'border-yellow-500 bg-yellow-50/80 dark:bg-yellow-900/20',
-          caution: 'border-red-500 bg-red-50/80 dark:bg-red-900/20',
-          important: 'border-purple-500 bg-purple-50/80 dark:bg-purple-900/20',
+          note: 'border-border bg-card',
+          info: 'border-border bg-card',
+          tip: 'border-green-600 bg-green-500/10 text-green-700 dark:text-green-400',
+          warning: 'border-yellow-600 bg-yellow-500/10 text-yellow-700 dark:text-yellow-400',
+          caution: 'border-primary bg-primary/10 text-foreground',
+          important: 'border-primary bg-primary/10 text-foreground',
         };
 
         const icons: Record<string, string> = {
@@ -330,11 +330,11 @@ const components = {
 
         return (
           <div className={`my-6 p-5 border-l-4 rounded-r-lg ${styles[alertType]}`} {...props}>
-            <div className="flex items-center gap-2 mb-2 font-semibold text-slate-900 dark:text-white">
+            <div className="flex items-center gap-2 mb-2 font-semibold text-foreground">
               <span className="text-lg">{icons[alertType]}</span>
               <span className="uppercase text-sm tracking-wide">{alertType}</span>
             </div>
-            <div className="text-slate-700 dark:text-slate-300">
+            <div className="text-muted-foreground">
               {children}
             </div>
           </div>

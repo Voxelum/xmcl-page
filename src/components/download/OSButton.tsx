@@ -25,18 +25,14 @@ export const OSButton: React.FC<OSButtonProps> = ({
   return (
     <motion.button
       onClick={onClick}
-      className={`relative px-6 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden ${
+      className={`relative px-6 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border ${
         isSelected
-          ? `bg-blue-500/20 ${color} text-white shadow-2xl scale-105`
-          : "bg-slate-800/50 text-slate-400 hover:bg-slate-700/50 hover:text-white hover:scale-105"
+          ? "bg-[#ea4c3c] border-[#ea4c3c] text-white scale-105"
+          : "bg-[#1c1c1c] border-[#2d2d2d] text-slate-400 hover:border-[#ea4c3c] hover:text-white hover:scale-105"
       }`}
       whileHover={{ y: -5 }}
       whileTap={{ scale: 0.95 }}
     >
-      {isSelected && (
-        <div className="absolute inset-0 bg-blue-500/20 rounded-2xl blur-xl -z-10" />
-      )}
-
       <div className="flex flex-col items-center gap-2">
         <span className="text-3xl">{icon}</span>
         <span>{name}</span>
@@ -53,24 +49,6 @@ export const OSButton: React.FC<OSButtonProps> = ({
           </motion.div>
         )}
       </div>
-
-      {isSelected && (
-        <motion.div
-          className="absolute inset-0 rounded-2xl"
-          style={{
-            boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)",
-          }}
-          animate={{
-            boxShadow: [
-              "0 0 20px rgba(59, 130, 246, 0.5)",
-              "0 0 30px rgba(168, 85, 247, 0.5)",
-              "0 0 20px rgba(236, 72, 153, 0.5)",
-              "0 0 20px rgba(59, 130, 246, 0.5)",
-            ],
-          }}
-          transition={{ duration: 3, repeat: Infinity }}
-        />
-      )}
     </motion.button>
   );
 };

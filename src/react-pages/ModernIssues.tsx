@@ -33,13 +33,14 @@ import {
   List as ListIcon
 } from '@phosphor-icons/react';
 import { AppShell } from '@/components/AppShell';
+import MarkdownRenderer from '@/components/MarkdownRenderer';
 
 // Memoized Components for Performance
 
 const StateIcon = memo(({ state }: { state: string }) => (
   state === 'open' ?
     <Warning className="w-4 h-4 text-emerald-500" /> :
-    <CheckCircle className="w-4 h-4 text-violet-500" />
+    <CheckCircle className="w-4 h-4 text-primary" />
 ));
 
 const IssueTypeIcon = memo(({ labels }: { labels: any[] }) => {
@@ -50,25 +51,15 @@ const IssueTypeIcon = memo(({ labels }: { labels: any[] }) => {
   if (hasLabel('bug')) return <Bug className="w-4 h-4 text-red-500" />;
   if (hasLabel('enhancement') || hasLabel('feature')) return <Lightbulb className="w-4 h-4 text-amber-500" />;
   if (hasLabel('performance')) return <Lightning className="w-4 h-4 text-blue-500" />;
-  return <GitBranch className="w-4 h-4 text-slate-500" />;
+  return <GitBranch className="w-4 h-4 text-muted-foreground" />;
 });
 
 const MarkdownContent = memo(({ content }: { content: string }) => {
   if (!content) return null;
   
   return (
-    <div className="prose prose-invert prose-sm max-w-none text-slate-300">
-      <ReactMarkdown 
-        remarkPlugins={[remarkGfm]} 
-        rehypePlugins={[rehypeRaw]}
-        components={{
-          a: ({node, ...props}) => <a {...props} className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" />,
-          img: ({node, ...props}) => <img {...props} className="max-w-full rounded-lg my-2" loading="lazy" />,
-          pre: ({node, ...props}) => <pre {...props} className="bg-slate-900/50 p-3 rounded-lg overflow-x-auto" />,
-        }}
-      >
-        {content}
-      </ReactMarkdown>
+    <div className="prose-sm">
+      <MarkdownRenderer content={content} />
     </div>
   );
 });
@@ -90,8 +81,8 @@ const StatsDashboard = memo(({ stats }: { stats: any }) => {
             <Warning className="w-5 h-5 text-emerald-500" />
           </div>
           <div>
-            <p className="text-slate-400 text-xs font-medium uppercase tracking-wider">{t('issues.openIssues')}</p>
-            <p className="text-2xl font-bold text-white">{stats.openIssues}</p>
+            <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">{t('issues.openIssues')}</p>
+            <p className="text-2xl font-bold text-foreground">{stats.openIssues}</p>
           </div>
         </div>
       </motion.div>
@@ -100,15 +91,15 @@ const StatsDashboard = memo(({ stats }: { stats: any }) => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-violet-500/10 border border-violet-500/20 p-4 rounded-xl flex items-center justify-between"
+        className="bg-primary/10 border border-primary/20 p-4 rounded-xl flex items-center justify-between"
       >
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-violet-500/20 rounded-lg">
-            <CheckCircle className="w-5 h-5 text-violet-500" />
+          <div className="p-2 bg-primary/20 rounded-lg">
+            <CheckCircle className="w-5 h-5 text-primary" />
           </div>
           <div>
-            <p className="text-slate-400 text-xs font-medium uppercase tracking-wider">{t('issues.closedIssues')}</p>
-            <p className="text-2xl font-bold text-white">{stats.closedIssues}</p>
+            <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">{t('issues.closedIssues')}</p>
+            <p className="text-2xl font-bold text-foreground">{stats.closedIssues}</p>
           </div>
         </div>
       </motion.div>
@@ -124,8 +115,8 @@ const StatsDashboard = memo(({ stats }: { stats: any }) => {
             <SquaresFour className="w-5 h-5 text-blue-500" />
           </div>
           <div>
-            <p className="text-slate-400 text-xs font-medium uppercase tracking-wider">{t('issues.allIssues')}</p>
-            <p className="text-2xl font-bold text-white">{stats.openIssues + stats.closedIssues}</p>
+            <p className="text-muted-foreground text-xs font-medium uppercase tracking-wider">{t('issues.allIssues')}</p>
+            <p className="text-2xl font-bold text-foreground">{stats.openIssues + stats.closedIssues}</p>
           </div>
         </div>
       </motion.div>
@@ -139,7 +130,7 @@ const IssueCard = memo(({ issue, expanded, onToggleExpand, t }: any) => {
       layout="position"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="mb-4 bg-slate-800/40 border border-slate-700/50 hover:border-violet-500/30 hover:bg-slate-700/40 transition-all duration-300 rounded-xl overflow-hidden group"
+      className="mb-4 bg-card border border-border hover:border-primary/30 hover:bg-muted/50 transition-all duration-300 rounded-xl overflow-hidden group"
     >
       <div className="p-4 md:p-5">
         <div className="flex flex-col gap-4">
@@ -147,11 +138,11 @@ const IssueCard = memo(({ issue, expanded, onToggleExpand, t }: any) => {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-2">
                 <StateIcon state={issue.state} />
-                <span className="text-slate-400 text-xs">#{issue.number}</span>
-                <span className="text-slate-500 text-xs">•</span>
-                <span className="text-slate-400 text-xs">{new Date(issue.created_at).toLocaleDateString()}</span>
+                <span className="text-muted-foreground text-xs">#{issue.number}</span>
+                <span className="text-muted-foreground text-xs">•</span>
+                <span className="text-muted-foreground text-xs">{new Date(issue.created_at).toLocaleDateString()}</span>
               </div>
-              <h3 className="font-semibold text-white text-lg leading-tight group-hover:text-violet-300 transition-colors mb-2">
+              <h3 className="font-semibold text-foreground text-lg leading-tight group-hover:text-primary transition-colors mb-2">
                 {issue.title}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -178,7 +169,7 @@ const IssueCard = memo(({ issue, expanded, onToggleExpand, t }: any) => {
               <Button
                 size="sm"
                 variant="outline"
-                className="h-8 w-8 p-0 border-slate-700 hover:bg-slate-700 text-slate-300"
+                className="h-8 w-8 p-0 border-border hover:bg-muted text-foreground"
                 onClick={() => window.open(issue.html_url, '_blank')}
                 title={t('actions.goToIssue')}
               >
@@ -187,7 +178,7 @@ const IssueCard = memo(({ issue, expanded, onToggleExpand, t }: any) => {
               <Button
                 size="sm"
                 variant={expanded ? "secondary" : "ghost"}
-                className={`h-8 w-8 p-0 ${expanded ? 'bg-violet-500/20 text-violet-300' : 'text-slate-400 hover:text-white hover:bg-slate-700'}`}
+                className={`h-8 w-8 p-0 ${expanded ? 'bg-primary/20 text-primary' : 'text-muted-foreground hover:text-foreground hover:bg-muted'}`}
                 onClick={onToggleExpand}
                 title={expanded ? t('actions.hide') : t('actions.preview')}
               >
@@ -196,14 +187,14 @@ const IssueCard = memo(({ issue, expanded, onToggleExpand, t }: any) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-xs text-slate-500 border-t border-slate-800/50 pt-3 mt-1">
+          <div className="flex items-center gap-4 text-xs text-muted-foreground border-t border-border pt-3 mt-1">
              <div className="flex items-center gap-1.5">
               <img src={issue.user.avatar_url} alt="" className="w-4 h-4 rounded-full" />
-              <span className="text-slate-400">{issue.user.login}</span>
+              <span className="text-foreground">{issue.user.login}</span>
              </div>
              <div className="flex items-center gap-1.5">
-               <ChatCircle className="w-3.5 h-3.5" />
-               <span>{issue.comments}</span>
+                <ChatCircle className="w-3.5 h-3.5" />
+                <span>{issue.comments}</span>
              </div>
           </div>
         </div>
@@ -216,12 +207,12 @@ const IssueCard = memo(({ issue, expanded, onToggleExpand, t }: any) => {
               exit={{ height: 0, opacity: 0 }}
               className="overflow-hidden"
             >
-              <div className="pt-4 mt-4 border-t border-slate-700/50">
+              <div className="pt-4 mt-4 border-t border-border">
                 <MarkdownContent content={issue.body} />
                 <div className="mt-4 flex justify-end">
                    <Button 
                       size="sm" 
-                      className="bg-violet-600 hover:bg-violet-700 text-white"
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground"
                       onClick={() => window.open(issue.html_url, '_blank')}
                     >
                       {t('issues.viewOnGitHub')} <ArrowUpRight className="ml-2 w-3 h-3" />
@@ -285,10 +276,10 @@ function ModernIssuesContent() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center p-8 bg-red-500/10 rounded-2xl border border-red-500/20">
-          <Warning className="w-12 h-12 text-red-500 mx-auto mb-4" />
-          <h2 className="text-xl font-bold text-white mb-2">{t('errors.issuesLoad')}</h2>
+      <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+        <div className="text-center p-8 bg-destructive/10 rounded-2xl border border-destructive/20">
+          <Warning className="w-12 h-12 text-destructive mx-auto mb-4" />
+          <h2 className="text-xl font-bold text-foreground mb-2">{t('errors.issuesLoad')}</h2>
           <Button onClick={() => window.location.reload()} variant="outline" className="mt-4">
             {t('actions.retry')}
           </Button>
@@ -299,8 +290,8 @@ function ModernIssuesContent() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-slate-950 relative">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20 pointer-events-none" />
+      <div className="min-h-screen bg-background text-foreground relative">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-5 pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 relative z-10">
           {/* Header */}
@@ -311,16 +302,16 @@ function ModernIssuesContent() {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-center gap-3 mb-2"
               >
-                <div className="p-2 bg-violet-500/20 rounded-lg border border-violet-500/30">
-                  <Bug className="w-6 h-6 text-violet-400" />
+                <div className="p-2 bg-primary/20 rounded-lg border border-primary/30">
+                  <Bug className="w-6 h-6 text-primary" />
                 </div>
-                <h1 className="text-3xl font-bold text-white tracking-tight">{t('issues.title')}</h1>
+                <h1 className="text-3xl font-bold text-foreground tracking-tight">{t('issues.title')}</h1>
               </motion.div>
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
-                className="text-slate-400 max-w-xl"
+                className="text-muted-foreground max-w-xl"
               >
                 {t('issues.subtitle')}
               </motion.p>
@@ -334,14 +325,14 @@ function ModernIssuesContent() {
               <Button 
                 onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/issues', '_blank')}
                 variant="outline"
-                className="border-slate-700 hover:bg-slate-800 text-slate-300"
+                className="border-border hover:bg-muted text-foreground"
               >
                 <GithubLogo className="w-4 h-4 mr-2" />
                 GitHub
               </Button>
               <Button 
                 onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/issues/new', '_blank')}
-                className="bg-violet-600 hover:bg-violet-700 text-white shadow-lg shadow-violet-900/20"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
               >
                 <Plus className="w-4 h-4 mr-2" />
                 {t('issues.reportNewIssue')}
@@ -353,47 +344,47 @@ function ModernIssuesContent() {
 
           {/* Filters & Search - Glassmorphic Bar */}
           <div className="sticky top-4 z-30 mb-8">
-            <div className="bg-slate-900/80 border border-slate-700/50 rounded-2xl p-2 shadow-2xl flex flex-col md:flex-row gap-2">
+            <div className="bg-card border border-border rounded-2xl p-2 shadow-2xl flex flex-col md:flex-row gap-2">
               <div className="relative flex-1">
-                <MagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                <MagnifyingGlass className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input 
                   placeholder={t('issues.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 bg-slate-800/50 border-transparent focus:bg-slate-800 transition-all text-white h-10 rounded-xl"
+                  className="pl-10 bg-background border-border focus:ring-primary/20 focus:border-primary transition-all text-foreground h-10 rounded-xl"
                 />
               </div>
               
               <div className="flex gap-2 p-1 overflow-x-auto">
-                <div className="flex bg-slate-800/50 rounded-xl p-1 shrink-0">
+                <div className="flex bg-muted rounded-xl p-1 shrink-0">
                   <button
                     onClick={() => setStateFilter('all')}
-                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all ${stateFilter === 'all' ? 'bg-slate-700 text-white shadow-sm' : 'text-slate-400 hover:text-slate-200'}`}
+                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all ${stateFilter === 'all' ? 'bg-background text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
                   >
                     {t('issues.allIssues')}
                   </button>
                   <button
                     onClick={() => setStateFilter('open')}
-                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${stateFilter === 'open' ? 'bg-emerald-500/20 text-emerald-400 shadow-sm' : 'text-slate-400 hover:text-emerald-400'}`}
+                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${stateFilter === 'open' ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 shadow-sm' : 'text-muted-foreground hover:text-emerald-500'}`}
                   >
                     <Warning className="w-3.5 h-3.5" />
                     {t('issues.openFilter')}
                   </button>
                   <button
                     onClick={() => setStateFilter('closed')}
-                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${stateFilter === 'closed' ? 'bg-violet-500/20 text-violet-400 shadow-sm' : 'text-slate-400 hover:text-violet-400'}`}
+                    className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all flex items-center gap-2 ${stateFilter === 'closed' ? 'bg-primary/20 text-primary shadow-sm' : 'text-muted-foreground hover:text-primary'}`}
                   >
                     <CheckCircle className="w-3.5 h-3.5" />
                     {t('issues.closedFilter')}
                   </button>
                 </div>
                 
-                <div className="h-full w-px bg-slate-700/50 mx-1 shrink-0" />
+                <div className="h-full w-px bg-border mx-1 shrink-0" />
                 
-                <div className="flex bg-slate-800/50 rounded-xl p-1 shrink-0">
+                <div className="flex bg-muted rounded-xl p-1 shrink-0">
                    <button
                     onClick={() => setSortBy(sortBy === 'created' ? 'updated' : 'created')}
-                    className="px-3 py-1.5 hover:bg-slate-700 rounded-lg text-slate-400 hover:text-white transition-colors"
+                    className="px-3 py-1.5 hover:bg-background rounded-lg text-muted-foreground hover:text-foreground transition-colors"
                     title={t('issues.sortBy')}
                    >
                      {sortBy === 'created' ? <Calendar className="w-4 h-4" /> : <CaretDown className="w-4 h-4" />}
@@ -406,8 +397,8 @@ function ModernIssuesContent() {
           {/* Virtualized Issue List */}
           {loading ? (
              <div className="flex flex-col items-center justify-center py-20">
-               <div className="w-12 h-12 border-4 border-violet-500/30 border-t-violet-500 rounded-full animate-spin mb-4" />
-               <p className="text-slate-400 font-medium">{t('issues.loadingIssues')}</p>
+               <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mb-4" />
+               <p className="text-muted-foreground font-medium">{t('issues.loadingIssues')}</p>
              </div>
           ) : filteredIssues.length > 0 ? (
             <div className="h-[800px] w-full"> 
@@ -430,16 +421,16 @@ function ModernIssuesContent() {
                />
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-20 text-center bg-slate-900/30 rounded-3xl border border-slate-800 border-dashed">
-               <div className="p-4 bg-slate-800/50 rounded-full mb-4">
-                 <MagnifyingGlass className="w-8 h-8 text-slate-500" />
+            <div className="flex flex-col items-center justify-center py-20 text-center bg-muted/30 rounded-3xl border border-border border-dashed">
+               <div className="p-4 bg-muted rounded-full mb-4">
+                 <MagnifyingGlass className="w-8 h-8 text-muted-foreground" />
                </div>
-               <h3 className="text-xl font-bold text-white mb-2">{t('issues.noIssuesFound')}</h3>
-               <p className="text-slate-400 max-w-sm">{t('issues.tryAdjusting')}</p>
+               <h3 className="text-xl font-bold text-foreground mb-2">{t('issues.noIssuesFound')}</h3>
+               <p className="text-muted-foreground max-w-sm">{t('issues.tryAdjusting')}</p>
                <Button 
                 variant="link" 
                 onClick={() => { setSearchTerm(''); setStateFilter('all'); }} 
-                className="mt-2 text-violet-400"
+                className="mt-2 text-primary"
                >
                  {t('common.clearFilters')}
                </Button>
