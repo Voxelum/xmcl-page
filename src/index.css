@@ -1,0 +1,461 @@
+@config "../tailwind.config.ts";
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 221.2 83.2% 53.3%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221.2 83.2% 53.3%;
+  }
+
+  .dark {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 91.2% 59.8%;
+
+    --sidebar-background: 222 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217.2 91.2% 59.8%;
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Enhanced light theme background */
+  .light body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: hsl(240 60% 97%);
+    pointer-events: none;
+  }
+
+  /* Enhanced dark theme background */
+  .dark body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: hsl(230 70% 6%);
+    pointer-events: none;
+  }
+
+  /* Light theme navigation improvements */
+  .light nav {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
+  /* Light theme card improvements */
+  .light .card-elevated {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.08),
+      0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  .light .card-elevated:hover {
+    box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.12),
+      0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Footer improvements for light theme */
+  .light footer {
+    background: rgba(248, 250, 252, 0.9) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
+  /* Button improvements for light theme */
+  .light button[variant="ghost"] {
+    color: hsl(220 10% 30%) !important;
+  }
+
+  .light button[variant="ghost"]:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: hsl(220 15% 20%) !important;
+  }
+}
+
+/* Custom animations and utilities */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .dark .glass-effect {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-gradient {
+    color: #3b82f6;
+  }
+
+  .dark .text-gradient {
+    color: #60a5fa;
+  }
+
+  /* Enhanced card effects */
+  .card-elevated {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .card-elevated:hover {
+    transform: translateY(-2px);
+  }
+
+  .dark .card-elevated {
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.3),
+      0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .dark .card-elevated:hover {
+    box-shadow:
+      0 14px 28px rgba(0, 0, 0, 0.5),
+      0 10px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Light theme specific improvements */
+  .light-theme-text {
+    color: hsl(220 15% 25%) !important;
+  }
+
+  .light-theme-muted {
+    color: hsl(220 10% 50%) !important;
+  }
+
+  .light-theme-border {
+    border-color: hsl(220 13% 88%) !important;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 20px rgba(59, 130, 246, 0.3),
+      0 0 40px rgba(147, 51, 234, 0.2);
+  }
+  to {
+    box-shadow:
+      0 0 30px rgba(59, 130, 246, 0.5),
+      0 0 60px rgba(147, 51, 234, 0.3);
+  }
+}
+.scroll-area-content {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+/* Blob animation for Information page */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 40px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+  will-change: transform;
+}
+
+/* Firefox-specific optimizations */
+@-moz-document url-prefix() {
+  .glass-effect,
+  .backdrop-blur-2xl,
+  .backdrop-blur-xl,
+  .backdrop-blur-md,
+  .backdrop-blur {
+    backdrop-filter: none !important;
+    background: rgba(
+      30,
+      41,
+      59,
+      0.95
+    ) !important; /* Fallback for dark/glass backgrounds */
+  }
+
+  .light .glass-effect,
+  .light .backdrop-blur-2xl,
+  .light .backdrop-blur-xl,
+  .light .backdrop-blur-md,
+  .light .backdrop-blur,
+  .light nav,
+  .light footer {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .animate-blob {
+    animation: none !important; /* Disable blob animation in Firefox if it causes lag */
+    opacity: 0.5;
+  }
+
+  /* Reduce heavy blurs in Firefox */
+  div[class*="blur-[100px]"] {
+    filter: blur(60px) !important;
+    opacity: 0.8;
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* ============================================
+   FIX: Prevent text from appearing blurry.
+   
+   Root cause: backdrop-filter: blur() on UI elements (cards, inputs,
+   badges, tabs) creates GPU compositing layers that cause text inside
+   to render with sub-pixel blur artifacts on many browsers/GPUs.
+   
+   Solution: Disable backdrop-filter globally. Replace with higher 
+   background opacity for visual depth.
+   ============================================ */
+
+/* Kill backdrop-filter everywhere — it causes blurry text */
+* {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force decorative blur blobs into isolated GPU layers */
+[class*="blur-3xl"],
+[class*="blur-[100px]"],
+[class*="blur-[150px]"],
+.animate-blob {
+  transform: translate3d(0, 0, 0);
+  will-change: filter;
+  pointer-events: none;
+}
+
+
+/* ============================================
+   View Transitions — Astro and fallback
+   ============================================ */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(page-content) {
+  animation: slide-out-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-new(page-content) {
+  animation: slide-in-right 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 0.2s ease-out forwards;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 0.3s ease-in forwards;
+}
+
+@keyframes slide-out-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Page entrance animation (used by React pages) */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger children entrance */
+.stagger-children > * {
+  opacity: 0;
+  animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.stagger-children > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.stagger-children > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.stagger-children > *:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.stagger-children > *:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.stagger-children > *:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.stagger-children > *:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.stagger-children > *:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.stagger-children > *:nth-child(8) {
+  animation-delay: 0.4s;
+}

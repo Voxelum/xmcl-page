@@ -1,0 +1,169 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "I18n Web",
+      "excerpt": "How do I add a translation for a website?",
+      "author": "Baneronetwo",
+      "date": "2025-09-20",
+      "tags": ["web", "i18n"],
+      "slug": "i18n-en",
+      "readTime": "20 min",
+      "difficulty": "Website"
+    },
+    {
+      "id": "2",
+      "title": "I18n Web (Українська)",
+      "excerpt": "Як мені додати переклад для веб-сайту?",
+      "author": "Baneronetwo",
+      "date": "2025-09-20",
+      "tags": ["web", "i18n"],
+      "slug": "i18n-uk",
+      "readTime": "20 min",
+      "difficulty": "Веб-сайт"
+    },
+    {
+      "id": "3",
+      "title": "I18n Web (中文)",
+      "excerpt": "我如何为网站添加翻译？",
+      "author": "Baneronetwo",
+      "date": "2025-09-20",
+      "tags": ["web", "i18n"],
+      "slug": "i18n-zh",
+      "readTime": "20 min",
+      "difficulty": "网站"
+    },
+    {
+      "id": "4",
+      "title": "Demo minecraft",
+      "excerpt": "Minecraft demo version - how to solve this?",
+      "author": "Voxelum",
+      "date": "2025-01-10",
+      "tags": ["account", "launcher", "demo-minecraft"],
+      "slug": "demo-minecraft",
+      "readTime": "10 min",
+      "difficulty": "Account"
+    },
+    {
+      "id": "5",
+      "title": "Data Storage ",
+      "excerpt": "How to store data in Minecraft?",
+      "author": "CIO10",
+      "date": "2025-01-10",
+      "tags": ["Data-Storage"],
+      "slug": "Data-Storage",
+      "readTime": "14 min",
+      "difficulty": "Storage"
+    },
+    {
+      "id": "6",
+      "title": "User",
+      "excerpt": "User data is stored under",
+      "author": "CIO10",
+      "date": "2025-01-10",
+      "tags": ["launcher", "user"],
+      "slug": "user",
+      "readTime": "14 min",
+      "difficulty": "User"
+    },
+    {
+      "id": "7",
+      "title": "Setting",
+      "excerpt": "Global Setting",
+      "author": "CIO10",
+      "date": "2025-01-10",
+      "tags": ["launcher", "setting"],
+      "slug": "setting",
+      "readTime": "14 min",
+      "difficulty": "Setting"
+    },
+    {
+      "id": "8",
+      "title": "Java",
+      "excerpt": "Java Data Cache",
+      "author": "CIO10",
+      "date": "2025-01-10",
+      "tags": ["launcher", "java"],
+      "slug": "java",
+      "readTime": "14 min",
+      "difficulty": "Java"
+    },
+    {
+      "id": "9",
+      "title": "Instance Copy",
+      "excerpt": "How to copy an instance?",
+      "author": "CIO10",
+      "date": "2025-01-10",
+      "tags": ["launcher", "instance"],
+      "slug": "instance-copy",
+      "readTime": "14 min",
+      "difficulty": "Instance"
+    },
+    {
+      "id": "10",
+      "title": "It's Cracked ?",
+      "excerpt": "Is this launcher legal?",
+      "author": "Baneronetwo",
+      "date": "2025-18-10",
+      "tags": ["launcher", "cracked"],
+      "slug": "its-cracked",
+      "readTime": "9 min",
+      "difficulty": "launcher-cracked"
+    },
+    {
+      "id": "11",
+      "title": "Nothing is downloading?",
+      "excerpt": "What should I do if nothing downloads or works?",
+      "author": "Baneronetwo",
+      "date": "2025-27-10",
+      "tags": ["launcher", "mod", "instance", "download"],
+      "slug": "not-load",
+      "readTime": "29 min",
+      "difficulty": "Loader"
+    },
+    {
+      "id": "12",
+      "title": "How to play online?",
+      "excerpt": "The launcher has a built-in option to play online, but how do you play?",
+      "author": "Baneronetwo",
+      "date": "2025-28-10",
+      "tags": ["launcher", "p2p", "online"],
+      "slug": "play-p2p",
+      "readTime": "25 min",
+      "difficulty": "Online"
+    },
+    {
+      "id": "13",
+      "title": "Bad Name ?",
+      "excerpt": "Is your username invalid for the servers?",
+      "author": "Baneronetwo",
+      "date": "2025-14-12",
+      "tags": ["launcher", "nickname"],
+      "slug": "name-bad",
+      "readTime": "25 min",
+      "difficulty": "Online"
+    },
+    {
+      "id": "14",
+      "title": "Licences NOT WORK ?!",
+      "excerpt": "I bought a license, but it doesn't work in the launcher?",
+      "author": "Baneronetwo",
+      "date": "2025-4-01",
+      "tags": ["launcher", "licence", "account"],
+      "slug": "licence-not-work",
+      "readTime": "12 min",
+      "difficulty": "Online"
+    }
+  ],
+  "categories": [
+    "advanced",
+    "account",
+    "launcher",
+    "mods",
+    "test",
+    "markdown",
+    "java",
+    "instance"
+  ],
+  "featured": ["demo-minecraft", "Data-Storage", "licence-not-work"]
+}

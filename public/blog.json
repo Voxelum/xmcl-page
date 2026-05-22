@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "New website and new technologies!",
+      "excerpt": "Website redesign and addition of many support features",
+      "date": "2025-09-19",
+      "author": "Baneronetwo",
+      "tags": ["update", "news"],
+      "slug": "NewWeb",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "Beta 1.4 V",
+      "excerpt": "A new version of the website with many new features",
+      "date": "2025-10-03",
+      "author": "Baneronetwo",
+      "tags": ["update", "news"],
+      "slug": "Beta1.4V",
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "Beta 1.5 V",
+      "excerpt": "New tabs and design along with optimization?",
+      "date": "2025-10-03",
+      "author": "Baneronetwo",
+      "tags": ["update", "news"],
+      "slug": "Beta1.5V",
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Beta 1.6 V: Performance Update",
+      "excerpt": "Major performance overhaul (LCP, INP) and rendering fixes.",
+      "date": "2025-12-14",
+      "author": "Baneronetwo",
+      "tags": ["update", "performance"],
+      "slug": "Beta1.6V",
+      "featured": true
+    }
+  ],
+  "categories": ["update", "news"],
+  "featured": ["1"]
+}

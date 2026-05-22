@@ -1,0 +1,169 @@
+---
+import "../index.css";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title = "XMCL - X Minecraft Launcher | Modern Minecraft Launcher",
+  description = "XMCL is a modern, open-source Minecraft launcher with advanced features like mod management, multiple instances, P2P sharing, and support for all mod loaders (Forge, Fabric, NeoForge, Quilt). Download now for Windows, macOS, and Linux.",
+  image = "/og-image.svg",
+  type = "website"
+} = Astro.props;
+
+const canonicalURL = `https://xmcl.app${Astro.url.pathname}`;
+const siteName = "X Minecraft Launcher";
+const twitterHandle = "@xmcl";
+
+// JSON-LD Structured Data for SEO
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "X Minecraft Launcher",
+  "alternateName": "XMCL",
+  "description": description,
+  "url": "https://xmcl.app",
+  "image": image,
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "5000"
+  }
+};
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" href="/PhotoXMCL/logo.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/PhotoXMCL/logo.png" />
+    <link rel="canonical" href={canonicalURL} />
+    <ClientRouter />
+    
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content={description} />
+    <meta name="author" content="Voxelum" />
+    <meta name="keywords" content="minecraft launcher, xmcl, minecraft mod manager, forge, fabric, neoforge, quilt, modpack, open source minecraft" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="msapplication-TileColor" content="#3b82f6" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+    <meta property="twitter:creator" content={twitterHandle} />
+    <meta property="twitter:site" content={twitterHandle} />
+
+    <!-- Additional SEO Tags -->
+    <meta name="application-name" content="XMCL" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="XMCL" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" is:inline>
+      {JSON.stringify(jsonLd)}
+    </script>
+
+    <!-- Google Translate (Dynamic Loader) -->
+    <meta name="google" content="notranslate" />
+    <script is:inline>
+      if (document.cookie.includes('googtrans') && !document.cookie.includes('googtrans=/en/en')) {
+        window.googleTranslateElementInit = function() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            autoDisplay: false,
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        };
+
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.head.appendChild(script);
+      }
+    </script>
+    <style is:inline>
+      /* Hide Google Translate bar and widget UI */
+      .goog-te-banner-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame {
+        display: none !important;
+      }
+      body { top: 0 !important; }
+      .goog-text-highlight { background: none !important; box-shadow: none !important; }
+    </style>
+    <!-- Language & Direction Sync -->
+    <script is:inline>
+      (function() {
+        function syncLangAndDir() {
+          try {
+            const savedLocale = localStorage.getItem("language");
+            if (savedLocale) {
+              document.documentElement.lang = savedLocale;
+              document.documentElement.dir = savedLocale === "ar" ? "rtl" : "ltr";
+            }
+          } catch (e) {}
+        }
+        syncLangAndDir();
+        document.addEventListener("astro:after-swap", syncLangAndDir);
+        document.addEventListener("astro:page-load", syncLangAndDir);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="google_translate_element" style="display:none"></div>
+    <main transition:animate="slide" style="view-transition-name: page-content;">
+      <slot />
+    </main>
+
+    <script>
+      // Console Easter Egg
+      console.log(`
+██╗  ██║███╗   ███╗ ██████╗ ██╗
+╚██╗██╔╝████╗ ████║██╔════╝ ██║
+ ╚███╔╝ ██╔████╔██║██║      ██║
+ ██╔██╗ ██║╚██╔╝██║██║      ██║
+██╔╝ ██╗██║ ╚═╝ ██║╚██████╗ ███████╗
+╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚══════╝
+
+THE BEST LAUNCHER !
+`);
+
+      // Easter egg functions
+      (window as any).baneronetwo = () => {
+        console.log('%cBANERONETWO IS THE DEVELOPER! This is not an official website yet.', 'color: #8b5cf6; font-weight: bold; font-size: 16px;');
+      };
+    </script>
+  </body>
+</html>
