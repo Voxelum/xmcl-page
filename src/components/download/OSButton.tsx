@@ -28,7 +28,7 @@ export const OSButton: React.FC<OSButtonProps> = ({
       className={`relative px-6 py-4 rounded-2xl font-bold text-lg transition-all duration-300 overflow-hidden border ${
         isSelected
           ? "bg-[#ea4c3c] border-[#ea4c3c] text-white scale-105"
-          : "bg-[#1c1c1c] border-[#2d2d2d] text-slate-400 hover:border-[#ea4c3c] hover:text-white hover:scale-105"
+          : "bg-card border-border text-muted-foreground hover:border-[#ea4c3c] hover:text-foreground hover:scale-105"
       }`}
       whileHover={{ y: -5 }}
       whileTap={{ scale: 0.95 }}

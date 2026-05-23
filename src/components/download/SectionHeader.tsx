@@ -62,7 +62,7 @@ export function SectionHeader({ title, subtitle, versionLabel, versionTag }: Sec
         
         {/* Subtitle */}
         <motion.p
-          className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -79,7 +79,7 @@ export function SectionHeader({ title, subtitle, versionLabel, versionTag }: Sec
         >
           {/* Version Badge */}
           <motion.div
-            className="flex items-center gap-3 px-6 py-3 bg-[#1c1c1c] rounded-xl border border-[#2d2d2d]"
+            className="flex items-center gap-3 px-6 py-3 bg-card rounded-xl border border-border"
             whileHover={{ scale: 1.05, y: -2 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -91,48 +91,48 @@ export function SectionHeader({ title, subtitle, versionLabel, versionTag }: Sec
             </motion.div>
             <div className="text-left">
               <p className="text-[#ea4c3c] font-semibold text-sm">{versionLabel}</p>
-              <p className="text-white font-bold">{versionTag}</p>
+              <p className="text-foreground font-bold">{versionTag}</p>
             </div>
           </motion.div>
           
           {/* GitHub Stats */}
           <div className="flex flex-wrap gap-3 justify-center">
             <motion.div
-              className="flex items-center gap-2 px-4 py-2 bg-[#1c1c1c] rounded-lg border border-[#2d2d2d]"
+              className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border border-border"
               whileHover={{ scale: 1.05 }}
             >
               <Star className="w-4 h-4 text-[#ea4c3c]" />
-              <span className="text-white/80 text-sm font-medium">
+              <span className="text-foreground/80 text-sm font-medium">
                 {repoLoading ? "..." : `${formattedStars} Stars`}
               </span>
             </motion.div>
             
             <motion.div
-              className="flex items-center gap-2 px-4 py-2 bg-[#1c1c1c] rounded-lg border border-[#2d2d2d]"
+              className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border border-border"
               whileHover={{ scale: 1.05 }}
             >
               <Users className="w-4 h-4 text-[#ea4c3c]" />
-              <span className="text-white/80 text-sm font-medium">
+              <span className="text-foreground/80 text-sm font-medium">
                 {downloadsLoading ? "..." : `${formattedDownloads} Downloads`}
               </span>
             </motion.div>
             
             <motion.div
-              className="flex items-center gap-2 px-4 py-2 bg-[#1c1c1c] rounded-lg border border-[#2d2d2d]"
+              className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border border-border"
               whileHover={{ scale: 1.05 }}
             >
               <GitBranch className="w-4 h-4 text-[#ea4c3c]" />
-              <span className="text-white/80 text-sm font-medium">
+              <span className="text-foreground/80 text-sm font-medium">
                 {repoLoading ? "..." : `${formattedForks} Forks`}
               </span>
             </motion.div>
             
             <motion.div
-              className="flex items-center gap-2 px-4 py-2 bg-[#1c1c1c] rounded-lg border border-[#2d2d2d]"
+              className="flex items-center gap-2 px-4 py-2 bg-card rounded-lg border border-border"
               whileHover={{ scale: 1.05 }}
             >
               <Lightning className="w-4 h-4 text-amber-500" />
-              <span className="text-white/80 text-sm font-medium">Lightning Fast</span>
+              <span className="text-foreground/80 text-sm font-medium">Lightning Fast</span>
             </motion.div>
           </div>
         </motion.div>

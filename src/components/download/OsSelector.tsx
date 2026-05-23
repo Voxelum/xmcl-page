@@ -24,7 +24,7 @@ const OSSelector: React.FC<OSSelectorProps> = ({ selectedOS, onSelectOS }) => {
 
   return (
     <div className="flex justify-center mb-12">
-      <div className="bg-[#1c1c1c] border border-[#2d2d2d] rounded-xl p-2 shadow-none">
+      <div className="bg-card border border-border rounded-xl p-2 shadow-none">
         <div className="flex gap-2">
           {osOptions.map((os) => (
             <button
@@ -33,7 +33,7 @@ const OSSelector: React.FC<OSSelectorProps> = ({ selectedOS, onSelectOS }) => {
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 flex items-center gap-2 ${
                 selectedOS === os.id
                   ? 'bg-[#ea4c3c] text-white'
-                  : 'text-slate-400 hover:bg-[#121212] hover:text-white'
+                  : 'text-muted-foreground hover:bg-background hover:text-foreground'
               }`}
             >
               <span>{os.icon}</span>

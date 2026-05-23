@@ -171,7 +171,7 @@ export const PackageIcon: React.FC<PackageIconProps> = ({ type, gradient }) => {
 
   return (
     <div
-      className="w-16 h-16 rounded-2xl bg-[#121212] border border-[#2d2d2d] flex items-center justify-center shrink-0 text-[#ea4c3c]"
+      className="w-16 h-16 rounded-2xl bg-background border border-border flex items-center justify-center shrink-0 text-[#ea4c3c]"
     >
       {renderIcon()}
     </div>

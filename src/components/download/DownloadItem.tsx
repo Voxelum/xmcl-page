@@ -47,12 +47,12 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
   };
 
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-[#1c1c1c] border border-[#2d2d2d] hover:border-[#ea4c3c] transition-all duration-300">
+    <div className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:border-[#ea4c3c] transition-all duration-300">
       <div className="p-6 flex items-center gap-6 flex-wrap sm:flex-nowrap">
         <PackageIcon type={packageType} gradient={gradient} />
 
         <div className="flex-1 min-w-0">
-          <h3 className="text-xl font-bold text-white mb-2 truncate">
+          <h3 className="text-xl font-bold text-foreground mb-2 truncate">
             {title}
           </h3>
 
@@ -63,7 +63,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    className="w-4 h-4 text-slate-400"
+                    className="w-4 h-4 text-muted-foreground"
                   >
                     <path
                       d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m14-7l-5-5m0 0L7 8m5-5v12"
@@ -72,7 +72,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
                       strokeLinecap="round"
                     />
                   </svg>
-                  <span className="text-slate-400 font-medium">
+                  <span className="text-muted-foreground font-medium">
                     {size} {t("downloadMessages.sizeMB")}
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    className="w-4 h-4 text-slate-400"
+                    className="w-4 h-4 text-muted-foreground"
                   >
                     <path
                       d="M12 2v13m0 0l-4-4m4 4l4-4M5 17v3a2 2 0 002 2h10a2 2 0 002-2v-3"
@@ -91,7 +91,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
                       strokeLinecap="round"
                     />
                   </svg>
-                  <span className="text-slate-400 font-medium">
+                  <span className="text-muted-foreground font-medium">
                     {formatNumber(downloads)}{" "}
                     {t("downloadMessages.downloads")}
                   </span>
@@ -101,8 +101,8 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
           )}
 
           {isCommand && commandText && (
-            <div className="mt-2 p-3 bg-black/40 rounded-lg border border-slate-700/50">
-              <code className="text-xs text-green-400 font-mono break-all leading-relaxed">
+            <div className="mt-2 p-3 bg-muted rounded-lg border border-border">
+              <code className="text-xs text-green-600 dark:text-green-400 font-mono break-all leading-relaxed">
                 {commandText.replace(/&#10;/g, "\n")}
               </code>
             </div>

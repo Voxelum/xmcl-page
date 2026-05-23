@@ -11,6 +11,7 @@ interface GitHubIssue {
     avatar_url: string;
   };
   labels: Array<{
+    id: number;
     name: string;
     color: string;
   }>;
@@ -46,8 +47,8 @@ const FALLBACK_DATA = {
         avatar_url: 'https://github.com/github.png'
       },
       labels: [
-        { name: 'bug', color: 'ff0000' },
-        { name: 'help wanted', color: '00ff00' }
+        { id: 101, name: 'bug', color: 'ff0000' },
+        { id: 102, name: 'help wanted', color: '00ff00' }
       ],
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
@@ -69,12 +70,14 @@ export function useGitHubApi() {
   const [stats, setStats] = useState<GitHubStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isFallback, setIsFallback] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         setError(null);
+        let fallbackActive = false;
 
         // Try to fetch real data from GitHub API
         const [issuesResponse, repoResponse] = await Promise.allSettled([
@@ -91,6 +94,7 @@ export function useGitHubApi() {
           issuesData = issues;
         } else {
           console.warn('GitHub Issues API unavailable, using fallback data');
+          fallbackActive = true;
         }
 
         // Handle repo stats response
@@ -104,16 +108,19 @@ export function useGitHubApi() {
           };
         } else {
           console.warn('GitHub Repo API unavailable, using fallback data');
+          fallbackActive = true;
         }
 
         setIssues(issuesData);
         setStats(statsData);
+        setIsFallback(fallbackActive);
       } catch (err) {
         console.error('GitHub API error:', err);
         setError('Failed to load GitHub data');
         // Use fallback data on error
         setIssues(FALLBACK_DATA.issues);
         setStats(FALLBACK_DATA.stats);
+        setIsFallback(true);
       } finally {
         setLoading(false);
       }
@@ -126,6 +133,7 @@ export function useGitHubApi() {
     issues,
     stats,
     loading,
-    error
+    error,
+    isFallback
   };
 }

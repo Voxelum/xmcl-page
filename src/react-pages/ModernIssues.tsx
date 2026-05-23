@@ -246,7 +246,7 @@ function ModernIssuesContent() {
   const [sortBy, setSortBy] = useState('created');
   const [expandedIssueId, setExpandedIssueId] = useState<number | null>(null);
   
-  const { issues, stats, loading, error } = useGitHubApi();
+  const { issues, stats, loading, error, isFallback } = useGitHubApi();
 
   const filteredIssues = useMemo(() => {
     let result = issues?.filter((issue: any) => !issue.pull_request) || [];
@@ -339,6 +339,31 @@ function ModernIssuesContent() {
               </Button>
             </motion.div>
           </div>
+
+          {isFallback && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-8 p-4 bg-primary/10 border border-primary/20 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-lg"
+            >
+              <div className="flex items-center gap-3">
+                <GithubLogo className="w-6 h-6 text-primary shrink-0 animate-pulse" />
+                <p className="text-sm text-foreground">
+                  <strong>GitHub API Rate Limit Exceeded:</strong> It seems you have visited our website too frequently, triggering the GitHub API rate limit. If you want to download launcher files or view updates, please check our official GitHub page!
+                </p>
+              </div>
+              <div className="flex gap-2 shrink-0">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-primary/30 hover:bg-primary/20 text-primary rounded-xl"
+                  onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/issues', '_blank')}
+                >
+                  GitHub Issues
+                </Button>
+              </div>
+            </motion.div>
+          )}
 
           <StatsDashboard stats={stats} />
 

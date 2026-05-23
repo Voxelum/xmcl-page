@@ -30,6 +30,7 @@ interface DownloadCardProps {
 const MOCK_RELEASES = [
   {
     tag_name: "v2.6.5",
+    published_at: "2026-05-22T00:00:00Z",
     assets: [
       {
         id: 1,
@@ -88,7 +89,8 @@ const InteractiveDownloadSection = memo(() => {
     staleTime: 60000, // 1 minute cache
   });
 
-  const latestRelease = releases?.[0];
+  const latestRelease = (releases && releases.length > 0) ? releases[0] : MOCK_RELEASES[0];
+  const isFallback = !isLoading && (!releases || releases === MOCK_RELEASES || releases.length === 0);
 
   const handleBrewCopy = () => {
     const commands = `brew tap voxelum/brew\nbrew install --cask xmcl`;
@@ -268,6 +270,38 @@ const InteractiveDownloadSection = memo(() => {
       <div className="absolute inset-0 bg-background" />
       
       <div className="container mx-auto relative z-10">
+        {isFallback && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="max-w-4xl mx-auto mb-10 p-4 bg-primary/10 border border-primary/20 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left shadow-lg"
+          >
+            <div className="flex items-center gap-3">
+              <GithubLogo className="w-6 h-6 text-primary shrink-0 animate-pulse" />
+              <p className="text-sm text-foreground">
+                <strong>GitHub API Rate Limit Exceeded:</strong> It seems you have visited our website too frequently, triggering the GitHub API rate limit. If you want to download launcher files or view updates, please check our official GitHub page!
+              </p>
+            </div>
+            <div className="flex gap-2 shrink-0">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-primary/30 hover:bg-primary/20 text-primary rounded-xl"
+                onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher', '_blank')}
+              >
+                GitHub Home
+              </Button>
+              <Button
+                size="sm"
+                className="bg-primary hover:bg-primary/95 text-white rounded-xl border-0 shadow-md shadow-primary/20"
+                onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/releases', '_blank')}
+              >
+                GitHub Releases
+              </Button>
+            </div>
+          </motion.div>
+        )}
+
         <div className="text-center mb-10 md:mb-16">
           <motion.h2 
             className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-primary"

@@ -36,34 +36,34 @@ export const OSWarningModal: React.FC<OSWarningModalProps> = ({
         initial={{ opacity: 0, scale: 0.9, y: -20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: -20 }}
-        className="relative bg-slate-800 dark:bg-slate-800 light:bg-white rounded-2xl p-6 max-w-md w-full border border-slate-700 dark:border-slate-700 light:border-slate-300 shadow-2xl z-10"
+        className="relative bg-card rounded-2xl p-6 max-w-md w-full border border-border shadow-2xl z-10"
       >
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
               <WarningCircle className="w-6 h-6 text-amber-500" />
             </div>
-            <h3 className="text-xl font-bold text-white dark:text-white light:text-slate-800">
+            <h3 className="text-xl font-bold text-foreground">
               {t("downloadMessages.osWarningTitle")}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-white dark:hover:text-white light:hover:text-slate-600 transition-colors"
+            className="text-muted-foreground hover:text-foreground transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        <p className="text-slate-300 dark:text-slate-300 light:text-slate-600 mb-6 leading-relaxed">
+        <p className="text-muted-foreground mb-6 leading-relaxed">
           {t("downloadMessages.osWarningDescription")}
-          <span className="font-semibold text-white dark:text-white light:text-slate-800">
+          <span className="font-semibold text-foreground">
             {fromOS}
           </span>
           {" "}
           {t("downloadMessages.osWarningTo")}
           {" "}
-          <span className="font-semibold text-white dark:text-white light:text-slate-800">
+          <span className="font-semibold text-foreground">
             {toOS}
           </span>
           . {t("downloadMessages.osWarningNote")}
@@ -73,7 +73,7 @@ export const OSWarningModal: React.FC<OSWarningModalProps> = ({
           <Button
             onClick={onClose}
             variant="outline"
-            className="flex-1 border-slate-600 dark:border-slate-600 light:border-slate-300 text-slate-300 dark:text-slate-300 light:text-slate-600 hover:bg-slate-700 dark:hover:bg-slate-700 light:hover:bg-slate-100"
+            className="flex-1 border-border text-muted-foreground hover:bg-muted"
           >
             {t("downloadMessages.osWarningCancel")}
           </Button>

@@ -34,7 +34,7 @@ export const DownloadHero: React.FC<DownloadHeroProps> = ({ latestRelease, detec
   if (!latestRelease) return null;
 
   return (
-    <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 px-4 overflow-hidden bg-[#121212]">
+    <section className="relative pt-24 md:pt-32 pb-12 md:pb-20 px-4 overflow-hidden bg-background text-foreground">
       <div className="container mx-auto relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,12 +46,12 @@ export const DownloadHero: React.FC<DownloadHeroProps> = ({ latestRelease, detec
           </Badge>
           
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 md:mb-8 tracking-tight transform-gpu">
-            <span className="text-white">
+            <span className="text-foreground">
               {t('downloadMessages.downloadTitle')}
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">
             {t('downloadMessages.downloadDescription')}
           </p>
 
@@ -66,7 +66,7 @@ export const DownloadHero: React.FC<DownloadHeroProps> = ({ latestRelease, detec
               <DownloadSimple className="w-5 h-5 ml-3" />
             </Button>
             
-            <span className="text-sm text-slate-500">
+            <span className="text-sm text-muted-foreground">
               {t('downloadMessages.releasedOn')} {new Date(latestRelease.published_at).toLocaleDateString()}
             </span>
           </div>

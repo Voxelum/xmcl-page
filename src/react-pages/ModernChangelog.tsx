@@ -425,11 +425,25 @@ const ModernChangelogContent: React.FC = () => {
             {status === 'pending' ? (
               <LoadingState />
             ) : status === 'error' ? (
-              <div className="text-center py-20">
-                <Info className="w-16 h-16 mx-auto mb-6 text-red-400" />
-                <p className="text-red-500 mb-4">Failed to load releases</p>
-                <Button variant="outline" onClick={() => window.location.reload()}>Retry</Button>
-              </div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-16 px-6 bg-card border border-border rounded-2xl max-w-2xl mx-auto shadow-xl"
+              >
+                <GithubLogo className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
+                <h3 className="text-2xl font-bold text-foreground mb-3">GitHub API Rate Limit Exceeded</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  It seems you have visited our website too frequently, triggering the GitHub API rate limit. If you want to download launcher files or view updates, please check our official GitHub page!
+                </p>
+                <div className="flex justify-center gap-4 flex-wrap">
+                  <Button variant="outline" className="border-border hover:bg-muted text-foreground" onClick={() => window.location.reload()}>
+                    Retry Loading
+                  </Button>
+                  <Button className="bg-primary hover:bg-primary/95 text-white shadow-md shadow-primary/20 border-0" onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/releases', '_blank')}>
+                    View on GitHub
+                  </Button>
+                </div>
+              </motion.div>
             ) : (
               <div className="space-y-5">
                 <AnimatePresence mode="popLayout">

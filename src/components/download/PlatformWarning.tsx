@@ -46,7 +46,7 @@ export const PlatformWarning = ({ detectedOS, selectedOS, onContinue, onCancel }
       
       {/* Modal Content */}
       <Card 
-        className="relative p-8 max-w-md w-full bg-[#1c1c1c] border border-[#2d2d2d] shadow-2xl rounded-2xl" 
+        className="relative p-8 max-w-md w-full bg-card border border-border shadow-2xl rounded-2xl" 
         onClick={(e) => e.stopPropagation()}
         style={{ position: 'relative', zIndex: 1 }}
       >
@@ -55,21 +55,21 @@ export const PlatformWarning = ({ detectedOS, selectedOS, onContinue, onCancel }
               <Warning className="w-8 h-8 text-[#ea4c3c]" />
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-foreground mb-2">
                 Предупреждение о платформе
               </h3>
-              <p className="text-slate-400 mb-4">
+              <p className="text-muted-foreground mb-4">
                 Мы обнаружили, что вы используете <span className="font-semibold text-[#ea4c3c]">{detectedOS}</span>, 
                 но выбираете версию для <span className="font-semibold text-[#ea4c3c]">{selectedOS}</span>.
               </p>
-              <p className="text-slate-400 mb-6">
+              <p className="text-muted-foreground mb-6">
                 Пакет для другой операционной системы может не запуститься или работать некорректно.
               </p>
               <div className="flex gap-3">
                 <Button
                   onClick={onCancel}
                   variant="outline"
-                  className="flex-1 border-[#2d2d2d] hover:bg-[#121212] text-slate-300 hover:text-white"
+                  className="flex-1 border-border hover:bg-muted text-muted-foreground hover:text-foreground"
                 >
                   <X className="w-4 h-4 mr-2" />
                   Отмена

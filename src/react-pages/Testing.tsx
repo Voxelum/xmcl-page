@@ -18,7 +18,8 @@ import {
   Lightning,
   MonitorPlay,
   AppleLogo,
-  User
+  User,
+  GithubLogo
 } from "@phosphor-icons/react";
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -303,17 +304,25 @@ const TestingContent = () => {
                 ))}
               </div>
             ) : error ? (
-              <div className="p-8 bg-red-500/10 border border-red-500/20 rounded-2xl text-center">
-                <XCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
-                <p className="text-red-500 font-medium">Failed to load builds</p>
-                <Button 
-                  variant="outline" 
-                  className="mt-4"
-                  onClick={() => window.location.reload()}
-                >
-                  Retry
-                </Button>
-              </div>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="p-8 bg-card border border-border rounded-2xl text-center shadow-xl max-w-xl mx-auto"
+              >
+                <GithubLogo className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
+                <h3 className="text-xl font-bold text-foreground mb-3">GitHub API Rate Limit Exceeded</h3>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+                  It seems you have visited our website too frequently, triggering the GitHub API rate limit. If you want to download launcher files, view live test actions, or check recent runs, please check our official GitHub page!
+                </p>
+                <div className="flex justify-center gap-4 flex-wrap">
+                  <Button variant="outline" className="border-border hover:bg-muted text-foreground" onClick={() => window.location.reload()}>
+                    Retry
+                  </Button>
+                  <Button className="bg-primary hover:bg-primary/95 text-white border-0 shadow-md shadow-primary/20" onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/actions', '_blank')}>
+                    View on GitHub
+                  </Button>
+                </div>
+              </motion.div>
             ) : (
               <div className="space-y-4">
                 {runs.map((run: any, index: number) => (
