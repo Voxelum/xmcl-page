@@ -2,6 +2,11 @@
 
 本指南用于在 XMCL 中配置内置 AI Agent。
 
+::: tip Agnes AI 完全免费
+**Agnes AI 完全免费使用。** 你只需免费创建一个 API Key，
+无需付费、订阅或绑定银行卡。
+:::
+
 完成后，你应该可以：
 
 - 打开 AI Agent 对话框；
@@ -12,7 +17,7 @@
 
 - 最新版 XMCL。
 - 可用网络连接。
-- Agnes AI API Key。
+- Agnes AI API Key（免费）。
 
 ## 第一步：获取 Agnes AI API Key
 

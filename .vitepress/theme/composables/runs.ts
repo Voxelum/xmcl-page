@@ -15,13 +15,20 @@ export async function getRuns(token: string): Promise<WorkflowRun[]> {
         headers: token ? {
             Authorization: `token ${token}`,
         } : {},
-    }).then((runResponse) => runResponse.json()).then(processData).catch((e) => {
+    }).then(async (runResponse) => {
+        const data = await runResponse.json();
+        if (!runResponse.ok) {
+            throw new Error(`GitHub API error ${runResponse.status}: ${data?.message ?? 'Unknown error'}`);
+        }
+        return processData(data);
+    }).catch((e) => {
         console.error('Failed to fetch runs', e);
         return [];
     });
     return runResponse
 }
 
-const processData = (data: { workflow_runs: WorkflowRun[] }) => {
-    return data.workflow_runs.filter(r => r.status !== 'in_progress').sort((a, b) => a.created_at > b.created_at ? -1 : 1);
+const processData = (data: { workflow_runs?: WorkflowRun[] }) => {
+    const workflowRuns = Array.isArray(data?.workflow_runs) ? data.workflow_runs : [];
+    return workflowRuns.filter(r => r.status !== 'in_progress').sort((a, b) => a.created_at > b.created_at ? -1 : 1);
 }
