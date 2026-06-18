@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { Input } from "@/components/ui/input";
-import { Globe, MagnifyingGlass, Check, Sparkle, ArrowLeft, X } from "@phosphor-icons/react";
+import { Globe, MagnifyingGlass, Check, Sparkle, ArrowLeft, X, CaretRight } from "@phosphor-icons/react";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { languageConfigs } from "@/i18n/languageConfigs";
 import { motion, AnimatePresence } from "framer-motion";
@@ -102,9 +102,7 @@ export const LanguageTrigger = ({ onClick }: { onClick?: () => void }) => {
           <span className="text-[10px] bg-yellow-500/20 text-yellow-600 dark:text-yellow-400 px-1.5 py-0.5 rounded-full">AUTO</span>
         )}
       </div>
-      <svg className="w-4 h-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
+      <CaretRight className="w-4 h-4 opacity-50" />
     </button>
   );
 };

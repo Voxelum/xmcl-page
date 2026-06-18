@@ -8,6 +8,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import MermaidDiagram from "./MermaidDiagram";
 import "katex/dist/katex.min.css";
+import { ArrowSquareOut } from "@phosphor-icons/react";
 
 interface MarkdownRendererProps {
   content: string;
@@ -113,9 +114,7 @@ const components = {
       {...props}
     >
       {children}
-      <svg className="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
+      <ArrowSquareOut className="w-3.5 h-3.5 opacity-60" />
     </a>
   ),
   ul: ({ children, ...props }: any) => (

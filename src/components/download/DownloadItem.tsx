@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DownloadSimple, Copy, Check } from "@phosphor-icons/react";
+import { DownloadSimple, Copy, Check, HardDrive } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/useTranslation";
 import { toast } from "sonner";
@@ -60,18 +60,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
             <div className="flex items-center gap-4 flex-wrap">
               {size && (
                 <div className="flex items-center gap-2 text-sm">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="w-4 h-4 text-muted-foreground"
-                  >
-                    <path
-                      d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m14-7l-5-5m0 0L7 8m5-5v12"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                  <HardDrive className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground font-medium">
                     {size} {t("downloadMessages.sizeMB")}
                   </span>
@@ -79,18 +68,7 @@ export const DownloadItem: React.FC<DownloadItemProps> = ({
               )}
               {downloads !== undefined && (
                 <div className="flex items-center gap-2 text-sm">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="w-4 h-4 text-muted-foreground"
-                  >
-                    <path
-                      d="M12 2v13m0 0l-4-4m4 4l4-4M5 17v3a2 2 0 002 2h10a2 2 0 002-2v-3"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
+                  <DownloadSimple className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground font-medium">
                     {formatNumber(downloads)}{" "}
                     {t("downloadMessages.downloads")}

@@ -19,16 +19,15 @@ export interface GitHubAsset {
 export interface PlatformAssets {
   windows: {
     x64: GitHubAsset[];
-    arm: GitHubAsset[];
+    app: GitHubAsset[];
   };
   macos: {
     x64: GitHubAsset[];
-    arm: GitHubAsset[];
+    arm64: GitHubAsset[];
   };
   linux: {
     x64: GitHubAsset[];
-    arm: GitHubAsset[];
-    appimage: GitHubAsset[];
+    arm64: GitHubAsset[];
   };
 }
 

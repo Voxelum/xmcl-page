@@ -262,7 +262,18 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
   const [showFilters, setShowFilters] = useState(false);
 
   // Data fetching
-  const { posts, categories, featured, isLoading, fetchPostContent } = useBlogPosts();
+  const { posts, categories: rawCategories, featured, isLoading, fetchPostContent } = useBlogPosts();
+
+  // Dynamically extract categories from posts tags
+  const categories = useMemo(() => {
+    const tagsSet = new Set<string>();
+    posts.forEach((post) => {
+      post.tags?.forEach((tag) => {
+        if (tag) tagsSet.add(tag);
+      });
+    });
+    return Array.from(tagsSet);
+  }, [posts]);
 
   const { data: postContent } = useQuery({
     queryKey: ["blog-post", id],

@@ -8,7 +8,9 @@ const supportedLocales = new Set(languageConfigs.map(lang => lang.code));
 export function isSupportedLocale(locale: string): locale is SupportedLocale {
   return supportedLocales.has(locale as SupportedLocale);
 }
-const translationModules = import.meta.glob('../translations/*.json', { eager: false });
+// Eager load all translations to make language switching instantaneous and stable.
+const translationModules = import.meta.glob('../translations/*.json', { eager: true }) as Record<string, { default: Translations }>;
+
 const localeToModulePath: Record<string, string> = {
   en: '../translations/en.json',
   ru: '../translations/ru.json',
@@ -27,46 +29,30 @@ const localeToModulePath: Record<string, string> = {
   tr: '../translations/tr.json',
 };
 
-const translationsCache = new Map<SupportedLocale, Promise<Translations>>();
+// Fallback to English module directly
+const defaultTranslations = (translationModules['../translations/en.json']?.default || {}) as Translations;
+
+export function loadTranslationsSync(locale: SupportedLocale): Translations {
+  if (!isSupportedLocale(locale)) {
+    return defaultTranslations;
+  }
+
+  // Handle zh-Hant mapping to zh if zh-Hant.json is not present
+  const mappedLocale = (locale as string) === 'zh-Hant' ? 'zh' : locale;
+
+  const modulePath = localeToModulePath[mappedLocale];
+  if (!modulePath) {
+    return defaultTranslations;
+  }
+
+  const module = translationModules[modulePath];
+  return module ? module.default : defaultTranslations;
+}
 
 export function loadTranslations(locale: SupportedLocale): Promise<Translations> {
-  if (!isSupportedLocale(locale)) {
-    console.warn(`Attempted to load unsupported locale: ${locale}`);
-    return Promise.resolve({} as Translations);
-  }
-
-  if (translationsCache.has(locale)) {
-    return translationsCache.get(locale)!;
-  }
-
-  const modulePath = localeToModulePath[locale];
-  const moduleLoader = translationModules[modulePath];
-
-  if (!moduleLoader) {
-    console.error(`No translation module found for locale: ${locale}`);
-    if (locale !== DEFAULT_LOCALE) {
-      console.log(`Falling back to default locale: ${DEFAULT_LOCALE}`);
-      return loadTranslations(DEFAULT_LOCALE);
-    }
-    return Promise.resolve({} as Translations);
-  }
-
-  const translationPromise = (moduleLoader() as Promise<{ default: Translations }>)
-    .then(module => module.default)
-    .catch(error => {
-      console.error(`Failed to load translations for ${locale}:`, error);
-      translationsCache.delete(locale);
-      if (locale !== DEFAULT_LOCALE) {
-        console.log(`Falling back to default locale: ${DEFAULT_LOCALE}`);
-        return loadTranslations(DEFAULT_LOCALE);
-      }
-      return {} as Translations;
-    });
-
-  translationsCache.set(locale, translationPromise);
-  return translationPromise;
+  return Promise.resolve(loadTranslationsSync(locale));
 }
 
 export function clearTranslationsCache() {
-  translationsCache.clear();
+  // No-op since we eager load
 }

@@ -104,13 +104,13 @@ const DownloadArtifacts: React.FC<DownloadArtifactsProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mx-auto mb-4">
-          <Monitor className="w-8 h-8 text-slate-400" />
+        <div className="w-16 h-16 bg-muted border border-border rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <Monitor className="w-8 h-8 text-muted-foreground" />
         </div>
-        <h3 className="text-xl font-semibold text-white mb-2">
+        <h3 className="text-xl font-semibold text-foreground mb-2">
           {t('testing.noArtifacts')}
         </h3>
-        <p className="text-slate-400">
+        <p className="text-muted-foreground">
           No artifacts available for {platform}
         </p>
       </motion.div>
@@ -126,25 +126,28 @@ const DownloadArtifacts: React.FC<DownloadArtifactsProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 * index }}
         >
-          <Card className="p-6 bg-white/10 border-white/10 shadow-xl hover:bg-white/15 transition-all duration-300 group">
-            <div className="text-center">
-              <div className="w-14 h-14 bg-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Lightning className="w-7 h-7 text-white" />
+          <Card className="p-6 bg-card border border-border hover:border-primary/30 shadow-md hover:shadow-lg transition-all duration-300 group relative overflow-hidden">
+            {/* Background accent glow on hover */}
+            <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            
+            <div className="text-center relative z-10">
+              <div className="w-14 h-14 bg-primary/10 text-primary border border-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Lightning className="w-7 h-7" />
               </div>
 
-              <h3 className="text-sm font-bold text-white mb-2 truncate px-2" title={artifact.name}>
+              <h3 className="text-sm font-bold text-foreground mb-2 truncate px-2" title={artifact.name}>
                 {artifact.name}
               </h3>
 
               <div className="flex justify-center gap-2 mb-4">
-                <Badge variant="secondary" className="text-xs bg-black/20 text-slate-300">
+                <Badge variant="secondary" className="text-xs bg-muted text-muted-foreground border-0">
                   {formatFileSize(artifact.size_in_bytes)}
                 </Badge>
                 <Badge
-                  className={`text-xs ${
+                  className={`text-xs border-0 ${
                     artifact.expired
-                      ? 'bg-red-500 text-white'
-                      : 'bg-green-500 text-white'
+                      ? 'bg-red-500/10 text-red-600 dark:text-red-400'
+                      : 'bg-green-500/10 text-green-600 dark:text-green-400'
                   }`}
                 >
                   {artifact.expired ? 'Expired' : 'Available'}
@@ -155,10 +158,10 @@ const DownloadArtifacts: React.FC<DownloadArtifactsProps> = ({
                 onClick={() => handleDownload(artifact)}
                 disabled={artifact.expired}
                 size="sm"
-                className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/10"
+                className="w-full bg-primary hover:bg-primary/95 text-white border-0 shadow-sm"
               >
                 <Download className="w-4 h-4 mr-2" />
-                {t('testing.downloadArtifact')}
+                {t('testing.downloadArtifact') || 'Download'}
               </Button>
             </div>
           </Card>

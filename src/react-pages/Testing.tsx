@@ -18,6 +18,8 @@ import {
   Lightning,
   MonitorPlay,
   AppleLogo,
+  Laptop,
+  LinuxLogo,
   User,
   GithubLogo
 } from "@phosphor-icons/react";
@@ -27,52 +29,37 @@ import { DownloadArtifacts } from '@/components/testing/DownloadArtifacts';
 import { AppShell } from '@/components/AppShell';
 import { Badge } from '@/components/ui/badge';
 
-// Platform Icons
-const WindowsIcon = () => (
-  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
-  </svg>
-);
-
-const MacOSIcon = () => (
-  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.21-1.96 1.07-3.11-1.05.05-2.31.74-3.03 1.59-.67.78-1.26 2.05-1.11 3.17 1.17.09 2.36-.75 3.07-1.65z"/>
-  </svg>
-);
-
-const LinuxIcon = () => (
-  <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
-    <path d="M12.03 0C5.396 0 .024 5.362.024 11.988S5.384 24 12.03 24c6.634 0 11.964-5.362 11.964-11.988S18.664 0 12.03 0zm4.512 20.328c-1.2 1.392-3.528 1.152-4.488.984-1.008.168-3.36.36-4.512-.984-.96-1.152.024-3.84 1.392-4.968-1.08-2.352-.336-4.92 1.776-6.504.624-.48 2.112-.624 2.808-.024.696-.6 2.184-.456 2.808.024 2.112 1.584 2.856 4.152 1.776 6.504 1.32 1.128 2.424 3.816 1.344 4.968h-2.904z"/>
-  </svg>
-);
+const WindowsIcon = () => <Laptop className="w-5 h-5" />;
+const MacOSIcon = () => <AppleLogo className="w-5 h-5" />;
+const LinuxIcon = () => <LinuxLogo className="w-5 h-5" />;
 
 const platforms = [
-  { key: 'windows', label: 'Windows', icon: WindowsIcon, color: 'bg-blue-500' },
-  { key: 'macos', label: 'macOS', icon: MacOSIcon, color: 'bg-slate-600' },
-  { key: 'linux', label: 'Linux', icon: LinuxIcon, color: 'bg-orange-500' },
+  { key: 'windows', label: 'Windows', icon: WindowsIcon, activeColor: 'bg-primary border-primary hover:bg-primary/95 text-white' },
+  { key: 'macos', label: 'macOS', icon: MacOSIcon, activeColor: 'bg-foreground border-foreground text-background dark:text-background hover:bg-foreground/90' },
+  { key: 'linux', label: 'Linux', icon: LinuxIcon, activeColor: 'bg-primary border-primary hover:bg-primary/95 text-white' },
 ];
 
 const StatusBadge = memo(({ conclusion }: { conclusion: string }) => {
   switch (conclusion) {
     case 'success':
       return (
-        <Badge className="bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20 gap-1.5">
+        <Badge className="bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20 px-2.5 py-0.5 text-xs font-semibold rounded-full gap-1">
           <CheckCircle className="w-3.5 h-3.5" />
           Success
         </Badge>
       );
     case 'failure':
       return (
-        <Badge className="bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20 gap-1.5">
+        <Badge className="bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20 px-2.5 py-0.5 text-xs font-semibold rounded-full gap-1">
           <XCircle className="w-3.5 h-3.5" />
           Failed
         </Badge>
       );
     default:
       return (
-        <Badge className="bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 gap-1.5">
+        <Badge className="bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 px-2.5 py-0.5 text-xs font-semibold rounded-full gap-1">
           <WarningCircle className="w-3.5 h-3.5" />
-          {conclusion || 'Unknown'}
+          {conclusion || 'Pending'}
         </Badge>
       );
   }
@@ -80,13 +67,6 @@ const StatusBadge = memo(({ conclusion }: { conclusion: string }) => {
 
 // Build Card Component
 const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestSuccess }: any) => {
-  const formatDate = (dateString: string) => {
-    const d = new Date(dateString);
-    return d.toLocaleDateString(undefined, {
-      month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
-    });
-  };
-
   const formatRelativeTime = (dateString: string) => {
     const diff = Date.now() - new Date(dateString).getTime();
     const hours = Math.floor(diff / (1000 * 60 * 60));
@@ -101,70 +81,55 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       className={`group relative overflow-hidden rounded-2xl transition-all duration-300
-        bg-card
-        border ${isSuccess ? 'border-border' : 'border-red-500/20'}
-        hover:shadow-xl hover:shadow-indigo-500/5
-        ${isLatestSuccess ? 'ring-2 ring-green-500/30' : ''}
+        bg-card border border-border/80 hover:border-primary/40
+        ${isSuccess ? 'border-l-4 border-l-green-500' : 'border-l-4 border-l-red-500'}
+        ${isLatestSuccess ? 'ring-2 ring-primary/20 shadow-lg' : 'hover:shadow-md'}
       `}
     >
-      {/* Latest success indicator */}
-      {isLatestSuccess && (
-        <div className="absolute top-0 left-0 right-0 h-1 bg-green-500" />
-      )}
-
-      {/* Main content */}
       <div className="p-5 md:p-6">
-        <div className="flex items-start gap-4">
-          {/* Status indicator */}
-          <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center
-            ${isSuccess 
-              ? 'bg-green-500/10 text-green-500' 
-              : 'bg-red-500/10 text-red-500'
-            }
-          `}>
-            {isSuccess ? <CheckCircle className="w-6 h-6" /> : <XCircle className="w-6 h-6" />}
-          </div>
-
-          {/* Info */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          {/* Main details */}
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-3 mb-2 flex-wrap">
-              <h3 className="text-lg font-bold text-foreground truncate">
+            <div className="flex items-center gap-3 mb-2.5 flex-wrap">
+              <h3 className="text-lg font-bold text-foreground truncate max-w-[90%] md:max-w-[70%]">
                 {run.display_title}
               </h3>
               <StatusBadge conclusion={run.conclusion} />
               {isLatestSuccess && (
-                <Badge className="bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20">
-                  <Sparkle className="w-3 h-3 mr-1" />
-                  Latest
+                <Badge className="bg-primary/10 text-primary border border-primary/20 font-bold px-2.5 py-0.5 text-xs rounded-full">
+                  <Sparkle className="w-3 h-3 mr-1 fill-current animate-pulse" />
+                  LATEST RUN
                 </Badge>
               )}
             </div>
 
-            <div className="flex items-center gap-4 text-sm text-muted-foreground flex-wrap">
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" />
-                {formatRelativeTime(run.updated_at)}
-              </span>
-              <span className="flex items-center gap-1.5 font-mono text-xs bg-accent text-foreground px-2 py-0.5 rounded-md">
+            {/* Meta tags / tech metrics row */}
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5 font-mono text-xs bg-muted border border-border px-2 py-0.5 rounded-md text-foreground/80">
                 #{run.run_number}
               </span>
               <span className="flex items-center gap-1.5">
-                <GitBranch className="w-4 h-4" />
+                <Clock className="w-4 h-4 text-muted-foreground/75" />
+                {formatRelativeTime(run.updated_at)}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <GitBranch className="w-4 h-4 text-muted-foreground/75" />
                 {run.head_branch}
               </span>
               <a 
                 href={run.actor?.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-indigo-500 transition-colors"
+                className="inline-flex items-center gap-1.5 hover:text-primary transition-colors font-medium text-foreground/90 group/actor"
+                onClick={(e) => e.stopPropagation()}
               >
                 <img 
                   src={run.actor?.avatar_url} 
                   alt="" 
-                  className="w-5 h-5 rounded-full"
+                  className="w-5 h-5 rounded-full border border-border group-hover/actor:border-primary/50 transition-colors"
                   loading="lazy" 
                 />
                 {run.actor?.login}
@@ -172,22 +137,22 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
             </div>
           </div>
 
-          {/* Expand button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => onToggle(run.id)}
-            className={`flex items-center gap-2 rounded-xl transition-all
-              ${isExpanded 
-                ? 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400' 
-                : 'text-muted-foreground hover:text-indigo-600 hover:bg-accent'
-              }
-            `}
-          >
-            <DownloadSimple className="w-4 h-4" />
-            <span className="hidden sm:inline">Downloads</span>
-            <CaretDown className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
-          </Button>
+          {/* Action button column */}
+          <div className="flex items-center gap-2 self-end md:self-center">
+            <Button
+              onClick={() => onToggle(run.id)}
+              className={`flex items-center gap-2 px-5 py-2.5 h-11 rounded-xl transition-all font-semibold border
+                ${isExpanded 
+                  ? 'bg-primary text-white border-primary hover:bg-primary/95 shadow-md shadow-primary/25' 
+                  : 'bg-card border-border hover:bg-accent text-foreground hover:border-primary/30'
+                }
+              `}
+            >
+              <DownloadSimple className="w-4.5 h-4.5" />
+              <span>Downloads</span>
+              <CaretDown className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -199,12 +164,10 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden"
+            className="overflow-hidden bg-muted/40 border-t border-border/60"
           >
-            <div className="px-5 pb-5 md:px-6 md:pb-6 pt-0">
-              <div className="p-4 bg-background rounded-xl border border-border">
-                <DownloadArtifacts runId={run.id} platform={selectedPlatform} />
-              </div>
+            <div className="p-5 md:p-6">
+              <DownloadArtifacts runId={run.id} platform={selectedPlatform} />
             </div>
           </motion.div>
         )}
@@ -212,6 +175,7 @@ const BuildCard = memo(({ run, isExpanded, onToggle, selectedPlatform, isLatestS
     </motion.div>
   );
 });
+BuildCard.displayName = 'BuildCard';
 
 // --- Main Content ---
 
@@ -236,9 +200,8 @@ const TestingContent = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-background text-foreground">
-
       <div className="container mx-auto px-4 py-20 md:py-28 relative z-10">
-
+        
         {/* Header */}
         <header className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
           <motion.div
@@ -246,42 +209,42 @@ const TestingContent = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge className="mb-6 px-4 py-1.5 bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 gap-2">
-              <Warning className="w-4 h-4" />
+            <Badge className="mb-6 px-4 py-1.5 bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 gap-2 font-bold rounded-full border">
+              <Warning className="w-4 h-4 text-amber-500" />
               Experimental Builds
             </Badge>
 
-            <h1 className="text-4xl md:text-6xl font-black mb-6 text-foreground">
-              {t('testing.title')}
+            <h1 className="text-4xl md:text-6xl font-black mb-6 text-foreground tracking-tight">
+              {t('testing.title') || 'Experimental Testing'}
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t('testing.subtitle')}
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              {t('testing.subtitle') || 'Download experimental test builds generated automatically from Github Actions. Ideal for testing bleeding edge features.'}
             </p>
           </motion.div>
         </header>
 
         {/* Platform Selector */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-4xl mx-auto mb-10"
+          className="max-w-4xl mx-auto mb-12"
         >
-          <div className="flex justify-center gap-3 p-2 bg-card rounded-2xl border border-border shadow-lg w-fit mx-auto animate-in fade-in duration-300">
+          <div className="flex justify-center gap-3 p-2 bg-card rounded-2xl border border-border shadow-md w-fit mx-auto">
             {platforms.map((platform) => (
               <button
                 key={platform.key}
                 onClick={() => setSelectedPlatform(platform.key)}
-                className={`flex items-center gap-3 px-6 py-3 rounded-xl font-medium transition-all duration-300
+                className={`flex items-center gap-3.5 px-6 py-3 rounded-xl font-semibold transition-all duration-300 border
                   ${selectedPlatform === platform.key
-                    ? `${platform.color} text-white shadow-lg`
-                    : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                    ? `${platform.activeColor} shadow-md border-transparent scale-[1.02]`
+                    : 'bg-card border-transparent text-muted-foreground hover:bg-muted hover:text-foreground hover:border-border'
                   }
                 `}
               >
                 <platform.icon />
-                <span className="hidden sm:inline">{platform.label}</span>
+                <span className="text-sm">{platform.label}</span>
               </button>
             ))}
           </div>
@@ -292,7 +255,7 @@ const TestingContent = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-bold text-foreground flex items-center gap-2">
-                <Lightning className="w-5 h-5 text-indigo-500" />
+                <Lightning className="w-5 h-5 text-primary" />
                 Recent Builds
               </h2>
             </div>
@@ -318,7 +281,7 @@ const TestingContent = () => {
                   <Button variant="outline" className="border-border hover:bg-muted text-foreground" onClick={() => window.location.reload()}>
                     Retry
                   </Button>
-                  <Button className="bg-primary hover:bg-primary/95 text-white border-0 shadow-md shadow-primary/20" onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/actions', '_blank')}>
+                  <Button className="bg-primary hover:bg-primary/95 text-white border-0 shadow-md shadow-primary/20 animate-in fade-in" onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/actions', '_blank')}>
                     View on GitHub
                   </Button>
                 </div>
@@ -346,15 +309,15 @@ const TestingContent = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-5 bg-amber-50 dark:bg-amber-500/10 rounded-2xl border border-amber-200 dark:border-amber-500/20"
+              className="p-6 bg-amber-500/5 dark:bg-amber-500/5 rounded-2xl border border-amber-500/20 text-amber-700 dark:text-amber-400"
             >
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                  <WarningOctagon className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20">
+                  <WarningOctagon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-amber-800 dark:text-amber-400 mb-1">Warning</h3>
-                  <p className="text-sm text-amber-700 dark:text-amber-200/80 leading-relaxed">
+                  <h3 className="font-bold text-amber-800 dark:text-amber-400 mb-1.5 text-base">Warning</h3>
+                  <p className="text-sm text-amber-700/80 dark:text-amber-200/70 leading-relaxed">
                     These are development builds. They may contain bugs or incomplete features. Always backup your data first.
                   </p>
                 </div>
@@ -366,31 +329,37 @@ const TestingContent = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="p-5 bg-card rounded-2xl border border-border"
+              className="p-6 bg-card rounded-2xl border border-border shadow-sm"
             >
-              <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
-                <Terminal className="w-5 h-5 text-indigo-500" />
+              <h3 className="font-bold text-foreground mb-5 flex items-center gap-2 text-base">
+                <Terminal className="w-5 h-5 text-primary" />
                 Quick Start
               </h3>
               
               <div className="space-y-4">
                 {[
-                  { num: 1, color: 'indigo', text: 'Click download button on any successful build' },
-                  { num: 2, color: 'purple', text: 'Extract the downloaded archive' },
-                  { num: 3, color: 'pink', text: 'Run the executable directly' },
+                  { num: '01', title: 'Download Artifact', text: 'Select your target operating system, choose a successful build, expand it, and click to download the ZIP file.' },
+                  { num: '02', title: 'Extract Files', text: 'Locate the downloaded archive and extract its contents to any directory of your preference.' },
+                  { num: '03', title: 'Run and Play', text: 'Launch the main launcher executable directly without any complex system configurations.' },
                 ].map((step) => (
-                  <div key={step.num} className="flex gap-3">
-                    <div className={`flex-shrink-0 w-7 h-7 rounded-lg bg-${step.color}-500/20 text-${step.color}-500 flex items-center justify-center font-bold text-sm`}>
+                  <div key={step.num} className="flex gap-4 p-4 rounded-xl border border-border/80 bg-background/50 relative overflow-hidden group/step hover:border-primary/25 transition-all">
+                    <div className="absolute top-0 right-0 p-1 font-mono text-3xl font-extrabold opacity-[0.02] dark:opacity-[0.04] text-foreground group-hover/step:text-primary group-hover/step:opacity-[0.08] transition-all">
                       {step.num}
                     </div>
-                    <p className="text-sm text-muted-foreground pt-0.5">{step.text}</p>
+                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                      {step.num}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-foreground text-sm mb-1">{step.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{step.text}</p>
+                    </div>
                   </div>
                 ))}
               </div>
 
               <Button
                 variant="outline"
-                className="w-full mt-5 gap-2 bg-background border border-border text-foreground hover:bg-accent"
+                className="w-full mt-6 gap-2 bg-background border border-border text-foreground hover:bg-primary hover:text-white hover:border-transparent transition-all duration-300 rounded-xl"
                 onClick={() => window.open('https://github.com/Voxelum/x-minecraft-launcher/issues', '_blank')}
               >
                 Report Issue

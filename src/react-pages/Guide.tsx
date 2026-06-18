@@ -230,7 +230,15 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
   });
 
   const posts: GuidePost[] = config?.posts || [];
-  const categories: string[] = config?.categories || [];
+  const categories = useMemo(() => {
+    const tagsSet = new Set<string>();
+    posts.forEach((post) => {
+      post.tags?.forEach((tag) => {
+        if (tag) tagsSet.add(tag);
+      });
+    });
+    return Array.from(tagsSet);
+  }, [posts]);
   const featured: string[] = config?.featured || [];
 
   const filteredPosts = useMemo(() => {

@@ -172,9 +172,13 @@ export const StaggeredMenu = () => {
                   /* =================== MAIN MENU VIEW =================== */
                   <motion.div
                     key="menu-view"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    initial="closed"
+                    animate="open"
+                    exit="closed"
+                    variants={{
+                      closed: { opacity: 0, x: -20 },
+                      open: { opacity: 1, x: 0 }
+                    }}
                     transition={{ duration: 0.2 }}
                   >
                     {/* Navigation Items */}

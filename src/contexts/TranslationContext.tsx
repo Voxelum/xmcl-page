@@ -6,9 +6,34 @@ import React, {
   useCallback,
   useEffect,
 } from "react";
-import type { SupportedLocale, Translations } from "@/types/i18n";
-import { loadTranslations, DEFAULT_LOCALE, isSupportedLocale } from "@/i18n";
+import { loadTranslations, DEFAULT_LOCALE, isSupportedLocale, loadTranslationsSync } from "@/i18n";
 import enTranslations from "@/translations/en.json";
+
+// Global cache and state to persist values across Astro client-side page transitions
+let globalLocale: SupportedLocale = DEFAULT_LOCALE;
+let globalTranslations: Translations = enTranslations as Translations;
+const globalTranslationsMap = new Map<SupportedLocale, Translations>([[DEFAULT_LOCALE, enTranslations as Translations]]);
+let isInitializedFromStorage = false;
+
+// Declare global field on window interface for hydration tracking
+declare global {
+  interface Window {
+    __REACT_HYDRATED__?: boolean;
+  }
+}
+
+const initFromStorage = () => {
+  if (isInitializedFromStorage || typeof window === "undefined") return;
+  try {
+    const savedLocale = localStorage.getItem("language") as SupportedLocale;
+    if (savedLocale && isSupportedLocale(savedLocale)) {
+      globalLocale = savedLocale;
+      globalTranslations = loadTranslationsSync(savedLocale);
+      globalTranslationsMap.set(savedLocale, globalTranslations);
+    }
+  } catch {}
+  isInitializedFromStorage = true;
+};
 
 interface TranslationContextType {
   locale: SupportedLocale;
@@ -27,13 +52,32 @@ interface TranslationProviderProps {
 }
 
 export function TranslationProvider({ children }: TranslationProviderProps) {
-  const [locale, setLocale] = useState<SupportedLocale>(DEFAULT_LOCALE);
-  const [translationsMap, setTranslationsMap] = useState<
-    Map<SupportedLocale, Translations>
-  >(() => new Map([[DEFAULT_LOCALE, enTranslations as Translations]]));
-  const [currentTranslations, setCurrentTranslations] = useState<Translations>(
-    enTranslations as Translations,
-  );
+  // Ensure we check storage on mount/first render
+  if (typeof window !== "undefined" && !isInitializedFromStorage) {
+    initFromStorage();
+  }
+
+  // To prevent hydration mismatch, we must initialize React states with DEFAULT_LOCALE on initial mount,
+  // but if the window indicates we have already hydrated once (i.e. client-side page load), we can use global values directly.
+  const [locale, setLocale] = useState<SupportedLocale>(() => {
+    if (typeof window === "undefined") return DEFAULT_LOCALE;
+    return window.__REACT_HYDRATED__ ? globalLocale : DEFAULT_LOCALE;
+  });
+
+  const [translationsMap, setTranslationsMap] = useState<Map<SupportedLocale, Translations>>(() => {
+    if (typeof window === "undefined" || !window.__REACT_HYDRATED__) {
+      return new Map([[DEFAULT_LOCALE, enTranslations as Translations]]);
+    }
+    return new Map(globalTranslationsMap);
+  });
+
+  const [currentTranslations, setCurrentTranslations] = useState<Translations>(() => {
+    if (typeof window === "undefined" || !window.__REACT_HYDRATED__) {
+      return enTranslations as Translations;
+    }
+    return globalTranslations;
+  });
+
   const [isLoading, setIsLoading] = useState(false);
 
   const changeLanguage = useCallback(
@@ -47,103 +91,52 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
         return;
       }
 
-      // If we already have it cached, switch synchronously
-      if (translationsMap.has(newLocale)) {
-        setLocale(newLocale);
-        setCurrentTranslations(translationsMap.get(newLocale)!);
-        // Persist explicit user choice so the app can remember preference on next visit.
-        try {
-          localStorage.setItem("language", newLocale);
-        } catch {
-          /* ignore localStorage errors */
-        }
-        // Only set the document language and direction when user explicitly changes language
-        try {
-          document.documentElement.lang = newLocale;
-          document.documentElement.dir = newLocale === "ar" ? "rtl" : "ltr";
-        } catch {
-          /* ignore DOM errors in non-browser environments */
-        }
-        return;
-      }
+      // Load synchronously (instant and cached)
+      const loaded = loadTranslationsSync(newLocale);
+      
+      globalLocale = newLocale;
+      globalTranslations = loaded;
+      globalTranslationsMap.set(newLocale, loaded);
 
-      // Otherwise, load lazily
-      setIsLoading(true);
+      setLocale(newLocale);
+      setCurrentTranslations(loaded);
+      setTranslationsMap(new Map(globalTranslationsMap));
+
+      // Persist choice
       try {
-        const loaded = await loadTranslations(newLocale);
-        setTranslationsMap((prev) => {
-          const next = new Map(prev);
-          next.set(newLocale, loaded);
-          return next;
-        });
-        setCurrentTranslations(loaded);
-        setLocale(newLocale);
-        try {
-          localStorage.setItem("language", newLocale);
-        } catch {
-          /* ignore localStorage errors */
-        }
-        try {
-          document.documentElement.lang = newLocale;
-          document.documentElement.dir = newLocale === "ar" ? "rtl" : "ltr";
-        } catch {
-          /* ignore DOM errors in non-browser environments */
-        }
-      } catch (error) {
-        console.error("Failed to load translations for", newLocale, error);
-      } finally {
-        setIsLoading(false);
-      }
+        localStorage.setItem("language", newLocale);
+      } catch {}
+
+      try {
+        document.documentElement.lang = newLocale;
+        document.documentElement.dir = newLocale === "ar" ? "rtl" : "ltr";
+      } catch {}
     },
-    [locale, translationsMap],
+    [locale],
   );
 
-  // On mount, check for a saved language preference and apply it.
+  // Sync state on initial mount to match client-side saved language preference
   useEffect(() => {
-    const initializeLanguage = async () => {
-      let savedLocale: string | null = null;
-      try {
-        savedLocale = localStorage.getItem("language");
-      } catch {
-        /* ignore localStorage errors */
-      }
+    const isFirstHydration = !window.__REACT_HYDRATED__;
+    window.__REACT_HYDRATED__ = true;
 
-      if (
-        savedLocale &&
-        isSupportedLocale(savedLocale) &&
-        savedLocale !== DEFAULT_LOCALE
-      ) {
-        // We have a saved, non-default language. Load it.
-        setIsLoading(true);
-        try {
-          const loaded = await loadTranslations(savedLocale);
-          setTranslationsMap((prev) => {
-            const next = new Map(prev);
-            next.set(savedLocale, loaded);
-            return next;
-          });
-          setCurrentTranslations(loaded);
-          setLocale(savedLocale);
-          try {
-            document.documentElement.lang = savedLocale;
-            document.documentElement.dir = savedLocale === "ar" ? "rtl" : "ltr";
-          } catch {
-            /* ignore DOM errors in non-browser environments */
-          }
-        } catch (error) {
-          console.error(
-            "Failed to load saved translations for",
-            savedLocale,
-            error,
-          );
-        } finally {
-          setIsLoading(false);
-        }
-      }
-    };
+    if (isFirstHydration) {
+      // Initialize if not already done
+      initFromStorage();
 
-    initializeLanguage();
-  }, []); // Run only on mount
+      if (globalLocale !== DEFAULT_LOCALE) {
+        setLocale(globalLocale);
+        setCurrentTranslations(globalTranslations);
+        setTranslationsMap(new Map(globalTranslationsMap));
+      }
+    }
+
+    // Always ensure DOM attributes match the current locale on page load/remount
+    try {
+      document.documentElement.lang = globalLocale;
+      document.documentElement.dir = globalLocale === "ar" ? "rtl" : "ltr";
+    } catch {}
+  }, []);
 
   // t: safe translation getter with fallbacks (current -> English -> fallback -> key)
   const t = useCallback(
