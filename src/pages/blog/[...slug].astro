@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Blog from "../../react-pages/Blog";
+import { getAllBlogPosts } from "../../utils/blogUtils";
+
+export async function getStaticPaths() {
+  const posts = await getAllBlogPosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout title="Blog Post - X Minecraft Launcher" description="Read our blog post about X Minecraft Launcher.">
+  <Blog client:load initialSlug={slug} />
+</Layout>

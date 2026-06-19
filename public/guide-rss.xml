@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>XMCL Guides</title>
+    <link>https://xmcl.app/guide</link>
+    <atom:link href="https://xmcl.app/guide-rss.xml" rel="self" type="application/rss+xml" />
+    <description>Latest guides and tutorials from XMCL</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 22 May 2026 18:10:03 GMT</lastBuildDate>
+    <generator>XMCL Website</generator>
+
+    <item>
+      <title><![CDATA[I18n Web]]></title>
+      <link>https://xmcl.app/guide/i18n-en</link>
+      <guid>https://xmcl.app/guide/i18n-en</guid>
+      <description><![CDATA[How do I add a translation for a website?]]></description>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[Baneronetwo]]></author>
+      <category><![CDATA[web]]></category>
+      <category><![CDATA[i18n]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[I18n Web (Українська)]]></title>
+      <link>https://xmcl.app/guide/i18n-uk</link>
+      <guid>https://xmcl.app/guide/i18n-uk</guid>
+      <description><![CDATA[Як мені додати переклад для веб-сайту?]]></description>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[Baneronetwo]]></author>
+      <category><![CDATA[web]]></category>
+      <category><![CDATA[i18n]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[I18n Web (中文)]]></title>
+      <link>https://xmcl.app/guide/i18n-zh</link>
+      <guid>https://xmcl.app/guide/i18n-zh</guid>
+      <description><![CDATA[我如何为网站添加翻译？]]></description>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[Baneronetwo]]></author>
+      <category><![CDATA[web]]></category>
+      <category><![CDATA[i18n]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Installation Guide]]></title>
+      <link>https://xmcl.app/guide/install</link>
+      <guid>https://xmcl.app/guide/install</guid>
+      <description><![CDATA[Complete guide to installing XMCL on Windows, macOS, and Linux]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[installation]]></category>
+      <category><![CDATA[windows]]></category>
+      <category><![CDATA[macos]]></category>
+      <category><![CDATA[linux]]></category>
+      <category><![CDATA[beginner]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Appearance Guide]]></title>
+      <link>https://xmcl.app/guide/appearance</link>
+      <guid>https://xmcl.app/guide/appearance</guid>
+      <description><![CDATA[Customize colors, themes, and background effects in XMCL]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[appearance]]></category>
+      <category><![CDATA[themes]]></category>
+      <category><![CDATA[customization]]></category>
+      <category><![CDATA[beginner]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Contributing Guide]]></title>
+      <link>https://xmcl.app/guide/contributing</link>
+      <guid>https://xmcl.app/guide/contributing</guid>
+      <description><![CDATA[Learn how to contribute to XMCL development]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[contributing]]></category>
+      <category><![CDATA[development]]></category>
+      <category><![CDATA[advanced]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[What is Modloader and Why I Need That]]></title>
+      <link>https://xmcl.app/guide/modloader</link>
+      <guid>https://xmcl.app/guide/modloader</guid>
+      <description><![CDATA[Understanding Minecraft mod loaders: Forge, Fabric, NeoForge, and Quilt]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[modloader]]></category>
+      <category><![CDATA[forge]]></category>
+      <category><![CDATA[fabric]]></category>
+      <category><![CDATA[neoforge]]></category>
+      <category><![CDATA[quilt]]></category>
+      <category><![CDATA[beginner]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Update Guide]]></title>
+      <link>https://xmcl.app/guide/update</link>
+      <guid>https://xmcl.app/guide/update</guid>
+      <description><![CDATA[How to update XMCL and backup your data]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[update]]></category>
+      <category><![CDATA[backup]]></category>
+      <category><![CDATA[appx]]></category>
+      <category><![CDATA[beginner]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[APPX Migration Guide]]></title>
+      <link>https://xmcl.app/guide/appx-migration</link>
+      <guid>https://xmcl.app/guide/appx-migration</guid>
+      <description><![CDATA[How to migrate from APPX to other formats]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[appx]]></category>
+      <category><![CDATA[migration]]></category>
+      <category><![CDATA[windows]]></category>
+      <category><![CDATA[intermediate]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Localization Guide]]></title>
+      <link>https://xmcl.app/guide/localization</link>
+      <guid>https://xmcl.app/guide/localization</guid>
+      <description><![CDATA[How to add translations and localize XMCL]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[localization]]></category>
+      <category><![CDATA[i18n]]></category>
+      <category><![CDATA[translation]]></category>
+      <category><![CDATA[intermediate]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Multiplayer Guide]]></title>
+      <link>https://xmcl.app/guide/multiplayer</link>
+      <guid>https://xmcl.app/guide/multiplayer</guid>
+      <description><![CDATA[How to play multiplayer with XMCL]]></description>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[XMCL Team]]></author>
+      <category><![CDATA[multiplayer]]></category>
+      <category><![CDATA[p2p]]></category>
+      <category><![CDATA[online]]></category>
+      <category><![CDATA[beginner]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Demo minecraft]]></title>
+      <link>https://xmcl.app/guide/demo-minecraft</link>
+      <guid>https://xmcl.app/guide/demo-minecraft</guid>
+      <description><![CDATA[Minecraft demo version - how to solve this?]]></description>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[Voxelum]]></author>
+      <category><![CDATA[account]]></category>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[demo-minecraft]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Data Storage ]]></title>
+      <link>https://xmcl.app/guide/Data-Storage</link>
+      <guid>https://xmcl.app/guide/Data-Storage</guid>
+      <description><![CDATA[How to store data in Minecraft?]]></description>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[CIO10]]></author>
+      <category><![CDATA[Data-Storage]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[User]]></title>
+      <link>https://xmcl.app/guide/user</link>
+      <guid>https://xmcl.app/guide/user</guid>
+      <description><![CDATA[User data is stored under]]></description>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[CIO10]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[user]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Setting]]></title>
+      <link>https://xmcl.app/guide/setting</link>
+      <guid>https://xmcl.app/guide/setting</guid>
+      <description><![CDATA[Global Setting]]></description>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[CIO10]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[setting]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Java]]></title>
+      <link>https://xmcl.app/guide/java</link>
+      <guid>https://xmcl.app/guide/java</guid>
+      <description><![CDATA[Java Data Cache]]></description>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[CIO10]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[java]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Instance Copy]]></title>
+      <link>https://xmcl.app/guide/instance-copy</link>
+      <guid>https://xmcl.app/guide/instance-copy</guid>
+      <description><![CDATA[How to copy an instance?]]></description>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
+      <author><![CDATA[CIO10]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[instance]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[It's Cracked ?]]></title>
+      <link>https://xmcl.app/guide/its-cracked</link>
+      <guid>https://xmcl.app/guide/its-cracked</guid>
+      <description><![CDATA[Is this launcher legal?]]></description>
+      <pubDate>Invalid Date</pubDate>
+      <author><![CDATA[Baneronetwo]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[cracked]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Nothing is downloading?]]></title>
+      <link>https://xmcl.app/guide/not-load</link>
+      <guid>https://xmcl.app/guide/not-load</guid>
+      <description><![CDATA[What should I do if nothing downloads or works?]]></description>
+      <pubDate>Invalid Date</pubDate>
+      <author><![CDATA[Baneronetwo]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[mod]]></category>
+      <category><![CDATA[instance]]></category>
+      <category><![CDATA[download]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[How to play online?]]></title>
+      <link>https://xmcl.app/guide/play-p2p</link>
+      <guid>https://xmcl.app/guide/play-p2p</guid>
+      <description><![CDATA[The launcher has a built-in option to play online, but how do you play?]]></description>
+      <pubDate>Invalid Date</pubDate>
+      <author><![CDATA[Baneronetwo]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[p2p]]></category>
+      <category><![CDATA[online]]></category>
+    </item>
+
+    <item>
+      <title><![CDATA[Bad Name ?]]></title>
+      <link>https://xmcl.app/guide/name-bad</link>
+      <guid>https://xmcl.app/guide/name-bad</guid>
+      <description><![CDATA[Is your username invalid for the servers?]]></description>
+      <pubDate>Invalid Date</pubDate>
+      <author><![CDATA[Baneronetwo]]></author>
+      <category><![CDATA[launcher]]></category>
+      <category><![CDATA[nickname]]></category>
+    </item>
+  </channel>
+</rss>

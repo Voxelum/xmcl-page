@@ -7,10 +7,12 @@ on:
     paths:
       - .github/workflows/deploy.yaml
       - src/**
-      - .vitepress/**
       - locales/**
       - public/**
+      - astro.config.mjs
       - vite.config.ts
+      - tailwind.config.ts
+      - uno.config.ts
       - vercel.json
       - package.json
   workflow_dispatch:
@@ -47,7 +49,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_THANKFUL_MUD_0911A2700 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
-          app_location: ".vitepress/dist" # App source code path
+          app_location: "./build" # App source code path
           api_location: "api" # Api source code path - optional
           config_file_location: "."
           skip_app_build: true
@@ -59,6 +61,6 @@ jobs:
           # The Vercel deploy API rejects CLI < 47.2.2 since mid-May 2026.
           # The action's bundled CLI (42.x) is too old, so pin to latest.
           vercel-version: latest
-          vercel-args: '--prod --archive=tgz ./.vitepress/dist'
+          vercel-args: '--prod --archive=tgz ./build'
           vercel-org-id: ${{ secrets.ORG_ID }}
           vercel-project-id: ${{ secrets.PROJECT_ID }}

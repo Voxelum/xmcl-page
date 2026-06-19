@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Guide from "../../react-pages/Guide";
+import { getAllGuidePosts } from "../../utils/guideUtils";
+
+export async function getStaticPaths() {
+  const posts = await getAllGuidePosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout title="Guide - X Minecraft Launcher" description="Read our guide about X Minecraft Launcher.">
+  <Guide client:load initialSlug={slug} />
+</Layout>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X Minecraft Launcher</title>
+    <link rel="icon" href="/PhotoXMCL/logo.ico" />
+    <meta
+      name="description"
+      content="Experience Minecraft like never before with XMCL - a modern, feature-rich launcher designed for performance and customization."
+      data-i18n-key="meta_description"
+    />
+    <meta
+      property="og:description"
+      content="Experience Minecraft like never before with XMCL - a modern, feature-rich launcher designed for performance and customization."
+      data-i18n-key="og_description"
+    />
+
+    <meta name="author" content="Volexum" />
+    <meta
+      property="og:title"
+      content="X Minecraft Launcher"
+      data-i18n-key="og_title"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="/PhotoXMCL/591e0b02-a16f-4fe0-8eda-dd9a81f27cf8.png"
+    />
+    <meta
+      name="twitter:image"
+      content="/PhotoXMCL/591e0b02-a16f-4fe0-8eda-dd9a81f27cf8.png"
+    />
+
+    <!-- Theme initialization script - runs before React to prevent flash -->
+    <script>
+      (function () {
+        try {
+          // Get saved theme mode from localStorage
+          const savedMode = localStorage.getItem("theme");
+          const mode = savedMode === "dark" || savedMode === "light" || savedMode === "system" ? savedMode : "light";
+          
+          // Determine effective theme
+          let effectiveTheme;
+          if (mode === "system") {
+            // Detect system preference
+            effectiveTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          } else {
+            effectiveTheme = mode;
+          }
+          
+          // Remove any existing theme classes
+          document.documentElement.classList.remove("light", "dark");
+          
+          // Apply the effective theme
+          document.documentElement.classList.add(effectiveTheme);
+          
+          // Debug log
+          console.log("Theme initialized:", effectiveTheme, "| Mode:", mode, "| Saved:", savedMode);
+        } catch (e) {
+          // Fallback to light theme if anything fails
+          document.documentElement.classList.add("light");
+          console.error("Theme initialization failed:", e);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="src/main.tsx"></script>
+  </body>
+</html>

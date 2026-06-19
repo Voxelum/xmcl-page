@@ -1,0 +1,435 @@
+@config "../tailwind.config.ts";
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 96%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 6 78% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 7%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 92%;
+    --accent-foreground: 0 0% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 6 78% 57%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 6 78% 57%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 6 78% 57%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 11%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 6 78% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 62%;
+
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 6 78% 57%;
+
+    --sidebar-background: 0 0% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 6 78% 57%;
+    --sidebar-primary-foreground: 0 0% 11%;
+    --sidebar-accent: 0 0% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 6 78% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  /* Enhanced light theme background */
+  .light body {
+    background: #f5f5f5 !important;
+  }
+
+  /* Enhanced dark theme background */
+  .dark body {
+    background: #121212 !important;
+  }
+
+  /* Light theme navigation improvements */
+  .light nav {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e7eb !important;
+  }
+
+  /* Light theme card improvements */
+  .light .card-elevated {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .light .card-elevated:hover {
+    border-color: #d1d5db;
+    transform: translateY(-1px);
+  }
+
+  /* Footer improvements for light theme */
+  .light footer {
+    background: #fafafa !important;
+    border-top: 1px solid #e5e7eb !important;
+  }
+
+  /* Button improvements for light theme */
+  .light button[variant="ghost"] {
+    color: #4b5563 !important;
+  }
+
+  .light button[variant="ghost"]:hover {
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
+  }
+}
+
+/* Custom animations and utilities */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-glow {
+    /* Flat design - no neon glowing circles */
+    box-shadow: none !important;
+  }
+
+  .glass-effect {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+  }
+
+  .dark .glass-effect {
+    background: #1c1c1c;
+    border: 1px solid #2d2d2d;
+  }
+
+  .text-gradient {
+    color: #ea4c3c;
+  }
+
+  .dark .text-gradient {
+    color: #ea4c3c;
+  }
+
+  /* Enhanced card effects */
+  .card-elevated {
+    transition: all 0.2s ease-out;
+  }
+
+  .card-elevated:hover {
+    transform: translateY(-1px);
+  }
+
+  .dark .card-elevated {
+    background: #1c1c1c;
+    border: 1px solid #2d2d2d;
+  }
+
+  .dark .card-elevated:hover {
+    border-color: #ea4c3c;
+  }
+
+  /* Light theme specific improvements */
+  .light-theme-text {
+    color: #374151 !important;
+  }
+
+  .light-theme-muted {
+    color: #6b7280 !important;
+  }
+
+  .light-theme-border {
+    border-color: #e5e7eb !important;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: none;
+  }
+}
+.scroll-area-content {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+/* Blob animation for Information page */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 40px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+  will-change: transform;
+}
+
+/* Firefox-specific optimizations */
+@-moz-document url-prefix() {
+  .glass-effect,
+  .backdrop-blur-2xl,
+  .backdrop-blur-xl,
+  .backdrop-blur-md,
+  .backdrop-blur {
+    backdrop-filter: none !important;
+    background: rgba(
+      30,
+      41,
+      59,
+      0.95
+    ) !important; /* Fallback for dark/glass backgrounds */
+  }
+
+  .light .glass-effect,
+  .light .backdrop-blur-2xl,
+  .light .backdrop-blur-xl,
+  .light .backdrop-blur-md,
+  .light .backdrop-blur,
+  .light nav,
+  .light footer {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .animate-blob {
+    animation: none !important; /* Disable blob animation in Firefox if it causes lag */
+    opacity: 0.5;
+  }
+
+  /* Reduce heavy blurs in Firefox */
+  div[class*="blur-[100px]"] {
+    filter: blur(60px) !important;
+    opacity: 0.8;
+  }
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* ============================================
+   FIX: Prevent text from appearing blurry.
+   
+   Root cause: backdrop-filter: blur() on UI elements (cards, inputs,
+   badges, tabs) creates GPU compositing layers that cause text inside
+   to render with sub-pixel blur artifacts on many browsers/GPUs.
+   
+   Solution: Disable backdrop-filter globally. Replace with higher 
+   background opacity for visual depth.
+   ============================================ */
+
+/* Kill backdrop-filter everywhere — it causes blurry text */
+* {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force decorative blur blobs into isolated GPU layers */
+[class*="blur-3xl"],
+[class*="blur-[100px]"],
+[class*="blur-[150px]"],
+.animate-blob {
+  transform: translate3d(0, 0, 0);
+  will-change: filter;
+  pointer-events: none;
+}
+
+
+/* ============================================
+   View Transitions — Astro and fallback
+   ============================================ */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(page-content) {
+  animation: slide-out-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-new(page-content) {
+  animation: slide-in-right 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 0.2s ease-out forwards;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 0.3s ease-in forwards;
+}
+
+@keyframes slide-out-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Page entrance animation (used by React pages) */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger children entrance */
+.stagger-children > * {
+  opacity: 0;
+  animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.stagger-children > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.stagger-children > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.stagger-children > *:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.stagger-children > *:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.stagger-children > *:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.stagger-children > *:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.stagger-children > *:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.stagger-children > *:nth-child(8) {
+  animation-delay: 0.4s;
+}

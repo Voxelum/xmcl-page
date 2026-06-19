@@ -1,2 +1,8 @@
 User-agent: *
 Allow: /
+
+# Sitemaps
+Sitemap: https://xmcl.app/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

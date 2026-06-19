@@ -1,0 +1,11 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Index from "../react-pages/Index";
+
+const seoTitle = "XMCL - X Minecraft Launcher | Free Modern Minecraft Launcher";
+const seoDescription = "Download XMCL - the best free, open-source Minecraft launcher with mod management, multiple instances, P2P sharing, and support for Forge, Fabric, NeoForge, Quilt. Available for Windows, macOS, and Linux.";
+---
+
+<Layout title={seoTitle} description={seoDescription}>
+  <Index client:load />
+</Layout>
