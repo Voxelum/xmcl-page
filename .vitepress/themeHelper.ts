@@ -86,7 +86,7 @@ export function loadTheme(location: string, locale: string) {
         sidebar[`/${locale}/changelogs/`] = changelogsSidebar
         nav.push({ text: '📜 ' + localeMessages.changelogs, link: `/${locale}/changelogs/${changelogFiles[0]}`, activeMatch: `/${locale}/changelogs/(.+)?` })
     }
-    if (locale === 'en' || locale === 'ko') {
+    if (existsSync(join(location, 'blog'))) {
         nav.push(
             { text: '🪁 ' + (localeMessages.blogs || 'Blogs'), link: `/${locale}/blog/`, activeMatch: `/${locale}/blog/(.+)?` },
         )
@@ -94,6 +94,7 @@ export function loadTheme(location: string, locale: string) {
     const theme: LocaleConfig<DefaultTheme.Config>[string] = {
         label: localeMessages.label,
         lang: locale,
+        dir: locale === 'ar' ? 'rtl' : 'ltr',
         head: [
             ['meta', { property: 'og:type', content: 'website' }],
             ['meta', { property: 'og:site_name', content: 'X Minecraft Launcher' }],

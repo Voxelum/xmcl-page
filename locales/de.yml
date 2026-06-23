@@ -36,6 +36,7 @@ download-snap: Snap
 download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
+download-flathub: Flathub
 azure-source: Herunterladen von Azure
 azure-ms-source: Herunterladen von Azure Microsoft CDN
 github-source: Von Github herunterladen

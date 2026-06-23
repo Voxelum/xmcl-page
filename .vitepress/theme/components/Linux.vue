@@ -30,6 +30,10 @@
           @click="trackDownload('linux', 'tar.xz')" :text="t('download-tarxz') + ' (x64)'" :icon="'i-fa6-solid:box'" />
         <UILeftPointingButton class="inverted brown" :href="artifacts.tarxzArm64" @click="trackDownload('linux', 'tar.xz-arm64')" text="ARM64" />
       </div>
+      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
+        <UIButton class="inverted grey" :organized="organized" href="https://flathub.org/en/apps/app.xmcl.voxelum"
+          target="_blank" @click="trackDownload('linux', 'flathub')" :text="t('download-flathub') + ' (+ steam deck)'" :icon="'i-simple-icons:flathub'" />
+      </div>
     </div>
   </div>
 </template>
