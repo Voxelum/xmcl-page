@@ -30,7 +30,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       imagetools(),
       Unocss({
         configFile: resolve(__dirname, '../unocss.config.ts'),
-        safelist: ['text-[rgb(208,208,208)]', 'text-green-400', 'text-yellow-300', 'text-sky-400', 'text-[rgb(61,239,233)]', 'text-[rgb(107,217,104)]', 'text-amber-600', 'text-emerald-700', 'text-red-700'],
+        safelist: ['text-[rgb(208,208,208)]', 'text-green-400', 'text-yellow-300', 'text-sky-400', 'text-[rgb(61,239,233)]', 'text-[rgb(107,217,104)]', 'text-amber-600', 'text-emerald-700', 'text-red-700', 'i-simple-icons:flathub'],
       }),
       // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
       VueI18n({

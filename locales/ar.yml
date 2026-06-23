@@ -1,0 +1,98 @@
+repository: مستودع الكود البرمجي
+intro:
+  first:
+    body: لانشر ماينكرافت {openSource} مع تجربة مستخدم {modernUx}.
+    openSource: مفتوح المصدر
+    modernUx: حديثة
+  second:
+    body: يوفر طريقة {diskEfficient} لإدارة جميع {mods} الخاصة بك!
+    diskEfficient: موفرة للمساحة
+    mods: المودات
+  description: >-
+    X Minecraft Launcher (XMCL) هو لانشر ماينكرافت حديث يتيح لك إدارة مواردك الهائلة مثل حزم المودات، حزم الموارد، المودات، وحزم الشادر... كما أنه يتكامل مع Minecraft Forge و Fabric و Quilt و CurseForge و Modrinth.
+label: العربية
+guide: الدليل
+protocol: البروتوكول
+changelogs: سجل التغييرات
+outline: في هذه الصفحة
+coreDocument: المستند البرمجي الأساسي
+blogs: المدونات
+launcher:
+  manage:
+    intro: أدر لعبة ماينكرافت الخاصة بك بفعالية.
+  description: لانشر ماينكرافت بسيط ومفتوح المصدر وموجه نحو الوظائف
+downloadFor:
+  windows: 'التنزيل لنظام التشغيل Windows:'
+  mac: 'التنزيل لنظام التشغيل Mac:'
+  linux: 'التنزيل لنظام التشغيل Linux:'
+author: الاتصال بالمؤلف
+download-zip: Zip
+download-zip-32: Zip (32 بت)
+download-appx: حزمة AppX
+download-appinstaller: مثبت التطبيقات (App Installer)
+download-portable: نسخة محمولة (Portable)
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: التنزيل من Azure
+azure-ms-source: التنزيل من Azure Microsoft CDN
+github-source: التنزيل من Github
+auto-source: الكشف التلقائي عن مصدر التنزيل
+authSuccess: تم بنجاح!
+authSuccessTitle: تمت المصادقة بنجاح. سيتم توجيهك مرة أخرى إلى اللانشر!
+redirectHelperTitle: >-
+  إذا لم يتم توجيهك تلقائياً، يمكنك النقر على زر "الفتح في التطبيق" للتوجيه يدوياً.
+redirectHelperMessage: >-
+  سيظهر لك مربع حوار يطلب منك فتح اللانشر. إذا كان لا يزال لا يعمل، يمكنك محاولة سحب الزر إلى نافذة اللانشر!
+notWork: لا يعمل؟
+openInAppButton: الفتح في اللانشر
+nothingWork: إذا لم يعمل أي مما سبق، فقد ترغب في إعادة تنزيل أحدث إصدار من اللانشر
+gameInstall:
+  title:
+    body: لا داعي للقلق بشأن {gameInstall} بعد الآن
+    gameInstall: تثبيت اللعبة
+  description: >-
+    يدعم XMCL تثبيت ماينكرافت الأصلية (Vanilla)، و Minecraft Forge، و Fabric، وحتى Optifine الكل في واحد! يمكنك تثبيتهم في مكان واحد داخل اللانشر. كما أنه يدعم رابط المرآة التابع لجهات خارجية BMCL API. ويمكنك حتى تخصيص المرآة الخاصة بك في اللانشر.
+optimalDisk:
+  title:
+    body: مساحة قرص {optimal} مع {massiveResources}
+    optimal: مثالية
+    massiveResources: موارد هائلة
+  description: >-
+    سيقوم XMCL بتخزين جميع المودات وحزم الموارد وحزم الشادر وحزم المودات في موقع تخزين واحد. عندما تحاول استخدام أي مورد معروف، سيستخدم الرابط الصلب (hard link) لتثبيت المورد في النسخة دون نسخه. هذا يعني أنك لن ترى أي نسخة مكررة في مجلد /mods بعد الآن.
+cleanWorkspace:
+  title:
+    body: حافظ على مساحة عملك {clean} باستخدام النسخ المتعددة
+    clean: نظيفة
+  description: >-
+    يحتوي XMCL على دعم مدمج للنسخ المتعددة. يمكنك إنشاء نسخ متعددة بسهولة. لذلك لا داعي للقلق بشأن تداخل إعدادات التشغيل المختلفة.
+communityIntegration:
+  title:
+    body: متكامل مع {multipleCommunities}
+    multipleCommunities: مجتمعات متعددة
+  description: >-
+    يدعم XMCL بشكل مدمج كلاً من Curseforge و Modrinth. كما يوفر القدرة على دعم حسابات المستخدمين المخصصة / وأنظمة السكنات مثل blessing skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: الانضمام إلى مجموعة {inviter}
+joinPeerDescription: >-
+  لقد دعاك {inviter} للانضمام إلى مجموعته {group} للعب ماينكرافت معاً! سيتم توجيهك مرة أخرى إلى اللانشر!
+fullChangelog: ما الجديد؟
+privacy: خصوصية البرنامج
+prebuild:
+  history: تاريخ البناء
+  historyDescription: عمليات البناء والإصدارات السابقة
+  download: تنزيل نسخ التطوير
+  downloadDescription: >-
+    نسخ التطوير (Prebuild) هي ملفات يتم إنشاؤها أثناء عملية التطوير. قد تكون غير مستقرة. استخدمها على مسؤوليتك الخاصة!
+  entryHint: ملفات نسخ التطوير؟
+  ready: جاهز
+  selected: تم الاختيار
+  selectBuild: اختر البناء
+  downloading: جارٍ التنزيل...
+downloadMacHint:
+  content: لمستخدمي Mac، يرجى اتباع {link} للتثبيت.
+  link: تعليمات التثبيت
