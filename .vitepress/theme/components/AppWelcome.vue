@@ -46,7 +46,7 @@
                         <div class="w-full flex justify-center mt-10 gap-2">
                             <a class="ui version inverted basic label text-sm" target="_blank"
                                 href="https://github.com/voxelum/x-minecraft-launcher/releases">
-                                <span>{{ data.latestVersion }}</span>
+                                <span>{{ downloads.latestVersion }}</span>
                             </a>
                         </div>
 
@@ -255,6 +255,9 @@ import { useData, useRoute } from 'vitepress';
 import { computed, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { data } from '../composables/latest.data';
+import { useDownloads } from '../composables/useDownloads';
+
+const downloads = useDownloads()
 import { useGFW } from '../composables/useGFW';
 import { useI18nSync } from '../composables/useI18nSync';
 import { usePlatform } from '../composables/usePlatform';

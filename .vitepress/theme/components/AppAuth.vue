@@ -33,7 +33,7 @@
         }}</div>
         <div class="w-full flex justify-center mt-10">
           <a class="ui version basic label text-sm" :class="{ inverted: isDark }" target="_blank"
-            href="https://github.com/voxelum/x-minecraft-launcher/releases">{{ data.latestVersion }}</a>
+            href="https://github.com/voxelum/x-minecraft-launcher/releases">{{ downloads.latestVersion }}</a>
         </div>
         <div class="flex item-center w-full justify-center mb-20 mt-10">
           <component :is="componentByPlatform" />
@@ -53,6 +53,9 @@ import MacVue from "../components/Mac.vue";
 import Win32Vue from "../components/Win32.vue";
 import { data } from '../composables/latest.data';
 import { usePlatform } from '../composables/usePlatform';
+import { useDownloads } from '../composables/useDownloads';
+
+const downloads = useDownloads()
 import '../styles/divider.min.css';
 import '../styles/message.min.css';
 import '../styles/container.min.css';

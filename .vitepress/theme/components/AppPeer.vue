@@ -33,7 +33,7 @@
           }}</div>
         <div class="w-full flex justify-center mt-10">
           <a class="ui version inverted basic label" target="_blank"
-            href="https://github.com/voxelum/x-minecraft-launcher/releases">{{ github.latestVersion }}</a>
+            href="https://github.com/voxelum/x-minecraft-launcher/releases">{{ downloads.latestVersion }}</a>
         </div>
         <div class="flex item-center w-full justify-center mb-20 mt-10">
           <ClientOnly>
@@ -49,10 +49,11 @@
 import LinuxVue from "~/components/Linux.vue";
 import MacVue from "~/components/Mac.vue";
 import Win32Vue from "~/components/Win32.vue";
-import { useGithubInfoStore, usePlatform } from "~/composables";
+import { usePlatform } from "../composables/usePlatform";
+import { useDownloads } from "../composables/useDownloads";
 
 const query = useUrlSearchParams()
-const github = useGithubInfoStore()
+const downloads = useDownloads()
 const { t } = useI18n()
 const inviter = computed(() => query.inviter)
 
