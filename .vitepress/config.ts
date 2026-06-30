@@ -14,6 +14,9 @@ const localeConfig: LocaleConfig<DefaultTheme.Config> = {}
 for (const locale of locales) {
   localeConfig[locale] = loadTheme(resolve(src, locale), locale)
 }
+if (localeConfig['en']) {
+  localeConfig['root'] = localeConfig['en']
+}
 
 export default defineConfigWithTheme<DefaultTheme.Config>({
   title: "X Minecraft Launcher",
