@@ -1,17 +1,19 @@
 <template>
-  <div mac class="flex flex-col">
-    <h1 v-if="title" class="ui inverted py-5" style="line-height: 1.4; font-size: 3em">
-      <div id="downloadFor" style="font-size: 0.45em">{{ t("downloadFor.mac") }}</div>
-    </h1>
-    <div class="ui hidden divider" style="padding: 0 0"></div>
-    <div class="flex gap-2 flex-wrap" :class="{
-      'w-full': organized,
-      'justify-center': organized
+  <div mac class="flex flex-col h-full w-full">
+    <h3 v-if="title" class="text-2xl lg:text-xl xl:text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white flex items-center justify-center min-h-[4rem]">
+      {{ t("downloadFor.mac") }}
+    </h3>
+    <div class="flex gap-3 flex-grow" :class="{
+      'flex-wrap': !title,
+      'flex-col': title,
+      'items-stretch': title,
+      'w-full': organized || title,
+      'justify-center': organized && !title
     }">
-      <div class="ui labeled button w-full" tabindex="0">
-        <UIButton class="inverted positive" :disabled="!buttonData[0].href" :organized="organized" :href="buttonData[0].href"
+      <div class="ui labeled button w-full flex" tabindex="0">
+        <UIButton class="inverted positive flex-grow" :disabled="!buttonData[0].href" :organized="organized" :href="buttonData[0].href"
           @click="buttonData[0].click()" :text="buttonData[0].text" :icon="'i-fa6-solid:hard-drive'" />
-        <UILeftPointingButton class="basic inverted green" :href="buttonData[1].href" @click="buttonData[1].click()"
+        <UILeftPointingButton class="basic inverted green whitespace-nowrap shrink-0" :href="buttonData[1].href" @click="buttonData[1].click()"
           :text="buttonData[1].text" />
       </div>
     </div>

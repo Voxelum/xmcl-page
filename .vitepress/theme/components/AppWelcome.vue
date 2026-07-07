@@ -239,11 +239,41 @@
             </div>
         </section>
 
-        <section class="section intro min-h-100vh mb-10">
-            <div class="flex flex-col justify-center min-h-100vh px-10 sm:px-40">
-                <win32 title v-motion :initial="{ opacity: 0, y: 50 }" :visibleOnce="transitionFinal" />
-                <mac title v-motion :initial="{ opacity: 0, y: 50 }" :visibleOnce="transitionFinal" />
-                <linux title v-motion :initial="{ opacity: 0, y: 50 }" :visibleOnce="transitionFinal" />
+        <section class="section intro mb-20 mt-20">
+            <div class="flex flex-col items-center justify-center px-10 sm:px-10 max-w-7xl mx-auto">
+                <div v-motion :initial="{ opacity: 0, y: 30 }" :visibleOnce="transitionFinal" class="text-center mb-16">
+                    <h2 class="text-5xl font-bold dark:text-white text-gray-900 mb-6">X Minecraft Launcher</h2>
+                    <p class="text-xl dark:text-gray-400 text-gray-600">{{ t('intro.description') }}</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full">
+                    <div v-motion :initial="{ opacity: 0, y: 50 }" :visibleOnce="{ ...transitionFinal, transition: { ...transitionFinal.transition, delay: 200 } }" class="flex flex-col bg-gray-50 dark:bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-2xl shadow-lg dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden border border-gray-200 dark:border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:hover:border-[rgba(255,255,255,0.2)]">
+                        <div class="p-6 flex-grow flex flex-col items-center">
+                            <div class="text-7xl mb-6 text-blue-500 dark:text-blue-400">
+                                <i class="i-fa6-brands:windows"></i>
+                            </div>
+                            <win32 title class="w-full flex-grow flex flex-col" />
+                        </div>
+                    </div>
+                    
+                    <div v-motion :initial="{ opacity: 0, y: 50 }" :visibleOnce="{ ...transitionFinal, transition: { ...transitionFinal.transition, delay: 400 } }" class="flex flex-col bg-gray-50 dark:bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-2xl shadow-lg dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden border border-gray-200 dark:border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:hover:border-[rgba(255,255,255,0.2)]">
+                        <div class="p-6 flex-grow flex flex-col items-center">
+                            <div class="text-7xl mb-6 text-gray-800 dark:text-gray-200">
+                                <i class="i-fa6-brands:apple"></i>
+                            </div>
+                            <mac title class="w-full flex-grow flex flex-col" />
+                        </div>
+                    </div>
+                    
+                    <div v-motion :initial="{ opacity: 0, y: 50 }" :visibleOnce="{ ...transitionFinal, transition: { ...transitionFinal.transition, delay: 600 } }" class="flex flex-col bg-gray-50 dark:bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-2xl shadow-lg dark:shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden border border-gray-200 dark:border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:hover:border-[rgba(255,255,255,0.2)]">
+                        <div class="p-6 flex-grow flex flex-col items-center">
+                            <div class="text-7xl mb-6 text-yellow-600 dark:text-yellow-500">
+                                <i class="i-fa6-brands:linux"></i>
+                            </div>
+                            <linux title class="w-full flex-grow flex flex-col" />
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

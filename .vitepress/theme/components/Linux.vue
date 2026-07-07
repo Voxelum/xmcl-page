@@ -1,39 +1,39 @@
 <template>
-  <div linux class="flex flex-col">
-    <h1 v-if="title" class="ui inverted py-5" style="line-height: 1.4; font-size: 3em">
-      <div id="downloadFor" style="font-size: 0.45em">{{ t("downloadFor.linux") }}</div>
-    </h1>
-    <div class="ui hidden divider" style="padding: 0 0"></div>
-    <div class="gap-2 flex-wrap" :class="{
-      'flex': !organized,
-      organized: organized,
-      'w-full': organized,
-      'justify-center': organized
+  <div linux class="flex flex-col h-full w-full">
+    <h3 v-if="title" class="text-2xl lg:text-xl xl:text-2xl font-bold text-center mb-6 text-gray-900 dark:text-white flex items-center justify-center min-h-[4rem]">
+      {{ t("downloadFor.linux") }}
+    </h3>
+    <div class="gap-3 flex-grow" :class="{
+      'flex': !organized || title,
+      'flex-wrap': !title,
+      'flex-col': title,
+      'items-stretch': title,
+      organized: organized && !title,
+      'w-full': organized || title,
+      'justify-center': organized && !title
     }">
-      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
-        <UIButton class="inverted positive" :disabled="!artifacts.deb" :organized="organized" :href="artifacts.deb"
+      <div class="ui labeled button w-full flex" tabindex="0">
+        <UIButton class="inverted positive flex-grow" :disabled="!artifacts.deb" :organized="organized" :href="artifacts.deb"
           @click="trackDownload('linux', 'deb')" :text="t('download-deb') + ' (x64)'" :icon="'i-fa6-brands:debian'" />
-        <UILeftPointingButton class="basic inverted green" :href="artifacts.debArm64" @click="trackDownload('linux', 'deb-arm64')" text="ARM64" />
+        <UILeftPointingButton class="basic inverted green whitespace-nowrap shrink-0" :href="artifacts.debArm64" @click="trackDownload('linux', 'deb-arm64')" text="ARM64" />
       </div>
-      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
-        <UIButton class="" :disabled="!artifacts.rpm" :organized="organized" :href="artifacts.rpm"
+      <div class="ui labeled button w-full flex" tabindex="0">
+        <UIButton class="flex-grow" :disabled="!artifacts.rpm" :organized="organized" :href="artifacts.rpm"
           @click="trackDownload('linux', 'rpm')" :text="t('download-rpm') + ' (x64)'" :icon="'i-fa6-brands:linux'" />
-        <UILeftPointingButton class="white" :href="artifacts.rpmAArch64" @click="trackDownload('linux', 'rpm-aarch64')" text="AArch64" />
+        <UILeftPointingButton class="white whitespace-nowrap shrink-0" :href="artifacts.rpmAArch64" @click="trackDownload('linux', 'rpm-aarch64')" text="AArch64" />
       </div>
-      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
-        <UIButton class="inverted red" :disabled="!artifacts.appImage" :organized="organized" :href="artifacts.appImage"
+      <div class="ui labeled button w-full flex" tabindex="0">
+        <UIButton class="inverted red flex-grow" :disabled="!artifacts.appImage" :organized="organized" :href="artifacts.appImage"
           @click="trackDownload('linux', 'appimage')" :text="t('download-appimage') + ' (x64)'" :icon="'i-fa6-solid:hard-drive'" />
-        <UILeftPointingButton class="inverted red" :href="artifacts.appImageArm64" @click="trackDownload('linux', 'appimage-arm64')" text="ARM64" />
+        <UILeftPointingButton class="inverted red whitespace-nowrap shrink-0" :href="artifacts.appImageArm64" @click="trackDownload('linux', 'appimage-arm64')" text="ARM64" />
       </div>
-      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
-        <UIButton class="inverted brown" :disabled="!artifacts.tarxz" :organized="organized" :href="artifacts.tarxz"
+      <div class="ui labeled button w-full flex" tabindex="0">
+        <UIButton class="inverted brown flex-grow" :disabled="!artifacts.tarxz" :organized="organized" :href="artifacts.tarxz"
           @click="trackDownload('linux', 'tar.xz')" :text="t('download-tarxz') + ' (x64)'" :icon="'i-fa6-solid:box'" />
-        <UILeftPointingButton class="inverted brown" :href="artifacts.tarxzArm64" @click="trackDownload('linux', 'tar.xz-arm64')" text="ARM64" />
+        <UILeftPointingButton class="inverted brown whitespace-nowrap shrink-0" :href="artifacts.tarxzArm64" @click="trackDownload('linux', 'tar.xz-arm64')" text="ARM64" />
       </div>
-      <div class="ui labeled button w-full xl:w-auto" tabindex="0">
-        <UIButton class="inverted grey" :organized="organized" href="https://flathub.org/en/apps/app.xmcl.voxelum"
-          target="_blank" @click="trackDownload('linux', 'flathub')" :text="t('download-flathub') + ' (+ steam deck)'" :icon="'i-simple-icons:flathub'" />
-      </div>
+      <UIButton class="inverted grey w-full" :organized="organized" href="https://flathub.org/en/apps/app.xmcl.voxelum"
+        target="_blank" @click="trackDownload('linux', 'flathub')" :text="t('download-flathub') + ' (+ steam deck)'" :icon="'i-simple-icons:flathub'" />
     </div>
   </div>
 </template>

@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev . --port 9000",
+    "dev": "vitepress dev . --host --port 9000",
     "build": "tsx prepare.ts && tsx scripts/build.ts",
     "group-changelogs": "tsx scripts/group_changelog.ts",
     "preview": "vitepress preview .",
@@ -27,7 +27,8 @@
     "gray-matter": "^4.0.3",
     "platform": "^1.3.6",
     "vue": "^3.5.13",
-    "vue-i18n": "^9.14.2"
+    "vue-i18n": "^9.14.2",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@iconify-json/fa6-brands": "^1.2.5",
