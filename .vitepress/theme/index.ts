@@ -20,6 +20,9 @@ import './styles/index.css'
 import AppForgePicture from "./components/AppForgePicture.vue"
 import AppFabricPicture from "./components/AppFabricPicture.vue"
 import AppNeoForgePicture from "./components/AppNeoForgePicture.vue"
+import QuiltIcon from "./components/QuiltIcon.vue"
+import AppOptifinePicture from "./components/AppOptifinePicture.vue"
+import AppLabymodPicture from "./components/AppLabymodPicture.vue"
 
 export default {
   extends: DefaultTheme,
@@ -69,5 +72,8 @@ export default {
     app.component('AppForgePicture', AppForgePicture)
     app.component('AppFabricPicture', AppFabricPicture)
     app.component('AppNeoForgePicture', AppNeoForgePicture)
+    app.component('QuiltIcon', QuiltIcon)
+    app.component('AppOptifinePicture', AppOptifinePicture)
+    app.component('AppLabymodPicture', AppLabymodPicture)
   },
 }

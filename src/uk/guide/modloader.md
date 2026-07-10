@@ -8,94 +8,141 @@
 
 **Можливо, вам не доведеться довго обирати завантажувач модів — ваші моди зроблять цей вибір за вас...**
 
-У цьому документі ми розглянемо чотири популярні завантажувачі модів: **Minecraft Forge**, **Fabric**, **NeoForge** та **Quilt**. Кожен із них пропонує свій набір функцій, задовольняючи різні потреби моддингу та продуктивності.
+У цьому документі ми розглянемо популярні завантажувачі модів та клієнтські оптимізації. Кожен із них пропонує свій набір функцій, задовольняючи різні потреби моддингу та продуктивності.
 
-:::info AI
-Цей документ підготовлено за допомогою ШІ та перевірено людиною
-:::
+---
 
 ## Minecraft Forge
 
-<AppForgePicture />
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppForgePicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">Minecraft Forge</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">Оригінальний і перевірений часом завантажувач модів для Minecraft. Найкращий вибір для великих збірок та глибокої інтеграції в гру.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(147, 34, 255, 0.15); color: #a855f7; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Зріла екосистема</span>
+      <span style="background: rgba(147, 34, 255, 0.15); color: #a855f7; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Глибокий API</span>
+      <span style="background: rgba(147, 34, 255, 0.15); color: #a855f7; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Широка сумісність</span>
+    </div>
+  </div>
+</div>
 
-**Огляд:**
+*   **Переваги:** Роки розробки забезпечили величезну кількість документації, посібників та ресурсів.
+*   **Недоліки:** Оновлення до останніх версій гри займає більше часу; створює значне навантаження на систему, що збільшує час завантаження.
 
-- Оригінальний і перевірений часом завантажувач модів для Minecraft.
-- Пропонує велику підтримку спільноти та зрілу екосистему.
-- Надає надійний API, що робить його ідеальним для великих збірок модів та глибокої інтеграції в гру.
-
-**Основні переваги:**
-
-- **Зріла екосистема:** Роки розробки забезпечили величезну кількість документації, посібників та ресурсів спільноти.
-- **Глибока інтеграція API:** Повний API Forge дозволяє детально взаємодіяти з грою, що ідеально для модів, які змінюють основні функції.
-- **Широка сумісність:** Величезна кількість популярних модів і збірок створена під Forge, що гарантує сумісність.
-
-**Недоліки:**
-
-- **Затримка оновлень:** Іноді оновлення Forge до останніх версій гри займає більше часу.
-- **Використання ресурсів:** Багатий набір функцій може збільшувати час завантаження у порівнянні з легшими завантажувачами.
+---
 
 ## Fabric
 
-<AppFabricPicture />
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppFabricPicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">Fabric</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">Легкий та модульний завантажувач, розроблений для сучасних версій Minecraft. Ідеальний для оптимізації FPS та швидкого завантаження гри.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Орієнтований на FPS</span>
+      <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Швидкі оновлення</span>
+      <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Легкість</span>
+    </div>
+  </div>
+</div>
 
-**Огляд:**
+*   **Переваги:** Простий дизайн мінімізує навантаження, забезпечуючи швидкий запуск та високий FPS (ідеально для модів на кшталт "Distant Horizons" та шейдерів).
+*   **Недоліки:** База модів все ще наздоганяє Forge; немає вбудованої підтримки старих версій гри.
 
-- Легкий модульний завантажувач модів, розроблений для сучасних версій Minecraft.
-- Його вибирають розробники та гравці, для яких у пріоритеті швидка робота та швидкі оновлення.
-- Особливо підходить для модів покращення графіки, шейдерів або збільшення дальності промальовування.
-
-**Основні переваги:**
-
-- **Орієнтований на продуктивність:** Простий дизайн мінімізує навантаження, забезпечуючи швидке завантаження.
-- **Швидкі оновлення:** Модульна структура Fabric дозволяє швидко адаптуватися до нових версій гри.
-- **Гнучкість для розробників:** Простий, але потужний API сприяє швидким експериментам.
-
-**Приклад використання:**
-
-- **Величезна дальність промальовування:** Якщо ви хочете встановити мод на кшталт "Distant Horizons", Fabric буде чудовим вибором.
-- **Покращена графіка:** Шейдери для реалістичного світла та тіней працюватимуть надзвичайно плавно.
-
-**Недоліки:**
-
-- **Бібліотека модів росте:** Хоча спільнота швидко розвивається, репозиторій Fabric все ще наздоганяє Forge за кількістю модів.
-- **Обмежена підтримка старих версій:** Створений перш за все для сучасних версій гри, старі моди можуть не підтримуватися.
+---
 
 ## NeoForge
 
-<AppNeoForgePicture />
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppNeoForgePicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">NeoForge</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">Сучасне відгалуження (форк) Forge, що поєднує стабільність оригінального API із сучасними оптимізаціями та швидкою кодовою базою.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Сучасний API</span>
+      <span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Гібридний підхід</span>
+      <span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Активна розробка</span>
+    </div>
+  </div>
+</div>
 
-**Огляд:**
+*   **Переваги:** Чистіший код для розробників, вища стабільність та сумісність із сучасними стандартами продуктивності.
+*   **Недоліки:** Оскільки проект новий, він ще нарощує свою базу сумісних модів та документацію.
 
-- Новий завантажувач модів, який прагне поєднати широку сумісність Forge із сучасними оптимізаціями продуктивності.
-- Орієнтований на гравців, які шукають баланс між традиційною функціональністю та швидкою роботою.
-
-**Основні переваги:**
-
-- **Гібридний підхід:** Поєднує стабільні функції Forge з сучасними покращеннями продуктивності.
-- **Сучасна кодова база:** Створений з урахуванням сучасних практик моддингу із збереженням сумісності.
-- **Керований спільнотою:** Постійно розвивається за відгуками користувачів та розробників.
-
-**Недоліки:**
-
-- **Ранній етап:** Як новий інструмент, NeoForge може мати менше підтримуваних модів та менш детальну документацію.
+---
 
 ## Quilt
 
-**Огляд:**
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <QuiltIcon style="width: 48px; height: 48px; display: block;" />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">Quilt</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">Сучасний завантажувач від спільноти, побудований на базі Fabric. Він забезпечує зворотну сумісність із модами Fabric та пропонує ширший інструментарій.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(236, 72, 153, 0.15); color: #ec4899; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Сумісний із Fabric</span>
+      <span style="background: rgba(236, 72, 153, 0.15); color: #ec4899; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Інноваційний</span>
+      <span style="background: rgba(236, 72, 153, 0.15); color: #ec4899; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Гнучкий</span>
+    </div>
+  </div>
+</div>
 
-- Форк Fabric, який розширює його легку основу новими можливостями та покращеннями.
-- Створений відповідно до потреб спільноти, Quilt прагне вдосконалити досвід використання модів.
+*   **Переваги:** Повна підтримка більшості модів для Fabric «з коробки» разом із власними потужними інструментами розробки.
+*   **Недоліки:** Знаходиться в стані активного формування власної незалежної екосистеми.
 
-**Основні переваги:**
+---
 
-- **Розширена функціональність:** Пропонує додаткові API для більшої свободи розробників.
-- **Інновації:** Розроблений з урахуванням сучасних стандартів, пропонуючи швидкі оновлення.
-- **Сумісність:** Початково підтримує моди для Fabric, поступово створюючи власну екосистему.
+## OptiFine
 
-**Недоліки:**
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppOptifinePicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">OptiFine</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">Легендарний мод для оптимізації Minecraft. Забезпечує величезний приріст FPS, підтримку текстур високої роздільної здатності (HD), шейдерів та безліч графічних налаштувань.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Оптимізація FPS</span>
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Шейдери</span>
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Кастомізація</span>
+    </div>
+  </div>
+</div>
 
-- **Активна розробка:** Проект все ще на ранніх етапах, тому інколи можуть виникати нестабільності.
+*   **Переваги:** Неперевершена робота зі старішими версіями Minecraft, найпростіший спосіб запустити шейдери без додаткових модів.
+*   **Недоліки:** Закритий вихідний код, що часто викликає конфлікти сумісності з новими модами для Forge або Fabric.
+
+---
+
+## LabyMod
+
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppLabymodPicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">LabyMod</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">Багатофункціональна модифікація клієнта Minecraft. Вона повністю змінює інтерфейс користувача, додає безліч корисних віджетів, анімацій та вбудовану косметику.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Кастомний HUD</span>
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Модифікація клієнта</span>
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Косметика</span>
+    </div>
+  </div>
+</div>
+
+*   **Переваги:** Модульний дизайн, велика кількість готових віджетів для PvP, плавна інтеграція та легке налаштування інтерфейсу.
+*   **Недоліки:** Орієнтований в основному на мультиплеєр та PvP; може бути несумісним із деякими глобальними модами на зміну генерації світу.
+
+---
 
 ## Порівняння
 
@@ -105,3 +152,25 @@
 | **Спільнота та підтримка** | Величезна, добре відома | Швидко зростає | Нова, розвивається | Використовує спільноту Fabric |
 | **Сумісність модів** | Величезна база | Найкраще для сучасних модів | Поєднує старі та нові моди | Сумісний із модами Fabric |
 | **Цикл оновлень** | Повільна адаптація нових версій | Швидкий та адаптивний | Поступово покращується за відгуками | Швидкі модульні оновлення |
+
+---
+
+## Завантажувачі та керування модами в XMCL
+
+X Minecraft Launcher (XMCL) надає вбудовану та повністю інтегровану систему для встановлення завантажувачів модів та керування вашими модами. Вам більше не потрібно вручну завантажувати сторонні `.jar` чи `.exe` інсталятори або проходити складні процедури налаштування.
+
+### 1. Встановлення завантажувача в один клік
+При створенні нової збірки або редагуванні версії поточної збірки:
+1. Відкрийте бічну панель вибору версії для вашого профілю.
+2. Виберіть потрібну версію Minecraft.
+3. Оберіть завантажувач модів, який ви хочете використовувати (**Forge**, **Fabric**, **NeoForge** або **Quilt**), а також додаткові оптимізатори, як-от **OptiFine** чи **LabyMod**.
+4. При запуску гри XMCL автоматично завантажить, розпакує та перевірить усі необхідні бібліотеки та залежності.
+
+### 2. Вбудований завантажувач модів
+У вкладці **«Моди»** вашої збірки ви можете шукати та завантажувати моди безпосередньо з баз даних **Modrinth** та **CurseForge** без використання браузера:
+* **Автоматична фільтрація:** XMCL автоматично відфільтрує результати пошуку відповідно до версії гри та вибраного завантажувача модів вашої збірки. Ви бачитимете лише сумісні моди.
+* **Автоматичне вирішення залежностей:** Якщо для роботи моду потрібна додаткова бібліотека (наприклад, *Fabric API* або *Architectury*), XMCL виявить це і запропонує автоматично завантажити всі необхідні залежності.
+
+### 3. Керування модами та їх вимкнення
+* **Увімкнення/вимкнення модів:** Ви можете тимчасово вимкнути any мод за допомогою простого перемикача у списку модів. Вам не потрібно видаляти файли з папки.
+* **Швидкі оновлення:** Лаунчер автоматично сканує встановлені моди та показує, для яких з них є доступні оновлення, дозволяючи оновити їх в один клік.

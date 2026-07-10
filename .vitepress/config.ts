@@ -9,7 +9,17 @@ import { imagetools } from 'vite-imagetools'
 
 const src = resolve(__dirname, '../src')
 const files = readdirSync(src)
-const locales = files.filter(f => f !== 'assets' && !f.endsWith('.md'))
+const localesOrder = ['en', 'de', 'fr', 'pl', 'uk', 'ru', 'kk', 'ar', 'zh', 'zh-TW', 'ko', 'jp']
+const locales = files
+  .filter(f => f !== 'assets' && !f.endsWith('.md'))
+  .sort((a, b) => {
+    const indexA = localesOrder.indexOf(a)
+    const indexB = localesOrder.indexOf(b)
+    if (indexA === -1 && indexB === -1) return a.localeCompare(b)
+    if (indexA === -1) return 1
+    if (indexB === -1) return -1
+    return indexA - indexB
+  })
 const localeConfig: LocaleConfig<DefaultTheme.Config> = {}
 for (const locale of locales) {
   localeConfig[locale] = loadTheme(resolve(src, locale), locale)

@@ -10,9 +10,6 @@ Na exempel, jeśli chcesz zainstalować modyfikację shaderów (taką jak Sildur
 
 W tym dokumencie przyjrzymy się czterem popularnym modloaderom: **Minecraft Forge**, **Fabric**, **NeoForge** i **Quilt**. Każdy z nich oferuje własny zestaw funkcji i korzyści, zaspokajając różne potrzeby modowania i preferencje dotyczące wydajności.
 
-:::info AI
-Ten dokument został przygotowany przy pomocy AI i zweryfikowany przez człowieka.
-:::
 
 ## Minecraft Forge
 

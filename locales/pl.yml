@@ -2,12 +2,12 @@ repository: Repozytorium kodu źródłowego
 intro:
   first:
     body: "{openSource} launcher Minecraft z {modernUx} interfejsem UX"
-    openSource: "Otwartoźródłowy"
-    modernUx: "Nowoczesnym"
+    openSource: "otwartoźródłowy"
+    modernUx: "nowoczesnym"
   second:
-    body: "Zapewnia {diskEfficient} sposób zarządzania wszystkimi twoimi {mods}!"
-    diskEfficient: "Wydajny dyskowy"
-    mods: "Modami"
+    body: "Zapewnia {diskEfficient} sposób zarządzania wszystkimi swoimi {mods}!"
+    diskEfficient: "oszczędzający miejsce na dysku"
+    mods: "modami"
   description: >-
     X Minecraft Launcher (XMCL) to nowoczesny launcher Minecraft, który pozwala
     zarządzać ogromnymi zasobami, takimi jak paczki modów, paczki zasobów, mody,
@@ -65,18 +65,18 @@ gameInstall:
     Możesz nawet dostosować własne lustro w launcherze.
 optimalDisk:
   title:
-    body: "{optimal} przestrzeń dyskowa z {massiveResources}"
+    body: "{optimal} przestrzeń dyskowa przy {massiveResources}"
     optimal: "Optymalna"
-    massiveResources: "Masowymi zasobami"
+    massiveResources: "masowych zasobach"
   description: >-
     XMCL przechowuje wszystkie mody, paczki zasobów, shadery i paczki modów
     w jednej lokalizacji. Kiedy próbujesz użyć znanego zasobu, użyje twardego
-    linku, aby zainstalować zasób w instancji bez kopiowania. To oznacza, że
+    dowiązania, aby zainstalować zasób w instancji bez kopiowania. To oznacza, że
     nigdy więcej nie zobaczysz zduplikowanych kopii w folderze /mods.
 cleanWorkspace:
   title:
     body: "Utrzymuj swój obszar roboczy {clean} dzięki wielu instancjom"
-    clean: "Czysty"
+    clean: "czysty"
   description: >-
     XMCL ma wbudowane wsparcie dla wielu instancji. Możesz łatwo tworzyć wiele
     instancji. Dzięki temu nie musisz się martwić o mieszanie różnych ustawień
@@ -84,7 +84,7 @@ cleanWorkspace:
 communityIntegration:
   title:
     body: "Integracja z {multipleCommunities}"
-    multipleCommunities: "Wieloma społecznościami"
+    multipleCommunities: "wieloma społecznościami"
   description: >-
     XMCL ma wbudowane wsparcie dla Curseforge i Modrinth. Zapewnia również
     możliwość obsługi niestandardowych kont użytkowników/systemów skinów,
@@ -98,7 +98,7 @@ joinPeerDescription: >-
 fullChangelog: Co nowego?
 privacy: Polityka prywatności
 prebuild:
-  history: Historia buildów
+  history: Historia kompilacji
   historyDescription: Poprzednie buildy i wydania
   download: Pobierz wersje prebuild
   downloadDescription: >-
@@ -110,5 +110,5 @@ prebuild:
   selectBuild: Wybierz build
   downloading: Pobieranie...
 downloadMacHint:
-  content: Dla użytkowników Mac, proszę postępować zgodnie z {link}, aby zainstalować.
+  content: W przypadku systemu macOS postępuj zgodnie z {link}, aby zainstalować program.
   link: instrukcją instalacji
