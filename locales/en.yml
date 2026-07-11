@@ -15,6 +15,11 @@ intro:
     CurseForge and Modrinth.
 label: English
 guide: Guide
+guide_getting_started: Getting Started
+guide_features_customization: Features & Customization
+guide_multiplayer: Multiplayer & Online
+guide_advanced: Data & Advanced
+guide_troubleshooting: Troubleshooting
 protocol: Protocol
 changelogs: Changelogs
 outline: On this page

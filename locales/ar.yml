@@ -12,6 +12,11 @@ intro:
     X Minecraft Launcher (XMCL) هو لانشر ماينكرافت حديث يتيح لك إدارة مواردك الهائلة مثل حزم المودات، حزم الموارد، المودات، وحزم الشادر... كما أنه يتكامل مع Minecraft Forge و Fabric و Quilt و CurseForge و Modrinth.
 label: العربية
 guide: الدليل
+guide_getting_started: البدء
+guide_features_customization: الميزات والتخصيص
+guide_multiplayer: اللعب الجماعي وعبر الإنترنت
+guide_advanced: البيانات والميزات المتقدمة
+guide_troubleshooting: استكشاف الأخطاء وإصلاحها
 protocol: البروتوكول
 changelogs: سجل التغييرات
 outline: في هذه الصفحة

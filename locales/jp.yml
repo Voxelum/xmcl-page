@@ -14,6 +14,11 @@ intro:
     CurseForge、Modrinthとの連携も備えています。
 label: 日本語
 guide: ガイド
+guide_getting_started: はじめに
+guide_features_customization: 機能とカスタマイズ
+guide_multiplayer: マルチプレイとオンライン
+guide_advanced: データと高度な設定
+guide_troubleshooting: トラブルシューティング
 protocol: プロトコル
 changelogs: 変更履歴
 outline: このページについて

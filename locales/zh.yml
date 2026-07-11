@@ -31,6 +31,11 @@ returnToTopLabel: 返回顶部
 langMenuLabel: 语言
 lastUpdatedText: 上次更新
 guide: 指南
+guide_getting_started: 开始使用
+guide_features_customization: 功能与自定义
+guide_multiplayer: 多人联机与联机
+guide_advanced: 数据与高级
+guide_troubleshooting: 故障排除与支持
 coreDocument: 核心文档 (英文)
 protocol: 协议
 editLink: 在 GitHub 上编辑此页

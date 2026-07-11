@@ -5,7 +5,7 @@ import { parse } from 'yaml';
 
 export function loadSidebarSection(location: string, locale: string, type: string) {
     try {
-        const files = readdirSync(join(location, type))
+        const files = readdirSync(join(location, type)).filter(f => f.endsWith('.md') && f !== 'index.md')
         const items = files.map(f => {
             const content = readFileSync(join(location, type, f), 'utf-8').trim()
             const lines = content.split('\n').filter(v => !!v)
@@ -13,11 +13,109 @@ export function loadSidebarSection(location: string, locale: string, type: strin
             if (title) {
                 return {
                     text: title,
-                    link: `/${locale}/${type}/${f}`,
+                    link: `/${locale}/${type}/${f.slice(0, -3)}`,
                 }
             }
         }).filter((v): v is { text: string; link: string } => !!v)
         return items
+    } catch {
+        return []
+    }
+}
+
+const GUIDE_GROUPS = [
+    { key: 'guide_getting_started', fallback: 'Getting Started', icon: '🚀 ' },
+    { key: 'guide_features_customization', fallback: 'Features & Customization', icon: '🎨 ' },
+    { key: 'guide_multiplayer', fallback: 'Multiplayer & Online', icon: '🌐 ' },
+    { key: 'guide_advanced', fallback: 'Data & Advanced', icon: '⚙️ ' },
+    { key: 'guide_troubleshooting', fallback: 'Troubleshooting & Support', icon: '🔧 ' },
+]
+
+const GUIDE_FILE_TO_GROUP: Record<string, string> = {
+    'install': 'guide_getting_started',
+    'update': 'guide_getting_started',
+    'appx-migrate': 'guide_getting_started',
+    'demo-minecraft': 'guide_getting_started',
+    'appearance': 'guide_features_customization',
+    'modloader': 'guide_features_customization',
+    'custom-skins': 'guide_features_customization',
+    'p2p': 'guide_multiplayer',
+    'manage': 'guide_advanced',
+    'agnes-ai-setup': 'guide_advanced',
+    'i18n': 'guide_advanced',
+    'microsoft-login-issues': 'guide_troubleshooting',
+    'troubleshooting': 'guide_troubleshooting',
+    'contributing': 'guide_troubleshooting',
+}
+
+const GUIDE_FILE_ORDER = [
+    'install',
+    'update',
+    'appx-migrate',
+    'demo-minecraft',
+    'appearance',
+    'modloader',
+    'custom-skins',
+    'p2p',
+    'manage',
+    'agnes-ai-setup',
+    'i18n',
+    'microsoft-login-issues',
+    'troubleshooting',
+    'contributing',
+]
+
+export function loadGuideSidebar(location: string, locale: string, localeMessages: any) {
+    try {
+        const type = 'guide'
+        const dirPath = join(location, type)
+        if (!existsSync(dirPath)) return []
+
+        const files = readdirSync(dirPath).filter(f => f.endsWith('.md') && f !== 'index.md')
+        
+        const groups: Record<string, { text: string; items: { text: string; link: string; base: string }[] }> = {}
+        for (const g of GUIDE_GROUPS) {
+            const title = (localeMessages[g.key] || g.fallback)
+            groups[g.key] = {
+                text: g.icon + title,
+                items: []
+            }
+        }
+
+        for (const f of files) {
+            const content = readFileSync(join(dirPath, f), 'utf-8').trim()
+            const lines = content.split('\n').filter(v => !!v)
+            const title = lines[0].startsWith('#') ? lines[0].slice(1).trim() : ''
+            if (title) {
+                const base = f.slice(0, -3)
+                const groupKey = GUIDE_FILE_TO_GROUP[base] || 'guide_troubleshooting'
+                const link = `/${locale}/${type}/${base}`
+                groups[groupKey].items.push({ text: title, link, base })
+            }
+        }
+
+        const sidebarItems: DefaultTheme.SidebarItem[] = []
+        for (const g of GUIDE_GROUPS) {
+            const group = groups[g.key]
+            if (group.items.length > 0) {
+                group.items.sort((a, b) => {
+                    const idxA = GUIDE_FILE_ORDER.indexOf(a.base)
+                    const idxB = GUIDE_FILE_ORDER.indexOf(b.base)
+                    if (idxA === -1 && idxB === -1) return a.base.localeCompare(b.base)
+                    if (idxA === -1) return 1
+                    if (idxB === -1) return -1
+                    return idxA - idxB
+                })
+
+                sidebarItems.push({
+                    text: group.text,
+                    items: group.items.map(item => ({ text: item.text, link: item.link })),
+                    collapsed: false
+                })
+            }
+        }
+
+        return sidebarItems
     } catch {
         return []
     }
@@ -57,23 +155,24 @@ export function loadTheme(location: string, locale: string) {
         { text: '📖 ' + localeMessages.coreDocument, link: '/en/core/' },
     ]
 
-    const guideSection = loadSidebarSection(location, locale, 'guide')
+    const guideSection = loadGuideSidebar(location, locale, localeMessages)
     const protocolSection = loadSidebarSection(location, locale, 'protocol')
     const changelogFiles = getChangelogsFiles(location)
 
     const commonSidebar: DefaultTheme.SidebarItem[] = []
     if (guideSection.length > 0) {
-        commonSidebar.push({
-            text: '🧭 ' + localeMessages.guide,
-            items: guideSection
-        })
-        sidebar[`/${locale}/guide/`] = commonSidebar
+        commonSidebar.push(...guideSection)
     }
     if (protocolSection.length > 0) {
         commonSidebar.push({
             text: '🤝 ' + localeMessages.protocol,
-            items: protocolSection
+            items: protocolSection,
+            collapsed: false
         })
+    }
+    
+    if (commonSidebar.length > 0) {
+        sidebar[`/${locale}/guide/`] = commonSidebar
         sidebar[`/${locale}/protocol/`] = commonSidebar
     }
     if (changelogFiles.length > 0) {
