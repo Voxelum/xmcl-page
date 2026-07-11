@@ -1,106 +1,177 @@
-# 模组？为什么我需要模组加载器？
+# 什么是模组加载器，为什么我需要它？
 
-在Minecraft中，模组加载器是拓展游戏体验的必备工具。
+Minecraft 模组加载器（Mod Loader）是玩家与开发者扩展和丰富游戏必不可少的工具。
 
-你是否曾在抖音或B站上看到那些拥有超长视野、绚丽光影效果的Minecraft视频？那背后离不开模组加载器的支持。比如，如果你想体验逼真的光影特效（例如Sildur's Shaders或SEUS等），或者想安装“Distant Horizon”这类能够让你看到远处景观的模组，那么你就需要一个模组加载器来帮助你加载这些高级改装内容。
+无论您是想为游戏添加真实的光影效果以彻底改变世界外观，还是想实现像 TikTok 和 YouTube 热门视频中那样极具视觉震撼的超远视距渲染，模组加载器都是您通往创意世界的大门。
 
-简而言之，无论你是为了在游戏中体验更真实的视觉效果，还是为了突破原版的限制感受更宽广的视野，一个合适的模组加载器都能帮助你实现这些创意。
+例如，如果您想安装类似 Sildur's Shaders 的光影模组以获得逼真的光影效果，或者添加 "Distant Horizons" 模组来极大地拓宽您的视距，您都需要像 Fabric 或 Forge 这样的模组加载器来加载和管理这些修改。
 
-**不过实际上，如果你是一个新人玩家或许不会太关注这些，毕竟你只是想玩某一个模组罢了，模组支持什么模组加载器你就用什么。**
+**不过，或许您根本不需要在选择模组加载器上纠结太久——您想玩的模组本身会替您做好决定...**
 
-但本文档还是会介绍当前流行的四种模组加载器：**Minecraft Forge**、**Fabric**、**NeoForge** 和 **Quilt**。
-如果读者好奇的话可以仔细了解一下每个加载器的理念和优缺点。
+在此文档中，我们将为您详细探讨目前主流的模组加载器与客户端优化修改版。它们各具特色，能完美满足您对模组玩法和游戏性能的不同追求。
 
-:::info AI
-这篇文章是AI起草，人工编辑完成的
-:::
+---
 
 ## Minecraft Forge
 
-<AppForgePicture />
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppForgePicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">Minecraft Forge</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">历史最悠久、历经沙场的 Minecraft 模组加载器。非常适合大型整合包以及与游戏内核深度交互的复杂模组。</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(147, 34, 255, 0.15); color: #a855f7; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">成熟的生态系统</span>
+      <span style="background: rgba(147, 34, 255, 0.15); color: #a855f7; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">深度 API 交互</span>
+      <span style="background: rgba(147, 34, 255, 0.15); color: #a855f7; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">广泛的兼容性</span>
+    </div>
+  </div>
+</div>
 
-**概述：**
+*   **优点：** 积淀多年的开发社区带来了极其详尽的文档、教程以及庞大的模组资源。
+*   **缺点：** 适配最新游戏版本的速度可能较慢；由于功能极其庞杂，可能会增加游戏加载的时间和内存消耗。
 
-- Minecraft 最早、经得起考验的模组加载器。
-- 拥有庞大而专注的社区以及成熟的生态系统。
-- 提供丰富的模组兼容性和健全的 API，已成为业界标准。
-
-**主要特点：**
-
-- **成熟的生态系统：** 多年的开发造就了丰富的文档、教程和社区支持。
-- **强大的 API：** 稳定成熟的 API 允许开发者深度整合 Minecraft，使其成为构建全面模组包的理想之选。
-- **模组兼容性：** 大量模组以 Forge 为目标平台，确保了广泛的互操作性。
-
-**注意事项：**
-
-- **更新周期：** 更新至最新 Minecraft 版本时可能会有延迟。
-- **性能：** 丰富的功能集有时会导致加载时间较长，相对于更轻量的方案存在一定劣势。
+---
 
 ## Fabric
 
-<AppFabricPicture />
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppFabricPicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">Fabric</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">专为现代 Minecraft 版本设计的轻量级、模块化模组加载器。在运行性能、FPS 帧率以及快速版本更新上表现优异。</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">性能优化导向</span>
+      <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">版本适配迅速</span>
+      <span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">轻量低消耗</span>
+    </div>
+  </div>
+</div>
 
-**概述：**
+*   **优点：** 极低的性能开销、更快的游戏启动速度，且能极其迅速地适配游戏的新版本（非常适合加载光影和各类优化模组）。
+*   **缺点：** 经典老旧版本的模组积累不如 Forge 丰富；对 Minecraft 早期版本的支持比较有限。
 
-- 轻量且模块化的模组加载器，专为现代 Minecraft 版本设计。
-- 深受那些追求速度和灵活性开发者的青睐。
-
-**主要特点：**
-
-- **轻量架构：** Fabric 减少了资源开销，提供更快的加载速度和更流畅的体验。
-- **快速更新：** 模块化使其能迅速适应最新 Minecraft 版本。
-- **开发灵活性：** 简洁而强大的 API 帮助开发者更容易试验和迭代新模组创意。
-
-**注意事项：**
-
-- **社区规模：** 虽然增长迅速，但 Fabric 的社区和模组库还不如 Forge 庞大。
-- **旧版支持：** Fabric 主要支持较新的 Minecraft 版本，对旧模组的支持可能有限。
+---
 
 ## NeoForge
 
-<AppNeoForgePicture />
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppNeoForgePicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">NeoForge</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">Forge 的现代分支版本。它将原有加载器的健壮性和庞大特性与最前沿的性能优化算法完美结合。</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">现代化 API</span>
+      <span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">混合化优势</span>
+      <span style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">积极演进中</span>
+    </div>
+  </div>
+</div>
 
-**概述：**
+*   **优点：** 经过重构的现代化干净代码库、大幅度改善的模组开发体验，以及紧贴社区实际性能需求的更新策略。
+*   **缺点：** 作为一个新兴的生态系统，最初可用的兼容模组总数可能会少于经典版的 Forge。
 
-- 新兴的模组加载器，旨在融合 Forge 的强大兼容性与现代化的性能导向设计。
-- 力图成为传统 Forge 模组开发与当代开发实践之间的桥梁。
-
-**主要特点：**
-
-- **混合式方法：** 结合了 Forge 的丰富特性与优化过的性能，力求在两者间取得平衡。
-- **现代化代码基础：** 从零开始设计，更贴合当前模组开发趋势，同时保持一定的旧版支持。
-- **社区驱动：** 根据模组开发者的反馈和不断变化的 Minecraft 环境不断进化。
-
-**注意事项：**
-
-- **成熟度：** 作为新秀，NeoForge 仍在发展中，可能在细节打磨和模组库的广度上不及 Forge。
-- **采纳率：** 尽管社区正在扩展，但支持和文档的完善程度尚未达到成熟加载器的水平。
+---
 
 ## Quilt
 
-**概述：**
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <QuiltIcon style="width: 48px; height: 48px; display: block;" />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">Quilt</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">由社区驱动的 Fabric 分支项目。在保留轻量化设计的同时，提供了更强悍的 API 扩展工具，并完美兼容绝大多数 Fabric 模组。</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(236, 72, 153, 0.15); color: #ec4899; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">兼容 Fabric</span>
+      <span style="background: rgba(236, 72, 153, 0.15); color: #ec4899; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">创新功能</span>
+      <span style="background: rgba(236, 72, 153, 0.15); color: #ec4899; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">高灵活性</span>
+    </div>
+  </div>
+</div>
 
-- 源自 Fabric 的分叉项目，在轻量基础上引入了更多功能和改进。
-- 基于社区讨论而诞生，旨在解决 Fabric 开发者和用户面临的一些挑战。
+*   **优点：** 开箱即用支持绝大部分 Fabric 模组；为模组创作者提供了更具创造力的高级工具。
+*   **缺点：** 仍处于快速的社区开发演进中，在向独立生态转变的过渡期内可能伴随轻微的不稳定性。
 
-**主要特点：**
+---
 
-- **增强功能：** 提供更多 API 和工具改进，为模组开发者带来更大的创作自由。
-- **社区导向：** 响应模组开发者的需求，平衡快速更新与功能扩展。
-- **互操作性：** 设计上能够良好兼容 Fabric 模组，同时逐步建立自己的生态系统。
+## OptiFine
 
-**注意事项：**
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppOptifinePicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">OptiFine</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">传奇级的 Minecraft 优化模组。提供巨大的 FPS 提升、对 HD 材质和光影的支持，以及丰富的图形细节设置。</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">FPS 提升</span>
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">光影支持</span>
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">细节调优</span>
+    </div>
+  </div>
+</div>
 
-- **开发阶段：** 尽管前景看好，Quilt 仍处于活跃开发阶段，可能需要开发者调整工作流程。
-- **采纳曲线：** 借助 Fabric 的基础虽然有先发优势，但 Quilt 的独特改进正在使其逐步独立。
+*   **优点：** 在旧版本 Minecraft 上拥有无可比拟的兼容性，是不安装其他任何辅助模组即可启用光影的最简便方式。
+*   **缺点：** 闭源，这常常会导致它与许多现代的 Forge/Fabric 模组产生严重的兼容性冲突。
+
+---
+
+## LabyMod
+
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppLabymodPicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">LabyMod</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">功能丰富的 Minecraft 客户端修改版。它完全重构了用户界面，添加了各种实用的桌面小部件、动画和内置化妆道具。</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">自定义 HUD</span>
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">客户端修改</span>
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">个性化妆容</span>
+    </div>
+  </div>
+</div>
+
+*   **优点：** 模块化设计，内置了极其丰富的 PvP 工具、流畅的游戏内整合和高自由度的界面定制。
+*   **缺点：** 主要面向多人游戏和 PvP；可能与部分大型全局地图/世界生成模组产生兼容性冲突。
+
+---
 
 ## 对比
 
 | 特性                   | Minecraft Forge                      | Fabric                         | NeoForge                                  | Quilt                             |
 |------------------------|--------------------------------------|--------------------------------|-------------------------------------------|-----------------------------------|
-| **代码基础**           | 成熟且稳定                           | 轻量、模块化                    | 混合式：现代化Forge方法                    | 基于Fabric的轻量分叉               |
+| **代码基础**           | 成熟且稳定                           | 轻量、模块化                    | 混合式：现代化Forge方法                    | 基于Fabric the light分叉          |
 | **性能**               | 可能存在加载时间较长的问题             | 加载迅速，专注速度优化            | 力求在稳定性与速度之间取得平衡               | 优化加载速度，并附加额外功能          |
 | **社区与支持**         | 庞大且长期活跃的社区                  | 快速扩展中的社区                  | 新兴社区，正在逐步扩大                       | 借助Fabric社区积累资源              |
 | **模组兼容性**         | 广泛且成熟                           | 适合最新版本的模组                | 兼顾传统与现代模组支持                        | 兼容Fabric模组，并逐步独立           |
-| **更新周期**           | 更新至新版本较慢                       | 快速响应最新版本               | 根据反馈逐步成熟                           | 模块化设计带来灵活更新              
+| **更新周期**           | 更新至新版本较慢                       | 快速响应最新版本               | 根据反馈逐步成熟                           | 模块化设计带来灵活更新              |
 
+---
+
+## XMCL 中的模组加载器与模组管理
+
+X Minecraft Launcher (XMCL) 提供了原生且深度集成的模组加载器安装与模组管理系统。您完全不需要手动去网上下载第三方的 `.jar` 或 `.exe` 安装包，更不需要阅读复杂的安装手册。
+
+### 1. 模组加载器一键安装
+在创建新的实例版本或者修改现有实例的配置时：
+1. 展开实例的版本选择面板。
+2. 选择您想要的游戏版本。
+3. 勾选需要搭配的模组加载器（**Forge**, **Fabric**, **NeoForge**, **Quilt**）或优化修改版（**OptiFine**, **LabyMod**）。
+4. 在您启动游戏时，XMCL 会自动检测、下载并为您配齐所有必须的运行库与底层依赖项。
+
+### 2. 游戏内快捷搜索与下载
+在实例的 **模组** 选项卡下，您可以直接搜索并极速下载来自 **Modrinth** 与 **CurseForge** 的庞大模组：
+* **自动精确过滤：** XMCL 会依据您当前的实例版本和模组加载器，自动为您过滤掉不兼容的搜索结果，您只能看到完全适用的模组。
+* **依赖项自动解析：** 如果某款模组依赖额外的底层库支持（如 *Fabric API* 或 *Architectury*），XMCL 会主动发现并引导您一键连同所有依赖项共同下载。
+
+### 3. 便捷启用与卸载
+* **模组一键开关：** 在模组列表中，您只需通过简单的拨动开关即可在游戏里启用或临时停用特定模组，免去了手动挪移模组文件夹内文件的烦恼。
+* **一键同步更新：** 启动器会时刻自动检索当前所有已装模组的可升级版本，并醒目提示，帮助您一键升级至最新最稳版本。
