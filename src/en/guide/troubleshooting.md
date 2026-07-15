@@ -106,4 +106,72 @@ You can find the log files to see what is causing the crash:
    * **macOS:** `~/Library/Application Support/xmcl`
    * **Linux:** `~/.config/xmcl`
 2. Open the `logs` folder and look for the latest `main.log` file.
-3. Send this log file to the development team on Discord or GitHub for support.
+
+---
+
+## 📑 6. How to Analyze Launcher & Game Logs
+
+When you experience issues, the logs will tell you exactly what is happening. Here is how to find them, understand them, and where to get help.
+
+### 🔍 How to Find the Logs
+
+Depending on whether it's a launcher error or a game crash, you will need to check different logs:
+
+#### A. Launcher Logs (`main.log`)
+For launcher crashes, download failures, network errors, or login issues:
+- **Windows:** Press `Win + R`, type `%appdata%\xmcl\logs` and press Enter.
+- **macOS:** Navigate to `~/Library/Application Support/xmcl/logs`.
+- **Linux:** Go to `~/.config/xmcl/logs`.
+- Find the latest file named `main.log`.
+
+#### B. Game Logs (`latest.log` & Crash Reports)
+For mod conflicts, Minecraft crashes, performance issues, or Java errors:
+- Open the instance card in the launcher.
+- Click the **Folder** icon at the top right of the instance dashboard to open its directory.
+- Go to the `logs` folder and open `latest.log`.
+- If the game crashed and closed, go to the `crash-reports` folder and look for the newest `.txt` file (named like `crash-YYYY-MM-DD_HH.MM.SS-client.txt`).
+
+---
+
+### 🛠 How to Analyze Logs & Fix Common Errors
+
+Open the log file in any text editor (like Notepad) and look for the following errors (you can use `Ctrl + F` to search):
+
+#### 🔴 Case 1: Out of Memory Error
+- **What to look for:** `java.lang.OutOfMemoryError: Java heap space` or `Exit code: -805306369`.
+- **Explanation:** You haven't allocated enough RAM for the game to load all the mods.
+- **How to fix:**
+  1. Open instance settings (gear icon next to the Play button).
+  2. Scroll down to the **Java** section.
+  3. Increase the **Min Memory** and **Max Memory** (e.g. set Max Memory to `4096` or `6144` MB).
+
+#### 🔴 Case 2: Mod Mismatch or Missing Dependencies
+- **What to look for:** `Mixin transformation failed`, `DependencyResolutionException`, or lines like `Requires mod 'fabric' (version X or later), but only version Y is installed`.
+- **Explanation:** One of your mods requires another mod (dependency) that is missing, or two mods are incompatible with each other.
+- **How to fix:** Read the error line carefully. It usually names the missing mod. Download and place the missing mod jar file into your `mods` folder, or update the conflicting mod to a compatible version.
+
+#### 🔴 Case 3: Java Version Mismatch
+- **What to look for:** `java.lang.UnsupportedClassVersionError: ... has been compiled by a more recent version of the Java Runtime`.
+- **Explanation:** You are running a Minecraft version or modpack with an incompatible Java version (e.g., using Java 8 for Minecraft 1.20).
+- **How to fix:** Open instance settings, go to the **Java** section, and click **Install Java** to download the recommended Java version for that specific Minecraft version.
+
+#### 🔴 Case 4: Graphics Card Driver Crash
+- **What to look for:** `GLFW error 65542: WGL: The driver does not seem to support OpenGL` or `Pixel format not accelerated`.
+- **Explanation:** Your graphics card drivers are outdated, missing, or the game is running on your CPU's integrated graphics instead of your dedicated GPU.
+- **How to fix:** Update your graphics drivers to the latest version from the official manufacturer website (NVIDIA, AMD, or Intel). For laptops, ensure the launcher is running on the high-performance GPU in your system settings.
+
+---
+
+### ❓ What to Do If You Can't Understand the Logs?
+
+If you've looked through the logs and still don't know what is causing the crash, do not worry! The XMCL community is here to help:
+
+#### 1. Join Our Official Discord Server
+- Get instant help from developers and experienced players.
+- Join via: **[Discord Server Link](https://discord.gg/W5XVwYY7GQ)**
+- **How to ask:** Upload your `latest.log` or the crash report file directly to the `#support` channel. Do not copy-paste thousands of lines of text; sending the file is much cleaner!
+
+#### 2. Open a GitHub Issue
+- If you believe you found a bug in the launcher itself, you can file a bug report.
+- Submit here: **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
+- Paste the content of your `main.log` or Minecraft crash logs inside the issue description so developers can debug it.
