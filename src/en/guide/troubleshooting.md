@@ -109,9 +109,21 @@ You can find the log files to see what is causing the crash:
 
 ---
 
-## 📑 6. How to Analyze Launcher & Game Logs
+## 📋 6. Generate a Diagnostic Report (Recommended First Step)
 
-When you experience issues, the logs will tell you exactly what is happening. Here is how to find them, understand them, and where to get help.
+Before searching for raw log files manually, we highly recommend generating a **Diagnostic Report** inside the launcher. This compiles all launcher logs, game logs, and system environment info into a single package, allowing the community or developers to help you much faster.
+
+### How to Generate a Report:
+1. Click on the **Help & Feedback** menu in the launcher header.
+2. Click **Generate Report** to bundle launcher diagnostics and logs.
+
+   <video src="/guidephoto/Generate%20Report.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+
+---
+
+## 📑 7. How to Analyze Launcher & Game Logs
+
+If you prefer to find the logs manually, they will tell you exactly what is happening. Here is how to locate them and understand common crash scenarios.
 
 ### 🔍 How to Find the Logs
 
@@ -164,14 +176,21 @@ Open the log file in any text editor (like Notepad) and look for the following e
 
 ### ❓ What to Do If You Can't Understand the Logs?
 
-If you've looked through the logs and still don't know what is causing the crash, do not worry! The XMCL community is here to help:
+If you've looked through the logs/reports and still don't know what is causing the crash, do not worry! The XMCL community is here to help across multiple platforms:
 
 #### 1. Join Our Official Discord Server
 - Get instant help from developers and experienced players.
 - Join via: **[Discord Server Link](https://discord.gg/W5XVwYY7GQ)**
-- **How to ask:** Upload your `latest.log` or the crash report file directly to the `#support` channel. Do not copy-paste thousands of lines of text; sending the file is much cleaner!
+- **How to ask:** Go to the **#feedback-and-idea** channel and upload your generated diagnostic report or crash log file.
+- Look at this illustration of our feedback channel:
+  
+  <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. Open a GitHub Issue
+#### 2. Ask on Reddit
+- You can post your issues and ask the community on our subreddit:
+- Visit: **[r/XMCL Subreddit](https://www.reddit.com/r/XMCL/)**
+
+#### 3. Open a GitHub Issue
 - If you believe you found a bug in the launcher itself, you can file a bug report.
 - Submit here: **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
-- Paste the content of your `main.log` or Minecraft crash logs inside the issue description so developers can debug it.
+- Paste the content of your report or logs inside the issue description so developers can debug it.

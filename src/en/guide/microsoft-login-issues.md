@@ -10,11 +10,11 @@ To sign in and play with your official Minecraft license, follow these steps:
 
 1. Click on your profile/avatar (or **"Manage Account"**) in the top right to open the Account Manager:
 
-   <video src="/guidephoto/My%20stuff.mp4" autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+   <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
 2. Click **"Add Account"**, choose **Microsoft**, and proceed with the login:
 
-   <video src="/guidephoto/add%20account.mp4" autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+   <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
 > 💡 **Sign In via Device Code:**  
 > If you don't want to type your password inside the launcher, check **"Login by Device Code"**. XMCL will show a code; simply visit `microsoft.com/link` in your web browser, enter the code, and confirm the login.

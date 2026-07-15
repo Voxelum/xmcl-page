@@ -10,11 +10,11 @@
 
 1. Натисніть на свій профіль/аватар (або кнопку **"Керування обліковими записами"**) у верхньому правому кутку, щоб відкрити менеджер акаунтів:
 
-   <video src="/guidephoto/My%20stuff.mp4" autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+   <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
 2. Натисніть **"Додати акаунт"**, виберіть **Microsoft** та виконайте вхід:
 
-   <video src="/guidephoto/add%20account.mp4" autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+   <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
 > 💡 **Вхід за допомогою коду пристрою (Device Code):**  
 > Якщо ви не хочете вводити пароль безпосередньо в лаунчері, позначте пункт **"Login by Device Code"** (Вхід за кодом). XMCL покаже унікальний код. Перейдіть на сторінку `microsoft.com/link` у браузері, введіть цей код і підтвердіть авторизацію.
