@@ -1,0 +1,114 @@
+repository: Рэпазіторый зыходнага коду
+label: Беларуская
+intro:
+  first:
+    body: Лаўнчар Minecraft з {openSource} і {modernUx} інтэрфейсам.
+    openSource: адкрытым кодам
+    modernUx: сучасным
+  second:
+    body: Забяспечце {diskEfficient} кіраванне ўсімі сваімі {mods}!
+    diskEfficient: эфектыўнае для дыска
+    mods: модамі
+  description: >-
+    X Minecraft Launcher (XMCL) — це сучасны лаўнчар Minecraft, які дазваляе
+    кіраваць такімі велізарнымі рэсурсамі, як модпакі, пакеты рэсурсаў, моды,
+    шэйдары... Ён таксама інтэграваны з Minecraft Forge, Fabric, Quilt,
+    CurseForge і Modrinth.
+launcher:
+  manage:
+    intro: Эфектыўна кіруйце сваім Minecraft.
+  description: Просты, адкрыты і функцыянальны лаўнчар Minecraft
+downloadFor:
+  windows: 'Спампаваць для Windows:'
+  mac: 'Спампаваць для Mac:'
+  linux: 'Спампаваць для Linux:'
+guide: Дапаможнік
+protocol: Пратакол
+changelogs: Спіс змен
+outline: Na гэтай старонцы
+coreDocument: Базавая дакументацыя
+author: Звязацца з аўтарам
+download-zip: Zip
+download-zip-32: Zip (32 bits)
+download-appx: AppX Пакет
+download-appinstaller: App Інсталятар
+download-portable: Portable
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: Спампаваць з Azure
+azure-ms-source: Спампаваць з Azure Microsoft CDN
+github-source: Спампаваць з Github
+auto-source: Аўтаматычнае вызначэнне крыніцы
+authSuccess: Паспяхова!
+authSuccessTitle: Аўтарызацыя прайшла паспяхова. Вас будзе перанакіравана назад у лаўнчар!
+redirectHelperTitle: >-
+  Калі вас не перанакіравала аўтаматычна, вы можаце паспрабаваць націснуць кнопку
+  «Адкрыць у лаўнчары».
+redirectHelperMessage: >-
+  З'явіцца ўсплывальнае акно з запытам на адкрыццё лаўнчара. Калі гэта не спрацуе,
+  паспрабуйце перацягнуць кнопку ў акно лаўнчара!
+notWork: Не працуе?
+openInAppButton: Адкрыць у лаўнчары
+nothingWork: >-
+  Калі нічога з гэтага не дапамагае, вы можаце спампаваць апошнюю версію
+  лаўнчара зноў
+gameInstall:
+  title:
+    body: Больш не турбуйцеся пра {gameInstall}
+    gameInstall: Усталёўку гульні
+  description: >-
+    XMCL падтрымлівае ўсталёўку ванільнага Minecraft, Forge, Fabric і нават
+    OptiFine — усё ў адным месцы! Вы можаце ўсталяваць іх прама ў лаўнчары.
+optimalDisk:
+  title:
+    body: '{optimal} дыскавая прастора з {massiveResources}'
+    optimal: Аптымальная
+    massiveResources: масіўнымі рэсурсамі
+  description: >-
+    XMCL захоўвае ўсе моды, пакеты рэсурсаў, шэйдары і модпакі ў адным месцы.
+    Замест капіявання файлаў для кожнага гульнявога профілю выкарыстоўваюцца жорсткія
+    спасылкі. Гэта азначае, што вы больш ніколі не ўбачыце дублікатаў файлаў у
+    папцы /mods, што значна эканоміць месца на дыску.
+cleanWorkspace:
+  title:
+    body: Трымайце працоўнае месца {clean} дзякуючы некалькім профілям
+    clean: чыстым
+  description: >-
+    XMCL мае ўбудаваную падтрымку некалькіх профіляў гульні. Вы можаце
+    лёгка стварыць некалькі профіляў, не турбуючыся аб змешванні розных версій
+    ці налад запуску.
+communityIntegration:
+  title:
+    body: Аб'ядноўвайцеся з {multipleCommunities}
+    multipleCommunities: рознымі супольнасцямі
+  description: >-
+    XMCL падтрымлівае CurseForge і Modrinth. Таксама ёсць магчымасць выкарыстоўваць
+    староннія сістэмы аўтарызацыі і скінаў, такія як Blessing Skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: 'Далучыцца да партыі: {inviter}'
+joinPeerDescription: >-
+  {inviter} запрасіў вас далучыцца да групы {group}, каб разам гуляць у
+  Minecraft! Вас будзе перанакіравана назад у лаўнчар!
+fullChangelog: Што новага?
+privacy: Канфідэнцыяльнасць праграмы
+prebuild:
+  history: Гісторыя зборак
+  historyDescription: Папярэднія зборкі і рэлізы
+  download: Спампаваць папярэднія зборкі
+  downloadDescription: |-
+    Prebuild — гэта артэфакты, створаныя ў працэсе распрацоўкі.
+    Яны могуць быць нестабільнымі.
+    Выкарыстоўвайце на свой страх і рызыка!
+  entryHint: Папярэднія зборкі артэфактаў?
+  ready: Готова
+  selected: Выбрана
+  selectBuild: Выбраць зборку
+  downloading: Загрузка...
+downloadMacHint:
+  link: Інструкцыя па ўсталёўцы
+  content: Для карыстальнікаў MAC, калі ласка, выконвайце {link} для ўсталёўкі.

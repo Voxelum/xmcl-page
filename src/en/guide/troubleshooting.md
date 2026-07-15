@@ -109,7 +109,99 @@ You can find the log files to see what is causing the crash:
 
 ---
 
-## 📋 6. Generate a Diagnostic Report (Recommended First Step)
+## 🔍 3. Mod is on CurseForge Website but Missing in Launcher Search
+
+### Symptoms
+* You search for a mod inside the launcher, but it says "No results found", even though you can see it on the official CurseForge website.
+
+### Cause
+CurseForge allows mod authors to **disable third-party API access** for their mods. When disabled, the CurseForge API (which XMCL uses to search and fetch mods) is forbidden from returning the mod in search results.
+
+### Solution
+1. Open your web browser and navigate to the mod's page on [CurseForge](https://www.curseforge.com/minecraft/search).
+2. Click **Download** to save the `.jar` file to your computer.
+3. Open XMCL and select your active instance.
+4. **Drag-and-drop** the downloaded `.jar` file directly onto the launcher's window. XMCL will automatically install it into the `mods` folder of the selected instance.
+
+---
+
+## 📦 4. Imported Modpacks "Disappear" or Seem Empty
+
+### Symptoms
+* You drag and drop a modpack `.zip` or `.mrpack` file into the launcher, but you can't find it in your current game profile, or the mod list appears empty.
+
+### Cause
+1. **New Instance Creation**: XMCL does not merge modpacks into your currently active profile. Instead, it creates a **completely new Instance** (profile) for that modpack.
+2. **Background Download Tasks**: Modpack files do not contain the actual `.jar` mods to save space (they only contain metadata). After importing, XMCL starts a background task to download all the mods. Until this task finishes, the mod list might look empty.
+
+### Solution
+1. **Switch Instances**: Click on the sidebar menu or profile switcher to see all instances. Look for a new instance named after the imported modpack and select it.
+2. **Check Task Manager**: Click the Task icon (top right corner of the launcher) to check if the modpack download task is still running. Wait for the download to complete before launching the game.
+
+---
+
+## 🔄 5. Infinite File Corruption Loop (Checksum Mismatch)
+
+### Symptoms
+* The launcher continuously redownloads a library or asset file, saying it is corrupted.
+* The game fails to start because validation fails repeatedly.
+
+### Cause
+A file download was interrupted, and a corrupted partial file is locked in your cache, preventing the launcher from overriding it correctly.
+
+### Solution
+1. Find the path of the corrupted file shown in the launcher diagnostics or logs (e.g., `libraries/org/lwjgl/...`).
+2. Open your instance data folder (click the Folder icon at the top right of the instance dashboard).
+3. Navigate to the path specified in the error and **delete the containing folder** of the corrupted library/asset.
+4. Click **Repair** or restart the launch process. The launcher will download a fresh, clean copy.
+
+---
+
+## ☕ 6. Game Crashes Instantly (Java Version Mismatch)
+
+### Symptoms
+* The game starts but crashes immediately with exit code `1` or `-1`.
+* The log says `UnsupportedClassVersionError` or "Java not found".
+
+### Cause
+Each Minecraft version requires a specific version of Java (JDK). Using the wrong one will cause the game to crash.
+
+### Solution
+XMCL has an automatic Java manager that downloads correct JDK versions for you.
+
+:::warning Java Compatibility Matrix
+Ensure your instance is using the correct Java version:
+* **Minecraft 1.12.2 and older:** Java 8
+* **Minecraft 1.16 - 1.17:** Java 16 / 17
+* **Minecraft 1.18 - 1.20.4:** Java 17
+* **Minecraft 1.20.5+:** Java 21
+:::
+
+#### How to manage Java in XMCL:
+1. Go to the instance settings (gear icon next to the Play button).
+2. Look at the **Java** section.
+3. Click the selection box. XMCL will list all detected Java versions on your system and highlight compatible ones.
+4. If you don't have the correct Java version, click **Install Java** to let the launcher download the optimal version automatically.
+
+---
+
+## 📑 7. Launcher Won't Open or Black Screen
+
+### Symptoms
+* Double-clicking the launcher does nothing.
+* The launcher window opens but remains completely black.
+
+### Solution
+You can find the log files to see what is causing the crash:
+1. Go to your local app data directory:
+   * **Windows:** `%appdata%\xmcl`
+   * **macOS:** `~/Library/Application Support/xmcl`
+   * **Linux:** `~/.config/xmcl`
+2. Open the `logs` folder and look for the latest `main.log` file.
+
+---
+
+## 📋 8. Generate a Diagnostic Report (Recommended First Step)
 
 Before searching for raw log files manually, we highly recommend generating a **Diagnostic Report** inside the launcher. This compiles all launcher logs, game logs, and system environment info into a single package, allowing the community or developers to help you much faster.
 
@@ -121,7 +213,7 @@ Before searching for raw log files manually, we highly recommend generating a **
 
 ---
 
-## 📑 7. How to Analyze Launcher & Game Logs
+## 📑 9. How to Analyze Launcher & Game Logs
 
 If you prefer to find the logs manually, they will tell you exactly what is happening. Here is how to locate them and understand common crash scenarios.
 
