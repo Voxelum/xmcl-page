@@ -104,6 +104,64 @@ TURN 서버는 트래픽 중계 역할을 합니다.
 
 ---
 
+## 🔄 연결 흐름 및 신호 아키텍처
+
+다음 다이어그램은 두 마인크래프트 클라이언트 간에 P2P 연결이 조정되고, NAT 홀펀칭이 완료되며, 게임 트래픽이 안전하게 터널링되는 과정을 보여줍니다:
+
+<div style="margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
+<h3 style="margin-top: 0; margin-bottom: 16px; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1); display: flex; align-items: center; gap: 8px;">
+<span>🔄 연결 및 데이터 흐름 시퀀스</span>
+</h3>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<!-- Step 1 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">1</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">신호 교환 및 방 설정</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+<strong>호스트</strong>가 신호 서버(Lobby)에 SDP Offer를 전송합니다. <br/><strong>게스트</strong>가 Offer를 받아 설정하고 호스트에게 SDP Answer를 반환합니다.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 2 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">2</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">NAT 홀 펀칭</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+두 런처 모두 STUN/TURN을 통해 NAT 홀 펀칭을 수행하여 직접 P2P 연결을 설정합니다. 신뢰할 수 있는 제어용 메타데이터 채널이 열립니다.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 3 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">3</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">LAN 게임 감지</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+<strong>마인크래프트 호스트</strong>가 LAN 세계를 브로드캐스트합니다. 호스트 런처가 이 메타데이터를 게스트에게 전달합니다.<br/><strong>게스트 런처</strong>가 로컬 TCP 프록시를 실행하고 이를 게스트의 마인크래프트 클라이언트에 가짜 LAN 게임으로 브로드캐스트합니다.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 4 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">4</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">게임 트래픽 터널링</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+게스트 클라이언트가 프록시에 연결합니다. 게스트 런처가 연결을 새로운 이진 WebRTC DataChannel에 매핑합니다. 호스트 런처가 실제 마인크래프트 서버로 패킷을 전달합니다.
+</p>
+</div>
+</div>
+</div>
+</div>
+
 ## 사용자 간 연결을 맺는 방법
 
 WebRTC에서는 Description 문자열 교환을 통해 사용자 간 연결이 형성됩니다.  

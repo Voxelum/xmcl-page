@@ -146,12 +146,12 @@ In this document, we will explore popular mod loaders and client optimization mo
 
 ## Compare
 
-| Feature                 | Minecraft Forge                 | Fabric               | NeoForge                            | Quilt                              |
-| ----------------------- | ------------------------------- | -------------------- | ----------------------------------- | ---------------------------------- |
-| **Performance**         | Occasionally longer load times  | Optimized for speed  | Balances stability with performance | Enhanced speed with extra features |
-| **Community & Support** | Extensive, well-established     | Rapidly growing      | Emerging; community still evolving  | Leveraging Fabric’s community      |
-| **Mod Compatibility**   | Broad and established           | Best for modern mods | Bridges legacy and new mod support  | Compatible with Fabric mods        |
-| **Update Cycle**        | Slower adoption of new versions | Fast and responsive  | Gradually maturing through feedback | Agile modular updates              |
+| Feature                 | Minecraft Forge                 | Fabric               | NeoForge                            | Quilt                              | OptiFine                            | LabyMod                            |
+| ----------------------- | ------------------------------- | -------------------- | ----------------------------------- | ---------------------------------- | ----------------------------------- | ---------------------------------- |
+| **Performance**         | Occasionally longer load times  | Optimized for speed  | Balances stability with performance | Enhanced speed with extra features | High FPS boost on older versions    | Extremely smooth, optimized HUD    |
+| **Community & Support** | Extensive, well-established     | Rapidly growing      | Emerging; community still evolving  | Leveraging Fabric’s community      | Legacy status, widely known         | Dedicated multiplayer community    |
+| **Mod Compatibility**   | Broad and established           | Best for modern mods | Bridges legacy and new mod support  | Compatible with Fabric mods        | High conflicts (closed-source)      | Modular base, PvP-focused addons   |
+| **Update Cycle**        | Slower adoption of new versions | Fast and responsive  | Gradually maturing through feedback | Agile modular updates              | Slower, closed-source releases      | Quick updates for PvP versions     |
 
 ---
 

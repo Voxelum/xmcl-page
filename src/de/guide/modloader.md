@@ -146,12 +146,12 @@ In diesem Dokument stellen wir Ihnen beliebte Modloader und Client-Optimierungen
 
 ## Vergleich
 
-| Feature | Minecraft Forge | Fabric | NeoForge | Quilt |
-| --- | --- | --- | --- | --- |
-| **Leistung** | Gelegentlich längere Ladezeiten | Optimiert für Geschwindigkeit | Gleicht Stabilität mit Leistung aus | Erhöhte Geschwindigkeit mit Zusatzfeatures |
-| **Community & Support** | Umfassend, gut etabliert | Schnell wachsend | Aufstrebend; Community entwickelt sich noch | Nutzt die Community von Fabric |
-| **Mod-Kompatibilität** | Breit und etabliert | Am besten für moderne Mods | Verbindet Legacy- und neue Mod-Unterstützung | Kompatibel mit Fabric-Mods |
-| **Update-Zyklus** | Langsamere Einführung neuer Versionen | Schnell und reaktionsschnell | Reift allmählich durch Feedback | Agile modulare Updates |
+| Feature | Minecraft Forge | Fabric | NeoForge | Quilt | OptiFine | LabyMod |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Leistung** | Gelegentlich längere Ladezeiten | Optimiert für Geschwindigkeit | Gleicht Stabilität mit Leistung aus | Erhöhte Geschwindigkeit mit Zusatzfeatures | Hervorragender FPS-Boost auf älteren Versionen | Extrem flüssiges, optimiertes HUD |
+| **Community & Support** | Umfassend, gut etabliert | Schnell wachsend | Aufstrebend; Community entwickelt sich noch | Nutzt die Community von Fabric | Legacy-Status, weithin bekannt | Eigene Multiplayer-Community |
+| **Mod-Kompatibilität** | Breit und etabliert | Am besten für moderne Mods | Verbindet Legacy- und neue Mod-Unterstützung | Kompatibel mit Fabric-Mods | Viele Konflikte (Closed-Source) | Modulare Basis, PvP-fokussierte Add-ons |
+| **Update-Zyklus** | Langsamere Einführung neuer Versionen | Schnell und reaktionsschnell | Reift allmählich durch Feedback | Agile modulare Updates | Langsamere Closed-Source-Releases | Schnelle Updates für PvP-Versionen |
 
 ---
 

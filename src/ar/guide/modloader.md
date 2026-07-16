@@ -97,11 +97,77 @@
 
 - **تطوير نشط:** لا يزال Quilt في مرحلة التطوير المبكرة، لذلك قد يواجه المستخدمون حالات عدم استقرار عرضية.
 
+## OptiFine
+
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppOptifinePicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">OptiFine</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">مود تحسين ماينكرافت الشهير. يوفر زيادة هائلة في الـ FPS، ودعمًا للأنسجة عالية الدقة (HD textures)، والمظللات (shaders)، والكثير من إعدادات الرسوميات بالتفصيل.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">FPS Boost</span>
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Shaders Support</span>
+      <span style="background: rgba(30, 58, 138, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Fine-Tuning</span>
+    </div>
+  </div>
+</div>
+
+*   **الميزات:** توافق لا مثيل له في إصدارات ماينكرافت القديمة، وأسهل طريقة لتشغيل المظللات دون الحاجة لتثبيت مودات أخرى.
+*   **العيوب:** مغلق المصدر (closed-source)، مما يسبب غالبًا مشكلات توافق مع مودات Forge/Fabric الحديثة.
+
+---
+
+## LabyMod
+
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: var(--vp-c-bg-mute); padding: 8px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+    <AppLabymodPicture />
+  </div>
+  <div>
+    <h3 style="margin-top: 0 !important; font-size: 1.25rem; font-weight: 600; color: var(--vp-c-text-1);">LabyMod</h3>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">تعديل غني بالميزات لعميل ماينكرافت. يعيد تصميم واجهة المستخدم بالكامل، مع إضافة العديد من الأدوات المفيدة، والحركات، ومستحضرات التجميل المضمنة.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Custom HUD</span>
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Client Mod</span>
+      <span style="background: rgba(15, 23, 42, 0.15); color: #22d3ee; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">Cosmetics</span>
+    </div>
+  </div>
+</div>
+
+*   **الميزات:** تصميم نمطي، ومجموعة واسعة من أدوات الـ PvP الجاهزة للاستخدام، وتكامل سلس وسهول في تخصيص واجهة الـ HUD.
+*   **العيوب:** يركز بشكل أساسي على اللعب الجماعي والـ PvP؛ قد يتعارض مع بعض المودات العالمية الخاصة بتوليد العوالم.
+
+---
+
 ## مقارنة
 
-| الميزة | Minecraft Forge | Fabric | NeoForge | Quilt |
-| --- | --- | --- | --- | --- |
-| **الأداء** | أوقات تحميل أطول أحياناً | محسن للسرعة | يوازن بين الاستقرار والأداء | سرعة محسنة مع ميزات إضافية |
-| **المجتمع والدعم** | واسع ومستقر جداً | ينمو بسرعة | ناشئ؛ المجتمع لا يزال يتطور | يستفيد من مجتمع Fabric |
-| **توافق المودات** | واسع وراسخ | الأفضل للمودات الحديثة | يجمع بين دعم المودات القديمة والجديدة | متوافق مع مودات Fabric |
-| **دورة التحديث** | اعتماد أبطأ للإصدارات الجديدة | سريع ومتجاوب | ينضج تدريجياً عبر الملاحظات | تحديثات نمطية مرنة |
+| الميزة | Minecraft Forge | Fabric | NeoForge | Quilt | OptiFine | LabyMod |
+| --- | --- | --- | --- | --- | --- | --- |
+| **الأداء** | أوقات تحميل أطول أحياناً | محسن للسرعة | يوازن بين الاستقرار والأداء | سرعة محسنة مع ميزات إضافية | زيادة ممتازة في الـ FPS على الإصدارات القديمة | سلس للغاية، واجهة HUD محسنة |
+| **المجتمع والدعم** | واسع ومستقر جداً | ينمو بسرعة | ناشئ؛ المجتمع لا يزال يتطور | يستفيد من مجتمع Fabric | حالة قديمة، معروف على نطاق واسع | مجتمع مخصص للعب الجماعي |
+| **توافق المودات** | واسع وراسخ | الأفضل للمودات الحديثة | يجمع بين دعم المودات القديمة والجديدة | متوافق مع مودات Fabric | تعارضات كثيرة (مغلق المصدر) | قاعدة نمطية، إضافات مخصصة للـ PvP |
+| **دورة التحديث** | اعتماد أبطأ للإصدارات الجديدة | سريع ومتجاوب | ينضج تدريجياً عبر الملاحظات | تحديثات نمطية مرنة | تحديثات أبطأ (مغلق المصدر) | تحديثات سريعة لإصدارات الـ PvP |
+
+---
+
+## أدوات التحميل وإدارة المودات في XMCL
+
+يوفر لانشر X Minecraft Launcher (XMCL) نظامًا متكاملًا وسهلاً لتثبيت أدوات التحميل وإدارة المودات الخاصة بك. لست بحاجة إلى تنزيل أدوات تثبيت خارجية بصيغة `.jar` أو `.exe` أو إجراء خطوات إعداد معقدة.
+
+### 1. تثبيت أدوات التحميل بنقرة واحدة
+عند إنشاء ملف تعريف (مثيل) جديد أو تعديل إصدار ملف تعريف موجود:
+1. افتح لوحة خيارات الإصدار في إعدادات الملف التعريفي.
+2. اختر إصدار ماينكرافت المطلوب.
+3. حدد أداة التحميل التي تريدها (**Forge**، **Fabric**، **NeoForge**، **Quilt**) أو حزم التحسين والعملاء مثل (**OptiFine**، **LabyMod**).
+4. سيقوم XMCL تلقائيًا بتنزيل وتثبيت جميع المكتبات والتبعيات المطلوبة عند بدء تشغيل اللعبة.
+
+### 2. متجر المودات المدمج
+تحت تبويب **المودات** في ملفك التعريفي، يمكنك البحث وتنزيل المودات مباشرة من منصات **Modrinth** و **CurseForge** دون الحاجة لفتح المتصفح:
+* **التصفية التلقائية المتوافقة:** يقوم XMCL تلقائيًا بتصفية نتائج البحث وفقًا لإصدار اللعبة وأداة التحميل المستخدمة في ملف التعريف، لتظهر لك المودات المتوافقة فقط.
+* **حل التبعيات تلقائيًا:** إذا كان المود يحتاج إلى مكتبة إضافية أخرى (مثل *Fabric API* أو *Architectury*)، فسيقوم XMCL باكتشاف ذلك تلقائيًا وعرض تنزيل جميع التبعيات المطلوبة بنقرة واحدة.
+
+### 3. تفعيل المودات وتعطيلها وتحديثها
+* **تمكين وتفعيل المودات:** يمكنك تعطيل المودات مؤقتًا باستخدام مفاتيح التبديل البسيطة في قائمة المودات، دون الحاجة لنقل الملفات خارج مجلد المودات `mods`.
+* **تحديثات سهلة وبسيطة:** يقوم اللانشر بفحص المودات المثبتة ويشير بوضوح إلى المودات التي تملك تحديثات جديدة متوفرة، مما يتيح لك تحديثها بنقرة واحدة.

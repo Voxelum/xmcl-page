@@ -106,4 +106,183 @@ You can find the log files to see what is causing the crash:
    * **macOS:** `~/Library/Application Support/xmcl`
    * **Linux:** `~/.config/xmcl`
 2. Open the `logs` folder and look for the latest `main.log` file.
-3. Send this log file to the development team on Discord or GitHub for support.
+
+---
+
+## 🔍 3. Mod is on CurseForge Website but Missing in Launcher Search
+
+### Symptoms
+* You search for a mod inside the launcher, but it says "No results found", even though you can see it on the official CurseForge website.
+
+### Cause
+CurseForge allows mod authors to **disable third-party API access** for their mods. When disabled, the CurseForge API (which XMCL uses to search and fetch mods) is forbidden from returning the mod in search results.
+
+### Solution
+1. Open your web browser and navigate to the mod's page on [CurseForge](https://www.curseforge.com/minecraft/search).
+2. Click **Download** to save the `.jar` file to your computer.
+3. Open XMCL and select your active instance.
+4. **Drag-and-drop** the downloaded `.jar` file directly onto the launcher's window. XMCL will automatically install it into the `mods` folder of the selected instance.
+
+---
+
+## 📦 4. Imported Modpacks "Disappear" or Seem Empty
+
+### Symptoms
+* You drag and drop a modpack `.zip` or `.mrpack` file into the launcher, but you can't find it in your current game profile, or the mod list appears empty.
+
+### Cause
+1. **New Instance Creation**: XMCL does not merge modpacks into your currently active profile. Instead, it creates a **completely new Instance** (profile) for that modpack.
+2. **Background Download Tasks**: Modpack files do not contain the actual `.jar` mods to save space (they only contain metadata). After importing, XMCL starts a background task to download all the mods. Until this task finishes, the mod list might look empty.
+
+### Solution
+1. **Switch Instances**: Click on the sidebar menu or profile switcher to see all instances. Look for a new instance named after the imported modpack and select it.
+2. **Check Task Manager**: Click the Task icon (top right corner of the launcher) to check if the modpack download task is still running. Wait for the download to complete before launching the game.
+
+---
+
+## 🔄 5. Infinite File Corruption Loop (Checksum Mismatch)
+
+### Symptoms
+* The launcher continuously redownloads a library or asset file, saying it is corrupted.
+* The game fails to start because validation fails repeatedly.
+
+### Cause
+A file download was interrupted, and a corrupted partial file is locked in your cache, preventing the launcher from overriding it correctly.
+
+### Solution
+1. Find the path of the corrupted file shown in the launcher diagnostics or logs (e.g., `libraries/org/lwjgl/...`).
+2. Open your instance data folder (click the Folder icon at the top right of the instance dashboard).
+3. Navigate to the path specified in the error and **delete the containing folder** of the corrupted library/asset.
+4. Click **Repair** or restart the launch process. The launcher will download a fresh, clean copy.
+
+---
+
+## ☕ 6. Game Crashes Instantly (Java Version Mismatch)
+
+### Symptoms
+* The game starts but crashes immediately with exit code `1` or `-1`.
+* The log says `UnsupportedClassVersionError` or "Java not found".
+
+### Cause
+Each Minecraft version requires a specific version of Java (JDK). Using the wrong one will cause the game to crash.
+
+### Solution
+XMCL has an automatic Java manager that downloads correct JDK versions for you.
+
+:::warning Java Compatibility Matrix
+Ensure your instance is using the correct Java version:
+* **Minecraft 1.12.2 and older:** Java 8
+* **Minecraft 1.16 - 1.17:** Java 16 / 17
+* **Minecraft 1.18 - 1.20.4:** Java 17
+* **Minecraft 1.20.5+:** Java 21
+:::
+
+#### How to manage Java in XMCL:
+1. Go to the instance settings (gear icon next to the Play button).
+2. Look at the **Java** section.
+3. Click the selection box. XMCL will list all detected Java versions on your system and highlight compatible ones.
+4. If you don't have the correct Java version, click **Install Java** to let the launcher download the optimal version automatically.
+
+---
+
+## 📑 7. Launcher Won't Open or Black Screen
+
+### Symptoms
+* Double-clicking the launcher does nothing.
+* The launcher window opens but remains completely black.
+
+### Solution
+You can find the log files to see what is causing the crash:
+1. Go to your local app data directory:
+   * **Windows:** `%appdata%\xmcl`
+   * **macOS:** `~/Library/Application Support/xmcl`
+   * **Linux:** `~/.config/xmcl`
+2. Open the `logs` folder and look for the latest `main.log` file.
+
+---
+
+## 📋 8. Generate a Diagnostic Report (Recommended First Step)
+
+Before searching for raw log files manually, we highly recommend generating a **Diagnostic Report** inside the launcher. This compiles all launcher logs, game logs, and system environment info into a single package, allowing the community or developers to help you much faster.
+
+### How to Generate a Report:
+1. Click on the **Help & Feedback** menu in the launcher header.
+2. Click **Generate Report** to bundle launcher diagnostics and logs.
+
+   <img src="/guidephoto/Generate%20Report.gif" alt="Generate Report" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;">
+
+---
+
+## 📑 9. How to Analyze Launcher & Game Logs
+
+If you prefer to find the logs manually, they will tell you exactly what is happening. Here is how to locate them and understand common crash scenarios.
+
+### 🔍 How to Find the Logs
+
+Depending on whether it's a launcher error or a game crash, you will need to check different logs:
+
+#### A. Launcher Logs (`main.log`)
+For launcher crashes, download failures, network errors, or login issues:
+- **Windows:** Press `Win + R`, type `%appdata%\xmcl\logs` and press Enter.
+- **macOS:** Navigate to `~/Library/Application Support/xmcl/logs`.
+- **Linux:** Go to `~/.config/xmcl/logs`.
+- Find the latest file named `main.log`.
+
+#### B. Game Logs (`latest.log` & Crash Reports)
+For mod conflicts, Minecraft crashes, performance issues, or Java errors:
+- Open the instance card in the launcher.
+- Click the **Folder** icon at the top right of the instance dashboard to open its directory.
+- Go to the `logs` folder and open `latest.log`.
+- If the game crashed and closed, go to the `crash-reports` folder and look for the newest `.txt` file (named like `crash-YYYY-MM-DD_HH.MM.SS-client.txt`).
+
+---
+
+### 🛠 How to Analyze Logs & Fix Common Errors
+
+Open the log file in any text editor (like Notepad) and look for the following errors (you can use `Ctrl + F` to search):
+
+#### 🔴 Case 1: Out of Memory Error
+- **What to look for:** `java.lang.OutOfMemoryError: Java heap space` or `Exit code: -805306369`.
+- **Explanation:** You haven't allocated enough RAM for the game to load all the mods.
+- **How to fix:**
+  1. Open instance settings (gear icon next to the Play button).
+  2. Scroll down to the **Java** section.
+  3. Increase the **Min Memory** and **Max Memory** (e.g. set Max Memory to `4096` or `6144` MB).
+
+#### 🔴 Case 2: Mod Mismatch or Missing Dependencies
+- **What to look for:** `Mixin transformation failed`, `DependencyResolutionException`, or lines like `Requires mod 'fabric' (version X or later), but only version Y is installed`.
+- **Explanation:** One of your mods requires another mod (dependency) that is missing, or two mods are incompatible with each other.
+- **How to fix:** Read the error line carefully. It usually names the missing mod. Download and place the missing mod jar file into your `mods` folder, or update the conflicting mod to a compatible version.
+
+#### 🔴 Case 3: Java Version Mismatch
+- **What to look for:** `java.lang.UnsupportedClassVersionError: ... has been compiled by a more recent version of the Java Runtime`.
+- **Explanation:** You are running a Minecraft version or modpack with an incompatible Java version (e.g., using Java 8 for Minecraft 1.20).
+- **How to fix:** Open instance settings, go to the **Java** section, and click **Install Java** to download the recommended Java version for that specific Minecraft version.
+
+#### 🔴 Case 4: Graphics Card Driver Crash
+- **What to look for:** `GLFW error 65542: WGL: The driver does not seem to support OpenGL` or `Pixel format not accelerated`.
+- **Explanation:** Your graphics card drivers are outdated, missing, or the game is running on your CPU's integrated graphics instead of your dedicated GPU.
+- **How to fix:** Update your graphics drivers to the latest version from the official manufacturer website (NVIDIA, AMD, or Intel). For laptops, ensure the launcher is running on the high-performance GPU in your system settings.
+
+---
+
+### ❓ What to Do If You Can't Understand the Logs?
+
+If you've looked through the logs/reports and still don't know what is causing the crash, do not worry! The XMCL community is here to help across multiple platforms:
+
+#### 1. Join Our Official Discord Server
+- Get instant help from developers and experienced players.
+- Join via: **[Discord Server Link](https://discord.gg/W5XVwYY7GQ)**
+- **How to ask:** Go to the **#feedback-and-idea** channel and upload your generated diagnostic report or crash log file.
+- Look at this illustration of our feedback channel:
+  
+  <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
+
+#### 2. Ask on Reddit
+- You can post your issues and ask the community on our subreddit:
+- Visit: **[r/XMCL Subreddit](https://www.reddit.com/r/XMCL/)**
+
+#### 3. Open a GitHub Issue
+- If you believe you found a bug in the launcher itself, you can file a bug report.
+- Submit here: **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
+- Paste the content of your report or logs inside the issue description so developers can debug it.

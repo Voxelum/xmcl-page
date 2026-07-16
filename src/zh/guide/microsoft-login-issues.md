@@ -1,10 +1,27 @@
-# Microsoft 登录问题 (failed to exchange Xbox token)
+# Microsoft 账号登录与演示模式指南
 
-本指南将解释为什么在 XMCL 中登录 Microsoft 账户时可能会遇到 **"failed to exchange Xbox token"**（无法交换 Xbox 令牌）错误，以及快速排查并解决此问题的最佳方案。
+本指南将解释如何在 XMCL 中添加您的 Microsoft 账号，详细分析登录认证原理，以及快速解决 **"failed to exchange Xbox token"** 或卡在**演示模式（Demo Mode）**等常见登录故障。
 
 ---
 
-## 🔍 详解登录认证原理
+## 🔑 1. 如何添加 Microsoft 账号
+
+要使用您的官方正版账号登录并畅玩 Minecraft，请按照以下步骤操作：
+
+1. 点击启动器右上角的个人头像/档案（或 **“管理账户”**），打开账户管理器：
+
+   <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+
+2. 点击 **“添加账户”**，选择 **Microsoft**，然后按照屏幕指引完成登录：
+
+   <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+
+> 💡 **通过设备代码登录（Device Code）：**  
+> 如果您不想在启动器内直接输入账号密码，可以勾选 **“通过设备代码登录”**（Login by Device Code）。XMCL 会为您显示一个唯一的设备代码。只需使用您的网页浏览器访问 `microsoft.com/link`，输入该代码并确认，即可安全完成登录。
+
+---
+
+## 🔍 2. 详解登录认证原理
 
 为了能顺利启动正版 Minecraft，启动器必须在三个不同的安全认证层级上依次验证您的身份：
 
@@ -38,7 +55,7 @@
 
 ---
 
-## 🛠 三大主因排查与解决办法
+## 🛠 3. 三大主因排查与解决办法
 
 ### 1. 当前 Microsoft 账号未拥有 Minecraft 游戏授权
 
@@ -59,53 +76,72 @@
 
 ---
 
-### 2. 未创建 Xbox Live 玩家档案（Gamertag）
+### 2. 该 Microsoft 账号没有 Xbox Live 档案 (缺失 Gamertag)
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(245, 158, 11, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #f59e0b; font-weight: bold; font-size: 1.25rem;">
-    👤
+    👾
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">起因：Microsoft 账号尚未在 Xbox Live 平台激活</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">虽然建立了 Microsoft 账号，但此前从未接触过任何 Xbox 生态的服务。验证服务器无法为缺失玩家昵称（Gamertag）的账号发放游戏登录令牌。</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">起因：Microsoft 账号尚未注册游戏角色</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">您的 Microsoft 账号必须绑定一个有效的 Xbox Live 玩家档案以供拉取正版凭证。如果您是刚购买了游戏或从未运行过游戏，可能还未创建该档案，从而导致登录后卡在 <strong>“演示模式”</strong>。</p>
   </div>
 </div>
 
 #### 如何解决：
-1. 访问官方网页 [Xbox.com](https://www.xbox.com/)。
-2. 点击右上角 **登录**（Sign In）按钮。
-3. 若页面弹出激活提示，请 **接受相关协议并给自己设立一个玩家代号（Gamertag）**。
-4. 创建完成后，静待 1 至 2 分钟以让服务器数据同步，接着重新打开 XMCL 尝试登录。
+1. 访问 [Xbox Live 官网](https://www.xbox.com/)。
+2. 使用您的 Microsoft 账号密码登录。
+3. 按照指引免费注册一个 Xbox Live 账户（设定您的玩家代号 Gamertag 和头像）。
+4. 注册成功后，重新启动 XMCL 启动器并重新登录账户。
 
 ---
 
-### 3. 网络通信被防火墙或宽带运营商拦截阻断
+### 3. 网络故障或连线被系统拦截
 
-<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); margin: 20px 0;">
-  <div style="flex-shrink: 0; background: rgba(139, 92, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #8b5cf6; font-weight: bold; font-size: 1.25rem;">
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #3b82f6; font-weight: bold; font-size: 1.25rem;">
     🌐
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">起因：本地主机至 Mojang 或 Microsoft 服务器的通信不畅</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">由于地区运营商网络波动、防范严密的防火墙或本地受损的 DNS 配置，您的设备无法顺利连通微软及 Mojang 的验证网关（例如 `api.minecraftservices.com`）。</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">起因：DNS 污染或网络安全屏蔽</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">在特定地区或对于某些较为严格的网络运营商，连接到 Xbox Live 或 Mojang 验证服务器的通道可能会被防火墙阻断、污染，导致网络丢包或验证超时。</p>
   </div>
 </div>
 
 #### 如何解决：
-* **配合网络加速/VPN 服务：** 在尝试登录账号前开启网游加速器或使用稳定的网络代理，以绕过运营商的网络通信阻断或路由延迟。
-* **直接在 XMCL 中配置代理服务：**
-  1. 点击 XMCL 侧边栏左下角的 **设置** 图标（齿轮）。
-  2. 定位到 **网络设置** 模块。
-  3. 配置并开启您的 HTTP、HTTPS 或 SOCKS5 代理接口。
-* **重置 hosts 系统映射文件：**
-  检查您电脑上的 hosts 文件（路径通常为 `C:\Windows\System32\drivers\etc\hosts`），确保其中不含有将 `mojang.com` 或 `minecraftservices.com` 重定向至错误 IP 的恶意硬编码条目。如有，请直接将其整行删除。
+* **使用 VPN/加速器：** 如果您所在的地区网络受到严格过滤，请打开网络加速器或 VPN，然后尝试完成 Microsoft 正版验证。
+* **修改本地 DNS 服务：** 将您的系统 DNS 手动修改为快速、安全的公共 DNS（例如 Google DNS: `8.8.8.8` 和 `8.8.4.4`，或阿里 DNS: `223.5.5.5` / 腾讯 DNS: `119.29.29.29`）。
+* **稍后重试：** Microsoft 校验服务器偶尔可能会出现波动。您可以稍等几分钟，网络通畅后再试。
 
 ---
 
-## 📋 快速简明排查对照表
+## 🚪 4. 离线模式与第三方登录 (无需正版 Microsoft 账号)
 
-| 错误具体表征 | 极大概率原因 | 首选解决方案 |
-| :--- | :--- | :--- |
-| 输入账号密码后直接提示报错 | 账户被封禁、冻结或输入有误 | 前往 Microsoft.com 官方网重设您的密码 |
-| 报 **"failed to exchange Xbox token"** 错误 | 无正版授权 / 缺少 Xbox 个人档案 | 到 Xbox.com 建立 Gamertag，或购买正版授权 |
-| 报 **"Failed to connect to server"** 错误 | 通信阻断 / 运营商解析异常 | 开启网络代理、游戏加速服务，或配置 XMCL 内部代理 |
+如果您不持有官方正版 Microsoft 账号，或是处于没有网络的环境下需要与本地局域网联机，XMCL 同样提供了极具弹性的第三方和离线登录方案。
+
+### 方案 A：离线本地游玩 (开发者模式)
+
+**开发者模式**（Developer Mode）允许您在本地自定义任何玩家名字，且无需密码直接脱机进入游戏。
+
+1. 点击右上角打开账户管理器。
+2. 点击 **“添加账户”**（Add Account）。
+3. 选择其中的 **开发者**（Developer）模式：
+
+   <img src="/guidephoto/developer-mode.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
+
+4. 输入任意您想要的玩家名字并确认。
+5. 现在即可运行游戏。**注意：** 离线账户只允许进入关闭了正版验证（即服务端 `online-mode=false`）的联机服务器，并且您的皮肤外观将是 Minecraft 默认的基础外观。
+
+---
+
+### 方案 B：自定义皮肤平台 (Yggdrasil 接口服务)
+
+如果您希望在进入服务器后展示您在特定皮肤站配置的个性皮肤，XMCL 原生支持通过 Yggdrasil 协议登录第三方平台（如 **LittleSkin**、**Ely.by** 或自建皮肤站）。
+
+1. 前往账户管理器，点击 **添加账户**。
+2. 选择您要登录的平台（例如 **LittleSkin**，或者使用 **Yggdrasil** 并填写自建站的 API 接口 URL）。
+3. 输入您在该第三方平台注册的邮箱及密码：
+
+   <img src="/guidephoto/reg-account.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
+
+4. 启动器将自动从对应服务站抓取您的头像、皮肤配置以及外置授权信息。

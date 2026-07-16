@@ -78,6 +78,64 @@ WebRTC needs to obtain local network information from an STUN server in order to
 Many STUN servers are free, such as `stun:stun.qq.com` used by QQ.
 
 A TURN server is responsible for relaying traffic. It is usually self-deployed and requires payment.
+## 🔄 Connection Flow and Signaling Architecture
+
+The following diagram illustrates how the P2P connection is coordinated, NAT hole-punching is completed, and game traffic is securely tunneled between two Minecraft clients:
+
+<div style="margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
+<h3 style="margin-top: 0; margin-bottom: 16px; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1); display: flex; align-items: center; gap: 8px;">
+<span>🔄 Connection & Data Flow Sequence</span>
+</h3>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<!-- Step 1 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">1</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">Signaling & Room Setup</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+<strong>Host</strong> sends SDP Offer to the Lobby/Signaling Server. <br/><strong>Guest</strong> retrieves the Offer, sets it, and returns an SDP Answer back to the Host.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 2 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">2</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">NAT Traversal & Hole Punching</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+Both launchers perform STUN/TURN hole-punching to establish a direct Peer-to-Peer connection. A reliable metadata control channel is opened.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 3 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">3</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">LAN Game Discovery</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+<strong>Host Minecraft</strong> broadcasts its LAN world. Host launcher forwards this metadata to the Guest.<br/><strong>Guest Launcher</strong> spawns a local TCP Proxy and broadcasts it as a fake LAN game to the Guest's Minecraft client.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 4 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">4</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">Tunneling Game Traffic</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+Guest client connects to the proxy. Guest launcher maps the connection to a new binary WebRTC DataChannel. Host launcher forwards the packets to the actual Minecraft server.
+</p>
+</div>
+</div>
+</div>
+</div>
+
 ## How to establish connections between users
 
 In WebRTC, connections between users are established through the exchange of Description strings.

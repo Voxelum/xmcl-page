@@ -146,12 +146,12 @@ Dans ce document, nous allons explorer les chargeurs de mods et les modification
 
 ## Comparer
 
-| Fonctionnalité | Minecraft Forge | Fabric | NeoForge | Quilt |
-| --- | --- | --- | --- | --- |
-| **Performances** | Temps de chargement passez parfois plus longs | Optimisé pour la vitesse | Équilibre la stabilité et les performances | Vitesse améliorée avec des fonctionnalités supplémentaires |
-| **Communauté & Support** | Vaste, bien établi | Croissance rapide | Émergent ; la communauté évolue encore | Tire parti de la communauté de Fabric |
-| **Compatibilité des mods** | Large et établie | Idéal pour les mods modernes | Fait le pont entre le support des anciens et des nouveaux mods | Compatible avec les mods Fabric |
-| **Cycle de mise à jour** | Adoption plus lente des nouvelles versions | Rapide et réactif | Mûrit progressivement grâce aux commentaires | Mises à jour modulaires agiles |
+| Fonctionnalité | Minecraft Forge | Fabric | NeoForge | Quilt | OptiFine | LabyMod |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Performances** | Temps de chargement passez parfois plus longs | Optimisé pour la vitesse | Équilibre la stabilité et les performances | Vitesse améliorée avec des fonctionnalités supplémentaires | Excellent boost de FPS sur les anciennes versions | HUD extrêmement fluide et optimisé |
+| **Communauté & Support** | Vaste, bien établi | Croissance rapide | Émergent ; la communauté évolue encore | Tire parti de la communauté de Fabric | Statut hérité, largement connu | Communauté multijoueur dédiée |
+| **Compatibilité des mods** | Large et établie | Idéal pour les mods modernes | Fait le pont entre le support des anciens et des nouveaux mods | Compatible avec les mods Fabric | Nombreux conflits (code fermé) | Base modulaire, addons axés sur le PvP |
+| **Cycle de mise à jour** | Adoption plus lente des nouvelles versions | Rapide et réactif | Mûrit progressivement grâce aux commentaires | Mises à jour modulaires agiles | Mises à jour plus lentes (code fermé) | Mises à jour rapides pour les versions PvP |
 
 ---
 

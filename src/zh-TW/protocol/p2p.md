@@ -84,6 +84,64 @@ STUN 服务器很多都是免费的，例如 QQ 用的 STUN `stun:stun.qq.com`�
 TURN server 则是负责转发流量（中继）的服务器。
 这种一般都是自己架设，毕竟要花钱的。
 
+## 🔄 連線流程與信令架構
+
+以下圖表展示了如何協調 P2P 連線、完成 NAT 打洞以及在兩個 Minecraft 用戶端之間安全地建立遊戲流量隧道：
+
+<div style="margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
+<h3 style="margin-top: 0; margin-bottom: 16px; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1); display: flex; align-items: center; gap: 8px;">
+<span>🔄 連線與數據流步驟</span>
+</h3>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<!-- Step 1 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">1</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">信令與房間建立</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+<strong>房主</strong>發送 SDP Offer 到信令伺服器（Lobby）。<br/><strong>客人</strong>獲取 Offer，設置並向房主返回 SDP Answer。
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 2 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">2</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">NAT 穿透與打洞</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+雙方啟動器通過 STUN/TURN 进行 NAT 打洞，以建立直接的 P2P 連線。開啟可靠的元數據控制通道。
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 3 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">3</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">區域網遊戲發現</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+<strong>房主 Minecraft</strong> 廣播其區域網世界。房主啟動器將該元數據轉發給客人。<br/><strong>客人啟動器</strong>啟動本地 TCP 代理，並將其作為假區域網遊戲廣播給客人的 Minecraft 用戶端。
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 4 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">4</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">遊戲流量隧道代理</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+客人用戶端連線到代理。客人啟動器將連線映射到新的二進制 WebRTC DataChannel。房主啟動器將數據包轉發到實際的 Minecraft 伺服器。
+</p>
+</div>
+</div>
+</div>
+</div>
+
 ## 用户之间如何建立连接
 
 在 WebRTC 中，用户之间的连接是通过交换 Description 字符串来实现的。

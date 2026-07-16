@@ -1,10 +1,27 @@
-# Microsoft-Login-Fehler (failed to exchange Xbox token)
+# Microsoft-Konto Login & Demo-Modus Anleitung
 
-Diese Anleitung erklärt, warum beim Anmelden mit Ihrem Microsoft-Konto in XMCL die Fehlermeldung **"failed to exchange Xbox token"** (Xbox-Token konnte nicht ausgetauscht werden) angezeigt wird, was die Ursache dafür ist und wie Sie das Problem beheben.
+Diese Anleitung erklärt, wie Sie Ihr Microsoft-Konto in XMCL hinzufügen, wie der Authentifizierungsprozess funktioniert und wie Sie häufige Login-Fehler wie **"failed to exchange Xbox token"** oder Probleme mit dem **Demo-Modus** beheben.
 
 ---
 
-## 🔍 Wie der Authentifizierungsprozess funktioniert
+## 🔑 1. So fügen Sie ein Microsoft-Konto hinzu
+
+Um Minecraft mit Ihrem offiziellen Konto zu spielen, müssen Sie sich anmelden:
+
+1. Klicken Sie oben rechts auf Ihr Profil/Avatar (oder **"Konto verwalten"**), um die Kontoverwaltung zu öffnen:
+
+   <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+
+2. Klicken Sie auf **"Konto hinzufügen"**, wählen Sie **Microsoft** und fahren Sie mit der Anmeldung fort:
+
+   <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
+
+> 💡 **Anmeldung per Gerätecode (Device Code):**  
+> Wenn Sie Ihr Passwort nicht direkt im Launcher eingeben möchten, aktivieren Sie die Option **"Login by Device Code"** (Über Gerätecode anmelden). XMCL zeigt daraufhin einen Code an. Rufen Sie einfach `microsoft.com/link` in Ihrem Webbrowser auf, geben Sie den Code ein und bestätigen Sie die Anmeldung.
+
+---
+
+## 🔍 2. Wie der Authentifizierungsprozess funktioniert
 
 Um eine lizenzierte Kopie von Minecraft zu starten, muss der Launcher Ihre Identität über drei separate Sicherheitsstufen verifizieren:
 
@@ -38,7 +55,7 @@ Um eine lizenzierte Kopie von Minecraft zu starten, muss der Launcher Ihre Ident
 
 ---
 
-## 🛠 Drei Hauptursachen und Lösungen
+## 🛠 3. Drei Hauptursachen und Lösungen
 
 ### 1. Keine Minecraft-Lizenz auf diesem Konto
 
@@ -59,53 +76,72 @@ Um eine lizenzierte Kopie von Minecraft zu starten, muss der Launcher Ihre Ident
 
 ---
 
-### 2. Fehlendes Xbox Live-Profil
+### 2. Das Konto hat kein Xbox-Profil (Fehlender Gamertag)
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(245, 158, 11, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #f59e0b; font-weight: bold; font-size: 1.25rem;">
-    👤
+    👾
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Ursache: Microsoft-Konto nicht bei Xbox Live aktiviert</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Sie haben ein Microsoft-Konto erstellt, aber die Xbox Live-Dienste nie initialisiert. Die Login-Server können kein Token generieren, da dem Konto ein eindeutiger Gamertag fehlt.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Ursache: Das Microsoft-Konto ist nicht für Spiele eingerichtet</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Ihr Microsoft-Konto benötigt ein verknüpftes Xbox Live-Profil, um Minecraft-Tokens abzurufen. Wenn Sie Minecraft erst vor Kurzem gekauft haben oder das Spiel noch nie gestartet haben, ist dieses Profil möglicherweise noch nicht erstellt worden, was zum <strong>Demo-Modus</strong> führt.</p>
   </div>
 </div>
 
 #### So beheben Sie es:
-1. Rufen Sie die offizielle [Xbox.com](https://www.xbox.com/de-DE/) Website auf.
-2. Klicken Sie oben rechts auf **Anmelden**.
-3. Wenn Sie aufgefordert werden, ein Xbox-Profil zu erstellen, **akzeptieren Sie die Bedingungen und legen Sie einen Gamertag fest** (Ihr eindeutiger Spitzname).
-4. Warten Sie 1–2 Minuten, bis die Server synchronisiert sind, öffnen Sie dann XMCL und versuchen Sie die Anmeldung erneut.
+1. Rufen Sie die offizielle Website [Xbox.com](https://www.xbox.com/) auf.
+2. Melden Sie sich mit Ihren Microsoft-Kontodaten an.
+3. Wenn Sie dazu aufgefordert werden, erstellen Sie ein kostenloses Xbox Live-Profil (indem Sie Ihren Gamertag und Avatar festlegen).
+4. Sobald das Profil erstellt ist, starten Sie XMCL neu und versuchen Sie erneut, sich anzumelden.
 
 ---
 
-### 3. Netzwerksperren und Routing-Probleme Ihres Anbieters
+### 3. Netzwerkfehler oder blockierte Verbindungen
 
-<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); margin: 20px 0;">
-  <div style="flex-shrink: 0; background: rgba(139, 92, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #8b5cf6; font-weight: bold; font-size: 1.25rem;">
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #3b82f6; font-weight: bold; font-size: 1.25rem;">
     🌐
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Ursache: Blockierte Verbindung zu Mojang- oder Microsoft-Servern</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Aufgrund regionaler Anbieter-Sperren, lokaler Firewalls oder fehlerhafter DNS-Konfigurationen kann Ihr PC keine Verbindung zu `api.minecraftservices.com` oder den Xbox Live-Servern herstellen.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Ursache: DNS-Probleme oder staatliche Blockaden</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">In bestimmten Regionen (z. B. China, aufgrund der Great Firewall) oder bei bestimmten restriktiven Internetanbietern können Verbindungen zu den Xbox Live- oder Mojang-Authentifizierungsservern blockiert oder gestört sein.</p>
   </div>
 </div>
 
 #### So beheben Sie es:
-* **Nutzen Sie ein VPN:** Verbinden Sie sich vor dem Anmeldeversuch mit einem stabilen VPN. Dies umgeht Routing-Probleme und ISP-Drosselungen.
-* **Proxy in XMCL konfigurieren:**
-  1. Öffnen Sie die **Einstellungen** (Zahnrad-Symbol unten in der linken Leiste).
-  2. Gehen Sie zu **Netzwerkeinstellungen**.
-  3. Tragen Sie Ihre aktive Proxy-Server-Adresse ein (HTTP, HTTPS und SOCKS5 werden unterstützt).
-* **hosts-Datei zurücksetzen**:
-  Stellen Sie sicher, dass Ihre hosts-Datei (`C:\Windows\System32\drivers\etc\hosts`) keine Einträge enthält, die Anfragen an `mojang.com` oder `minecraftservices.com` umleiten. Bereinigen Sie diese, falls vorhanden.
+* **Verwenden Sie ein VPN:** Wenn Sie sich in einem Land mit strenger Internetzensur befinden, nutzen Sie ein VPN, um den Microsoft-Authentifizierungsprozess abzuschließen.
+* **DNS-Server ändern:** Wechseln Sie zu einem schnellen, globalen DNS-Server (z. B. Google DNS: `8.8.8.8` und `8.8.4.4` oder Cloudflare DNS: `1.1.1.1`).
+* **Erneuter Versuch:** Die Authentifizierungsserver von Microsoft können zeitweise überlastet sein. Warten Sie einige Minuten und versuchen Sie es erneut.
 
 ---
 
-## 📋 Schnelle Diagnosetabelle
+## 🚪 4. Offline-Modus & Alternative Anmeldeoptionen (Spielen ohne Microsoft-Konto)
 
-| Fehlersymptom | Wahrscheinliche Ursache | Erster Schritt zur Behebung |
-| :--- | :--- | :--- |
-| Fehler direkt nach Eingabe von E-Mail/Passwort | Microsoft-Konto gesperrt oder ungültig | Passwort auf Microsoft.com zurücksetzen |
-| Fehler **"failed to exchange Xbox token"** | Keine Minecraft-Lizenz / Kein Xbox-Profil | Gamertag auf Xbox.com erstellen oder Spiel kaufen |
-| Fehler **"Failed to connect to server"** | Netzwerksperren / DNS-Routing-Probleme | Mit einem VPN verbinden oder Proxy in XMCL einrichten |
+Wenn Sie kein offizielles Microsoft-Konto besitzen, das Spiel offline spielen möchten oder einen privaten/lokalen Server nutzen, bietet XMCL alternative Anmeldemethoden an.
+
+### Option A: Lokaler Modus / Offline-Spiel (Entwicklermodus)
+
+Der **Developer-Modus** (Entwicklermodus) ermöglicht es Ihnen, mit jedem beliebigen Benutzernamen ohne Passwort lokal im Offline-Modus zu spielen.
+
+1. Öffnen Sie die Kontoverwaltung in der oberen rechten Ecke.
+2. Klicken Sie auf **"Konto hinzufügen"** (Add Account).
+3. Wählen Sie **Entwickler** (Developer) aus den angebotenen Optionen:
+
+   <img src="/guidephoto/developer-mode.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
+
+4. Geben Sie einen beliebigen Benutzernamen ein und bestätigen Sie.
+5. Sie können nun Minecraft starten. **Hinweis:** Im Offline-Modus können Sie nur auf Offline-Servern (mit der Option `online-mode=false` in der Serverkonfiguration) spielen, und Ihr Skin entspricht dem Standard-Skin von Minecraft.
+
+---
+
+### Option B: Eigene Skin-Plattformen (Yggdrasil API)
+
+Wenn Sie mit einem eigenen Avatar (Skin) auf privaten Servern spielen möchten, unterstützt XMCL alternative Authentifizierungsdienste wie **LittleSkin**, **Ely.by** oder benutzerdefinierte Yggdrasil-Server.
+
+1. Klicken Sie in der Kontoverwaltung auf **Konto hinzufügen**.
+2. Wählen Sie die gewünschte Plattform (z. B. **LittleSkin** oder **Yggdrasil** für eine benutzerdefinierte API-Adresse).
+3. Geben Sie die mit diesem Dienst verknüpften Zugangsdaten ein:
+
+   <img src="/guidephoto/reg-account.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
+
+4. Der Launcher lädt Ihren Skin und Ihre Profildaten automatisch direkt von dieser Plattform.

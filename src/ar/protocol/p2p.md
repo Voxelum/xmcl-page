@@ -78,6 +78,64 @@ WebRTC needs to obtain local network information from an STUN server in order to
 Many STUN servers are free, such as `stun:stun.qq.com` used by QQ.
 
 A TURN server is responsible for relaying traffic. It is usually self-deployed and requires payment.
+## 🔄 تدفق الاتصال وبنية الإشارات
+
+يوضح المخطط التالي كيفية تنسيق اتصال P2P، وإكمال تجاوز NAT، وتوجيه حركة مرور اللعبة بأمان بين عميلين ماين كرافت:
+
+<div style="margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
+<h3 style="margin-top: 0; margin-bottom: 16px; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1); display: flex; align-items: center; gap: 8px;">
+<span>🔄 تسلسل الاتصال وتدفق البيانات</span>
+</h3>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<!-- Step 1 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">1</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">تبادل الإشارات وإعداد الغرفة</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+يقوم <strong>المستضيف</strong> بإرسال عرض SDP إلى خادم الإشارات (Lobby). <br/>يقوم <strong>الضيف</strong> باستلام العرض وتعيينه وإرسال إجابة SDP للمستضيف.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 2 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">2</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">تجاوز NAT وحفر الثقوب</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+يقوم كلا اللانشرين بعمل حفر ثقوب NAT عبر خوادم STUN/TURN لتأسيس اتصال P2P مباشر. ويتم فتح قناة تحكم موثوقة للبيانات الوصفية.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 3 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">3</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">اكتشاف ألعاب LAN</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+يقوم <strong>مستضيف ماينكرافت</strong> ببث لعبة LAN المحلية. ويقوم لانشر المستضيف بتمرير هذه البيانات للضيف.<br/>يقوم <strong>لانشر الضيف</strong> بإنشاء خادم وكيل TCP محلي وبثه كأنه لعبة LAN وهمية لعميل ماينكرافت للضيف.
+</p>
+</div>
+</div>
+<!-- Arrow -->
+<div style="margin-left: 14px; border-left: 2px dashed var(--vp-c-divider); height: 16px;"></div>
+<!-- Step 4 -->
+<div style="display: flex; gap: 16px;">
+<div style="flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--vp-c-brand-1); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem;">4</div>
+<div>
+<strong style="color: var(--vp-c-text-1); display: block; margin-bottom: 4px;">نفق حركة مرور اللعبة</strong>
+<p style="margin: 0; font-size: 0.9rem; color: var(--vp-c-text-2);">
+يتصل عميل الضيف بالخادم الوكيل. ويقوم لانشر الضيف بتحويل الاتصال إلى قناة DataChannel ثنائية من WebRTC. ويقوم لانشر المستضيف بتمرير الحزم إلى خادم ماينكرافت الفعلي.
+</p>
+</div>
+</div>
+</div>
+</div>
+
 ## How to establish connections between users
 
 In WebRTC, connections between users are established through the exchange of Description strings.

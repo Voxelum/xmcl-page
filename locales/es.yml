@@ -1,0 +1,111 @@
+repository: Repositorio de código fuente
+label: Español
+intro:
+  first:
+    body: Un lanzador de Minecraft con {openSource} y una interfaz {modernUx}.
+    openSource: código abierto
+    modernUx: moderna
+  second:
+    body: ¡Consiga una gestión {diskEfficient} para todos sus {mods}!
+    diskEfficient: eficiente en disco
+    mods: mods
+  description: >-
+    X Minecraft Launcher (XMCL) es un lanzador moderno de Minecraft que permite
+    gestionar recursos masivos como modpacks, paquetes de recursos, mods,
+    shaders... También está integrado con Minecraft Forge, Fabric, Quilt,
+    CurseForge y Modrinth.
+launcher:
+  manage:
+    intro: Gestione su Minecraft eficientemente.
+  description: Un lanzador de Minecraft simple, abierto y funcional.
+downloadFor:
+  windows: 'Descargar para Windows:'
+  mac: 'Descargar para Mac:'
+  linux: 'Descargar para Linux:'
+guide: Guía
+protocol: Protocolo
+changelogs: Historial de cambios
+outline: En esta página
+coreDocument: Documentación principal
+author: Contactar al autor
+download-zip: Zip
+download-zip-32: Zip (32 bits)
+download-appx: Paquete AppX
+download-appinstaller: Instalador de App
+download-portable: Portátil
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: Descargar desde Azure
+azure-ms-source: Descargar desde Azure Microsoft CDN
+github-source: Descargar desde Github
+auto-source: Selección automática de origen
+authSuccess: ¡Éxito!
+authSuccessTitle: Autorización exitosa. ¡Será redirigido de vuelta al lanzador!
+redirectHelperTitle: >-
+  Si no se redirige automáticamente, puede intentar hacer clic en el botón
+  "Abrir en el Lanzador".
+redirectHelperMessage: >-
+  Aparecerá una ventana emergente que le pedirá abrir el lanzador. Si esto no funciona,
+  ¡intente arrastrar el botón a la ventana del lanzador!
+notWork: ¿No funciona?
+openInAppButton: Abrir en el Lanzador
+nothingWork: >-
+  Si nada de esto funciona, puede descargar la última versión
+  del lanzador de nuevo.
+gameInstall:
+  title:
+    body: No se preocupe más por la {gameInstall}
+    gameInstall: Instalación del juego
+  description: >-
+    XMCL admite la instalación de Minecraft oficial, Forge, Fabric e incluso
+    OptiFine, ¡todo en un solo lugar! Puede instalarlos directamente en el lanzador.
+optimalDisk:
+  title:
+    body: Espacio en disco {optimal} con {massiveResources}
+    optimal: Óptimo
+    massiveResources: recursos masivos
+  description: >-
+    XMCL guarda todos los mods, paquetes de recursos, shaders y modpacks en un solo lugar.
+    En lugar de copiar archivos para cada perfil, se usan enlaces duros. Esto significa
+    que nunca verá archivos duplicados en la carpeta /mods, ahorrando mucho espacio en disco.
+cleanWorkspace:
+  title:
+    body: Mantenga su espacio de trabajo {clean} con múltiples perfiles
+    clean: limpio
+  description: >-
+    XMCL tiene soporte integrado para múltiples instancias. Puede crear múltiples
+    instancias fácilmente para no preocuparse por mezclar configuraciones de lanzamiento.
+communityIntegration:
+  title:
+    body: Integrado con {multipleCommunities}
+    multipleCommunities: múltiples comunidades
+  description: >-
+    XMCL viene con soporte integrado para Curseforge y Modrinth. También ofrece la
+    posibilidad de admitir cuentas de usuario personalizadas y sistemas de skins como Blessing Skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: Unirse a la partida de {inviter}
+joinPeerDescription: >-
+  ¡{inviter} le ha invitado a unirse a su grupo {group} para jugar a Minecraft
+  juntos! ¡Será redirigido de vuelta al lanzador!
+fullChangelog: ¿Qué hay de nuevo?
+privacy: Privacidad del Software
+prebuild:
+  history: Historial de compilación
+  historyDescription: Compilaciones y lanzamientos anteriores
+  download: Descargar precompilados
+  downloadDescription: >-
+    Los precompilados son artefactos generados durante el desarrollo. Pueden ser
+    inestables. ¡Úselos bajo su propio riesgo!
+  entryHint: ¿Artefactos precompilados?
+  ready: Listo
+  selected: Seleccionado
+  selectBuild: Seleccionar compilación
+  downloading: Descargando...
+downloadMacHint:
+  content: Para usuarios de Mac, siga las {link} para instalar.
+  link: instrucciones de instalación
