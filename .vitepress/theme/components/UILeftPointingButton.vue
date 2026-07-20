@@ -1,7 +1,7 @@
 <template>
-    <a class="ui left pointing label" :href="href"
+    <a class="download-btn-arch-chip" :href="href"
         @click="$emit('click', $event)">
-        {{ text }}
+        <span>{{ text }}</span>
     </a>
 </template>
 <script setup lang="ts">

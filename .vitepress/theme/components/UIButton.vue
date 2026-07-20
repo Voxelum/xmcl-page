@@ -1,11 +1,11 @@
 <template>
-    <a class="ui huge download labeled button w-full duration-350!"
-        :class="{ disabled: disabled, '2xl:w-[45%]': organized, 'md:w-auto': !organized, icon: !!icon }"
+    <a class="download-btn-base"
+        :class="{ disabled: disabled, 'w-full': organized }"
         :href="href" @click="$emit('click', $event)">
-        <i v-if="icon" class="icon">
+        <span v-if="icon" class="btn-icon">
             <div :class="icon" />
-        </i>
-        <span>{{ text }}</span>
+        </span>
+        <span class="btn-text">{{ text }}</span>
     </a>
 </template>
 <script setup lang="ts">
