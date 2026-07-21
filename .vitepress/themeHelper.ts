@@ -53,8 +53,8 @@ export function loadTheme(location: string, locale: string) {
     }
 
     const nav: DefaultTheme.NavItem[] = [
-        { text: '🧭 ' + localeMessages.guide, link: `/${locale}/guide/install`, activeMatch: `/${locale}/guide/(.+)?` },
-        { text: '📖 ' + localeMessages.coreDocument, link: '/en/core/' },
+        { text: localeMessages.guide, link: `/${locale}/guide/install`, activeMatch: `/${locale}/guide/(.+)?` },
+        { text: localeMessages.coreDocument, link: '/en/core/' },
     ]
 
     const guideSection = loadSidebarSection(location, locale, 'guide')
@@ -84,11 +84,11 @@ export function loadTheme(location: string, locale: string) {
             }
         ]
         sidebar[`/${locale}/changelogs/`] = changelogsSidebar
-        nav.push({ text: '📜 ' + localeMessages.changelogs, link: `/${locale}/changelogs/${changelogFiles[0]}`, activeMatch: `/${locale}/changelogs/(.+)?` })
+        nav.push({ text: localeMessages.changelogs, link: `/${locale}/changelogs/${changelogFiles[0]}`, activeMatch: `/${locale}/changelogs/(.+)?` })
     }
     if (existsSync(join(location, 'blog'))) {
         nav.push(
-            { text: '🪁 ' + (localeMessages.blogs || 'Blogs'), link: `/${locale}/blog/`, activeMatch: `/${locale}/blog/(.+)?` },
+            { text: (localeMessages.blogs || 'Blogs'), link: `/${locale}/blog/`, activeMatch: `/${locale}/blog/(.+)?` },
         )
     }
     const theme: LocaleConfig<DefaultTheme.Config>[string] = {

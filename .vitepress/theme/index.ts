@@ -54,7 +54,12 @@ export default {
       })
     }
 
-    return () => [h(DefaultTheme.Layout, props), h(SpeedInsights)]
+    return () => [
+      h(DefaultTheme.Layout, props, {
+        'nav-bar-extra': () => null
+      }),
+      h(SpeedInsights)
+    ]
   }),
   enhanceApp({ app }: EnhanceAppContext) {
     app.use(i18n)

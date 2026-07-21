@@ -1,0 +1,255 @@
+/* ==========================================================================
+   Header & Top Navigation Bar (VPNav) Refined Design
+   ========================================================================== */
+
+/* Top Navigation Glassmorphism Container */
+.VPNav {
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  background-color: rgba(18, 18, 24, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
+html:not(.dark) .VPNav {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Inner Navbar Container */
+.VPNavBar {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Logo & Title - Completely Static (0 Animations on Hover) */
+.VPNavBarTitle {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.625rem !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.VPNavBarTitle:hover {
+  transform: none !important;
+}
+
+.VPNavBarTitle .logo {
+  transform: none !important;
+  transition: none !important;
+  filter: none !important;
+}
+
+.VPNavBarTitle:hover .logo {
+  transform: none !important;
+  filter: none !important;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  font-size: 1.05rem !important;
+  color: var(--vp-c-text-1) !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.VPNavBarTitle:hover .title {
+  transform: none !important;
+}
+
+/* Nav Menu Links - Clean Pill Design */
+.VPNavBarMenuLink {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  height: 2.25rem !important; /* 36px clean pill */
+  padding: 0 0.875rem !important;
+  border-radius: 0.625rem !important;
+  font-weight: 600 !important;
+  font-size: 0.9375rem !important;
+  line-height: 1 !important;
+  color: var(--vp-c-text-2) !important;
+  background: transparent !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: 1px solid transparent !important;
+}
+
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-text-1) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-1px);
+}
+
+html:not(.dark) .VPNavBarMenuLink:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.VPNavBarMenuLink.active {
+  color: var(--vp-c-brand-1) !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Custom Vector SVG Icons for Nav Links (No Lucide) */
+/* Guide: Map / Route Icon */
+.VPNavBarMenuLink[href*="/guide/"]::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: #10b981;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M565.6 36.2C572.1 40.7 576 48.1 576 56V392c0 10-6.2 18.9-15.5 22.4l-168 64c-5.2 2-10.9 2.1-16.1 .3L192 416 32.5 477.4C23 481 12.2 478.4 5.6 470.9S-1.5 452.6 1.9 443.4L177.9 27.4c5.2-2 10.9-2.1 16.1-.3L384 96 543.5 34.6c9.5-3.6 20.3-1 26.9 6.5zM384 144v272l144-54.9V89.1L384 144zM192 368V96L48 150.9V422.9L192 368z'/%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M565.6 36.2C572.1 40.7 576 48.1 576 56V392c0 10-6.2 18.9-15.5 22.4l-168 64c-5.2 2-10.9 2.1-16.1 .3L192 416 32.5 477.4C23 481 12.2 478.4 5.6 470.9S-1.5 452.6 1.9 443.4L177.9 27.4c5.2-2 10.9-2.1 16.1-.3L384 96 543.5 34.6c9.5-3.6 20.3-1 26.9 6.5zM384 144v272l144-54.9V89.1L384 144zM192 368V96L48 150.9V422.9L192 368z'/%3E%3C/svg%3E") no-repeat center / contain;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Core Document: Book Icon */
+.VPNavBarMenuLink[href*="/core/"]::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: #38bdf8;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='currentColor' d='M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H96zM384 80v64H96c-8.8 0-16-7.2-16-16s7.2-16 16-16H384zm0 128V448H96c-26.5 0-48-21.5-48-48V166.5c11.6 6.1 24.8 9.5 38.7 9.5H384z'/%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='currentColor' d='M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H96zM384 80v64H96c-8.8 0-16-7.2-16-16s7.2-16 16-16H384zm0 128V448H96c-26.5 0-48-21.5-48-48V166.5c11.6 6.1 24.8 9.5 38.7 9.5H384z'/%3E%3C/svg%3E") no-repeat center / contain;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Changelogs: Scroll Icon */
+.VPNavBarMenuLink[href*="/changelogs/"]::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: #f59e0b;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V288H216c-22.1 0-40 17.9-40 40s17.9 40 40 40H384V512H64c-35.3 0-64-28.7-64-64V64zM256 0V128H384L256 0z'/%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V288H216c-22.1 0-40 17.9-40 40s17.9 40 40 40H384V512H64c-35.3 0-64-28.7-64-64V64zM256 0V128H384L256 0z'/%3E%3C/svg%3E") no-repeat center / contain;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Blogs: Newspaper Icon */
+.VPNavBarMenuLink[href*="/blog/"]::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: #f43f5e;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='currentColor' d='M96 0C60.7 0 32 28.7 32 64V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H96zM384 64V224H128V64H384zM128 288H384v32H128V288zm0 80H288v32H128V368z'/%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='currentColor' d='M96 0C60.7 0 32 28.7 32 64V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H96zM384 64V224H128V64H384zM128 288H384v32H128V288zm0 80H288v32H128V368z'/%3E%3C/svg%3E") no-repeat center / contain;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.VPNavBarMenuLink:hover::before {
+  transform: scale(1.18);
+}
+
+/* Hide extra overflow 3 dots button (...) completely */
+.VPNavBarExtra,
+.VPNavBarExtra.flyout,
+.VPNavBar .extra,
+.VPNavBar .VPNavBarExtra,
+.VPNavBarExtra .button,
+.VPNavBarMenu .VPFlyout.VPNavBarExtra,
+[class*="VPNavBarExtra"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Flyout / Dropdown Menu (Language Selector) */
+.VPFlyout {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.VPFlyout .button {
+  height: 2.25rem !important;
+  padding: 0 0.75rem !important;
+  border-radius: 0.625rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.VPFlyout .button:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+.VPFlyout .menu {
+  background: var(--vp-c-bg-soft) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  border-radius: 0.875rem !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(16px) !important;
+  padding: 0.5rem !important;
+}
+
+.VPFlyout .option {
+  border-radius: 0.5rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.VPFlyout .option:hover {
+  background: rgba(16, 185, 129, 0.12) !important;
+  color: var(--vp-c-brand-1) !important;
+}
+
+/* Social Icon Links (GitHub, Discord, Reddit) */
+.VPSocialLink {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 0.625rem !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+html:not(.dark) .VPSocialLink {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.VPSocialLink:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.VPSocialLink[href*="github"]:hover {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2) !important;
+}
+
+.VPSocialLink[href*="discord"]:hover {
+  color: #5865f2 !important;
+  border-color: rgba(88, 101, 242, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(88, 101, 242, 0.3) !important;
+}
+
+.VPSocialLink[href*="reddit"]:hover {
+  color: #ff4500 !important;
+  border-color: rgba(255, 69, 0, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(255, 69, 0, 0.3) !important;
+}
+
+/* Appearance Switch */
+.VPSwitchAppearance {
+  border-radius: 9999px !important;
+  transition: all 0.2s ease !important;
+}
+
+.VPSwitchAppearance:hover {
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3) !important;
+}
