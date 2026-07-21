@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from '@/components/Link';
 import { List, X } from '@phosphor-icons/react';
 import { motion } from 'framer-motion';
-import { LanguageSelector } from './LanguageSelector';
+import { LanguagePanel, LanguageTrigger } from './LanguageSelector';
 import { ThemeSelector } from './ThemeSelector';
 import { NavItems } from './navigation/NavItems';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[9999] bg-card border-b border-border shadow-sm transition-all duration-300">
@@ -34,14 +35,24 @@ export const Navigation = () => {
             <NavItems />
             <div className="flex items-center gap-3">
               <ThemeSelector />
-              <LanguageSelector />
+              <div className="relative">
+                <LanguageTrigger onClick={() => setIsLanguageOpen((open) => !open)} />
+                {isLanguageOpen && (
+                  <div className="absolute right-0 top-12 z-50 w-[300px] overflow-hidden rounded-2xl border border-border bg-card shadow-2xl">
+                    <LanguagePanel
+                      onBack={() => setIsLanguageOpen(false)}
+                      onClose={() => setIsLanguageOpen(false)}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-3">
             <ThemeSelector />
-            <LanguageSelector />
+            <LanguageTrigger onClick={() => setIsLanguageOpen((open) => !open)} />
             <Button
               variant="ghost"
               size="sm"

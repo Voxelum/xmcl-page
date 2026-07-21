@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { StaggeredMenu } from "@/components/StaggeredMenu";
+import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useOS } from '@/hooks/useOS';
 import { useTheme } from '@/hooks/useTheme';
@@ -23,10 +24,10 @@ interface AppShellProps {
  */
 export function AppShell({ children, initialLocale }: AppShellProps) {
   const os = useOS();
-  
+
   // Initialize theme on app load
   useTheme();
-  
+
   const handleDownloadClick = React.useCallback(() => {
     window.location.href = '/download';
   }, []);
@@ -41,15 +42,20 @@ export function AppShell({ children, initialLocale }: AppShellProps) {
           <Sonner />
             <div className="min-h-screen bg-background text-foreground">
               {!isDesktopStyle && (
-                <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-                  <StaggeredMenu />
-                </div>
+                <>
+                  <div className="hidden lg:block">
+                    <Navigation />
+                  </div>
+                  <div className="fixed top-6 left-1/2 z-50 -translate-x-1/2 lg:hidden">
+                    <StaggeredMenu />
+                  </div>
+                </>
               )}
-              
-              <main>
+
+              <main className={!isDesktopStyle ? "lg:pt-16" : undefined}>
                 {children}
               </main>
-              
+
               {isDesktopStyle && <MacOSDock />}
 
               <Footer onDownloadClick={handleDownloadClick} />
