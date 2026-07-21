@@ -14,8 +14,8 @@ const messages = Object.fromEntries(
   Object.entries(
     import.meta.glob('../../../locales/*.y(a)?ml', { eager: true }))
     .map(([key, value]) => {
-      const yaml = key.endsWith('.yaml')
-      return [key.slice(14 + 3, yaml ? -5 : -4), value.default]
+      const locale = key.match(/locales\/([^/]+)\.ya?ml$/)?.[1]
+      return [locale, value.default]
     }),
 )
 
