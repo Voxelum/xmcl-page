@@ -112,3 +112,93 @@ prebuild:
 downloadMacHint:
   content: W przypadku systemu macOS postępuj zgodnie z {link}, aby zainstalować program.
   link: instrukcją instalacji
+features:
+  label: Funkcje
+  ui:
+    kicker: XMCL / KATALOG FUNKCJI
+    heading: Funkcje launchera
+    description: Poznaj procesy ułatwiające tworzenie, zrozumienie i udostępnianie zmodyfikowanych konfiguracji Minecraft.
+    all: Wszystkie funkcje
+    search: Szukaj funkcji...
+    features: funkcji
+    featuresInView: funkcji widocznych
+    readWorkflow: Zobacz proces
+  status:
+    homepage: Strona główna
+    catalog: Katalog
+    guide: Poradnik
+    detail: Szczegóły
+  groups:
+    instances:
+      short: Instancje
+      title: Instancje i profile
+      description: Zarządzaj każdą konfiguracją Minecraft niezależnie i miej ją zawsze gotową do uruchomienia.
+    community:
+      short: Społeczność
+      title: Mody i treści społeczności
+      description: Odkrywaj, sprawdzaj i instaluj projekty do kolejnego świata Minecraft.
+    mods:
+      short: Zarządzanie modami
+      title: Zarządzanie modami
+      description: Uporządkuj duże konfiguracje dzięki wyszukiwaniu, grupom i kontroli zależności.
+    world-tools:
+      short: Narzędzia świata
+      title: Narzędzia świata
+      description: Badaj światy, wybieraj ich części i sprawdzaj użyte materiały.
+    sharing:
+      short: Udostępnianie
+      title: Udostępnianie i multiplayer
+      description: Przenoś działającą konfigurację do znajomego, serwera lub innej instalacji.
+    accounts:
+      short: Konta
+      title: Konta i produktywność
+      description: Zarządzaj tożsamością, wyglądem i częstymi działaniami przy swoich światach.
+    diagnostics:
+      short: Diagnostyka
+      title: Diagnostyka i pomoc
+      description: Po błędzie uruchamiania znajdź dowody i następne działanie w jednym miejscu.
+  items:
+    instance-library:
+      title: Zorganizowana biblioteka instancji
+    instance-create-modloaders:
+      title: Tworzenie instancji Java i Bedrock
+    instance-folder-groups:
+      title: Grupowanie instancji w folderach
+    instance-settings:
+      title: Ustawienia instancji
+    instance-theme:
+      title: Motyw instancji
+    local-server:
+      title: Uruchom lokalny serwer
+    server-list:
+      title: Lista serwerów
+    modpack-market:
+      title: Rynek modpacków
+    online-mod-search:
+      title: Wyszukiwanie modów online
+    modpack-detail:
+      title: Szczegóły modpacka
+    mod-collections:
+      title: Kolekcje modów
+    mod-detail:
+      title: Szczegóły moda
+    local-mods:
+      title: Zarządzanie zainstalowanymi modami
+    custom-mod-groups:
+      title: Własne grupy modów
+    save-preview:
+      title: Podgląd świata i narzędzia chunków
+    blueprint-preview:
+      title: Podgląd blueprintu
+    modpack-export:
+      title: Eksport modpacka
+    server-export:
+      title: Eksport serwera
+    account-login:
+      title: Wiele usług uwierzytelniania
+    quick-action:
+      title: Szybkie działania
+    crash-diagnosis:
+      title: Raporty awarii i błędów uruchamiania
+    ai-agent:
+      title: Wbudowany agent AI

@@ -115,3 +115,93 @@ prebuild:
 downloadMacHint:
   link: установить инструкцию
   content: Для пользователей Mac, пожалуйста, перейдите по {link} для установки.
+features:
+  label: Возможности
+  ui:
+    kicker: XMCL / КАТАЛОГ ВОЗМОЖНОСТЕЙ
+    heading: Возможности лаунчера
+    description: Изучите рабочие процессы для создания, понимания и совместного использования модифицированных сборок Minecraft.
+    all: Все возможности
+    search: Поиск возможностей...
+    features: возможностей
+    featuresInView: возможностей показано
+    readWorkflow: Открыть процесс
+  status:
+    homepage: Главная
+    catalog: Каталог
+    guide: Руководство
+    detail: Подробности
+  groups:
+    instances:
+      short: Сборки
+      title: Сборки и профили
+      description: Храните каждую конфигурацию Minecraft отдельно, на виду и готовой к запуску.
+    community:
+      short: Сообщество
+      title: Моды и контент сообщества
+      description: Находите, проверяйте и устанавливайте проекты для следующего мира Minecraft.
+    mods:
+      short: Управление модами
+      title: Управление модами
+      description: Сохраняйте порядок в больших сборках с помощью поиска, групп, проверки зависимостей и обновлений.
+    world-tools:
+      short: Миры
+      title: Инструменты мира
+      description: Исследуйте миры, выбирайте их части и изучайте используемые материалы.
+    sharing:
+      short: Обмен
+      title: Обмен и мультиплеер
+      description: Переносите рабочую конфигурацию друзьям, на сервер или другую установку вместе с деталями.
+    accounts:
+      short: Аккаунты
+      title: Аккаунты и продуктивность
+      description: Управляйте аккаунтами, оформлением и частыми действиями рядом с игровыми мирами.
+    diagnostics:
+      short: Диагностика
+      title: Диагностика и помощь
+      description: При ошибке запуска все сведения и следующие действия находятся в одном месте.
+  items:
+    instance-library:
+      title: Организованная библиотека сборок
+    instance-create-modloaders:
+      title: Создание сборок Java и Bedrock
+    instance-folder-groups:
+      title: Группы сборок по папкам
+    instance-settings:
+      title: Настройки сборки
+    instance-theme:
+      title: Тема сборки
+    local-server:
+      title: Запуск локального сервера
+    server-list:
+      title: Список серверов
+    modpack-market:
+      title: Рынок модпаков
+    online-mod-search:
+      title: Поиск модов онлайн
+    modpack-detail:
+      title: Подробности модпака
+    mod-collections:
+      title: Коллекции модов
+    mod-detail:
+      title: Подробности мода
+    local-mods:
+      title: Управление установленными модами
+    custom-mod-groups:
+      title: Пользовательские группы модов
+    save-preview:
+      title: Просмотр мира и инструменты чанков
+    blueprint-preview:
+      title: Просмотр blueprint
+    modpack-export:
+      title: Экспорт модпака
+    server-export:
+      title: Экспорт сервера
+    account-login:
+      title: Несколько сервисов авторизации
+    quick-action:
+      title: Быстрые действия
+    crash-diagnosis:
+      title: Отчёты о сбоях и ошибках запуска
+    ai-agent:
+      title: Встроенный AI Agent

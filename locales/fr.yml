@@ -119,3 +119,137 @@ prebuild:
 downloadMacHint:
   link: installer des instructions
   content: Pour les utilisateurs de Mac, veuillez suivre le {link} à installer.
+features:
+  label: Fonctionnalités
+  ui:
+    kicker: XMCL / CATALOGUE DES FONCTIONNALITÉS
+    heading: Le launcher en un coup d'œil
+    description: Explorez les workflows qui simplifient la création, la compréhension et le partage d'une installation Minecraft modifiée.
+    all: Toutes les fonctionnalités
+    search: Rechercher une fonctionnalité...
+    features: fonctionnalités
+    featuresInView: fonctionnalités affichées
+    readWorkflow: Voir le workflow
+  status:
+    homepage: Accueil
+    catalog: Catalogue
+    guide: Guide
+    detail: Détails
+  groups:
+    instances:
+      short: Instances
+      title: Instances et profils
+      description: Gardez chaque configuration Minecraft indépendante, visible et prête à démarrer.
+    community:
+      short: Communauté
+      title: Mods et contenu communautaire
+      description: Découvrez, examinez et installez les projets qui transforment une version de Minecraft en nouveau monde.
+    mods:
+      short: Gestion des mods
+      title: Gestion des mods
+      description: Gardez une grande configuration de mods claire grâce à la recherche, aux groupes et aux contrôles de dépendances.
+    world-tools:
+      short: Outils du monde
+      title: Outils du monde
+      description: Inspectez les mondes, sélectionnez leurs parties et comprenez leurs matériaux.
+    sharing:
+      short: Partage
+      title: Partage et multijoueur
+      description: Déplacez une configuration fonctionnelle vers un ami, un serveur ou une autre installation avec ses détails.
+    accounts:
+      short: Comptes
+      title: Comptes et productivité
+      description: Gardez identité, personnalisation et actions fréquentes près des mondes que vous jouez.
+    diagnostics:
+      short: Diagnostic
+      title: Diagnostic et assistance
+      description: Quand le lancement échoue, XMCL rassemble les preuves et l'action suivante au même endroit.
+  items:
+    instance-library:
+      title: Une bibliothèque d'instances organisée
+      benefit: Voyez les mondes vanilla, moddés et expérimentaux dans un accueil prêt à lancer.
+      capabilities: Séparer les versions et loaders|Voir mods, sauvegardes et ressources|Lancer la configuration voulue
+    instance-create-modloaders:
+      title: Créer des instances Java et Bedrock
+      benefit: Commencez une configuration avec l'édition et le loader adaptés au monde souhaité.
+      capabilities: Java Edition et prise en charge expérimentale de Bedrock|Forge, Fabric, Quilt, NeoForge, OptiFine et LabyMod|Sources Minecraft et versions locales
+    instance-folder-groups:
+      title: Groupes d'instances par dossiers
+      benefit: Classez de nombreuses instances dans des dossiers pour retrouver rapidement mondes et configurations.
+      capabilities: Grouper par projet ou usage|Garder les configurations liées ensemble|Changer de dossier depuis la barre des instances
+    instance-settings:
+      title: Paramètres de l'instance
+      benefit: Réglez Java, la mémoire, les versions, les loaders et le lancement indépendamment.
+      capabilities: Configuration indépendante|Choix de la version et du loader|Apparence propre à l'instance
+    instance-theme:
+      title: Thème de l'instance
+      benefit: Donnez à chaque monde son identité avec arrière-plans, couleurs, flou, polices et CSS personnalisé.
+      capabilities: Image d'arrière-plan et overlay|Coins arrondis et polices|Importer et exporter un thème
+    local-server:
+      title: Lancer un serveur local
+      benefit: Transformez une instance en serveur local configurable avec monde, limite de joueurs et fichiers exportables.
+      capabilities: MOTD, port et limite de joueurs|Choix du monde et des fichiers serveur|Exporter un paquet serveur
+    server-list:
+      title: Liste des serveurs
+      benefit: Gardez les destinations multijoueur près de l'instance concernée et voyez leur état de connexion.
+      capabilities: État du serveur et nombre de joueurs|Épingler et supprimer|Afficher clairement les échecs de connexion
+    modpack-market:
+      title: Marché des modpacks
+      benefit: Parcourez le contenu Modrinth, CurseForge et FTB depuis un marché unique et searchable.
+      capabilities: Filtres de source, version, loader et catégorie|Découvrir les packs populaires et récents|Ouvrir les détails d'un pack
+    online-mod-search:
+      title: Recherche de mods en ligne
+      benefit: Trouvez des mods compatibles sur les principales plateformes communautaires avant de les ajouter.
+      capabilities: Sources Modrinth et CurseForge|Filtres de version Minecraft et loader|Filtres d'environnement et catégorie
+    modpack-detail:
+      title: Détails du modpack
+      benefit: Consultez captures, auteurs, statistiques et exigences techniques avant l'installation.
+      capabilities: Captures, tags et statistiques|Installer et lancer|Informations techniques et ressources externes
+    mod-collections:
+      title: Collections de mods
+      benefit: Enregistrez les projets à revoir et transformez une collection en configuration réutilisable.
+      capabilities: Collections du launcher|Projets Modrinth suivis|Installation groupée et gestion de collection
+    mod-detail:
+      title: Détails du mod
+      benefit: Examinez versions, dépendances, sources et compatibilité avant de modifier l'instance.
+      capabilities: Sélection de version et dépendances|Loaders, catégories et liens sources|Description et ressources externes
+    local-mods:
+      title: Gestion des mods installés
+      benefit: Voyez le contenu activé, filtrez-le rapidement et gardez la configuration saine.
+      capabilities: Rechercher, trier et filtrer|Vérifier dépendances et contenu inutilisé|Choisir une politique de mise à jour
+    custom-mod-groups:
+      title: Groupes de mods personnalisés
+      benefit: Créez vos groupes et enregistrez les règles qui organisent une instance complexe.
+      capabilities: Appliquer et enregistrer des règles|Grouper depuis le menu contextuel|Activer, désactiver ou inspecter les fichiers
+    save-preview:
+      title: Aperçu de sauvegarde et outils de chunks
+      benefit: Consultez un monde avant son lancement et modifiez précisément ses chunks.
+      capabilities: Déplacer et inspecter les cartes|Sélectionner, copier ou supprimer des chunks|Voir propriétés et matériaux
+    blueprint-preview:
+      title: Aperçu de blueprint
+      benefit: Prévisualisez une structure en 3D et vérifiez compatibilité et matériaux avant de la placer.
+      capabilities: Formats Litematica et WorldEdit|Compatibilité et mods manquants|Liste des matériaux et conversion
+    modpack-export:
+      title: Exporter un modpack
+      benefit: Partagez une instance sans perdre les métadonnées et fichiers nécessaires.
+      capabilities: Export CurseForge et Modrinth|Auteur, description et URL|Choisir fichiers et assets inclus
+    server-export:
+      title: Exporter un serveur
+      benefit: Choisissez monde et fichiers serveur puis exportez un serveur local clairement configuré.
+      capabilities: Exporter vers un dossier ou téléverser|Choisir les fichiers serveur|Configurer MOTD et options
+    account-login:
+      title: Plusieurs services d'authentification
+      benefit: Choisissez Microsoft, hors ligne ou un service tiers selon votre façon de jouer.
+      capabilities: Comptes Microsoft et hors ligne|Services Ely.by et LittleSkin|Ajouter et gérer les services
+    quick-action:
+      title: Actions rapides
+      benefit: Recherchez instances et commandes sans quitter la page actuelle.
+      capabilities: Rechercher commandes, instances et mods|Lancer ou créer une instance|Navigation clavier avec Ctrl+K
+    crash-diagnosis:
+      title: Rapports de crash et d'échec de lancement
+      benefit: Lisez les logs, rapports de crash et sorties serveur derrière un lancement échoué.
+      capabilities: Logs, crashes et échecs de lancement|Erreurs de résolution et codes de sortie|Copier un prompt vers une IA externe
+    ai-agent:
+      title: Agent IA intégré
+      benefit: Laissez un agent inspecter le système de fichiers virtuel et expliquer une solution concrète.
+      capabilities: Lire fichiers et rapports|Analyser avant de conclure|Appliquer une solution si possible

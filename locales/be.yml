@@ -112,3 +112,93 @@ prebuild:
 downloadMacHint:
   link: Інструкцыя па ўсталёўцы
   content: Для карыстальнікаў MAC, калі ласка, выконвайце {link} для ўсталёўкі.
+features:
+  label: Магчымасці
+  ui:
+    kicker: XMCL / КАТАЛОГ МАГЧЫМАСЦЯЎ
+    heading: Магчымасці лаунчера
+    description: Даследуйце працэсы стварэння, разумення і абмену мадыфікаванымі канфігурацыямі Minecraft.
+    all: Усе магчымасці
+    search: Пошук магчымасцяў...
+    features: магчымасцяў
+    featuresInView: магчымасцяў паказана
+    readWorkflow: Паглядзець працэс
+  status:
+    homepage: Галоўная
+    catalog: Каталог
+    guide: Даведнік
+    detail: Падрабязнасці
+  groups:
+    instances:
+      short: Інстансы
+      title: Інстансы і профілі
+      description: Трымайце кожную канфігурацыю Minecraft асобнай, бачнай і гатовай да запуску.
+    community:
+      short: Супольнасць
+      title: Моды і змесціва супольнасці
+      description: Знаходзьце, правярайце і ўсталёўвайце праекты для наступнага свету Minecraft.
+    mods:
+      short: Кіраванне модамі
+      title: Кіраванне модамі
+      description: Упарадкоўвайце вялікія канфігурацыі з пошукам, групамі, залежнасцямі і абнаўленнямі.
+    world-tools:
+      short: Інструменты свету
+      title: Інструменты свету
+      description: Даследуйце светы, выбірайце іх часткі і вывучайце матэрыялы.
+    sharing:
+      short: Абмен
+      title: Абмен і мультыплэер
+      description: Пераносьце працоўную канфігурацыю сябру, на сервер або ў іншую ўсталёўку.
+    accounts:
+      short: Акаўнты
+      title: Акаўнты і прадукцыйнасць
+      description: Кіруйце ідэнтычнасцю, выглядам і частымі дзеяннямі побач са сваімі светамі.
+    diagnostics:
+      short: Дыягностыка
+      title: Дыягностыка і дапамога
+      description: Пры памылцы запуску ўсе звесткі і наступныя дзеянні знаходзяцца ў адным месцы.
+  items:
+    instance-library:
+      title: Арганізаваная бібліятэка інстансаў
+    instance-create-modloaders:
+      title: Стварэнне інстансаў Java і Bedrock
+    instance-folder-groups:
+      title: Групы інстансаў па папках
+    instance-settings:
+      title: Налады інстансу
+    instance-theme:
+      title: Тэма інстансу
+    local-server:
+      title: Запуск лакальнага сервера
+    server-list:
+      title: Спіс сервераў
+    modpack-market:
+      title: Рынак модпакаў
+    online-mod-search:
+      title: Пошук модаў онлайн
+    modpack-detail:
+      title: Падрабязнасці модпака
+    mod-collections:
+      title: Калекцыі модаў
+    mod-detail:
+      title: Падрабязнасці мода
+    local-mods:
+      title: Кіраванне ўсталяванымі модамі
+    custom-mod-groups:
+      title: Уласныя групы модаў
+    save-preview:
+      title: Прагляд свету і інструменты чанкаў
+    blueprint-preview:
+      title: Прагляд blueprint
+    modpack-export:
+      title: Экспарт модпака
+    server-export:
+      title: Экспарт сервера
+    account-login:
+      title: Некалькі сэрвісаў аўтэнтыфікацыі
+    quick-action:
+      title: Хуткія дзеянні
+    crash-diagnosis:
+      title: Справаздачы аб збоях і памылках запуску
+    ai-agent:
+      title: Убудаваны AI Agent

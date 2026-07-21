@@ -113,3 +113,137 @@ coreDocument: Core-Dokumentation
 downloadMacHint:
   link: Installationsanweisungen
   content: Mac-Benutzer folgen bitte den {link} zur Installation.
+features:
+  label: Funktionen
+  ui:
+    kicker: XMCL / FUNKTIONSKATALOG
+    heading: Der Launcher im Überblick
+    description: Entdecke die Workflows, mit denen sich eine modifizierte Minecraft-Umgebung einfacher erstellen, verstehen und teilen lässt.
+    all: Alle Funktionen
+    search: Funktionen suchen...
+    features: Funktionen
+    featuresInView: Funktionen angezeigt
+    readWorkflow: Workflow ansehen
+  status:
+    homepage: Startseite
+    catalog: Katalog
+    guide: Anleitung
+    detail: Details
+  groups:
+    instances:
+      short: Instanzen
+      title: Instanzen und Profile
+      description: Halte jede Minecraft-Konfiguration unabhängig, übersichtlich und startbereit.
+    community:
+      short: Community
+      title: Mods und Community-Inhalte
+      description: Entdecke, prüfe und installiere Projekte, die aus einer Minecraft-Version deine nächste Welt machen.
+    mods:
+      short: Mod-Verwaltung
+      title: Mod-Verwaltung
+      description: Halte große Mod-Setups mit Suche, Gruppen, Abhängigkeitsprüfung und Update-Regeln übersichtlich.
+    world-tools:
+      short: Weltwerkzeuge
+      title: Weltwerkzeuge
+      description: Untersuche Welten, wähle ihre Bereiche aus und verstehe die verwendeten Materialien.
+    sharing:
+      short: Teilen
+      title: Teilen und Multiplayer
+      description: Übertrage ein funktionierendes Setup mit allen wichtigen Details an Freunde, Server oder andere Installationen.
+    accounts:
+      short: Konten
+      title: Konten und Produktivität
+      description: Verwalte Identität, Anpassungen und häufige Aktionen direkt bei deinen Spielwelten.
+    diagnostics:
+      short: Diagnose
+      title: Diagnose und Hilfe
+      description: Wenn ein Start fehlschlägt, findest du Beweise und nächste Schritte am selben Ort.
+  items:
+    instance-library:
+      title: Eine übersichtliche Instanzbibliothek
+      benefit: Sieh Vanilla-, Mod- und experimentelle Welten gemeinsam in einer startbereiten Übersicht.
+      capabilities: Separate Spielversionen und Loader|Mods, Welten und Ressourcen auf einen Blick|Die gewünschte Konfiguration direkt starten
+    instance-create-modloaders:
+      title: Java- und Bedrock-Instanzen erstellen
+      benefit: Starte ein Setup mit der passenden Edition und dem Loader für deine gewünschte Welt.
+      capabilities: Java Edition und experimentelle Bedrock-Unterstützung|Forge, Fabric, Quilt, NeoForge, OptiFine und LabyMod|Minecraft- und lokale Versionsquellen
+    instance-folder-groups:
+      title: Instanzen in Ordnern gruppieren
+      benefit: Ordne viele Instanzen in Ordner ein, damit Welten und Setups schnell auffindbar bleiben.
+      capabilities: Nach Projekt oder Zweck gruppieren|Zusammengehörige Setups zusammenhalten|Ordner über die Instanzleiste wechseln
+    instance-settings:
+      title: Instanzeinstellungen
+      benefit: Passe Java, Speicher, Versionen, Loader und Startverhalten unabhängig an.
+      capabilities: Unabhängige Instanzkonfiguration|Version und Loader auswählen|Aussehen der Instanz festlegen
+    instance-theme:
+      title: Instanzdesign
+      benefit: Gib jeder Welt mit Hintergründen, Farben, Unschärfe, Schriftarten und CSS eine eigene Identität.
+      capabilities: Hintergrundbild und Overlay|Ecken und Schriftarten anpassen|Design importieren und exportieren
+    local-server:
+      title: Lokalen Server starten
+      benefit: Verwandle eine Instanz in einen konfigurierbaren lokalen Server mit Welt, Spielerlimit und exportierbaren Dateien.
+      capabilities: MOTD, Port und Spielerlimit|Welt und Serverdateien auswählen|Serverpaket exportieren
+    server-list:
+      title: Serverliste
+      benefit: Halte Multiplayer-Ziele bei der passenden Instanz und sieh ihren Verbindungsstatus.
+      capabilities: Serverstatus und Spielerzahl|Ziele anheften und entfernen|Verbindungsfehler klar anzeigen
+    modpack-market:
+      title: Modpack-Markt
+      benefit: Durchsuche Modrinth, CurseForge und FTB in einem gemeinsamen Marktplatz.
+      capabilities: Quellen, Versionen, Loader und Kategorien filtern|Beliebte und neue Modpacks entdecken|Modpack-Details öffnen
+    online-mod-search:
+      title: Online-Modsuche
+      benefit: Finde kompatible Mods auf den wichtigsten Community-Plattformen, bevor du sie installierst.
+      capabilities: Modrinth- und CurseForge-Quellen|Minecraft-Version und Loader filtern|Umgebung und Kategorien filtern
+    modpack-detail:
+      title: Modpack-Details
+      benefit: Prüfe Screenshots, Autoren, Statistiken und technische Anforderungen vor der Installation.
+      capabilities: Screenshots, Tags und Projektstatistiken|Installieren und starten|Technische Informationen und externe Ressourcen
+    mod-collections:
+      title: Mod-Sammlungen
+      benefit: Speichere Projekte für später und verwandle eine Sammlung in ein wiederverwendbares Setup.
+      capabilities: Launcher-Sammlungen|Gefolgte Modrinth-Projekte|Sammlung verwalten und gesammelt installieren
+    mod-detail:
+      title: Mod-Details
+      benefit: Prüfe Versionen, Abhängigkeiten, Quellen und Kompatibilität eines Mods vor Änderungen an der Instanz.
+      capabilities: Versionen und Abhängigkeiten|Loader, Kategorien und Quellen|Beschreibung und externe Ressourcen
+    local-mods:
+      title: Installierte Mods verwalten
+      benefit: Sieh aktivierte Inhalte, filtere schnell und halte dein Setup gesund.
+      capabilities: Mods suchen, sortieren und filtern|Abhängigkeiten und ungenutzte Inhalte prüfen|Update-Regel auswählen
+    custom-mod-groups:
+      title: Benutzerdefinierte Mod-Gruppen
+      benefit: Erstelle eigene Gruppen und speichere Regeln für komplexe Instanzen.
+      capabilities: Gruppenregeln anwenden und speichern|Mods über das Kontextmenü gruppieren|Dateien aktivieren, deaktivieren oder prüfen
+    save-preview:
+      title: Weltenvorschau und Chunk-Werkzeuge
+      benefit: Sieh eine Welt vor dem Start und bearbeite ihre Chunks gezielt.
+      capabilities: Weltkarten verschieben und prüfen|Chunks auswählen, kopieren oder löschen|Welteigenschaften und Materialien ansehen
+    blueprint-preview:
+      title: Blueprint-Vorschau
+      benefit: Prüfe Strukturen in 3D sowie Kompatibilität und Materialien vor dem Einfügen ins Spiel.
+      capabilities: Litematica- und WorldEdit-Formate|Kompatibilität und fehlende Mods|Materialliste und Formatkonvertierung
+    modpack-export:
+      title: Modpack exportieren
+      benefit: Teile eine Instanz mit anderen Spielern, ohne wichtige Metadaten oder Dateien zu verlieren.
+      capabilities: CurseForge- und Modrinth-Export|Autor, Beschreibung und URL|Einzuschließende Dateien und Assets auswählen
+    server-export:
+      title: Server exportieren
+      benefit: Wähle Welt und Serverdateien aus und exportiere einen klar konfigurierten lokalen Server.
+      capabilities: In Ordner exportieren oder hochladen|Serverdateien auswählen|MOTD und Serveroptionen konfigurieren
+    account-login:
+      title: Mehrere Authentifizierungsdienste
+      benefit: Wähle Microsoft, Offline- oder Drittanbieter-Konten passend zu deiner Spielweise.
+      capabilities: Microsoft- und Offline-Konten|Ely.by und LittleSkin|Authentifizierungsdienste hinzufügen und verwalten
+    quick-action:
+      title: Schnellaktionen
+      benefit: Suche Instanzen und Befehle, ohne die aktuelle Seite zu verlassen.
+      capabilities: Befehle, Instanzen und Mods suchen|Instanz starten oder erstellen|Tastaturnavigation mit Ctrl+K
+    crash-diagnosis:
+      title: Absturz- und Startfehlerberichte
+      benefit: Lies Logs, Absturzberichte und Serverausgaben hinter einem fehlgeschlagenen Start.
+      capabilities: Logs, Absturzberichte und Startfehler|Mod-Auflösungsfehler und Exit-Codes|Prompt für externe KI kopieren
+    ai-agent:
+      title: Integrierter KI-Agent
+      benefit: Lass einen Agenten das virtuelle Dateisystem prüfen und eine umsetzbare Lösung erklären.
+      capabilities: Instanzdateien und Berichte lesen|Erst untersuchen und dann schlussfolgern|Wenn möglich eine Lösung anwenden

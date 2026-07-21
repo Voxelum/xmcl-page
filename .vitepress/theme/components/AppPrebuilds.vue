@@ -3,16 +3,16 @@
         <section class="prebuild-hero">
             <div class="prebuild-grid" aria-hidden="true"></div>
             <div class="prebuild-hero-inner">
-                <div class="prebuild-kicker"><span class="prebuild-kicker-dot"></span> PREBUILD CHANNEL</div>
+                <div class="prebuild-kicker"><span class="prebuild-kicker-dot"></span> {{ t('prebuild.kicker') }}</div>
                 <div class="prebuild-heading-row">
                     <div class="prebuild-heading-copy">
                         <h1>{{ t('prebuild.download') }}</h1>
                         <p>{{ t('prebuild.downloadDescription') }}</p>
                     </div>
                     <div class="prebuild-heading-aside">
-                        <span>DEVELOPMENT BUILDS</span>
-                        <strong>Try what is next.</strong>
-                        <small>Unstable artifacts for testing upcoming XMCL changes.</small>
+                        <span>{{ t('prebuild.developmentBuilds') }}</span>
+                        <strong>{{ t('prebuild.tryNext') }}</strong>
+                        <small>{{ t('prebuild.unstableDescription') }}</small>
                     </div>
                 </div>
 
@@ -23,7 +23,7 @@
                     </div>
                     <div class="prebuild-featured-body">
                         <div>
-                            <span class="prebuild-card-label">SELECTED BUILD</span>
+                            <span class="prebuild-card-label">{{ t('prebuild.selectedBuild') }}</span>
                             <h2>{{ selected.display_title }}</h2>
                             <p>{{ formatBuildDate(selected.created_at) }} <span> / </span> {{ t('prebuild.downloadDescription') }}</p>
                         </div>
@@ -46,8 +46,8 @@
                     <p>{{ t('prebuild.historyDescription') }}</p>
                 </div>
                 <div class="prebuild-history-rule">
-                    <span>{{ runs.length }} builds available</span>
-                    <span>SELECT A BUILD</span>
+                    <span>{{ t('prebuild.buildsAvailable', { count: runs.length }) }}</span>
+                    <span>{{ t('prebuild.selectABuild') }}</span>
                 </div>
 
                 <ClientOnly>
@@ -74,9 +74,9 @@
                         </button>
                     </div>
                     <div v-if="runs.length === 0" class="prebuild-empty">
-                        <span class="prebuild-section-kicker">NO BUILDS FOUND</span>
-                        <strong>There are no prebuild artifacts available right now.</strong>
-                        <p>Please check back after the next development workflow completes.</p>
+                        <span class="prebuild-section-kicker">{{ t('prebuild.noBuilds') }}</span>
+                        <strong>{{ t('prebuild.noBuildsDescription') }}</strong>
+                        <p>{{ t('prebuild.checkBack') }}</p>
                     </div>
                 </ClientOnly>
             </div>
@@ -94,7 +94,7 @@ import PrebuildDownloads from './PrebuildDownloads.vue';
 import { getRuns } from '../composables/runs';
 import { useI18nSync } from '../composables/useI18nSync';
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 useI18nSync()
 
 const { state } = useAsyncState(() => getRuns(import.meta.env.VITE_GITHUB_TOKEN ?? ''), [], {
@@ -120,11 +120,11 @@ const formatBuildDate = (dateStr: string) => {
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
     
     if (diffDays === 1) {
-        return 'Yesterday'
+        return t('prebuild.yesterday')
     } else if (diffDays < 7) {
-        return `${diffDays} days ago`
+        return t('prebuild.daysAgo', { count: diffDays })
     } else {
-        return date.toLocaleDateString('en-US', { 
+        return date.toLocaleDateString(locale.value, {
             month: 'short', 
             day: 'numeric', 
             year: 'numeric' 

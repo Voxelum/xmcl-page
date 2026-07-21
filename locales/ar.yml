@@ -96,3 +96,93 @@ prebuild:
 downloadMacHint:
   content: لمستخدمي Mac، يرجى اتباع {link} للتثبيت.
   link: تعليمات التثبيت
+features:
+  label: الميزات
+  ui:
+    kicker: XMCL / كتالوج الميزات
+    heading: ميزات المشغّل
+    description: استكشف مسارات العمل التي تجعل إنشاء بيئة Minecraft المعدّلة وفهمها ومشاركتها أسهل.
+    all: كل الميزات
+    search: البحث عن ميزة...
+    features: ميزات
+    featuresInView: ميزات معروضة
+    readWorkflow: عرض مسار العمل
+  status:
+    homepage: الصفحة الرئيسية
+    catalog: الكتالوج
+    guide: الدليل
+    detail: التفاصيل
+  groups:
+    instances:
+      short: النسخ
+      title: النسخ والملفات الشخصية
+      description: حافظ على كل إعداد Minecraft مستقلاً ومرئياً وجاهزاً للتشغيل.
+    community:
+      short: المجتمع
+      title: التعديلات ومحتوى المجتمع
+      description: اكتشف المشاريع التي تحول إصدار Minecraft إلى عالمك التالي وتحقق منها وثبتها.
+    mods:
+      short: إدارة التعديلات
+      title: إدارة التعديلات
+      description: حافظ على ترتيب البيئات الكبيرة باستخدام البحث والمجموعات وفحص التبعيات والتحديثات.
+    world-tools:
+      short: أدوات العالم
+      title: أدوات العالم
+      description: افحص العوالم وحدد أجزاءها وتعرّف على المواد المستخدمة فيها.
+    sharing:
+      short: المشاركة
+      title: المشاركة واللعب الجماعي
+      description: انقل إعداداً يعمل إلى صديق أو خادم أو تثبيت آخر مع تفاصيله.
+    accounts:
+      short: الحسابات
+      title: الحسابات والإنتاجية
+      description: أدر الهوية والتخصيص والإجراءات المتكررة بالقرب من عوالمك.
+    diagnostics:
+      short: التشخيص
+      title: التشخيص والمساعدة
+      description: عند فشل التشغيل، ستجد الأدلة والإجراء التالي في المكان نفسه.
+  items:
+    instance-library:
+      title: مكتبة نسخ منظمة
+    instance-create-modloaders:
+      title: إنشاء نسخ Java وBedrock
+    instance-folder-groups:
+      title: مجموعات النسخ في مجلدات
+    instance-settings:
+      title: إعدادات النسخة
+    instance-theme:
+      title: سمة النسخة
+    local-server:
+      title: تشغيل خادم محلي
+    server-list:
+      title: قائمة الخوادم
+    modpack-market:
+      title: سوق حزم التعديلات
+    online-mod-search:
+      title: البحث عن التعديلات عبر الإنترنت
+    modpack-detail:
+      title: تفاصيل حزمة التعديلات
+    mod-collections:
+      title: مجموعات التعديلات
+    mod-detail:
+      title: تفاصيل التعديل
+    local-mods:
+      title: إدارة التعديلات المثبتة
+    custom-mod-groups:
+      title: مجموعات تعديلات مخصصة
+    save-preview:
+      title: معاينة الحفظ وأدوات المقاطع
+    blueprint-preview:
+      title: معاينة المخطط
+    modpack-export:
+      title: تصدير حزمة التعديلات
+    server-export:
+      title: تصدير الخادم
+    account-login:
+      title: خدمات مصادقة متعددة
+    quick-action:
+      title: إجراءات سريعة
+    crash-diagnosis:
+      title: تقارير التعطل وفشل التشغيل
+    ai-agent:
+      title: وكيل AI مدمج

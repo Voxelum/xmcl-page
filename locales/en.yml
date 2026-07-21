@@ -109,6 +109,224 @@ prebuild:
   selected: Selected
   selectBuild: Select Build
   downloading: Downloading...
+  kicker: PREBUILD CHANNEL
+  developmentBuilds: DEVELOPMENT BUILDS
+  tryNext: Try what's next.
+  unstableDescription: Unstable artifacts for testing upcoming XMCL changes.
+  selectedBuild: SELECTED BUILD
+  buildsAvailable: '{count} builds available'
+  selectABuild: SELECT A BUILD
+  noBuilds: NO BUILDS FOUND
+  noBuildsDescription: There are no prebuild artifacts available right now.
+  checkBack: Please check back after the next development workflow completes.
+  yesterday: Yesterday
+  daysAgo: '{count} days ago'
 downloadMacHint:
   content: For Mac users, please follow the {link} to install.
   link: install instruction
+features:
+  label: Features
+  ui:
+    kicker: XMCL / FEATURE CATALOG
+    heading: The launcher, mapped.
+    description: Explore the workflows that make a modded Minecraft setup easier to build, understand, and share.
+    all: All features
+    search: Search features...
+    features: features
+    featuresInView: features in view
+    readWorkflow: Read the workflow
+  status:
+    homepage: Homepage
+    catalog: Catalog
+    guide: Guide
+    detail: Detail
+  groups:
+    instances:
+      short: Instances
+      title: Instances and profiles
+      description: Keep every Minecraft setup independent, visible, and ready to launch without losing the details that make it yours.
+    community:
+      short: Community
+      title: Mods and community content
+      description: Discover, inspect, and install the projects that turn a Minecraft version into your next world.
+    mods:
+      short: Mod control
+      title: Mod management
+      description: Keep a large modded setup understandable with search, grouping, dependency checks, and deliberate update controls.
+    world-tools:
+      short: World tools
+      title: World tools
+      description: "Work with the worlds behind your instances: inspect their shape, select their pieces, and understand their materials."
+    sharing:
+      short: Sharing
+      title: Sharing and multiplayer
+      description: Move a working setup from your machine to a friend, a server, or another install with the details intact.
+    accounts:
+      short: Accounts
+      title: Accounts and productivity
+      description: Keep identity, customization, and frequent actions close to the worlds you play.
+    diagnostics:
+      short: Diagnostics
+      title: Diagnostics and assistance
+      description: When a launch fails, XMCL puts the evidence and the next action in the same place.
+  items:
+    instance-library:
+      title: One organized instance library
+      benefit: See vanilla, modded, and experimental worlds together in one launch-ready home.
+      capabilities: Separate game versions and loaders|See Mods, Saves, and resources at a glance|Launch the setup you need
+    instance-create-modloaders:
+      title: Create Java and Bedrock Instances
+      benefit: Start a new setup with the loader and edition that matches the world you want to play.
+      capabilities: Java Edition and experimental Bedrock support|Forge, Fabric, Quilt, NeoForge, OptiFine, and LabyMod|Minecraft and local version sources
+    instance-folder-groups:
+      title: Instance Folder Groups
+      benefit: Arrange many instances into folders so different worlds and setups stay easy to scan.
+      capabilities: Group instances by purpose or project|Keep related setups together|Switch between folders from the instance rail
+    instance-settings:
+      title: Instance settings
+      benefit: Tune Java, memory, versions, loaders, and launch behavior without touching another setup.
+      capabilities: Independent instance configuration|Version and loader selection|Per-instance appearance controls
+    instance-theme:
+      title: Instance Theme
+      benefit: Give each world its own identity with backgrounds, colors, blur, fonts, and custom CSS.
+      capabilities: Background image and overlay|Rounded corners and font controls|Export and import a theme
+    local-server:
+      title: Launch a local server
+      benefit: Turn an instance into a configurable local server with a world, player limit, and exportable files.
+      capabilities: MOTD, port, and player limit|World and server file selection|Export a server package
+    server-list:
+      title: Server List
+      benefit: Keep multiplayer destinations close to the instance that uses them and see their connection state.
+      capabilities: Server status and player count|Pin and remove destinations|Show connection failures clearly
+    modpack-market:
+      title: Modpack Market
+      benefit: Browse Modrinth, CurseForge, and FTB content from one searchable marketplace.
+      capabilities: Source, version, loader, and category filters|Trending and latest pack discovery|Open a pack detail page
+    online-mod-search:
+      title: Online Mod Search
+      benefit: Find compatible Mods across the major community platforms before they reach your instance.
+      capabilities: Modrinth and CurseForge sources|Minecraft version and loader filters|Environment and category filters
+    modpack-detail:
+      title: Modpack Detail
+      benefit: Understand a pack before installing it, from screenshots and authors to technical requirements.
+      capabilities: Screenshots, tags, and project stats|Install and launch actions|Technical information and external resources
+    mod-collections:
+      title: Mod Collections
+      benefit: Save projects you want to revisit and turn a collection into a reusable setup.
+      capabilities: Launcher collections|Followed Modrinth projects|Batch install and collection management
+    mod-detail:
+      title: Mod Detail
+      benefit: Inspect a Mod before changing your instance and understand its versions, dependencies, and sources.
+      capabilities: Version selection and dependencies|Loaders, categories, and source links|Description and external resources
+    local-mods:
+      title: Installed Mod Management
+      benefit: See what is enabled, filter it quickly, and keep the working set healthy.
+      capabilities: Search, sort, and filter Mods|Check dependencies and unused content|Choose an update policy
+    custom-mod-groups:
+      title: Custom Mod Groups
+      benefit: Build your own groups and save the rules that organize a complex instance.
+      capabilities: Apply and save grouping rules|Group Mods from the context menu|Enable, disable, or inspect files
+    save-preview:
+      title: Save Preview and Chunk Tools
+      benefit: Read a world visually before launching it and make precise Chunk-level changes.
+      capabilities: Pan and inspect world maps|Select, copy, or delete Chunks|Read world properties and materials
+    blueprint-preview:
+      title: Blueprint Preview
+      benefit: Preview a structure in 3D and verify compatibility and materials before placing it in-game.
+      capabilities: Litematica and WorldEdit formats|Compatibility and missing Mod status|Materials list and format conversion
+    modpack-export:
+      title: Modpack Export
+      benefit: Package an instance for other players without losing the metadata and files that make it work.
+      capabilities: CurseForge and Modrinth export|Author, description, and URL metadata|Choose files and assets to include
+    server-export:
+      title: Server Export
+      benefit: Select the right world and server files, then export a local server with a clear configuration.
+      capabilities: Export to a folder or upload|Select server files|Configure MOTD and server options
+    account-login:
+      title: Multiple Auth Services
+      benefit: Choose the account service that matches how you play, from Microsoft to offline and third-party services.
+      capabilities: Microsoft and offline accounts|Ely.by and LittleSkin services|Add and manage authentication services
+    quick-action:
+      title: Quick Action
+      benefit: Find instances and commands without leaving the page you are working on.
+      capabilities: Search commands, instances, and Mods|Launch or create an instance|Keyboard-first navigation with Ctrl+K
+    crash-diagnosis:
+      title: Crash and Launch Failure Reports
+      benefit: Read the actual logs, crash reports, and server output behind a failed launch.
+      capabilities: Logs, crash reports, and launch failures|Mod resolution errors and exit codes|Copy a prompt for external AI tools
+    ai-agent:
+      title: Built-in AI Agent
+      benefit: Let an agent inspect the instance virtual filesystem and explain an actionable fix.
+      capabilities: Read instance files and reports|Investigate before making a conclusion|Apply an actionable fix when possible
+modernHome:
+  kicker: OPEN SOURCE MINECRAFT LAUNCHER
+  visualLabel: BUILT FOR MODDED WORLDS
+  windowLabel: XMCL / HOME
+  latestRelease: LATEST RELEASE
+  readyToPlay: READY TO PLAY
+  libraryTitle: One clean library
+  librarySubtitle: Mods, packs, and instances
+  proofLabel: Launcher capabilities
+  proof:
+    fastTitle: FAST SETUP
+    fastDescription: From vanilla to modded
+    libraryTitle: ONE LIBRARY
+    libraryDescription: Resources stay organized
+    ecosystemTitle: YOUR ECOSYSTEM
+    ecosystemDescription: Modrinth and CurseForge
+  workflow:
+    kicker: THE XMCL WORKFLOW
+    title: Everything your worlds need.
+    description: Designed for players who want the power of a modded setup without the maintenance overhead.
+    stageLabel: XMCL / WORKFLOW
+    scrollHint: SCROLL TO EXPLORE
+  openSource:
+    kicker: OPEN SOURCE PULSE
+    title: Built in public.
+    viewOnGitHub: View on GitHub
+    repository: GITHUB REPOSITORY
+    snapshot: BUILD SNAPSHOT
+    downloads: Downloads
+    stars: Stars
+    forks: Forks
+    openIssues: Open issues
+    statsNote: GitHub project signals captured when this site was built.
+    contributors: CONTRIBUTORS
+    inView: IN VIEW
+    contributorsCopy: Every issue, pull request, translation, and idea helps shape the next release.
+  sponsor:
+    label: SPONSOR XMCL
+    title: Keep the launcher moving.
+    description: Support maintenance, releases, and the people building XMCL in the open.
+    supportedBy: SUPPORTED BY
+  download:
+    kicker: YOUR NEXT ADVENTURE
+    title: Ready when you are.
+    platforms: Download platforms
+  footer:
+    issues: Issues
+  features:
+    setup:
+      title: Every setup, one launcher
+      short: Multi-loader, multi-instance
+      description: Create and manage separate Minecraft instances across Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod, and experimental Bedrock support, with installation handled for you.
+      alt: XMCL Create Game dialog with multiple Mod Loaders and Bedrock Edition
+      link: Explore instance setup
+    discover:
+      title: Find community content
+      short: Modrinth, CurseForge, and FTB
+      description: Browse modpacks and community projects, filter them by version and loader, and move from discovery to play.
+      alt: XMCL modpack market with community content filters
+      link: Explore community content
+    mods:
+      title: Keep modded setups under control
+      short: Search, group, update
+      description: Manage installed Mods, inspect dependencies, organize custom groups, and keep a large setup understandable.
+      alt: XMCL local Mod management with filters and update controls
+      link: Explore Mod management
+    accounts:
+      title: Your accounts, your way
+      short: Microsoft, offline, and more
+      description: Connect the account service that fits your setup, from Microsoft and offline profiles to third-party authentication services, without leaving the launcher.
+      alt: XMCL account login dialog with multiple authentication services
+      link: Explore account support

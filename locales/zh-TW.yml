@@ -125,3 +125,93 @@ prebuild:
 downloadMacHint:
   link: 安裝指令
   content: 對於Mac用戶，請按照{link}進行安裝。
+features:
+  label: 功能
+  ui:
+    kicker: XMCL / 功能目錄
+    heading: 啟動器功能總覽
+    description: 探索讓 Minecraft 模組環境更容易建立、理解與分享的工作流程。
+    all: 所有功能
+    search: 搜尋功能...
+    features: 個功能
+    featuresInView: 個功能顯示中
+    readWorkflow: 查看工作流程
+  status:
+    homepage: 首頁
+    catalog: 目錄
+    guide: 指南
+    detail: 詳情
+  groups:
+    instances:
+      short: 實例
+      title: 實例與設定檔
+      description: 獨立管理每個 Minecraft 設定，讓它們清楚可見並隨時可以啟動。
+    community:
+      short: 社群內容
+      title: 模組與社群內容
+      description: 發現、查看並安裝將 Minecraft 版本變成新世界的社群專案。
+    mods:
+      short: 模組管理
+      title: 模組管理
+      description: 透過搜尋、分組、依賴檢查和更新策略，讓大型模組環境保持可控。
+    world-tools:
+      short: 世界工具
+      title: 世界工具
+      description: 檢查世界結構、選擇區塊，並了解世界中的方塊與材料。
+    sharing:
+      short: 分享與連線
+      title: 分享與多人遊戲
+      description: 將完整的遊戲環境從本機分享給朋友、伺服器或另一台裝置。
+    accounts:
+      short: 帳號與效率
+      title: 帳號與效率工具
+      description: 在遊戲世界附近管理身分、個人化設定和常用操作。
+    diagnostics:
+      short: 診斷
+      title: 診斷與輔助
+      description: 啟動失敗時，在同一個地方查看證據並找到下一步操作。
+  items:
+    instance-library:
+      title: 統一的實例庫
+    instance-create-modloaders:
+      title: 建立 Java 與 Bedrock 實例
+    instance-folder-groups:
+      title: 實例資料夾分組
+    instance-settings:
+      title: 實例設定
+    instance-theme:
+      title: 實例主題
+    local-server:
+      title: 啟動本機伺服器
+    server-list:
+      title: 伺服器列表
+    modpack-market:
+      title: 整合包市場
+    online-mod-search:
+      title: 線上模組搜尋
+    modpack-detail:
+      title: 整合包詳情
+    mod-collections:
+      title: 模組收藏
+    mod-detail:
+      title: 模組詳情
+    local-mods:
+      title: 已安裝模組管理
+    custom-mod-groups:
+      title: 自訂模組分組
+    save-preview:
+      title: 存檔預覽與區塊工具
+    blueprint-preview:
+      title: 藍圖預覽
+    modpack-export:
+      title: 整合包匯出
+    server-export:
+      title: 伺服器匯出
+    account-login:
+      title: 多種驗證服務
+    quick-action:
+      title: 快速操作
+    crash-diagnosis:
+      title: 當機與啟動失敗報告
+    ai-agent:
+      title: 內建 AI Agent

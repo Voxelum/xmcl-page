@@ -118,6 +118,18 @@ prebuild:
     它可能不稳定。
     请自行承担使用风险！
   entryHint: 在找快照版下载？
+  kicker: 预构建频道
+  developmentBuilds: 开发构建
+  tryNext: 试试即将到来的版本。
+  unstableDescription: 用于测试 XMCL 新功能的不稳定构建产物。
+  selectedBuild: 当前选中的构建
+  buildsAvailable: '共有 {count} 个构建'
+  selectABuild: 选择一个构建
+  noBuilds: 未找到构建
+  noBuildsDescription: 当前没有可用的预构建产物。
+  checkBack: 请在下一次开发工作流完成后再回来查看。
+  yesterday: 昨天
+  daysAgo: '{count} 天前'
   ready: 就绪
   selected: 已选择
   selectBuild: 选择构建
@@ -125,3 +137,209 @@ prebuild:
 downloadMacHint:
   link: 安装指南
   content: 对于Mac用户，请按照{link}进行安装。
+features:
+  label: 功能
+  ui:
+    kicker: XMCL / 功能目录
+    heading: 启动器功能全景
+    description: 探索让 Minecraft 模组环境更容易构建、理解和分享的工作流。
+    all: 全部功能
+    search: 搜索功能...
+    features: 个功能
+    featuresInView: 个功能匹配
+    readWorkflow: 查看工作流
+  status:
+    homepage: 首页
+    catalog: 目录
+    guide: 指南
+    detail: 详情
+  groups:
+    instances:
+      short: 实例
+      title: 实例与配置
+      description: 独立管理每个 Minecraft 配置，让它们清晰可见并随时可以启动。
+    community:
+      short: 社区内容
+      title: 模组与社区内容
+      description: 发现、查看并安装将 Minecraft 版本变成新世界的社区项目。
+    mods:
+      short: 模组管理
+      title: 模组管理
+      description: 通过搜索、分组、依赖检查和更新策略，让大型模组环境保持可控。
+    world-tools:
+      short: 世界工具
+      title: 世界工具
+      description: 检查世界结构、选择区块，并了解世界中的方块与材料。
+    sharing:
+      short: 分享与联机
+      title: 分享与多人游戏
+      description: 将配置完整的游戏环境从本机分享给朋友、服务器或另一台设备。
+    accounts:
+      short: 账号与效率
+      title: 账号与效率工具
+      description: 在游戏世界附近管理身份、个性化设置和常用操作。
+    diagnostics:
+      short: 诊断
+      title: 诊断与辅助
+      description: 启动失败时，在同一个地方查看证据并找到下一步操作。
+  items:
+    instance-library:
+      title: 统一的实例库
+      benefit: 在一个随时可启动的主页中查看原版、模组和实验性世界。
+      capabilities: 隔离不同游戏版本和加载器|一览模组、存档和资源|直接启动需要的配置
+    instance-create-modloaders:
+      title: 创建 Java 与 Bedrock 实例
+      benefit: 选择适合目标世界的版本和加载器，快速创建新的游戏配置。
+      capabilities: 支持 Java Edition 和实验性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine 与 LabyMod|使用 Minecraft 或本地版本
+    instance-folder-groups:
+      title: 实例文件夹分组
+      benefit: 将大量实例按文件夹整理，让不同世界和配置更容易查找。
+      capabilities: 按项目或用途分组|将相关配置放在一起|从实例侧栏切换文件夹
+    instance-settings:
+      title: 实例设置
+      benefit: 独立调整 Java、内存、版本、加载器和启动行为，不影响其他配置。
+      capabilities: 独立的实例配置|选择版本和加载器|设置实例外观
+    instance-theme:
+      title: 实例主题
+      benefit: 使用背景、颜色、模糊、字体和自定义 CSS 为每个世界赋予独立风格。
+      capabilities: 背景图片和遮罩|圆角与字体设置|导入和导出主题
+    local-server:
+      title: 启动本地服务器
+      benefit: 将实例变成本地服务器，并配置世界、玩家上限和可导出的文件。
+      capabilities: MOTD、端口和玩家上限|选择世界与服务器文件|导出服务器包
+    server-list:
+      title: 服务器列表
+      benefit: 将多人服务器放在对应实例附近，并实时查看连接状态。
+      capabilities: 服务器状态与玩家数量|置顶和移除服务器|清晰显示连接失败
+    modpack-market:
+      title: 整合包市场
+      benefit: 在一个可搜索的市场中浏览 Modrinth、CurseForge 和 FTB 内容。
+      capabilities: 来源、版本、加载器和分类筛选|发现热门与最新整合包|打开整合包详情
+    online-mod-search:
+      title: 在线模组搜索
+      benefit: 在模组进入实例前，从主要社区平台找到兼容的模组。
+      capabilities: Modrinth 与 CurseForge 来源|Minecraft 版本和加载器筛选|环境与分类筛选
+    modpack-detail:
+      title: 整合包详情
+      benefit: 在安装前了解整合包的截图、作者、统计数据和技术要求。
+      capabilities: 截图、标签和项目统计|安装与启动操作|技术信息和外部资源
+    mod-collections:
+      title: 模组收藏
+      benefit: 保存想要再次访问的项目，并将收藏转换为可复用的配置。
+      capabilities: 启动器收藏|关注的 Modrinth 项目|批量安装和收藏管理
+    mod-detail:
+      title: 模组详情
+      benefit: 在修改实例前了解模组的版本、依赖、来源和兼容信息。
+      capabilities: 版本选择和依赖|加载器、分类和来源链接|描述和外部资源
+    local-mods:
+      title: 已安装模组管理
+      benefit: 快速查看启用内容、筛选模组，并保持当前配置健康。
+      capabilities: 搜索、排序和筛选模组|检查依赖和未使用内容|选择更新策略
+    custom-mod-groups:
+      title: 自定义模组分组
+      benefit: 创建自己的分组，并保存整理复杂实例的规则。
+      capabilities: 应用和保存分组规则|从右键菜单添加模组|启用、禁用或查看文件
+    save-preview:
+      title: 存档预览与区块工具
+      benefit: 启动世界前先查看地图，并精确处理 Minecraft 区块。
+      capabilities: 平移和查看世界地图|选择、复制或删除区块|查看世界属性和材料
+    blueprint-preview:
+      title: 蓝图预览
+      benefit: 以 3D 预览建筑结构，在放入游戏前确认兼容性和材料。
+      capabilities: 支持 Litematica 和 WorldEdit 格式|兼容性与缺少模组状态|材料清单和格式转换
+    modpack-export:
+      title: 整合包导出
+      benefit: 将实例打包分享给其他玩家，同时保留必要的元数据和文件。
+      capabilities: CurseForge 和 Modrinth 导出|作者、描述和 URL 元数据|选择要包含的文件和资源
+    server-export:
+      title: 服务器导出
+      benefit: 选择正确的世界和服务器文件，导出清晰配置的本地服务器。
+      capabilities: 导出到文件夹或上传|选择服务器文件|配置 MOTD 和服务器选项
+    account-login:
+      title: 多种认证服务
+      benefit: 使用适合自己玩法的账号服务，从 Microsoft、离线账号到第三方认证均可选择。
+      capabilities: Microsoft 和离线账号|Ely.by 与 LittleSkin 服务|添加和管理认证服务
+    quick-action:
+      title: 快捷操作
+      benefit: 无需离开当前页面即可搜索实例和执行命令。
+      capabilities: 搜索命令、实例和模组|启动或创建实例|使用 Ctrl+K 键盘导航
+    crash-diagnosis:
+      title: 崩溃与启动失败报告
+      benefit: 查看启动失败背后的日志、崩溃报告和服务器输出。
+      capabilities: 日志、崩溃报告和启动失败|模组解析错误与退出代码|复制 Prompt 给外部 AI 工具
+    ai-agent:
+      title: 内置 AI Agent
+      benefit: 让 Agent 检查实例虚拟文件系统，并解释可执行的解决方案。
+      capabilities: 读取实例文件和报告|分析问题再得出结论|在可能时应用解决方案
+modernHome:
+  kicker: 开源 Minecraft 启动器
+  visualLabel: 为模组世界而生
+  windowLabel: XMCL / 主页
+  latestRelease: 最新版本
+  readyToPlay: 准备开始
+  libraryTitle: 统一的资源库
+  librarySubtitle: 模组、整合包和实例
+  proofLabel: 启动器能力
+  proof:
+    fastTitle: 快速配置
+    fastDescription: 从原版到模组
+    libraryTitle: 统一资源库
+    libraryDescription: 资源集中管理
+    ecosystemTitle: 你的生态
+    ecosystemDescription: Modrinth 与 CurseForge
+  workflow:
+    kicker: XMCL 工作流
+    title: 满足你的世界所需的一切。
+    description: 为希望拥有模组强大能力、又不想承担维护负担的玩家而设计。
+    stageLabel: XMCL / 工作流
+    scrollHint: 滚动探索
+  openSource:
+    kicker: 开源脉搏
+    title: 在公开协作中构建。
+    viewOnGitHub: 在 GitHub 查看
+    repository: GitHub 仓库
+    snapshot: 构建快照
+    downloads: 下载量
+    stars: Stars
+    forks: Forks
+    openIssues: 未解决 Issue
+    statsNote: GitHub 项目数据在网站构建时采集。
+    contributors: 贡献者
+    inView: 位贡献者
+    contributorsCopy: 每个 Issue、Pull Request、翻译和想法，都在塑造下一个版本。
+  sponsor:
+    label: 赞助 XMCL
+    title: 让启动器持续前进。
+    description: 支持维护、发布，以及公开构建 XMCL 的人们。
+    supportedBy: 支持方
+  download:
+    kicker: 下一场冒险
+    title: 准备好就出发。
+    platforms: 下载平台
+  footer:
+    issues: Issue
+  features:
+    setup:
+      title: 一个启动器，管理所有配置
+      short: 多加载器，多实例
+      description: 支持 Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod 和实验性 Bedrock，并自动完成安装与配置。
+      alt: XMCL 创建游戏对话框，展示多个 Mod Loader 和 Bedrock Edition
+      link: 查看实例配置
+    discover:
+      title: 发现社区内容
+      short: Modrinth、CurseForge 和 FTB
+      description: 浏览整合包和社区项目，按版本与加载器筛选，从发现直接进入游戏。
+      alt: XMCL 整合包市场和社区内容筛选器
+      link: 查看社区内容
+    mods:
+      title: 轻松掌控模组配置
+      short: 搜索、分组、更新
+      description: 管理已安装模组、检查依赖、整理自定义分组，让大型模组环境保持清晰。
+      alt: XMCL 本地模组管理和筛选控制
+      link: 查看模组管理
+    accounts:
+      title: 按你的方式使用账号
+      short: Microsoft、离线账号及更多
+      description: 在启动器中连接适合你的账号服务，包括 Microsoft、离线账号和第三方认证服务。
+      alt: XMCL 登录对话框，展示多种认证服务
+      link: 查看账号支持

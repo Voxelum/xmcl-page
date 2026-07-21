@@ -102,3 +102,137 @@ prebuild:
 downloadMacHint:
   content: Macユーザーの場合は、{link}に従ってインストールしてください。
   link: インストール手順
+features:
+  label: 機能
+  ui:
+    kicker: XMCL / 機能カタログ
+    heading: ランチャーの機能一覧
+    description: Minecraft の改造環境を作成、理解、共有しやすくするワークフローを紹介します。
+    all: すべての機能
+    search: 機能を検索...
+    features: 機能
+    featuresInView: 件の機能を表示中
+    readWorkflow: ワークフローを見る
+  status:
+    homepage: ホーム
+    catalog: カタログ
+    guide: ガイド
+    detail: 詳細
+  groups:
+    instances:
+      short: インスタンス
+      title: インスタンスとプロファイル
+      description: Minecraft の各環境を独立して管理し、見やすく、いつでも起動できる状態にします。
+    community:
+      short: コミュニティ
+      title: Mod とコミュニティコンテンツ
+      description: Minecraft のバージョンを新しい世界に変えるプロジェクトを発見、確認、インストールできます。
+    mods:
+      short: Mod 管理
+      title: Mod 管理
+      description: 検索、グループ、依存関係チェック、更新設定で大規模な Mod 環境を整理します。
+    world-tools:
+      short: ワールドツール
+      title: ワールドツール
+      description: ワールドを調べ、必要な部分を選択し、使用されている素材を確認します。
+    sharing:
+      short: 共有
+      title: 共有とマルチプレイ
+      description: 必要な情報を保ったまま、動作する環境を友人、サーバー、別のインストールへ移せます。
+    accounts:
+      short: アカウント
+      title: アカウントと生産性
+      description: プレイするワールドの近くでアカウント、カスタマイズ、よく使う操作を管理します。
+    diagnostics:
+      short: 診断
+      title: 診断とアシスタント
+      description: 起動に失敗したとき、原因の証拠と次の操作を同じ場所で確認できます。
+  items:
+    instance-library:
+      title: 整理されたインスタンスライブラリ
+      benefit: Vanilla、Mod 環境、実験的なワールドを起動可能な一覧でまとめて確認できます。
+      capabilities: バージョンと Loader の分離|Mod、ワールド、リソースを一覧表示|必要な環境を起動
+    instance-create-modloaders:
+      title: Java と Bedrock のインスタンスを作成
+      benefit: プレイしたいワールドに合うエディションと Loader で環境を作成します。
+      capabilities: Java Edition と実験的な Bedrock 対応|Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod|Minecraft とローカル版のソース
+    instance-folder-groups:
+      title: インスタンスのフォルダーグループ
+      benefit: 多数のインスタンスをフォルダーに整理し、ワールドをすばやく見つけられます。
+      capabilities: プロジェクトや用途で分類|関連する環境をまとめる|インスタンスバーからフォルダーを切り替え
+    instance-settings:
+      title: インスタンス設定
+      benefit: Java、メモリ、バージョン、Loader、起動動作を個別に設定します。
+      capabilities: 独立した設定|バージョンと Loader の選択|インスタンスの外観設定
+    instance-theme:
+      title: インスタンステーマ
+      benefit: 背景、色、ぼかし、フォント、カスタム CSS でワールドごとの個性を作れます。
+      capabilities: 背景画像とオーバーレイ|角丸とフォント設定|テーマのインポートとエクスポート
+    local-server:
+      title: ローカルサーバーを起動
+      benefit: ワールド、プレイヤー上限、ファイルを設定できるローカルサーバーに変換します。
+      capabilities: MOTD、ポート、プレイヤー上限|ワールドとサーバーファイルの選択|サーバーパッケージのエクスポート
+    server-list:
+      title: サーバーリスト
+      benefit: インスタンスに関連するマルチプレイ先を管理し、接続状態を確認できます。
+      capabilities: サーバー状態と人数|ピン留めと削除|接続失敗を明確に表示
+    modpack-market:
+      title: Modpack マーケット
+      benefit: Modrinth、CurseForge、FTB のコンテンツを一つの市場で検索できます。
+      capabilities: ソース、バージョン、Loader、カテゴリの絞り込み|人気と新着パック|パック詳細を開く
+    online-mod-search:
+      title: オンライン Mod 検索
+      benefit: インスタンスに追加する前に主要なコミュニティから互換 Mod を探せます。
+      capabilities: Modrinth と CurseForge|Minecraft バージョンと Loader|環境とカテゴリの絞り込み
+    modpack-detail:
+      title: Modpack 詳細
+      benefit: インストール前にスクリーンショット、作者、統計、技術要件を確認できます。
+      capabilities: スクリーンショット、タグ、統計|インストールと起動|技術情報と外部リソース
+    mod-collections:
+      title: Mod コレクション
+      benefit: 後で見たいプロジェクトを保存し、再利用できる環境にまとめます。
+      capabilities: ランチャーコレクション|フォロー中の Modrinth プロジェクト|一括インストールと管理
+    mod-detail:
+      title: Mod 詳細
+      benefit: 環境を変更する前にバージョン、依存関係、ソース、互換性を確認します。
+      capabilities: バージョンと依存関係|Loader、カテゴリ、ソースリンク|説明と外部リソース
+    local-mods:
+      title: インストール済み Mod 管理
+      benefit: 有効なコンテンツを確認し、すばやく絞り込み、環境を整理します。
+      capabilities: Mod の検索、並べ替え、絞り込み|依存関係と未使用コンテンツ|更新ポリシー
+    custom-mod-groups:
+      title: カスタム Mod グループ
+      benefit: 独自のグループを作り、複雑な環境を整理するルールを保存します。
+      capabilities: グループルールの適用と保存|コンテキストメニューから分類|ファイルの有効化、無効化、確認
+    save-preview:
+      title: セーブプレビューと Chunk ツール
+      benefit: 起動前にワールドを確認し、Chunk を正確に編集できます。
+      capabilities: ワールドマップの移動と確認|Chunk の選択、コピー、削除|ワールド情報と素材
+    blueprint-preview:
+      title: Blueprint プレビュー
+      benefit: 3D で構造物を確認し、配置前に互換性と素材を確認します。
+      capabilities: Litematica と WorldEdit|互換性と不足 Mod|素材一覧と形式変換
+    modpack-export:
+      title: Modpack をエクスポート
+      benefit: 必要なメタデータとファイルを保ったまま環境を共有できます。
+      capabilities: CurseForge と Modrinth への出力|作者、説明、URL|含めるファイルとアセットの選択
+    server-export:
+      title: サーバーをエクスポート
+      benefit: ワールドとサーバーファイルを選び、設定済みのローカルサーバーを出力します。
+      capabilities: フォルダーへ出力またはアップロード|サーバーファイルの選択|MOTD とサーバー設定
+    account-login:
+      title: 複数の認証サービス
+      benefit: Microsoft、オフライン、外部サービスからプレイ方法に合うアカウントを選べます。
+      capabilities: Microsoft とオフラインアカウント|Ely.by と LittleSkin|認証サービスの追加と管理
+    quick-action:
+      title: クイックアクション
+      benefit: 現在のページを離れずにインスタンスとコマンドを検索できます。
+      capabilities: コマンド、インスタンス、Mod の検索|インスタンスの起動と作成|Ctrl+K によるキーボード操作
+    crash-diagnosis:
+      title: クラッシュと起動失敗レポート
+      benefit: 起動失敗の原因となったログ、クラッシュレポート、サーバー出力を確認できます。
+      capabilities: ログ、クラッシュ、起動失敗|Mod 解決エラーと終了コード|外部 AI 用 Prompt のコピー
+    ai-agent:
+      title: 内蔵 AI Agent
+      benefit: Agent に仮想ファイルシステムを調べさせ、実行可能な解決策を説明させます。
+      capabilities: インスタンスのファイルとレポートを読む|結論の前に調査|可能な場合は解決策を適用

@@ -109,3 +109,137 @@ prebuild:
 downloadMacHint:
   content: Per gli utenti Mac, segui le {link} per installare.
   link: istruzioni di installazione
+features:
+  label: Funzionalità
+  ui:
+    kicker: XMCL / CATALOGO FUNZIONALITÀ
+    heading: Il launcher, in una mappa
+    description: Esplora i flussi di lavoro che rendono più semplice creare, capire e condividere una configurazione Minecraft moddata.
+    all: Tutte le funzionalità
+    search: Cerca funzionalità...
+    features: funzionalità
+    featuresInView: funzionalità visualizzate
+    readWorkflow: Vedi il flusso di lavoro
+  status:
+    homepage: Home
+    catalog: Catalogo
+    guide: Guida
+    detail: Dettagli
+  groups:
+    instances:
+      short: Istanze
+      title: Istanze e profili
+      description: Mantieni ogni configurazione Minecraft indipendente, visibile e pronta per l'avvio.
+    community:
+      short: Community
+      title: Mod e contenuti della community
+      description: Scopri, esamina e installa i progetti che trasformano una versione di Minecraft nel tuo prossimo mondo.
+    mods:
+      short: Gestione mod
+      title: Gestione mod
+      description: Mantieni ordinata una configurazione con molti mod grazie a ricerca, gruppi, dipendenze e aggiornamenti controllati.
+    world-tools:
+      short: Strumenti mondo
+      title: Strumenti mondo
+      description: Ispeziona i mondi, seleziona le loro parti e comprendi i materiali utilizzati.
+    sharing:
+      short: Condivisione
+      title: Condivisione e multiplayer
+      description: Sposta una configurazione funzionante a un amico, server o altra installazione mantenendo tutti i dettagli.
+    accounts:
+      short: Account
+      title: Account e produttività
+      description: Tieni identità, personalizzazione e azioni frequenti vicino ai mondi che giochi.
+    diagnostics:
+      short: Diagnostica
+      title: Diagnostica e assistenza
+      description: Quando l'avvio fallisce, XMCL mette prove e prossimo passo nello stesso posto.
+  items:
+    instance-library:
+      title: Una libreria di istanze organizzata
+      benefit: Visualizza insieme mondi vanilla, modded e sperimentali in una home pronta all'avvio.
+      capabilities: Separare versioni e loader|Vedere mod, mondi e risorse a colpo d'occhio|Avviare la configurazione desiderata
+    instance-create-modloaders:
+      title: Creare istanze Java e Bedrock
+      benefit: Inizia una configurazione con l'edizione e il loader adatti al mondo che vuoi giocare.
+      capabilities: Java Edition e supporto sperimentale Bedrock|Forge, Fabric, Quilt, NeoForge, OptiFine e LabyMod|Sorgenti Minecraft e versioni locali
+    instance-folder-groups:
+      title: Gruppi di istanze per cartelle
+      benefit: Organizza molte istanze in cartelle per trovare rapidamente mondi e configurazioni.
+      capabilities: Raggruppare per progetto o scopo|Tenere insieme configurazioni correlate|Cambiare cartella dalla barra delle istanze
+    instance-settings:
+      title: Impostazioni dell'istanza
+      benefit: Configura Java, memoria, versioni, loader e comportamento di avvio in modo indipendente.
+      capabilities: Configurazione indipendente|Scegliere versione e loader|Personalizzare l'aspetto dell'istanza
+    instance-theme:
+      title: Tema dell'istanza
+      benefit: Dai a ogni mondo una propria identità con sfondi, colori, sfocatura, font e CSS personalizzato.
+      capabilities: Immagine di sfondo e overlay|Angoli e font personalizzati|Importare ed esportare un tema
+    local-server:
+      title: Avviare un server locale
+      benefit: Trasforma un'istanza in un server locale configurabile con mondo, limite giocatori e file esportabili.
+      capabilities: MOTD, porta e limite giocatori|Scegliere mondo e file server|Esportare un pacchetto server
+    server-list:
+      title: Lista server
+      benefit: Tieni le destinazioni multiplayer vicino all'istanza corretta e controlla il loro stato.
+      capabilities: Stato server e giocatori|Fissare e rimuovere destinazioni|Mostrare chiaramente gli errori di connessione
+    modpack-market:
+      title: Mercato modpack
+      benefit: Esplora contenuti Modrinth, CurseForge e FTB da un unico mercato ricercabile.
+      capabilities: Filtri per fonte, versione, loader e categoria|Scoprire pack popolari e recenti|Aprire i dettagli di un pack
+    online-mod-search:
+      title: Ricerca mod online
+      benefit: Trova mod compatibili sulle principali piattaforme della community prima di aggiungerli.
+      capabilities: Fonti Modrinth e CurseForge|Filtri versione Minecraft e loader|Filtri ambiente e categoria
+    modpack-detail:
+      title: Dettagli modpack
+      benefit: Consulta screenshot, autori, statistiche e requisiti tecnici prima dell'installazione.
+      capabilities: Screenshot, tag e statistiche|Installare e avviare|Informazioni tecniche e risorse esterne
+    mod-collections:
+      title: Collezioni di mod
+      benefit: Salva i progetti da rivedere e trasforma una collezione in una configurazione riutilizzabile.
+      capabilities: Collezioni del launcher|Progetti Modrinth seguiti|Installazione batch e gestione collezioni
+    mod-detail:
+      title: Dettagli mod
+      benefit: Esamina versioni, dipendenze, fonti e compatibilità prima di modificare l'istanza.
+      capabilities: Selezione versione e dipendenze|Loader, categorie e fonti|Descrizione e risorse esterne
+    local-mods:
+      title: Gestione mod installati
+      benefit: Visualizza i contenuti attivi, filtra rapidamente e mantieni sana la configurazione.
+      capabilities: Cercare, ordinare e filtrare mod|Controllare dipendenze e contenuti inutilizzati|Scegliere politica aggiornamenti
+    custom-mod-groups:
+      title: Gruppi mod personalizzati
+      benefit: Crea gruppi personali e salva le regole per organizzare istanze complesse.
+      capabilities: Applicare e salvare regole|Raggruppare mod dal menu contestuale|Attivare, disattivare o ispezionare file
+    save-preview:
+      title: Anteprima salvataggio e strumenti chunk
+      benefit: Esamina un mondo prima dell'avvio e modifica con precisione i suoi chunk.
+      capabilities: Spostare e ispezionare mappe|Selezionare, copiare o eliminare chunk|Vedere proprietà e materiali
+    blueprint-preview:
+      title: Anteprima blueprint
+      benefit: Visualizza una struttura in 3D e verifica compatibilità e materiali prima di inserirla nel gioco.
+      capabilities: Formati Litematica e WorldEdit|Compatibilità e mod mancanti|Lista materiali e conversione formato
+    modpack-export:
+      title: Esportare un modpack
+      benefit: Condividi un'istanza senza perdere metadati e file necessari.
+      capabilities: Esportazione CurseForge e Modrinth|Autore, descrizione e URL|Scegliere file e asset inclusi
+    server-export:
+      title: Esportare un server
+      benefit: Scegli mondo e file server ed esporta un server locale configurato chiaramente.
+      capabilities: Esportare in cartella o caricare|Scegliere file server|Configurare MOTD e opzioni server
+    account-login:
+      title: Più servizi di autenticazione
+      benefit: Scegli Microsoft, offline o un servizio di terze parti in base al tuo modo di giocare.
+      capabilities: Account Microsoft e offline|Servizi Ely.by e LittleSkin|Aggiungere e gestire servizi
+    quick-action:
+      title: Azioni rapide
+      benefit: Cerca istanze e comandi senza lasciare la pagina attuale.
+      capabilities: Cercare comandi, istanze e mod|Avviare o creare un'istanza|Navigazione da tastiera con Ctrl+K
+    crash-diagnosis:
+      title: Report di crash e avvio fallito
+      benefit: Leggi log, report di crash e output del server dietro un avvio fallito.
+      capabilities: Log, crash e avvii falliti|Errori di risoluzione e codici di uscita|Copiare un prompt per IA esterna
+    ai-agent:
+      title: Agente IA integrato
+      benefit: Lascia che un agente controlli il file system virtuale e spieghi una soluzione concreta.
+      capabilities: Leggere file e report|Indagare prima di concludere|Applicare una soluzione quando possibile

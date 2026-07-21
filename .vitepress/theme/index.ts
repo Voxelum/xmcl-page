@@ -1,4 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/vue"
 import 'uno.css'
 import { EnhanceAppContext, useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
@@ -7,8 +6,8 @@ import Doc from 'vitepress/dist/client/theme-default/components/VPDoc.vue'
 import { defineComponent, h, provide, watchEffect } from 'vue'
 import AppAuth from './components/AppAuth.vue'
 import AppPrebuilds from './components/AppPrebuilds.vue'
-import AppWelcome from './components/AppWelcome.vue'
 import AppWelcomeModern from './components/AppWelcomeModern.vue'
+import FeatureExplorer from './components/FeatureExplorer.vue'
 import AuthorDetail from './components/BlogAuthorDetail.vue'
 import Post from './components/BlogPost.vue'
 import PostAuthor from './components/BlogPostAuthor.vue'
@@ -26,10 +25,33 @@ import QuiltIcon from "./components/QuiltIcon.vue"
 import AppOptifinePicture from "./components/AppOptifinePicture.vue"
 import AppLabymodPicture from "./components/AppLabymodPicture.vue"
 
+const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
+
+function resolveLocale(language: string) {
+  const normalizedLanguage = language.trim().replace('_', '-')
+  const exactLocale = supportedLocales.find((locale) => locale.toLowerCase() === normalizedLanguage.toLowerCase())
+  if (exactLocale) return exactLocale
+
+  const languageCode = normalizedLanguage.split('-')[0].toLowerCase()
+  if (languageCode === 'ja') return 'jp'
+  return supportedLocales.find((locale) => locale.toLowerCase() === languageCode)
+}
+
+function redirectRootToLocale() {
+  if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return
+
+  const languages = navigator.languages.length > 0 ? navigator.languages : [navigator.language]
+  const locale = languages
+    .map(resolveLocale)
+    .find((resolvedLocale): resolvedLocale is string => Boolean(resolvedLocale)) ?? 'en'
+  window.location.replace(`/${locale}/`)
+}
+
 export default {
   extends: DefaultTheme,
   Layout: defineComponent((props, { slots }) => {
     if (!import.meta.env.SSR) {
+      redirectRootToLocale()
       const router = useRouter()
       const promise = import('@microsoft/applicationinsights-web').then(({ ApplicationInsights }) => {
         const appInsights = new ApplicationInsights({
@@ -60,7 +82,6 @@ export default {
       h(DefaultTheme.Layout, props, {
         'nav-bar-extra': () => null
       }),
-      h(SpeedInsights)
     ]
   }),
   enhanceApp({ app }: EnhanceAppContext) {
@@ -72,8 +93,8 @@ export default {
     app.component('PostIcon', PostIcon)
     app.component('PostAuthor', PostAuthor)
     app.component('AuthorDetail', AuthorDetail)
-    app.component('welcome', AppWelcome)
     app.component('welcome-modern', AppWelcomeModern)
+    app.component('FeatureExplorer', FeatureExplorer)
     app.component('prebuilds', AppPrebuilds)
     app.component('changelog', Doc)
     app.component('auth', AppAuth)

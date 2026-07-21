@@ -114,3 +114,93 @@ prebuild:
 downloadMacHint:
   content: Mac қолданушылары үшін орнату үшін {link} орындаңыз.
   link: орнату нұсқауларын
+features:
+  label: Мүмкіндіктер
+  ui:
+    kicker: XMCL / МҮМКІНДІКТЕР КАТАЛОГЫ
+    heading: Лаунчер мүмкіндіктері
+    description: Minecraft модталған ортасын құру, түсіну және бөлісуге көмектесетін жұмыс процестерін зерттеңіз.
+    all: Барлық мүмкіндіктер
+    search: Мүмкіндіктерді іздеу...
+    features: мүмкіндік
+    featuresInView: мүмкіндік көрсетілуде
+    readWorkflow: Жұмыс процесін көру
+  status:
+    homepage: Басты бет
+    catalog: Каталог
+    guide: Нұсқаулық
+    detail: Толық ақпарат
+  groups:
+    instances:
+      short: Инстанстар
+      title: Инстанстар және профильдер
+      description: Әр Minecraft конфигурациясын бөлек, көрнекі және іске қосуға дайын ұстаңыз.
+    community:
+      short: Қауымдастық
+      title: Модтар және қауымдастық мазмұны
+      description: Келесі Minecraft әлеміне арналған жобаларды табыңыз, тексеріңіз және орнатыңыз.
+    mods:
+      short: Модтарды басқару
+      title: Модтарды басқару
+      description: Іздеу, топтар, тәуелділіктерді тексеру және жаңарту арқылы үлкен ортаны реттеңіз.
+    world-tools:
+      short: Әлем құралдары
+      title: Әлем құралдары
+      description: Әлемдерді зерттеп, бөліктерін таңдап, қолданылған материалдарды түсініңіз.
+    sharing:
+      short: Бөлісу
+      title: Бөлісу және мультиплеер
+      description: Жұмыс істейтін конфигурацияны барлық деректерімен досыңызға, серверге немесе басқа орнатуға көшіріңіз.
+    accounts:
+      short: Тіркелгілер
+      title: Тіркелгілер және өнімділік
+      description: Ойын әлемдеріңіздің жанында тіркелгілерді, безендіруді және жиі қолданылатын әрекеттерді басқарыңыз.
+    diagnostics:
+      short: Диагностика
+      title: Диагностика және көмек
+      description: Іске қосу сәтсіз болса, себептер мен келесі әрекетті бір жерден көріңіз.
+  items:
+    instance-library:
+      title: Реттелген инстанстар кітапханасы
+    instance-create-modloaders:
+      title: Java және Bedrock инстанстарын жасау
+    instance-folder-groups:
+      title: Инстанстарды қалталарға топтау
+    instance-settings:
+      title: Инстанс параметрлері
+    instance-theme:
+      title: Инстанс тақырыбы
+    local-server:
+      title: Жергілікті серверді іске қосу
+    server-list:
+      title: Серверлер тізімі
+    modpack-market:
+      title: Модпактар нарығы
+    online-mod-search:
+      title: Онлайн мод іздеу
+    modpack-detail:
+      title: Модпак толық ақпараты
+    mod-collections:
+      title: Мод топтамалары
+    mod-detail:
+      title: Мод толық ақпараты
+    local-mods:
+      title: Орнатылған модтарды басқару
+    custom-mod-groups:
+      title: Жеке мод топтары
+    save-preview:
+      title: Әлемді алдын ала көру және чанк құралдары
+    blueprint-preview:
+      title: Blueprint алдын ала көрінісі
+    modpack-export:
+      title: Модпакты экспорттау
+    server-export:
+      title: Серверді экспорттау
+    account-login:
+      title: Бірнеше аутентификация қызметі
+    quick-action:
+      title: Жылдам әрекеттер
+    crash-diagnosis:
+      title: Қате және іске қосу сәтсіздігі есептері
+    ai-agent:
+      title: Кірістірілген AI Agent

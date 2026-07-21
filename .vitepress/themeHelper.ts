@@ -56,6 +56,7 @@ export function loadTheme(location: string, locale: string) {
         { text: localeMessages.guide, link: `/${locale}/guide/install`, activeMatch: `/${locale}/guide/(.+)?` },
         { text: localeMessages.coreDocument, link: '/en/core/' },
     ]
+    nav.splice(1, 0, { text: localeMessages.features?.label || 'Features', link: `/${locale}/features/`, activeMatch: `/${locale}/features/(.+)?` })
 
     const guideSection = loadSidebarSection(location, locale, 'guide')
     const protocolSection = loadSidebarSection(location, locale, 'protocol')
@@ -95,13 +96,6 @@ export function loadTheme(location: string, locale: string) {
         label: localeMessages.label,
         lang: locale,
         dir: locale === 'ar' ? 'rtl' : 'ltr',
-        head: [
-            ['meta', { property: 'og:type', content: 'website' }],
-            ['meta', { property: 'og:site_name', content: 'X Minecraft Launcher' }],
-            ['meta', { property: 'og:locale', content: locale }],
-            ['meta', { property: 'og:image', content: 'https://xmcl.app/favicon.svg' }],
-            ['meta', { property: 'og:url', content: 'https://xmcl.app/' + locale + '/' }],
-        ],
         themeConfig: {
             logo: { src: '/logo.svg', alt: 'X Minecraft Launcher', width: '24', height: '24' },
             logoLink: `/${locale}/`,

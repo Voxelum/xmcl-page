@@ -104,3 +104,93 @@ prebuild:
 downloadMacHint:
   content: Mac 사용자는 {link}에서 설치 방법을 확인하세요.
   link: 여기
+features:
+  label: 기능
+  ui:
+    kicker: XMCL / 기능 카탈로그
+    heading: 런처 기능 한눈에 보기
+    description: 모드 Minecraft 환경을 만들고 이해하고 공유하기 쉽게 해 주는 작업 흐름을 살펴보세요.
+    all: 모든 기능
+    search: 기능 검색...
+    features: 기능
+    featuresInView: 기능 표시 중
+    readWorkflow: 작업 흐름 보기
+  status:
+    homepage: 홈
+    catalog: 카탈로그
+    guide: 가이드
+    detail: 상세
+  groups:
+    instances:
+      short: 인스턴스
+      title: 인스턴스와 프로필
+      description: 모든 Minecraft 설정을 독립적으로 관리하고 바로 실행할 수 있습니다.
+    community:
+      short: 커뮤니티
+      title: 모드와 커뮤니티 콘텐츠
+      description: 다음 Minecraft 월드를 위한 프로젝트를 찾아보고 설치하세요.
+    mods:
+      short: 모드 관리
+      title: 모드 관리
+      description: 검색, 그룹, 의존성 검사와 업데이트로 큰 모드 환경을 정리하세요.
+    world-tools:
+      short: 월드 도구
+      title: 월드 도구
+      description: 월드를 확인하고 필요한 부분과 재료를 파악하세요.
+    sharing:
+      short: 공유
+      title: 공유와 멀티플레이
+      description: 필요한 정보를 유지한 채 환경을 친구나 서버로 옮기세요.
+    accounts:
+      short: 계정
+      title: 계정과 생산성
+      description: 계정과 사용자 설정, 자주 쓰는 작업을 관리하세요.
+    diagnostics:
+      short: 진단
+      title: 진단과 지원
+      description: 실행 실패의 원인과 다음 작업을 한곳에서 확인하세요.
+  items:
+    instance-library:
+      title: 정리된 인스턴스 라이브러리
+    instance-create-modloaders:
+      title: Java 및 Bedrock 인스턴스 만들기
+    instance-folder-groups:
+      title: 인스턴스 폴더 그룹
+    instance-settings:
+      title: 인스턴스 설정
+    instance-theme:
+      title: 인스턴스 테마
+    local-server:
+      title: 로컬 서버 실행
+    server-list:
+      title: 서버 목록
+    modpack-market:
+      title: 모드팩 마켓
+    online-mod-search:
+      title: 온라인 모드 검색
+    modpack-detail:
+      title: 모드팩 상세
+    mod-collections:
+      title: 모드 컬렉션
+    mod-detail:
+      title: 모드 상세
+    local-mods:
+      title: 설치된 모드 관리
+    custom-mod-groups:
+      title: 사용자 지정 모드 그룹
+    save-preview:
+      title: 세이브 미리보기와 청크 도구
+    blueprint-preview:
+      title: 블루프린트 미리보기
+    modpack-export:
+      title: 모드팩 내보내기
+    server-export:
+      title: 서버 내보내기
+    account-login:
+      title: 여러 인증 서비스
+    quick-action:
+      title: 빠른 작업
+    crash-diagnosis:
+      title: 충돌 및 실행 실패 보고서
+    ai-agent:
+      title: 내장 AI Agent

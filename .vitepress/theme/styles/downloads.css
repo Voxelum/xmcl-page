@@ -308,3 +308,16 @@ a.download-btn-base:not(.download-segmented-btn *):not(.ui.labeled.button *):hov
   cursor: not-allowed;
   pointer-events: none;
 }
+
+body:has(.xmcl-modern) .modern-download-component .download-btn-base {
+  background: #17211f !important;
+  border-color: #17211f !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+body:has(.xmcl-modern) .modern-download-component .download-btn-base:hover {
+  background: #c9f85a !important;
+  border-color: #17211f !important;
+  color: #17211f !important;
+}

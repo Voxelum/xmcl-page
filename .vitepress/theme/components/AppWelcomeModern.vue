@@ -5,7 +5,7 @@
       <div class="modern-hero-content">
         <div class="modern-kicker">
           <span class="modern-kicker-dot"></span>
-          <span>OPEN SOURCE MINECRAFT LAUNCHER</span>
+          <span>{{ t('modernHome.kicker') }}</span>
         </div>
         <h1>X Minecraft Launcher</h1>
         <i18n-t class="modern-hero-copy" keypath="intro.first.body" tag="p">
@@ -37,39 +37,39 @@
       </div>
 
       <div class="modern-hero-visual" v-motion :initial="{ opacity: 0, y: 24 }" :visibleOnce="heroTransition">
-        <div class="modern-visual-label modern-visual-label-top">BUILT FOR MODDED WORLDS</div>
+        <div class="modern-visual-label modern-visual-label-top">{{ t('modernHome.visualLabel') }}</div>
         <div class="modern-screenshot-frame">
           <div class="modern-window-bar">
             <span></span><span></span><span></span>
-            <small>XMCL / HOME</small>
+            <small>{{ t('modernHome.windowLabel') }}</small>
           </div>
           <AppPicture :value="homePicture" alt="X Minecraft Launcher home page" loading="eager" decoding="async" />
         </div>
         <div class="modern-floating-card modern-floating-version">
-          <span class="modern-card-overline">LATEST RELEASE</span>
+          <span class="modern-card-overline">{{ t('modernHome.latestRelease') }}</span>
           <strong>{{ data.latestVersion }}</strong>
-          <span class="modern-live-dot">READY TO PLAY</span>
+          <span class="modern-live-dot">{{ t('modernHome.readyToPlay') }}</span>
         </div>
         <div class="modern-floating-card modern-floating-stack">
           <span class="modern-stack-icon i-fa6-solid:cubes-stacked"></span>
-          <span><strong>One clean library</strong><small>Mods, packs, and instances</small></span>
+          <span><strong>{{ t('modernHome.libraryTitle') }}</strong><small>{{ t('modernHome.librarySubtitle') }}</small></span>
         </div>
       </div>
     </section>
 
-    <section class="modern-proof-row" aria-label="Launcher capabilities">
-      <div><span class="i-fa6-solid:bolt"></span><strong>FAST SETUP</strong><small>From vanilla to modded</small></div>
-      <div><span class="i-fa6-solid:layer-group"></span><strong>ONE LIBRARY</strong><small>Resources stay organized</small></div>
-      <div><span class="i-fa6-solid:users"></span><strong>YOUR ECOSYSTEM</strong><small>Modrinth and CurseForge</small></div>
+    <section class="modern-proof-row" :aria-label="t('modernHome.proofLabel')">
+      <div><span class="i-fa6-solid:bolt"></span><strong>{{ t('modernHome.proof.fastTitle') }}</strong><small>{{ t('modernHome.proof.fastDescription') }}</small></div>
+      <div><span class="i-fa6-solid:layer-group"></span><strong>{{ t('modernHome.proof.libraryTitle') }}</strong><small>{{ t('modernHome.proof.libraryDescription') }}</small></div>
+      <div><span class="i-fa6-solid:users"></span><strong>{{ t('modernHome.proof.ecosystemTitle') }}</strong><small>{{ t('modernHome.proof.ecosystemDescription') }}</small></div>
     </section>
 
     <section class="modern-feature-section">
       <div class="modern-section-heading">
         <div>
-          <span class="modern-section-kicker">THE XMCL WORKFLOW</span>
-          <h2>Everything your worlds need.</h2>
+          <span class="modern-section-kicker">{{ t('modernHome.workflow.kicker') }}</span>
+          <h2>{{ t('modernHome.workflow.title') }}</h2>
         </div>
-        <p>Designed for players who want the power of a modded setup without the maintenance overhead.</p>
+        <p>{{ t('modernHome.workflow.description') }}</p>
       </div>
 
       <div class="modern-feature-film">
@@ -81,20 +81,20 @@
               <h3>{{ feature.title }}</h3>
               <span class="modern-feature-scene-short">{{ feature.short }}</span>
               <p>{{ feature.description }}</p>
-              <a :href="feature.link" target="_blank" rel="noreferrer">{{ feature.linkLabel }} <span aria-hidden="true">+</span></a>
+              <a :href="feature.link">{{ feature.linkLabel }} <span aria-hidden="true">+</span></a>
             </div>
           </article>
         </div>
         <div class="modern-feature-stage-column">
           <div class="modern-feature-stage" :class="`modern-feature-stage-${activeFeatureData.index}`">
-            <div class="modern-stage-label"><span>XMCL / WORKFLOW</span><span>{{ activeFeatureData.index }} / 04</span></div>
+            <div class="modern-stage-label"><span>{{ t('modernHome.workflow.stageLabel') }}</span><span>{{ activeFeatureData.index }} / 04</span></div>
             <div class="modern-stage-window-bar"><span></span><span></span><span></span><small>{{ activeFeatureData.title }}</small></div>
             <div class="modern-stage-screen">
               <Transition name="feature-screen" mode="out-in">
                 <AppPicture :key="activeFeatureData.id" :value="activeFeatureData.image" :alt="activeFeatureData.alt" loading="eager" decoding="async" />
               </Transition>
             </div>
-            <div class="modern-stage-caption"><strong>{{ activeFeatureData.short }}</strong><span>SCROLL TO EXPLORE</span></div>
+            <div class="modern-stage-caption"><strong>{{ activeFeatureData.short }}</strong><span>{{ t('modernHome.workflow.scrollHint') }}</span></div>
           </div>
         </div>
       </div>
@@ -104,53 +104,53 @@
       <div class="modern-open-source-inner">
         <header class="modern-open-source-header">
           <div>
-            <span class="modern-section-kicker">OPEN SOURCE PULSE</span>
-            <h2 id="open-source-title">Built in public.</h2>
+            <span class="modern-section-kicker">{{ t('modernHome.openSource.kicker') }}</span>
+            <h2 id="open-source-title">{{ t('modernHome.openSource.title') }}</h2>
           </div>
-          <a class="modern-open-source-link" :href="githubUrl" target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">+</span></a>
+          <a class="modern-open-source-link" :href="githubUrl" target="_blank" rel="noreferrer">{{ t('modernHome.openSource.viewOnGitHub') }} <span aria-hidden="true">+</span></a>
         </header>
 
         <div class="modern-open-source-grid">
           <div class="modern-github-stats">
-            <div class="modern-pulse-heading"><span>GITHUB REPOSITORY</span><span class="modern-pulse-live"><span></span> BUILD SNAPSHOT</span></div>
+            <div class="modern-pulse-heading"><span>{{ t('modernHome.openSource.repository') }}</span><span class="modern-pulse-live"><span></span> {{ t('modernHome.openSource.snapshot') }}</span></div>
             <div class="modern-stat-grid">
               <a class="modern-stat" :href="`${githubUrl}/releases`" target="_blank" rel="noreferrer">
-                <strong>{{ formatCount(githubStats.downloads) }}</strong><span>Downloads</span>
+                <strong>{{ formatCount(githubStats.downloads) }}</strong><span>{{ t('modernHome.openSource.downloads') }}</span>
               </a>
               <a class="modern-stat" :href="githubUrl" target="_blank" rel="noreferrer">
-                <strong>{{ formatCount(githubStats.stars) }}</strong><span>Stars</span>
+                <strong>{{ formatCount(githubStats.stars) }}</strong><span>{{ t('modernHome.openSource.stars') }}</span>
               </a>
               <a class="modern-stat" :href="`${githubUrl}/network`" target="_blank" rel="noreferrer">
-                <strong>{{ formatCount(githubStats.forks) }}</strong><span>Forks</span>
+                <strong>{{ formatCount(githubStats.forks) }}</strong><span>{{ t('modernHome.openSource.forks') }}</span>
               </a>
               <a class="modern-stat" :href="githubIssuesUrl" target="_blank" rel="noreferrer">
-                <strong>{{ formatCount(githubStats.issues) }}</strong><span>Open issues</span>
+                <strong>{{ formatCount(githubStats.issues) }}</strong><span>{{ t('modernHome.openSource.openIssues') }}</span>
               </a>
             </div>
-            <p class="modern-stats-note">GitHub project signals captured when this site was built.</p>
+            <p class="modern-stats-note">{{ t('modernHome.openSource.statsNote') }}</p>
           </div>
 
           <div class="modern-support-column">
             <div class="modern-contributor-panel">
-              <div class="modern-pulse-heading"><span>CONTRIBUTORS</span><span>{{ githubContributors.length || '--' }} IN VIEW</span></div>
+              <div class="modern-pulse-heading"><span>{{ t('modernHome.openSource.contributors') }}</span><span>{{ githubContributors.length || '--' }} {{ t('modernHome.openSource.inView') }}</span></div>
               <div v-if="githubContributors.length" class="modern-avatar-list">
                 <a v-for="contributor in githubContributors" :key="contributor.login" class="modern-contributor-avatar" :href="contributor.html_url" :title="`${contributor.login} - ${contributor.contributions} contributions`" target="_blank" rel="noreferrer">
                   <img :src="contributor.avatar_url" :alt="contributor.login" loading="lazy" />
                 </a>
               </div>
-              <p>Every issue, pull request, translation, and idea helps shape the next release.</p>
+              <p>{{ t('modernHome.openSource.contributorsCopy') }}</p>
             </div>
 
             <div class="modern-sponsor-panel">
-              <span class="modern-sponsor-label">SPONSOR XMCL</span>
-              <h3>Keep the launcher moving.</h3>
-              <p>Support maintenance, releases, and the people building XMCL in the open.</p>
+              <span class="modern-sponsor-label">{{ t('modernHome.sponsor.label') }}</span>
+              <h3>{{ t('modernHome.sponsor.title') }}</h3>
+              <p>{{ t('modernHome.sponsor.description') }}</p>
               <div class="modern-sponsor-links">
                 <a href="https://afdian.com/@ci010" target="_blank" rel="noreferrer">Afdian <span aria-hidden="true">+</span></a>
                 <a href="https://patreon.com/xmcl" target="_blank" rel="noreferrer">Patreon <span aria-hidden="true">+</span></a>
               </div>
               <div class="modern-sponsor-partners">
-                <span>SUPPORTED BY</span>
+                <span>{{ t('modernHome.sponsor.supportedBy') }}</span>
                 <a href="https://signpath.io/" target="_blank" rel="noreferrer"><span class="modern-sponsor-logo modern-sponsor-logo-signpath" aria-hidden="true">S</span><span>SignPath</span></a>
                 <a href="https://deno.com/deploy" target="_blank" rel="noreferrer"><span class="modern-sponsor-logo modern-sponsor-logo-deno i-simple-icons:deno" aria-hidden="true"></span><span>Deno Deploy</span></a>
                 <a href="https://edgeone.ai/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/Voxelum/x-minecraft-launcher/master/assets/EdgeOne.png" alt="Tencent EdgeOne" /><span>Tencent EdgeOne</span></a>
@@ -164,16 +164,22 @@
     <section id="download" class="modern-download-section">
       <div class="modern-download-panel">
         <div class="modern-download-copy">
-          <span class="modern-section-kicker">YOUR NEXT ADVENTURE</span>
-          <h2>Ready when you are.</h2>
+          <span class="modern-section-kicker">{{ t('modernHome.download.kicker') }}</span>
+          <h2>{{ t('modernHome.download.title') }}</h2>
           <p>{{ t('launcher.description') }}</p>
           <a class="modern-text-link" :href="prebuildsUrl">{{ t('prebuild.entryHint') }} <span aria-hidden="true">+</span></a>
         </div>
         <div class="modern-download-control">
+          <div class="modern-download-platforms" role="tablist" :aria-label="t('modernHome.download.platforms')">
+            <button v-for="download in downloadOptions" :key="download.id" type="button" role="tab" :aria-selected="selectedDownloadPlatform === download.id" :class="{ active: selectedDownloadPlatform === download.id }" @click="selectedDownloadPlatform = download.id">
+              <span :class="download.icon" aria-hidden="true"></span>
+              <span>{{ t(download.labelKey).replace(':', '') }}</span>
+            </button>
+          </div>
           <div class="modern-download-heading"><span class="modern-live-dot"></span><span>{{ t('auto-source') }}</span></div>
           <ClientOnly>
-            <component :is="platformDownload" class="modern-download-component" :organized="true" />
-            <p v-if="platform === 'Mac'" class="modern-download-note">{{ t('downloadMacHint.content').replace('{link}', t('downloadMacHint.link')) }}</p>
+            <component :is="downloadPlatform" class="modern-download-component" :organized="true" />
+            <p v-if="selectedDownloadPlatform === 'Mac'" class="modern-download-note">{{ t('downloadMacHint.content').replace('{link}', t('downloadMacHint.link')) }}</p>
           </ClientOnly>
         </div>
       </div>
@@ -184,9 +190,8 @@
       <div class="modern-footer-links">
         <a :href="guideUrl">{{ t('guide') }}</a>
         <a :href="prebuildsUrl">{{ t('prebuild.download') }}</a>
-        <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">Issues</a>
+        <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">{{ t('modernHome.footer.issues') }}</a>
         <a href="https://discord.gg/W5XVwYY7GQ" target="_blank" rel="noreferrer">Discord</a>
-        <a href="/legacy/">Legacy home</a>
         <a :href="githubUrl" target="_blank" rel="noreferrer">GitHub</a>
       </div>
       <span class="modern-footer-note">X Minecraft Launcher</span>
@@ -208,15 +213,17 @@ import Linux from './Linux.vue'
 import Mac from './Mac.vue'
 import Win32 from './Win32.vue'
 
-import homePicture from '../assets/home.png?w=400;800&format=avif;webp;jpg&as=picture'
-import installPicture from '../assets/install.png?w=400;800&format=avif;webp;jpg&as=picture'
-import instancesPicture from '../assets/instances.png?w=400;800&format=avif;webp;jpg&as=picture'
-import modrinthPicture from '../assets/modrinth.png?w=400;800&format=avif;webp;jpg&as=picture'
+import homePicture from '../../../src/assets/home-compact-1600-candidate.png?w=400;800&format=avif;webp;jpg&as=picture'
+import instanceCreatePicture from '../../../src/assets/instance-create-modloaders-candidate.png?w=400;800&format=avif;webp;jpg&as=picture'
+import modpackMarketPicture from '../../../src/assets/modpack-market-candidate.png?w=400;800&format=avif;webp;jpg&as=picture'
+import localModPicture from '../../../src/assets/local-mod-management-candidate.png?w=400;800&format=avif;webp;jpg&as=picture'
+import accountLoginPicture from '../../../src/assets/account-login-dialog-candidate.png?w=400;800&format=avif;webp;jpg&as=picture'
 
 const { t, locale } = useI18n()
 const { site } = useData()
 const platform = usePlatform()
-const activeFeature = ref('install')
+const activeFeature = ref('setup')
+const selectedDownloadPlatform = ref<'Win32' | 'Mac' | 'Linux'>('Win32')
 const githubStats = githubData.stats
 const githubContributors = githubData.contributors
 
@@ -233,7 +240,13 @@ const heroTransition = {
 
 const guideUrl = computed(() => `${site.value.base}${locale.value}/guide/install`)
 const prebuildsUrl = computed(() => `${site.value.base}${locale.value}/prebuilds`)
-const platformDownload = computed(() => platform === 'Mac' ? Mac : platform === 'Linux' ? Linux : Win32)
+const featureCatalogUrl = computed(() => `${site.value.base}${locale.value}/features/`)
+const downloadPlatform = computed(() => selectedDownloadPlatform.value === 'Mac' ? Mac : selectedDownloadPlatform.value === 'Linux' ? Linux : Win32)
+const downloadOptions = [
+  { id: 'Win32' as const, labelKey: 'downloadFor.windows', icon: 'i-fa6-brands:windows' },
+  { id: 'Mac' as const, labelKey: 'downloadFor.mac', icon: 'i-fa6-brands:apple' },
+  { id: 'Linux' as const, labelKey: 'downloadFor.linux', icon: 'i-fa6-brands:linux' },
+]
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
 
@@ -244,6 +257,7 @@ const formatCount = (value: number | null) => value === null
 let featureObserver: IntersectionObserver | undefined
 
 onMounted(() => {
+  if (platform === 'Mac' || platform === 'Linux' || platform === 'Win32') selectedDownloadPlatform.value = platform
   const scenes = document.querySelectorAll<HTMLElement>('.modern-feature-narrative')
   featureObserver = new IntersectionObserver((entries) => {
     const visible = entries
@@ -259,24 +273,24 @@ onBeforeUnmount(() => featureObserver?.disconnect())
 
 const features = computed(() => [
   {
-    id: 'install', index: '01', title: t('gameInstall.title.gameInstall'), short: 'Vanilla, Forge, Fabric',
-    description: t('gameInstall.description'), image: installPicture, alt: 'Minecraft installation flow',
-    link: 'https://bmclapidoc.bangbang93.com/', linkLabel: 'BMCL API',
+    id: 'setup', index: '01', title: t('modernHome.features.setup.title'), short: t('modernHome.features.setup.short'),
+    description: t('modernHome.features.setup.description'), image: instanceCreatePicture, alt: t('modernHome.features.setup.alt'),
+    link: `${featureCatalogUrl.value}#instance-create-modloaders`, linkLabel: t('modernHome.features.setup.link'),
   },
   {
-    id: 'library', index: '02', title: t('optimalDisk.title.optimal'), short: 'No duplicated resources',
-    description: t('optimalDisk.description'), image: homePicture, alt: 'XMCL resource library',
-    link: 'https://en.wikipedia.org/wiki/Hard_link', linkLabel: 'How hard links work',
+    id: 'discover', index: '02', title: t('modernHome.features.discover.title'), short: t('modernHome.features.discover.short'),
+    description: t('modernHome.features.discover.description'), image: modpackMarketPicture, alt: t('modernHome.features.discover.alt'),
+    link: `${featureCatalogUrl.value}#modpack-market`, linkLabel: t('modernHome.features.discover.link'),
   },
   {
-    id: 'instances', index: '03', title: t('cleanWorkspace.title.clean'), short: 'Separate every setup',
-    description: t('cleanWorkspace.description'), image: instancesPicture, alt: 'XMCL instances manager',
-    link: `${site.value.base}${locale.value}/guide/manage`, linkLabel: t('guide'),
+    id: 'mods', index: '03', title: t('modernHome.features.mods.title'), short: t('modernHome.features.mods.short'),
+    description: t('modernHome.features.mods.description'), image: localModPicture, alt: t('modernHome.features.mods.alt'),
+    link: `${featureCatalogUrl.value}#local-mods`, linkLabel: t('modernHome.features.mods.link'),
   },
   {
-    id: 'community', index: '04', title: t('communityIntegration.title.multipleCommunities'), short: 'Modrinth, CurseForge, more',
-    description: t('communityIntegration.description'), image: modrinthPicture, alt: 'XMCL community integrations',
-    link: 'https://modrinth.com/', linkLabel: 'Modrinth',
+    id: 'accounts', index: '04', title: t('modernHome.features.accounts.title'), short: t('modernHome.features.accounts.short'),
+    description: t('modernHome.features.accounts.description'), image: accountLoginPicture, alt: t('modernHome.features.accounts.alt'),
+    link: `${featureCatalogUrl.value}#account-login`, linkLabel: t('modernHome.features.accounts.link'),
   },
 ])
 
@@ -389,7 +403,7 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
   background: #ffffff !important;
   border: 1px solid #d8ded7 !important;
   border-radius: 6px !important;
-  box-shadow: 5px 5px 0 #17211f !important;
+  box-shadow: 0 8px 20px rgba(23, 33, 31, 0.12) !important;
   padding: 6px !important;
 }
 
@@ -470,7 +484,7 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 :global(html.dark body:has(.xmcl-modern) .VPFlyout .menu) {
   background: #1b241f !important;
   border-color: #334139 !important;
-  box-shadow: 5px 5px 0 #050806 !important;
+  box-shadow: 0 8px 20px rgba(5, 8, 6, 0.28) !important;
 }
 
 :global(html.dark body:has(.xmcl-modern) .VPFlyout .option:hover),
@@ -665,12 +679,12 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 .modern-window-bar small { font-size: 8px; letter-spacing: 0.14em; margin-left: auto; }
 .modern-screenshot-frame img { display: block; height: auto; width: 100%; }
 .modern-floating-card { background: var(--modern-panel); border: 1px solid var(--modern-ink); box-shadow: 5px 5px 0 var(--modern-ink); position: absolute; }
-.modern-floating-version { bottom: 20px; padding: 14px 18px; right: 0; transform: rotate(-3deg); }
+.modern-floating-version { bottom: -8px; padding: 10px 14px; right: 12px; transform: rotate(-2deg); }
 .modern-card-overline { color: var(--modern-muted); display: block; font-size: 9px; margin-bottom: 5px; }
 .modern-floating-version strong { display: block; font-size: 22px; letter-spacing: -0.04em; }
 .modern-live-dot { height: 6px; margin-right: 6px; width: 6px; }
 .modern-floating-version .modern-live-dot { color: #5d9624; display: block; font-size: 9px; letter-spacing: 0.12em; margin-top: 9px; width: auto; }
-.modern-floating-stack { align-items: center; display: flex; gap: 11px; left: 6px; padding: 12px 14px; top: 76px; transform: rotate(-4deg); }
+.modern-floating-stack { align-items: center; display: flex; gap: 11px; padding: 10px 12px; right: 0; top: -12px; transform: rotate(-3deg); }
 .modern-stack-icon { align-items: center; background: var(--modern-lime); display: flex; font-size: 18px; height: 34px; justify-content: center; width: 34px; }
 .modern-floating-stack strong, .modern-floating-stack small { display: block; }
 .modern-floating-stack strong { font-size: 12px; }
@@ -725,11 +739,26 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 .modern-download-copy p { color: #405035; font-size: 15px; line-height: 1.65; margin: 24px 0 0; max-width: 380px; }
 .modern-download-copy .modern-text-link { border-bottom: 1px solid #405035; padding-bottom: 3px; }
 .modern-download-control { background: var(--modern-panel); border: 1px solid var(--modern-ink); padding: 20px; }
+.modern-download-platforms { border-bottom: 1px solid var(--modern-line); display: flex; gap: 6px; margin: -4px 0 16px; padding-bottom: 12px; }
+.modern-download-platforms button { align-items: center; background: transparent; border: 1px solid transparent; color: var(--modern-muted); cursor: pointer; display: inline-flex; font: inherit; font-size: 11px; font-weight: 700; gap: 7px; padding: 8px 10px; }
+.modern-download-platforms button:hover { border-color: var(--modern-line); color: var(--modern-ink); }
+.modern-download-platforms button.active { background: #17211f; border-color: #17211f; color: #ffffff; }
 .modern-download-heading { align-items: center; display: flex; gap: 9px; margin-bottom: 18px; }
 .modern-download-component :deep(.download-os-card) { margin: 0; }
 .modern-download-component :deep(.download-section-header) { display: none; }
-.modern-download-component :deep(.download-buttons-flex) { align-items: stretch; gap: 8px; }
-.modern-download-component :deep(.download-btn-base) { border-radius: 0; min-height: 42px; }
+.modern-download-component :deep(.download-buttons-flex) { align-items: stretch; display: grid; gap: 8px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.modern-download-component :deep(.download-btn-base),
+.modern-download-component :deep(.download-segmented-btn) { background: #17211f !important; border: 1px solid #17211f !important; border-radius: 0 !important; box-shadow: none !important; color: #ffffff !important; min-height: 44px; width: 100%; }
+.modern-download-component :deep(.download-btn-base) { font-size: 12px; gap: 8px; padding: 10px 13px; }
+.modern-download-component :deep(.download-segmented-btn > .download-btn-base) { background: transparent !important; border: 0 !important; color: #ffffff !important; flex: 1 1 auto; min-width: 0; }
+.modern-download-component :deep(.download-btn-arch-chip) { background: #2d3a34 !important; border-left: 1px solid #64716b !important; color: #ffffff !important; font-size: 10px; padding: 10px 11px; }
+.modern-download-component :deep(.download-buttons-flex > .download-btn-base) { justify-content: flex-start; width: 100%; }
+.modern-download-component :deep(.download-btn-base:hover),
+.modern-download-component :deep(.download-segmented-btn:hover),
+.modern-download-component :deep(.download-btn-arch-chip:hover) { background: var(--modern-lime) !important; border-color: #17211f !important; color: #17211f !important; }
+.modern-download-component :deep(.download-segmented-btn:hover > .download-btn-base) { background: transparent !important; color: #17211f !important; }
+.modern-download-component :deep(.download-btn-base .btn-icon) { color: var(--modern-lime); font-size: 1.15em; }
+.modern-download-component :deep(.download-btn-base:hover .btn-icon) { color: var(--modern-ink); }
 .modern-download-note { color: var(--modern-muted); font-size: 11px; line-height: 1.5; margin: 12px 0 0; }
 
 .modern-open-source { background: var(--modern-paper); border-bottom: 1px solid var(--modern-line); padding: 100px clamp(24px, 7vw, 112px); }
@@ -801,8 +830,8 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
   .modern-hero-meta { gap: 9px; }
   .modern-hero-visual { padding: 40px 14px 80px 20px; }
   .modern-screenshot-frame { box-shadow: 8px 8px 0 var(--modern-orange); }
-  .modern-floating-stack { left: -4px; }
-  .modern-floating-version { right: -4px; }
+  .modern-floating-stack { right: -4px; }
+  .modern-floating-version { bottom: -6px; right: -4px; }
   .modern-proof-row { grid-template-columns: 1fr; margin: 0 20px; }
   .modern-proof-row > div { border-bottom: 1px solid var(--modern-line); border-right: 0; }
   .modern-proof-row > div:last-child { border-bottom: 0; }
@@ -821,7 +850,8 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
   .modern-stat:nth-child(3) { padding-left: 0; }
   .modern-download-panel { padding: 28px 20px; }
   .modern-download-control { padding: 14px; }
-  .modern-download-component :deep(.download-buttons-flex) { flex-direction: column; }
+  .modern-download-platforms { flex-wrap: wrap; }
+  .modern-download-component :deep(.download-buttons-flex) { grid-template-columns: 1fr; }
   .modern-footer { align-items: start; flex-direction: column; padding: 26px 20px; }
   .modern-footer-note { display: none; }
 }

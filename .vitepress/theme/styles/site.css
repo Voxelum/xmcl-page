@@ -21,6 +21,8 @@ body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) {
   background: var(--xmcl-paper);
   color: var(--xmcl-ink);
   font-family: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+  isolation: isolate;
+  position: relative;
 }
 
 html.dark body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) {
@@ -43,6 +45,29 @@ html.dark body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) {
   --vp-c-brand-1: var(--xmcl-lime);
   --vp-c-brand-2: #b3e444;
   --vp-c-brand-3: #d8ff7b;
+  background: var(--xmcl-paper);
+  color: var(--xmcl-ink);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy))::before {
+  background-image: linear-gradient(to right, rgba(23, 33, 31, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(23, 33, 31, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  content: '';
+  inset: 0;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 90%);
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
+}
+
+html.dark body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy))::before {
+  background-image: linear-gradient(to right, rgba(237, 243, 237, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(237, 243, 237, 0.06) 1px, transparent 1px);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPContent,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc {
+  background: transparent !important;
 }
 
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNav {
@@ -116,7 +141,7 @@ body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPFlyout .menu {
   background: var(--xmcl-panel) !important;
   border: 1px solid var(--xmcl-line) !important;
   border-radius: 6px !important;
-  box-shadow: 5px 5px 0 var(--xmcl-ink) !important;
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--xmcl-ink) 14%, transparent) !important;
   padding: 6px !important;
 }
 

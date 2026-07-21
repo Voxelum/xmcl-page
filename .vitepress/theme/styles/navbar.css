@@ -122,6 +122,17 @@ html:not(.dark) .VPNavBarMenuLink:hover {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+/* Features: connected capability map icon */
+.VPNavBarMenuLink[href*="/features/"]::before {
+  content: '';
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: #f97316;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M12 2a3 3 0 0 0-3 3c0 .35.06.69.17 1L6.5 8.5A3 3 0 1 0 8 11.17l2.67-2.5c.4.21.85.33 1.33.33s.93-.12 1.33-.33L16 11.17A3 3 0 1 0 17.5 8.5l-2.67-2.5c.11-.31.17-.65.17-1a3 3 0 0 0-3-3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM5 9a1 1 0 1 1 0 2A1 1 0 0 1 5 9Zm14 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 13a3 3 0 0 0-3 3c0 .35.06.69.17 1L6.5 19.5A3 3 0 1 0 8 22.17l2.67-2.5c.4.21.85.33 1.33.33s.93-.12 1.33-.33L16 22.17a3 3 0 1 0 1.5-2.67l-2.67-2.5c.11-.31.17-.65.17-1a3 3 0 0 0-3-3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM5 20a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm14 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'/%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M12 2a3 3 0 0 0-3 3c0 .35.06.69.17 1L6.5 8.5A3 3 0 1 0 8 11.17l2.67-2.5c.4.21.85.33 1.33.33s.93-.12 1.33-.33L16 11.17A3 3 0 1 0 17.5 8.5l-2.67-2.5c.11-.31.17-.65.17-1a3 3 0 0 0-3-3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM5 9a1 1 0 1 1 0 2A1 1 0 0 1 5 9Zm14 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 13a3 3 0 0 0-3 3c0 .35.06.69.17 1L6.5 19.5A3 3 0 1 0 8 22.17l2.67-2.5c.4.21.85.33 1.33.33s.93-.12 1.33-.33L16 22.17a3 3 0 1 0 1.5-2.67l-2.67-2.5c.11-.31.17-.65.17-1a3 3 0 0 0-3-3Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM5 20a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm14 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
 /* Core Document: Book Icon */
 .VPNavBarMenuLink[href*="/core/"]::before {
   content: '';
@@ -201,7 +212,7 @@ html:not(.dark) .VPNavBarMenuLink:hover {
   background: var(--vp-c-bg-soft) !important;
   border: 1px solid var(--vp-c-divider) !important;
   border-radius: 0.875rem !important;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: 0 8px 20px rgba(23, 33, 31, 0.12) !important;
   backdrop-filter: blur(16px) !important;
   padding: 0.5rem !important;
 }

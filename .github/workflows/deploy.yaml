@@ -6,13 +6,18 @@ on:
       - "master"
     paths:
       - .github/workflows/deploy.yaml
+      - api/**
+      - functions/**
       - src/**
       - .vitepress/**
       - locales/**
       - public/**
       - vite.config.ts
-      - vercel.json
+      - staticwebapp.config.json
+      - scripts/build.ts
+      - wrangler.jsonc
       - package.json
+      - pnpm-lock.yaml
   workflow_dispatch:
 
 jobs:
@@ -41,6 +46,7 @@ jobs:
           PROD: true
           VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
       - name: Deploy Azure
+        if: github.ref_name == 'master'
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
@@ -52,13 +58,11 @@ jobs:
           config_file_location: "."
           skip_app_build: true
           skip_api_build: true
-      - if: always()
-        uses: amondnet/vercel-action@v42.3.0
+      - name: Deploy Cloudflare Pages production
+        if: github.ref_name == 'master'
+        uses: cloudflare/wrangler-action@v3
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          # The Vercel deploy API rejects CLI < 47.2.2 since mid-May 2026.
-          # The action's bundled CLI (42.x) is too old, so pin to latest.
-          vercel-version: latest
-          vercel-args: '--prod --archive=tgz ./.vitepress/dist'
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy --project-name=xmcl-page
