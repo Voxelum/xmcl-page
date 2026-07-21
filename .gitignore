@@ -26,9 +26,6 @@ yarn-error.log*
 *.sw?
 .vite-ssg-temp
 
-.vercel
 **/.vitepress/cache/**
 **/.vitepress/dist/**
 **/.vitepress/.temp/**
-
-.vercel

@@ -4,6 +4,7 @@ on:
     branches:
       - "docs-reload"
       - "master"
+      - "new-designer"
     paths:
       - .github/workflows/deploy.yaml
       - src/**
@@ -13,8 +14,9 @@ on:
       - vite.config.ts
       - tailwind.config.ts
       - uno.config.ts
-      - vercel.json
+      - staticwebapp.config.json
       - package.json
+      - pnpm-lock.yaml
   workflow_dispatch:
 
 jobs:
@@ -54,13 +56,19 @@ jobs:
           config_file_location: "."
           skip_app_build: true
           skip_api_build: true
-      - if: always()
-        uses: amondnet/vercel-action@v42.3.0
+      - name: Deploy Cloudflare Pages preview
+        if: github.ref_name != 'master'
+        uses: cloudflare/wrangler-action@v3
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          # The Vercel deploy API rejects CLI < 47.2.2 since mid-May 2026.
-          # The action's bundled CLI (42.x) is too old, so pin to latest.
-          vercel-version: latest
-          vercel-args: '--prod --archive=tgz ./build'
-          vercel-org-id: ${{ secrets.ORG_ID }}
-          vercel-project-id: ${{ secrets.PROJECT_ID }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy build --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'xmcl-page' }} --branch=${{ github.ref_name }}
+      - name: Deploy Cloudflare Pages production
+        if: github.ref_name == 'master'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy build --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'xmcl-page' }}

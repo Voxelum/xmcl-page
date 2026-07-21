@@ -26,7 +26,7 @@ export async function getRSSFeed(req: Request): Promise<Response> {
       siteUrl = url.origin;
     } catch (e) {
       // Fallback to a default URL
-      siteUrl = 'https://xmcl-website-not-official.vercel.app';
+      siteUrl = 'https://xmcl.app';
       console.warn('Could not determine site URL from request, using fallback:', siteUrl);
     }
     

@@ -17,7 +17,7 @@ export async function getGuideRSSFeed(req: Request): Promise<Response> {
       const url = new URL(req.url);
       siteUrl = url.origin;
     } catch (e) {
-      siteUrl = 'https://xmcl-website-not-official.vercel.app';
+      siteUrl = 'https://xmcl.app';
       console.warn('Could not determine site URL from request, using fallback:', siteUrl);
     }
     

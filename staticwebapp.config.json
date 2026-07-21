@@ -6,7 +6,8 @@
   "routes": [
     {
       "route": "/",
-      "rewrite": "/api/lookup"
+      "redirect": "/en/",
+      "statusCode": 301
     },
     {
       "route": "/auth",
