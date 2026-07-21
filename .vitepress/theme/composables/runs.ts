@@ -10,22 +10,16 @@ export type WorkflowRun = {
 };
 
 export async function getRuns(token: string): Promise<WorkflowRun[]> {
-    console.log('Fetching runs');
-    const runResponse = await fetch(`https://api.github.com/repos/voxelum/x-minecraft-launcher/actions/workflows/1220495/runs`, {
+    const runResponse = await fetch('https://api.github.com/repos/voxelum/x-minecraft-launcher/actions/workflows/1220495/runs', {
         headers: token ? {
             Authorization: `token ${token}`,
         } : {},
-    }).then(async (runResponse) => {
-        const data = await runResponse.json();
-        if (!runResponse.ok) {
-            throw new Error(`GitHub API error ${runResponse.status}: ${data?.message ?? 'Unknown error'}`);
-        }
-        return processData(data);
-    }).catch((e) => {
-        console.error('Failed to fetch runs', e);
-        return [];
-    });
-    return runResponse
+    })
+    const data = await runResponse.json()
+    if (!runResponse.ok) {
+        throw new Error(`GitHub API error ${runResponse.status}: ${data?.message ?? 'Unknown error'}`)
+    }
+    return processData(data)
 }
 
 const processData = (data: { workflow_runs?: WorkflowRun[] }) => {

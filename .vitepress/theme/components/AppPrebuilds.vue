@@ -91,13 +91,12 @@ import { data } from '../composables/runs.data';
 import '../styles/list.min.css';
 import '../styles/progress.min.css';
 import PrebuildDownloads from './PrebuildDownloads.vue';
-import { getRuns } from '../composables/runs';
 import { useI18nSync } from '../composables/useI18nSync';
 
 const { t, locale } = useI18n()
 useI18nSync()
 
-const { state } = useAsyncState(() => getRuns(import.meta.env.VITE_GITHUB_TOKEN ?? ''), [], {
+const { state } = useAsyncState(async () => data, [], {
     shallow: true
 })
 

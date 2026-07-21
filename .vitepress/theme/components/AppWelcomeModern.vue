@@ -190,6 +190,7 @@
       <div class="modern-footer-links">
         <a :href="guideUrl">{{ t('guide') }}</a>
         <a :href="prebuildsUrl">{{ t('prebuild.download') }}</a>
+        <a :href="logViewerUrl">Log Viewer</a>
         <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">{{ t('modernHome.footer.issues') }}</a>
         <a href="https://discord.gg/W5XVwYY7GQ" target="_blank" rel="noreferrer">Discord</a>
         <a :href="githubUrl" target="_blank" rel="noreferrer">GitHub</a>
@@ -240,6 +241,7 @@ const heroTransition = {
 
 const guideUrl = computed(() => `${site.value.base}${locale.value}/guide/install`)
 const prebuildsUrl = computed(() => `${site.value.base}${locale.value}/prebuilds`)
+const logViewerUrl = computed(() => `${site.value.base}en/log-viewer`)
 const featureCatalogUrl = computed(() => `${site.value.base}${locale.value}/features/`)
 const downloadPlatform = computed(() => selectedDownloadPlatform.value === 'Mac' ? Mac : selectedDownloadPlatform.value === 'Linux' ? Linux : Win32)
 const downloadOptions = [

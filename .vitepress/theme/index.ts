@@ -24,6 +24,7 @@ import AppNeoForgePicture from "./components/AppNeoForgePicture.vue"
 import QuiltIcon from "./components/QuiltIcon.vue"
 import AppOptifinePicture from "./components/AppOptifinePicture.vue"
 import AppLabymodPicture from "./components/AppLabymodPicture.vue"
+import LogViewer from './components/LogViewer.vue'
 
 const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
 
@@ -104,5 +105,6 @@ export default {
     app.component('QuiltIcon', QuiltIcon)
     app.component('AppOptifinePicture', AppOptifinePicture)
     app.component('AppLabymodPicture', AppLabymodPicture)
+    app.component('LogViewer', LogViewer)
   },
 }

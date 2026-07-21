@@ -29,6 +29,13 @@ jobs:
           repository: voxelum/minecraft-launcher-core-node
           path: src/en/core
           ref: 'gh-pages'
+      - name: Restore GitHub data cache
+        uses: actions/cache@v4
+        with:
+          path: .vitepress/cache/github
+          key: github-data-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            github-data-v1-
       - uses: pnpm/action-setup@v4
         with:
           version: 9.3.0

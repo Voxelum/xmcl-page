@@ -1,3 +1,5 @@
+import { loadCachedGitHubData } from './github-cache'
+
 export interface GitHubStats {
   stars: number | null
   forks: number | null
@@ -50,7 +52,7 @@ async function fetchGitHub<T>(url: string): Promise<T> {
   return response.json() as Promise<T>
 }
 
-async function load(): Promise<GitHubData> {
+async function loadFresh(): Promise<GitHubData> {
   const fallback: GitHubData = {
     stats: { stars: null, forks: null, issues: null, downloads: null },
     contributors: [],
@@ -84,10 +86,18 @@ async function load(): Promise<GitHubData> {
   }
 
   if (repositoryResult.status === 'rejected' && releasesResult.status === 'rejected' && contributorsResult.status === 'rejected') {
-    console.warn('Failed to fetch GitHub project data; using empty snapshot', repositoryResult.reason)
+    throw repositoryResult.reason
   }
 
   return fallback
+}
+
+async function load(): Promise<GitHubData> {
+  return loadCachedGitHubData('project-data', loadFresh, () => ({
+    stats: { stars: null, forks: null, issues: null, downloads: null },
+    contributors: [],
+    generatedAt: new Date().toISOString(),
+  }))
 }
 
 export default {
