@@ -812,8 +812,8 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 .modern-sponsor-label { color: #405035; display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; }
 .modern-sponsor-panel h3 { color: #17211f; font-size: 25px; letter-spacing: -0.04em; line-height: 1.05; margin: 12px 0 0; }
 .modern-sponsor-panel p { color: #405035; margin-top: 10px; }
-.modern-sponsor-supporters { align-content: center; display: grid; flex: 1; gap: 14px 12px; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 30px auto; max-width: 390px; width: 100%; }
-.modern-sponsor-supporters a { aspect-ratio: 1; border: 2px solid #17211f; border-radius: 50%; display: block; overflow: hidden; transition: transform 180ms ease, border-color 180ms ease; width: 100%; }
+.modern-sponsor-supporters { display: grid; gap: 12px 16px; grid-template-columns: repeat(5, 52px); justify-content: center; margin: 28px auto 30px; }
+.modern-sponsor-supporters a { aspect-ratio: 1; border: 2px solid #17211f; border-radius: 50%; display: block; height: 52px; overflow: hidden; transition: transform 180ms ease, border-color 180ms ease; width: 52px; }
 .modern-sponsor-supporters a:hover { border-color: #e45e42; transform: translateY(-3px); }
 .modern-sponsor-supporters img { display: block; height: 100%; object-fit: cover; width: 100%; }
 .modern-sponsor-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 22px; }
@@ -822,10 +822,10 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 .modern-sponsor-partners { border-top: 1px solid rgba(23, 33, 31, 0.22); display: grid; gap: 18px 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; padding-top: 18px; }
 .modern-sponsor-partners > span { color: #405035; font-size: 9px; font-weight: 700; grid-column: 1 / -1; letter-spacing: 0.12em; }
 .modern-sponsor-partners a { align-items: flex-start; color: #405035; display: flex; flex-direction: column; font-size: 12px; font-weight: 700; gap: 10px; min-width: 0; }
-.modern-sponsor-logo { align-items: center; display: inline-flex; height: 38px; justify-content: center; width: 38px; }
-.modern-sponsor-logo-deno { font-size: 34px; }
-.modern-sponsor-logo-signpath { border: 2px solid currentColor; color: #405035; font-size: 22px; font-weight: 800; }
-.modern-sponsor-logo-agnes { background: #17211f; color: var(--modern-lime); font-size: 23px; font-weight: 800; }
+.modern-sponsor-logo { align-items: center; display: inline-flex; height: 52px; justify-content: center; width: 52px; }
+.modern-sponsor-logo-deno { font-size: 46px; }
+.modern-sponsor-logo-signpath { border: 2px solid currentColor; color: #405035; font-size: 30px; font-weight: 800; }
+.modern-sponsor-logo-agnes { background: #17211f; color: var(--modern-lime); font-size: 31px; font-weight: 800; }
 .modern-sponsor-partners a:hover { color: #e45e42; }
 
 .modern-footer { align-items: center; background: var(--modern-paper); border-top: 1px solid var(--modern-line); display: flex; gap: 24px; justify-content: space-between; padding: 28px clamp(24px, 7vw, 112px); }
@@ -868,7 +868,8 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
   .modern-open-source { padding: 72px 20px; }
   .modern-open-source-header { align-items: start; flex-direction: column; gap: 22px; }
   .modern-github-stats, .modern-contributor-panel, .modern-sponsor-panel { padding: 20px; }
-  .modern-sponsor-supporters { gap: 10px; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 24px auto; }
+  .modern-sponsor-supporters { gap: 10px 12px; grid-template-columns: repeat(5, 44px); margin: 24px auto; }
+  .modern-sponsor-supporters a { height: 44px; width: 44px; }
   .modern-stat-grid { grid-template-columns: repeat(2, 1fr); row-gap: 26px; }
   .modern-stat:nth-child(2) { border-right: 0; }
   .modern-stat:nth-child(3), .modern-stat:nth-child(4) { border-top: 1px solid var(--modern-line); padding-top: 26px; }
