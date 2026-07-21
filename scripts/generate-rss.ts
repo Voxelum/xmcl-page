@@ -38,7 +38,7 @@ function generateRSSFeed(posts: BlogPost[], siteUrl: string): string {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>XMCL Blog</title>
-    <link>${siteUrl}/blogs</link>
+    <link>${siteUrl}/blog/</link>
     <atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Latest updates and insights from the XMCL team</description>
     <language>en</language>
@@ -50,8 +50,8 @@ function generateRSSFeed(posts: BlogPost[], siteUrl: string): string {
     xml += `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <link>${siteUrl}/blogs/${post.slug}</link>
-      <guid>${siteUrl}/blogs/${post.slug}</guid>
+      <link>${siteUrl}/blog/${post.slug}/</link>
+      <guid>${siteUrl}/blog/${post.slug}/</guid>
       <description><![CDATA[${post.excerpt || ""}]]></description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <author><![CDATA[${post.author}]]></author>
@@ -61,8 +61,6 @@ function generateRSSFeed(posts: BlogPost[], siteUrl: string): string {
       for (let tag of post.tags) {
         xml += `      <category><![CDATA[${tag}]]></category>\n`;
       }
-    } else {
-      xml += `      <category><![CDATA[undefined]]></category>\n`;
     }
 
     xml += `    </item>
@@ -96,8 +94,8 @@ function generateGuideRSSFeed(posts: BlogPost[], siteUrl: string): string {
     xml += `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <link>${siteUrl}/guide/${post.slug}</link>
-      <guid>${siteUrl}/guide/${post.slug}</guid>
+      <link>${siteUrl}/guide/${post.slug}/</link>
+      <guid>${siteUrl}/guide/${post.slug}/</guid>
       <description><![CDATA[${post.excerpt || ""}]]></description>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <author><![CDATA[${post.author}]]></author>

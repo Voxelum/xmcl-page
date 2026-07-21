@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "astro dev --port 8080",
+    "dev": "npm run generate-rss && astro dev --port 8080",
     "build": "npm run generate-rss && astro build",
     "generate-rss": "ts-node --esm -r tsconfig-paths/register scripts/generate-rss.ts",
     "lint": "eslint .",

@@ -4,6 +4,8 @@ node_modules
 .vscode
 
 build
+public/rss.xml
+public/guide-rss.xml
 
 # local env files
 .env.local
