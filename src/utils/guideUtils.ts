@@ -13,17 +13,30 @@ export interface GuidePost {
   difficulty: string;
 }
 
-export async function getAllGuidePosts(): Promise<GuidePost[]> {
-  try {
-    const filePath = path.join(process.cwd(), 'public/guides.json');
-    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    return [...data.posts]
+export interface GuideConfig {
+  posts: GuidePost[];
+  featured: string[];
+}
+
+export function getGuideConfig(): GuideConfig {
+  const filePath = path.join(process.cwd(), 'public/guides.json');
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+  return {
+    ...data,
+    posts: data.posts
       .filter((post: GuidePost) => fs.existsSync(
         path.join(process.cwd(), 'public', 'guide', `${post.slug}.md`),
       ))
       .sort((a: GuidePost, b: GuidePost) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-      });
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      }),
+  };
+}
+
+export async function getAllGuidePosts(): Promise<GuidePost[]> {
+  try {
+    return getGuideConfig().posts;
   } catch (error) {
     console.error('Error fetching guide posts:', error);
     return [];

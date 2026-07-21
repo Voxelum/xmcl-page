@@ -41,6 +41,11 @@ interface GuidePost {
   difficulty?: string;
 }
 
+interface GuideConfig {
+  posts: GuidePost[];
+  featured: string[];
+}
+
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState(value);
   useEffect(() => {
@@ -105,7 +110,12 @@ const GuideCard = React.memo(({ post, featured, onClick, index }: {
           </div>
 
           <h3 className="mb-3 text-xl font-bold text-foreground transition-colors group-hover:text-[#ea4c3c]">
-            {post.title}
+            <a
+              href={`/guide/${post.slug}/`}
+              onClick={(event) => event.stopPropagation()}
+            >
+              {post.title}
+            </a>
           </h3>
 
           <p className="mb-4 text-sm text-muted-foreground line-clamp-2 flex-grow">
@@ -197,7 +207,13 @@ const GuideDetail = ({ post, content, onBack }: {
   );
 };
 
-const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
+const GuideContent = ({
+  initialSlug,
+  initialConfig,
+}: {
+  initialSlug?: string;
+  initialConfig?: GuideConfig;
+}) => {
   const { t } = useTranslation();
   const { id: hashId } = useParams();
   const id = initialSlug || hashId;
@@ -209,6 +225,7 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
 
   const { data: config, isLoading } = useQuery({
     queryKey: ["guides-config"],
+    initialData: initialConfig,
     queryFn: async () => {
       const response = await fetch("/guides.json");
       if (!response.ok) throw new Error("Failed to fetch guides");
@@ -406,10 +423,16 @@ const GuideContent = ({ initialSlug }: { initialSlug?: string }) => {
   );
 };
 
-export default function Guide({ initialSlug }: { initialSlug?: string }) {
+export default function Guide({
+  initialSlug,
+  initialConfig,
+}: {
+  initialSlug?: string;
+  initialConfig?: GuideConfig;
+}) {
   return (
     <AppShell>
-      <GuideContent initialSlug={initialSlug} />
+      <GuideContent initialSlug={initialSlug} initialConfig={initialConfig} />
     </AppShell>
   );
 }

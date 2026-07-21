@@ -13,15 +13,16 @@ interface BlogPost {
   slug: string;
 }
 
-interface BlogConfig {
+export interface BlogConfig {
   posts: BlogPost[];
   categories: string[];
   featured: string[];
 }
 
-export const useBlogPosts = () => {
+export const useBlogPosts = (initialConfig?: BlogConfig) => {
   const { data: config, isLoading, error } = useQuery({
     queryKey: ['blog-config'],
+    initialData: initialConfig,
     queryFn: async (): Promise<BlogConfig> => {
       try {
         const response = await fetch('/blog.json');

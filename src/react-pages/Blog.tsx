@@ -19,7 +19,7 @@ import {
 } from "@phosphor-icons/react";
 import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "@/contexts/TranslationContext";
-import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { useBlogPosts, type BlogConfig } from "@/hooks/useBlogPosts";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppShell } from "@/components/AppShell";
 import { TranslateButton } from "@/components/TranslateButton";
@@ -143,7 +143,12 @@ const PostCard = React.memo(({ post, featured, onClick, index }: {
 
         <div className="relative z-10 flex flex-col h-full">
           <h3 className="mb-3 text-xl font-bold text-foreground transition-colors group-hover:text-[#ea4c3c]">
-            {post.title}
+            <a
+              href={`/blog/${post.slug}/`}
+              onClick={(event) => event.stopPropagation()}
+            >
+              {post.title}
+            </a>
           </h3>
 
           <p className="mb-4 text-sm text-muted-foreground line-clamp-2 flex-grow">
@@ -252,7 +257,13 @@ const PostDetail = ({ post, content, onBack }: { post: any; content: string; onB
 
 
 // --- MAIN COMPONENT ---
-const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
+const BlogContent = ({
+  initialSlug,
+  initialConfig,
+}: {
+  initialSlug?: string;
+  initialConfig?: BlogConfig;
+}) => {
   const { t } = useTranslation();
   const { id: hashId } = useParams();
   const id = initialSlug || hashId;
@@ -262,7 +273,7 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
   const [showFilters, setShowFilters] = useState(false);
 
   // Data fetching
-  const { posts, categories: rawCategories, featured, isLoading, fetchPostContent } = useBlogPosts();
+  const { posts, categories: rawCategories, featured, isLoading, fetchPostContent } = useBlogPosts(initialConfig);
 
   // Dynamically extract categories from posts tags
   const categories = useMemo(() => {
@@ -401,10 +412,16 @@ const BlogContent = ({ initialSlug }: { initialSlug?: string }) => {
   );
 };
 
-export default function Blog({ initialSlug }: { initialSlug?: string }) {
+export default function Blog({
+  initialSlug,
+  initialConfig,
+}: {
+  initialSlug?: string;
+  initialConfig?: BlogConfig;
+}) {
   return (
     <AppShell>
-      <BlogContent initialSlug={initialSlug} />
+      <BlogContent initialSlug={initialSlug} initialConfig={initialConfig} />
     </AppShell>
   );
 }
