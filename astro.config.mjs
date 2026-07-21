@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@tailwindcss/vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -8,8 +9,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
+  site: 'https://xmcl.app',
   integrations: [
     react(),
+    sitemap(),
   ],
   output: 'static',
   outDir: './build',
@@ -39,4 +42,3 @@ export default defineConfig({
     },
   },
 });
-

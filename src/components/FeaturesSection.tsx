@@ -36,7 +36,11 @@ const COLOR_MAP = {
   amber: "bg-amber-500 hover:bg-amber-600 shadow-amber-500/50",
 };
 
-export const FeaturesSection = memo(() => {
+interface FeaturesSectionProps {
+  headingLevel?: "h1" | "h2";
+}
+
+export const FeaturesSection = memo(({ headingLevel = "h2" }: FeaturesSectionProps) => {
   const { t } = useTranslation();
 
   const features = useMemo(
@@ -138,7 +142,7 @@ export const FeaturesSection = memo(() => {
       <FloatingOrbs />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <SectionHeader t={t} />
+        <SectionHeader t={t} headingLevel={headingLevel} />
 
         <div className="space-y-24 lg:space-y-40">
           {features.map((feature, index) => (
@@ -156,9 +160,13 @@ export const FeaturesSection = memo(() => {
 
 interface SectionHeaderProps {
   t: (key: string) => string;
+  headingLevel: "h1" | "h2";
 }
 
-const SectionHeader = memo(({ t }: SectionHeaderProps) => (
+const SectionHeader = memo(({ t, headingLevel }: SectionHeaderProps) => {
+  const Heading = headingLevel === "h1" ? motion.h1 : motion.h2;
+
+  return (
   <motion.div
     className="text-center mb-20"
     initial={{ opacity: 0 }}
@@ -166,7 +174,7 @@ const SectionHeader = memo(({ t }: SectionHeaderProps) => (
     viewport={{ once: true, amount: 0.3 }}
     transition={{ duration: 1 }}
   >
-    <motion.h2
+    <Heading
       className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 md:mb-8 leading-[0.9] tracking-tight text-foreground"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -174,7 +182,7 @@ const SectionHeader = memo(({ t }: SectionHeaderProps) => (
       transition={{ duration: 0.8, delay: 0.3 }}
     >
       {t("home.featuresTitle")}
-    </motion.h2>
+    </Heading>
 
     <motion.p
       className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium"
@@ -186,7 +194,8 @@ const SectionHeader = memo(({ t }: SectionHeaderProps) => (
       {t("home.comprehensiveSolution")}
     </motion.p>
   </motion.div>
-));
+  );
+});
 
 const FloatingOrbs = memo(() => {
   return null;

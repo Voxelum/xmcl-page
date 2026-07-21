@@ -7,45 +7,54 @@ interface Props {
   description?: string;
   image?: string;
   type?: string;
+  lang?: string;
+  noindex?: boolean;
+  publishedTime?: string;
+  structuredData?: Record<string, unknown>;
 }
 
 const {
   title = "XMCL - X Minecraft Launcher | Modern Minecraft Launcher",
   description = "XMCL is a modern, open-source Minecraft launcher with advanced features like mod management, multiple instances, P2P sharing, and support for all mod loaders (Forge, Fabric, NeoForge, Quilt). Download now for Windows, macOS, and Linux.",
   image = "/og-image.svg",
-  type = "website"
+  type = "website",
+  lang = "en",
+  noindex = false,
+  publishedTime,
+  structuredData,
 } = Astro.props;
 
-const canonicalURL = `https://xmcl.app${Astro.url.pathname}`;
+const siteURL = Astro.site ?? new URL("https://xmcl.app");
+const canonicalURL = new URL(Astro.url.pathname, siteURL).href;
+const imageURL = new URL(image, siteURL).href;
 const siteName = "X Minecraft Launcher";
 const twitterHandle = "@xmcl";
-
-// JSON-LD Structured Data for SEO
-const jsonLd = {
+const normalizedPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isApplicationPage = normalizedPath === "/" || normalizedPath === "/download";
+const defaultStructuredData = isApplicationPage ? {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "X Minecraft Launcher",
   "alternateName": "XMCL",
   "description": description,
-  "url": "https://xmcl.app",
-  "image": image,
+  "url": canonicalURL,
+  "image": imageURL,
   "applicationCategory": "GameApplication",
   "operatingSystem": "Windows, macOS, Linux",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "5000"
   }
-};
+} : undefined;
+const jsonLd = structuredData ?? defaultStructuredData;
+const robots = noindex
+  ? "noindex, nofollow"
+  : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang={lang} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -58,9 +67,8 @@ const jsonLd = {
     <!-- Primary SEO Meta Tags -->
     <meta name="description" content={description} />
     <meta name="author" content="Voxelum" />
-    <meta name="keywords" content="minecraft launcher, xmcl, minecraft mod manager, forge, fabric, neoforge, quilt, modpack, open source minecraft" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={robots} />
     <meta name="theme-color" content="#3b82f6" />
     <meta name="msapplication-TileColor" content="#3b82f6" />
 
@@ -69,20 +77,23 @@ const jsonLd = {
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={imageURL} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
-    <meta property="twitter:creator" content={twitterHandle} />
-    <meta property="twitter:site" content={twitterHandle} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+    <meta name="twitter:creator" content={twitterHandle} />
+    <meta name="twitter:site" content={twitterHandle} />
+    {type === "article" && publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+    )}
 
     <!-- Additional SEO Tags -->
     <meta name="application-name" content="XMCL" />
@@ -92,12 +103,10 @@ const jsonLd = {
     <meta name="format-detection" content="telephone=no" />
     <meta name="mobile-web-app-capable" content="yes" />
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" is:inline>
-      {JSON.stringify(jsonLd)}
-    </script>
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
 
-    <!-- Google Translate (Dynamic Loader) -->
     <meta name="google" content="notranslate" />
     <script is:inline>
       if (document.cookie.includes('googtrans') && !document.cookie.includes('googtrans=/en/en')) {
@@ -116,14 +125,12 @@ const jsonLd = {
       }
     </script>
     <style is:inline>
-      /* Hide Google Translate bar and widget UI */
       .goog-te-banner-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame {
         display: none !important;
       }
       body { top: 0 !important; }
       .goog-text-highlight { background: none !important; box-shadow: none !important; }
     </style>
-    <!-- Language & Direction Sync -->
     <script is:inline>
       (function() {
         function syncLangAndDir() {

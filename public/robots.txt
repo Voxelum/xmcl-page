@@ -2,7 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://xmcl.app/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
+Sitemap: https://xmcl.app/sitemap-index.xml

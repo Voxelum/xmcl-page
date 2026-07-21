@@ -6,7 +6,7 @@
     <atom:link href="https://xmcl.app/guide-rss.xml" rel="self" type="application/rss+xml" />
     <description>Latest guides and tutorials from XMCL</description>
     <language>en</language>
-    <lastBuildDate>Fri, 22 May 2026 18:10:03 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 05:12:00 GMT</lastBuildDate>
     <generator>XMCL Website</generator>
 
     <item>
@@ -201,17 +201,6 @@
       <author><![CDATA[CIO10]]></author>
       <category><![CDATA[launcher]]></category>
       <category><![CDATA[java]]></category>
-    </item>
-
-    <item>
-      <title><![CDATA[Instance Copy]]></title>
-      <link>https://xmcl.app/guide/instance-copy</link>
-      <guid>https://xmcl.app/guide/instance-copy</guid>
-      <description><![CDATA[How to copy an instance?]]></description>
-      <pubDate>Fri, 10 Jan 2025 00:00:00 GMT</pubDate>
-      <author><![CDATA[CIO10]]></author>
-      <category><![CDATA[launcher]]></category>
-      <category><![CDATA[instance]]></category>
     </item>
 
     <item>

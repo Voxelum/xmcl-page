@@ -3,6 +3,8 @@ node_modules
 /dist
 .vscode
 
+build
+
 # local env files
 .env.local
 .env.*.local
@@ -28,3 +30,5 @@ yarn-error.log*
 **/.vitepress/cache/**
 **/.vitepress/dist/**
 **/.vitepress/.temp/**
+
+.vercel

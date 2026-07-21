@@ -1,7 +1,5 @@
-import { fetch } from 'undici'; // or whatever fetch is used, but since it's browser, no need import
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
 export interface GuidePost {
   id: string;
@@ -17,24 +15,28 @@ export interface GuidePost {
 
 export async function getAllGuidePosts(): Promise<GuidePost[]> {
   try {
-    if (typeof window === 'undefined') {
-      const filePath = path.join(process.cwd(), 'public/guides.json');
-      const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      return data.posts.sort((a: GuidePost, b: GuidePost) => {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    const filePath = path.join(process.cwd(), 'public/guides.json');
+    const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    return [...data.posts]
+      .filter((post: GuidePost) => fs.existsSync(
+        path.join(process.cwd(), 'public', 'guide', `${post.slug}.md`),
+      ))
+      .sort((a: GuidePost, b: GuidePost) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
       });
-    } else {
-      const response = await fetch('/guides.json');
-      if (!response.ok) {
-        throw new Error('Failed to fetch guides');
-      }
-      const data = await response.json();
-      return data.posts.sort((a: GuidePost, b: GuidePost) => {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
-      });
-    }
   } catch (error) {
     console.error('Error fetching guide posts:', error);
     return [];
   }
+}
+
+export function getGuideContent(slug: string): string {
+  const safeSlug = path.basename(slug);
+
+  if (safeSlug !== slug) {
+    throw new Error(`Invalid guide slug "${slug}"`);
+  }
+
+  const filePath = path.join(process.cwd(), 'public', 'guide', `${safeSlug}.md`);
+  return fs.readFileSync(filePath, 'utf8');
 }

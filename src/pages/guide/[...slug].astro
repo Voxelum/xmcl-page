@@ -1,18 +1,48 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Guide from "../../react-pages/Guide";
-import { getAllGuidePosts } from "../../utils/guideUtils";
+import { StaticArticle } from "../../components/StaticArticle";
+import { getAllGuidePosts, getGuideContent } from "../../utils/guideUtils";
 
 export async function getStaticPaths() {
   const posts = await getAllGuidePosts();
   return posts.map((post) => ({
     params: { slug: post.slug },
+    props: { post, content: getGuideContent(post.slug) },
   }));
 }
 
-const { slug } = Astro.params;
+const { post, content } = Astro.props;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": post.title,
+  "description": post.excerpt,
+  "datePublished": post.date,
+  "author": {
+    "@type": "Organization",
+    "name": post.author,
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, Astro.site).href,
+  },
+};
 ---
 
-<Layout title="Guide - X Minecraft Launcher" description="Read our guide about X Minecraft Launcher.">
-  <Guide client:load initialSlug={slug} />
+<Layout
+  title={`${post.title} | XMCL Guide`}
+  description={post.excerpt}
+  type="article"
+  publishedTime={post.date}
+  structuredData={structuredData}
+>
+  <StaticArticle
+    title={post.title}
+    description={post.excerpt}
+    author={post.author}
+    date={post.date}
+    content={content}
+    backHref="/guide/"
+    backLabel="Back to guides"
+  />
 </Layout>

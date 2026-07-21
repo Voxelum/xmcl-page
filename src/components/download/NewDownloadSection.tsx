@@ -362,6 +362,7 @@ const NewDownloadSection = () => {
   if (isLoading) {
     return (
       <section className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground">
+        <h1 className="mb-6 text-center text-4xl font-black">Download X Minecraft Launcher</h1>
         <Spinner className="w-12 h-12 animate-spin text-[#ea4c3c] mb-4" />
         <p className="text-muted-foreground text-sm font-semibold">{t("downloadMessages.loadingReleases") || "Loading releases..."}</p>
       </section>
@@ -373,8 +374,9 @@ const NewDownloadSection = () => {
     return (
       <section className="min-h-screen flex flex-col items-center justify-center px-4 bg-background">
         <Card className="p-8 md:p-10 rounded-3xl bg-card border border-border max-w-xl w-full text-center shadow-2xl">
+          <h1 className="mb-3 text-3xl font-black text-foreground">Download X Minecraft Launcher</h1>
           <GithubLogo className="w-16 h-16 text-primary mx-auto mb-6 animate-pulse" />
-          <h3 className="text-2xl font-black text-foreground mb-3">GitHub API Rate Limit Exceeded</h3>
+          <h2 className="text-2xl font-black text-foreground mb-3">GitHub API Rate Limit Exceeded</h2>
           <p className="text-muted-foreground mb-8 text-sm md:text-base leading-relaxed">
             It seems you have visited our website too frequently, triggering the GitHub API rate limit. If you want to download launcher files or view updates, please check our official GitHub page!
           </p>

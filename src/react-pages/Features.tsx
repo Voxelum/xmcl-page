@@ -6,7 +6,7 @@ import { AppShell } from '@/components/AppShell';
 const FeaturesContent = () => {
   return (
     <PageTransition>
-      <FeaturesSection />
+      <FeaturesSection headingLevel="h1" />
     </PageTransition>
   );
 };

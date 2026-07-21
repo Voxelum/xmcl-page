@@ -1,18 +1,48 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Blog from "../../react-pages/Blog";
-import { getAllBlogPosts } from "../../utils/blogUtils";
+import { StaticArticle } from "../../components/StaticArticle";
+import { getAllBlogPosts, getBlogPost } from "../../utils/blogUtils";
 
 export async function getStaticPaths() {
   const posts = await getAllBlogPosts();
-  return posts.map((post) => ({
+  return Promise.all(posts.map(async (post) => ({
     params: { slug: post.slug },
-  }));
+    props: { post: await getBlogPost(post.slug) },
+  })));
 }
 
-const { slug } = Astro.params;
+const { post } = Astro.props;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.excerpt,
+  "datePublished": post.date,
+  "author": {
+    "@type": "Person",
+    "name": post.author,
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, Astro.site).href,
+  },
+};
 ---
 
-<Layout title="Blog Post - X Minecraft Launcher" description="Read our blog post about X Minecraft Launcher.">
-  <Blog client:load initialSlug={slug} />
+<Layout
+  title={`${post.title} | XMCL Blog`}
+  description={post.excerpt}
+  type="article"
+  publishedTime={post.date}
+  structuredData={structuredData}
+>
+  <StaticArticle
+    title={post.title}
+    description={post.excerpt}
+    author={post.author}
+    date={post.date}
+    content={post.content}
+    backHref="/blog/"
+    backLabel="Back to blog"
+  />
 </Layout>

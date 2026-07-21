@@ -1,8 +1,9 @@
 
+import fs from 'fs';
+import path from 'path';
 import type { BlogPost } from '../types/blog.ts';
 import { blogPosts } from '../data/blogPosts.ts';
-// import { parseRussianDate } from './dateUtils.ts';
-import { fetchBlogPosts, fetchBlogPost } from './blogFetcher.ts';
+import { fetchBlogPosts } from './blogFetcher.ts';
 
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   try {
@@ -33,29 +34,20 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 }
 
 export async function getBlogPost(slug: string): Promise<BlogPost> {
-  console.log(`Fetching blog post with slug: ${slug}`);
-  
-  // Clean up the slug (remove any path components from URLs if present)
   const cleanSlug = slug.split('/').pop() || slug;
-  
-  // First try to fetch from the JSON/markdown system
-  try {
-    const jsonPost = await fetchBlogPost(cleanSlug);
-    if (jsonPost) {
-      return jsonPost;
-    }
-  } catch (error) {
-    console.error(`Error fetching JSON blog post: ${error}`);
-  }
-  
-  // Fallback to hardcoded data
-  const post = blogPosts.find(post => post.slug === cleanSlug);
-  
+  const posts = await getAllBlogPosts();
+  const post = posts.find((item) => item.slug === cleanSlug);
+
   if (!post) {
     throw new Error(`Blog post with slug "${cleanSlug}" not found`);
   }
-  
-  return post;
+
+  const markdownPath = post.path ?? `/blog/${cleanSlug}.md`;
+  const safePath = markdownPath.replace(/^[/\\]+/, '');
+  const filePath = path.join(process.cwd(), 'public', safePath);
+  const content = fs.readFileSync(filePath, 'utf8');
+
+  return { ...post, content };
 }
 
 // Re-export the BlogPost type for convenience

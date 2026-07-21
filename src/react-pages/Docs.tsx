@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowSquareOut, Code, Book, Layers } from "@phosphor-icons/react";
+import { ArrowSquareOut, Code, Book, Stack } from "@phosphor-icons/react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { AppShell } from '@/components/AppShell';
 
@@ -21,7 +21,7 @@ const DocsContent = () => {
     {
       title: t('docs.sections.launcherCore.title'),
       description: t('docs.sections.launcherCore.description'),
-      icon: <Layers weight="fill" className="w-8 h-8" />,
+      icon: <Stack weight="fill" className="w-8 h-8" />,
       color: "text-[#ea4c3c]",
       url: "https://xmcl.app/en/core/launcher"
     },
