@@ -12,10 +12,10 @@ const localesMap = Object.fromEntries(
 
 const messages = Object.fromEntries(
   Object.entries(
-    import.meta.glob('../../../locales/*.y(a)?ml', { eager: true }))
+    import.meta.glob('../../../locales/*.yml', { eager: true, import: 'default' }))
     .map(([key, value]) => {
       const locale = key.match(/locales\/([^/]+)\.ya?ml$/)?.[1]
-      return [locale, value.default]
+      return [locale, value]
     }),
 )
 

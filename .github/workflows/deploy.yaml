@@ -2,7 +2,6 @@ name: "Deploy"
 on:
   push:
     branches:
-      - "docs-reload"
       - "master"
     paths:
       - .github/workflows/deploy.yaml
@@ -65,4 +64,4 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: pages deploy --project-name=xmcl-page
+          command: pages deploy .vitepress/dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'xmcl-page' }}
