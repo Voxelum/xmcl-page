@@ -66,9 +66,9 @@ const IndexContent = () => {
   );
 };
 
-export default function Index() {
+export default function Index({ initialLocale }: { initialLocale?: SupportedLocale }) {
   return (
-    <AppShell>
+    <AppShell initialLocale={initialLocale}>
       <IndexContent />
     </AppShell>
   );

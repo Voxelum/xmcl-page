@@ -12,7 +12,9 @@ export default defineConfig({
   site: 'https://xmcl.app',
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => page !== 'https://xmcl.app/',
+    }),
   ],
   output: 'static',
   outDir: './build',

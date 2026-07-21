@@ -6,14 +6,13 @@ import React, {
   useCallback,
   useEffect,
 } from "react";
-import { loadTranslations, DEFAULT_LOCALE, isSupportedLocale, loadTranslationsSync } from "@/i18n";
+import { DEFAULT_LOCALE, isSupportedLocale, loadTranslationsSync } from "@/i18n";
 import enTranslations from "@/translations/en.json";
 
-// Global cache and state to persist values across Astro client-side page transitions
+// Global cache and state to persist values across Astro client-side page transitions.
 let globalLocale: SupportedLocale = DEFAULT_LOCALE;
 let globalTranslations: Translations = enTranslations as Translations;
 const globalTranslationsMap = new Map<SupportedLocale, Translations>([[DEFAULT_LOCALE, enTranslations as Translations]]);
-let isInitializedFromStorage = false;
 
 // Declare global field on window interface for hydration tracking
 declare global {
@@ -21,19 +20,6 @@ declare global {
     __REACT_HYDRATED__?: boolean;
   }
 }
-
-const initFromStorage = () => {
-  if (isInitializedFromStorage || typeof window === "undefined") return;
-  try {
-    const savedLocale = localStorage.getItem("language") as SupportedLocale;
-    if (savedLocale && isSupportedLocale(savedLocale)) {
-      globalLocale = savedLocale;
-      globalTranslations = loadTranslationsSync(savedLocale);
-      globalTranslationsMap.set(savedLocale, globalTranslations);
-    }
-  } catch {}
-  isInitializedFromStorage = true;
-};
 
 interface TranslationContextType {
   locale: SupportedLocale;
@@ -49,33 +35,25 @@ const TranslationContext = createContext<TranslationContextType | undefined>(
 
 interface TranslationProviderProps {
   children: ReactNode;
+  initialLocale?: SupportedLocale;
 }
 
-export function TranslationProvider({ children }: TranslationProviderProps) {
-  // Ensure we check storage on mount/first render
-  if (typeof window !== "undefined" && !isInitializedFromStorage) {
-    initFromStorage();
-  }
+export function TranslationProvider({
+  children,
+  initialLocale = DEFAULT_LOCALE,
+}: TranslationProviderProps) {
+  const initialTranslations = loadTranslationsSync(initialLocale);
 
-  // To prevent hydration mismatch, we must initialize React states with DEFAULT_LOCALE on initial mount,
-  // but if the window indicates we have already hydrated once (i.e. client-side page load), we can use global values directly.
   const [locale, setLocale] = useState<SupportedLocale>(() => {
-    if (typeof window === "undefined") return DEFAULT_LOCALE;
-    return window.__REACT_HYDRATED__ ? globalLocale : DEFAULT_LOCALE;
+    return initialLocale;
   });
 
   const [translationsMap, setTranslationsMap] = useState<Map<SupportedLocale, Translations>>(() => {
-    if (typeof window === "undefined" || !window.__REACT_HYDRATED__) {
-      return new Map([[DEFAULT_LOCALE, enTranslations as Translations]]);
-    }
-    return new Map(globalTranslationsMap);
+    return new Map([[initialLocale, initialTranslations]]);
   });
 
   const [currentTranslations, setCurrentTranslations] = useState<Translations>(() => {
-    if (typeof window === "undefined" || !window.__REACT_HYDRATED__) {
-      return enTranslations as Translations;
-    }
-    return globalTranslations;
+    return initialTranslations;
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -115,28 +93,31 @@ export function TranslationProvider({ children }: TranslationProviderProps) {
     [locale],
   );
 
-  // Sync state on initial mount to match client-side saved language preference
+  // Locale-prefixed static pages are authoritative; only legacy unprefixed
+  // pages restore a user's browser preference after hydration.
   useEffect(() => {
-    const isFirstHydration = !window.__REACT_HYDRATED__;
     window.__REACT_HYDRATED__ = true;
+    let activeLocale = initialLocale;
 
-    if (isFirstHydration) {
-      // Initialize if not already done
-      initFromStorage();
-
-      if (globalLocale !== DEFAULT_LOCALE) {
-        setLocale(globalLocale);
-        setCurrentTranslations(globalTranslations);
-        setTranslationsMap(new Map(globalTranslationsMap));
-      }
+    if (initialLocale === DEFAULT_LOCALE) {
+      try {
+        const savedLocale = localStorage.getItem("language") as SupportedLocale;
+        if (savedLocale && isSupportedLocale(savedLocale)) {
+          activeLocale = savedLocale;
+        }
+      } catch {}
     }
 
-    // Always ensure DOM attributes match the current locale on page load/remount
-    try {
-      document.documentElement.lang = globalLocale;
-      document.documentElement.dir = globalLocale === "ar" ? "rtl" : "ltr";
-    } catch {}
-  }, []);
+    const activeTranslations = loadTranslationsSync(activeLocale);
+    globalLocale = activeLocale;
+    globalTranslations = activeTranslations;
+    globalTranslationsMap.set(activeLocale, activeTranslations);
+    setLocale(activeLocale);
+    setCurrentTranslations(activeTranslations);
+    setTranslationsMap(new Map(globalTranslationsMap));
+    document.documentElement.lang = activeLocale;
+    document.documentElement.dir = activeLocale === "ar" ? "rtl" : "ltr";
+  }, [initialLocale]);
 
   // t: safe translation getter with fallbacks (current -> English -> fallback -> key)
   const t = useCallback(

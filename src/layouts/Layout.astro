@@ -11,6 +11,9 @@ interface Props {
   noindex?: boolean;
   publishedTime?: string;
   structuredData?: Record<string, unknown>;
+  dir?: "ltr" | "rtl";
+  ogLocale?: string;
+  alternateLocales?: Array<{ href: string; hreflang: string }>;
 }
 
 const {
@@ -22,6 +25,9 @@ const {
   noindex = false,
   publishedTime,
   structuredData,
+  dir = "ltr",
+  ogLocale = "en_US",
+  alternateLocales = [],
 } = Astro.props;
 
 const siteURL = Astro.site ?? new URL("https://xmcl.app");
@@ -54,7 +60,7 @@ const robots = noindex
 ---
 
 <!DOCTYPE html>
-<html lang={lang} class="dark">
+<html lang={lang} dir={dir} class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,6 +68,9 @@ const robots = noindex
     <link rel="icon" href="/PhotoXMCL/logo.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/PhotoXMCL/logo.png" />
     <link rel="canonical" href={canonicalURL} />
+    {alternateLocales.map((alternate) => (
+      <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />
+    ))}
     <ClientRouter />
     
     <!-- Primary SEO Meta Tags -->
@@ -81,7 +90,7 @@ const robots = noindex
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={ogLocale} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />

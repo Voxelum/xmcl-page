@@ -112,7 +112,7 @@ export const LanguageTrigger = ({ onClick }: { onClick?: () => void }) => {
  * Replaces the main menu content when the user wants to change language.
  */
 export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose: () => void }) => {
-  const { t, locale, changeLanguage } = useTranslation();
+  const { t, locale } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState<'manual' | 'auto'>('manual');
   const [autoTranslateLanguage, setAutoTranslateLanguage] = useState<string | null>(() => {
@@ -144,13 +144,13 @@ export const LanguagePanel = ({ onBack, onClose }: { onBack: () => void; onClose
     (langCode: string) => {
       // Clear any active auto-translate first
       removeGoogleTranslate();
-      changeLanguage(langCode);
       localStorage.setItem(USER_PREFERENCE_KEY, langCode);
       localStorage.removeItem(AUTO_TRANSLATE_KEY);
       setAutoTranslateLanguage(null);
       onClose();
+      window.location.assign(`/${langCode}/`);
     },
-    [changeLanguage, onClose],
+    [onClose],
   );
 
   const handleAutoTranslate = useCallback(

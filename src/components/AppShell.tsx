@@ -14,13 +14,14 @@ const queryClient = new QueryClient();
 
 interface AppShellProps {
   children: React.ReactNode;
+  initialLocale?: SupportedLocale;
 }
 
 /**
  * AppShell wrapper component that provides all necessary React contexts.
  * This component wraps the entire page content including header and footer.
  */
-export function AppShell({ children }: AppShellProps) {
+export function AppShell({ children, initialLocale }: AppShellProps) {
   const os = useOS();
   
   // Initialize theme on app load
@@ -34,7 +35,7 @@ export function AppShell({ children }: AppShellProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TranslationProvider>
+      <TranslationProvider initialLocale={initialLocale}>
         <TooltipProvider>
           <Toaster />
           <Sonner />
