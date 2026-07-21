@@ -5,6 +5,7 @@ import { languageConfigs } from "../../i18n/languageConfigs";
 import { loadTranslationsSync } from "../../i18n";
 import { getAllBlogPosts } from "../../utils/blogUtils";
 import { getGuideConfig } from "../../utils/guideUtils";
+import { getChangelogs } from "../../utils/changelogUtils";
 import { getHreflang, getLocaleAlternates, getOgLocale, getText } from "../../lib/locales";
 
 export async function getStaticPaths() {
@@ -35,13 +36,16 @@ export async function getStaticPaths() {
   };
   const guideConfig = getGuideConfig();
 
-  return languageConfigs.flatMap(({ code }) => pages.map((page) => ({
-    params: { locale: code, slug: page.slug },
-    props: { ...page, locale: code, blogConfig, guideConfig },
-  })));
+  return languageConfigs.flatMap(({ code }) => {
+    const changelogs = getChangelogs(code);
+    return pages.map((page) => ({
+      params: { locale: code, slug: page.slug },
+      props: { ...page, locale: code, blogConfig, guideConfig, changelogs },
+    }));
+  });
 }
 
-const { page, locale, titleKey, fallbackTitle, fallbackDescription, blogConfig, guideConfig } = Astro.props;
+const { page, locale, titleKey, fallbackTitle, fallbackDescription, blogConfig, guideConfig, changelogs } = Astro.props;
 const translations = loadTranslationsSync(locale) as Record<string, unknown>;
 const title = `${getText(translations, titleKey, fallbackTitle)} | X Minecraft Launcher`;
 const description = getText(translations, "home.heroSubtitle", fallbackDescription);
@@ -62,5 +66,6 @@ const localizedPath = `/${Astro.params.slug}/`;
     locale={locale}
     blogConfig={blogConfig}
     guideConfig={guideConfig}
+    changelogs={changelogs}
   />
 </Layout>

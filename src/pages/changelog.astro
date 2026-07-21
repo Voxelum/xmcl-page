@@ -1,8 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ModernChangelog from "../react-pages/ModernChangelog";
+import LocalChangelog from "../react-pages/LocalChangelog";
+import { getChangelogs } from "../utils/changelogUtils";
+
+const changelogs = getChangelogs("en");
 ---
 
 <Layout title="Changelog - X Minecraft Launcher" description="View the complete changelog and release history of X Minecraft Launcher.">
-  <ModernChangelog client:load />
+  <LocalChangelog client:load entries={changelogs} />
 </Layout>

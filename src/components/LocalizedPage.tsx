@@ -7,12 +7,13 @@ import Download from "@/react-pages/Download";
 import Features from "@/react-pages/Features";
 import Guide, { type GuideConfig } from "@/react-pages/Guide";
 import Information from "@/react-pages/Information";
-import ModernChangelog from "@/react-pages/ModernChangelog";
+import LocalChangelog from "@/react-pages/LocalChangelog";
 import ModernIssues from "@/react-pages/ModernIssues";
 import Privacy from "@/react-pages/Privacy";
 import RSSFeed from "@/react-pages/RSSFeed";
 import Testing from "@/react-pages/Testing";
 import Index from "@/react-pages/Index";
+import type { ChangelogEntry } from "@/utils/changelogUtils";
 
 export type LocalizedPageName =
   | "home"
@@ -34,6 +35,7 @@ interface LocalizedPageProps {
   locale: SupportedLocale;
   blogConfig?: BlogConfig;
   guideConfig?: GuideConfig;
+  changelogs?: ChangelogEntry[];
 }
 
 export function LocalizedPage({
@@ -41,6 +43,7 @@ export function LocalizedPage({
   locale,
   blogConfig,
   guideConfig,
+  changelogs = [],
 }: LocalizedPageProps) {
   let content: React.ReactNode;
 
@@ -52,7 +55,7 @@ export function LocalizedPage({
       content = <Blog initialConfig={blogConfig} />;
       break;
     case "changelog":
-      content = <ModernChangelog />;
+      content = <LocalChangelog entries={changelogs} />;
       break;
     case "contact":
       content = <Contact />;
