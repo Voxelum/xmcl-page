@@ -130,32 +130,35 @@
             <p class="modern-stats-note">{{ t('modernHome.openSource.statsNote') }}</p>
           </div>
 
-          <div class="modern-support-column">
-            <div class="modern-contributor-panel">
-              <div class="modern-pulse-heading"><span>{{ t('modernHome.openSource.contributors') }}</span><span>{{ githubContributors.length || '--' }} {{ t('modernHome.openSource.inView') }}</span></div>
-              <div v-if="githubContributors.length" class="modern-avatar-list">
-                <a v-for="contributor in githubContributors" :key="contributor.login" class="modern-contributor-avatar" :href="contributor.html_url" :title="`${contributor.login} - ${contributor.contributions} contributions`" target="_blank" rel="noreferrer">
-                  <img :src="contributor.avatar_url" :alt="contributor.login" loading="lazy" />
-                </a>
-              </div>
-              <p>{{ t('modernHome.openSource.contributorsCopy') }}</p>
+          <div class="modern-contributor-panel">
+            <div class="modern-pulse-heading"><span>{{ t('modernHome.openSource.contributors') }}</span><span>{{ githubContributors.length || '--' }} {{ t('modernHome.openSource.inView') }}</span></div>
+            <div v-if="githubContributors.length" class="modern-avatar-list">
+              <a v-for="contributor in githubContributors" :key="contributor.login" class="modern-contributor-avatar" :href="contributor.html_url" :title="`${contributor.login} - ${contributor.contributions} contributions`" target="_blank" rel="noreferrer">
+                <img :src="contributor.avatar_url" :alt="contributor.login" loading="lazy" />
+              </a>
             </div>
+            <p>{{ t('modernHome.openSource.contributorsCopy') }}</p>
+          </div>
 
-            <div class="modern-sponsor-panel">
+          <div class="modern-sponsor-panel">
               <span class="modern-sponsor-label">{{ t('modernHome.sponsor.label') }}</span>
               <h3>{{ t('modernHome.sponsor.title') }}</h3>
               <p>{{ t('modernHome.sponsor.description') }}</p>
+              <div class="modern-sponsor-supporters" aria-label="Supporters from Afdian and Ko-fi">
+                <a v-for="supporter in supporters" :key="supporter.href" :href="supporter.href" :title="`${supporter.platform} supporter`" target="_blank" rel="noreferrer">
+                  <img :src="supporter.avatar" alt="" loading="lazy" />
+                </a>
+              </div>
               <div class="modern-sponsor-links">
                 <a href="https://afdian.com/@ci010" target="_blank" rel="noreferrer">Afdian <span aria-hidden="true">+</span></a>
-                <a href="https://patreon.com/xmcl" target="_blank" rel="noreferrer">Patreon <span aria-hidden="true">+</span></a>
+                <a href="https://ko-fi.com/ci010" target="_blank" rel="noreferrer">Ko-fi <span aria-hidden="true">+</span></a>
               </div>
               <div class="modern-sponsor-partners">
                 <span>{{ t('modernHome.sponsor.supportedBy') }}</span>
-                <a href="https://signpath.io/" target="_blank" rel="noreferrer"><span class="modern-sponsor-logo modern-sponsor-logo-signpath" aria-hidden="true">S</span><span>SignPath</span></a>
-                <a href="https://deno.com/deploy" target="_blank" rel="noreferrer"><span class="modern-sponsor-logo modern-sponsor-logo-deno i-simple-icons:deno" aria-hidden="true"></span><span>Deno Deploy</span></a>
-                <a href="https://edgeone.ai/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/Voxelum/x-minecraft-launcher/master/assets/EdgeOne.png" alt="Tencent EdgeOne" /><span>Tencent EdgeOne</span></a>
+                <a href="https://signpath.io/" title="SignPath code signing" target="_blank" rel="noreferrer"><span class="modern-sponsor-logo modern-sponsor-logo-signpath" aria-hidden="true">S</span><span>SignPath</span></a>
+                <a href="https://deno.com/deploy" title="Deno Deploy hosting" target="_blank" rel="noreferrer"><span class="modern-sponsor-logo modern-sponsor-logo-deno i-simple-icons:deno" aria-hidden="true"></span><span>Deno Deploy</span></a>
+                <a href="https://agnes-ai.com/" title="Agnes AI free model API" target="_blank" rel="noreferrer"><span class="modern-sponsor-logo modern-sponsor-logo-agnes" aria-hidden="true">A</span><span>Agnes AI</span></a>
               </div>
-            </div>
           </div>
         </div>
       </div>
@@ -251,6 +254,23 @@ const downloadOptions = [
 ]
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
+const supporters = [
+  { platform: 'Afdian', href: 'https://afdian.com/u/9d663ec6fb6711ec9ace52540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-purple.png?imageView2/1/' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/19e292c21a1d11ee929a52540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-purple.png?imageView2/1/' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/dd9058ce20df11eba5c052540025c377', avatar: 'https://pic1.afdiancdn.com/user/dd9058ce20df11eba5c052540025c377/avatar/0c776e6de1b1027e951c6d94919eb781_w1280_h1024_s364.jpg' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/404b86a078e111ecab3652540025c377', avatar: 'https://pic1.afdiancdn.com/user/404b86a078e111ecab3652540025c377/avatar/dfa3e35a696d8d8af5425dd400d68a8d_w607_h527_s432.png' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/7f6ad7161b3e11eb8d0e52540025c377', avatar: 'https://pic1.afdiancdn.com/user/7f6ad7161b3e11eb8d0e52540025c377/avatar/1fa3b75648a15aea8da202c6108d659b_w1153_h1153_s319.jpeg' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/ef50bc78b3d911ecb85352540025c377', avatar: 'https://pic1.afdiancdn.com/user/user_upload_osl/8a1c4eb2e580b4b8b463ceb2114b6381_w132_h132_s3.jpeg' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/7c3c65dc004a11eb9a6052540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-blue.png' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/89b1218c86e011eaa4d152540025c377', avatar: 'https://pic1.afdiancdn.com/user/89b1218c86e011eaa4d152540025c377/avatar/9bf08f81d231f3054c98f9e5c1c8ce40_w640_h640_s57.jpg' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/177bea3cf47211ec990352540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-purple.png' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/039508f2b17d11ebad1052540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-orange.png' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/0c5c865e08ee11ecba1352540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-purple.png?imageView2/1/' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/7ac297b4722211eab4a752540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-purple.png' },
+  { platform: 'Afdian', href: 'https://afdian.com/u/8c23a236cf7311ec9c3452540025c377', avatar: 'https://pic1.afdiancdn.com/default/avatar/avatar-purple.png' },
+  { platform: 'Ko-fi', href: 'https://ko-fi.com/K3K1P94LX', avatar: 'https://storage.ko-fi.com/cdn/useruploads/6274960f-74aa-4805-bf8f-4c3b961296cf.jpg' },
+  { platform: 'Ko-fi', href: 'https://ko-fi.com/O4O7WRFB9', avatar: 'https://api.dicebear.com/9.x/identicon/svg?seed=O4O7WRFB9&backgroundColor=c9f85a' },
+]
 
 const formatCount = (value: number | null) => value === null
   ? '--'
@@ -769,9 +789,9 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 .modern-open-source-header h2 { font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.05em; line-height: 0.98; margin: 0; }
 .modern-open-source-link { border-bottom: 1px solid var(--modern-ink); color: var(--modern-ink); display: inline-flex; font-size: 13px; font-weight: 700; gap: 8px; padding-bottom: 4px; }
 .modern-open-source-link:hover { border-color: var(--modern-orange); color: var(--modern-orange); }
-.modern-open-source-grid { display: grid; gap: 12px; grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr); }
+.modern-open-source-grid { align-items: stretch; display: grid; gap: 12px; grid-template-areas: 'github sponsor' 'contributors sponsor'; grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr); }
 .modern-github-stats, .modern-contributor-panel, .modern-sponsor-panel { border: 1px solid var(--modern-line); padding: 24px; }
-.modern-github-stats { background: var(--modern-panel); }
+.modern-github-stats { align-self: start; background: var(--modern-panel); grid-area: github; }
 .modern-pulse-heading { align-items: center; color: var(--modern-muted); display: flex; font-size: 10px; font-weight: 700; justify-content: space-between; letter-spacing: 0.14em; text-transform: uppercase; }
 .modern-pulse-live { align-items: center; color: #5d9624; display: inline-flex; gap: 7px; }
 .modern-pulse-live > span { background: #77b82a; border-radius: 50%; height: 6px; width: 6px; }
@@ -783,28 +803,30 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 .modern-stat strong { font-size: clamp(25px, 3vw, 38px); letter-spacing: -0.06em; line-height: 1; }
 .modern-stat span { color: var(--modern-muted); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .modern-stats-note, .modern-contributor-panel p, .modern-sponsor-panel p { color: var(--modern-muted); font-size: 12px; line-height: 1.6; margin: 28px 0 0; }
-.modern-support-column { display: grid; gap: 12px; grid-template-rows: 1fr auto; }
-.modern-contributor-panel { background: var(--modern-soft, #e9ece4); }
+.modern-contributor-panel { align-self: start; background: var(--modern-soft, #e9ece4); grid-area: contributors; }
 .modern-avatar-list { display: flex; flex-wrap: wrap; gap: 0; margin: 30px 0 0; padding-left: 8px; }
 .modern-contributor-avatar { border: 3px solid var(--modern-soft, #e9ece4); border-radius: 50%; height: 44px; margin-left: -8px; overflow: hidden; transition: transform 180ms ease, border-color 180ms ease; width: 44px; }
 .modern-contributor-avatar:hover { border-color: var(--modern-orange); transform: translateY(-4px); z-index: 1; }
 .modern-contributor-avatar img { display: block; height: 100%; object-fit: cover; width: 100%; }
-.modern-sponsor-panel { background: var(--modern-lime); border-color: var(--modern-ink); }
+.modern-sponsor-panel { background: var(--modern-lime); border-color: var(--modern-ink); display: flex; flex-direction: column; grid-area: sponsor; min-height: 100%; }
 .modern-sponsor-label { color: #405035; display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; }
 .modern-sponsor-panel h3 { color: #17211f; font-size: 25px; letter-spacing: -0.04em; line-height: 1.05; margin: 12px 0 0; }
 .modern-sponsor-panel p { color: #405035; margin-top: 10px; }
+.modern-sponsor-supporters { align-content: center; display: grid; flex: 1; gap: 14px 12px; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 30px auto; max-width: 390px; width: 100%; }
+.modern-sponsor-supporters a { aspect-ratio: 1; border: 2px solid #17211f; border-radius: 50%; display: block; overflow: hidden; transition: transform 180ms ease, border-color 180ms ease; width: 100%; }
+.modern-sponsor-supporters a:hover { border-color: #e45e42; transform: translateY(-3px); }
+.modern-sponsor-supporters img { display: block; height: 100%; object-fit: cover; width: 100%; }
 .modern-sponsor-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 22px; }
 .modern-sponsor-links a { border-bottom: 1px solid #17211f; color: #17211f; display: inline-flex; font-size: 12px; font-weight: 700; gap: 6px; padding-bottom: 3px; }
 .modern-sponsor-links a:hover { border-color: #e45e42; color: #e45e42; }
-.modern-sponsor-partners { align-items: center; border-top: 1px solid rgba(23, 33, 31, 0.22); display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 24px; padding-top: 14px; }
-.modern-sponsor-partners > span { color: #405035; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; width: 100%; }
-.modern-sponsor-partners a { align-items: center; color: #405035; display: inline-flex; font-size: 11px; font-weight: 700; gap: 6px; }
-.modern-sponsor-partners a img { filter: grayscale(1) contrast(0.9); height: 20px; max-width: 72px; object-fit: contain; width: auto; }
-.modern-sponsor-logo { display: inline-block; height: 20px; width: 20px; }
-.modern-sponsor-logo-deno { color: #405035; }
-.modern-sponsor-logo-signpath { align-items: center; border: 1px solid currentColor; color: #405035; display: inline-flex; font-size: 13px; font-weight: 800; justify-content: center; }
+.modern-sponsor-partners { border-top: 1px solid rgba(23, 33, 31, 0.22); display: grid; gap: 18px 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; padding-top: 18px; }
+.modern-sponsor-partners > span { color: #405035; font-size: 9px; font-weight: 700; grid-column: 1 / -1; letter-spacing: 0.12em; }
+.modern-sponsor-partners a { align-items: flex-start; color: #405035; display: flex; flex-direction: column; font-size: 12px; font-weight: 700; gap: 10px; min-width: 0; }
+.modern-sponsor-logo { align-items: center; display: inline-flex; height: 38px; justify-content: center; width: 38px; }
+.modern-sponsor-logo-deno { font-size: 34px; }
+.modern-sponsor-logo-signpath { border: 2px solid currentColor; color: #405035; font-size: 22px; font-weight: 800; }
+.modern-sponsor-logo-agnes { background: #17211f; color: var(--modern-lime); font-size: 23px; font-weight: 800; }
 .modern-sponsor-partners a:hover { color: #e45e42; }
-.modern-sponsor-partners a:hover img { filter: none; }
 
 .modern-footer { align-items: center; background: var(--modern-paper); border-top: 1px solid var(--modern-line); display: flex; gap: 24px; justify-content: space-between; padding: 28px clamp(24px, 7vw, 112px); }
 .modern-footer-brand { align-items: center; display: inline-flex; font-size: 14px; font-weight: 800; gap: 8px; }
@@ -822,7 +844,7 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
   .modern-feature-stage-column { order: -1; }
   .modern-feature-stage { top: 88px; }
   .modern-download-panel { gap: 32px; }
-  .modern-open-source-grid { grid-template-columns: 1fr; }
+  .modern-open-source-grid { grid-template-areas: 'github' 'contributors' 'sponsor'; grid-template-columns: 1fr; }
 }
 
 @media (max-width: 620px) {
@@ -846,6 +868,7 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
   .modern-open-source { padding: 72px 20px; }
   .modern-open-source-header { align-items: start; flex-direction: column; gap: 22px; }
   .modern-github-stats, .modern-contributor-panel, .modern-sponsor-panel { padding: 20px; }
+  .modern-sponsor-supporters { gap: 10px; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 24px auto; }
   .modern-stat-grid { grid-template-columns: repeat(2, 1fr); row-gap: 26px; }
   .modern-stat:nth-child(2) { border-right: 0; }
   .modern-stat:nth-child(3), .modern-stat:nth-child(4) { border-top: 1px solid var(--modern-line); padding-top: 26px; }
