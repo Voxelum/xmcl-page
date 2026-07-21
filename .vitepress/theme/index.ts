@@ -8,6 +8,7 @@ import { defineComponent, h, provide, watchEffect } from 'vue'
 import AppAuth from './components/AppAuth.vue'
 import AppPrebuilds from './components/AppPrebuilds.vue'
 import AppWelcome from './components/AppWelcome.vue'
+import AppWelcomeModern from './components/AppWelcomeModern.vue'
 import AuthorDetail from './components/BlogAuthorDetail.vue'
 import Post from './components/BlogPost.vue'
 import PostAuthor from './components/BlogPostAuthor.vue'
@@ -17,6 +18,7 @@ import Posts from './components/BlogPosts.vue'
 import { i18n } from './modules/i18n'
 import { MotionPlugin } from '@vueuse/motion'
 import './styles/index.css'
+import './styles/site.css'
 import AppForgePicture from "./components/AppForgePicture.vue"
 import AppFabricPicture from "./components/AppFabricPicture.vue"
 import AppNeoForgePicture from "./components/AppNeoForgePicture.vue"
@@ -71,6 +73,7 @@ export default {
     app.component('PostAuthor', PostAuthor)
     app.component('AuthorDetail', AuthorDetail)
     app.component('welcome', AppWelcome)
+    app.component('welcome-modern', AppWelcomeModern)
     app.component('prebuilds', AppPrebuilds)
     app.component('changelog', Doc)
     app.component('auth', AppAuth)

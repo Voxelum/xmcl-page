@@ -1,86 +1,86 @@
 <template>
-    <div class="w-full min-h-full" id="prebuild">
-        <!-- Hero Section -->
-        <div class="hero-section">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="hero-content">
-                    <h1 class="hero-title">{{ t('prebuild.download') }}</h1>
-                    <p class="hero-description">{{ t('prebuild.downloadDescription') }}</p>
+    <div class="prebuild-page" id="prebuild">
+        <section class="prebuild-hero">
+            <div class="prebuild-grid" aria-hidden="true"></div>
+            <div class="prebuild-hero-inner">
+                <div class="prebuild-kicker"><span class="prebuild-kicker-dot"></span> PREBUILD CHANNEL</div>
+                <div class="prebuild-heading-row">
+                    <div class="prebuild-heading-copy">
+                        <h1>{{ t('prebuild.download') }}</h1>
+                        <p>{{ t('prebuild.downloadDescription') }}</p>
+                    </div>
+                    <div class="prebuild-heading-aside">
+                        <span>DEVELOPMENT BUILDS</span>
+                        <strong>Try what is next.</strong>
+                        <small>Unstable artifacts for testing upcoming XMCL changes.</small>
+                    </div>
                 </div>
-                
-                <!-- Featured Build Card -->
-                <div class="featured-build-card" v-if="selected">
-                    <div class="card-header">
-                        <div class="build-number">
-                            <span class="hash-symbol">#</span>
-                            <span class="number">{{ selected.run_number }}</span>
-                        </div>
-                        <div class="build-status">
-                            <div class="status-indicator completed"></div>
-                            <span class="status-text">{{ t('prebuild.ready') }}</span>
-                        </div>
+
+                <div class="prebuild-featured" v-if="selected">
+                    <div class="prebuild-featured-topline">
+                        <div class="prebuild-build-id"><span>#</span>{{ selected.run_number }}</div>
+                        <div class="prebuild-status"><span></span>{{ t('prebuild.ready') }}</div>
                     </div>
-                    <div class="card-body">
-                        <h3 class="build-title">{{ selected.display_title }}</h3>
-                        <div class="build-meta">
-                            <span class="build-date">{{ formatBuildDate(selected.created_at) }}</span>
+                    <div class="prebuild-featured-body">
+                        <div>
+                            <span class="prebuild-card-label">SELECTED BUILD</span>
+                            <h2>{{ selected.display_title }}</h2>
+                            <p>{{ formatBuildDate(selected.created_at) }} <span> / </span> {{ t('prebuild.downloadDescription') }}</p>
                         </div>
+                        <div class="prebuild-featured-mark">#{{ selected.run_number }}</div>
                     </div>
-                    <div class="downloads-section">
+                    <div class="prebuild-downloads">
                         <PrebuildDownloads :id="selected.id" />
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- History Section -->
-        <div class="history-section">
-            <div class="container mx-auto px-6 lg:px-12">
-                <div class="section-header">
-                    <h2 class="section-title">{{ t('prebuild.history') }}</h2>
-                    <p class="section-subtitle">{{ t('prebuild.historyDescription') }}</p>
+        <section class="prebuild-history">
+            <div class="prebuild-history-inner">
+                <div class="prebuild-section-heading">
+                    <div>
+                        <span class="prebuild-section-kicker">BUILD HISTORY</span>
+                        <h2>{{ t('prebuild.history') }}</h2>
+                    </div>
+                    <p>{{ t('prebuild.historyDescription') }}</p>
                 </div>
-                
+                <div class="prebuild-history-rule">
+                    <span>{{ runs.length }} builds available</span>
+                    <span>SELECT A BUILD</span>
+                </div>
+
                 <ClientOnly>
-                    <div class="builds-grid">
-                        <div 
-                            class="build-card" 
-                            v-for="item of runs" 
+                    <div class="prebuild-build-grid">
+                        <button
+                            v-for="item of runs"
                             :key="item.id"
+                            class="prebuild-build-card"
                             :class="{ active: selected?.id === item.id }"
+                            type="button"
+                            :aria-pressed="selected?.id === item.id"
                             @click="selectBuild(item)"
                         >
-                            <div class="card-content">
-                                <div class="build-header">
-                                    <div class="build-info">
-                                        <div class="build-number-small">#{{ item.run_number }}</div>
-                                        <div class="build-status-small">
-                                            <div 
-                                                class="status-dot" 
-                                                :class="{ 
-                                                    completed: item.status === 'completed',
-                                                    pending: item.status !== 'completed' 
-                                                }"
-                                            ></div>
-                                        </div>
-                                    </div>
-                                    <div class="build-date-small">
-                                        {{ new Date(item.created_at).toLocaleDateString() }}
-                                    </div>
-                                </div>
-                                <h4 class="build-title-small">{{ item.display_title }}</h4>
-                                <div class="card-actions">
-                                    <button class="select-button">
-                                        <span v-if="selected?.id === item.id">{{ t('prebuild.selected') }}</span>
-                                        <span v-else>{{ t('prebuild.selectBuild') }}</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                            <span class="prebuild-build-card-topline">
+                                <span>#{{ item.run_number }}</span>
+                                <span class="prebuild-build-dot" :class="{ completed: item.status === 'completed' }"></span>
+                            </span>
+                            <strong>{{ item.display_title }}</strong>
+                            <span class="prebuild-build-date">{{ new Date(item.created_at).toLocaleDateString() }}</span>
+                            <span class="prebuild-build-action">
+                                {{ selected?.id === item.id ? t('prebuild.selected') : t('prebuild.selectBuild') }}
+                                <span aria-hidden="true">+</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div v-if="runs.length === 0" class="prebuild-empty">
+                        <span class="prebuild-section-kicker">NO BUILDS FOUND</span>
+                        <strong>There are no prebuild artifacts available right now.</strong>
+                        <p>Please check back after the next development workflow completes.</p>
                     </div>
                 </ClientOnly>
             </div>
-        </div>
+        </section>
     </div>
 </template>
 <script setup lang="ts">
@@ -92,26 +92,26 @@ import '../styles/list.min.css';
 import '../styles/progress.min.css';
 import PrebuildDownloads from './PrebuildDownloads.vue';
 import { getRuns } from '../composables/runs';
-import { useData } from 'vitepress';
 import { useI18nSync } from '../composables/useI18nSync';
 
 const { t } = useI18n()
-const { isDark } = useData()
 useI18nSync()
 
-watch(isDark, (val) => {
-    console.log('isDark', val)
-}, { immediate: true })
-
-const { state, isReady } = useAsyncState(() => getRuns(import.meta.env.VITE_GITHUB_TOKEN ?? ''), [], {
+const { state } = useAsyncState(() => getRuns(import.meta.env.VITE_GITHUB_TOKEN ?? ''), [], {
     shallow: true
 })
 
 const runs = computed(() => {
-    return (isReady.value && state.value) || data
+    return state.value.length > 0 ? state.value : data
 })
 
 const selected = ref(runs.value[0])
+
+const scrollToSelected = () => {
+    nextTick().then(() => {
+        document.getElementById('prebuild')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+}
 
 const formatBuildDate = (dateStr: string) => {
     const date = new Date(dateStr)
@@ -134,27 +134,17 @@ const formatBuildDate = (dateStr: string) => {
 
 const selectBuild = (item: any) => {
     selected.value = item
-    nextTick().then(() => {
-        (document.getElementById('app')?.firstChild as any)?.scroll({
-            top: 0,
-            behavior: 'smooth'
-        })
-    })
 }
 
 watch(selected, (val) => {
     if (val) {
-        nextTick().then(() => {
-            (document.getElementById('app')?.firstChild as any)?.scroll({
-                top: 0,
-                behavior: 'smooth'
-            })
-        })
+        scrollToSelected()
     }
 })
 
 watch(state, (value) => {
-    selected.value = value[0]
+    const next = value[0] || data[0]
+    if (next) selected.value = next
 }, { immediate: true })
 
 </script>
@@ -540,5 +530,102 @@ watch(state, (value) => {
         font-size: 3.75rem;
         line-height: 1;
     }
+}
+</style>
+
+<style scoped>
+.prebuild-page {
+    --prebuild-ink: var(--xmcl-ink, #17211f);
+    --prebuild-muted: var(--xmcl-muted, #64706c);
+    --prebuild-paper: var(--xmcl-paper, #f4f5ef);
+    --prebuild-panel: var(--xmcl-panel, #ffffff);
+    --prebuild-soft: var(--xmcl-soft, #e9ece4);
+    --prebuild-line: var(--xmcl-line, #d8ded7);
+    --prebuild-lime: var(--xmcl-lime, #c9f85a);
+    --prebuild-orange: var(--xmcl-orange, #e45e42);
+    background: var(--prebuild-paper);
+    color: var(--prebuild-ink);
+    font-family: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+    min-height: 100%;
+}
+
+:global(html.dark .prebuild-page) {
+    --prebuild-ink: #edf3ed;
+    --prebuild-muted: #9aa9a1;
+    --prebuild-paper: #101612;
+    --prebuild-panel: #1b241f;
+    --prebuild-soft: #151d18;
+    --prebuild-line: #334139;
+    --prebuild-lime: #c9f85a;
+    --prebuild-orange: #ff8060;
+}
+
+.prebuild-hero { background: var(--prebuild-paper); border-bottom: 1px solid var(--prebuild-line); overflow: hidden; padding: 82px clamp(24px, 7vw, 112px) 72px; position: relative; }
+.prebuild-grid { background-image: linear-gradient(to right, color-mix(in srgb, var(--prebuild-ink) 7%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--prebuild-ink) 7%, transparent) 1px, transparent 1px); background-size: 56px 56px; inset: 0; mask-image: linear-gradient(to bottom, black, transparent 94%); pointer-events: none; position: absolute; }
+.prebuild-hero-inner { margin: 0 auto; max-width: 1216px; position: relative; z-index: 1; }
+.prebuild-kicker, .prebuild-section-kicker, .prebuild-card-label, .prebuild-heading-aside > span, .prebuild-history-rule { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.prebuild-kicker { align-items: center; color: var(--prebuild-muted); display: flex; gap: 10px; }
+.prebuild-kicker-dot, .prebuild-status span, .prebuild-build-dot { background: #77b82a; border-radius: 50%; display: inline-block; height: 8px; width: 8px; }
+.prebuild-heading-row { align-items: end; display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr) minmax(230px, 0.4fr); margin: 28px 0 52px; }
+.prebuild-heading-copy h1 { font-size: clamp(50px, 7vw, 96px); font-weight: 700; letter-spacing: -0.06em; line-height: 0.94; margin: 0 0 22px; }
+.prebuild-heading-copy p { color: var(--prebuild-muted); font-size: 17px; line-height: 1.65; margin: 0; max-width: 670px; }
+.prebuild-heading-aside { border-left: 1px solid var(--prebuild-line); display: flex; flex-direction: column; gap: 12px; padding: 12px 0 4px 24px; }
+.prebuild-heading-aside > span, .prebuild-section-kicker, .prebuild-card-label { color: var(--prebuild-orange); }
+.prebuild-heading-aside strong { font-size: 24px; letter-spacing: -0.04em; line-height: 1.1; }
+.prebuild-heading-aside small { color: var(--prebuild-muted); font-size: 13px; line-height: 1.5; }
+
+.prebuild-featured { background: var(--prebuild-panel); border: 1px solid var(--prebuild-ink); box-shadow: 8px 8px 0 var(--prebuild-orange); padding: clamp(22px, 4vw, 42px); }
+.prebuild-featured-topline, .prebuild-featured-body { align-items: center; display: flex; justify-content: space-between; }
+.prebuild-featured-topline { border-bottom: 1px solid var(--prebuild-line); padding-bottom: 18px; }
+.prebuild-build-id { color: var(--prebuild-ink); font-size: 28px; font-weight: 700; letter-spacing: -0.04em; }
+.prebuild-build-id span { color: var(--prebuild-orange); }
+.prebuild-status { align-items: center; color: #5d9624; display: inline-flex; font-size: 11px; font-weight: 700; gap: 8px; letter-spacing: 0.12em; text-transform: uppercase; }
+.prebuild-featured-body { gap: 32px; padding: 30px 0; }
+.prebuild-featured-body h2 { color: var(--prebuild-ink); font-size: clamp(24px, 3vw, 38px); letter-spacing: -0.04em; line-height: 1.05; margin: 10px 0 10px; }
+.prebuild-featured-body p { color: var(--prebuild-muted); font-size: 13px; line-height: 1.5; margin: 0; }
+.prebuild-featured-body p span { color: var(--prebuild-orange); }
+.prebuild-featured-mark { color: var(--prebuild-soft); font-size: clamp(50px, 8vw, 100px); font-weight: 800; letter-spacing: -0.08em; line-height: 1; }
+.prebuild-downloads { border-top: 1px solid var(--prebuild-line); padding-top: 24px; }
+.prebuild-downloads :deep(.downloads-container) { margin: 0; }
+
+.prebuild-history { background: var(--prebuild-soft); padding: 100px clamp(24px, 7vw, 112px) 120px; }
+.prebuild-history-inner { margin: 0 auto; max-width: 1216px; }
+.prebuild-section-heading { align-items: end; display: flex; gap: 40px; justify-content: space-between; }
+.prebuild-section-kicker { display: block; margin-bottom: 14px; }
+.prebuild-section-heading h2 { color: var(--prebuild-ink); font-size: clamp(36px, 5vw, 62px); letter-spacing: -0.06em; line-height: 0.95; margin: 0; }
+.prebuild-section-heading p { color: var(--prebuild-muted); line-height: 1.6; margin: 0 0 2px; max-width: 330px; }
+.prebuild-history-rule { border-bottom: 1px solid var(--prebuild-line); border-top: 1px solid var(--prebuild-line); color: var(--prebuild-muted); display: flex; justify-content: space-between; margin: 48px 0 16px; padding: 13px 0; }
+.prebuild-build-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.prebuild-build-card { background: var(--prebuild-panel); border: 1px solid var(--prebuild-line); color: var(--prebuild-ink); cursor: pointer; display: flex; flex-direction: column; min-height: 220px; padding: 22px; text-align: left; transition: background 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.prebuild-build-card:hover, .prebuild-build-card.active { background: var(--prebuild-lime); border-color: var(--prebuild-ink); color: #17211f; transform: translateY(-3px); }
+.prebuild-build-card-topline { align-items: center; color: var(--prebuild-orange); display: flex; font-size: 13px; font-weight: 700; justify-content: space-between; }
+.prebuild-build-card.active .prebuild-build-card-topline, .prebuild-build-card:hover .prebuild-build-card-topline { color: #17211f; }
+.prebuild-build-dot { background: #d5ddd6; height: 7px; width: 7px; }
+.prebuild-build-dot.completed { background: #5d9624; }
+.prebuild-build-card strong { font-size: 19px; letter-spacing: -0.03em; line-height: 1.2; margin: 30px 0 10px; }
+.prebuild-build-date { color: var(--prebuild-muted); font-size: 12px; }
+.prebuild-build-card.active .prebuild-build-date, .prebuild-build-card:hover .prebuild-build-date { color: #405035; }
+.prebuild-build-action { align-items: center; border-top: 1px solid var(--prebuild-line); display: flex; font-size: 12px; font-weight: 700; justify-content: space-between; margin-top: auto; padding-top: 16px; }
+.prebuild-build-card.active .prebuild-build-action, .prebuild-build-card:hover .prebuild-build-action { border-top-color: rgba(23, 33, 31, 0.25); }
+.prebuild-build-action span { font-size: 20px; font-weight: 400; }
+.prebuild-empty { border: 1px solid var(--prebuild-line); padding: 36px 24px; }
+.prebuild-empty strong { color: var(--prebuild-ink); display: block; font-size: 20px; letter-spacing: -0.03em; margin-top: 10px; }
+.prebuild-empty p { color: var(--prebuild-muted); font-size: 13px; margin: 8px 0 0; }
+
+@media (max-width: 900px) {
+    .prebuild-heading-row { grid-template-columns: 1fr; }
+    .prebuild-heading-aside { border-left: 0; border-top: 1px solid var(--prebuild-line); padding: 20px 0 0; }
+    .prebuild-build-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 600px) {
+    .prebuild-hero { padding: 54px 20px 52px; }
+    .prebuild-heading-copy h1 { font-size: 56px; }
+    .prebuild-featured { box-shadow: 5px 5px 0 var(--prebuild-orange); padding: 20px; }
+    .prebuild-featured-body { align-items: start; flex-direction: column; }
+    .prebuild-featured-mark { display: none; }
+    .prebuild-history { padding: 72px 20px 84px; }
+    .prebuild-section-heading { align-items: start; flex-direction: column; gap: 18px; }
+    .prebuild-build-grid { grid-template-columns: 1fr; }
 }
 </style>

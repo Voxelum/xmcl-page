@@ -22,6 +22,21 @@ html:not(.dark) .VPNav {
   border: none !important;
 }
 
+@media (min-width: 960px) {
+  .VPNavBarMenu {
+    gap: 8px !important;
+  }
+
+  .VPNavBarAppearance {
+    margin-left: 16px;
+  }
+
+  .VPNavBarSocialLinks {
+    gap: 8px;
+    margin-left: 12px;
+  }
+}
+
 /* Logo & Title - Completely Static (0 Animations on Hover) */
 .VPNavBarTitle {
   display: flex !important;
@@ -199,6 +214,14 @@ html:not(.dark) .VPNavBarMenuLink:hover {
 .VPFlyout .option:hover {
   background: rgba(16, 185, 129, 0.12) !important;
   color: var(--vp-c-brand-1) !important;
+}
+
+/* The root alias and /en/ share the English label. Keep /en/ as the single menu entry. */
+.VPNavBarTranslations .menu .option[href="/"],
+.VPNavBarTranslations .menu a[href="/"],
+.VPNavScreenTranslations .menu .option[href="/"],
+.VPNavScreenTranslations .menu a[href="/"] {
+  display: none !important;
 }
 
 /* Social Icon Links (GitHub, Discord, Reddit) */

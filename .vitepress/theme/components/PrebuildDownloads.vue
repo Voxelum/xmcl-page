@@ -456,3 +456,43 @@ const artifacts = computed(() => state.value?.filter(a => a.name !== 'build') ??
     }
 }
 </style>
+
+<style scoped>
+.downloads-container {
+    --download-ink: var(--prebuild-ink, #17211f);
+    --download-muted: var(--prebuild-muted, #64706c);
+    --download-panel: var(--prebuild-panel, #ffffff);
+    --download-line: var(--prebuild-line, #d8ded7);
+    --download-lime: var(--prebuild-lime, #c9f85a);
+}
+
+:global(html.dark .downloads-container) {
+    --download-ink: #edf3ed;
+    --download-muted: #9aa9a1;
+    --download-panel: #1b241f;
+    --download-line: #334139;
+    --download-lime: #c9f85a;
+}
+
+.platforms-grid { gap: 10px; margin-bottom: 0; }
+.platform-card { background: var(--download-panel); border: 1px solid var(--download-line); border-radius: 0; box-shadow: none; padding: 0; }
+.platform-card::before { background: var(--platform-color); height: 3px; }
+.platform-card:hover { box-shadow: 4px 4px 0 var(--download-line); transform: translateY(-2px); }
+.platform-card.active { box-shadow: 4px 4px 0 var(--platform-color); }
+.download-btn { border-radius: 0; color: var(--download-ink); padding: 16px; }
+.download-btn:hover { background: var(--prebuild-soft, #e9ece4); color: var(--platform-color); }
+.platform-icon { background: var(--prebuild-soft, #e9ece4); border-radius: 0; height: 42px; width: 42px; }
+.platform-arch { color: var(--download-muted); }
+.arch-btn { background: var(--download-lime); border-radius: 0; color: #17211f; margin: 0 16px 16px; width: calc(100% - 32px); }
+.arch-btn:hover:not(.disabled) { background: var(--download-lime); color: #17211f; transform: translateY(-1px); }
+.loading-spinner { border-color: var(--download-line); border-top-color: var(--platform-color); border-radius: 50%; }
+.progress-container { margin-top: 18px; }
+.progress-bar { background: var(--download-line); border-radius: 0; height: 8px; }
+.progress-fill { background: var(--download-lime); border-radius: 0; }
+.progress-text { color: #17211f; text-shadow: none; }
+.progress-label { color: var(--download-muted); }
+
+@media (max-width: 768px) {
+    .platform-card { padding: 0; }
+}
+</style>

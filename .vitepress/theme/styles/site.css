@@ -1,0 +1,316 @@
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) {
+  --xmcl-ink: #17211f;
+  --xmcl-muted: #64706c;
+  --xmcl-paper: #f4f5ef;
+  --xmcl-panel: #ffffff;
+  --xmcl-soft: #e9ece4;
+  --xmcl-line: #d8ded7;
+  --xmcl-lime: #c9f85a;
+  --xmcl-orange: #e45e42;
+  --vp-c-bg: var(--xmcl-paper);
+  --vp-c-bg-alt: var(--xmcl-soft);
+  --vp-c-bg-elv: var(--xmcl-panel);
+  --vp-c-bg-soft: #edf0ea;
+  --vp-c-divider: var(--xmcl-line);
+  --vp-c-text-1: var(--xmcl-ink);
+  --vp-c-text-2: var(--xmcl-muted);
+  --vp-c-text-3: #87918c;
+  --vp-c-brand-1: var(--xmcl-orange);
+  --vp-c-brand-2: #c94f37;
+  --vp-c-brand-3: #ff7757;
+  background: var(--xmcl-paper);
+  color: var(--xmcl-ink);
+  font-family: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+}
+
+html.dark body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) {
+  --xmcl-ink: #edf3ed;
+  --xmcl-muted: #9aa9a1;
+  --xmcl-paper: #101612;
+  --xmcl-panel: #1b241f;
+  --xmcl-soft: #151d18;
+  --xmcl-line: #334139;
+  --xmcl-lime: #c9f85a;
+  --xmcl-orange: #ff8060;
+  --vp-c-bg: var(--xmcl-paper);
+  --vp-c-bg-alt: var(--xmcl-soft);
+  --vp-c-bg-elv: var(--xmcl-panel);
+  --vp-c-bg-soft: #1d2821;
+  --vp-c-divider: var(--xmcl-line);
+  --vp-c-text-1: var(--xmcl-ink);
+  --vp-c-text-2: var(--xmcl-muted);
+  --vp-c-text-3: #718078;
+  --vp-c-brand-1: var(--xmcl-lime);
+  --vp-c-brand-2: #b3e444;
+  --vp-c-brand-3: #d8ff7b;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNav {
+  background: color-mix(in srgb, var(--xmcl-paper) 92%, transparent) !important;
+  border-bottom: 1px solid var(--xmcl-line) !important;
+  box-shadow: none !important;
+  color: var(--xmcl-ink);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBar,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBar .container {
+  background: transparent !important;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBar .container {
+  max-width: 1400px !important;
+  padding-left: clamp(20px, 7vw, 112px) !important;
+  padding-right: clamp(20px, 7vw, 112px) !important;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarTitle .title,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink {
+  color: var(--xmcl-ink) !important;
+  font-family: inherit;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarTitle .title {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink {
+  border: 1px solid transparent !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  height: 34px !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink:hover,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink.active {
+  background: var(--xmcl-lime) !important;
+  border-color: var(--xmcl-ink) !important;
+  color: #17211f !important;
+  transform: none;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPFlyout .button,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarAppearance .VPSwitchAppearance,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSocialLink {
+  border: 1px solid var(--xmcl-line) !important;
+  border-radius: 6px !important;
+  color: var(--xmcl-muted) !important;
+  font-family: inherit;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPFlyout .button:hover,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarAppearance .VPSwitchAppearance:hover,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSocialLink:hover {
+  background: var(--xmcl-panel) !important;
+  border-color: var(--xmcl-ink) !important;
+  box-shadow: none !important;
+  color: var(--xmcl-ink) !important;
+  transform: none;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPFlyout .menu {
+  background: var(--xmcl-panel) !important;
+  border: 1px solid var(--xmcl-line) !important;
+  border-radius: 6px !important;
+  box-shadow: 5px 5px 0 var(--xmcl-ink) !important;
+  padding: 6px !important;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPFlyout .option:hover,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavScreenMenuLink:hover {
+  background: var(--xmcl-lime) !important;
+  color: #17211f !important;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavScreen {
+  background: var(--xmcl-paper) !important;
+  border-top: 1px solid var(--xmcl-line) !important;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavScreenMenuLink {
+  border-bottom: 1px solid var(--xmcl-line) !important;
+  color: var(--xmcl-ink) !important;
+  font-family: inherit;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebar {
+  background: var(--xmcl-paper) !important;
+  border-right: 1px solid var(--xmcl-line) !important;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebarItem .item .link {
+  border-radius: 6px;
+  color: var(--xmcl-muted);
+  font-family: inherit;
+  transition: background 180ms ease, color 180ms ease, padding 180ms ease;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebarItem .item .link:hover {
+  background: var(--xmcl-soft);
+  color: var(--xmcl-ink);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebarItem .item .link.active {
+  background: var(--xmcl-lime);
+  color: #17211f;
+  font-weight: 700;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebarItem.level-0 > .item > .link {
+  color: var(--xmcl-ink);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc {
+  color: var(--xmcl-ink);
+  font-family: inherit;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc h1 {
+  color: var(--xmcl-ink);
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc h2 {
+  border-top: 1px solid var(--xmcl-line);
+  color: var(--xmcl-ink);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-top: 56px;
+  padding-top: 24px;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc h3 {
+  color: var(--xmcl-ink);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc p,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc li {
+  color: var(--xmcl-muted);
+  line-height: 1.8;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc strong {
+  color: var(--xmcl-ink);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc a {
+  color: var(--xmcl-orange);
+  font-weight: 600;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc a:hover {
+  color: var(--xmcl-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc :not(pre) > code {
+  background: var(--xmcl-soft);
+  border: 1px solid var(--xmcl-line);
+  border-radius: 4px;
+  color: var(--xmcl-orange);
+  font-size: 0.9em;
+  padding: 3px 6px;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc .custom-block {
+  background: var(--xmcl-soft);
+  border: 1px solid var(--xmcl-line);
+  border-left: 4px solid var(--xmcl-orange);
+  border-radius: 0;
+  color: var(--xmcl-ink);
+  padding: 18px 20px;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc .custom-block.info {
+  border-left-color: #6bb8e8;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc .custom-block.tip {
+  border-left-color: #77b82a;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc .custom-block.warning {
+  border-left-color: var(--xmcl-orange);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc div[class*='language-'] {
+  border: 1px solid var(--xmcl-line);
+  border-radius: 0;
+  box-shadow: 5px 5px 0 var(--xmcl-line);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc table {
+  border: 1px solid var(--xmcl-line);
+  display: table;
+  width: 100%;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc th {
+  background: var(--xmcl-soft);
+  color: var(--xmcl-ink);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc td,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc th {
+  border: 1px solid var(--xmcl-line);
+  padding: 12px 14px;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDocAsideOutline {
+  border-left: 1px solid var(--xmcl-line);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDocAsideOutline .outline-link {
+  color: var(--xmcl-muted);
+  font-family: inherit;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDocAsideOutline .outline-link.active,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDocAsideOutline .outline-link:hover {
+  color: var(--xmcl-orange);
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDocFooter {
+  border-top: 1px solid var(--xmcl-line);
+}
+
+@media (max-width: 959px) {
+  body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebar {
+    background: var(--xmcl-paper) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc h1 {
+    font-size: 38px;
+  }
+
+  body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc h2 {
+    font-size: 28px;
+    margin-top: 42px;
+  }
+
+  body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc div[class*='language-'] {
+    box-shadow: 3px 3px 0 var(--xmcl-line);
+  }
+}

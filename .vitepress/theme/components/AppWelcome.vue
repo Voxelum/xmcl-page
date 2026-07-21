@@ -1,5 +1,5 @@
 <template>
-    <div class="relative transition-colors">
+    <div class="relative transition-colors xmcl-legacy">
         <section class="section dark:bg-gray-900 bg-gray-200 face min-h-100vh dark:text-gray-200 lg:py-0 lg:py-20">
             <div class="flex lg:flex-row flex-col-reverse p-1 items-center gap-4 pl-0 2xl:pl-20">
                 <div main class="lg:w-1/2 description-part">

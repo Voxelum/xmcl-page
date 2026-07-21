@@ -4,7 +4,6 @@ import type { Post } from '../composables/posts.data'
 import useAuthors from '../composables/useAuthors'
 import PostIcon from './BlogPostIcon.vue'
 import { computed } from 'vue';
-// import PostAuthor from './BlogPostAuthor.vue'
 
 const props = defineProps<{
   post: Post
@@ -16,105 +15,60 @@ const author = findByName(props.post.author)
 </script>
 
 <template>
-  <a :href="href" class="Blog p-6 rounded-lg border shadow-md cursor-pointer">
-    <div class="flex justify-between items-center mb-5 text-gray-500">
-      <span
-        class="bg-primary-100 text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)] text-sm font-medium inline-flex items-center rounded">
-        <PostIcon :post="post">
-          <span class="text-sm">{{ post.date.since }}</span>
-        </PostIcon>
-      </span>
+  <a :href="href" class="blog-card">
+    <div class="blog-card-topline">
+      <span class="blog-card-category"><PostIcon :post="post" /></span>
+      <span>{{ post.date.since }}</span>
     </div>
-    <h2
-      class="mb-2 text-2xl font-bold tracking-tight text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]">
-      {{ post.title }}
-    </h2>
-    <p class="mb-5 text-[color:var(--vp-c-text-2)] " v-html="post.excerpt" />
-    <div class="flex justify-between items-center">
-      <!-- <PostAuthor v-if="author" :author="author" /> -->
-      <span class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)]">
-        Read more
-        <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd"
-            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
+    <h2>{{ post.title }}</h2>
+    <p class="blog-card-excerpt" v-html="post.excerpt" />
+    <div class="blog-card-footer">
+      <span class="blog-card-author">{{ author?.name || post.author }}</span>
+      <span class="blog-card-link">Read more <span aria-hidden="true">+</span></span>
     </div>
   </a>
 </template>
 
 <style scoped>
-.Blog {
-  display: block;
-  border: 1px solid var(--vp-c-bg-soft);
-  border-radius: 12px;
-  height: 100%;
-  background-color: var(--vp-c-bg-soft);
-  transition: border-color 0.25s, background-color 0.25s;
-}
-
-.Blog:hover {
-  border-color: var(--vp-c-brand-1);
-}
-
-.box {
+.blog-card {
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  min-height: 290px;
+  padding: 26px 28px 24px;
+  position: relative;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.blog-card {
+  --post-ink: var(--xmcl-ink, #17211f);
+  --post-muted: var(--xmcl-muted, #64706c);
+  --post-panel: var(--xmcl-panel, #ffffff);
+  --post-soft: var(--xmcl-soft, #e9ece4);
+  --post-line: var(--xmcl-line, #d8ded7);
+  background: var(--post-panel);
+  border: 1px solid var(--post-line);
+  color: var(--post-ink);
+}
+
+.blog-card:nth-child(3n) { background: var(--post-soft); }
+.blog-card:hover { border-color: var(--post-ink); transform: translateY(-3px); }
+.blog-card:hover .blog-card-link { color: var(--xmcl-orange, #e45e42); }
+.blog-card-topline { align-items: center; color: var(--post-muted); display: flex; font-size: 11px; font-weight: 700; justify-content: space-between; letter-spacing: 0.08em; text-transform: uppercase; }
+.blog-card-category { color: var(--xmcl-orange, #e45e42); }
+.blog-card-category :deep(div) { align-items: center; display: inline-flex; gap: 7px; }
+.blog-card h2 { font-size: clamp(22px, 3vw, 32px); letter-spacing: -0.04em; line-height: 1.05; margin: 44px 0 14px; max-width: 520px; }
+.blog-card-excerpt { color: var(--post-muted); font-size: 14px; line-height: 1.7; margin: 0; max-width: 620px; }
+.blog-card-excerpt :deep(p) { margin: 0; }
+.blog-card-footer { align-items: center; border-top: 1px solid var(--post-line); display: flex; font-size: 12px; justify-content: space-between; margin-top: auto; padding-top: 18px; }
+.blog-card-author { color: var(--post-muted); }
+.blog-card-link { color: var(--post-ink); font-weight: 700; }
+.blog-card-link span { font-size: 18px; margin-left: 5px; }
+
+/* Keep the card stable for older pages that still reference these hooks. */
+.Blog {
+  display: block;
   height: 100%;
-}
-
-.box> :deep(.VPImage) {
-  margin-bottom: 20px;
-}
-
-.icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  border-radius: 6px;
-  background-color: var(--vp-c-default-soft);
-  width: 48px;
-  height: 48px;
-  font-size: 24px;
-  transition: background-color 0.25s;
-}
-
-.title {
-  line-height: 24px;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.details {
-  flex-grow: 1;
-  padding-top: 8px;
-  line-height: 24px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--vp-c-text-2);
-}
-
-.link-text {
-  padding-top: 8px;
-}
-
-.link-text-value {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--vp-c-brand-1);
-}
-
-.link-text-icon {
-  display: inline-block;
-  margin-left: 6px;
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
 }
 </style>
 
