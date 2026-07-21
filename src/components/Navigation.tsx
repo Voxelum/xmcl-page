@@ -25,7 +25,7 @@ export const Navigation = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="text-lg sm:text-2xl font-bold text-foreground group-hover:text-[#ea4c3c] transition-colors duration-300">
+            <span className="hidden min-[1000px]:inline text-2xl font-bold text-foreground group-hover:text-[#ea4c3c] transition-colors duration-300">
               X Minecraft Launcher
             </span>
           </Link>

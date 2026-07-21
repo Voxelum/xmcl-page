@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@/components/Link';
 import { useLocation } from '@/hooks/useRouting';
 import { useTranslation } from '@/hooks/useTranslation';
+import { usePageLocale } from '@/contexts/PageLocaleContext';
 
 interface NavItem {
   name: string;
@@ -16,6 +17,7 @@ interface NavItemsProps {
 const NavItems: React.FC<NavItemsProps> = ({ className = '', onItemClick }) => {
   const location = useLocation();
   const { t } = useTranslation();
+  const locale = usePageLocale();
 
   const navItems: NavItem[] = [
     { name: t('nav.home'), path: '/' },
@@ -32,19 +34,25 @@ const NavItems: React.FC<NavItemsProps> = ({ className = '', onItemClick }) => {
   return (
     <>
       {navItems.map((item) => (
-        <Link
-          key={item.path}
-          to={item.path}
-          className={`${baseClassName} ${activeClassName} ${className} ${
-            (location.pathname === item.path || 
-             (location.pathname.endsWith('/') ? location.pathname.slice(0, -1) : location.pathname) === item.path)
+        (() => {
+          const path = locale ? `/${locale}${item.path}` : item.path;
+
+          return (
+            <Link
+              key={item.path}
+              to={path}
+              className={`${baseClassName} ${activeClassName} ${className} ${
+               (location.pathname === path ||
+                (location.pathname.endsWith('/') ? location.pathname.slice(0, -1) : location.pathname) === path)
               ? 'text-[#ea4c3c] after:scale-x-100'
               : 'text-slate-600 hover:text-[#ea4c3c] dark:text-slate-300 dark:hover:text-white'
-          }`}
-          onClick={onItemClick}
-        >
-          {item.name}
-        </Link>
+              }`}
+              onClick={onItemClick}
+            >
+              {item.name}
+            </Link>
+          );
+        })()
       ))}
     </>
   );

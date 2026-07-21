@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePageLocale } from "@/contexts/PageLocaleContext";
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   to?: string;
@@ -11,7 +12,14 @@ interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
  * In Astro, we use regular anchor tags for navigation.
  */
 export const Link: React.FC<LinkProps> = ({ to, href, children, ...props }) => {
-  const finalHref = to || href || '#';
+  const locale = usePageLocale();
+  const rawHref = to || href || '#';
+  const finalHref = locale && rawHref.startsWith("/") &&
+    !rawHref.startsWith(`/${locale}/`) &&
+    !rawHref.startsWith("/api/") &&
+    !rawHref.endsWith(".xml")
+    ? `/${locale}${rawHref}`
+    : rawHref;
   
   return (
     <a href={finalHref} {...props}>

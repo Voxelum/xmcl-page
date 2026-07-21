@@ -22,6 +22,7 @@ import { useTranslation } from "@/contexts/TranslationContext";
 import { useBlogPosts, type BlogConfig } from "@/hooks/useBlogPosts";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppShell } from "@/components/AppShell";
+import { Link } from "@/components/Link";
 import { TranslateButton } from "@/components/TranslateButton";
 import { useContentTranslation } from "@/hooks/useContentTranslation";
 import { preprocessMarkdown } from "@/utils/markdownUtils";
@@ -143,12 +144,12 @@ const PostCard = React.memo(({ post, featured, onClick, index }: {
 
         <div className="relative z-10 flex flex-col h-full">
           <h3 className="mb-3 text-xl font-bold text-foreground transition-colors group-hover:text-[#ea4c3c]">
-            <a
-              href={`/blog/${post.slug}/`}
+            <Link
+              to={`/blog/${post.slug}/`}
               onClick={(event) => event.stopPropagation()}
             >
               {post.title}
-            </a>
+            </Link>
           </h3>
 
           <p className="mb-4 text-sm text-muted-foreground line-clamp-2 flex-grow">

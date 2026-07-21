@@ -75,11 +75,11 @@ const AnimatedLink = React.memo(({
     >
       <div className="relative flex items-center justify-between p-2.5 rounded-lg hover:bg-[#ea4c3c]/5 transition-colors duration-300">
         <div className="flex items-center gap-3">
-          <div className={`p-1.5 rounded-md transition-colors duration-300 ${isHovered ? 'text-[#ea4c3c] bg-[#ea4c3c]/10' : 'text-slate-400 dark:text-slate-500'}`}>
+          <div className={`p-1.5 rounded-md transition-colors duration-300 ${isHovered ? 'bg-[#ea4c3c]/10 text-[#ea4c3c]' : 'text-muted-foreground'}`}>
             <Icon className="w-4 h-4" />
           </div>
 
-          <span className={`text-sm font-medium transition-colors duration-300 ${isHovered ? 'text-white' : 'text-slate-400 dark:text-slate-300'}`}>
+          <span className={`text-sm font-medium transition-colors duration-300 ${isHovered ? 'text-foreground' : 'text-muted-foreground'}`}>
             {label}
           </span>
         </div>
@@ -129,7 +129,7 @@ const LinksSection = React.memo(({ title, links, delay = 0 }: {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
     >
-      <h3 className="text-sm font-bold text-white uppercase tracking-wider px-2">
+      <h3 className="px-2 text-sm font-bold uppercase tracking-wider text-foreground">
         {title}
       </h3>
 

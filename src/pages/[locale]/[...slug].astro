@@ -1,0 +1,66 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { LocalizedPage, type LocalizedPageName } from "../../components/LocalizedPage";
+import { languageConfigs } from "../../i18n/languageConfigs";
+import { loadTranslationsSync } from "../../i18n";
+import { getAllBlogPosts } from "../../utils/blogUtils";
+import { getGuideConfig } from "../../utils/guideUtils";
+import { getHreflang, getLocaleAlternates, getOgLocale, getText } from "../../lib/locales";
+
+export async function getStaticPaths() {
+  const pages: Array<{
+    slug: string;
+    page: LocalizedPageName;
+    titleKey: string;
+    fallbackTitle: string;
+    fallbackDescription: string;
+  }> = [
+    { slug: "blog", page: "blog", titleKey: "nav.blog", fallbackTitle: "Blog", fallbackDescription: "Latest XMCL news and updates." },
+    { slug: "changelog", page: "changelog", titleKey: "nav.changelog", fallbackTitle: "Changelog", fallbackDescription: "XMCL release history and updates." },
+    { slug: "contact", page: "contact", titleKey: "footer.contact", fallbackTitle: "Contact", fallbackDescription: "Contact the XMCL community." },
+    { slug: "docs", page: "docs", titleKey: "footer.documentation", fallbackTitle: "Documentation", fallbackDescription: "XMCL documentation and guides." },
+    { slug: "download", page: "download", titleKey: "common.download", fallbackTitle: "Download", fallbackDescription: "Download X Minecraft Launcher." },
+    { slug: "features", page: "features", titleKey: "nav.features", fallbackTitle: "Features", fallbackDescription: "Explore XMCL features." },
+    { slug: "guide", page: "guide", titleKey: "nav.guide", fallbackTitle: "Guide", fallbackDescription: "Learn how to use XMCL." },
+    { slug: "information", page: "information", titleKey: "nav.information", fallbackTitle: "Information", fallbackDescription: "Information about XMCL." },
+    { slug: "issues", page: "issues", titleKey: "nav.issues", fallbackTitle: "Issues", fallbackDescription: "Known XMCL issues." },
+    { slug: "privacy", page: "privacy", titleKey: "footer.privacyPolicy", fallbackTitle: "Privacy Policy", fallbackDescription: "XMCL privacy policy." },
+    { slug: "rss", page: "rss", titleKey: "nav.blog", fallbackTitle: "RSS", fallbackDescription: "XMCL RSS feeds." },
+    { slug: "testing", page: "testing", titleKey: "nav.testing", fallbackTitle: "Testing", fallbackDescription: "XMCL testing builds." },
+  ];
+  const blogConfig = {
+    posts: await getAllBlogPosts(),
+    categories: [],
+    featured: [],
+  };
+  const guideConfig = getGuideConfig();
+
+  return languageConfigs.flatMap(({ code }) => pages.map((page) => ({
+    params: { locale: code, slug: page.slug },
+    props: { ...page, locale: code, blogConfig, guideConfig },
+  })));
+}
+
+const { page, locale, titleKey, fallbackTitle, fallbackDescription, blogConfig, guideConfig } = Astro.props;
+const translations = loadTranslationsSync(locale) as Record<string, unknown>;
+const title = `${getText(translations, titleKey, fallbackTitle)} | X Minecraft Launcher`;
+const description = getText(translations, "home.heroSubtitle", fallbackDescription);
+const localizedPath = `/${Astro.params.slug}/`;
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={getHreflang(locale)}
+  dir={locale === "ar" ? "rtl" : "ltr"}
+  ogLocale={getOgLocale(locale)}
+  alternateLocales={getLocaleAlternates(localizedPath, Astro.site)}
+>
+  <LocalizedPage
+    client:load
+    page={page}
+    locale={locale}
+    blogConfig={blogConfig}
+    guideConfig={guideConfig}
+  />
+</Layout>

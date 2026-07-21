@@ -1,0 +1,59 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { StaticArticle } from "../../../components/StaticArticle";
+import { languageConfigs } from "../../../i18n/languageConfigs";
+import { loadTranslationsSync } from "../../../i18n";
+import { getAllGuidePosts, getGuideContent } from "../../../utils/guideUtils";
+import { getHreflang, getLocaleAlternates, getLocalizedPath, getOgLocale, getText } from "../../../lib/locales";
+
+export async function getStaticPaths() {
+  const posts = await getAllGuidePosts();
+
+  return languageConfigs.flatMap(({ code }) => posts.map((post) => ({
+    params: { locale: code, slug: post.slug },
+    props: { locale: code, post, content: getGuideContent(post.slug) },
+  })));
+}
+
+const { locale, post, content } = Astro.props;
+const translations = loadTranslationsSync(locale) as Record<string, unknown>;
+const articlePath = `/guide/${post.slug}/`;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": post.title,
+  "description": post.excerpt,
+  "datePublished": post.date,
+  "author": {
+    "@type": "Organization",
+    "name": post.author,
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, Astro.site).href,
+  },
+};
+---
+
+<Layout
+  title={`${post.title} | XMCL Guide`}
+  description={post.excerpt}
+  type="article"
+  lang={getHreflang(locale)}
+  dir={locale === "ar" ? "rtl" : "ltr"}
+  ogLocale={getOgLocale(locale)}
+  publishedTime={post.date}
+  alternateLocales={getLocaleAlternates(articlePath, Astro.site)}
+  structuredData={structuredData}
+>
+  <StaticArticle
+    initialLocale={locale}
+    title={post.title}
+    description={post.excerpt}
+    author={post.author}
+    date={post.date}
+    content={content}
+    backHref={getLocalizedPath(locale, "/guide/")}
+    backLabel={getText(translations, "common.back", "Back")}
+  />
+</Layout>

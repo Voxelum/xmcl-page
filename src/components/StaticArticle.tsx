@@ -3,6 +3,7 @@ import { ArrowLeft, Calendar, User } from "@phosphor-icons/react";
 import { AppShell } from "@/components/AppShell";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 import { preprocessMarkdown } from "@/utils/markdownUtils";
+import { PageLocaleContext } from "@/contexts/PageLocaleContext";
 
 interface StaticArticleProps {
   title: string;
@@ -12,6 +13,7 @@ interface StaticArticleProps {
   content: string;
   backHref: string;
   backLabel: string;
+  initialLocale?: SupportedLocale;
 }
 
 function removeLeadingHeading(markdown: string) {
@@ -26,11 +28,12 @@ export function StaticArticle({
   content,
   backHref,
   backLabel,
+  initialLocale,
 }: StaticArticleProps) {
   const markdown = removeLeadingHeading(preprocessMarkdown(content));
 
-  return (
-    <AppShell>
+  const article = (
+    <AppShell initialLocale={initialLocale}>
       <article className="mx-auto max-w-4xl px-4 py-28 text-foreground">
         <a
           href={backHref}
@@ -59,4 +62,10 @@ export function StaticArticle({
       </article>
     </AppShell>
   );
+
+  return initialLocale ? (
+    <PageLocaleContext.Provider value={initialLocale}>
+      {article}
+    </PageLocaleContext.Provider>
+  ) : article;
 }

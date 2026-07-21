@@ -21,6 +21,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useTranslation } from "@/contexts/TranslationContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { AppShell } from "@/components/AppShell";
+import { Link } from "@/components/Link";
 import { TranslateButton } from "@/components/TranslateButton";
 import { useContentTranslation } from "@/hooks/useContentTranslation";
 import { preprocessMarkdown } from "@/utils/markdownUtils";
@@ -41,7 +42,7 @@ interface GuidePost {
   difficulty?: string;
 }
 
-interface GuideConfig {
+export interface GuideConfig {
   posts: GuidePost[];
   featured: string[];
 }
@@ -110,12 +111,12 @@ const GuideCard = React.memo(({ post, featured, onClick, index }: {
           </div>
 
           <h3 className="mb-3 text-xl font-bold text-foreground transition-colors group-hover:text-[#ea4c3c]">
-            <a
-              href={`/guide/${post.slug}/`}
+            <Link
+              to={`/guide/${post.slug}/`}
               onClick={(event) => event.stopPropagation()}
             >
               {post.title}
-            </a>
+            </Link>
           </h3>
 
           <p className="mb-4 text-sm text-muted-foreground line-clamp-2 flex-grow">
@@ -305,15 +306,17 @@ const GuideContent = ({
       {/* Это позволяет тексту (subtitle) появиться мгновенно. */}
       <header className="relative border-b border-border bg-card py-10 md:py-16">
         <div className="container mx-auto px-4 text-center">
-          <div className="mb-6 inline-flex items-center justify-center animate-in fade-in zoom-in duration-500">
-            <div className="rounded-2xl bg-[#ea4c3c] p-4 shadow-lg shadow-[#ea4c3c]/10">
-              <GraduationCap className="h-10 w-10 text-white" />
+          <div className="mb-6 flex flex-col items-center gap-4">
+            <div className="inline-flex animate-in fade-in zoom-in duration-500">
+              <div className="rounded-2xl bg-[#ea4c3c] p-4 shadow-lg shadow-[#ea4c3c]/10">
+                <GraduationCap className="h-10 w-10 text-white" />
+              </div>
             </div>
-          </div>
 
-          <div className="mb-4 inline-flex items-center gap-2 bg-[#ea4c3c]/10 px-4 py-2 rounded-full text-[#ea4c3c] text-sm font-medium border border-[#ea4c3c]/20">
-            <Sparkle className="h-4 w-4" />
-            Learn & Discover
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#ea4c3c]/20 bg-[#ea4c3c]/10 px-4 py-2 text-sm font-medium text-[#ea4c3c]">
+              <Sparkle className="h-4 w-4" />
+              Learn & Discover
+            </div>
           </div>
 
           <h1 className="mb-4 text-4xl md:text-5xl lg:text-6xl font-black text-foreground">

@@ -163,7 +163,7 @@ export const StaggeredMenu = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="absolute top-16 right-0 sm:right-auto sm:left-1/2 sm:-translate-x-1/2 w-[300px] z-50"
+            className="absolute top-16 left-1/2 z-50 w-[300px] -translate-x-1/2"
           >
             <div className="overflow-hidden rounded-2xl bg-card border border-border shadow-2xl">
               

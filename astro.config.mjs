@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
-      filter: (page) => page !== 'https://xmcl.app/',
+      filter: (page) => /^https:\/\/xmcl\.app\/(?:en|de|it|ja|zh|ar|zh-Hant|ko|uk|ru|kz|by|fr|es|pt|tr)(?:\/|$)/.test(page),
     }),
   ],
   output: 'static',

@@ -1,30 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Index from "../../react-pages/Index";
+import { LocalizedPage } from "../../components/LocalizedPage";
 import { languageConfigs } from "../../i18n/languageConfigs";
 import { loadTranslationsSync } from "../../i18n";
-
-const localeConfig = {
-  zh: { hreflang: "zh-Hans", ogLocale: "zh_CN" },
-  "zh-Hant": { hreflang: "zh-Hant", ogLocale: "zh_TW" },
-  ar: { hreflang: "ar", ogLocale: "ar_AR" },
-  by: { hreflang: "be", ogLocale: "be_BY" },
-  kz: { hreflang: "kk", ogLocale: "kk_KZ" },
-  pt: { hreflang: "pt", ogLocale: "pt_PT" },
-} as const;
-
-type TranslationTree = Record<string, unknown>;
-
-function getText(translations: TranslationTree, path: string, fallback: string) {
-  const value = path.split(".").reduce<unknown>((current, key) => {
-    if (current && typeof current === "object" && key in current) {
-      return (current as Record<string, unknown>)[key];
-    }
-    return undefined;
-  }, translations);
-
-  return typeof value === "string" ? value : fallback;
-}
+import { getHreflang, getLocaleAlternates, getOgLocale, getText } from "../../lib/locales";
 
 export function getStaticPaths() {
   return languageConfigs.map(({ code }) => ({
@@ -33,19 +12,8 @@ export function getStaticPaths() {
 }
 
 const locale = Astro.params.locale as SupportedLocale;
-const translations = loadTranslationsSync(locale) as TranslationTree;
-const localeInfo = localeConfig[locale as keyof typeof localeConfig];
-const hreflang = localeInfo?.hreflang ?? locale;
-const alternateLocales = [
-  ...languageConfigs.map(({ code }) => ({
-    hreflang: localeConfig[code as keyof typeof localeConfig]?.hreflang ?? code,
-    href: new URL(`/${code}/`, Astro.site).href,
-  })),
-  {
-    hreflang: "x-default",
-    href: new URL("/en/", Astro.site).href,
-  },
-];
+const translations = loadTranslationsSync(locale) as Record<string, unknown>;
+const hreflang = getHreflang(locale);
 const title = `${getText(translations, "home.heroTitle", "X Minecraft Launcher")} | X Minecraft Launcher`;
 const description = getText(
   translations,
@@ -74,9 +42,9 @@ const structuredData = {
   description={description}
   lang={hreflang}
   dir={locale === "ar" ? "rtl" : "ltr"}
-  ogLocale={localeInfo?.ogLocale}
-  alternateLocales={alternateLocales}
+  ogLocale={getOgLocale(locale)}
+  alternateLocales={getLocaleAlternates("/", Astro.site)}
   structuredData={structuredData}
 >
-  <Index client:load initialLocale={locale} />
+  <LocalizedPage client:load page="home" locale={locale} />
 </Layout>
