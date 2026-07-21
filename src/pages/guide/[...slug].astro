@@ -4,10 +4,10 @@ import { StaticArticle } from "../../components/StaticArticle";
 import { getAllGuidePosts, getGuideContent } from "../../utils/guideUtils";
 
 export async function getStaticPaths() {
-  const posts = await getAllGuidePosts();
+  const posts = await getAllGuidePosts('en');
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: { post, content: getGuideContent(post.slug) },
+    props: { post, content: getGuideContent('en', post.slug) },
   }));
 }
 

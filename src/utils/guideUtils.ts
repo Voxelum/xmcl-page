@@ -1,16 +1,22 @@
 import fs from 'fs';
 import path from 'path';
 
+const sourceLocaleMap: Record<string, string> = {
+  by: 'be',
+  ja: 'jp',
+  kz: 'kk',
+  'zh-Hant': 'zh-TW',
+};
+
 export interface GuidePost {
-  id: string;
   title: string;
   excerpt: string;
-  author: string;
-  date: string;
   tags: string[];
   slug: string;
-  readTime: string;
-  difficulty: string;
+  author?: string;
+  date?: string;
+  readTime?: string;
+  difficulty?: string;
 }
 
 export interface GuideConfig {
@@ -18,38 +24,68 @@ export interface GuideConfig {
   featured: string[];
 }
 
-export function getGuideConfig(): GuideConfig {
-  const filePath = path.join(process.cwd(), 'public/guides.json');
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-
-  return {
-    ...data,
-    posts: data.posts
-      .filter((post: GuidePost) => fs.existsSync(
-        path.join(process.cwd(), 'public', 'guide', `${post.slug}.md`),
-      ))
-      .sort((a: GuidePost, b: GuidePost) => {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
-      }),
-  };
+function getGuideDirectory(locale: string) {
+  const directory = path.join(process.cwd(), 'src', sourceLocaleMap[locale] ?? locale, 'guide');
+  return fs.existsSync(directory) || locale === 'en'
+    ? directory
+    : getGuideDirectory('en');
 }
 
-export async function getAllGuidePosts(): Promise<GuidePost[]> {
+function getTitle(markdown: string, fallback: string) {
+  return markdown.match(/^#\s+(.+)$/m)?.[1]?.trim() ?? fallback;
+}
+
+function getExcerpt(markdown: string) {
+  const paragraph = markdown
+    .replace(/^#.+$/gm, '')
+    .replace(/^:::.+$/gm, '')
+    .split(/\r?\n\r?\n/)
+    .map((part) => part.replace(/\r?\n/g, ' ').trim())
+    .find((part) => part.length > 0);
+
+  return paragraph?.slice(0, 180) ?? '';
+}
+
+export function getGuideConfig(locale = 'en'): GuideConfig {
+  const directory = getGuideDirectory(locale);
+
+  const posts = fs.readdirSync(directory)
+    .filter((file) => file.endsWith('.md') && file !== 'index.md')
+    .map((file) => {
+      const slug = file.slice(0, -3);
+      const content = fs.readFileSync(path.join(directory, file), 'utf8');
+
+      return {
+        title: getTitle(content, slug),
+        excerpt: getExcerpt(content),
+        tags: [],
+        slug,
+      };
+    })
+    .sort((a, b) => a.title.localeCompare(b.title));
+
+  return { posts, featured: [] };
+}
+
+export async function getAllGuidePosts(locale = 'en'): Promise<GuidePost[]> {
   try {
-    return getGuideConfig().posts;
+    return getGuideConfig(locale).posts;
   } catch (error) {
     console.error('Error fetching guide posts:', error);
     return [];
   }
 }
 
-export function getGuideContent(slug: string): string {
-  const safeSlug = path.basename(slug);
+export function getGuideContent(locale: string, slug?: string): string {
+  const guideSlug = slug ?? locale;
+  const guideLocale = slug ? locale : 'en';
+  const directory = getGuideDirectory(guideLocale);
+  const safeSlug = path.basename(guideSlug);
 
-  if (safeSlug !== slug) {
-    throw new Error(`Invalid guide slug "${slug}"`);
+  if (safeSlug !== guideSlug) {
+    throw new Error(`Invalid guide slug "${guideSlug}"`);
   }
 
-  const filePath = path.join(process.cwd(), 'public', 'guide', `${safeSlug}.md`);
+  const filePath = path.join(directory, `${safeSlug}.md`);
   return fs.readFileSync(filePath, 'utf8');
 }

@@ -7,12 +7,13 @@ import { getAllGuidePosts, getGuideContent } from "../../../utils/guideUtils";
 import { getHreflang, getLocaleAlternates, getLocalizedPath, getOgLocale, getText } from "../../../lib/locales";
 
 export async function getStaticPaths() {
-  const posts = await getAllGuidePosts();
-
-  return languageConfigs.flatMap(({ code }) => posts.map((post) => ({
-    params: { locale: code, slug: post.slug },
-    props: { locale: code, post, content: getGuideContent(post.slug) },
-  })));
+  return (await Promise.all(languageConfigs.map(async ({ code }) => {
+    const posts = await getAllGuidePosts(code);
+    return posts.map((post) => ({
+      params: { locale: code, slug: post.slug },
+      props: { locale: code, post, content: getGuideContent(code, post.slug) },
+    }));
+  }))).flat();
 }
 
 const { locale, post, content } = Astro.props;

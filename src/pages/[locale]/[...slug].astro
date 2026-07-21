@@ -6,7 +6,9 @@ import { loadTranslationsSync } from "../../i18n";
 import { getAllBlogPosts } from "../../utils/blogUtils";
 import { getGuideConfig } from "../../utils/guideUtils";
 import { getChangelogs } from "../../utils/changelogUtils";
+import { getMarkdownDocuments } from "../../utils/markdownDocumentUtils";
 import { getHreflang, getLocaleAlternates, getOgLocale, getText } from "../../lib/locales";
+import { MarkdownDocument } from "../../components/MarkdownDocument";
 
 export async function getStaticPaths() {
   const pages: Array<{
@@ -34,21 +36,36 @@ export async function getStaticPaths() {
     categories: [],
     featured: [],
   };
-  const guideConfig = getGuideConfig();
-
   return languageConfigs.flatMap(({ code }) => {
     const changelogs = getChangelogs(code);
-    return pages.map((page) => ({
+    const guideConfig = getGuideConfig(code);
+    const primaryPages = pages.map((page) => ({
       params: { locale: code, slug: page.slug },
       props: { ...page, locale: code, blogConfig, guideConfig, changelogs },
     }));
+    const documents = getMarkdownDocuments(code).map((document) => ({
+      params: { locale: code, slug: document.slug },
+      props: {
+        page: "document",
+        locale: code,
+        titleKey: "",
+        fallbackTitle: document.title,
+        fallbackDescription: document.title,
+        document,
+      },
+    }));
+
+    return [...primaryPages, ...documents];
   });
 }
 
-const { page, locale, titleKey, fallbackTitle, fallbackDescription, blogConfig, guideConfig, changelogs } = Astro.props;
+const { page, locale, titleKey, fallbackTitle, fallbackDescription, blogConfig, guideConfig, changelogs, document } = Astro.props;
 const translations = loadTranslationsSync(locale) as Record<string, unknown>;
-const title = `${getText(translations, titleKey, fallbackTitle)} | X Minecraft Launcher`;
-const description = getText(translations, "home.heroSubtitle", fallbackDescription);
+const isDocument = page === "document";
+const title = `${isDocument ? document.title : getText(translations, titleKey, fallbackTitle)} | X Minecraft Launcher`;
+const description = isDocument
+  ? document.title
+  : getText(translations, "home.heroSubtitle", fallbackDescription);
 const localizedPath = `/${Astro.params.slug}/`;
 ---
 
@@ -60,12 +77,16 @@ const localizedPath = `/${Astro.params.slug}/`;
   ogLocale={getOgLocale(locale)}
   alternateLocales={getLocaleAlternates(localizedPath, Astro.site)}
 >
-  <LocalizedPage
-    client:load
-    page={page}
-    locale={locale}
-    blogConfig={blogConfig}
-    guideConfig={guideConfig}
-    changelogs={changelogs}
-  />
+  {isDocument ? (
+    <MarkdownDocument content={document.content} initialLocale={locale} />
+  ) : (
+    <LocalizedPage
+      client:load
+      page={page}
+      locale={locale}
+      blogConfig={blogConfig}
+      guideConfig={guideConfig}
+      changelogs={changelogs}
+    />
+  )}
 </Layout>

@@ -9,6 +9,13 @@ const localeMetadata = {
   pt: { hreflang: "pt", ogLocale: "pt_PT" },
 } as const;
 
+const sourceLocaleMap: Record<string, string> = {
+  by: "be",
+  ja: "jp",
+  kz: "kk",
+  "zh-Hant": "zh-TW",
+};
+
 type TranslationTree = Record<string, unknown>;
 
 export function getHreflang(locale: string) {
@@ -17,6 +24,10 @@ export function getHreflang(locale: string) {
 
 export function getOgLocale(locale: string) {
   return localeMetadata[locale as keyof typeof localeMetadata]?.ogLocale;
+}
+
+export function getSourceLocale(locale: string) {
+  return sourceLocaleMap[locale] ?? locale;
 }
 
 export function getLocalizedPath(locale: string, path = "/") {
