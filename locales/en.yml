@@ -331,6 +331,29 @@ modernHome:
       description: Connect the account service that fits your setup, from Microsoft and offline profiles to third-party authentication services, without leaving the launcher.
       alt: XMCL account login dialog with multiple authentication services
       link: Explore account support
+siteFooter:
+  ariaLabel: Site footer
+  navigation: Footer navigation
+  description: Open-source Minecraft infrastructure for players, Linux desktops, and the people who build the worlds we play.
+  status: Open source · built in public
+  explore:
+    title: Explore
+    home: Home
+    features: Feature catalog
+    documentation: Documentation
+  useCases:
+    title: Use cases
+    linux: Linux launcher
+    creators: Modpack creators
+    download: Download XMCL
+  resources:
+    title: Resources
+    logViewer: Log viewer
+    github: GitHub
+    issue: Report an issue
+    discord: Discord
+  bottomNote: Built for the way you play and create.
+  readDocumentation: Read the documentation
 sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION

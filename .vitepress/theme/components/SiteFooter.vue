@@ -1,50 +1,54 @@
 <template>
-  <footer class="site-footer">
+  <footer class="site-footer" :aria-label="t('siteFooter.ariaLabel')">
     <div class="site-footer-main">
       <div class="site-footer-brand">
         <a class="site-footer-logo" :href="homeUrl"><img src="/logo.svg" alt="" /> <span>XMCL</span></a>
-        <p>Open-source Minecraft infrastructure for players, Linux desktops, and the people who build the worlds we play.</p>
-        <span class="site-footer-status"><span class="site-footer-live-dot"></span> Open source · built in public</span>
+        <p>{{ t('siteFooter.description') }}</p>
+        <span class="site-footer-status"><span class="site-footer-live-dot"></span> {{ t('siteFooter.status') }}</span>
       </div>
-      <nav class="site-footer-links" aria-label="Footer navigation">
+      <nav class="site-footer-links" :aria-label="t('siteFooter.navigation')">
         <section class="site-footer-group">
-          <h2>Explore</h2>
-          <a :href="homeUrl">Home</a>
-          <a :href="featuresUrl">Feature catalog</a>
-          <a :href="guideUrl">Documentation</a>
+          <h2>{{ t('siteFooter.explore.title') }}</h2>
+          <a :href="homeUrl">{{ t('siteFooter.explore.home') }}</a>
+          <a :href="featuresUrl">{{ t('siteFooter.explore.features') }}</a>
+          <a :href="guideUrl">{{ t('siteFooter.explore.documentation') }}</a>
         </section>
         <section class="site-footer-group">
-          <h2>Use cases</h2>
-          <a :href="linuxUrl">Linux launcher</a>
-          <a :href="creatorsUrl">Modpack creators</a>
-          <a :href="prebuildsUrl">Download XMCL</a>
+          <h2>{{ t('siteFooter.useCases.title') }}</h2>
+          <a :href="linuxUrl">{{ t('siteFooter.useCases.linux') }}</a>
+          <a :href="creatorsUrl">{{ t('siteFooter.useCases.creators') }}</a>
+          <a :href="prebuildsUrl">{{ t('siteFooter.useCases.download') }}</a>
         </section>
         <section class="site-footer-group">
-          <h2>Resources</h2>
-          <a :href="logViewerUrl">Log viewer</a>
-          <a :href="githubUrl" target="_blank" rel="noreferrer">GitHub</a>
-          <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">Report an issue</a>
-          <a href="https://discord.gg/W5XVwYY7GQ" target="_blank" rel="noreferrer">Discord</a>
+          <h2>{{ t('siteFooter.resources.title') }}</h2>
+          <a :href="logViewerUrl">{{ t('siteFooter.resources.logViewer') }}</a>
+          <a :href="githubUrl" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.github') }}</a>
+          <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.issue') }}</a>
+          <a href="https://discord.gg/W5XVwYY7GQ" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.discord') }}</a>
         </section>
       </nav>
     </div>
-    <div class="site-footer-bottom"><span>© {{ year }} X Minecraft Launcher</span><span>Built for the way you play and create.</span><a :href="guideUrl">Read the documentation <span aria-hidden="true">+</span></a></div>
+    <div class="site-footer-bottom"><span>© {{ year }} X Minecraft Launcher</span><span>{{ t('siteFooter.bottomNote') }}</span><a :href="guideUrl">{{ t('siteFooter.readDocumentation') }} <span aria-hidden="true">+</span></a></div>
   </footer>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { useI18n } from 'vue-i18n'
+import { useI18nSync } from '../composables/useI18nSync'
 
 const { lang, site } = useData()
+const { t } = useI18n()
+useI18nSync()
 const pageUrl = (path: string) => `${site.value.base}${lang.value}/${path}`
 const homeUrl = computed(() => `${site.value.base}${lang.value}/`)
 const guideUrl = computed(() => pageUrl('guide/install'))
 const featuresUrl = computed(() => pageUrl('features/'))
 const prebuildsUrl = computed(() => pageUrl('prebuilds'))
-const linuxUrl = computed(() => `${site.value.base}en/linux-minecraft-launcher`)
-const creatorsUrl = computed(() => `${site.value.base}en/modpack-creator`)
-const logViewerUrl = computed(() => `${site.value.base}en/log-viewer`)
+const linuxUrl = computed(() => pageUrl('linux-minecraft-launcher'))
+const creatorsUrl = computed(() => pageUrl('modpack-creator'))
+const logViewerUrl = computed(() => pageUrl('log-viewer'))
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
 const year = new Date().getFullYear()

@@ -215,6 +215,29 @@ features:
       title: 當機與啟動失敗報告
     ai-agent:
       title: 內建 AI Agent
+siteFooter:
+  ariaLabel: 網站頁尾
+  navigation: 頁尾導覽
+  description: 為玩家、Linux 桌面與打造遊戲世界的人們建立的開源 Minecraft 基礎設施。
+  status: 開源專案 · 公開建置
+  explore:
+    title: 探索
+    home: 首頁
+    features: 功能目錄
+    documentation: 文件
+  useCases:
+    title: 使用情境
+    linux: Linux 啟動器
+    creators: 整合包製作者
+    download: 下載 XMCL
+  resources:
+    title: 資源
+    logViewer: 記錄檢視器
+    github: GitHub
+    issue: 回報問題
+    discord: Discord
+  bottomNote: 為你的遊玩與創作方式而生。
+  readDocumentation: 閱讀文件
 sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION

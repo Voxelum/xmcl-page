@@ -236,6 +236,29 @@ features:
       title: 内蔵 AI Agent
       benefit: Agent に仮想ファイルシステムを調べさせ、実行可能な解決策を説明させます。
       capabilities: インスタンスのファイルとレポートを読む|結論の前に調査|可能な場合は解決策を適用
+siteFooter:
+  ariaLabel: サイトフッター
+  navigation: フッターナビゲーション
+  description: プレイヤー、Linux デスクトップ、そして世界を作る人のためのオープンソース Minecraft 基盤。
+  status: オープンソース · 公開開発
+  explore:
+    title: 探索
+    home: ホーム
+    features: 機能カタログ
+    documentation: ドキュメント
+  useCases:
+    title: 活用シーン
+    linux: Linux ランチャー
+    creators: Modpack クリエイター
+    download: XMCL をダウンロード
+  resources:
+    title: リソース
+    logViewer: ログビューア
+    github: GitHub
+    issue: 問題を報告
+    discord: Discord
+  bottomNote: あなたの遊び方と作り方のために。
+  readDocumentation: ドキュメントを読む
 sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION

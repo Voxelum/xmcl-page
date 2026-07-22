@@ -247,6 +247,29 @@ features:
       title: Integrierter KI-Agent
       benefit: Lass einen Agenten das virtuelle Dateisystem prüfen und eine umsetzbare Lösung erklären.
       capabilities: Instanzdateien und Berichte lesen|Erst untersuchen und dann schlussfolgern|Wenn möglich eine Lösung anwenden
+siteFooter:
+  ariaLabel: Seitenfuß
+  navigation: Footer-Navigation
+  description: Open-Source-Minecraft-Infrastruktur für Spieler, Linux-Desktops und die Menschen, die unsere Welten bauen.
+  status: Open Source · öffentlich entwickelt
+  explore:
+    title: Entdecken
+    home: Startseite
+    features: Feature-Katalog
+    documentation: Dokumentation
+  useCases:
+    title: Anwendungsfälle
+    linux: Linux-Launcher
+    creators: Modpack-Ersteller
+    download: XMCL herunterladen
+  resources:
+    title: Ressourcen
+    logViewer: Log Viewer
+    github: GitHub
+    issue: Problem melden
+    discord: Discord
+  bottomNote: Für deine Art zu spielen und zu erstellen.
+  readDocumentation: Dokumentation lesen
 sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION

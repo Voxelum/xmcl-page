@@ -343,6 +343,29 @@ modernHome:
       description: 在启动器中连接适合你的账号服务，包括 Microsoft、离线账号和第三方认证服务。
       alt: XMCL 登录对话框，展示多种认证服务
       link: 查看账号支持
+siteFooter:
+  ariaLabel: 网站页脚
+  navigation: 页脚导航
+  description: 为玩家、Linux 桌面和创造游戏世界的人们打造的开源 Minecraft 基础设施。
+  status: 开源项目 · 公开构建
+  explore:
+    title: 探索
+    home: 首页
+    features: 功能目录
+    documentation: 文档
+  useCases:
+    title: 使用场景
+    linux: Linux 启动器
+    creators: 整合包制作者
+    download: 下载 XMCL
+  resources:
+    title: 资源
+    logViewer: 日志查看器
+    github: GitHub
+    issue: 报告问题
+    discord: Discord
+  bottomNote: 为你的游玩和创作方式而生。
+  readDocumentation: 阅读文档
 sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION

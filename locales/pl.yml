@@ -202,6 +202,29 @@ features:
       title: Raporty awarii i błędów uruchamiania
     ai-agent:
       title: Wbudowany agent AI
+siteFooter:
+  ariaLabel: Stopka strony
+  navigation: Nawigacja stopki
+  description: Otwarta infrastruktura Minecraft dla graczy, pulpitów Linux i osób budujących nasze światy.
+  status: Open source · tworzony publicznie
+  explore:
+    title: Odkrywaj
+    home: Strona główna
+    features: Katalog funkcji
+    documentation: Dokumentacja
+  useCases:
+    title: Zastosowania
+    linux: Launcher Linux
+    creators: Twórcy modpacków
+    download: Pobierz XMCL
+  resources:
+    title: Zasoby
+    logViewer: Przeglądarka logów
+    github: GitHub
+    issue: Zgłoś problem
+    discord: Discord
+  bottomNote: Stworzone dla Twojego sposobu grania i tworzenia.
+  readDocumentation: Czytaj dokumentację
 sceneLanding:
   linux:
     eyebrow: XMCL / EDYCJA LINUX

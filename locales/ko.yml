@@ -194,6 +194,29 @@ features:
       title: 충돌 및 실행 실패 보고서
     ai-agent:
       title: 내장 AI Agent
+siteFooter:
+  ariaLabel: 사이트 푸터
+  navigation: 푸터 탐색
+  description: 플레이어, Linux 데스크톱, 그리고 우리가 플레이하는 세계를 만드는 사람들을 위한 오픈 소스 Minecraft 인프라입니다.
+  status: 오픈 소스 · 공개 개발
+  explore:
+    title: 탐색
+    home: 홈
+    features: 기능 카탈로그
+    documentation: 문서
+  useCases:
+    title: 사용 사례
+    linux: Linux 런처
+    creators: 모드팩 제작자
+    download: XMCL 다운로드
+  resources:
+    title: 리소스
+    logViewer: 로그 뷰어
+    github: GitHub
+    issue: 문제 신고
+    discord: Discord
+  bottomNote: 여러분의 플레이와 제작 방식을 위해 만들어졌습니다.
+  readDocumentation: 문서 읽기
 sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION

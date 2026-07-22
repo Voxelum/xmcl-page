@@ -204,6 +204,29 @@ features:
       title: Қате және іске қосу сәтсіздігі есептері
     ai-agent:
       title: Кірістірілген AI Agent
+siteFooter:
+  ariaLabel: Сайт төменгі бөлігі
+  navigation: Төменгі бөлік навигациясы
+  description: Ойыншыларға, Linux жұмыс үстелдеріне және біз ойнайтын әлемдерді жасайтын адамдарға арналған ашық Minecraft инфрақұрылымы.
+  status: Ашық бастапқы код · ашық әзірлеу
+  explore:
+    title: Шолу
+    home: Басты бет
+    features: Мүмкіндіктер каталогы
+    documentation: Құжаттама
+  useCases:
+    title: Қолдану сценарийлері
+    linux: Linux лаунчері
+    creators: Модпак жасаушылар
+    download: XMCL жүктеу
+  resources:
+    title: Ресурстар
+    logViewer: Журнал көруші
+    github: GitHub
+    issue: Мәселе туралы хабарлау
+    discord: Discord
+  bottomNote: Сіздің ойнау және жасау тәсіліңіз үшін жасалған.
+  readDocumentation: Құжаттаманы оқу
 sceneLanding:
   linux:
     eyebrow: XMCL / LINUX НҰСҚАСЫ

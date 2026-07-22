@@ -243,6 +243,29 @@ features:
       title: Agente de IA integrado
       benefit: Deja que un agente inspeccione el sistema de archivos virtual y explique una solución práctica.
       capabilities: Leer archivos e informes|Investigar antes de concluir|Aplicar una solución cuando sea posible
+siteFooter:
+  ariaLabel: Pie de página
+  navigation: Navegación del pie de página
+  description: Infraestructura Minecraft de código abierto para jugadores, escritorios Linux y quienes construyen nuestros mundos.
+  status: Código abierto · creado públicamente
+  explore:
+    title: Explorar
+    home: Inicio
+    features: Catálogo de funciones
+    documentation: Documentación
+  useCases:
+    title: Casos de uso
+    linux: Launcher para Linux
+    creators: Creadores de modpacks
+    download: Descargar XMCL
+  resources:
+    title: Recursos
+    logViewer: Visor de registros
+    github: GitHub
+    issue: Informar de un problema
+    discord: Discord
+  bottomNote: Creado para tu forma de jugar y crear.
+  readDocumentation: Leer la documentación
 sceneLanding:
   linux:
     eyebrow: XMCL / EDICIÓN LINUX

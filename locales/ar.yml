@@ -186,6 +186,29 @@ features:
       title: تقارير التعطل وفشل التشغيل
     ai-agent:
       title: وكيل AI مدمج
+siteFooter:
+  ariaLabel: تذييل الموقع
+  navigation: تنقل التذييل
+  description: بنية Minecraft مفتوحة المصدر للاعبين وأجهزة Linux المكتبية ومن يبنون العوالم التي نلعب فيها.
+  status: مفتوح المصدر · يُبنى علناً
+  explore:
+    title: استكشف
+    home: الرئيسية
+    features: كتالوج الميزات
+    documentation: التوثيق
+  useCases:
+    title: حالات الاستخدام
+    linux: مشغل Linux
+    creators: منشئو حزم التعديلات
+    download: تنزيل XMCL
+  resources:
+    title: الموارد
+    logViewer: عارض السجلات
+    github: GitHub
+    issue: الإبلاغ عن مشكلة
+    discord: Discord
+  bottomNote: صُمم لطريقتك في اللعب والإبداع.
+  readDocumentation: قراءة التوثيق
 sceneLanding:
   linux:
     eyebrow: XMCL / إصدار LINUX

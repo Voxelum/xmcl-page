@@ -205,6 +205,29 @@ features:
       title: Отчёты о сбоях и ошибках запуска
     ai-agent:
       title: Встроенный AI Agent
+siteFooter:
+  ariaLabel: Подвал сайта
+  navigation: Навигация в подвале
+  description: Открытая Minecraft-инфраструктура для игроков, Linux-десктопов и создателей наших миров.
+  status: Открытый исходный код · разработка на виду
+  explore:
+    title: Обзор
+    home: Главная
+    features: Каталог возможностей
+    documentation: Документация
+  useCases:
+    title: Сценарии
+    linux: Лаунчер для Linux
+    creators: Создатели модпаков
+    download: Скачать XMCL
+  resources:
+    title: Ресурсы
+    logViewer: Просмотрщик логов
+    github: GitHub
+    issue: Сообщить о проблеме
+    discord: Discord
+  bottomNote: Создано для вашего способа играть и создавать.
+  readDocumentation: Читать документацию
 sceneLanding:
   linux:
     eyebrow: XMCL / ВЕРСИЯ ДЛЯ LINUX
