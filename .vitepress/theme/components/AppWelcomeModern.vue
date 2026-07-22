@@ -188,18 +188,6 @@
       </div>
     </section>
 
-    <footer class="modern-footer">
-      <a class="modern-footer-brand" href="#top"><img src="/logo.svg" alt="" /> <span>XMCL</span></a>
-      <div class="modern-footer-links">
-        <a :href="guideUrl">{{ t('guide') }}</a>
-        <a :href="prebuildsUrl">{{ t('prebuild.download') }}</a>
-        <a :href="logViewerUrl">Log Viewer</a>
-        <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">{{ t('modernHome.footer.issues') }}</a>
-        <a href="https://discord.gg/W5XVwYY7GQ" target="_blank" rel="noreferrer">Discord</a>
-        <a :href="githubUrl" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-      <span class="modern-footer-note">X Minecraft Launcher</span>
-    </footer>
   </div>
 </template>
 
@@ -320,7 +308,6 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 </script>
 
 <style scoped>
-:global(body:has(.xmcl-modern) .VPFooter) { display: none; }
 
 :global(body:has(.xmcl-modern)) {
   --vp-c-bg: #f4f5ef;
@@ -828,12 +815,6 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
 .modern-sponsor-logo-agnes { background: #17211f; color: var(--modern-lime); font-size: 31px; font-weight: 800; }
 .modern-sponsor-partners a:hover { color: #e45e42; }
 
-.modern-footer { align-items: center; background: var(--modern-paper); border-top: 1px solid var(--modern-line); display: flex; gap: 24px; justify-content: space-between; padding: 28px clamp(24px, 7vw, 112px); }
-.modern-footer-brand { align-items: center; display: inline-flex; font-size: 14px; font-weight: 800; gap: 8px; }
-.modern-footer-brand img { height: 24px; width: 24px; }
-.modern-footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
-.modern-footer-links, .modern-footer-note { color: var(--modern-muted); font-size: 12px; }
-.modern-footer-links a:hover { color: var(--modern-ink); }
 
 @media (max-width: 900px) {
   .modern-hero { grid-template-columns: 1fr; padding-top: 64px; }
@@ -878,7 +859,5 @@ const activeFeatureData = computed(() => features.value.find(feature => feature.
   .modern-download-control { padding: 14px; }
   .modern-download-platforms { flex-wrap: wrap; }
   .modern-download-component :deep(.download-buttons-flex) { grid-template-columns: 1fr; }
-  .modern-footer { align-items: start; flex-direction: column; padding: 26px 20px; }
-  .modern-footer-note { display: none; }
 }
 </style>

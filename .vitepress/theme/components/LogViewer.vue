@@ -283,8 +283,11 @@ function resetReports() {
 :global(body:has(.log-viewer-page) .VPContent),
 :global(body:has(.log-viewer-page) .VPDoc),
 :global(body:has(.log-viewer-page) .VPDoc .container),
+:global(body:has(.log-viewer-page) .VPDoc.has-aside .content),
 :global(body:has(.log-viewer-page) .VPDoc .content-container),
 :global(body:has(.log-viewer-page) .VPDoc .content) { max-width: none !important; padding-left: 0 !important; padding-right: 0 !important; width: 100% !important; }
+:global(body:has(.log-viewer-page) .VPDoc.has-aside .container) { display: block !important; }
+:global(body:has(.log-viewer-page) .VPDoc.has-aside .content) { flex: 1 1 auto !important; }
 :global(body:has(.log-viewer-page) .VPDocFooter),
 :global(body:has(.log-viewer-page) .VPDocAside) { display: none !important; }
 

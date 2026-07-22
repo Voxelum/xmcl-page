@@ -25,6 +25,8 @@ import QuiltIcon from "./components/QuiltIcon.vue"
 import AppOptifinePicture from "./components/AppOptifinePicture.vue"
 import AppLabymodPicture from "./components/AppLabymodPicture.vue"
 import LogViewer from './components/LogViewer.vue'
+import SceneLanding from './components/SceneLanding.vue'
+import SiteFooter from './components/SiteFooter.vue'
 
 const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
 
@@ -81,7 +83,8 @@ export default {
 
     return () => [
       h(DefaultTheme.Layout, props, {
-        'nav-bar-extra': () => null
+        'nav-bar-extra': () => null,
+        'layout-bottom': () => h(SiteFooter),
       }),
     ]
   }),
@@ -95,6 +98,8 @@ export default {
     app.component('PostAuthor', PostAuthor)
     app.component('AuthorDetail', AuthorDetail)
     app.component('welcome-modern', AppWelcomeModern)
+    app.component('scene-landing', SceneLanding)
+    app.component('SiteFooter', SiteFooter)
     app.component('FeatureExplorer', FeatureExplorer)
     app.component('prebuilds', AppPrebuilds)
     app.component('changelog', Doc)

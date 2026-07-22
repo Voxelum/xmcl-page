@@ -34,9 +34,6 @@ function getChangelogsFiles(location: string) {
 export function loadTheme(location: string, locale: string) {
     const localeFile = join(__dirname, '..', 'locales', locale + '.yml')
     const localeMessages = parse(readFileSync(localeFile, 'utf-8'))
-    const logViewerLink = `<a href="/en/log-viewer">${localeMessages.logViewer || 'Log Viewer'}</a>`
-    const footerMessage = localeMessages.footer ? `${localeMessages.footer} · ${logViewerLink}` : logViewerLink
-
     const sidebar: DefaultTheme.SidebarMulti = {
     }
 
@@ -131,10 +128,6 @@ export function loadTheme(location: string, locale: string) {
             langMenuLabel: localeMessages.langMenuLabel,
             docFooter: localeMessages.docFooter,
             lastUpdatedText: localeMessages.lastUpdatedText,
-            footer: {
-                message: footerMessage,
-                copyright: `Copyright © 2022-${new Date().getFullYear()} CI010`
-            },
             editLink: {
                 text: localeMessages.editLink,
                 pattern: 'https://github.com/voxelum/xmcl-page/edit/master/src/:path'
