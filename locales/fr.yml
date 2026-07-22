@@ -253,3 +253,42 @@ features:
       title: Agent IA intégré
       benefit: Laissez un agent inspecter le système de fichiers virtuel et expliquer une solution concrète.
       capabilities: Lire fichiers et rapports|Analyser avant de conclure|Appliquer une solution si possible
+sceneLanding:
+  linux:
+    eyebrow: XMCL / ÉDITION LINUX
+    title: Le launcher Minecraft qui semble natif sous Linux.
+    lede: Un launcher open source soigné pour les bureaux Linux et Steam Deck. Choisissez votre paquet et lancez chaque monde en un clic.
+    primaryAction: Télécharger pour Linux
+    secondaryAction: Voir le workflow Linux
+    heroNote: Builds Linux natifs, ARM64 et support Flathub
+    visualLabel: XMCL · espace Linux
+    heroAlt: Accueil XMCL avec une bibliothèque d’instances Minecraft
+    visualTag: Espace prêt pour la 4K
+    visualStatus: PRÊT POUR VOTRE PROCHAIN MONDE
+    workflowKicker: WORKFLOW LINUX-FIRST
+    workflowTitle: Du paquet à la partie sans friction.
+    workflowDescription: XMCL réunit des installations prévisibles, une interface claire et des environnements de jeu indépendants pour les joueurs Linux.
+    signals:
+      packages: { number: '05', label: Paquets Linux, description: 'DEB, RPM, AppImage, tar.xz et Flathub.' }
+      scale: { number: '4K', label: Lisible à toute échelle, description: 'Une bibliothèque claire sur les grands écrans.' }
+      worlds: { number: '∞', label: Mondes séparés, description: 'Versions, loaders et sauvegardes restent isolés.' }
+    download: { kicker: TÉLÉCHARGER POUR LINUX, title: Installez XMCL à votre façon., description: 'Choisissez le paquet adapté ou utilisez Flathub sur Steam Deck.', link: Voir toutes les versions et builds }
+  creators:
+    eyebrow: XMCL / POUR LES CRÉATEURS DE MODPACKS
+    title: Construisez vos modpacks avec toute la boucle de publication au même endroit.
+    lede: Trouvez des projets, résolvez les dépendances, testez, analysez les crashs et exportez un pack Modrinth ou CurseForge propre.
+    primaryAction: Explorer les workflows créateur
+    secondaryAction: Ouvrir le catalogue des fonctionnalités
+    heroNote: Workflows Modrinth, CurseForge et diagnostic assisté par IA
+    visualLabel: XMCL · espace créateur
+    heroAlt: Marché de modpacks XMCL avec des projets Modrinth et CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: ENSEMBLE DE TRAVAIL SYNCHRONISÉ
+    workflowKicker: LA BOUCLE DU CRÉATEUR
+    workflowTitle: De l’idée au pack que les joueurs peuvent réellement lancer.
+    workflowDescription: XMCL traite le modpack comme un système vivant et vous aide à suivre les catalogues, les changements et les dépendances.
+    signals:
+      sources: { number: '2×', label: Sources de projets, description: 'Recherchez Modrinth et CurseForge dans un seul espace.' }
+      export: { number: UN CLIC, label: Export de pack, description: 'Créez un paquet MR ou CF distribuable en quelques étapes.' }
+      ai: { number: IA, label: Assistance crash, description: 'Transformez un rapport d’erreur en prochaine action.' }
+    cta: { kicker: POUR VOTRE PROCHAINE VERSION, title: Construire. Publier. Garder le pack sain., description: 'XMCL offre aux créateurs une boucle locale rapide pour découvrir, tester, diagnostiquer et exporter.', button: Explorer toutes les fonctionnalités }

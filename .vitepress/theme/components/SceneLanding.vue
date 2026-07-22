@@ -57,17 +57,17 @@
 
       <section v-if="kind === 'linux'" id="download" class="scene-download">
         <div class="scene-download-copy">
-          <span class="scene-section-kicker">DOWNLOAD FOR LINUX</span>
-          <h2>Install XMCL your way.</h2>
-          <p>Choose the package that belongs on your system, or use Flathub to bring XMCL to Steam Deck.</p>
-          <a class="scene-text-link" :href="prebuildsUrl">See every release and prebuild <span aria-hidden="true">+</span></a>
+          <span class="scene-section-kicker">{{ content.download.kicker }}</span>
+          <h2>{{ content.download.title }}</h2>
+          <p>{{ content.download.description }}</p>
+          <a class="scene-text-link" :href="prebuildsUrl">{{ content.download.link }} <span aria-hidden="true">+</span></a>
         </div>
         <div class="scene-download-control"><ClientOnly><Linux :organized="true" /></ClientOnly></div>
       </section>
 
       <section v-else class="scene-creator-cta">
-        <div><span class="scene-section-kicker">A WORKBENCH FOR YOUR NEXT RELEASE</span><h2>Make the pack. Ship the pack. Keep it healthy.</h2></div>
-        <div><p>XMCL gives creators a fast local loop for discovery, testing, diagnosis, and export across the two ecosystems your players already use.</p><a class="scene-button scene-button-primary" :href="featuresUrl">Explore every feature <span aria-hidden="true">+</span></a></div>
+        <div><span class="scene-section-kicker">{{ content.cta.kicker }}</span><h2>{{ content.cta.title }}</h2></div>
+        <div><p>{{ content.cta.description }}</p><a class="scene-button scene-button-primary" :href="featuresUrl">{{ content.cta.button }} <span aria-hidden="true">+</span></a></div>
       </section>
     </main>
 
@@ -77,7 +77,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import { useI18n } from 'vue-i18n'
 import Linux from './Linux.vue'
+import { useI18nSync } from '../composables/useI18nSync'
 
 import aiAgent from '../../../src/assets/ai-agent-dialog-candidate.png'
 import homeExpanded from '../../../src/assets/home-expanded-1600-candidate.png'
@@ -90,12 +92,14 @@ import modpackMarket from '../../../src/assets/modpack-market-candidate.png'
 import onlineModSearch from '../../../src/assets/online-mod-search-candidate.png'
 
 const props = defineProps<{ kind: 'linux' | 'creators' }>()
-const { site } = useData()
-const pageUrl = (path: string) => `${site.value.base}en/${path}`
+const { lang, site } = useData()
+const { t } = useI18n()
+useI18nSync()
+const pageUrl = (path: string) => `${site.value.base}${lang.value}/${path}`
 const prebuildsUrl = computed(() => pageUrl('prebuilds'))
 const featuresUrl = computed(() => pageUrl('features/'))
 
-const content = computed(() => props.kind === 'linux' ? {
+const legacyContent = computed(() => props.kind === 'linux' ? {
   eyebrow: 'XMCL / LINUX EDITION',
   title: 'The Minecraft launcher that feels native on Linux.',
   lede: 'A polished, open-source launcher for Linux desktops and Steam Deck. Pick the package your distribution expects, plug into a 4K display, and keep every world one clear launch away.',
@@ -149,6 +153,47 @@ const content = computed(() => props.kind === 'linux' ? {
     { label: '04 / EXPORT', title: 'Ship one pack in the format your players need.', description: 'Export a polished Modrinth or CurseForge modpack with the right metadata and selected files. The release step becomes a repeatable part of the workflow, not a last-minute archive operation.', points: ['One-click Modrinth and CurseForge export', 'Author, description, URL, and version metadata', 'Choose exactly which files and assets ship'], image: modpackExport, alt: 'XMCL modpack export screen for Modrinth and CurseForge formats' },
     { label: '05 / DIAGNOSE', title: 'Let AI help turn crash reports into fixes.', description: 'When a test launch fails, XMCL puts logs, crash reports, and an AI agent in the same place. The agent can inspect the instance context and explain an actionable next step.', points: ['Read launch logs and crash reports in context', 'AI-assisted investigation of instance files', 'Resolve mod conflicts before release'], image: aiAgent, alt: 'XMCL AI agent investigating a Minecraft launch failure' },
   ],
+})
+
+const content = computed(() => {
+  const prefix = props.kind === 'linux' ? 'sceneLanding.linux' : 'sceneLanding.creators'
+  const text = (key: string) => t(`${prefix}.${key}`)
+  const feature = (key: string, image: unknown) => ({
+    label: text(`features.${key}.label`),
+    title: text(`features.${key}.title`),
+    description: text(`features.${key}.description`),
+    points: [1, 2, 3].map(index => text(`features.${key}.point${index}`)),
+    image,
+    alt: text(`features.${key}.alt`),
+  })
+
+  if (props.kind === 'linux') {
+    return {
+      eyebrow: text('eyebrow'), title: text('title'), lede: text('lede'),
+      primaryAction: { label: text('primaryAction'), href: '#download' },
+      secondaryAction: { label: text('secondaryAction'), href: '#workflow' },
+      heroNote: text('heroNote'), visualIndex: '01 / 02', visualLabel: text('visualLabel'),
+      heroImage: homeProduction, heroAlt: text('heroAlt'), visualTag: text('visualTag'), visualStatus: text('visualStatus'),
+      workflowKicker: text('workflowKicker'), workflowTitle: text('workflowTitle'), workflowDescription: text('workflowDescription'),
+      signals: ['packages', 'scale', 'worlds'].map(key => ({ number: text(`signals.${key}.number`), label: text(`signals.${key}.label`), description: text(`signals.${key}.description`) })),
+      features: [feature('install', instanceCreate), feature('organize', homeExpanded), feature('anywhere', homeProduction)],
+      download: { kicker: text('download.kicker'), title: text('download.title'), description: text('download.description'), link: text('download.link') },
+      cta: { kicker: '', title: '', description: '', button: '' },
+    }
+  }
+
+  return {
+    eyebrow: text('eyebrow'), title: text('title'), lede: text('lede'),
+    primaryAction: { label: text('primaryAction'), href: '#workflow' },
+    secondaryAction: { label: text('secondaryAction'), href: featuresUrl.value },
+    heroNote: text('heroNote'), visualIndex: '02 / 02', visualLabel: text('visualLabel'),
+    heroImage: modpackMarket, heroAlt: text('heroAlt'), visualTag: text('visualTag'), visualStatus: text('visualStatus'),
+    workflowKicker: text('workflowKicker'), workflowTitle: text('workflowTitle'), workflowDescription: text('workflowDescription'),
+    signals: ['sources', 'export', 'ai'].map(key => ({ number: text(`signals.${key}.number`), label: text(`signals.${key}.label`), description: text(`signals.${key}.description`) })),
+    features: [feature('discover', onlineModSearch), feature('build', localModDetail), feature('curate', localModManagement), feature('export', modpackExport), feature('diagnose', aiAgent)],
+    download: { kicker: '', title: '', description: '', link: '' },
+    cta: { kicker: text('cta.kicker'), title: text('cta.title'), description: text('cta.description'), button: text('cta.button') },
+  }
 })
 </script>
 

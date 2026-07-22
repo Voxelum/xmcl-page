@@ -205,3 +205,68 @@ features:
       title: Отчёты о сбоях и ошибках запуска
     ai-agent:
       title: Встроенный AI Agent
+sceneLanding:
+  linux:
+    eyebrow: XMCL / ВЕРСИЯ ДЛЯ LINUX
+    title: Minecraft-лаунчер, который ощущается родным в Linux.
+    lede: Современный лаунчер с открытым исходным кодом для Linux и Steam Deck. Выберите нужный пакет и запускайте любой мир одним понятным действием.
+    primaryAction: Скачать для Linux
+    secondaryAction: Посмотреть Linux-сценарий
+    heroNote: Нативные сборки Linux, ARM64 и поддержка Flathub
+    visualLabel: XMCL · рабочее пространство Linux
+    heroAlt: Главная страница XMCL с библиотекой экземпляров Minecraft
+    visualTag: Рабочее пространство для 4K
+    visualStatus: ГОТОВ К СЛЕДУЮЩЕМУ МИРУ
+    workflowKicker: LINUX-FIRST СЦЕНАРИЙ
+    workflowTitle: От установки пакета до игры без лишних шагов.
+    workflowDescription: XMCL объединяет предсказуемую установку, ясный интерфейс и независимые игровые окружения для пользователей Linux.
+    signals:
+      packages:
+        number: '05'
+        label: Пакеты Linux
+        description: 'DEB, RPM, AppImage, tar.xz и Flathub.'
+      scale:
+        number: '4K'
+        label: Чётко на любом экране
+        description: Библиотека остаётся удобной на больших дисплеях.
+      worlds:
+        number: '∞'
+        label: Отдельные миры
+        description: Версии, загрузчики и сохранения не смешиваются.
+    download:
+      kicker: СКАЧАТЬ ДЛЯ LINUX
+      title: Установите XMCL своим способом.
+      description: Выберите пакет для системы или используйте Flathub на Steam Deck.
+      link: Все релизы и сборки
+  creators:
+    eyebrow: XMCL / ДЛЯ СОЗДАТЕЛЕЙ МОДПАКОВ
+    title: Собирайте модпаки и проходите весь цикл релиза в одном месте.
+    lede: Ищите проекты, разрешайте зависимости, тестируйте сборку, анализируйте сбои и экспортируйте чистые паки для Modrinth или CurseForge.
+    primaryAction: Открыть сценарии для создателей
+    secondaryAction: Открыть каталог возможностей
+    heroNote: Modrinth, CurseForge и диагностика с помощью AI
+    visualLabel: XMCL · рабочее пространство создателя
+    heroAlt: Рынок модпаков XMCL с проектами Modrinth и CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: РАБОЧИЙ НАБОР СИНХРОНИЗИРОВАН
+    workflowKicker: ЦИКЛ СОЗДАТЕЛЯ
+    workflowTitle: От идеи до пака, который игроки действительно смогут запустить.
+    workflowDescription: XMCL рассматривает модпак как живую систему и помогает контролировать каталоги, изменения и зависимости.
+    signals:
+      sources:
+        number: '2×'
+        label: Источники проектов
+        description: Ищите Modrinth и CurseForge в одном рабочем пространстве.
+      export:
+        number: ОДИН КЛИК
+        label: Экспорт пака
+        description: Создайте распространяемый MR или CF пакет за несколько шагов.
+      ai:
+        number: AI
+        label: Помощь при сбоях
+        description: Превратите отчёт об ошибке в следующее действие.
+    cta:
+      kicker: РАБОЧИЙ СТОЛ ДЛЯ СЛЕДУЮЩЕГО РЕЛИЗА
+      title: Соберите. Выпустите. Поддерживайте пак здоровым.
+      description: XMCL даёт создателям быстрый локальный цикл поиска, тестирования, диагностики и экспорта.
+      button: Открыть все возможности

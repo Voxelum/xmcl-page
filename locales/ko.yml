@@ -194,3 +194,68 @@ features:
       title: 충돌 및 실행 실패 보고서
     ai-agent:
       title: 내장 AI Agent
+sceneLanding:
+  linux:
+    eyebrow: XMCL / LINUX EDITION
+    title: Linux에 자연스럽게 녹아드는 Minecraft 런처.
+    lede: Linux 데스크톱과 Steam Deck을 위한 세련된 오픈 소스 런처입니다. 배포판에 맞는 패키지를 선택하고 모든 월드를 한 번에 실행하세요.
+    primaryAction: Linux용 다운로드
+    secondaryAction: Linux 워크플로 보기
+    heroNote: 네이티브 Linux 빌드, ARM64, Flathub 지원
+    visualLabel: XMCL · Linux 작업 공간
+    heroAlt: Minecraft 인스턴스 라이브러리를 보여 주는 XMCL 홈 화면
+    visualTag: 4K 지원 작업 공간
+    visualStatus: 다음 월드 플레이 준비 완료
+    workflowKicker: LINUX FIRST WORKFLOW
+    workflowTitle: 패키지 설치부터 플레이까지 마찰 없이.
+    workflowDescription: XMCL은 Linux 플레이어에게 필요한 예측 가능한 설치, 선명한 인터페이스, 독립적인 게임 환경을 한곳에 제공합니다.
+    signals:
+      packages:
+        number: '05'
+        label: Linux 패키지
+        description: 'DEB, RPM, AppImage, tar.xz, Flathub 지원.'
+      scale:
+        number: '4K'
+        label: 어떤 크기에서도 선명하게
+        description: 큰 화면에서도 읽기 쉬운 라이브러리.
+      worlds:
+        number: '∞'
+        label: 분리된 월드
+        description: 버전, 로더, 저장 데이터를 서로 분리.
+    download:
+      kicker: LINUX용 다운로드
+      title: 원하는 방식으로 XMCL 설치.
+      description: 시스템에 맞는 패키지 또는 Steam Deck용 Flathub를 선택하세요.
+      link: 모든 릴리스와 빌드 보기
+  creators:
+    eyebrow: XMCL / 모드팩 제작자를 위해
+    title: 하나의 작업 흐름에서 모드팩 릴리스 전체를 완성하세요.
+    lede: 프로젝트 검색, 의존성 해결, 테스트, 충돌 분석, Modrinth 또는 CurseForge 팩 내보내기를 한곳에서 처리합니다.
+    primaryAction: 제작자 워크플로 탐색
+    secondaryAction: 기능 카탈로그 열기
+    heroNote: Modrinth, CurseForge, AI 지원 진단
+    visualLabel: XMCL · 제작자 작업 공간
+    heroAlt: Modrinth 및 CurseForge 프로젝트를 보여 주는 XMCL 모드팩 마켓
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: 작업 세트 동기화 완료
+    workflowKicker: 제작자 루프
+    workflowTitle: 아이디어에서 플레이어가 실행할 수 있는 팩까지 더 빠르게.
+    workflowDescription: XMCL은 모드팩을 살아 있는 시스템으로 다루며 카탈로그, 변경 사항, 의존성을 한눈에 파악하도록 돕습니다.
+    signals:
+      sources:
+        number: '2×'
+        label: 프로젝트 소스
+        description: 하나의 작업 공간에서 Modrinth와 CurseForge 검색.
+      export:
+        number: 원클릭
+        label: 팩 내보내기
+        description: 배포 가능한 MR 또는 CF 패키지를 몇 단계로 생성.
+      ai:
+        number: AI
+        label: 충돌 지원
+        description: 오류 보고서를 실행 가능한 다음 단계로 변환.
+    cta:
+      kicker: 다음 릴리스를 위한 작업대
+      title: 만들고. 배포하고. 건강하게 유지하세요.
+      description: XMCL은 발견, 테스트, 진단, 내보내기를 빠르게 반복하는 제작자용 로컬 루프를 제공합니다.
+      button: 모든 기능 보기

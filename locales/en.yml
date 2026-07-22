@@ -331,3 +331,134 @@ modernHome:
       description: Connect the account service that fits your setup, from Microsoft and offline profiles to third-party authentication services, without leaving the launcher.
       alt: XMCL account login dialog with multiple authentication services
       link: Explore account support
+sceneLanding:
+  linux:
+    eyebrow: XMCL / LINUX EDITION
+    title: The Minecraft launcher that feels native on Linux.
+    lede: A polished, open-source launcher for Linux desktops and Steam Deck. Pick the package your distribution expects, plug into a 4K display, and keep every world one clear launch away.
+    primaryAction: Download for Linux
+    secondaryAction: See the Linux workflow
+    heroNote: Native Linux builds, ARM64 options, and Flathub support
+    visualLabel: XMCL · Linux workspace
+    heroAlt: X Minecraft Launcher home screen showing a library of Minecraft instances
+    visualTag: 4K-ready workspace
+    visualStatus: READY FOR YOUR NEXT WORLD
+    workflowKicker: A LINUX-FIRST WORKFLOW
+    workflowTitle: From package manager to play session without the friction.
+    workflowDescription: 'XMCL keeps the things Linux players care about close: predictable installs, a sharp interface, and independent game environments that stay easy to move between.'
+    signals:
+      packages:
+        number: '05'
+        label: Linux packages
+        description: DEB, RPM, AppImage, tar.xz, and Flathub.
+      scale:
+        number: '4K'
+        label: Clear at any scale
+        description: A dense library that stays readable on a large display.
+      worlds:
+        number: '∞'
+        label: Separate worlds
+        description: Keep versions, loaders, and saves from colliding.
+    features:
+      install:
+        label: 01 / CHOOSE YOUR INSTALL
+        title: Use the format your distribution understands.
+        description: Download a native package for your desktop or use Flathub when you want a portable, Steam Deck-friendly route. XMCL also offers ARM64 builds where the hardware calls for them.
+        point1: DEB and RPM for mainstream Linux desktops
+        point2: AppImage and tar.xz for portable installs
+        point3: Flathub support for Steam Deck
+        alt: XMCL create instance dialog with Minecraft versions and mod loaders
+      organize:
+        label: 02 / KEEP IT ORGANIZED
+        title: Every instance gets its own clean runway.
+        description: Separate vanilla, modded, testing, and server setups without juggling folders by hand. Your versions, loaders, mods, saves, and settings stay together.
+        point1: Independent game data and launch settings
+        point2: Forge, Fabric, Quilt, NeoForge, and more
+        point3: Fast switching between worlds and experiments
+        alt: XMCL instance library with organized Minecraft game profiles
+      anywhere:
+        label: 03 / PLAY ANYWHERE
+        title: A desktop launcher that travels well.
+        description: Move from a Linux desktop to a Steam Deck session without giving up a clear library or a dependable setup. XMCL gives your collection room to grow without turning it into a spreadsheet.
+        point1: Flathub path designed for Steam Deck
+        point2: A focused interface on 4K displays
+        point3: Open source and built for Linux players
+        alt: X Minecraft Launcher home page with a large instance library
+    download:
+      kicker: DOWNLOAD FOR LINUX
+      title: Install XMCL your way.
+      description: Choose the package that belongs on your system, or use Flathub to bring XMCL to Steam Deck.
+      link: See every release and prebuild
+  creators:
+    eyebrow: XMCL / FOR MODPACK CREATORS
+    title: Build modpacks with the whole release loop in one place.
+    lede: Discover projects, resolve dependencies, test a working set, diagnose crashes, and export a clean Modrinth or CurseForge pack without leaving your launcher.
+    primaryAction: Explore creator workflows
+    secondaryAction: Open the feature catalog
+    heroNote: Modrinth and CurseForge workflows, with AI-assisted diagnosis
+    visualLabel: XMCL · creator workspace
+    heroAlt: X Minecraft Launcher modpack market with Modrinth and CurseForge projects
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: WORKING SET IN SYNC
+    workflowKicker: THE CREATOR LOOP
+    workflowTitle: A faster path from rough idea to a pack players can actually launch.
+    workflowDescription: 'XMCL treats a modpack as a living system. Explore both catalogs, make deliberate changes, and let the launcher surface the relationships that keep your release healthy.'
+    signals:
+      sources:
+        number: '2×'
+        label: Project sources
+        description: Search Modrinth and CurseForge from one workspace.
+      export:
+        number: '1-CLICK'
+        label: Pack export
+        description: Build a distributable MR or CF package in a few steps.
+      ai:
+        number: 'AI'
+        label: Crash assistance
+        description: Turn a failure report into a useful next action.
+    features:
+      discover:
+        label: 01 / DISCOVER
+        title: Search both ecosystems without splitting your focus.
+        description: Find projects across Modrinth and CurseForge with version, loader, environment, and category filters. XMCL maps projects across both sources so you can compare the same work with less guesswork.
+        point1: Modrinth and CurseForge search in one flow
+        point2: Minecraft version and loader compatibility filters
+        point3: Cross-platform project mapping
+        alt: XMCL online mod search with source and compatibility filters
+      build:
+        label: 02 / BUILD
+        title: Make dependencies part of the plan.
+        description: When a mod needs another mod, XMCL can install the dependency with it. When you enable or disable a project, the launcher helps keep the resulting set coherent instead of making you trace the graph manually.
+        point1: Automatic dependency installation
+        point2: Dependency-aware enable and disable actions
+        point3: Inspect versions, loaders, and project metadata
+        alt: XMCL mod detail view showing versions and dependencies
+      curate:
+        label: 03 / CURATE
+        title: Keep the working set lean and intentional.
+        description: Search, sort, group, update, and remove the mods that no longer belong. Custom groups make it easy to test optional content, compare profiles, or keep a release candidate focused.
+        point1: Automatic mod update checks
+        point2: Custom groups for optional and test content
+        point3: Find and remove unused mods
+        alt: XMCL installed mod management view with search and update controls
+      export:
+        label: 04 / EXPORT
+        title: Ship one pack in the format your players need.
+        description: Export a polished Modrinth or CurseForge modpack with the right metadata and selected files. The release step becomes a repeatable part of the workflow, not a last-minute archive operation.
+        point1: One-click Modrinth and CurseForge export
+        point2: Author, description, URL, and version metadata
+        point3: Choose exactly which files and assets ship
+        alt: XMCL modpack export screen for Modrinth and CurseForge formats
+      diagnose:
+        label: 05 / DIAGNOSE
+        title: Let AI help turn crash reports into fixes.
+        description: When a test launch fails, XMCL puts logs, crash reports, and an AI agent in the same place. The agent can inspect the instance context and explain an actionable next step.
+        point1: Read launch logs and crash reports in context
+        point2: AI-assisted investigation of instance files
+        point3: Resolve mod conflicts before release
+        alt: XMCL AI agent investigating a Minecraft launch failure
+    cta:
+      kicker: A WORKBENCH FOR YOUR NEXT RELEASE
+      title: Make the pack. Ship the pack. Keep it healthy.
+      description: XMCL gives creators a fast local loop for discovery, testing, diagnosis, and export across the two ecosystems your players already use.
+      button: Explore every feature

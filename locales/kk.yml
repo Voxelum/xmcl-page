@@ -204,3 +204,42 @@ features:
       title: Қате және іске қосу сәтсіздігі есептері
     ai-agent:
       title: Кірістірілген AI Agent
+sceneLanding:
+  linux:
+    eyebrow: XMCL / LINUX НҰСҚАСЫ
+    title: Linux жүйесінде табиғи сезілетін Minecraft лаунчері.
+    lede: Linux жұмыс үстелдері мен Steam Deck үшін жасалған ашық бастапқы лаунчер. Қажетті пакетті таңдап, кез келген әлемді бірден іске қосыңыз.
+    primaryAction: Linux үшін жүктеу
+    secondaryAction: Linux жұмыс процесін көру
+    heroNote: Linux нативті жинақтары, ARM64 және Flathub қолдауы
+    visualLabel: XMCL · Linux жұмыс кеңістігі
+    heroAlt: Minecraft инстанстары кітапханасы бар XMCL басты беті
+    visualTag: 4K дайын жұмыс кеңістігі
+    visualStatus: КЕЛЕСІ ӘЛЕМГЕ ДАЙЫН
+    workflowKicker: LINUX-FIRST ЖҰМЫС ПРОЦЕСІ
+    workflowTitle: Пакет менеджерінен ойынға дейін қиындықсыз.
+    workflowDescription: XMCL сенімді орнатуды, анық интерфейсті және Linux ойыншыларына арналған тәуелсіз орталарды біріктіреді.
+    download:
+      kicker: LINUX ҮШІН ЖҮКТЕУ
+      title: XMCL-ді өз жолыңызбен орнатыңыз.
+      description: Жүйеңізге сай пакетті немесе Steam Deck үшін Flathub-ты таңдаңыз.
+      link: Барлық релиздер мен жинақтарды көру
+  creators:
+    eyebrow: XMCL / МОДПАК ЖАСАУШЫЛАРҒА
+    title: Модпактың бүкіл релиз циклін бір жерде жасаңыз.
+    lede: Жобаларды тауып, тәуелділіктерді шешіп, сынап, қателерді талдап, Modrinth немесе CurseForge пакетін экспорттаңыз.
+    primaryAction: Жасаушы жұмыс процестерін көру
+    secondaryAction: Мүмкіндіктер каталогын ашу
+    heroNote: Modrinth, CurseForge және AI көмегімен диагностика
+    visualLabel: XMCL · жасаушының жұмыс кеңістігі
+    heroAlt: Modrinth және CurseForge жобалары бар XMCL модпак нарығы
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: ЖҰМЫС ЖИНАҒЫ СИНХРОНДАЛДЫ
+    workflowKicker: ЖАСАУШЫ ЦИКЛІ
+    workflowTitle: Идеядан ойыншы іске қоса алатын пакетке дейін жылдам.
+    workflowDescription: XMCL модпакты тірі жүйе ретінде қарастырып, каталогтарды, өзгерістерді және тәуелділіктерді бақылауға көмектеседі.
+    cta:
+      kicker: КЕЛЕСІ РЕЛИЗГЕ АРНАЛҒАН ЖҰМЫС ҮСТЕЛІ
+      title: Жасаңыз. Жариялаңыз. Пакетті сау күйде ұстаңыз.
+      description: XMCL жасаушыларға іздеу, сынау, диагностика және экспорт үшін жылдам жергілікті цикл береді.
+      button: Барлық мүмкіндіктерді көру

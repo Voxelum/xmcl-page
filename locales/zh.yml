@@ -343,3 +343,134 @@ modernHome:
       description: 在启动器中连接适合你的账号服务，包括 Microsoft、离线账号和第三方认证服务。
       alt: XMCL 登录对话框，展示多种认证服务
       link: 查看账号支持
+sceneLanding:
+  linux:
+    eyebrow: XMCL / LINUX EDITION
+    title: Linux 上体验最好的 Minecraft 启动器。
+    lede: 为 Linux 桌面和 Steam Deck 打造的开源启动器。选择适合发行版的安装包，连接 4K 屏幕，让每个世界都能一键启动。
+    primaryAction: 下载 Linux 版
+    secondaryAction: 查看 Linux 工作流
+    heroNote: 原生 Linux 构建、ARM64 版本和 Flathub 支持
+    visualLabel: XMCL · Linux 工作区
+    heroAlt: X Minecraft Launcher 实例库主页
+    visualTag: 4K 就绪工作区
+    visualStatus: 准备进入下一个世界
+    workflowKicker: LINUX 优先的工作流
+    workflowTitle: 从安装包到游戏启动，全程顺畅无阻。
+    workflowDescription: XMCL 将 Linux 玩家在意的体验放在一起：可靠的安装方式、清晰的界面，以及彼此独立、方便切换的游戏环境。
+    signals:
+      packages:
+        number: '05'
+        label: Linux 安装包
+        description: DEB、RPM、AppImage、tar.xz 和 Flathub。
+      scale:
+        number: '4K'
+        label: 任意尺寸都清晰
+        description: 在大屏幕上也能轻松浏览实例库。
+      worlds:
+        number: '∞'
+        label: 世界彼此独立
+        description: 版本、加载器和存档不会互相干扰。
+    features:
+      install:
+        label: 01 / 选择安装方式
+        title: 使用发行版熟悉的格式。
+        description: 为桌面下载原生安装包，或通过 Flathub 以更便携的方式在 Steam Deck 上使用 XMCL。
+        point1: 主流 Linux 桌面的 DEB 和 RPM
+        point2: 便携安装的 AppImage 和 tar.xz
+        point3: 面向 Steam Deck 的 Flathub 支持
+        alt: XMCL 创建实例对话框
+      organize:
+        label: 02 / 保持整洁
+        title: 每个实例都有独立的启动空间。
+        description: 无需手动整理文件夹，即可分开管理原版、模组、测试和服务器环境。
+        point1: 独立的游戏数据和启动设置
+        point2: 支持 Forge、Fabric、Quilt、NeoForge 等加载器
+        point3: 快速切换不同世界和实验环境
+        alt: XMCL 整理后的 Minecraft 实例库
+      anywhere:
+        label: 03 / 随时游玩
+        title: 从桌面到 Steam Deck 都好用。
+        description: 在 Linux 桌面和 Steam Deck 之间切换时，依然保留清晰的实例库和可靠的游戏配置。
+        point1: 为 Steam Deck 准备的 Flathub 路径
+        point2: 适合 4K 屏幕的清晰界面
+        point3: 面向 Linux 玩家打造的开源项目
+        alt: 展示大型实例库的 XMCL 主页
+    download:
+      kicker: 下载 LINUX 版
+      title: 按你的方式安装 XMCL。
+      description: 选择适合系统的安装包，也可以通过 Flathub 将 XMCL 带到 Steam Deck。
+      link: 查看所有发行版和预构建版本
+  creators:
+    eyebrow: XMCL / 整合包制作者
+    title: 在一个工作流中完成整合包的构建与发布。
+    lede: 搜索项目、处理依赖、测试配置、分析崩溃，并直接导出 Modrinth 或 CurseForge 整合包。
+    primaryAction: 探索制作者工作流
+    secondaryAction: 打开功能目录
+    heroNote: 支持 Modrinth、CurseForge 和 AI 辅助诊断
+    visualLabel: XMCL · 制作者工作区
+    heroAlt: 展示 Modrinth 与 CurseForge 项目的 XMCL 整合包市场
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: 工作配置已同步
+    workflowKicker: 制作者工作循环
+    workflowTitle: 从想法到玩家真正能启动的整合包，路径更短。
+    workflowDescription: XMCL 将整合包视为一个持续演进的系统：浏览两个平台，进行有把握的修改，并让启动器帮助你维护发布质量。
+    signals:
+      sources:
+        number: '2×'
+        label: 项目来源
+        description: 在一个工作区搜索 Modrinth 和 CurseForge。
+      export:
+        number: 一键
+        label: 整合包导出
+        description: 用几步构建可发布的 MR 或 CF 整合包。
+      ai:
+        number: AI
+        label: 崩溃辅助
+        description: 将失败报告转化为可执行的下一步操作。
+    features:
+      discover:
+        label: 01 / 发现项目
+        title: 不切换平台，同时搜索两个生态。
+        description: 按版本、加载器、环境和分类筛选 Modrinth 与 CurseForge 项目，并通过双向映射比较同一个项目。
+        point1: 一个流程搜索 Modrinth 和 CurseForge
+        point2: Minecraft 版本与加载器兼容性筛选
+        point3: 跨平台项目双向映射
+        alt: 带来源和兼容性筛选的 XMCL 在线模组搜索
+      build:
+        label: 02 / 构建配置
+        title: 让依赖成为构建计划的一部分。
+        description: 安装模组时自动处理依赖，启用或禁用项目时也会考虑相关关系，避免手动追踪依赖图。
+        point1: 自动安装依赖
+        point2: 启用和禁用时感知依赖关系
+        point3: 查看版本、加载器和项目元数据
+        alt: 展示版本和依赖关系的 XMCL 模组详情
+      curate:
+        label: 03 / 整理内容
+        title: 保持工作集精简且有目的。
+        description: 搜索、排序、分组、更新并移除不再需要的模组，为可选内容和候选版本建立清晰的测试环境。
+        point1: 自动检查模组更新
+        point2: 为可选和测试内容建立自定义分组
+        point3: 找出并移除未使用的模组
+        alt: 带搜索和更新控制的 XMCL 已安装模组管理
+      export:
+        label: 04 / 导出发布
+        title: 按玩家需要的格式发布整合包。
+        description: 导出带有正确元数据和文件选择的 Modrinth 或 CurseForge 整合包，让发布成为可重复的工作步骤。
+        point1: 一键导出 Modrinth 和 CurseForge 整合包
+        point2: 作者、描述、网址和版本元数据
+        point3: 精确选择需要发布的文件和资源
+        alt: XMCL Modrinth 与 CurseForge 整合包导出页面
+      diagnose:
+        label: 05 / 分析问题
+        title: 让 AI 帮你把崩溃报告变成修复方案。
+        description: 测试启动失败时，在同一个地方查看日志、崩溃报告并使用 AI Agent 分析实例环境。
+        point1: 在上下文中查看启动日志和崩溃报告
+        point2: AI 辅助检查实例文件
+        point3: 在发布前定位模组冲突
+        alt: XMCL AI Agent 分析 Minecraft 启动失败
+    cta:
+      kicker: 为下一次发布准备的工作台
+      title: 构建整合包，发布整合包，让它一直保持健康。
+      description: XMCL 为制作者提供从发现、测试、诊断到导出的快速本地循环，覆盖玩家常用的两个模组生态。
+      button: 探索全部功能

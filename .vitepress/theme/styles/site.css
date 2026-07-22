@@ -319,6 +319,10 @@ body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDocFooter {
   border-top: 1px solid var(--xmcl-line);
 }
 
+body .VPFooter {
+  display: none !important;
+}
+
 @media (max-width: 959px) {
   body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebar {
     background: var(--xmcl-paper) !important;

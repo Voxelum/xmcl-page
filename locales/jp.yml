@@ -236,3 +236,42 @@ features:
       title: 内蔵 AI Agent
       benefit: Agent に仮想ファイルシステムを調べさせ、実行可能な解決策を説明させます。
       capabilities: インスタンスのファイルとレポートを読む|結論の前に調査|可能な場合は解決策を適用
+sceneLanding:
+  linux:
+    eyebrow: XMCL / LINUX EDITION
+    title: Linux でネイティブのように使える Minecraft ランチャー。
+    lede: Linux デスクトップと Steam Deck のための洗練されたオープンソースランチャー。環境に合うパッケージを選び、すべてのワールドをすぐに起動できます。
+    primaryAction: Linux 版をダウンロード
+    secondaryAction: Linux のワークフローを見る
+    heroNote: Linux ネイティブビルド、ARM64、Flathub に対応
+    visualLabel: XMCL · Linux ワークスペース
+    heroAlt: Minecraft インスタンスライブラリを表示する XMCL ホーム画面
+    visualTag: 4K 対応ワークスペース
+    visualStatus: 次のワールドへ準備完了
+    workflowKicker: LINUX FIRST WORKFLOW
+    workflowTitle: パッケージの導入からプレイまで、迷いなく。
+    workflowDescription: XMCL は Linux ユーザーが重視する確実なインストール、見やすい画面、独立したゲーム環境をまとめて提供します。
+    signals:
+      packages: { number: '05', label: Linux パッケージ, description: DEB、RPM、AppImage、tar.xz、Flathub。 }
+      scale: { number: '4K', label: どのサイズでも鮮明, description: 大画面でも見やすいインスタンスライブラリ。 }
+      worlds: { number: '∞', label: 独立したワールド, description: バージョン、ローダー、セーブデータを分離。 }
+    download: { kicker: LINUX 版をダウンロード, title: XMCL を好きな方法でインストール。, description: システムに合うパッケージ、または Steam Deck 向けの Flathub を選択してください。, link: すべてのリリースとビルドを見る }
+  creators:
+    eyebrow: XMCL / MODPACK CREATOR 向け
+    title: Modpack のリリースサイクルを一つの場所で構築。
+    lede: プロジェクトの検索、依存関係の解決、テスト、クラッシュ分析、Modrinth または CurseForge への書き出しを行えます。
+    primaryAction: Creator ワークフローを見る
+    secondaryAction: 機能カタログを開く
+    heroNote: Modrinth、CurseForge、AI 支援診断に対応
+    visualLabel: XMCL · creator ワークスペース
+    heroAlt: Modrinth と CurseForge のプロジェクトを表示する XMCL modpack マーケット
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: 作業セットを同期中
+    workflowKicker: CREATOR LOOP
+    workflowTitle: アイデアから、プレイヤーが起動できる pack までを短く。
+    workflowDescription: XMCL は modpack を変化するシステムとして扱い、カタログ、変更、依存関係を把握しやすくします。
+    signals:
+      sources: { number: '2×', label: プロジェクトソース, description: Modrinth と CurseForge を一つの画面で検索。 }
+      export: { number: ワンクリック, label: Pack 書き出し, description: 配布可能な MR または CF パッケージを数ステップで作成。 }
+      ai: { number: AI, label: クラッシュ支援, description: エラーレポートを次のアクションに変換。 }
+    cta: { kicker: 次のリリースのためのワークベンチ, title: 作る。届ける。健全な pack を保つ。, description: XMCL は発見、テスト、診断、書き出しを素早く行える creator 向けのローカルループを提供します。, button: すべての機能を見る }

@@ -204,3 +204,42 @@ features:
       title: Звіти про збої та помилки запуску
     ai-agent:
       title: Вбудований AI Agent
+sceneLanding:
+  linux:
+    eyebrow: XMCL / ВЕРСІЯ ДЛЯ LINUX
+    title: Minecraft-лаунчер, який відчувається рідним у Linux.
+    lede: Сучасний лаунчер з відкритим кодом для Linux і Steam Deck. Оберіть потрібний пакет і запускайте кожен світ одним зрозумілим натисканням.
+    primaryAction: Завантажити для Linux
+    secondaryAction: Переглянути Linux-процес
+    heroNote: Нативні збірки Linux, ARM64 і підтримка Flathub
+    visualLabel: XMCL · робочий простір Linux
+    heroAlt: Головна сторінка XMCL з бібліотекою інстансів Minecraft
+    visualTag: Робочий простір для 4K
+    visualStatus: ГОТОВО ДО НАСТУПНОГО СВІТУ
+    workflowKicker: LINUX-FIRST ПРОЦЕС
+    workflowTitle: Від пакета до гри без зайвих кроків.
+    workflowDescription: XMCL поєднує надійне встановлення, зрозумілий інтерфейс і незалежні ігрові середовища для користувачів Linux.
+    download:
+      kicker: ЗАВАНТАЖИТИ ДЛЯ LINUX
+      title: Встановіть XMCL своїм способом.
+      description: Оберіть пакет для системи або використовуйте Flathub на Steam Deck.
+      link: Усі релізи та збірки
+  creators:
+    eyebrow: XMCL / ДЛЯ ТВОРЦІВ МОДПАКІВ
+    title: Створюйте модпаки та проходьте весь цикл релізу в одному місці.
+    lede: Знаходьте проєкти, розв’язуйте залежності, тестуйте, аналізуйте збої та експортуйте пакети Modrinth або CurseForge.
+    primaryAction: Відкрити процеси творця
+    secondaryAction: Відкрити каталог функцій
+    heroNote: Modrinth, CurseForge і діагностика за допомогою AI
+    visualLabel: XMCL · робочий простір творця
+    heroAlt: Ринок модпаків XMCL з проєктами Modrinth і CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: РОБОЧИЙ НАБІР СИНХРОНІЗОВАНО
+    workflowKicker: ЦИКЛ ТВОРЦЯ
+    workflowTitle: Від ідеї до пакета, який гравці справді зможуть запустити.
+    workflowDescription: XMCL розглядає модпак як живу систему та допомагає контролювати каталоги, зміни й залежності.
+    cta:
+      kicker: РОБОЧИЙ СТІЛ ДЛЯ НАСТУПНОГО РЕЛІЗУ
+      title: Створіть. Випустіть. Підтримуйте пак здоровим.
+      description: XMCL дає творцям швидкий локальний цикл пошуку, тестування, діагностики та експорту.
+      button: Відкрити всі можливості

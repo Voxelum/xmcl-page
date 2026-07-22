@@ -186,3 +186,42 @@ features:
       title: تقارير التعطل وفشل التشغيل
     ai-agent:
       title: وكيل AI مدمج
+sceneLanding:
+  linux:
+    eyebrow: XMCL / إصدار LINUX
+    title: مشغل Minecraft يبدو أصلياً على Linux.
+    lede: مشغل مفتوح المصدر لأجهزة Linux المكتبية وSteam Deck. اختر الحزمة المناسبة وابدأ أي عالم بنقرة واضحة.
+    primaryAction: تنزيل إصدار Linux
+    secondaryAction: عرض سير عمل Linux
+    heroNote: إصدارات Linux أصلية ودعم ARM64 وFlathub
+    visualLabel: XMCL · مساحة عمل Linux
+    heroAlt: الصفحة الرئيسية لـ XMCL مع مكتبة عوالم Minecraft
+    visualTag: مساحة عمل جاهزة لـ 4K
+    visualStatus: جاهز لعالمك التالي
+    workflowKicker: سير عمل LINUX أولاً
+    workflowTitle: من الحزمة إلى اللعب بدون تعقيد.
+    workflowDescription: يجمع XMCL التثبيت الموثوق والواجهة الواضحة وبيئات اللعب المستقلة للاعبي Linux.
+    download:
+      kicker: تنزيل لـ LINUX
+      title: ثبّت XMCL بطريقتك.
+      description: اختر الحزمة المناسبة لنظامك أو استخدم Flathub على Steam Deck.
+      link: عرض كل الإصدارات والبنيات
+  creators:
+    eyebrow: XMCL / لمنشئي حزم التعديلات
+    title: ابنِ حزم Minecraft مع دورة الإصدار كاملة في مكان واحد.
+    lede: اكتشف المشاريع، وحل التبعيات، واختبر الإعدادات، وحلل الأعطال، وصدّر حزم Modrinth أو CurseForge.
+    primaryAction: استكشف سير عمل المنشئين
+    secondaryAction: افتح كتالوج الميزات
+    heroNote: دعم Modrinth وCurseForge والتشخيص بمساعدة AI
+    visualLabel: XMCL · مساحة عمل المنشئ
+    heroAlt: سوق حزم XMCL مع مشاريع Modrinth وCurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: مجموعة العمل متزامنة
+    workflowKicker: دورة المنشئ
+    workflowTitle: من الفكرة إلى حزمة يستطيع اللاعبون تشغيلها فعلاً.
+    workflowDescription: يتعامل XMCL مع حزمة التعديلات كنظام حي ويساعدك على متابعة المشاريع والتغييرات والتبعيات.
+    cta:
+      kicker: منصة إصدارك التالي
+      title: ابنِ. انشر. حافظ على سلامة الحزمة.
+      description: يمنح XMCL المنشئين دورة محلية سريعة للاكتشاف والاختبار والتشخيص والتصدير.
+      button: استكشف كل الميزات

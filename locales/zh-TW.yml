@@ -215,3 +215,68 @@ features:
       title: 當機與啟動失敗報告
     ai-agent:
       title: 內建 AI Agent
+sceneLanding:
+  linux:
+    eyebrow: XMCL / LINUX EDITION
+    title: Linux 上體驗最好的 Minecraft 啟動器。
+    lede: 為 Linux 桌面與 Steam Deck 打造的開源啟動器。選擇適合發行版的安裝包，連接 4K 螢幕，讓每個世界都能一鍵啟動。
+    primaryAction: 下載 Linux 版
+    secondaryAction: 查看 Linux 工作流程
+    heroNote: 原生 Linux 建置、ARM64 版本與 Flathub 支援
+    visualLabel: XMCL · Linux 工作區
+    heroAlt: X Minecraft Launcher 實例庫首頁
+    visualTag: 4K 就緒工作區
+    visualStatus: 準備進入下一個世界
+    workflowKicker: LINUX 優先的工作流程
+    workflowTitle: 從安裝包到遊戲啟動，全程順暢無阻。
+    workflowDescription: XMCL 將 Linux 玩家在意的體驗放在一起：可靠的安裝方式、清晰的介面，以及彼此獨立、方便切換的遊戲環境。
+    signals:
+      packages:
+        number: '05'
+        label: Linux 安裝包
+        description: DEB、RPM、AppImage、tar.xz 與 Flathub。
+      scale:
+        number: '4K'
+        label: 任意尺寸都清晰
+        description: 在大螢幕上也能輕鬆瀏覽實例庫。
+      worlds:
+        number: '∞'
+        label: 世界彼此獨立
+        description: 版本、載入器與存檔不會互相干擾。
+    download:
+      kicker: 下載 LINUX 版
+      title: 按你的方式安裝 XMCL。
+      description: 選擇適合系統的安裝包，也可以透過 Flathub 將 XMCL 帶到 Steam Deck。
+      link: 查看所有發行版與預先建置版本
+  creators:
+    eyebrow: XMCL / 整合包製作者
+    title: 在一個工作流程中完成整合包的建置與發布。
+    lede: 搜尋專案、處理依賴、測試設定、分析崩潰，並直接匯出 Modrinth 或 CurseForge 整合包。
+    primaryAction: 探索製作者工作流程
+    secondaryAction: 開啟功能目錄
+    heroNote: 支援 Modrinth、CurseForge 與 AI 輔助診斷
+    visualLabel: XMCL · 製作者工作區
+    heroAlt: 展示 Modrinth 與 CurseForge 專案的 XMCL 整合包市場
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: 工作設定已同步
+    workflowKicker: 製作者工作循環
+    workflowTitle: 從想法到玩家真正能啟動的整合包，路徑更短。
+    workflowDescription: XMCL 將整合包視為持續演進的系統：瀏覽兩個平台，進行有把握的修改，並讓啟動器幫助你維持發布品質。
+    signals:
+      sources:
+        number: '2×'
+        label: 專案來源
+        description: 在一個工作區搜尋 Modrinth 與 CurseForge。
+      export:
+        number: 一鍵
+        label: 整合包匯出
+        description: 用幾步建立可發布的 MR 或 CF 整合包。
+      ai:
+        number: AI
+        label: 崩潰輔助
+        description: 將失敗報告轉化為可執行的下一步操作。
+    cta:
+      kicker: 為下一次發布準備的工作台
+      title: 建立整合包、發布整合包，讓它一直保持健康。
+      description: XMCL 為製作者提供從發現、測試、診斷到匯出的快速本地循環，覆蓋玩家常用的兩個模組生態。
+      button: 探索全部功能

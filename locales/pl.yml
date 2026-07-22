@@ -202,3 +202,42 @@ features:
       title: Raporty awarii i błędów uruchamiania
     ai-agent:
       title: Wbudowany agent AI
+sceneLanding:
+  linux:
+    eyebrow: XMCL / EDYCJA LINUX
+    title: Minecraftowy launcher, który czuje się natywnie na Linuxie.
+    lede: Dopieszczony launcher open source dla komputerów z Linuxem i Steam Decka. Wybierz właściwy pakiet i uruchamiaj każdy świat jednym kliknięciem.
+    primaryAction: Pobierz dla Linuxa
+    secondaryAction: Zobacz workflow Linuxa
+    heroNote: Natywne buildy Linux, ARM64 i obsługa Flathub
+    visualLabel: XMCL · przestrzeń Linux
+    heroAlt: Strona główna XMCL z biblioteką instancji Minecraft
+    visualTag: Przestrzeń gotowa na 4K
+    visualStatus: GOTOWE NA TWÓJ NASTĘPNY ŚWIAT
+    workflowKicker: WORKFLOW LINUX-FIRST
+    workflowTitle: Od pakietu do gry bez zbędnych przeszkód.
+    workflowDescription: XMCL łączy przewidywalną instalację, przejrzysty interfejs i niezależne środowiska gry dla graczy Linux.
+    download:
+      kicker: POBIERZ DLA LINUXA
+      title: Zainstaluj XMCL po swojemu.
+      description: Wybierz pakiet dla swojego systemu albo użyj Flathub na Steam Decku.
+      link: Zobacz wszystkie wydania i buildy
+  creators:
+    eyebrow: XMCL / DLA TWÓRCÓW MODPACKÓW
+    title: Twórz modpacki z całym cyklem wydawniczym w jednym miejscu.
+    lede: Odkrywaj projekty, rozwiązuj zależności, testuj, analizuj crashe i eksportuj czyste paczki Modrinth lub CurseForge.
+    primaryAction: Odkryj workflow twórcy
+    secondaryAction: Otwórz katalog funkcji
+    heroNote: Modrinth, CurseForge i diagnostyka wspomagana przez AI
+    visualLabel: XMCL · przestrzeń twórcy
+    heroAlt: Rynek modpacków XMCL z projektami Modrinth i CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: ZESTAW ROBOCZY ZSYNCHRONIZOWANY
+    workflowKicker: CYKL TWÓRCY
+    workflowTitle: Od pomysłu do paczki, którą gracze naprawdę uruchomią.
+    workflowDescription: XMCL traktuje modpack jak żywy system i pomaga kontrolować katalogi, zmiany oraz zależności.
+    cta:
+      kicker: WARSZTAT DLA TWOJEGO NASTĘPNEGO WYDANIA
+      title: Zbuduj. Wydaj. Utrzymuj paczkę w dobrej kondycji.
+      description: XMCL daje twórcom szybki lokalny cykl odkrywania, testowania, diagnozowania i eksportu.
+      button: Odkryj wszystkie funkcje
