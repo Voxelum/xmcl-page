@@ -1,23 +1,18 @@
 <template>
   <section class="account-panel" aria-labelledby="account-title">
-    <template v-if="callbackOnly">
-      <p v-if="processing" class="notice">{{ text.completing }}</p>
-      <p v-else-if="callbackError" class="notice notice--error">{{ callbackError }}</p>
-    </template>
-    <template v-else>
-      <header class="account-hero">
-        <span class="account-mark" aria-hidden="true">X</span>
-        <div>
-          <p class="eyebrow">XMCL ACCOUNT</p>
-          <h2 id="account-title">{{ text.title }}</h2>
-          <p>{{ text.description }}</p>
-        </div>
-      </header>
+    <header class="account-hero">
+      <span class="account-mark" aria-hidden="true">X</span>
+      <div>
+        <p class="eyebrow">XMCL ACCOUNT</p>
+        <h2 id="account-title">{{ text.title }}</h2>
+        <p>{{ text.description }}</p>
+      </div>
+    </header>
 
-      <p v-if="accountSession.loading" class="notice">{{ text.loading }}</p>
-      <p v-else-if="accountSession.error" class="notice notice--error">{{ accountSession.error }}</p>
+    <p v-if="accountSession.loading" class="notice">{{ text.loading }}</p>
+    <p v-else-if="accountSession.error" class="notice notice--error">{{ accountSession.error }}</p>
 
-      <template v-else-if="accountSession.account">
+    <template v-else-if="accountSession.account">
         <section class="profile-summary">
           <div class="account-avatar">{{ accountInitial }}</div>
           <div class="profile-copy">
@@ -70,9 +65,9 @@
           </ul>
           <p v-if="managementError" class="notice notice--error">{{ managementError }}</p>
         </section>
-      </template>
+    </template>
 
-      <section v-else class="sign-in-panel">
+    <section v-else class="sign-in-panel">
         <div>
           <p class="eyebrow">{{ text.signIn }}</p>
           <h3>{{ text.signInTitle }}</h3>
@@ -91,8 +86,7 @@
           </button>
         </div>
         <p v-if="signInError" class="notice notice--error">{{ signInError }}</p>
-      </section>
-    </template>
+    </section>
   </section>
 </template>
 
@@ -101,7 +95,6 @@ import { computed, onMounted, ref } from 'vue'
 import {
   accountSession,
   beginWebSignIn,
-  completeWebSignIn,
   initializeAccountSession,
   signOut,
   unlinkIdentity,
@@ -110,10 +103,8 @@ import {
 
 const props = withDefaults(defineProps<{
   locale?: 'en' | 'zh' | 'zh-TW'
-  callbackOnly?: boolean
 }>(), {
   locale: 'en',
-  callbackOnly: false,
 })
 
 const text = {
@@ -194,8 +185,6 @@ const text = {
 const providers: OAuthProvider[] = ['microsoft', 'modrinth', 'google', 'discord']
 const signingIn = ref<OAuthProvider>()
 const signInError = ref<string>()
-const processing = ref(false)
-const callbackError = ref<string>()
 const disconnecting = ref<OAuthProvider>()
 const managementError = ref<string>()
 const displayName = computed(() =>
@@ -204,18 +193,6 @@ const displayName = computed(() =>
 const accountInitial = computed(() => displayName.value.slice(0, 1).toUpperCase())
 
 onMounted(async () => {
-  if (props.callbackOnly) {
-    processing.value = true
-    try {
-      const returnUrl = await completeWebSignIn(window.location.search)
-      window.location.replace(safeReturnUrl(returnUrl))
-    } catch (error) {
-      callbackError.value = error instanceof Error ? error.message : 'Unable to complete sign-in.'
-    } finally {
-      processing.value = false
-    }
-    return
-  }
   await initializeAccountSession()
 })
 
@@ -256,12 +233,6 @@ function providerLabel(provider: OAuthProvider) {
   return provider.charAt(0).toUpperCase() + provider.slice(1)
 }
 
-function safeReturnUrl(value: string) {
-  const url = new URL(value, window.location.origin)
-  return url.origin === window.location.origin
-    ? `${url.pathname}${url.search}${url.hash}`
-    : '/en/account/'
-}
 </script>
 
 <style scoped>
