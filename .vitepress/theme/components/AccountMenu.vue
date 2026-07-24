@@ -83,23 +83,23 @@ function providerLabel(provider: OAuthProvider) {
 
 .account-menu {
   align-items: center;
-  background: color-mix(in srgb, var(--vp-c-bg-soft) 70%, transparent);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.625rem;
   color: var(--vp-c-text-2);
   display: inline-flex;
-  font-size: 12px;
-  font-weight: 700;
-  gap: 10px;
-  height: 34px;
-  letter-spacing: 0.04em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  height: 2.25rem;
+  line-height: 1;
   max-width: 180px;
-  margin-left: 16px;
+  margin-left: 4px;
   overflow: hidden;
-  padding: 0 10px;
+  padding: 0 0.75rem;
   text-decoration: none;
   text-overflow: ellipsis;
-  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
 }
 
@@ -121,19 +121,24 @@ button.account-menu {
 }
 
 .account-menu:hover {
-  background: var(--vp-c-bg-elv);
-  border-color: var(--vp-c-text-1);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: transparent;
   color: var(--vp-c-text-1);
 }
 
+html:not(.dark) .account-menu:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .account-provider-menu {
-  background: var(--vp-c-bg-elv);
+  background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  box-shadow: 0 10px 24px color-mix(in srgb, var(--vp-c-text-1) 18%, transparent);
+  border-radius: 0.875rem;
+  box-shadow: 0 8px 20px rgba(23, 33, 31, 0.12);
+  backdrop-filter: blur(16px);
   display: grid;
   gap: 4px;
-  padding: 8px;
+  padding: 0.5rem;
   position: absolute;
   right: 0;
   top: calc(100% + 8px);
@@ -151,18 +156,19 @@ button.account-menu {
 .account-provider-menu button {
   background: transparent;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0.5rem;
   color: var(--vp-c-text-1);
   cursor: pointer;
   font: inherit;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 0.875rem;
+  font-weight: 500;
   padding: 8px;
   text-align: left;
 }
 
 .account-provider-menu button:hover:not(:disabled) {
-  background: var(--vp-c-bg-soft);
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--vp-c-brand-1);
 }
 
 .account-provider-menu button:disabled {
@@ -178,9 +184,9 @@ button.account-menu {
 @media (max-width: 959px) {
   .account-menu {
     justify-content: center;
-    margin-left: 8px;
+    margin-left: 4px;
     padding: 0;
-    width: 34px;
+    width: 2.25rem;
   }
 
   .account-menu span {

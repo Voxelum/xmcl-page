@@ -3,17 +3,137 @@
   <head>
     <meta charset="utf-8">
     <meta name="robots" content="noindex">
-    <title>Completing XMCL sign-in</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XMCL Account</title>
     <style>
-      body { align-items: center; color: #213547; display: flex; font: 16px system-ui, sans-serif; justify-content: center; margin: 0; min-height: 100vh; }
-      main { max-width: 28rem; padding: 2rem; text-align: center; }
-      .error { color: #b42318; }
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      body {
+        align-items: center;
+        background: #f8faf9;
+        color: #1f2933;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+      }
+      main {
+        box-sizing: border-box;
+        max-width: 32rem;
+        padding: 1.5rem;
+        width: 100%;
+      }
+      .card {
+        background: #ffffff;
+        border: 1px solid #d9e1dd;
+        border-radius: 1rem;
+        box-shadow: 0 12px 30px rgba(23, 33, 31, 0.08);
+        padding: 2.5rem;
+      }
+      .brand {
+        align-items: center;
+        color: #3f4d46;
+        display: flex;
+        font-size: 0.75rem;
+        font-weight: 700;
+        gap: 0.6rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .brand-mark {
+        align-items: center;
+        background: #62c995;
+        border-radius: 0.45rem;
+        color: #173121;
+        display: inline-flex;
+        font-size: 1rem;
+        font-weight: 800;
+        height: 2rem;
+        justify-content: center;
+        width: 2rem;
+      }
+      h1 {
+        font-size: clamp(1.75rem, 5vw, 2.35rem);
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+        margin: 2rem 0 0.75rem;
+      }
+      p {
+        color: #627168;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .status {
+        align-items: center;
+        background: #f0f5f2;
+        border: 1px solid #d9e8df;
+        border-radius: 0.75rem;
+        display: flex;
+        gap: 0.75rem;
+        margin-top: 2rem;
+        padding: 1rem;
+      }
+      .spinner {
+        animation: spin 0.9s linear infinite;
+        border: 2px solid #b9d2c2;
+        border-radius: 50%;
+        border-top-color: #2f855a;
+        flex: 0 0 auto;
+        height: 1rem;
+        width: 1rem;
+      }
+      .status.error {
+        background: #fdf1f1;
+        border-color: #f5cccc;
+      }
+      .status.error p { color: #9b1c1c; }
+      .status.error .spinner {
+        animation: none;
+        border-color: #d14343;
+        position: relative;
+      }
+      .status.error .spinner::after {
+        color: #d14343;
+        content: "!";
+        font-size: 0.75rem;
+        font-weight: 800;
+        left: 0.28rem;
+        position: absolute;
+        top: 0.03rem;
+      }
+      .return-link {
+        color: #277a4d;
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 1.25rem;
+      }
+      .return-link[hidden] { display: none; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      @media (prefers-color-scheme: dark) {
+        body { background: #121816; color: #edf5f0; }
+        .card { background: #19211e; border-color: #33443c; box-shadow: none; }
+        .brand { color: #c6d8cd; }
+        p { color: #a9bab0; }
+        .status { background: #202c26; border-color: #334b3d; }
+        .status.error { background: #352020; border-color: #6e3434; }
+      }
     </style>
   </head>
   <body>
     <main>
-      <p id="status" role="status">Completing sign-in...</p>
+      <section class="card" aria-labelledby="title">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">X</span> XMCL Account</div>
+        <h1 id="title">Completing sign-in</h1>
+        <p id="description">We are securely confirming your account with the selected provider.</p>
+        <div id="status-box" class="status" role="status" aria-live="polite">
+          <span class="spinner" aria-hidden="true"></span>
+          <p id="status">Completing sign-in…</p>
+        </div>
+        <a id="return-link" class="return-link" href="/en/account/" hidden>Return to your account</a>
+      </section>
     </main>
     <script>
       (() => {
@@ -21,26 +141,59 @@
         const sessionStorageKey = 'xmcl-account-session/v1'
         const pendingAuthorizationKey = 'xmcl-account-pending-authorization/v1'
         const authorizationLifetimeMs = 10 * 60_000
-        const messages = navigator.language.toLowerCase().startsWith('zh-tw')
-          ? { completing: '正在完成登入…', invalid: '這個登入回呼無效或已過期。請重新開始登入。', failed: '無法完成登入。請重新開始登入。' }
-          : navigator.language.toLowerCase().startsWith('zh')
-          ? { completing: '正在完成登录…', invalid: '此登录回调无效或已过期。请重新开始登录。', failed: '无法完成登录。请重新开始登录。' }
-          : { completing: 'Completing sign-in...', invalid: 'This sign-in callback is invalid or has expired. Start sign-in again.', failed: 'Unable to complete sign-in. Start sign-in again.' }
+        const locale = navigator.language.toLowerCase().startsWith('zh-tw')
+          ? 'zh-TW'
+          : navigator.language.toLowerCase().startsWith('zh') ? 'zh' : 'en'
+        const messages = {
+          en: {
+            title: 'Completing sign-in',
+            description: 'We are securely confirming your account with the selected provider.',
+            completing: 'Completing sign-in…',
+            invalid: 'This sign-in callback is invalid or has expired. Start sign-in again.',
+            failed: 'Unable to complete sign-in. Start sign-in again.',
+            return: 'Return to your account',
+          },
+          zh: {
+            title: '正在完成登录',
+            description: '我们正在通过所选身份提供商安全确认你的账户。',
+            completing: '正在完成登录…',
+            invalid: '此登录回调无效或已过期。请重新开始登录。',
+            failed: '无法完成登录。请重新开始登录。',
+            return: '返回账户页面',
+          },
+          'zh-TW': {
+            title: '正在完成登入',
+            description: '我們正在透過所選身分提供者安全確認你的帳戶。',
+            completing: '正在完成登入…',
+            invalid: '這個登入回呼無效或已過期。請重新開始登入。',
+            failed: '無法完成登入。請重新開始登入。',
+            return: '返回帳戶頁面',
+          },
+        }[locale]
         const status = document.getElementById('status')
+        const statusBox = document.getElementById('status-box')
+        const returnLink = document.getElementById('return-link')
+        document.documentElement.lang = locale
+        document.title = `${messages.title} · XMCL`
+        document.getElementById('title').textContent = messages.title
+        document.getElementById('description').textContent = messages.description
         status.textContent = messages.completing
+        returnLink.textContent = messages.return
+        returnLink.href = `/${locale}/account/`
 
         const fail = (message) => {
           status.textContent = message
-          status.className = 'error'
+          statusBox.classList.add('error')
+          returnLink.hidden = false
         }
         const returnUrl = (value) => {
           try {
             const url = new URL(value, window.location.origin)
             return url.origin === window.location.origin
               ? `${url.pathname}${url.search}${url.hash}`
-              : '/en/account/'
+              : `/${locale}/account/`
           } catch {
-            return '/en/account/'
+            return `/${locale}/account/`
           }
         }
         const pendingValue = sessionStorage.getItem(pendingAuthorizationKey)
