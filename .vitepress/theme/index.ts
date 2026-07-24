@@ -27,6 +27,7 @@ import AppLabymodPicture from "./components/AppLabymodPicture.vue"
 import LogViewer from './components/LogViewer.vue'
 import SceneLanding from './components/SceneLanding.vue'
 import SiteFooter from './components/SiteFooter.vue'
+import AccountMenu from './components/AccountMenu.vue'
 
 const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
 
@@ -83,7 +84,7 @@ export default {
 
     return () => [
       h(DefaultTheme.Layout, props, {
-        'nav-bar-extra': () => null,
+        'nav-bar-content-after': () => h(AccountMenu),
         'layout-bottom': () => h(SiteFooter),
       }),
     ]

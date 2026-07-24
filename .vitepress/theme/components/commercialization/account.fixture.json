@@ -1,0 +1,84 @@
+{
+  "contract": {
+    "module": "account",
+    "version": "account-page-local-proposal-v1+shared-v1",
+    "status": "local_mock",
+    "publishedContractPath": null,
+    "consumedSharedContractPath": "contracts/shared/v1",
+    "consumedSharedVersion": "shared/v1"
+  },
+  "backupStoragePolicy": {
+    "source": "contracts/shared/v1/fixtures/backup-storage-policy.json",
+    "freeBytes": 1073741824,
+    "policyVersion": 1,
+    "accountingOwner": "backups"
+  },
+  "account": {
+    "accountId": "acct_fixture_01",
+    "status": "active",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  },
+  "providers": [
+    {
+      "id": "microsoft",
+      "label": "Microsoft",
+      "websiteFlow": "documented",
+      "launcherBootstrap": true
+    },
+    {
+      "id": "modrinth",
+      "label": "Modrinth",
+      "websiteFlow": "documented",
+      "launcherBootstrap": true
+    },
+    {
+      "id": "google",
+      "label": "Google",
+      "websiteFlow": "documented",
+      "launcherBootstrap": false
+    },
+    {
+      "id": "discord",
+      "label": "Discord",
+      "websiteFlow": "documented",
+      "launcherBootstrap": false
+    }
+  ],
+  "flows": [
+    {
+      "id": "create_or_restore",
+      "endpoints": [
+        "GET /v1/auth/{provider}/authorize",
+        "POST /v1/auth/{provider}/exchange"
+      ]
+    },
+    {
+      "id": "list_or_link",
+      "endpoints": [
+        "GET /v1/account/identities",
+        "POST /v1/account/identities/{provider}/authorize",
+        "POST /v1/account/identities/{provider}/complete"
+      ]
+    },
+    {
+      "id": "explicit_merge",
+      "endpoints": [
+        "POST /v1/account/merge/prepare",
+        "POST /v1/account/merge/confirm"
+      ]
+    }
+  ],
+  "identityConflict": {
+    "error": "identity_conflict",
+    "requestId": "req_fixture_identity_conflict",
+    "nextEndpoint": "POST /v1/account/merge/prepare",
+    "exposedOtherAccountFields": []
+  },
+  "deferredImplementation": [
+    "Replace this page-local fixture with a client generated from the published account OpenAPI contract.",
+    "Choose and document the browser session transport, callback URI allowlist, and CSRF protections before enabling sign-in controls.",
+    "Connect authorize and exchange only after PKCE transaction, state, nonce, and redirect validation are contract-tested.",
+    "Implement authenticated identity listing, linking, unlinking, and explicit merge confirmation from published response and error schemas.",
+    "Add browser tests for success, expiry, replay, identity conflict, cancellation, and provider failure without exposing provider or XMCL tokens."
+  ]
+}
