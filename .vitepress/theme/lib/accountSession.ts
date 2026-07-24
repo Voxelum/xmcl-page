@@ -46,7 +46,6 @@ interface ApiErrorBody {
 const sessionStorageKey = 'xmcl-account-session/v1'
 const pendingAuthorizationKey = 'xmcl-account-pending-authorization/v1'
 const accessTokenRefreshLeewayMs = 60_000
-const authorizationLifetimeMs = 10 * 60_000
 const apiBaseUrl = (
   import.meta.env.VITE_COMMERCIAL_API_BASE ||
   'https://xmcl-web-api.cijhn.workers.dev'
@@ -78,22 +77,6 @@ function readStoredSession() {
 
 function persistSession(session: PublicSession) {
   browserStorage()?.setItem(sessionStorageKey, JSON.stringify({ session }))
-}
-
-function readPendingAuthorization() {
-  const value = browserStorage()?.getItem(pendingAuthorizationKey)
-  if (!value) return undefined
-  try {
-    const pending = JSON.parse(value) as PendingAuthorization
-    if (Date.now() - pending.createdAt > authorizationLifetimeMs) {
-      browserStorage()?.removeItem(pendingAuthorizationKey)
-      return undefined
-    }
-    return pending
-  } catch {
-    browserStorage()?.removeItem(pendingAuthorizationKey)
-    return undefined
-  }
 }
 
 function apiError(body: ApiErrorBody | undefined, status: number) {
@@ -206,38 +189,6 @@ export async function beginWebSignIn(provider: OAuthProvider, returnUrl: string)
     createdAt: Date.now(),
   } satisfies PendingAuthorization))
   window.location.assign(authorization.authorizationUrl)
-}
-
-export async function completeWebSignIn(search: string) {
-  const params = new URLSearchParams(search)
-  const code = params.get('code')
-  const state = params.get('state')
-  const pending = readPendingAuthorization()
-  if (!code || !state || !pending || pending.state !== state) {
-    throw new Error('This sign-in callback is invalid or has expired. Start sign-in again.')
-  }
-
-  try {
-    const result = await request<{ session: PublicSession }>(
-      `/v1/auth/${pending.provider}/exchange`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          transactionId: pending.transactionId,
-          state,
-          codeVerifier: pending.codeVerifier,
-          code,
-        }),
-      },
-      undefined,
-    )
-    setSession(result.session)
-    await loadAccount()
-    return pending.returnUrl
-  } finally {
-    browserStorage()?.removeItem(pendingAuthorizationKey)
-  }
 }
 
 export async function signOut() {

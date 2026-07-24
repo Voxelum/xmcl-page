@@ -4,9 +4,99 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex">
     <title>Completing XMCL sign-in</title>
-    <script>
-      window.location.replace(`/en/oauth/callback${window.location.search}${window.location.hash}`)
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body { align-items: center; color: #213547; display: flex; font: 16px system-ui, sans-serif; justify-content: center; margin: 0; min-height: 100vh; }
+      main { max-width: 28rem; padding: 2rem; text-align: center; }
+      .error { color: #b42318; }
+    </style>
   </head>
-  <body>Completing XMCL sign-in...</body>
+  <body>
+    <main>
+      <p id="status" role="status">Completing sign-in...</p>
+    </main>
+    <script>
+      (() => {
+        const apiBaseUrl = 'https://xmcl-web-api.cijhn.workers.dev'
+        const sessionStorageKey = 'xmcl-account-session/v1'
+        const pendingAuthorizationKey = 'xmcl-account-pending-authorization/v1'
+        const authorizationLifetimeMs = 10 * 60_000
+        const messages = navigator.language.toLowerCase().startsWith('zh-tw')
+          ? { completing: '正在完成登入…', invalid: '這個登入回呼無效或已過期。請重新開始登入。', failed: '無法完成登入。請重新開始登入。' }
+          : navigator.language.toLowerCase().startsWith('zh')
+          ? { completing: '正在完成登录…', invalid: '此登录回调无效或已过期。请重新开始登录。', failed: '无法完成登录。请重新开始登录。' }
+          : { completing: 'Completing sign-in...', invalid: 'This sign-in callback is invalid or has expired. Start sign-in again.', failed: 'Unable to complete sign-in. Start sign-in again.' }
+        const status = document.getElementById('status')
+        status.textContent = messages.completing
+
+        const fail = (message) => {
+          status.textContent = message
+          status.className = 'error'
+        }
+        const returnUrl = (value) => {
+          try {
+            const url = new URL(value, window.location.origin)
+            return url.origin === window.location.origin
+              ? `${url.pathname}${url.search}${url.hash}`
+              : '/en/account/'
+          } catch {
+            return '/en/account/'
+          }
+        }
+        const pendingValue = sessionStorage.getItem(pendingAuthorizationKey)
+        if (!pendingValue) {
+          fail(messages.invalid)
+          return
+        }
+
+        let pending
+        try {
+          pending = JSON.parse(pendingValue)
+        } catch {
+          sessionStorage.removeItem(pendingAuthorizationKey)
+          fail(messages.invalid)
+          return
+        }
+
+        const params = new URLSearchParams(window.location.search)
+        const code = params.get('code')
+        const state = params.get('state')
+        const valid = code && state && pending &&
+          typeof pending.provider === 'string' &&
+          typeof pending.transactionId === 'string' &&
+          typeof pending.codeVerifier === 'string' &&
+          typeof pending.returnUrl === 'string' &&
+          state === pending.state &&
+          Number.isFinite(pending.createdAt) &&
+          Date.now() - pending.createdAt <= authorizationLifetimeMs
+        if (!valid) {
+          sessionStorage.removeItem(pendingAuthorizationKey)
+          fail(messages.invalid)
+          return
+        }
+
+        fetch(`${apiBaseUrl}/v1/auth/${encodeURIComponent(pending.provider)}/exchange`, {
+          method: 'POST',
+          credentials: 'omit',
+          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            transactionId: pending.transactionId,
+            state,
+            codeVerifier: pending.codeVerifier,
+            code,
+          }),
+        })
+          .then(async (response) => {
+            const body = await response.json().catch(() => undefined)
+            if (!response.ok || !body || !body.session) {
+              throw new Error(body && (body.message || body.error))
+            }
+            sessionStorage.setItem(sessionStorageKey, JSON.stringify({ session: body.session }))
+            window.location.replace(returnUrl(pending.returnUrl))
+          })
+          .catch(() => fail(messages.failed))
+          .finally(() => sessionStorage.removeItem(pendingAuthorizationKey))
+      })()
+    </script>
+  </body>
 </html>
