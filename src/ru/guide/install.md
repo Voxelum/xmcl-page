@@ -60,7 +60,7 @@ AppX обновляется через механизм appinstaller. В соо�
 # разрешить программы из любого источника
 sudo spctl --master-disable
 # удалить атрибут карантина
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+sudo xattr -rd com.apple.quarantine /Applications/X\ Minecraft\ Launcher.app
 ```
 
 Если вы устанавливаете `X Minecraft Launcher.app` в другое место, просто замените `/Applications/X\ Minecraft\ Launcher.app` на путь к нему.

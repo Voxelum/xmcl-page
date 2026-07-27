@@ -1,98 +1,68 @@
-# دليل التثبيت
+# دليل التثبيت واختيار الحزمة
 
-يوفر اللانشر تنسيقات تثبيت متعددة، بعضها أقل شيوعاً. سنركز هنا على تقديم ميزات التنسيق **الأقل شيوعاً** أو **الخاصة**.
+XMCL provides multiple installation options for Windows, macOS, and Linux. This section breaks down every package available on the download page:
 
-## Windows
+---
 
-:::info
-تنسيق التثبيت الموصى به لمستخدمي Windows هو `APPX` أو `التثبيت عبر الإنترنت (appinstaller)`.
-:::
+## 💻 صيغ حزم Windows
 
-### APPX
+### 1. App Installer (`.appinstaller`) ⭐ *(Recommended for Win 10/11)*
+* **Description:** Automatic Microsoft web installer. Downloads and updates XMCL automatically in the background.
+* **Best Choice For:** General Windows 10 & 11 users who want hassle-free updates.
 
-تنسيق APPX هو حزمة تثبيت توفرها Windows 10 تتيح تشغيل البرامج في بيئة افتراضية/معزولة (sandboxed). سيتم تشغيل البرامج المثبتة عبر APPX بالكامل داخل حاوية Windows.
+### 2. AppX Package (`.appx` / `.msix`)
+* **Description:** Sandboxed MSIX package. All registry entries and temporary files are isolated in the app container.
+* **Best Choice For:** Users who prefer a direct installer download with clean uninstall support.
 
-الفائدة الأكبر للمستخدمين هي عزل `ملفات المؤقتة (cache)` و`تعديلات سجل النظام (registry)` والعمليات الأخرى للتطبيق — فعندما تقوم بإلغاء تثبيت التطبيق، سيتم حذف `الملفات المؤقتة` و`تعديلات السجل` معاً.
+### 3. Zip (x64) Portable Archive
+* **Description:** Standalone compressed archive. Requires no installation and no administrator rights.
+* **Best Choice For:** Portable USB drives, school/work PCs, and advanced users.
 
-:::info خبر سار
-لا تقلق بشأن قيام البرنامج بالعبث في سجل النظام، على الرغم من أن الإضافة الوحيدة لـ XMCL في السجل قد تكون ربط امتداد الملفات باللانشر.
-:::
+### 4. WinGet CLI
+* **Command:** `winget install CI010.XMinecraftLauncher`
+* **Best Choice For:** Command-line users and sysadmins.
 
-يتم تحديث AppX عبر آلية appinstaller. وفقاً لاستراتيجية [التحديث التلقائي](https://learn.microsoft.com/en-us/windows/msix/app-installer/auto-update-and-repair--overview#automatic-updates) المدمجة في appinstaller، يتحقق XMCL من وجود تحديثات عندما **يقوم المستخدم بتشغيل التطبيق**، وإذا كان هناك تحديث، فسيتم التحديث في التشغيل التالي.
+---
 
-:::tip خبر سار
-تعد التحديثات التلقائية لـ APPX موفرة ونوعية حيث تدعم **التحديثات التراكمية** لنظام Windows — ولا يتم تنزيل وتحديث سوى المحتوى المتغير.
-:::
+## 🍎 صيغ حزم macOS
 
-### التثبيت عبر الإنترنت (appinstaller)
+### 1. DMG Disk Image (`x64` / `ARM64`) ⭐ *(Recommended)*
+* **ARM64:** Native build for Apple Silicon (**M1, M2, M3, M4** Macs).
+* **x64:** Build for Intel Macs.
+* **Gatekeeper Fix:** `sudo xattr -rd com.apple.quarantine /Applications/X\ Minecraft\ Launcher.app`
 
-يعتبر `appinstaller` في الأساس مساوياً لتنسيق `APPX`. ملف `appinstaller` نفسه هو ملف نصي `XML` يحتوي على عنوان `URL` لحزمة `APPX`. عندما تظهر واجهة التثبيت، ستحاول تنزيل حزمة `APPX` وتثبيتها. لذلك فإن آلية التحديث الخاصة بها مطابقة لـ APPX.
+### 2. Homebrew Cask
+* **Command:** `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl`
 
-### Windows 7/8
+---
 
-حل تم اكتشافه وتقديمه بواسطة [longteng](https://github.com/longteng-H) ([bilibili](https://space.bilibili.com/1030667057))
+## 🐧 صيغ حزم Linux
 
-:::details كيفية تشغيل XMCL على أنظمة Windows الأقدم من Windows 10
-بشكل افتراضي، لا يدعم XMCL العمل على نظام Windows 7 الأصلي. عن طريق تثبيت نواة VxKex الممتدة لتوفير مكتبات التشغيل المطلوبة، يوفر هذا حلاً للمستخدمين الذين لا يزالون على الأنظمة القديمة. (ملاحظة: هذه الطريقة قابلة للتطبيق أيضاً على بعض البرامج التي لا يمكن تشغيلها بشكل طبيعي على الأنظمة القديمة)
+### 1. Flathub / Flatpak (+ Steam Deck) ⭐ *(Recommended for Steam Deck & Flatpak)*
+* **Description:** Containerized Flatpak package available from Flathub.
+* **Best Choice For:** **Steam Deck (SteamOS)**, Fedora Silverblue, and Flatpak-enabled desktops.
 
-1. قم بتنزيل وتثبيت نواة [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT) الممتدة.
-2. ابحث عن ملف X Minecraft Launcher.exe وقم بتمكين VxKex له. إذا كنت لا تعرف كيف، فيرجى الرجوع إلى الفيديو التعليمي: [تشغيل التطبيقات الحديثة على Windows 7](https://www.youtube.com/watch?v=zl7AsxtoPV8).
+### 2. Deb (`x64` / `ARM64`)
+* **Description:** Native package for Debian, Ubuntu, Linux Mint, Pop!_OS (`sudo apt install ./xmcl.deb`).
 
-قم بتحديد كل من "Enable VxKex NEXT for this program" و "Report other versions of Windows"، ثم قم بالتطبيق والموافقة.
+### 3. RPM (`x64` / `AArch64`)
+* **Description:** Native package for Fedora, RHEL, openSUSE (`sudo dnf install ./xmcl.rpm`).
 
-في هذه المرحلة، يمكن لـ XMCL العمل بشكل طبيعي على Windows 7، وستعمل جميع الوظائف باستثناء اللعب الجماعي أونلاين.
-:::
+### 4. AppImage (`x64` / `ARM64`)
+* **Description:** Universal standalone executable for any Linux distro (`chmod +x xmcl.AppImage`).
 
-## MacOS
+### 5. Tar.xz (`x64` / `ARM64`)
+* **Description:** Portable tarball archive for custom extraction.
 
-:::warning
-يحتاج مستخدم Mac إلى السماح بتثبيت التطبيقات غير الموقعة رقمياً.
-نظراً لأن XMCL غير موقع رسمياً، فأنت بحاجة إلى السماح بتشغيله في إعدادات النظام.
-:::
+---
 
-### DMG
+## 📊 الملخص: أي حزمة يجب أن تختار؟
 
-نحن نقدم تنسيق DMG فقط لمستخدمي MacOS. تنسيق DMG هو تنسيق صورة قرص يتم تركيبه كقرص افتراضي. بعد فتح DMG، قم بسحب التطبيق إلى مجلد `Applications` لتثبيته.
-
-لتشغيل التطبيق وتخطي تنبيه الحماية، يمكنك استخدام الأوامر التالية في الترمينال:
-
-```sh
-# السماح بتشغيل التطبيقات من أي مصدر
-sudo spctl --master-disable
-# إزالة سمة الحجر الصحي للتطبيق
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
-```
-
-إذا قمت بتثبيت التطبيق في مكان آخر، فما عليك سوى استبدال المسار `/Applications/X\ Minecraft\ Launcher.app` بمسارك المخصص.
-
-## Linux
-
-:::info
-يحتوي نظام Linux على العديد من التوزيعات مما يصعب معه توفير طريقة تثبيت موحدة. هنا نذكر فقط تنسيق `AppImage`.
-:::
-
-### AppImage
-
-تنسيق AppImage هو تنسيق لتطبيقات Linux يمكن تشغيله على أي واجهة لـ Linux دون تثبيت. ملف AppImage قابل للتنفيذ، فقط اضغط عليه مرتين أو قم بتشغيله من الترمينال.
-
-هذا هو البرنامج الوحيد الذي لا يحتاج لتثبيت ويوفره XMCL. لذلك فإن آلية التحديث الخاصة به تختلف عن التنسيقات الأخرى، ويحتاج المستخدمون لتنزيل ملف AppImage جديد بأنفسهم للتحديث.
-
-## التنسيقات الأخرى
-
-حالياً، تدعم التنسيقات الأخرى إما [التحديثات الفورية (hot updates)] أو تدعم طريقة التحديث التي يوفرها electron-builder. لا تتطلب هذه الأوضاع عادةً اهتماماً كبيراً (إذا لم تتمكن من التحديث، يمكنك تنزيل اللانشر مرة أخرى).
-
-:::tip التحديث الفوري
-التحديث الفوري يعني أن اللانشر يقوم باستبدال ملف asar الأساسي بنفسه (حجمه حوالي 30 ميجابايت)، دون الحاجة لتنزيل اللانشر كاملاً مرة أخرى.
-:::
-
-## ملحق: اختيار دليل بيانات اللعبة
-
-أثناء التثبيت الأولي، يحتاج المستخدمون إلى اختيار `دليل بيانات اللعبة`. سيضع XMCL الأصول المُنزلة `assets` و`libraries` و`versions` وما إلى ذلك في هذا الدليل.
-
-:::warning ملاحظة
-كما هو موضح في صفحة الإعداد، نظراً لبنية الملفات الخاصة بـ XMCL، لا يُنصح باستخدام دليل لعبة ماينكرافت **الأصلي** كدليل بيانات لـ XMCL.
-:::
-
-هنا، يُنصح باختيار مجلد جديد كـ `دليل بيانات اللعبة` لـ XMCL.
-
-لمزيد من المعلومات حول بنية دليل بيانات اللعبة، يرجى مراجعة [دليل إدارة البيانات](/ar/guide/manage.md#minecraft-related-data).
+| Platform | Best Choice (Recommended) | Portable / Alternative | CLI Installation |
+|---|---|---|---|
+| **Windows 10/11** | **App Installer** or **AppX** | **Zip (x64)** | `winget install CI010.XMinecraftLauncher` |
+| **macOS (M1-M4)** | **DMG (ARM64)** | — | `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl` |
+| **macOS (Intel)** | **DMG (x64)** | — | `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl` |
+| **Linux (Steam Deck)** | **Flathub (Flatpak)** | **AppImage** | — |
+| **Linux (Ubuntu/Debian)** | **Deb (x64)** | **AppImage** | — |
+| **Linux (Fedora/RHEL)** | **RPM (x64)** | **AppImage** | — |

@@ -1,98 +1,68 @@
-# Орнату нұсқаулығы
+# Орнату және пакетті таңдау нұсқаулығы
 
-Launcher бірнеше орнату форматтарын ұсынады, олардың кейбіреулері аз таралған. Мұнда біз **аз таралған** немесе **арнайы** формат мүмкіндіктерін таныстыруға назар аударамыз.
+XMCL provides multiple installation options for Windows, macOS, and Linux. This section breaks down every package available on the download page:
 
-## Windows
+---
 
-:::info
-Windows пайдаланушылары үшін ұсынылатын орнату форматы - `APPX` немесе `Онлайн орнату (appinstaller)`.
-:::
+## 💻 Windows пакеттері
 
-### APPX
+### 1. App Installer (`.appinstaller`) ⭐ *(Recommended for Win 10/11)*
+* **Description:** Automatic Microsoft web installer. Downloads and updates XMCL automatically in the background.
+* **Best Choice For:** General Windows 10 & 11 users who want hassle-free updates.
 
-APPX - бұл Windows 10 ұсынатын **орнату пакетінің** форматы, ол бағдарламаларға виртуалды/sandbox ортада жұмыс істеуге мүмкіндік береді. APPX арқылы орнатылған бағдарламалардың барлығы Windows sandbox ортасында жұмыс істейді.
+### 2. AppX Package (`.appx` / `.msix`)
+* **Description:** Sandboxed MSIX package. All registry entries and temporary files are isolated in the app container.
+* **Best Choice For:** Users who prefer a direct installer download with clean uninstall support.
 
-Пайдаланушылар үшін ең үлкен артықшылығы - қолданбаның `кэш файлдары`, `тіркелім өзгерістері` және басқа операциялар оқшауланады - қолданбаны жойған кезде, `кэш` және `тіркелім өзгерістері` бірге жойылады.
+### 3. Zip (x64) Portable Archive
+* **Description:** Standalone compressed archive. Requires no installation and no administrator rights.
+* **Best Choice For:** Portable USB drives, school/work PCs, and advanced users.
 
-:::info Жақсы жаңалық
-XMCL тіркелімге тек файл кеңейтімдерін байланыстыруды қосуы мүмкін болса да, бағдарламаның тіркелімде шатқаяқтауы туралы алаңдамаңыз.
-:::
+### 4. WinGet CLI
+* **Command:** `winget install CI010.XMinecraftLauncher`
+* **Best Choice For:** Command-line users and sysadmins.
 
-AppX appinstaller механизмі арқылы жаңартылады. Appinstaller-ге кіріктірілген [автоматты жаңарту](https://learn.microsoft.com/en-us/windows/msix/app-installer/auto-update-and-repair--overview#automatic-updates) стратегиясына сәйкес, XMCL пайдаланушы **қолданбаны іске қосқан** кезде жаңартуларды тексереді, және егер жаңарту болса, ол келесі іске қосу кезінде жаңартылады.
+---
 
-:::tip Жақсы жаңалық
-APPX-тің автоматты жаңартулары Windows-тың **оңтайландырылған жеткізу** және **инкрементальды жаңартулар** мүмкіндіктерін қолдайды - тек өзгертілген мазмұнды жаңартады.
-:::
+## 🍎 macOS пакеттері
 
-### Онлайн орнату (appinstaller)
+### 1. DMG Disk Image (`x64` / `ARM64`) ⭐ *(Recommended)*
+* **ARM64:** Native build for Apple Silicon (**M1, M2, M3, M4** Macs).
+* **x64:** Build for Intel Macs.
+* **Gatekeeper Fix:** `sudo xattr -rd com.apple.quarantine /Applications/X\ Minecraft\ Launcher.app`
 
-`appinstaller` іс жүзінде `APPX` форматымен бірдей. `appinstaller` өзі `APPX`-тің `URL` мекенжайын қамтитын `XML` мәтіндік файлы. Орнату интерфейсі пайда болған кезде, ол `APPX`-ті жүктеп, орнатуға тырысады. Сондықтан, оның жаңарту механизмі APPX-пен бірдей.
+### 2. Homebrew Cask
+* **Command:** `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl`
 
-### Windows 7/8
+---
 
-Шешімді тапып, ұсынған [longteng](https://github.com/longteng-H)([bilibili](https://space.bilibili.com/1030667057))
+## 🐧 Linux пакеттері
 
-:::details Windows 10-нан төмен Windows жүйелерінде XMCL-ді қалай іске қосу керек
-Әдепкі бойынша, XMCL Windows 7-дің табиғи жұмысын қолдамайды. Қажетті орындау уақыты кітапханаларын толықтыру үшін VxKex кеңейтілген ядросын орнату арқылы бұл ескі жүйелерді әлі пайдаланып жүрген пайдаланушыларға шешім ұсынады. (Ескерту: Бұл әдіс ескі жүйелерде қалыпты жұмыс істей алмайтын кейбір бағдарламалық жасақтамаға да қолданылады)
+### 1. Flathub / Flatpak (+ Steam Deck) ⭐ *(Recommended for Steam Deck & Flatpak)*
+* **Description:** Containerized Flatpak package available from Flathub.
+* **Best Choice For:** **Steam Deck (SteamOS)**, Fedora Silverblue, and Flatpak-enabled desktops.
 
-1. [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT) кеңейтілген ядросын жүктеп орнатыңыз. Бұл мұнда ұсынылған отандық тармақ.
-2. X Minecraft Launcher.exe табып, оған VxKex-ті қосыңыз. Қалай екенін білмесеңіз, видео дәстүрді қараңыз: [Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8).
+### 2. Deb (`x64` / `ARM64`)
+* **Description:** Native package for Debian, Ubuntu, Linux Mint, Pop!_OS (`sudo apt install ./xmcl.deb`).
 
-"Осы бағдарлама үшін VxKex NEXT қосу" және "Windows-тың басқа нұсқаларын хабарлау" екеуін де белгілеңіз, содан кейін қолданып растаңыз.
+### 3. RPM (`x64` / `AArch64`)
+* **Description:** Native package for Fedora, RHEL, openSUSE (`sudo dnf install ./xmcl.rpm`).
 
-Осы кезеңде XMCL Windows 7-де қалыпты жұмыс істей алады, көпқатысушы ойыннан басқа барлық функциялар қалыпты жұмыс істейді.
-:::
+### 4. AppImage (`x64` / `ARM64`)
+* **Description:** Universal standalone executable for any Linux distro (`chmod +x xmcl.AppImage`).
 
-## MacOS
+### 5. Tar.xz (`x64` / `ARM64`)
+* **Description:** Portable tarball archive for custom extraction.
 
-:::warning
-Mac пайдаланушылары қол қойылмаған бағдарламалық жасақтаманы орнатуға рұқсат беруі керек.
-XMCL қол қойылмаған болғандықтан, жүйе параметрлерінде оны іске қосуға рұқсат беруіңіз керек.
-:::
+---
 
-### DMG
+## 📊 Түйін: Қай пакетті таңдаған жөн?
 
-Біз MacOS пайдаланушылары үшін тек DMG форматын ұсынамыз. DMG форматы виртуалды диск ретінде монтаждалатын дискінің бейне форматы. DMG-ны ашқаннан кейін, қолданбаны орнату үшін оны `Applications` қалтасына сүйреңіз.
-
-Қолданбаны іске қосу үшін, сіз келесі пәрменді қолдана аласыз.
-
-```sh
-# кез-келген көзден бағдарламалық жасақтамаға рұқсат беру
-sudo spctl --master-disable
-# карантин атрибутын тазалау
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
-```
-
-Егер сіз `X Minecraft Launcher.app`-ты басқа жерге орнатсаңыз, жолды `/Applications/X\ Minecraft\ Launcher.app` орнына ауыстырыңыз.
-
-## Linux
-
-:::info
-Linux көптеген дистрибуциялары бар, сондықтан әмбебап орнату әдісін ұсыну қиын. Мұнда біз тек `AppImage` туралы айтамыз.
-:::
-
-### AppImage
-
-AppImage - бұл орнатусыз кез-келген Linux жұмыс үстелінде жұмыс істей алатын Linux қолданба форматы. AppImage файлы орындалатын файл, жай екі рет басыңыз немесе терминалдан іске қосыңыз.
-
-Бұл XMCL ұсынатын жалғыз орнатылмайтын бағдарлама (~~шын мәнінде оны қолдағым келмейді~~). Сондықтан, оның жаңарту механизмі басқа форматтардан өзгеше, және пайдаланушылар жаңарту үшін жаңа AppImage-ті өздері жүктеп алуы керек.
-
-## Басқа форматтар
-
-Қазіргі уақытта, басқа орнату форматтары [ыстық жаңартуларды] немесе electron-builder ұсынатын жаңарту әдісін қолдайды. Бұл жаңарту режимі әдетте тым көп назар аударуды қажет етпейді (~~егер жаңарта алмасаңыз, лаунчерді қайта жүктеп алуыңызға болады~~).
-
-:::tip Ыстық жаңарту
-Ыстық жаңарту дегеніміз, лаунчер негізгі asar файлын (~30MB) лаунчерді толық қайта жүктеп алмай-ақ өзі ауыстырады.
-:::
-
-## Қосымша: Ойын деректер каталогын таңдау
-
-Бастапқы орнату кезінде пайдаланушылар `Ойын деректер каталогын` таңдауы керек. XMCL жүктелген `ресурстарды`, `кітапханаларды`, `нұсқаларды` және т.б. осы каталогқа орналастырады.
-
-:::warning Ескерту
-Орнату бетінде айтылғандай, XMCL-дің арнайы файл құрылымына байланысты, **шикі** Minecraft ойын каталогын XMCL деректер каталогы ретінде пайдалану ұсынылмайды.
-:::
-
-Мұнда XMCL-дің `Ойын деректер каталогы` ретінде жаңа қалтаны таңдау ұсынылады.
-
-Ойын деректер каталогының құрылымы туралы қосымша ақпарат алу үшін [Деректерді басқару нұсқаулығын](/en/guide/manage.md#minecraft-related-data) қараңыз.
+| Platform | Best Choice (Recommended) | Portable / Alternative | CLI Installation |
+|---|---|---|---|
+| **Windows 10/11** | **App Installer** or **AppX** | **Zip (x64)** | `winget install CI010.XMinecraftLauncher` |
+| **macOS (M1-M4)** | **DMG (ARM64)** | — | `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl` |
+| **macOS (Intel)** | **DMG (x64)** | — | `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl` |
+| **Linux (Steam Deck)** | **Flathub (Flatpak)** | **AppImage** | — |
+| **Linux (Ubuntu/Debian)** | **Deb (x64)** | **AppImage** | — |
+| **Linux (Fedora/RHEL)** | **RPM (x64)** | **AppImage** | — |

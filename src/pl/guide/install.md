@@ -1,98 +1,68 @@
-# Instrukcja instalacji
+# Przewodnik Po Instalacji i Wyborze Pakietów
 
-Launcher oferuje wiele formatów instalacji, z których niektóre są mniej powszechne. Tutaj skupimy się na przedstawieniu funkcji formatów **mniej powszechnych** lub **specjalnych**.
+XMCL provides multiple installation options for Windows, macOS, and Linux. This section breaks down every package available on the download page:
 
-## Windows
+---
 
-:::info
-Zalecany format instalacji dla użytkowników systemu Windows to `APPX` lub `Instalacja online (appinstaller)`.
-:::
+## 💻 Formaty Pakietów dla Windows
 
-### APPX
+### 1. App Installer (`.appinstaller`) ⭐ *(Recommended for Win 10/11)*
+* **Description:** Automatic Microsoft web installer. Downloads and updates XMCL automatically in the background.
+* **Best Choice For:** General Windows 10 & 11 users who want hassle-free updates.
 
-APPX to **format pakietu instalacyjnego** dostarczany przez Windows 10, który umożliwia programom działanie w zwirtualizowanym/sandboxowym środowisku. Programy zainstalowane przez APPX będą działać w sandboxie Windows.
+### 2. AppX Package (`.appx` / `.msix`)
+* **Description:** Sandboxed MSIX package. All registry entries and temporary files are isolated in the app container.
+* **Best Choice For:** Users who prefer a direct installer download with clean uninstall support.
 
-Największą korzyścią dla użytkowników jest to, że `pliki pamięci podręcznej`, `modyfikacje rejestru` i inne operacje aplikacji będą izolowane - po odinstalowaniu aplikacji, `pamięć podręczna` i `modyfikacje rejestru` zostaną usunięte razem.
+### 3. Zip (x64) Portable Archive
+* **Description:** Standalone compressed archive. Requires no installation and no administrator rights.
+* **Best Choice For:** Portable USB drives, school/work PCs, and advanced users.
 
-:::info Dobra wiadomość
-Nie martw się, że program będzie manipulować rejestrem, chociaż jedynym dodatkiem do rejestru XMCL może być skojarzenie rozszerzeń plików.
-:::
+### 4. WinGet CLI
+* **Command:** `winget install CI010.XMinecraftLauncher`
+* **Best Choice For:** Command-line users and sysadmins.
 
-AppX jest aktualizowany za pośrednictwem mechanizmu appinstaller. Zgodnie ze [strategią automatycznych aktualizacji](https://learn.microsoft.com/en-us/windows/msix/app-installer/auto-update-and-repair--overview#automatic-updates) wbudowaną w appinstaller, XMCL sprawdza aktualizacje, gdy użytkownik **uruchamia aplikację**, a jeśli jest aktualizacja, zostanie ona zainstalowana przy następnym uruchomieniu.
+---
 
-:::tip Dobra wiadomość
-Automatyczne aktualizacje APPX obsługują **zoptymalizowane dostarczanie** i **przyrostowe aktualizacje** Windows - aktualizując tylko zmienioną zawartość.
-:::
+## 🍎 Formaty Pakietów dla macOS
 
-### Instalacja online (appinstaller)
+### 1. DMG Disk Image (`x64` / `ARM64`) ⭐ *(Recommended)*
+* **ARM64:** Native build for Apple Silicon (**M1, M2, M3, M4** Macs).
+* **x64:** Build for Intel Macs.
+* **Gatekeeper Fix:** `sudo xattr -rd com.apple.quarantine /Applications/X\ Minecraft\ Launcher.app`
 
-`appinstaller` jest zasadniczo taki sam jak format `APPX`. `appinstaller` sam w sobie jest plikiem tekstowym `XML`, który zawiera `URL` do `APPX`. Gdy pojawi się interfejs instalacji, próbuje pobrać `APPX` i zainstalować. Dlatego jego mechanizm aktualizacji jest taki sam jak w przypadku APPX.
+### 2. Homebrew Cask
+* **Command:** `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl`
 
-### Windows 7/8
+---
 
-Rozwiązanie odkryte i dostarczone przez [longteng](https://github.com/longteng-H)([bilibili](https://space.bilibili.com/1030667057))
+## 🐧 Formaty Pakietów dla Linux
 
-:::details Jak uruchomić XMCL na systemach Windows poniżej Windows 10
-Domyślnie XMCL nie obsługuje natywnej pracy Windows 7. Poprzez zainstalowanie rozszerzonego jądra VxKex w celu uzupełnienia wymaganych bibliotek środowiska uruchomieniowego, zapewnia to rozwiązanie dla użytkowników, którzy nadal korzystają ze starszych systemów. (Uwaga: Ta metoda ma również zastosowanie do niektórych programów, które nie mogą działać normalnie na starszych systemach)
+### 1. Flathub / Flatpak (+ Steam Deck) ⭐ *(Recommended for Steam Deck & Flatpak)*
+* **Description:** Containerized Flatpak package available from Flathub.
+* **Best Choice For:** **Steam Deck (SteamOS)**, Fedora Silverblue, and Flatpak-enabled desktops.
 
-1. Pobierz i zainstaluj rozszerzone jądro [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT). To jest gałąź krajowa dostarczona tutaj.
-2. Znajdź X Minecraft Launcher.exe i włącz dla niego VxKex. Jeśli nie wiesz jak, proszę zapoznaj się z tutorialem wideo: [Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8).
+### 2. Deb (`x64` / `ARM64`)
+* **Description:** Native package for Debian, Ubuntu, Linux Mint, Pop!_OS (`sudo apt install ./xmcl.deb`).
 
-Zaznacz zarówno "Włącz VxKex NEXT dla tego programu" i "Zgłaszaj inne wersje Windows", następnie zastosuj i potwierdź.
+### 3. RPM (`x64` / `AArch64`)
+* **Description:** Native package for Fedora, RHEL, openSUSE (`sudo dnf install ./xmcl.rpm`).
 
-W tym momencie XMCL może działać normalnie na Windows 7, a wszystkie funkcje oprócz multiplayer działają normalnie.
-:::
+### 4. AppImage (`x64` / `ARM64`)
+* **Description:** Universal standalone executable for any Linux distro (`chmod +x xmcl.AppImage`).
 
-## MacOS
+### 5. Tar.xz (`x64` / `ARM64`)
+* **Description:** Portable tarball archive for custom extraction.
 
-:::warning
-Użytkownicy Mac muszą pozwolić na instalację niepodpisanego oprogramowania.
-Ponieważ XMCL nie jest podpisany, musisz zezwolić na jego uruchomienie w ustawieniach systemowych.
-:::
+---
 
-### DMG
+## 📊 Podsumowanie: Który pakiet wybrać?
 
-Dla użytkowników MacOS oferujemy tylko format DMG. Format DMG to format obrazu dysku, który jest montowany jako wirtualny dysk. Po otwarciu DMG, przeciągnij aplikację do folderu `Applications`, aby ją zainstalować.
-
-Aby uruchomić aplikację, musisz pozwolić na jej działanie. Możesz użyć następującego polecenia:
-
-```sh
-# zezwól na oprogramowanie z dowolnego źródła
-sudo spctl --master-disable
-# wyczyść atrybut kwarantanny
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
-```
-
-Jeśli zainstalujesz `X Minecraft Launcher.app` w innym miejscu, po prostu użyj tej ścieżki zamiast `/Applications/X\ Minecraft\ Launcher.app`.
-
-## Linux
-
-:::info
-Linux ma tak wiele dystrybucji, że trudno jest dostarczyć uniwersalną metodę instalacji. Tutaj wspominamy tylko o `AppImage`.
-:::
-
-### AppImage
-
-AppImage to format aplikacji Linux, który może działać na dowolnym pulpicie Linux bez instalacji. Plik AppImage jest wykonywalny, wystarczy dwukrotnie kliknąć lub uruchomić z terminala.
-
-Jest to jedyny nieinstalacyjny program, który oferuje XMCL (~~właściwie nie chcemy go wspierać~~). Dlatego jego mechanizm aktualizacji różni się od innych formatów, a użytkownicy muszą sami pobrać nowy AppImage, aby go zaktualizować.
-
-## Inne formaty
-
-Obecnie inne formaty instalacji obsługują albo [aktualizacje na gorąco], albo metodę aktualizacji dostarczoną przez electron-builder. Ten tryb aktualizacji generalnie nie wymaga zbyt dużej uwagi (~~jeśli nie możesz zaktualizować, możesz po prostu ponownie pobrać launcher~~).
-
-:::tip Aktualizacja na gorąco
-Aktualizacja na gorąco oznacza, że launcher samodzielnie zastępuje podstawowy plik asar (~30MB), bez potrzeby ponownego pobierania całego launchera.
-:::
-
-## Dodatek: Wybór katalogu danych gry
-
-Podczas początkowej instalacji użytkownicy muszą wybrać `Katalog danych gry`. XMCL umieści pobrane `zasoby`, `biblioteki`, `wersje` itp. w tym katalogu.
-
-:::warning Uwaga
-Jak wspomniano na stronie konfiguracji, ze względu na specjalną strukturę plików XMCL, nie zaleca się używania **surowego** katalogu gry Minecraft jako katalogu danych XMCL.
-:::
-
-W tym miejscu zaleca się wybranie nowego folderu jako `Katalogu danych gry` XMCL.
-
-Aby uzyskać więcej informacji na temat struktury katalogu danych gry, zobacz [Przewodnik zarządzania danymi](/en/guide/manage.md#minecraft-related-data).
+| Platform | Best Choice (Recommended) | Portable / Alternative | CLI Installation |
+|---|---|---|---|
+| **Windows 10/11** | **App Installer** or **AppX** | **Zip (x64)** | `winget install CI010.XMinecraftLauncher` |
+| **macOS (M1-M4)** | **DMG (ARM64)** | — | `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl` |
+| **macOS (Intel)** | **DMG (x64)** | — | `brew tap voxelum/xmcl` && `brew install --cask voxelum/xmcl/xmcl` |
+| **Linux (Steam Deck)** | **Flathub (Flatpak)** | **AppImage** | — |
+| **Linux (Ubuntu/Debian)** | **Deb (x64)** | **AppImage** | — |
+| **Linux (Fedora/RHEL)** | **RPM (x64)** | **AppImage** | — |
