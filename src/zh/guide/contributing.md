@@ -1,180 +1,245 @@
-# 贡献指南
-### 技术栈与项目背景
+# Contributing to X Minecraft Launcher (XMCL)
 
-在这里，我们概述了这个项目使用的工具链与运行时。
+Thank you for your interest in contributing to XMCL! This guide provides an overview of the technical stack, monorepo architecture, development environment setup, editor configurations (**VS Code**, **Zed Editor**, **Neovim / Vim**, **Helix**, **JetBrains**), debugging workflows, testing procedures, and submission standards.
 
-对于整个项目，我们有：
+---
 
-- [Node.js >=20](https://nodejs.org/). 核心库基础环境。
-- [Electron 29](https://electron.atom.io). 启动器实际的运行时。
-- [pnpm](https://pnpm.io/). 用于 monorepo 包管理。
-- [TypeScript](https://www.typescriptlang.org/). 整个项目将尽可能使用 TypeScript 代码。
+## 1. Tech Stack & Infrastructure
 
-对于主进程（Electron），我们使用：
+XMCL is built as a modular monorepo powered by modern web and desktop technologies:
 
-- [esbuild](https://esbuild.github.io/). 使用 esbuild 来构建主进程的 TypeScript 代码。
+### Global Core & Monorepo
+- **[Node.js](https://nodejs.org/) (>= 20)**: Main runtime environment.
+- **[pnpm](https://pnpm.io/)**: Monorepo package manager using `pnpm` workspaces.
+- **[TypeScript](https://www.typescriptlang.org/) (v5.9+)**: Strict static typing across all modules.
 
-对于渲染侧，这是纯前端的技术栈：
+### Main Process (Electron Backend)
+- **[Electron 43](https://electronjs.org/)**: Desktop application container.
+- **[esbuild](https://esbuild.github.io/)**: High-performance bundler for main process TypeScript code.
+- **Native Modules**: `node-datachannel` (WebRTC P2P multiplayer), `@xmcl/windows-utils`.
 
-- [Vue](https://vuejs.org). 用于构建用户界面。
-- [Vite](https://vitejs.dev/). 用作我们的构建工具。
-- [Vuetify](https://vuetifyjs.com/). 用作我们的组件库。
-- [Vue Composition API](https://github.com/vuejs/composition-api). Vue 2 的组合式 API 的桥梁。一旦 Vuetify 升级到 Vue 3，这将被删除。
+### Renderer Process (Frontend UI)
+- **[Vue 3](https://vuejs.org/)**: Progressive framework for user interfaces (Composition API `<script setup>`).
+- **[Vite](https://vitejs.dev/)**: Lightning-fast frontend build tool and HMR dev server.
+- **[Vuetify 3](https://vuetifyjs.com/)**: Material Design component library.
 
-### 项目结构与设计
+### Testing & Code Quality
+- **[Vitest](https://vitest.dev/)**: Unit testing framework.
+- **[Oxlint](https://oxc.rs/)**: High-performance JavaScript/TypeScript linter.
 
-![diagram](../../assets/diagram.svg)
+---
 
-可以查看 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Voxelum/x-minecraft-launcher) 了解详细设计。它应该覆盖 90% 的情况！
+## 2. Monorepo Directory Structure
 
-## 贡献
-
-我们强烈建议您使用 VSCode 打开项目。
-
-### 开始
-
-#### 克隆
-
-用 git 克隆项目，需要使用 `--recurse-submodules` 选项：
-
-```bash
-git clone --recurse-submodules https://github.com/Voxelum/x-minecraft-launcher
+```sh
+x-minecraft-launcher
+ ├─ 📂 packages/               # Core independent TypeScript packages
+ │   ├─ 📂 core/               # Game launching, version parsing, Java resolution
+ │   ├─ 📂 installer/          # Downloads, Minecraft/Forge/Fabric/NeoForge installers
+ │   ├─ 📂 curseforge/         # CurseForge API integration
+ │   ├─ 📂 modrinth/           # Modrinth API integration
+ │   ├─ 📂 user/               # Yggdrasil & Authlib-injector authentication
+ │   └─ 📂 wrtc-multiplayer/   # WebRTC DataChannel P2P multiplayer networking
+ ├─ 📂 xmcl-runtime/           # Backend services & IPC controllers (JavaService, InstanceService, etc.)
+ ├─ 📂 xmcl-runtime-api/       # Shared TypeScript interfaces & IPC event contracts
+ ├─ 📂 xmcl-keystone-ui/       # Vue 3 / Vite frontend user interface
+ └─ 📂 xmcl-electron-app/      # Electron main process entry point & native app packaging
 ```
 
-如果您忘记添加 `--recurse-submodules` 标志，则需要手动初始化和更新 git 子模块：
+---
 
-```bash
-git submodule init
-git submodule update
+## 3. Getting Started & Local Setup
+
+### Step 1: Clone the Repository
+Clone with submodules using the `--recurse-submodules` flag:
+```sh
+git clone --recurse-submodules https://github.com/Voxelum/x-minecraft-launcher.git
+cd x-minecraft-launcher
 ```
 
-#### 安装依赖
-
-使用 [pnpm](https://pnpm.io) 安装项目：
-
-```
+### Step 2: Install Dependencies
+Install all workspace dependencies using `pnpm`:
+```sh
 pnpm install
 ```
 
-<details>
-  <summary> 解决中国国内安装依赖（如 Electron）太慢的办法 </summary>
+### Step 3: Configure Environment Variables
+Create a `.env` file inside `xmcl-electron-app/.env` to configure CurseForge API access:
+```ini
+CURSEFORGE_API_KEY=your_curseforge_api_key_here
+```
 
-  打开您的 git bash，在 `pnpm i` 前面加上 `registry=https://registry.npm.taobao.org electron_mirror="https://npm.taobao.org/mirrors/electron/"`。使用国内阿里提供的 npm 以及 Electron 的镜像。
-
-  最终输入的 command 也就是
-
-  ```bash
-  registry=https://registry.npm.taobao.org electron_mirror="https://npm.taobao.org/mirrors/electron/" pnpm i
-  ```
-</details>
-
-#### 设置环境变量
-在`xmcl-electron-app`下创建`.env`文件来设置`CURSEFORGE_API_KEY`。`.env`文件已被添加到`.gitignore`文件中。
-
-:::warning 注意
-**请注意保护好你的 CURSEFORGE API KEY**
+:::warning Security Notice
+Never commit your `.env` file or leak your `CURSEFORGE_API_KEY` in public commits or Pull Requests.
 :::
 
-#### 运行启动器
+---
 
-现在你可以运行开发版启动器了
+## 4. Code Editors Setup & Development Workflows
 
-#### 对于使用 VSCode 编辑器的开发者
+XMCL supports a wide variety of modern code editors. Choose your editor below for setup instructions, LSP configuration, and development task execution:
 
-进入 `Run and Debug` 菜单，使用配置文件 Electron: Main (launch) 来启动 Electron。（热键 F5）
+::: code-group
+```markdown [VS Code]
+### Visual Studio Code Setup
 
-#### 对于不使用 VSCode 编辑器的开发者
+VS Code provides out-of-the-box integration with integrated launch debuggers.
 
-打开任一终端，执行命令：
-
-```bash
-# 开启一个 UI 的 dev server
-npm run dev:renderer
+1. **Recommended Extensions**:
+   - Vue Language Features (Volar) (`Vue.volar`)
+   - TypeScript Vue Plugin (`Vue.vscode-typescript-vue-plugin`)
+   - i18n Ally (`lokalise.i18n-ally`)
+2. **Launching Dev Mode**:
+   - Press `F5` or go to **Run and Debug** -> select `Electron: Main (launch)`.
+   - VS Code will automatically launch Vite dev server and attach the node debugger to the main process with full breakpoint support.
 ```
 
-打开另一终端，执行命令：
+```json [Zed Editor]
+// Zed Editor Setup (.zed/tasks.json)
+// Zed is a high-performance GPU-accelerated editor built in Rust.
 
-``` bash
-# 开始监听主进程
-npm run dev:main
+// 1. Install Extensions:
+// Open Zed Extensions (Cmd+Shift+X / Ctrl+Shift+X) and install "Vue" and "YAML".
+
+// 2. Add Project Tasks (.zed/tasks.json):
+// Create a file at `.zed/tasks.json` in the root folder:
+[
+  {
+    "label": "Run XMCL Dev Launcher",
+    "command": "pnpm dev",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "Run Linter",
+    "command": "pnpm lint",
+    "use_new_terminal": true
+  },
+  {
+    "label": "Run Tests",
+    "command": "pnpm test",
+    "use_new_terminal": true
+  }
+]
+
+// 3. Run Tasks in Zed:
+// Press `Cmd+Shift+P` / `Ctrl+Shift+P` -> type `task: spawn` -> select `Run XMCL Dev Launcher`.
 ```
 
-#### 代码"热"更新
+```lua [Neovim / Vim]
+-- Neovim (NVIM) Setup
+-- Configured via nvim-lspconfig for Vue 3 + TypeScript monorepos.
 
-当你改了代码后，如何把把更新应用到正在跑的启动器中呢？
+-- 1. LSP Configuration (vtsls / volar / yamlls):
+local lspconfig = require('lspconfig')
 
-##### 对于浏览器进程
+-- Vue 3 Volar setup
+lspconfig.volar.setup({
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  init_options = {
+    vue = {
+      hybridMode = false,
+    },
+  },
+})
 
-Vite 提供热重载，它会自动更新。如果出现问题，您可以通过 `Ctrl+R` 刷新浏览器。
+-- YAML Language Server
+lspconfig.yamlls.setup({
+  settings = {
+    yaml = { validate = true, completion = true },
+  },
+})
 
-##### 对于主进程
+-- 2. Running Dev Server in Neovim:
+-- Open internal terminal buffer:
+-- :terminal pnpm dev
+-- Or use toggleterm.nvim (:ToggleTerm)
 
-如果您使用 VSCode 启动启动器，则在更改代码后，您可以点击 VSCode 调试器上的 `reload` 按钮。
-
-如果您不使用 VSCode 启动，则应该关闭 Electron 并重新启动。
-
-### 在启动器核心中发现问题
-
-启动器核心位于用 TypeScript 编写的[单独项目](https://github.com/voxelum/minecraft-launcher-core-node)中。
-
-如果您发现任何与之相关的问题，请在此开启一个 Issue。
-
-### VSCode 调试器
-
-该项目包含了针对 VSCode 调试器的配置。您可以在线添加断点并进行调试。目前，VSCode 调试器方法仅支持在主进程上进行调试。
-
-（无论如何，您都可以使用 Chrome DevTools 进行渲染进程）
-
-我们现在有两个选择：
-
-1. Electron: 主进程（启动）
-2. Electron: 主进程 （附加方式）
-
-如果您使用第一种方式启动，它会自动将调试器附加到实例。
-
-
-### 提交你的代码
-
-该项目遵循 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)。简而言之，提交信息的第一行应该是：
-
-```
-commit type: commit description
+-- 3. Debugging Main Process (nvim-dap):
+-- Configure nvim-dap node debugger to attach to port 9229 or launch `pnpm dev:main`.
 ```
 
-有几种可用的提交类型：`feat`, `fix`, `refactor`, `style`, `docs`, `chore`, `test`.
+```toml [Helix Editor]
+# Helix Editor Setup (.helix/languages.toml)
 
-参考自 [这个gist](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716):
+# Create `.helix/languages.toml` in repository root:
 
-> feat: (new feature for the user, not a new feature for build script)
->
-> fix: (bug fix for the user, not a fix to a build script)
->
-> docs: (changes to the documentation)
->
-> style: (formatting, missing semi colons, etc; no production code change)
->
-> refactor: (refactoring production code, eg. renaming a variable)
->
-> test: (adding missing tests, refactoring tests; no production code change)
->
-> chore: (updating grunt tasks etc; no production code change)
+[[language]]
+name = "vue"
+auto-format = true
+language-servers = ["volar", "vtsls"]
 
-**如果您不遵守这些规则，您的提交将被拒绝。**
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["vtsls"]
 
-### 如何构建启动器
+[[language]]
+name = "yaml"
+auto-format = true
+language-servers = ["yaml-language-server"]
 
-现在的启动器使用 2 个命令来构建
+# Running dev server from Helix:
+# Open terminal split or external terminal and run `pnpm dev`.
+```
 
-首先你需要先编译前端的代码：
+```markdown [JetBrains / WebStorm]
+### JetBrains IDEs (WebStorm / IntelliJ IDEA)
 
-```bash
+1. **Install Plugins**: Ensure **Vue.js**, **Tailwind CSS**, and **i18n Ally** plugins are enabled.
+2. **Create Run Configuration**:
+   - Go to **Run** -> **Edit Configurations** -> **+** -> **npm**.
+   - Set **Command**: `run`
+   - Set **Scripts**: `dev`
+   - Click **Apply** and **OK**.
+3. Press `Shift+F10` (or click Play icon) to start XMCL in dev mode.
+```
+:::
+
+---
+
+## 5. Testing, Linting & Building
+
+### Running Code Linter
+```sh
+pnpm lint
+```
+
+### Running Unit Tests
+```sh
+pnpm test
+```
+
+### Building Production Bundles
+```sh
+# 1. Build frontend UI bundle
 pnpm build:renderer
+
+# 2. Package Electron app distribution
+pnpm build
 ```
 
-除非你在 `xmcl-keystone-ui` 有新的改动，你已经不需再重新跑这个命令了。
+---
 
-然后你需要构建 Electron，将你刚刚构建的前端代码和 Electron 打包到一起：
+## 6. Commit Message Standards (Conventional Commits)
 
-```bash
-pnpm build
+This repository strictly enforces [Conventional Commits](https://www.conventionalcommits.org/). Your commit message must follow this format:
+
+```
+<type>: <short description>
+```
+
+### Available Commit Types:
+- `feat`: A new feature for users.
+- `fix`: A bug fix for users.
+- `docs`: Documentation updates.
+- `style`: Code formatting (no logic changes).
+- `refactor`: Code refactoring without changing functionality.
+- `perf`: Performance improvements.
+- `test`: Adding or updating tests.
+- `chore`: Build script or dependency updates.
+
+**Example**:
+```sh
+git commit -m "feat: add support for NeoForge modpack installation"
 ```
