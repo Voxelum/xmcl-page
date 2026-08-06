@@ -1,98 +1,74 @@
-# دليل التثبيت
+# Installation Guide
 
-يوفر اللانشر تنسيقات تثبيت متعددة، بعضها أقل شيوعاً. سنركز هنا على تقديم ميزات التنسيق **الأقل شيوعاً** أو **الخاصة**.
+X Minecraft Launcher (XMCL) provides multiple installation formats tailored for Windows, macOS, and Linux.
+
+:::tip Useful Guides
+- 💾 **Need to move the launcher or game data to drive D: or E:?** Read the [Drive Relocation Guide](./change-drive.md).
+- 🧱 **Want to play Minecraft Bedrock Edition (Windows 10/11)?** Read the [Bedrock Edition Guide](./bedrock.md).
+:::
+
+---
 
 ## Windows
 
-:::info
-تنسيق التثبيت الموصى به لمستخدمي Windows هو `APPX` أو `التثبيت عبر الإنترنت (appinstaller)`.
+Several installation options are available for Windows:
+
+### 1. APPX & Online AppInstaller — Recommended
+- **APPX** is the modern Windows 10/11 sandboxed package format. Apps run in an isolated environment. When uninstalled, cache and registry changes are cleanly removed.
+- **AppInstaller** automatically downloads and updates the APPX package via secure Microsoft delivery channels with **incremental updates** support.
+
+### 2. Portable ZIP Package
+- Requires no installation or administrator privileges.
+- Extract the archive anywhere (e.g. `D:\Games\XMCL`) and run `xmcl.exe` directly.
+- Ideal for USB drives or secondary disk partitions.
+
+### 3. Running on Windows 7 / 8 / 8.1 (VxKex Extended Kernel)
+
+:::warning Important Compatibility Notice
+Modern XMCL is built on **Electron 43 / Chromium 130+**. Chromium and Microsoft have **officially dropped all support for Windows 7, 8, and 8.1**. The launcher will **not run natively** on legacy Windows versions out of the box.
 :::
 
-### APPX
+:::details Workaround using VxKex Extended Kernel
+You can run XMCL on Windows 7 / 8 using the unofficial **VxKex** extended kernel:
 
-تنسيق APPX هو حزمة تثبيت توفرها Windows 10 تتيح تشغيل البرامج في بيئة افتراضية/معزولة (sandboxed). سيتم تشغيل البرامج المثبتة عبر APPX بالكامل داخل حاوية Windows.
+1. Download and install [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT).
+2. Right-click `xmcl.exe` -> **Properties** -> **VxKex** tab.
+3. Check **"Enable VxKex NEXT for this program"** and **"Report other versions of Windows"**, then apply.
 
-الفائدة الأكبر للمستخدمين هي عزل `ملفات المؤقتة (cache)` و`تعديلات سجل النظام (registry)` والعمليات الأخرى للتطبيق — فعندما تقوم بإلغاء تثبيت التطبيق، سيتم حذف `الملفات المؤقتة` و`تعديلات السجل` معاً.
-
-:::info خبر سار
-لا تقلق بشأن قيام البرنامج بالعبث في سجل النظام، على الرغم من أن الإضافة الوحيدة لـ XMCL في السجل قد تكون ربط امتداد الملفات باللانشر.
+**What works and what doesn't on Windows 7/8:**
+- ✅ **Singleplayer (Java Edition)** — Works normally with an appropriate Java runtime (Java 8 / 17 / 21).
+- ❌ **P2P WebRTC Multiplayer** — Not supported (requires Windows 10+ network APIs).
+- ❌ **Bedrock Edition (UWP)** — Not supported (requires Windows 10/11 UWP framework).
 :::
 
-يتم تحديث AppX عبر آلية appinstaller. وفقاً لاستراتيجية [التحديث التلقائي](https://learn.microsoft.com/en-us/windows/msix/app-installer/auto-update-and-repair--overview#automatic-updates) المدمجة في appinstaller، يتحقق XMCL من وجود تحديثات عندما **يقوم المستخدم بتشغيل التطبيق**، وإذا كان هناك تحديث، فسيتم التحديث في التشغيل التالي.
+---
 
-:::tip خبر سار
-تعد التحديثات التلقائية لـ APPX موفرة ونوعية حيث تدعم **التحديثات التراكمية** لنظام Windows — ولا يتم تنزيل وتحديث سوى المحتوى المتغير.
-:::
+## macOS
 
-### التثبيت عبر الإنترنت (appinstaller)
+### DMG Package
+1. Download and open the `.dmg` file.
+2. Drag **X Minecraft Launcher.app** to your **Applications** folder.
 
-يعتبر `appinstaller` في الأساس مساوياً لتنسيق `APPX`. ملف `appinstaller` نفسه هو ملف نصي `XML` يحتوي على عنوان `URL` لحزمة `APPX`. عندما تظهر واجهة التثبيت، ستحاول تنزيل حزمة `APPX` وتثبيتها. لذلك فإن آلية التحديث الخاصة بها مطابقة لـ APPX.
-
-### Windows 7/8
-
-حل تم اكتشافه وتقديمه بواسطة [longteng](https://github.com/longteng-H) ([bilibili](https://space.bilibili.com/1030667057))
-
-:::details كيفية تشغيل XMCL على أنظمة Windows الأقدم من Windows 10
-بشكل افتراضي، لا يدعم XMCL العمل على نظام Windows 7 الأصلي. عن طريق تثبيت نواة VxKex الممتدة لتوفير مكتبات التشغيل المطلوبة، يوفر هذا حلاً للمستخدمين الذين لا يزالون على الأنظمة القديمة. (ملاحظة: هذه الطريقة قابلة للتطبيق أيضاً على بعض البرامج التي لا يمكن تشغيلها بشكل طبيعي على الأنظمة القديمة)
-
-1. قم بتنزيل وتثبيت نواة [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT) الممتدة.
-2. ابحث عن ملف X Minecraft Launcher.exe وقم بتمكين VxKex له. إذا كنت لا تعرف كيف، فيرجى الرجوع إلى الفيديو التعليمي: [تشغيل التطبيقات الحديثة على Windows 7](https://www.youtube.com/watch?v=zl7AsxtoPV8).
-
-قم بتحديد كل من "Enable VxKex NEXT for this program" و "Report other versions of Windows"، ثم قم بالتطبيق والموافقة.
-
-في هذه المرحلة، يمكن لـ XMCL العمل بشكل طبيعي على Windows 7، وستعمل جميع الوظائف باستثناء اللعب الجماعي أونلاين.
-:::
-
-## MacOS
-
-:::warning
-يحتاج مستخدم Mac إلى السماح بتثبيت التطبيقات غير الموقعة رقمياً.
-نظراً لأن XMCL غير موقع رسمياً، فأنت بحاجة إلى السماح بتشغيله في إعدادات النظام.
-:::
-
-### DMG
-
-نحن نقدم تنسيق DMG فقط لمستخدمي MacOS. تنسيق DMG هو تنسيق صورة قرص يتم تركيبه كقرص افتراضي. بعد فتح DMG، قم بسحب التطبيق إلى مجلد `Applications` لتثبيته.
-
-لتشغيل التطبيق وتخطي تنبيه الحماية، يمكنك استخدام الأوامر التالية في الترمينال:
+:::warning Gatekeeper Clearance
+To clear the unsigned application warning on macOS, run this command in Terminal:
 
 ```sh
-# السماح بتشغيل التطبيقات من أي مصدر
-sudo spctl --master-disable
-# إزالة سمة الحجر الصحي للتطبيق
 sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
 ```
+:::
 
-إذا قمت بتثبيت التطبيق في مكان آخر، فما عليك سوى استبدال المسار `/Applications/X\ Minecraft\ Launcher.app` بمسارك المخصص.
+---
 
 ## Linux
 
-:::info
-يحتوي نظام Linux على العديد من التوزيعات مما يصعب معه توفير طريقة تثبيت موحدة. هنا نذكر فقط تنسيق `AppImage`.
-:::
-
 ### AppImage
+- Universal binary for Linux distributions (Ubuntu, Fedora, Arch, etc.).
+- Mark as executable: `chmod +x XMCL.AppImage` and launch.
 
-تنسيق AppImage هو تنسيق لتطبيقات Linux يمكن تشغيله على أي واجهة لـ Linux دون تثبيت. ملف AppImage قابل للتنفيذ، فقط اضغط عليه مرتين أو قم بتشغيله من الترمينال.
+---
 
-هذا هو البرنامج الوحيد الذي لا يحتاج لتثبيت ويوفره XMCL. لذلك فإن آلية التحديث الخاصة به تختلف عن التنسيقات الأخرى، ويحتاج المستخدمون لتنزيل ملف AppImage جديد بأنفسهم للتحديث.
+## Game Data Directory Selection
 
-## التنسيقات الأخرى
-
-حالياً، تدعم التنسيقات الأخرى إما [التحديثات الفورية (hot updates)] أو تدعم طريقة التحديث التي يوفرها electron-builder. لا تتطلب هذه الأوضاع عادةً اهتماماً كبيراً (إذا لم تتمكن من التحديث، يمكنك تنزيل اللانشر مرة أخرى).
-
-:::tip التحديث الفوري
-التحديث الفوري يعني أن اللانشر يقوم باستبدال ملف asar الأساسي بنفسه (حجمه حوالي 30 ميجابايت)، دون الحاجة لتنزيل اللانشر كاملاً مرة أخرى.
-:::
-
-## ملحق: اختيار دليل بيانات اللعبة
-
-أثناء التثبيت الأولي، يحتاج المستخدمون إلى اختيار `دليل بيانات اللعبة`. سيضع XMCL الأصول المُنزلة `assets` و`libraries` و`versions` وما إلى ذلك في هذا الدليل.
-
-:::warning ملاحظة
-كما هو موضح في صفحة الإعداد، نظراً لبنية الملفات الخاصة بـ XMCL، لا يُنصح باستخدام دليل لعبة ماينكرافت **الأصلي** كدليل بيانات لـ XMCL.
-:::
-
-هنا، يُنصح باختيار مجلد جديد كـ `دليل بيانات اللعبة` لـ XMCL.
-
-لمزيد من المعلومات حول بنية دليل بيانات اللعبة، يرجى مراجعة [دليل إدارة البيانات](/ar/guide/manage.md#minecraft-related-data).
+During initial setup, XMCL prompts for a **Game Data Directory**.
+- It is recommended to choose a dedicated folder (e.g., `D:\XMCL-Data`).
+- For details, see the [Data Management Guide](./manage.md) and [Drive Relocation Guide](./change-drive.md).

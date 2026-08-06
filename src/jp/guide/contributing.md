@@ -1,180 +1,245 @@
-# 貢献ガイド
-### 技術スタックと背景情報
+# Contributing to X Minecraft Launcher (XMCL)
 
-このプロジェクトのツールチェーンとランタイムの概要を紹介します
+Thank you for your interest in contributing to XMCL! This guide provides an overview of the technical stack, monorepo architecture, development environment setup, editor configurations (**VS Code**, **Zed Editor**, **Neovim / Vim**, **Helix**, **JetBrains**), debugging workflows, testing procedures, and submission standards.
 
-プロジェクト全体では以下を使用しています：
+---
 
-- [Node.js >=20](https://nodejs.org/)。コアライブラリのベース環境。
-- [Electron 29](https://electron.atom.io)。ランチャーの実際のランタイム。
-- [pnpm](https://pnpm.io/)。モノレポのパッケージ管理に使用。
-- [TypeScript](https://www.typescriptlang.org/)。プロジェクト全体でできるだけTypeScriptを使用しています。
+## 1. Tech Stack & Infrastructure
 
-メインプロセス（Electron）では：
+XMCL is built as a modular monorepo powered by modern web and desktop technologies:
 
-- [esbuild](https://esbuild.github.io/)。メインプロセスのTypeScriptをビルドするために使用しています。
+### Global Core & Monorepo
+- **[Node.js](https://nodejs.org/) (>= 20)**: Main runtime environment.
+- **[pnpm](https://pnpm.io/)**: Monorepo package manager using `pnpm` workspaces.
+- **[TypeScript](https://www.typescriptlang.org/) (v5.9+)**: Strict static typing across all modules.
 
-レンダラー側、つまり純粋なフロントエンドでは：
+### Main Process (Electron Backend)
+- **[Electron 43](https://electronjs.org/)**: Desktop application container.
+- **[esbuild](https://esbuild.github.io/)**: High-performance bundler for main process TypeScript code.
+- **Native Modules**: `node-datachannel` (WebRTC P2P multiplayer), `@xmcl/windows-utils`.
 
-- [Vue](https://vuejs.org)。ユーザーインターフェースの構築に使用。
-- [Vite](https://vitejs.dev/)。ビルドシステムとして使用。
-- [Vuetify](https://vuetifyjs.com/)。コンポーネントライブラリとして使用。
-- [Vue Composition API](https://github.com/vuejs/composition-api)。Vue 2向けのコンポジショナルAPIのブリッジ。VuetifyがVue 3にアップグレードされると、Vueもアップグレードされ、これは削除される予定です。
+### Renderer Process (Frontend UI)
+- **[Vue 3](https://vuejs.org/)**: Progressive framework for user interfaces (Composition API `<script setup>`).
+- **[Vite](https://vitejs.dev/)**: Lightning-fast frontend build tool and HMR dev server.
+- **[Vuetify 3](https://vuetifyjs.com/)**: Material Design component library.
 
-### プロジェクト構造と設計
+### Testing & Code Quality
+- **[Vitest](https://vitest.dev/)**: Unit testing framework.
+- **[Oxlint](https://oxc.rs/)**: High-performance JavaScript/TypeScript linter.
 
-![diagram](../../assets/diagram.svg)
+---
 
-詳細な設計については[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/Voxelum/x-minecraft-launcher)をご覧ください。90%のケースをカバーしています！
+## 2. Monorepo Directory Structure
 
-## 貢献する
-
-プロジェクトを開くにはVSCodeの使用を強く推奨します。
-
-### 始め方
-
-#### クローン
-
-サブモジュールフラグ`--recurse-submodules`を使ってプロジェクトをクローンします。
-
-```bash
-git clone --recurse-submodules https://github.com/Voxelum/x-minecraft-launcher
+```sh
+x-minecraft-launcher
+ ├─ 📂 packages/               # Core independent TypeScript packages
+ │   ├─ 📂 core/               # Game launching, version parsing, Java resolution
+ │   ├─ 📂 installer/          # Downloads, Minecraft/Forge/Fabric/NeoForge installers
+ │   ├─ 📂 curseforge/         # CurseForge API integration
+ │   ├─ 📂 modrinth/           # Modrinth API integration
+ │   ├─ 📂 user/               # Yggdrasil & Authlib-injector authentication
+ │   └─ 📂 wrtc-multiplayer/   # WebRTC DataChannel P2P multiplayer networking
+ ├─ 📂 xmcl-runtime/           # Backend services & IPC controllers (JavaService, InstanceService, etc.)
+ ├─ 📂 xmcl-runtime-api/       # Shared TypeScript interfaces & IPC event contracts
+ ├─ 📂 xmcl-keystone-ui/       # Vue 3 / Vite frontend user interface
+ └─ 📂 xmcl-electron-app/      # Electron main process entry point & native app packaging
 ```
 
-`--recurse-submodules`フラグを追加し忘れた場合は、gitサブモジュールを手動で初期化・更新する必要があります。
+---
 
-```bash
-git submodule init
-git submodule update
+## 3. Getting Started & Local Setup
+
+### Step 1: Clone the Repository
+Clone with submodules using the `--recurse-submodules` flag:
+```sh
+git clone --recurse-submodules https://github.com/Voxelum/x-minecraft-launcher.git
+cd x-minecraft-launcher
 ```
 
-#### インストール
-
-[pnpm](https://pnpm.io)を使ってプロジェクトをインストールします：
-
-```
+### Step 2: Install Dependencies
+Install all workspace dependencies using `pnpm`:
+```sh
 pnpm install
 ```
 
-<details>
-  <summary> 中国国内での依存関係（ElectronなどのようなもPの）インストールが遅い問題の解決策 </summary>
+### Step 3: Configure Environment Variables
+Create a `.env` file inside `xmcl-electron-app/.env` to configure CurseForge API access:
+```ini
+CURSEFORGE_API_KEY=your_curseforge_api_key_here
+```
 
-  gitバッシュを開き、`pnpm i`の前に`registry=https://registry.npm.taobao.org electron_mirror="https://npm.taobao.org/mirrors/electron/"`を追加します。Alibabaが提供する国内のnpmおよびElectronミラーを使用します。
-
-  最終的に入力するコマンドは
-
-  ```bash
-  registry=https://registry.npm.taobao.org electron_mirror="https://npm.taobao.org/mirrors/electron/" pnpm i
-  ```
-</details>
-
-#### 環境変数の設定
-
-`xmcl-electron-app`の下に`.env`ファイルを作成して`CURSEFORGE_API_KEY`を設定する必要があります。この`.env`ファイルは`.gitignore`ファイルに追加されています。
-
-:::warning 注意点
-**CURSEFORGEのAPIキーを漏らさないでください**
+:::warning Security Notice
+Never commit your `.env` file or leak your `CURSEFORGE_API_KEY` in public commits or Pull Requests.
 :::
 
-#### ランチャーを起動する
+---
 
-これでランチャーを実行できます
+## 4. Code Editors Setup & Development Workflows
 
-#### VSCode利用者向け
+XMCL supports a wide variety of modern code editors. Choose your editor below for setup instructions, LSP configuration, and development task execution:
 
-`実行とデバッグ`セクションに移動し、`Electron: Main (launch)`プロファイルを使用してelectronを起動します。(ホットキーF5)
+::: code-group
+```markdown [VS Code]
+### Visual Studio Code Setup
 
-#### VSCode以外の利用者向け
+VS Code provides out-of-the-box integration with integrated launch debuggers.
 
-ターミナルを一つ開き
-
-```bash
-# UIのためにdevサーバーを開始
-npm run dev:renderer
+1. **Recommended Extensions**:
+   - Vue Language Features (Volar) (`Vue.volar`)
+   - TypeScript Vue Plugin (`Vue.vscode-typescript-vue-plugin`)
+   - i18n Ally (`lokalise.i18n-ally`)
+2. **Launching Dev Mode**:
+   - Press `F5` or go to **Run and Debug** -> select `Electron: Main (launch)`.
+   - VS Code will automatically launch Vite dev server and attach the node debugger to the main process with full breakpoint support.
 ```
 
-別のターミナルを開き
+```json [Zed Editor]
+// Zed Editor Setup (.zed/tasks.json)
+// Zed is a high-performance GPU-accelerated editor built in Rust.
 
-``` bash
-# メインプロセスコードの監視を開始
-npm run dev:main
+// 1. Install Extensions:
+// Open Zed Extensions (Cmd+Shift+X / Ctrl+Shift+X) and install "Vue" and "YAML".
+
+// 2. Add Project Tasks (.zed/tasks.json):
+// Create a file at `.zed/tasks.json` in the root folder:
+[
+  {
+    "label": "Run XMCL Dev Launcher",
+    "command": "pnpm dev",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "Run Linter",
+    "command": "pnpm lint",
+    "use_new_terminal": true
+  },
+  {
+    "label": "Run Tests",
+    "command": "pnpm test",
+    "use_new_terminal": true
+  }
+]
+
+// 3. Run Tasks in Zed:
+// Press `Cmd+Shift+P` / `Ctrl+Shift+P` -> type `task: spawn` -> select `Run XMCL Dev Launcher`.
 ```
 
-#### コードの「ホット」変更
+```lua [Neovim / Vim]
+-- Neovim (NVIM) Setup
+-- Configured via nvim-lspconfig for Vue 3 + TypeScript monorepos.
 
-コードを変更した場合、その変更を実行中のランチャーインスタンスに更新する方法です。
+-- 1. LSP Configuration (vtsls / volar / yamlls):
+local lspconfig = require('lspconfig')
 
-##### ブラウザプロセスの場合
+-- Vue 3 Volar setup
+lspconfig.volar.setup({
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+  init_options = {
+    vue = {
+      hybridMode = false,
+    },
+  },
+})
 
-Viteはホットリロードを提供しているので、自動的に更新されるはずです。何か問題が発生した場合は、`Ctrl+R`でブラウザを更新できます。
+-- YAML Language Server
+lspconfig.yamlls.setup({
+  settings = {
+    yaml = { validate = true, completion = true },
+  },
+})
 
-##### メインプロセスの場合
+-- 2. Running Dev Server in Neovim:
+-- Open internal terminal buffer:
+-- :terminal pnpm dev
+-- Or use toggleterm.nvim (:ToggleTerm)
 
-VSCodeを使用してランチャーを起動している場合、コードを変更した後、VSCodeデバッガーの再読み込みボタンを押すことができます。
-
-VSCodeを使用して起動していない場合、Electronは自動的に閉じて再読み込みします。
-
-### ランチャーコアの問題を発見した場合
-
-ランチャーコアはTypeScriptで書かれた[別プロジェクト](https://github.com/voxelum/minecraft-launcher-core-node)にあります。
-
-関連する問題を特定した場合は、そちらで問題を開いてください。
-
-### VSCodeデバッガー
-
-プロジェクトにはVSCodeデバッガー設定が含まれています。行にブレークポイントを追加してデバッグできます。現在、VSCodeデバッガーの方法はメインプロセスのデバッグのみをサポートしています。
-
-（レンダラープロセスにはChrome Devtoolsを使用できます）
-
-現在、2つのオプションがあります：
-
-1. Electron: Main (launch)
-2. Electron: Main (attach)
-
-最初のオプションを使って起動すると、自動的にデバッガーがインスタンスにアタッチされます。
-
-### コードのコミット
-
-このプロジェクトは[コンベンショナルコミット](https://www.conventionalcommits.org/en/v1.0.0-beta.3/)に従っています。簡単に言えば、コミットメッセージの最初の行は次のようになります：
-
-```
-commit type: commit description
+-- 3. Debugging Main Process (nvim-dap):
+-- Configure nvim-dap node debugger to attach to port 9229 or launch `pnpm dev:main`.
 ```
 
-利用可能なコミットタイプは：`feat`、`fix`、`refactor`、`style`、`docs`、`chore`、`test`があります。
+```toml [Helix Editor]
+# Helix Editor Setup (.helix/languages.toml)
 
-[このgist](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)を参考にすると：
+# Create `.helix/languages.toml` in repository root:
 
-> feat: （ユーザー向けの新機能。ビルドスクリプトの新機能ではない）
->
-> fix: （ユーザー向けのバグ修正。ビルドスクリプトの修正ではない）
->
-> docs: （ドキュメントの変更）
->
-> style: （フォーマットや、セミコロンの欠落など；実際のコード変更はない）
->
-> refactor: （実際のコードのリファクタリング。変数名の変更など）
->
-> test: （欠落しているテストの追加、テストのリファクタリング；実際のコード変更はない）
->
-> chore: （gruntタスクの更新など；実際のコード変更はない）
+[[language]]
+name = "vue"
+auto-format = true
+language-servers = ["volar", "vtsls"]
 
-**これらのルールに従わないと、コミットは拒否されます。**
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["vtsls"]
 
-### ビルド方法
+[[language]]
+name = "yaml"
+auto-format = true
+language-servers = ["yaml-language-server"]
 
-現在のランチャーは、ビルドするために2つのコマンドを実行する必要があります
+# Running dev server from Helix:
+# Open terminal split or external terminal and run `pnpm dev`.
+```
 
-まず、フロントエンドコードをビルドする必要があります：
+```markdown [JetBrains / WebStorm]
+### JetBrains IDEs (WebStorm / IntelliJ IDEA)
 
-```bash
+1. **Install Plugins**: Ensure **Vue.js**, **Tailwind CSS**, and **i18n Ally** plugins are enabled.
+2. **Create Run Configuration**:
+   - Go to **Run** -> **Edit Configurations** -> **+** -> **npm**.
+   - Set **Command**: `run`
+   - Set **Scripts**: `dev`
+   - Click **Apply** and **OK**.
+3. Press `Shift+F10` (or click Play icon) to start XMCL in dev mode.
+```
+:::
+
+---
+
+## 5. Testing, Linting & Building
+
+### Running Code Linter
+```sh
+pnpm lint
+```
+
+### Running Unit Tests
+```sh
+pnpm test
+```
+
+### Building Production Bundles
+```sh
+# 1. Build frontend UI bundle
 pnpm build:renderer
+
+# 2. Package Electron app distribution
+pnpm build
 ```
 
-`xmcl-keystone-ui`の下のコードが変更されていない限り、これを再度ビルドする必要はありません。
+---
 
-次に、先ほどビルドしたフロントエンドを同梱してElectronをビルドできます：
+## 6. Commit Message Standards (Conventional Commits)
 
-```bash
-pnpm build
+This repository strictly enforces [Conventional Commits](https://www.conventionalcommits.org/). Your commit message must follow this format:
+
+```
+<type>: <short description>
+```
+
+### Available Commit Types:
+- `feat`: A new feature for users.
+- `fix`: A bug fix for users.
+- `docs`: Documentation updates.
+- `style`: Code formatting (no logic changes).
+- `refactor`: Code refactoring without changing functionality.
+- `perf`: Performance improvements.
+- `test`: Adding or updating tests.
+- `chore`: Build script or dependency updates.
+
+**Example**:
+```sh
+git commit -m "feat: add support for NeoForge modpack installation"
 ```
