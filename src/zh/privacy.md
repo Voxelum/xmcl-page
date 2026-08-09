@@ -2,4 +2,4 @@
 layout: page
 ---
 
-<AppPrivacy />
+<AppPrivacyZh />

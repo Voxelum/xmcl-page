@@ -29,6 +29,14 @@ import SceneLanding from './components/SceneLanding.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import AccountMenu from './components/AccountMenu.vue'
 import ImageZoomLightbox from './components/ImageZoomLightbox.vue'
+import AppSponsor from './components/AppSponsor.vue'
+import AppPrivacy from './components/AppPrivacy.vue'
+import AppPrivacyUk from './components/AppPrivacyUk.vue'
+import AppPrivacyRu from './components/AppPrivacyRu.vue'
+import AppPrivacyEn from './components/AppPrivacyEn.vue'
+import AppPrivacyZh from './components/AppPrivacyZh.vue'
+import AppPrivacyJp from './components/AppPrivacyJp.vue'
+import AppPrivacyAr from './components/AppPrivacyAr.vue'
 
 const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
 
@@ -113,5 +121,13 @@ export default {
     app.component('AppOptifinePicture', AppOptifinePicture)
     app.component('AppLabymodPicture', AppLabymodPicture)
     app.component('LogViewer', LogViewer)
+    app.component('AppSponsor', AppSponsor)
+    app.component('AppPrivacy', AppPrivacy)
+    app.component('AppPrivacyUk', AppPrivacyUk)
+    app.component('AppPrivacyRu', AppPrivacyRu)
+    app.component('AppPrivacyEn', AppPrivacyEn)
+    app.component('AppPrivacyZh', AppPrivacyZh)
+    app.component('AppPrivacyJp', AppPrivacyJp)
+    app.component('AppPrivacyAr', AppPrivacyAr)
   },
 }
