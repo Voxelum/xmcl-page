@@ -583,7 +583,7 @@ watch(state, (value) => {
 .prebuild-featured-body h2 { color: var(--prebuild-ink); font-size: clamp(24px, 3vw, 38px); letter-spacing: -0.04em; line-height: 1.05; margin: 10px 0 10px; }
 .prebuild-featured-body p { color: var(--prebuild-muted); font-size: 13px; line-height: 1.5; margin: 0; }
 .prebuild-featured-body p span { color: var(--prebuild-orange); }
-.prebuild-featured-mark { color: var(--prebuild-soft); font-size: clamp(50px, 8vw, 100px); font-weight: 800; letter-spacing: -0.08em; line-height: 1; }
+.prebuild-featured-mark { color: var(--prebuild-muted); font-size: clamp(50px, 8vw, 100px); font-weight: 800; letter-spacing: -0.08em; line-height: 1; }
 .prebuild-downloads { border-top: 1px solid var(--prebuild-line); padding-top: 24px; }
 .prebuild-downloads :deep(.downloads-container) { margin: 0; }
 
