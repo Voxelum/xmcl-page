@@ -1,0 +1,392 @@
+repository: Repositório do Código Fonte
+label: Português (Brasil)
+intro:
+  first:
+    body: Um launcher de Minecraft {openSource} com uma interface {modernUx}.
+    openSource: código aberto
+    modernUx: moderna
+  second:
+    body: Gerencie todos os seus {mods} de forma {diskEfficient}!
+    diskEfficient: eficiente em disco
+    mods: mods
+  description: >-
+    X Minecraft Launcher (XMCL) é um launcher moderno de Minecraft que permite
+    gerenciar seus recursos como modpacks, pacotes de recursos, mods,
+    shaders... Possui integração com Minecraft Forge, Fabric, Quilt,
+    CurseForge e Modrinth.
+launcher:
+  manage:
+    intro: Gerencie seu Minecraft com eficiência.
+  description: Um launcher de Minecraft simples, de código aberto e orientado a funcionalidades.
+downloadFor:
+  windows: 'Baixar para Windows:'
+  mac: 'Baixar para Mac:'
+  linux: 'Baixar para Linux:'
+guide: Guia
+protocol: Protocolo
+changelogs: Histórico de alterações
+outline: Nesta página
+coreDocument: Documentação principal
+blogs: Blog
+author: Contatar o autor
+download-zip: Zip
+download-zip-32: Zip (32 bits)
+download-appx: Pacote AppX
+download-appinstaller: Instalador de App
+download-portable: Portátil
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: Baixar via Azure
+azure-ms-source: Baixar via Azure Microsoft CDN
+github-source: Baixar via Github
+auto-source: Seleção automática de origem
+authSuccess: Sucesso!
+authSuccessTitle: Autorização bem-sucedida. Você será redirecionado de volta ao launcher!
+redirectHelperTitle: >-
+  Se não for redirecionado automaticamente, tente clicar no botão
+  "Abrir no Launcher".
+redirectHelperMessage: >-
+  Uma janela irá aparecer pedindo para abrir o launcher. Se não funcionar,
+  tente arrastar o botão para a janela do launcher!
+notWork: Não está funcionando?
+openInAppButton: Abrir no Launcher
+nothingWork: >-
+  Se nada funcionar, você pode baixar a versão mais recente do
+  launcher novamente.
+gameInstall:
+  title:
+    body: Sem mais preocupações com a {gameInstall}
+    gameInstall: Instalação do jogo
+  description: >-
+    O XMCL suporta a instalação do Minecraft original, Forge, Fabric e até
+    OptiFine, tudo em um só lugar! Você pode instalá-los diretamente no launcher.
+optimalDisk:
+  title:
+    body: Espaço em disco {optimal} com {massiveResources}
+    optimal: Ótimo
+    massiveResources: recursos massivos
+  description: >-
+    O XMCL armazena todos os mods, pacotes de recursos, shaders e modpacks em um único
+    local. Em vez de copiar arquivos para cada perfil, usa links físicos. Isso significa
+    que você nunca verá arquivos duplicados na pasta /mods, economizando muito espaço em disco.
+cleanWorkspace:
+  title:
+    body: Mantenha seu espaço de trabalho {clean} com múltiplos perfis
+    clean: organizado
+  description: >-
+    O XMCL tem suporte integrado para múltiplas instâncias. Você pode criar várias
+    instâncias facilmente e não precisar se preocupar com configurações de inicialização misturadas.
+communityIntegration:
+  title:
+    body: Integrado com {multipleCommunities}
+    multipleCommunities: múltiplas comunidades
+  description: >-
+    O XMCL tem suporte integrado para Curseforge e Modrinth. Também oferece a
+    possibilidade de usar contas de usuário personalizadas e sistemas de skins como o Blessing Skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: Entrar no grupo de {inviter}
+joinPeerDescription: >-
+  {inviter} te convidou para entrar no grupo {group} para jogar Minecraft
+  juntos! Você será redirecionado de volta ao launcher!
+fullChangelog: O que há de novo?
+privacy: Privacidade do Software
+prebuild:
+  history: Histórico de builds
+  historyDescription: Builds e lançamentos anteriores
+  download: Baixar prebuilds
+  downloadDescription: >-
+    Prebuilds são artefatos gerados durante o desenvolvimento. Podem ser
+    instáveis. Use por sua conta e risco!
+  entryHint: Artefatos de prebuild?
+  ready: Pronto
+  selected: Selecionado
+  selectBuild: Selecionar build
+  downloading: Baixando...
+  kicker: CANAL DE PREBUILD
+  developmentBuilds: BUILDS DE DESENVOLVIMENTO
+  tryNext: Experimente o que vem por aí.
+  unstableDescription: Artefatos instáveis para testar as próximas mudanças do XMCL.
+  selectedBuild: BUILD SELECIONADA
+  buildsAvailable: '{count} builds disponíveis'
+  selectABuild: SELECIONAR UMA BUILD
+  noBuilds: NENHUMA BUILD ENCONTRADA
+  noBuildsDescription: Não há artefatos de prebuild disponíveis no momento.
+  checkBack: Volte após o próximo workflow de desenvolvimento ser concluído.
+  yesterday: Ontem
+  daysAgo: 'há {count} dias'
+downloadMacHint:
+  content: Para usuários de Mac, siga as {link} para instalar.
+  link: instruções de instalação
+features:
+  label: Funcionalidades
+  ui:
+    kicker: XMCL / CATÁLOGO DE FUNCIONALIDADES
+    heading: O launcher, mapeado.
+    description: Explore os fluxos de trabalho que tornam uma instalação modificada do Minecraft mais fácil de criar, entender e compartilhar.
+    all: Todas as funcionalidades
+    search: Buscar funcionalidades...
+    features: funcionalidades
+    featuresInView: funcionalidades visíveis
+    readWorkflow: Ver o fluxo de trabalho
+  status:
+    homepage: Início
+    catalog: Catálogo
+    guide: Guia
+    detail: Detalhes
+  groups:
+    instances:
+      short: Instâncias
+      title: Instâncias e perfis
+      description: Mantenha cada configuração do Minecraft independente, visível e pronta para iniciar.
+    community:
+      short: Comunidade
+      title: Mods e conteúdo da comunidade
+      description: Descubra, inspecione e instale os projetos que transformam uma versão do Minecraft no seu próximo mundo.
+    mods:
+      short: Controle de mods
+      title: Gerenciamento de mods
+      description: Mantenha uma instalação grande organizada com busca, agrupamento, verificação de dependências e atualizações controladas.
+    world-tools:
+      short: Ferramentas de mundo
+      title: Ferramentas de mundo
+      description: Trabalhe com os mundos das suas instâncias, inspecione sua forma, selecione partes e entenda seus materiais.
+    sharing:
+      short: Compartilhar
+      title: Compartilhamento e multijogador
+      description: Mova uma configuração funcionando para um amigo, servidor ou outra instalação com todos os detalhes intactos.
+    accounts:
+      short: Contas
+      title: Contas e produtividade
+      description: Mantenha identidade, personalização e ações frequentes próximas dos mundos que você joga.
+    diagnostics:
+      short: Diagnóstico
+      title: Diagnóstico e assistência
+      description: Quando uma inicialização falha, o XMCL coloca as evidências e a próxima ação no mesmo lugar.
+  items:
+    instance-library:
+      title: Uma biblioteca de instâncias organizada
+      benefit: Veja mundos vanilla, modificados e experimentais juntos em um só lugar pronto para jogar.
+      capabilities: Separar versões e loaders|Ver mods, mundos e recursos rapidamente|Iniciar a configuração desejada
+    instance-create-modloaders:
+      title: Criar instâncias Java e Bedrock
+      benefit: Comece uma nova configuração com o loader e a edição que combinam com o mundo que você quer jogar.
+      capabilities: Java Edition e suporte experimental ao Bedrock|Forge, Fabric, Quilt, NeoForge, OptiFine e LabyMod|Fontes do Minecraft e versões locais
+    instance-folder-groups:
+      title: Grupos de instâncias por pastas
+      benefit: Organize muitas instâncias em pastas para que diferentes mundos e configurações sejam fáceis de encontrar.
+      capabilities: Agrupar instâncias por propósito ou projeto|Manter configurações relacionadas juntas|Alternar entre pastas na barra lateral
+    instance-settings:
+      title: Configurações da instância
+      benefit: Ajuste Java, memória, versões, loaders e comportamento de inicialização sem afetar outras instâncias.
+      capabilities: Configuração independente por instância|Seleção de versão e loader|Controles de aparência por instância
+    instance-theme:
+      title: Tema da instância
+      benefit: Dê a cada mundo sua própria identidade com planos de fundo, cores, desfoque, fontes e CSS personalizado.
+      capabilities: Imagem de fundo e overlay|Cantos arredondados e fontes|Exportar e importar tema
+    local-server:
+      title: Iniciar um servidor local
+      benefit: Transforme uma instância em um servidor local configurável com mundo, limite de jogadores e arquivos exportáveis.
+      capabilities: MOTD, porta e limite de jogadores|Seleção de mundo e arquivos do servidor|Exportar um pacote de servidor
+    server-list:
+      title: Lista de servidores
+      benefit: Mantenha destinos multijogador próximos à instância correspondente e veja o estado da conexão.
+      capabilities: Status do servidor e contagem de jogadores|Fixar e remover destinos|Mostrar falhas de conexão claramente
+    modpack-market:
+      title: Mercado de modpacks
+      benefit: Navegue por conteúdo do Modrinth, CurseForge e FTB em um único marketplace pesquisável.
+      capabilities: Filtros de fonte, versão, loader e categoria|Descoberta de packs populares e recentes|Abrir página de detalhes de um pack
+    online-mod-search:
+      title: Busca de mods online
+      benefit: Encontre mods compatíveis nas principais plataformas antes de adicioná-los à sua instância.
+      capabilities: Fontes Modrinth e CurseForge|Filtros de versão e loader|Filtros de ambiente e categoria
+    modpack-detail:
+      title: Detalhes do modpack
+      benefit: Entenda um pack antes de instalá-lo, de capturas de tela e autores a requisitos técnicos.
+      capabilities: Capturas de tela, tags e estatísticas|Ações de instalar e iniciar|Informações técnicas e recursos externos
+    mod-collections:
+      title: Coleções de mods
+      benefit: Salve projetos para revisitar e transforme uma coleção em uma configuração reutilizável.
+      capabilities: Coleções do launcher|Projetos seguidos no Modrinth|Instalação em lote e gerenciamento de coleções
+    mod-detail:
+      title: Detalhes do mod
+      benefit: Inspecione um mod antes de alterar sua instância e entenda suas versões, dependências e fontes.
+      capabilities: Seleção de versão e dependências|Loaders, categorias e links de fonte|Descrição e recursos externos
+    local-mods:
+      title: Gerenciamento de mods instalados
+      benefit: Veja o que está ativo, filtre rapidamente e mantenha o conjunto funcionando saudável.
+      capabilities: Buscar, ordenar e filtrar mods|Verificar dependências e conteúdo não utilizado|Escolher política de atualização
+    custom-mod-groups:
+      title: Grupos de mods personalizados
+      benefit: Crie seus próprios grupos e salve as regras que organizam uma instância complexa.
+      capabilities: Aplicar e salvar regras de agrupamento|Agrupar mods pelo menu de contexto|Ativar, desativar ou inspecionar arquivos
+    save-preview:
+      title: Prévia de saves e ferramentas de chunks
+      benefit: Leia um mundo visualmente antes de iniciá-lo e faça mudanças precisas em nível de chunk.
+      capabilities: Navegar e inspecionar mapas do mundo|Selecionar, copiar ou excluir chunks|Ler propriedades e materiais do mundo
+    blueprint-preview:
+      title: Prévia de blueprints
+      benefit: Pré-visualize uma estrutura em 3D e verifique compatibilidade e materiais antes de colocá-la no jogo.
+      capabilities: Formatos Litematica e WorldEdit|Status de compatibilidade e mods ausentes|Lista de materiais e conversão de formato
+    modpack-export:
+      title: Exportar modpack
+      benefit: Empacote uma instância para outros jogadores sem perder os metadados e arquivos que a fazem funcionar.
+      capabilities: Exportação para CurseForge e Modrinth|Metadados de autor, descrição e URL|Escolher arquivos e assets a incluir
+    server-export:
+      title: Exportar servidor
+      benefit: Selecione o mundo e os arquivos do servidor certos, então exporte um servidor local com configuração clara.
+      capabilities: Exportar para uma pasta ou fazer upload|Selecionar arquivos do servidor|Configurar MOTD e opções do servidor
+    account-login:
+      title: Múltiplos serviços de autenticação
+      benefit: Escolha o serviço de conta que combina com a sua forma de jogar, da Microsoft ao offline e serviços de terceiros.
+      capabilities: Contas Microsoft e offline|Serviços Ely.by e LittleSkin|Adicionar e gerenciar serviços de autenticação
+    quick-action:
+      title: Ação rápida
+      benefit: Encontre instâncias e comandos sem sair da página em que você está.
+      capabilities: Buscar comandos, instâncias e mods|Iniciar ou criar uma instância|Navegação por teclado com Ctrl+K
+    crash-diagnosis:
+      title: Relatórios de crash e falhas de inicialização
+      benefit: Leia os logs reais, relatórios de crash e saída do servidor por trás de uma inicialização falha.
+      capabilities: Logs, relatórios de crash e falhas de inicialização|Erros de resolução de mods e códigos de saída|Copiar um prompt para ferramentas de IA externas
+    ai-agent:
+      title: Agente de IA integrado
+      benefit: Deixe um agente inspecionar o sistema de arquivos virtual da instância e explicar uma correção acionável.
+      capabilities: Ler arquivos e relatórios da instância|Investigar antes de concluir|Aplicar uma correção quando possível
+modernHome:
+  kicker: LAUNCHER DE MINECRAFT DE CÓDIGO ABERTO
+  visualLabel: FEITO PARA MUNDOS MODIFICADOS
+  windowLabel: XMCL / INÍCIO
+  latestRelease: ÚLTIMO LANÇAMENTO
+  readyToPlay: PRONTO PARA JOGAR
+  libraryTitle: Uma biblioteca limpa
+  librarySubtitle: Mods, packs e instâncias
+  proofLabel: Capacidades do launcher
+  proof:
+    fastTitle: CONFIGURAÇÃO RÁPIDA
+    fastDescription: De vanilla a modificado
+    libraryTitle: UMA BIBLIOTECA
+    libraryDescription: Recursos organizados
+    ecosystemTitle: SEU ECOSSISTEMA
+    ecosystemDescription: Modrinth e CurseForge
+  workflow:
+    kicker: O FLUXO DO XMCL
+    title: Tudo o que seus mundos precisam.
+    description: Projetado para jogadores que querem o poder de uma instalação modificada sem o overhead de manutenção.
+    stageLabel: XMCL / FLUXO DE TRABALHO
+    scrollHint: ROLE PARA EXPLORAR
+  openSource:
+    kicker: PULSO OPEN SOURCE
+    title: Construído em público.
+    viewOnGitHub: Ver no GitHub
+    repository: REPOSITÓRIO NO GITHUB
+    snapshot: SNAPSHOT DE BUILD
+    downloads: Downloads
+    stars: Estrelas
+    forks: Forks
+    openIssues: Issues abertas
+    statsNote: Dados do projeto no GitHub capturados quando este site foi gerado.
+    contributors: CONTRIBUIDORES
+    inView: EM VISTA
+    contributorsCopy: Cada issue, pull request, tradução e ideia ajuda a moldar o próximo lançamento.
+  sponsor:
+    label: APOIE O XMCL
+    title: Mantenha o launcher em movimento.
+    description: Apoie a manutenção, os lançamentos e as pessoas que constroem o XMCL em público.
+    supportedBy: APOIADO POR
+  download:
+    kicker: SUA PRÓXIMA AVENTURA
+    title: Pronto quando você estiver.
+    platforms: Plataformas de download
+  footer:
+    issues: Issues
+  features:
+    setup:
+      title: Cada configuração, um launcher
+      short: Multi-loader, multi-instância
+      description: Crie e gerencie instâncias separadas do Minecraft com Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod e suporte experimental ao Bedrock, com a instalação cuidada para você.
+      alt: Diálogo de Criar Jogo do XMCL com múltiplos Mod Loaders e Bedrock Edition
+      link: Explorar configuração de instâncias
+    discover:
+      title: Encontre conteúdo da comunidade
+      short: Modrinth, CurseForge e FTB
+      description: Navegue por modpacks e projetos da comunidade, filtre por versão e loader, e vá da descoberta ao jogo.
+      alt: Mercado de modpacks do XMCL com filtros de conteúdo da comunidade
+      link: Explorar conteúdo da comunidade
+    mods:
+      title: Mantenha as instalações modificadas sob controle
+      short: Buscar, agrupar, atualizar
+      description: Gerencie mods instalados, inspecione dependências, organize grupos personalizados e mantenha uma instalação grande compreensível.
+      alt: Gerenciamento de mods local do XMCL com filtros e controles de atualização
+      link: Explorar gerenciamento de mods
+    accounts:
+      title: Suas contas, do seu jeito
+      short: Microsoft, offline e mais
+      description: Conecte o serviço de conta que se encaixa na sua instalação, de perfis Microsoft e offline a serviços de autenticação de terceiros, sem sair do launcher.
+      alt: Diálogo de login de conta do XMCL com múltiplos serviços de autenticação
+      link: Explorar suporte a contas
+siteFooter:
+  ariaLabel: Rodapé do site
+  navigation: Navegação do rodapé
+  description: Infraestrutura Minecraft de código aberto para jogadores, desktops Linux e as pessoas que constroem os mundos que jogamos.
+  status: Código aberto · construído em público
+  explore:
+    title: Explorar
+    home: Início
+    features: Catálogo de funcionalidades
+    documentation: Documentação
+  useCases:
+    title: Casos de uso
+    linux: Launcher para Linux
+    creators: Criadores de modpacks
+    download: Baixar XMCL
+  resources:
+    title: Recursos
+    logViewer: Visualizador de logs
+    github: GitHub
+    issue: Reportar um problema
+    discord: Discord
+  bottomNote: Feito para a forma como você joga e cria.
+  readDocumentation: Ler a documentação
+sceneLanding:
+  linux:
+    eyebrow: XMCL / EDIÇÃO LINUX
+    title: O launcher de Minecraft que parece nativo no Linux.
+    lede: Um launcher de código aberto e polido para desktops Linux e Steam Deck. Escolha o pacote que sua distribuição espera e mantenha cada mundo a um clique de distância.
+    primaryAction: Baixar para Linux
+    secondaryAction: Ver o fluxo Linux
+    heroNote: Builds nativos para Linux, opções ARM64 e suporte ao Flathub
+    visualLabel: XMCL · espaço de trabalho Linux
+    heroAlt: Tela inicial do X Minecraft Launcher mostrando uma biblioteca de instâncias do Minecraft
+    visualTag: Espaço de trabalho pronto para 4K
+    visualStatus: PRONTO PARA SEU PRÓXIMO MUNDO
+    workflowKicker: UM FLUXO LINUX-FIRST
+    workflowTitle: Do gerenciador de pacotes ao jogo sem fricção.
+    workflowDescription: 'O XMCL mantém o que os jogadores Linux se importam próximo: instalações previsíveis, uma interface clara e ambientes de jogo independentes.'
+    signals:
+      packages: { number: '05', label: 'Pacotes Linux', description: 'DEB, RPM, AppImage, tar.xz e Flathub.' }
+      scale: { number: '4K', label: 'Claro em qualquer escala', description: 'Uma biblioteca densa que permanece legível em telas grandes.' }
+      worlds: { number: '∞', label: 'Mundos separados', description: 'Versões, loaders e saves não se misturam.' }
+    download: { kicker: 'BAIXAR PARA LINUX', title: 'Instale o XMCL do seu jeito.', description: 'Escolha o pacote que pertence ao seu sistema, ou use o Flathub para o Steam Deck.', link: 'Ver todos os lançamentos e prebuilds' }
+  creators:
+    eyebrow: XMCL / PARA CRIADORES DE MODPACKS
+    title: Crie modpacks com todo o ciclo de lançamento em um só lugar.
+    lede: Descubra projetos, resolva dependências, teste uma configuração, diagnostique crashes e exporte um pack limpo para Modrinth ou CurseForge sem sair do launcher.
+    primaryAction: Explorar fluxos de criadores
+    secondaryAction: Abrir o catálogo de funcionalidades
+    heroNote: Fluxos Modrinth e CurseForge, com diagnóstico assistido por IA
+    visualLabel: XMCL · espaço de trabalho do criador
+    heroAlt: Mercado de modpacks do X Minecraft Launcher com projetos do Modrinth e CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: CONJUNTO DE TRABALHO SINCRONIZADO
+    workflowKicker: O CICLO DO CRIADOR
+    workflowTitle: Um caminho mais rápido de uma ideia bruta a um pack que os jogadores podem iniciar.
+    workflowDescription: 'O XMCL trata um modpack como um sistema vivo. Explore ambos os catálogos, faça mudanças deliberadas e deixe o launcher revelar os relacionamentos que mantêm seu lançamento saudável.'
+    signals:
+      sources: { number: '2×', label: 'Fontes de projetos', description: 'Busque Modrinth e CurseForge em um único espaço.' }
+      export: { number: '1 CLIQUE', label: 'Exportação do pack', description: 'Crie um pacote MR ou CF distribuível em poucos passos.' }
+      ai: { number: 'IA', label: 'Assistência a crashes', description: 'Transforme um relatório de falha em uma próxima ação útil.' }
+    cta: { kicker: 'UMA BANCADA PARA SEU PRÓXIMO LANÇAMENTO', title: 'Crie o pack. Lance o pack. Mantenha-o saudável.', description: 'O XMCL dá aos criadores um ciclo local rápido para descoberta, testes, diagnóstico e exportação nos dois ecossistemas que seus jogadores já usam.', button: 'Explorar todas as funcionalidades' }

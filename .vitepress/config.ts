@@ -10,7 +10,7 @@ import { imagetools } from 'vite-imagetools'
 
 const src = resolve(__dirname, '../src')
 const files = readdirSync(src)
-const localesOrder = ['en', 'de', 'fr', 'pl', 'uk', 'ru', 'kk', 'ar', 'zh', 'zh-TW', 'ko', 'jp']
+const localesOrder = ['en', 'de', 'fr', 'pt', 'pl', 'uk', 'ru', 'kk', 'ar', 'zh', 'zh-TW', 'ko', 'jp']
 const locales = files
   .filter(f => f !== 'assets' && !f.endsWith('.md'))
   .sort((a, b) => {
@@ -42,6 +42,7 @@ const localeMetadata: Record<string, { hreflang: string; ogLocale: string }> = {
   kk: { hreflang: 'kk', ogLocale: 'kk_KZ' },
   ko: { hreflang: 'ko', ogLocale: 'ko_KR' },
   pl: { hreflang: 'pl', ogLocale: 'pl_PL' },
+  pt: { hreflang: 'pt-BR', ogLocale: 'pt_BR' },
   ru: { hreflang: 'ru', ogLocale: 'ru_RU' },
   uk: { hreflang: 'uk', ogLocale: 'uk_UA' },
   'zh-TW': { hreflang: 'zh-Hant', ogLocale: 'zh_TW' },
