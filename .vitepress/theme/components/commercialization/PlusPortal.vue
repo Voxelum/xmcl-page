@@ -130,8 +130,11 @@
             <span aria-hidden="true">✦</span>
             <p><strong>{{ t('commercial.plus.catalog.aiIncluded') }}</strong>{{ t('commercial.plus.catalog.aiIncludedDescription') }}</p>
           </div>
-          <div v-if="accountSession.session" class="plan-action">
-            <template v-if="plan.id === 'home'">
+          <div v-if="plan.id !== 'home'" class="plan-action">
+            <button type="button" disabled>{{ comingSoon }}</button>
+          </div>
+          <div v-else-if="accountSession.session" class="plan-action">
+            <template>
               <a v-if="subscription?.status === 'payment_due'" :href="billingUrl">{{ t('commercial.plus.addFunds') }}</a>
               <button v-else-if="!subscription || subscription.status === 'cancelled'" type="button" :disabled="mutating || loading" @click="subscribe">
                 {{ t('commercial.plus.subscribe') }}
@@ -140,9 +143,6 @@
                 {{ t('commercial.plus.cancel') }}
               </button>
               <span v-else class="plan-state">{{ t('commercial.plus.cancelsOn', { date: date(subscription.currentPeriodEndsAt) }) }}</span>
-            </template>
-            <template v-else>
-              <button type="button" disabled>{{ comingSoon }}</button>
             </template>
           </div>
         </article>
