@@ -11,7 +11,9 @@
 
     <section class="connection">
       <p>{{ accountSession.session ? copy.identityReady : copy.signInRequired }}</p>
-      <a v-if="!accountSession.session" :href="accountUrl">{{ copy.signIn }}</a>
+      <button v-if="!accountSession.session" type="button" :disabled="signingIn" @click="signInToAdmin">
+        {{ signingIn ? copy.redirecting : copy.signIn }}
+      </button>
       <button v-else type="button" :disabled="loading" @click="connect">
         {{ loading ? copy.loading : copy.reload }}
       </button>
@@ -186,6 +188,7 @@ import {
 import {
   accountSession,
   authenticatedAccountRequest,
+  beginWebSignIn,
   initializeAccountSession,
 } from '../../lib/accountSession'
 
@@ -197,7 +200,7 @@ const language = typeof window === 'undefined'
 const copies = {
   en: {
     title: 'Operations console', description: 'Inspect payments, balances, subscriptions, and audit activity before enabling production billing.',
-    readOnly: 'Read-only verification', reload: 'Reload operations data', signIn: 'Sign in', signInRequired: 'Sign in with an approved XMCL identity to access operations data.', identityReady: 'Your XMCL identity will be exchanged for a short-lived admin session.',
+    readOnly: 'Read-only verification', reload: 'Reload operations data', signIn: 'Sign in with Microsoft', redirecting: 'Redirecting…', signInRequired: 'Sign in with an approved XMCL identity to access operations data.', identityReady: 'Your XMCL identity will be exchanged for a short-lived admin session.',
     loading: 'Loading…', security: 'Admin access is verified from your OAuth identity and expires after 15 minutes.', accounts: 'Accounts',
     collected: 'Gross collected', refunded: 'Refunded', available: 'Available balance', support: 'Support lookup',
     lookup: 'Inspect an account', accountId: 'Account ID', accountQuery: 'Account ID, email, or display name', lookupAction: 'Search', status: 'Status', billing: 'Billing',
@@ -213,7 +216,7 @@ const copies = {
   },
   zh: {
     title: '运营控制台', description: '在开放生产计费前检查付款、余额、订阅和审计活动。',
-    readOnly: '只读验证', reload: '重新加载运营数据', signIn: '登录', signInRequired: '请使用获准的 XMCL 身份登录以访问运营数据。', identityReady: '系统会将你的 XMCL 身份换取短时管理员会话。',
+    readOnly: '只读验证', reload: '重新加载运营数据', signIn: '使用 Microsoft 登录', redirecting: '正在跳转…', signInRequired: '请使用获准的 XMCL 身份登录以访问运营数据。', identityReady: '系统会将你的 XMCL 身份换取短时管理员会话。',
     loading: '加载中…', security: '管理员权限由 OAuth 身份验证，并在 15 分钟后过期。', accounts: '账户数',
     collected: '累计收款', refunded: '已退款', available: '可用余额', support: '客服查询',
     lookup: '查询账户', accountId: '账户 ID', accountQuery: '账户 ID、邮箱或显示名', lookupAction: '搜索', status: '状态', billing: '计费',
@@ -229,7 +232,7 @@ const copies = {
   },
   'zh-TW': {
     title: '營運控制台', description: '在開放正式計費前檢查付款、餘額、訂閱與稽核活動。',
-    readOnly: '唯讀驗證', reload: '重新載入營運資料', signIn: '登入', signInRequired: '請使用獲准的 XMCL 身分登入以存取營運資料。', identityReady: '系統會將你的 XMCL 身分換取短效管理員工作階段。',
+    readOnly: '唯讀驗證', reload: '重新載入營運資料', signIn: '使用 Microsoft 登入', redirecting: '正在跳轉…', signInRequired: '請使用獲准的 XMCL 身分登入以存取營運資料。', identityReady: '系統會將你的 XMCL 身分換取短效管理員工作階段。',
     loading: '載入中…', security: '管理員權限由 OAuth 身分驗證，並於 15 分鐘後失效。', accounts: '帳戶數',
     collected: '累計收款', refunded: '已退款', available: '可用餘額', support: '客服查詢',
     lookup: '查詢帳戶', accountId: '帳戶 ID', accountQuery: '帳戶 ID、信箱或顯示名稱', lookupAction: '搜尋', status: '狀態', billing: '計費',
@@ -258,6 +261,7 @@ const selectedAccount = ref<AdminAccount>()
 const searchResults = ref<AdminAccount[]>([])
 const searchAttempted = ref(false)
 const authenticationError = ref(false)
+const signingIn = ref(false)
 let api: AdminApiClient | undefined
 const accountUrl = `../account/`
 
@@ -291,6 +295,17 @@ onMounted(async () => {
   await initializeAccountSession()
   if (accountSession.session) await connect()
 })
+
+async function signInToAdmin() {
+  signingIn.value = true
+  error.value = ''
+  try {
+    await beginWebSignIn('microsoft', window.location.href)
+  } catch (cause) {
+    error.value = message(cause)
+    signingIn.value = false
+  }
+}
 
 async function connect() {
   loading.value = true
