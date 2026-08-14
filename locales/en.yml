@@ -485,3 +485,289 @@ sceneLanding:
       title: Make the pack. Ship the pack. Keep it healthy.
       description: XMCL gives creators a fast local loop for discovery, testing, diagnosis, and export across the two ecosystems your players already use.
       button: Explore every feature
+commercial:
+  common:
+    loading: Loading…
+    refresh: Refresh
+    refreshing: Refreshing…
+    signIn: Sign in
+  playModes:
+    label: Choose how your group plays
+    plusEyebrow: FRIEND-HOSTED
+    plusTitle: Together Home
+    plusDescription: Start a world locally and use Together when direct multiplayer needs help.
+    serverEyebrow: ALWAYS ONLINE
+    serverTitle: Together Camp, Lodge, or Village
+    serverDescription: Keep one persistent world available even when the group owner is offline.
+  billing:
+    eyebrow: XMCL BILLING
+    title: Billing & balance
+    description: Manage your cash balance, payments, and billing activity.
+    accountSettings: Account settings
+    disabled: Billing is not enabled on this deployment.
+    loadingTitle: Loading billing
+    loadingDescription: Retrieving your balance and activity…
+    signInTitle: Sign in to manage billing
+    signInDescription: Your balance, payments, and usage belong to your XMCL account.
+    overview: Overview
+    accountTitle: Your billing account
+    debt: Future top-ups first settle {amount} of outstanding balance.
+    available: Available balance
+    availableHint: Ready to use across XMCL services
+    reserved: Reserved
+    reservedHint: Held for active usage
+    history: History
+    activity: Billing activity
+    activityViews: Billing activity views
+    transactions: Transactions
+    payments: Payments
+    usage: Usage
+    descriptionLabel: Description
+    reference: Reference
+    date: Date
+    amount: Amount
+    payment: Payment
+    status: Status
+    usageEvent: Usage event
+    rate: Rate
+    charged: Charged
+    noTransactions: No transactions yet.
+    noPayments: No Waffo payments yet.
+    noUsage: No metered usage yet.
+    loadError: Billing data could not be loaded.
+    securedTitle: Payments secured by Waffo
+    securedDescription: Card and buyer details are handled on Waffo Pancake’s hosted checkout. XMCL never receives your card number.
+  checkout:
+    title: Add funds
+    description: Top up your XMCL balance securely with Waffo Pancake.
+    amount: Amount
+    preparing: Preparing checkout…
+    add: Add {amount}
+    providerNote: You’ll continue to Waffo’s hosted checkout to complete payment.
+    legalNote: By continuing, you agree to the XMCL Together
+    terms: Terms
+    and: and
+    privacy: Privacy Policy
+    openCheckout: Open checkout
+    cancelledReturned: I cancelled or returned
+    newTopUp: Start a new top-up
+    invalidAmount: Enter a positive whole amount before continuing.
+    unsafeUrl: The service did not return a safe Waffo checkout URL.
+    opened: Complete or cancel in Waffo checkout, then return here. XMCL will refresh the order and balance.
+    blocked: The approval window was blocked. Allow it, then try again with the same checkout intent.
+    returnRecorded: Checkout return recorded.
+    returnDetected: Checkout return detected.
+    refreshFailed: XMCL attempted to refresh the order and balance.
+    restoreFailed: The previous checkout could not be restored. Retry uses the same payment intent.
+    newIntent: A new payment intent can now be created. Do not use the previous Waffo checkout link.
+  server:
+    eyebrow: XMCL PLAY / ALWAYS ONLINE
+    title: A world that is ready whenever your group is.
+    description: Give your group an always-available modded world, without making one friend keep a computer online.
+    storyLink: XMCL's sad backstory
+    billingLink: Billing & balance
+    from: From
+    priceSuffix: / month + runtime
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: No host player. No waiting for someone to come online.
+    experienceDescription: Keep the group's modded world on persistent infrastructure and choose the capacity that fits the pack.
+    alwaysAvailable: world availability
+    performancePlans: performance configurations
+    aiBonus: included AI units / month
+    alwaysOnTitle: The world stays with the group
+    alwaysOnDescription: Friends can return to the same persistent world without depending on one player's computer or schedule.
+    rightSizeTitle: Match the server to the modpack
+    rightSizeDescription: Choose the performance, memory, and storage that fit the pack today, then move up when the group needs more.
+    signInTitle: Sign in to manage servers
+    signInDescription: Server plans and subscriptions belong to your XMCL account.
+    overview: Server subscription
+    yourServer: Your server plan
+    balance: Balance
+    addFunds: Add funds
+    paymentDue: Payment is due. Add funds to recover this subscription automatically.
+    cancelsOn: Cancels on {date}.
+    renewsOn: Renews on {date}.
+    cancel: Cancel plan
+    plansEyebrow: Shared hosting
+    choosePlan: Choose a plan
+    planDescription: Monthly access plus metered runtime. Every active plan includes AI assistance for modpack and server setup.
+    current: Current
+    perMonth: / month
+    runtimePrice: + {amount} per running hour
+    cpu: CPU
+    cpuValue: '{count} vCPU'
+    memory: Memory
+    storage: Persistent storage
+    includedAi: Included AI help
+    includedAiValue: 200,000 units / month
+    select: Select {plan}
+    selected: Selected
+    unavailable: Unavailable
+    noPlans: No shared hosting plans are currently published.
+    loadError: Server plans could not be loaded.
+    subscribeError: The subscription could not be created.
+    cancelError: The subscription could not be cancelled.
+    managerEyebrow: Your hosted servers
+    managerTitle: Server management
+    managerDescription: Each server runs and bills independently. Check its status and power it on or off here.
+    serverNumber: '{plan} server {number}'
+    start: Start server
+    stop: Stop server
+    cpuUsage: CPU usage
+    memoryUsage: Memory usage
+    launcherGuide: Use the XMCL launcher to change mods, modpacks, worlds, and other detailed settings.
+    operationError: Unable to change the server state.
+    status:
+      pending: Waiting for capacity
+      queued: Waiting for capacity
+      ready: Stopped
+      starting: Starting
+      running: Running
+      stopping: Stopping and saving
+      payment_due: Payment due
+      failed: Needs attention
+      retained: Archive retained
+      deleted: Deleted
+    plusEyebrow: PREFER FRIEND-HOSTED?
+    plusTitle: Start from your own computer instead.
+    plusDescription: Together keeps direct friend multiplayer reliable and includes the same kind of modpack troubleshooting assistance.
+    plusAction: Explore friend multiplayer
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: The best Minecraft setup is the friends you play with.
+    description: From building the modpack and staying connected to maintaining the server, XMCL Together lets you enjoy Minecraft modpacks with friends.
+    projectBoundary: XMCL remains free and open source. Together is optional, and the launcher works without a Together account.
+    serviceOperator: XMCL Together is an optional online service operated by CI010.
+    storyLink: The story of XMCL
+    perMonth: / month
+    from: From
+    priceSuffix: / month
+    catalog:
+      heroNote: Four plans. One will fit your group.
+      eyebrow: Choose a plan
+      title: Decide where the world runs.
+      description: All four plans serve the same goal—helping your group maintain and play in one shared modpack world.
+      recommended: Most modpacks
+      perMonth: / month
+      flatMonthly: 20 GB relay included · $0.08 / GB after
+      runtime: '{price} per running hour · pause anytime'
+      hosted: Hosted by XMCL
+      runsOn: Runs on
+      bestFor: Best for
+      connection: Connection
+      memory: Memory
+      cpu: CPU
+      storage: Persistent storage
+      aiIncluded: Complimentary AI service
+      aiIncludedDescription: Help building modpacks, troubleshooting, and maintaining servers
+      home:
+        location: Friend-hosted
+        description: Relay-enhanced multiplayer built for friends whose P2P connections are difficult or unstable; 20 GB typically gives 3 friends about 65 hours each month.
+        runsOn: Your own computer
+        bestFor: Groups that play occasionally
+        connection: 300+ global relay locations
+      camp:
+        description: A small but capable starting point for 2–4 friends playing a lighter modpack.
+      lodge:
+        description: Balanced performance and price for 4–6 friends playing a typical modpack.
+      village:
+        description: Room for 6–10 friends, larger modpacks, more content, and more concurrent players.
+    shared:
+      eyebrow: Included with every plan
+      title: More than keeping a server online.
+      description: Together helps with the whole journey from modpack to shared world instead of leaving one friend with every technical problem.
+      aiTitle: AI-assisted creation and maintenance
+      aiDescription: Get help choosing and tuning mods, resolving dependencies and crashes, and handling server setup and routine maintenance.
+      worldTitle: The world stays with the group
+      worldDescription: Home makes friend hosting easier to reach; hosted plans preserve the world and configuration until the group returns.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Pay for the hours the server actually runs.
+      description: A low monthly fee keeps the plan, world, saves, and configuration. Hourly charges apply only while the server is running.
+      playTitle: Start it when needed
+      playDescription: Turn it on when friends are ready and pay for actual running hours.
+      pauseTitle: Pause when nobody is playing
+      pauseDescription: Runtime charges stop while paused; continue from the same world next time.
+    confirm:
+      serverNumber: '{plan} server #{number}'
+      addAnother: Add another server
+      close: Close
+      purchaseEyebrow: Create a server
+      cancelEyebrow: Cancel a server
+      purchaseTitle: Confirm {plan} purchase
+      purchaseDescription: The {monthly} monthly fee is charged immediately. Runtime costs {hourly}/hour and stops while paused. Each server is billed independently and includes complimentary AI service.
+      regionLabel: Server location
+      regionDescription: Choose the location closest to most players. The current configuration supports {count} Vultr locations.
+      testRegions: Test and recommend
+      testingRegions: Testing…
+      testComplete: Selected {location}, with the lowest measured latency ({latency} ms).
+      testUnavailable: The speed test is unavailable. Please choose a location manually.
+      cancelTitle: Confirm cancellation of {plan}
+      cancelDescription: Cancellation takes effect at the end of the current period on {date}. The server remains available until then.
+      retentionTitle: Saves move to cold storage for 30 days
+      retentionDescription: Download the save before {date} from Server management → this server → Data & export. It is permanently deleted after that date.
+      back: Go back
+      purchase: Confirm purchase
+      cancel: Confirm cancellation
+    experienceEyebrow: TOGETHER HOME · FRIEND-HOSTED
+    experienceTitle: Less troubleshooting. More time in the same world.
+    experienceDescription: Together helps your group solve modpack problems and keeps multiplayer moving when a direct connection cannot.
+    networkLocations: global relay locations
+    automatic: Automatic
+    nearestRelay: nearest-location routing
+    guided: Guided
+    modpackHelp: modpack troubleshooting
+    signInTitle: Sign in to manage Together
+    signInDescription: Your Together subscription and allowances belong to your XMCL account.
+    disabled: Together is not enabled on this deployment.
+    loadError: Together information could not be loaded.
+    subscribeError: The Together subscription could not be created.
+    cancelError: The Together subscription could not be cancelled.
+    subscribe: Subscribe to Together
+    cancel: Cancel subscription
+    addFunds: Add funds
+    inactiveTitle: Start XMCL Together
+    inactiveDescription: Subscribe using your XMCL cash balance. The first month is charged immediately.
+    activeTitle: XMCL Together is active
+    paymentDueTitle: Payment required
+    paymentDueDescription: Add funds to your billing balance to resume Together.
+    renewsOn: Renews on {date}.
+    cancelsOn: Access remains active until {date}.
+    status:
+      inactive: Inactive
+      active: Active
+      payment_due: Payment due
+      cancelled: Cancelled
+    allowancesEyebrow: Your monthly usage
+    allowancesTitle: Allowances behind the experience
+    aiAllowance: Remaining AI assistance
+    aiUnits: weighted token units remaining
+    aiUsage: '{consumed} used of {included}'
+    aiFormula: 'Usage = cache-miss input + ceil(cache-hit input × 0.1) + output × 4.'
+    turnAllowance: Multiplayer relay
+    turnEgress: authenticated relay traffic
+    remainingUnavailable: Remaining usage is not available.
+    meteringUnavailable: Usage metering is not connected yet; this is the included allowance, not a remaining balance.
+    sourcesTitle: Active allowance sources
+    source:
+      plus: 'Together: {ai} AI units and {turn} relay'
+      shared_hosting: 'Server plan: {ai} AI units and no TURN'
+    serverBonus: Every active server plan separately includes 200,000 AI units each month to help with modpack and server setup.
+    aiTitle: Get the modpack working
+    aiDescription: Diagnose crashes, dependency conflicts, and configuration problems without making one friend become the group's full-time support desk.
+    turnTitle: Keep everyone connected
+    turnDescription: XMCL tries a direct connection first, then automatically uses the nearest available relay when networks or routers get in the way.
+    serverEyebrow: NEED MORE?
+    serverTitle: Give the group an always-available world.
+    serverDescription: Rent a dedicated XMCL server when peer hosting is no longer enough, with persistent storage and selectable performance.
+    serverAction: View server plans
+  accountLinks:
+    title: XMCL services
+    plusTitle: Explore Together
+    plusDescription: Solve modpack problems and keep your group connected.
+    billingEyebrow: Billing
+    billingTitle: Balance & activity
+    billingDescription: Add funds and review charges.
+    serverEyebrow: Servers
+    serverTitle: Shared hosting
+    serverDescription: Choose a server plan and manage its subscription.

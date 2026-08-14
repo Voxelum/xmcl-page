@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "master"
+      - "staging"
     paths:
       - .github/workflows/deploy.yaml
       - api/**
@@ -22,6 +23,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'staging' && 'staging' || 'production' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -51,6 +53,9 @@ jobs:
           DEV: false
           PROD: true
           VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
+          VITE_COMMERCIAL_API_BASE: ${{ github.ref_name == 'staging' && 'https://api-staging.xmcl.app' || 'https://api.xmcl.app' }}
+          VITE_BILLING_API_BASE: ${{ github.ref_name == 'staging' && 'https://api-staging.xmcl.app' || 'https://api.xmcl.app' }}
+          VITE_SHARED_HOSTING_API_BASE: ${{ github.ref_name == 'staging' && 'https://api-staging.xmcl.app' || 'https://api.xmcl.app' }}
       - name: Deploy Azure
         if: github.ref_name == 'master'
         id: builddeploy
@@ -72,3 +77,11 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           command: pages deploy .vitepress/dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT || 'xmcl-page' }}
+      - name: Deploy Cloudflare Pages staging
+        if: github.ref_name == 'staging'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy .vitepress/dist --project-name=${{ vars.CLOUDFLARE_PAGES_STAGING_PROJECT || 'xmcl-page-staging' }} --branch=staging

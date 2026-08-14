@@ -1,0 +1,12 @@
+name = "xmcl-page-billing-staging"
+account_id = "7af57e4bbecec7133ccf33d2b530b4b5"
+main = "worker.ts"
+compatibility_date = "2025-03-20"
+
+[[routes]]
+pattern = "xmcl.app/billing-staging/*"
+zone_name = "xmcl.app"
+
+[[routes]]
+pattern = "xmcl.app/oauth/callback*"
+zone_name = "xmcl.app"

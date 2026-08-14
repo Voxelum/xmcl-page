@@ -37,6 +37,26 @@ html:not(.dark) .VPNav {
   }
 }
 
+/* Keep the account control reachable without letting the desktop header overflow. */
+@media (min-width: 960px) and (max-width: 1200px) {
+  .VPNavBarMenu {
+    gap: 0 !important;
+  }
+
+  .VPNavBarMenuLink {
+    font-size: 0.75rem !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .VPNavBarAppearance {
+    margin-left: 10px !important;
+  }
+
+  .VPNavBarSocialLinks {
+    display: none !important;
+  }
+}
+
 /* Logo & Title - Completely Static (0 Animations on Hover) */
 .VPNavBarTitle {
   display: flex !important;

@@ -298,3 +298,80 @@ sceneLanding:
       export: { number: ワンクリック, label: Pack 書き出し, description: 配布可能な MR または CF パッケージを数ステップで作成。 }
       ai: { number: AI, label: クラッシュ支援, description: エラーレポートを次のアクションに変換。 }
     cta: { kicker: 次のリリースのためのワークベンチ, title: 作る。届ける。健全な pack を保つ。, description: XMCL は発見、テスト、診断、書き出しを素早く行える creator 向けのローカルループを提供します。, button: すべての機能を見る }
+commercial:
+  server:
+    managerEyebrow: ホスト中のサーバー
+    managerTitle: サーバー管理
+    managerDescription: 各サーバーは個別に稼働・課金されます。ここで状態確認と起動・停止ができます。
+    serverNumber: '{plan} サーバー {number}'
+    start: サーバーを起動
+    stop: サーバーを停止
+    cpuUsage: CPU 使用率
+    memoryUsage: メモリ使用量
+    launcherGuide: Mod、Modpack、ワールド、その他の詳細設定は XMCL ランチャーで変更してください。
+    operationError: サーバーの状態を変更できませんでした。
+    status: { pending: 容量待ち, queued: 容量待ち, ready: 停止中, starting: 起動中, running: 稼働中, stopping: 停止して保存中, payment_due: 支払い待ち, failed: 対応が必要, retained: アーカイブ保管中, deleted: 削除済み }
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: Minecraft で最高の構成は、一緒に遊ぶ仲間です。
+    description: Modpack の作成から安定した接続、サーバー保守まで、XMCL Together が仲間との Minecraft Modpack を支えます。
+    storyLink: XMCL の悲しい原点
+    catalog:
+      heroNote: 4 つのプランから、あなたたちに合うものを。
+      eyebrow: プランを選ぶ
+      title: ワールドをどこで動かすか決めよう。
+      description: 4 つのプランの目的は同じです。仲間と一つの Modpack ワールドを維持し、遊び続けられるようにします。
+      recommended: 一般的な Modpack 向け
+      perMonth: / 月
+      flatMonthly: リレー 20 GB 込み · 超過後は 0.08 ドル / GB
+      runtime: '稼働 1 時間あたり {price} · いつでも一時停止'
+      hosted: XMCL ホスティング
+      runsOn: 実行場所
+      bestFor: おすすめ
+      connection: 接続
+      memory: メモリ
+      cpu: CPU
+      storage: 永続ストレージ
+      aiIncluded: AI サービスをプレゼント
+      aiIncludedDescription: Modpack 作成、トラブル解決、サーバー保守を支援
+      home: { location: フレンドホスト, description: 'P2P 接続が難しい、または不安定な仲間向けのグローバルリレー強化マルチプレイ。20 GB で通常、3 人の仲間が月約 65 時間遊べます。', runsOn: 自分の PC, bestFor: ときどき集まって遊ぶグループ, connection: 世界 300 か所以上のリレー }
+      camp: { description: 軽量 Modpack を遊ぶ 2～4 人向けの、小さく十分な入門プラン。 }
+      lodge: { description: 一般的な Modpack を遊ぶ 4～6 人向けの、性能と価格のバランス型。 }
+      village: { description: 大型 Modpack と同時接続に余裕を持たせた 6～10 人向けプラン。 }
+    shared:
+      eyebrow: すべてのプランに含まれるもの
+      title: サーバーを起動するだけではありません。
+      description: Together は Modpack から共有ワールドまでの全工程を支え、技術的な問題を一人の仲間に背負わせません。
+      aiTitle: AI 支援による作成と保守
+      aiDescription: Mod の選択と調整、依存関係やクラッシュの解決、サーバー設定と日常保守を支援します。
+      worldTitle: ワールドは仲間みんなのもの
+      worldDescription: Home はフレンドホストへの接続を容易にし、ホスト型プランは次に遊ぶまでワールドと設定を保持します。
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: 実際に稼働した時間だけ支払う。
+      description: 低額の月額料金でプラン、ワールド、セーブ、設定を保持。時間料金はサーバー稼働中だけ発生します。
+      playTitle: 必要なときに起動
+      playDescription: 仲間が集まったら起動し、実際の稼働時間分だけ支払います。
+      pauseTitle: 遊ばないときは一時停止
+      pauseDescription: 一時停止中は時間料金が止まり、次回も同じワールドから再開できます。
+    confirm:
+      serverNumber: '{plan} サーバー #{number}'
+      addAnother: サーバーを追加
+      close: 閉じる
+      purchaseEyebrow: サーバーを作成
+      cancelEyebrow: サーバーを解約
+      purchaseTitle: '{plan} の購入を確認'
+      purchaseDescription: 月額 {monthly} はすぐに請求されます。稼働中は {hourly}/時間、停止中は稼働料金がかかりません。サーバーごとに個別請求され、AI サービスが付与されます。
+      regionLabel: サーバーの地域
+      regionDescription: 多くのプレイヤーに近い地域を選択してください。現在の構成では {count} か所の Vultr ロケーションに対応しています。
+      testRegions: 測定しておすすめ
+      testingRegions: 測定中…
+      testComplete: 測定遅延が最も低い {location}（{latency} ms）を選択しました。
+      testUnavailable: 現在速度を測定できません。地域を手動で選択してください。
+      cancelTitle: '{plan} の解約を確認'
+      cancelDescription: 解約は現在の期間が終了する {date} に有効になります。それまでは利用できます。
+      retentionTitle: セーブデータはコールドストレージに 30 日間保存
+      retentionDescription: '{date} までに「サーバー管理 → 対象サーバー → データとエクスポート」からダウンロードしてください。期限後は完全に削除されます。'
+      back: 戻る
+      purchase: 購入を確定
+      cancel: 解約を確定

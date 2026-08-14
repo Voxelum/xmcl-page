@@ -309,3 +309,80 @@ sceneLanding:
       export: { number: EIN KLICK, label: Pack-Export, description: 'Ein verteilbares MR- oder CF-Paket in wenigen Schritten erstellen.' }
       ai: { number: AI, label: Crash-Hilfe, description: 'Aus einem Fehlerbericht eine nächste Aktion ableiten.' }
     cta: { kicker: DEINE NÄCHSTE VERÖFFENTLICHUNG, title: Pack bauen. Pack veröffentlichen. Pack gesund halten., description: 'XMCL bietet Creators einen schnellen lokalen Kreislauf für Suche, Tests, Diagnose und Export.', button: Alle Features entdecken }
+commercial:
+  server:
+    managerEyebrow: Deine gehosteten Server
+    managerTitle: Serververwaltung
+    managerDescription: Jeder Server läuft und wird separat abgerechnet. Hier siehst du den Status und kannst ihn ein- oder ausschalten.
+    serverNumber: '{plan}-Server {number}'
+    start: Server starten
+    stop: Server stoppen
+    cpuUsage: CPU-Auslastung
+    memoryUsage: Speichernutzung
+    launcherGuide: Mods, Modpacks, Welten und weitere Einstellungen änderst du im XMCL-Launcher.
+    operationError: Der Serverstatus konnte nicht geändert werden.
+    status: { pending: Wartet auf Kapazität, queued: Wartet auf Kapazität, ready: Gestoppt, starting: Wird gestartet, running: Läuft, stopping: Wird gestoppt und gespeichert, payment_due: Zahlung ausstehend, failed: Eingriff erforderlich, retained: Archiv aufbewahrt, deleted: Gelöscht }
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: Die beste Ausstattung für Minecraft sind die Freunde, mit denen du spielst.
+    description: Von der Modpack-Erstellung über eine stabile Verbindung bis zur Serverpflege lässt XMCL Together dich Minecraft-Modpacks mit Freunden genießen.
+    storyLink: Die traurige Vorgeschichte von XMCL
+    catalog:
+      heroNote: Vier Tarife – einer passt zu euch.
+      eyebrow: Tarif wählen
+      title: Entscheidet, wo eure Welt läuft.
+      description: Alle vier Tarife verfolgen dasselbe Ziel – eure gemeinsame Modpack-Welt zuverlässig zu pflegen und zu spielen.
+      recommended: Für die meisten Modpacks
+      perMonth: / Monat
+      flatMonthly: 20 GB Relay inklusive · danach 0,08 $ / GB
+      runtime: '{price} pro Betriebsstunde · jederzeit pausierbar'
+      hosted: Von XMCL gehostet
+      runsOn: Läuft auf
+      bestFor: Geeignet für
+      connection: Verbindung
+      memory: Arbeitsspeicher
+      cpu: CPU
+      storage: Dauerhafter Speicher
+      aiIncluded: KI-Service geschenkt
+      aiIncludedDescription: Hilfe beim Erstellen von Modpacks, bei der Fehlersuche und Serverpflege
+      home: { location: Freundes-Host, description: 'Relay-verstärkter Mehrspielermodus für Freunde mit schwierigen oder instabilen P2P-Verbindungen; 20 GB reichen typischerweise für 3 Freunde etwa 65 Stunden im Monat.', runsOn: Deinem eigenen Computer, bestFor: Gruppen mit gelegentlichen Spielrunden, connection: Über 300 globale Relay-Standorte }
+      camp: { description: Ein kleiner und solider Einstieg für 2–4 Freunde mit einem leichten Modpack. }
+      lodge: { description: Ausgewogene Leistung und Kosten für 4–6 Freunde mit einem üblichen Modpack. }
+      village: { description: Mehr Raum für 6–10 Freunde, große Modpacks und mehr gleichzeitige Spieler. }
+    shared:
+      eyebrow: In jedem Tarif enthalten
+      title: Mehr als nur einen Server starten.
+      description: Together begleitet den ganzen Weg vom Modpack bis zur gemeinsamen Welt, statt alle technischen Probleme einem Freund zu überlassen.
+      aiTitle: KI-gestützte Erstellung und Pflege
+      aiDescription: Hilfe bei Auswahl und Anpassung von Mods, Abhängigkeiten, Abstürzen sowie Servereinrichtung und laufender Pflege.
+      worldTitle: Die Welt gehört der Freundesgruppe
+      worldDescription: Home erleichtert das Hosting durch Freunde; gehostete Tarife bewahren Welt und Konfiguration bis zur nächsten Runde.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Bezahlt nur für die tatsächliche Laufzeit.
+      description: Eine niedrige Monatsgebühr bewahrt Tarif, Welt, Spielstände und Konfiguration. Stundenkosten entstehen nur bei laufendem Server.
+      playTitle: Starten, wenn ihr spielen wollt
+      playDescription: Startet den Server, wenn alle bereit sind, und bezahlt die tatsächlichen Betriebsstunden.
+      pauseTitle: Pausieren, wenn niemand spielt
+      pauseDescription: Im Pausenmodus entfallen Laufzeitkosten; beim nächsten Mal geht es in derselben Welt weiter.
+    confirm:
+      serverNumber: '{plan}-Server #{number}'
+      addAnother: Weiteren Server hinzufügen
+      close: Schließen
+      purchaseEyebrow: Server erstellen
+      cancelEyebrow: Server kündigen
+      purchaseTitle: Kauf von {plan} bestätigen
+      purchaseDescription: Die Monatsgebühr von {monthly} wird sofort berechnet. Die Laufzeit kostet {hourly}/Stunde und wird in der Pause nicht berechnet. Jeder Server wird separat abgerechnet und enthält einen geschenkten KI-Service.
+      regionLabel: Serverstandort
+      regionDescription: Wähle den Standort, der den meisten Spielern am nächsten liegt. Die aktuelle Konfiguration unterstützt {count} Vultr-Standorte.
+      testRegions: Testen und empfehlen
+      testingRegions: Test läuft…
+      testComplete: "{location} mit der niedrigsten gemessenen Latenz ({latency} ms) wurde ausgewählt."
+      testUnavailable: Der Geschwindigkeitstest ist derzeit nicht verfügbar. Bitte wähle einen Standort manuell.
+      cancelTitle: Kündigung von {plan} bestätigen
+      cancelDescription: Die Kündigung wird am Ende des aktuellen Zeitraums am {date} wirksam. Bis dahin bleibt der Server verfügbar.
+      retentionTitle: Spielstände werden 30 Tage im Kältespeicher aufbewahrt
+      retentionDescription: Lade den Spielstand vor dem {date} unter Serververwaltung → dieser Server → Daten & Export herunter. Danach wird er endgültig gelöscht.
+      back: Zurück
+      purchase: Kauf bestätigen
+      cancel: Kündigung bestätigen

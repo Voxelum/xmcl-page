@@ -264,3 +264,80 @@ sceneLanding:
       title: Zbuduj. Wydaj. Utrzymuj paczkę w dobrej kondycji.
       description: XMCL daje twórcom szybki lokalny cykl odkrywania, testowania, diagnozowania i eksportu.
       button: Odkryj wszystkie funkcje
+commercial:
+  server:
+    managerEyebrow: Twoje hostowane serwery
+    managerTitle: Zarządzanie serwerami
+    managerDescription: Każdy serwer działa i jest rozliczany osobno. Tutaj sprawdzisz stan oraz włączysz lub wyłączysz serwer.
+    serverNumber: 'Serwer {plan} {number}'
+    start: Uruchom serwer
+    stop: Zatrzymaj serwer
+    cpuUsage: Użycie CPU
+    memoryUsage: Użycie pamięci
+    launcherGuide: Mody, paczki modów, światy i inne ustawienia zmienisz w launcherze XMCL.
+    operationError: Nie udało się zmienić stanu serwera.
+    status: { pending: Oczekiwanie na zasoby, queued: Oczekiwanie na zasoby, ready: Zatrzymany, starting: Uruchamianie, running: Działa, stopping: Zatrzymywanie i zapis, payment_due: Wymagana płatność, failed: Wymaga uwagi, retained: Archiwum zachowane, deleted: Usunięty }
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: Najlepszą konfiguracją do Minecrafta są znajomi, z którymi grasz.
+    description: Od tworzenia modpacka i stabilnego połączenia po utrzymanie serwera — XMCL Together pozwala cieszyć się modpackami Minecraft ze znajomymi.
+    storyLink: Smutna historia XMCL
+    catalog:
+      heroNote: Cztery plany — jeden będzie pasował do waszej grupy.
+      eyebrow: Wybierz plan
+      title: Zdecydujcie, gdzie działa wasz świat.
+      description: Wszystkie cztery plany mają jeden cel — pomóc grupie utrzymywać wspólny świat z modpackiem i grać w nim.
+      recommended: Dla większości modpacków
+      perMonth: / miesiąc
+      flatMonthly: 20 GB przekaźnika w cenie · potem 0,08 $ / GB
+      runtime: '{price} za godzinę działania · pauza w każdej chwili'
+      hosted: Hosting XMCL
+      runsOn: Działa na
+      bestFor: Najlepszy dla
+      connection: Połączenie
+      memory: Pamięć
+      cpu: CPU
+      storage: Trwała przestrzeń
+      aiIncluded: Usługa AI w prezencie
+      aiIncludedDescription: Pomoc w tworzeniu modpacków, rozwiązywaniu problemów i utrzymaniu serwerów
+      home: { location: Hosting u znajomego, description: 'Tryb wieloosobowy wspierany globalnymi przekaźnikami dla trudnych lub niestabilnych połączeń P2P; 20 GB zwykle wystarcza 3 znajomym na około 65 godzin miesięcznie.', runsOn: Twoim komputerze, bestFor: Grup grających okazjonalnie, connection: Ponad 300 globalnych przekaźników }
+      camp: { description: Mały, ale wystarczający start dla 2–4 znajomych z lekkim modpackiem. }
+      lodge: { description: Zrównoważona wydajność i cena dla 4–6 znajomych ze standardowym modpackiem. }
+      village: { description: Więcej miejsca dla 6–10 znajomych, dużych modpacków i większej liczby graczy naraz. }
+    shared:
+      eyebrow: W każdym planie
+      title: Więcej niż samo uruchomienie serwera.
+      description: Together pomaga na całej drodze od modpacka do wspólnego świata, zamiast zostawiać wszystkie problemy techniczne jednej osobie.
+      aiTitle: Tworzenie i utrzymanie z pomocą AI
+      aiDescription: Pomoc w wyborze i dostrajaniu modów, zależnościach, awariach oraz konfiguracji i bieżącym utrzymaniu serwera.
+      worldTitle: Świat pozostaje z grupą
+      worldDescription: Home ułatwia hosting u znajomego, a plany hostingowe zachowują świat i konfigurację do waszego powrotu.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Płaćcie tylko za faktyczny czas działania.
+      description: Niska opłata miesięczna zachowuje plan, świat, zapisy i konfigurację. Opłata godzinowa obowiązuje tylko podczas pracy serwera.
+      playTitle: Uruchamiajcie, gdy potrzeba
+      playDescription: Włączcie serwer, gdy znajomi są gotowi, i płaćcie za faktyczne godziny działania.
+      pauseTitle: Wstrzymajcie, gdy nikt nie gra
+      pauseDescription: Po wstrzymaniu opłaty godzinowe ustają; następnym razem wrócicie do tego samego świata.
+    confirm:
+      serverNumber: 'Serwer {plan} #{number}'
+      addAnother: Dodaj kolejny serwer
+      close: Zamknij
+      purchaseEyebrow: Utwórz serwer
+      cancelEyebrow: Anuluj serwer
+      purchaseTitle: Potwierdź zakup {plan}
+      purchaseDescription: Opłata miesięczna {monthly} jest pobierana od razu. Działanie kosztuje {hourly}/godzinę, a podczas pauzy opłata godzinowa nie jest naliczana. Każdy serwer jest rozliczany osobno i otrzymuje usługę AI w prezencie.
+      regionLabel: Lokalizacja serwera
+      regionDescription: Wybierz lokalizację najbliższą większości graczy. Obecna konfiguracja obsługuje {count} lokalizacji Vultr.
+      testRegions: Przetestuj i poleć
+      testingRegions: Testowanie…
+      testComplete: Wybrano {location} z najniższym zmierzonym opóźnieniem ({latency} ms).
+      testUnavailable: Test szybkości jest niedostępny. Wybierz lokalizację ręcznie.
+      cancelTitle: Potwierdź anulowanie {plan}
+      cancelDescription: Anulowanie zacznie obowiązywać po zakończeniu bieżącego okresu {date}. Do tego czasu serwer pozostaje dostępny.
+      retentionTitle: Zapisy są przechowywane 30 dni w chłodnym magazynie
+      retentionDescription: Pobierz zapis przed {date} w Zarządzanie serwerami → ten serwer → Dane i eksport. Potem zostanie trwale usunięty.
+      back: Wróć
+      purchase: Potwierdź zakup
+      cancel: Potwierdź anulowanie

@@ -79,14 +79,15 @@ function getJsonLdScript(data: Record<string, unknown>): HeadConfig {
 }
 
 export default defineConfigWithTheme<DefaultTheme.Config>({
-  title: "X Minecraft Launcher",
+  title: "XMCL",
+  base: process.env.VITEPRESS_BASE || '/',
   srcDir: 'src',
   lastUpdated: true,
   cleanUrls: true,
   sitemap: {
     hostname: 'https://xmcl.app',
   },
-  description: 'X Minecraft Launcher official document.',
+  description: 'XMCL is an open-source launcher for Minecraft.',
   transformHead({ pageData, title, description, head }) {
     const relativePath = normalizeRelativePath(pageData.relativePath)
     const locale = getLocale(relativePath)
@@ -134,24 +135,19 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           {
             '@type': 'WebSite',
             '@id': `${siteUrl}/#website`,
-            name: 'X Minecraft Launcher',
+            name: 'XMCL',
             url: siteUrl,
             inLanguage: localeMetadata[locale]?.hreflang || locale,
           },
           {
             '@type': 'SoftwareApplication',
-            name: 'X Minecraft Launcher',
-            alternateName: 'XMCL',
+            name: 'XMCL',
+            alternateName: 'An open-source launcher for Minecraft',
             description,
             url: canonicalUrl,
             image: imageUrl,
             applicationCategory: 'GameApplication',
             operatingSystem: 'Windows, macOS, Linux',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'USD',
-            },
           },
         ],
       }
@@ -185,7 +181,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:description', content: description }],
       ['meta', { property: 'og:image', content: imageUrl }],
-      ['meta', { property: 'og:site_name', content: 'X Minecraft Launcher' }],
+      ['meta', { property: 'og:site_name', content: 'XMCL' }],
       ['meta', { property: 'og:locale', content: localeMetadata[locale]?.ogLocale || locale }],
       ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:url', content: canonicalUrl }],

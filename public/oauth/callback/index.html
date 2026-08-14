@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <title>Completing XMCL sign-in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body { align-items: center; color: #213547; display: flex; font: 16px system-ui, sans-serif; justify-content: center; margin: 0; min-height: 100vh; }
+      main { max-width: 28rem; padding: 2rem; text-align: center; }
+      .error { color: #b42318; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p id="status" role="status">Completing sign-in...</p>
+    </main>
+    <script>
+      (() => {
+        window.location.replace(`/en/oauth/callback${window.location.search}${window.location.hash}`)
+      })()
+    </script>
+  </body>
+</html>

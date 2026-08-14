@@ -497,3 +497,289 @@ sceneLanding:
       title: 构建整合包，发布整合包，让它一直保持健康。
       description: XMCL 为制作者提供从发现、测试、诊断到导出的快速本地循环，覆盖玩家常用的两个模组生态。
       button: 探索全部功能
+commercial:
+  common:
+    loading: 正在加载…
+    refresh: 刷新
+    refreshing: 正在刷新…
+    signIn: 登录
+  playModes:
+    label: 选择朋友们一起玩的方式
+    plusEyebrow: 好友主机
+    plusTitle: Together Home
+    plusDescription: 本地启动世界，直连遇到困难时由 Together 保证联机体验。
+    serverEyebrow: 持久在线
+    serverTitle: Together Camp、Lodge 或 Village
+    serverDescription: 即使房主不在线，也让同一个持久世界随时开放。
+  billing:
+    eyebrow: XMCL 账单
+    title: 账单与余额
+    description: 管理现金余额、付款和账单记录。
+    accountSettings: 账户设置
+    disabled: 此部署未启用账单服务。
+    loadingTitle: 正在加载账单
+    loadingDescription: 正在获取余额和账单记录…
+    signInTitle: 登录后管理账单
+    signInDescription: 余额、付款和用量记录都属于你的 XMCL 账户。
+    overview: 概览
+    accountTitle: 你的账单账户
+    debt: 以后充值时会先偿还 {amount} 欠款。
+    available: 可用余额
+    availableHint: 可用于各项 XMCL 服务
+    reserved: 已预留
+    reservedHint: 为正在使用的服务保留
+    history: 历史记录
+    activity: 账单记录
+    activityViews: 账单记录视图
+    transactions: 交易
+    payments: 付款
+    usage: 用量
+    descriptionLabel: 说明
+    reference: 关联编号
+    date: 日期
+    amount: 金额
+    payment: 付款
+    status: 状态
+    usageEvent: 用量事件
+    rate: 费率
+    charged: 已扣费
+    noTransactions: 暂无交易记录。
+    noPayments: 暂无 Waffo 付款。
+    noUsage: 暂无计量用量。
+    loadError: 无法加载账单数据。
+    securedTitle: 付款由 Waffo 安全处理
+    securedDescription: 银行卡与付款人资料仅由 Waffo Pancake 托管结账页处理，XMCL 不会接收你的卡号。
+  checkout:
+    title: 充值
+    description: 通过 Waffo Pancake 安全充值 XMCL 余额。
+    amount: 金额
+    preparing: 正在准备结账…
+    add: 充值 {amount}
+    providerNote: 接下来会前往 Waffo 托管结账页完成付款。
+    legalNote: 继续即表示你同意 XMCL Together 的
+    terms: 服务条款
+    and: 和
+    privacy: 隐私政策
+    openCheckout: 打开结账页
+    cancelledReturned: 我已取消或返回
+    newTopUp: 新建充值
+    invalidAmount: 请输入有效的正数金额。
+    unsafeUrl: 服务没有返回安全的 Waffo 结账地址。
+    opened: 请在 Waffo 完成或取消付款，然后返回此页；XMCL 会刷新订单和余额。
+    blocked: 结账窗口被浏览器拦截，请允许弹窗后使用同一付款意图重试。
+    returnRecorded: 已记录从结账页返回。
+    returnDetected: 已检测到从结账页返回。
+    refreshFailed: XMCL 已尝试刷新订单和余额。
+    restoreFailed: 无法恢复上次结账；重试仍会使用同一付款意图。
+    newIntent: 现在可以创建新的付款意图，请勿继续使用之前的 Waffo 链接。
+  server:
+    eyebrow: XMCL 联机 / 持久在线
+    title: 给朋友们一个随时准备好的世界。
+    description: 给朋友们一个随时在线的模组世界，不必再让某个人一直开着电脑。
+    storyLink: XMCL 的悲伤往事
+    billingLink: 账单与余额
+    from: 起
+    priceSuffix: / 月 + 运行时费用
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: 不依赖房主，也不必等某个人上线。
+    experienceDescription: 把朋友们的模组世界放在持久基础设施上，并选择适合整合包的性能。
+    alwaysAvailable: 世界随时可用
+    performancePlans: 档性能配置
+    aiBonus: 每月赠送 AI units
+    alwaysOnTitle: 世界属于所有朋友
+    alwaysOnDescription: 不再依赖某一位玩家的电脑和时间，大家随时都能回到同一个持久世界。
+    rightSizeTitle: 为整合包选择合适性能
+    rightSizeDescription: 按当前整合包选择合适的性能、内存和存储，需要时再升级。
+    signInTitle: 登录后管理服务器
+    signInDescription: 服务器套餐和订阅都属于你的 XMCL 账户。
+    overview: 服务器订阅
+    yourServer: 你的服务器套餐
+    balance: 余额
+    addFunds: 充值
+    paymentDue: 订阅待付款，充值足够余额后会自动恢复。
+    cancelsOn: 将于 {date} 取消。
+    renewsOn: 将于 {date} 续期。
+    cancel: 取消套餐
+    plansEyebrow: 共享托管
+    choosePlan: 选择套餐
+    planDescription: 月费加服务器运行时计费；每个有效套餐都赠送用于整合包与服务器配置的 AI 协助额度。
+    current: 当前
+    perMonth: / 月
+    runtimePrice: + 每运行小时 {amount}
+    cpu: CPU
+    cpuValue: '{count} vCPU'
+    memory: 内存
+    storage: 持久存储
+    includedAi: 赠送 AI 协助
+    includedAiValue: 每月 200,000 units
+    select: 选择 {plan}
+    selected: 已选择
+    unavailable: 不可选择
+    noPlans: 当前没有已发布的共享托管套餐。
+    loadError: 无法加载服务器套餐。
+    subscribeError: 无法创建订阅。
+    cancelError: 无法取消订阅。
+    managerEyebrow: 你的托管服务器
+    managerTitle: 服务器管理
+    managerDescription: 每台服务器独立运行和计费；在这里查看状态并控制开关。
+    serverNumber: '{plan} 服务器 {number}'
+    start: 启动服务器
+    stop: 停止服务器
+    cpuUsage: CPU 使用率
+    memoryUsage: 内存使用
+    launcherGuide: 模组、整合包、世界和其他具体设置请前往 XMCL 启动器调整。
+    operationError: 无法更改服务器状态。
+    status:
+      pending: 等待容量
+      queued: 等待容量
+      ready: 已停止
+      starting: 正在启动
+      running: 运行中
+      stopping: 正在停止并保存
+      payment_due: 待付款
+      failed: 需要处理
+      retained: 存档保留中
+      deleted: 已删除
+    plusEyebrow: 更喜欢好友主机？
+    plusTitle: 也可以从自己的电脑开世界。
+    plusDescription: Together 让好友直联更加可靠，并赠送同样用于排查整合包问题的 AI 协助。
+    plusAction: 查看好友联机
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: 一起玩的朋友，才是玩 Minecraft 最高级的配置。
+    description: 从整合包制作、稳定联机到服务器维护，XMCL Together 让你和朋友畅玩 Minecraft 整合包。
+    projectBoundary: XMCL 始终免费并保持开源。Together 是可选服务，不登录 Together 账户也能使用启动器。
+    serviceOperator: XMCL Together 是由 CI010 运营的可选在线服务。
+    storyLink: XMCL 的故事
+    perMonth: / 月
+    from: 起
+    priceSuffix: / 月
+    catalog:
+      heroNote: 四种方案，总有一个适合你们。
+      eyebrow: 选择方案
+      title: 决定世界运行在哪里。
+      description: 四种方案服务于同一件事：让你和朋友顺利维护并游玩同一个 Modpack 世界。
+      recommended: 常规整合包
+      perMonth: / 月
+      flatMonthly: 含 20 GB 中继流量 · 超出后 $0.08 / GB
+      runtime: 运行时 {price} / 小时 · 可随时暂停
+      hosted: XMCL 托管
+      runsOn: 运行位置
+      bestFor: 适合
+      connection: 联机
+      memory: 内存
+      cpu: CPU
+      storage: 持久存储
+      aiIncluded: 赠送 AI 服务
+      aiIncludedDescription: 协助制作整合包、排查问题和维护服务器
+      home:
+        location: 好友主机
+        description: 通过全球中继增强的联机服务，专为 P2P 直连困难或不稳定的朋友准备；20 GB 通常足够 3 位朋友每月联机约 65 小时。
+        runsOn: 你自己的电脑
+        bestFor: 偶尔一起玩的朋友
+        connection: 300+ 全球中继节点
+      camp:
+        description: 适合 2–4 位朋友游玩轻量整合包，小而够用的托管起点。
+      lodge:
+        description: 适合 4–6 位朋友游玩常规整合包，性能与价格更均衡。
+      village:
+        description: 适合 6–10 位朋友游玩大型整合包，为更多内容和同时在线玩家留出空间。
+    shared:
+      eyebrow: 每个方案都包含
+      title: 不只是把服务器开起来。
+      description: Together 帮助你们处理从整合包到共同世界的整个过程，而不是把技术问题留给某一个朋友。
+      aiTitle: AI 辅助制作与维护
+      aiDescription: 帮助选择与调整 Mod、处理依赖和崩溃，并协助完成服务器配置与日常维护。
+      worldTitle: 世界始终属于这群朋友
+      worldDescription: Home 让好友主机更容易连接；托管方案则保存世界和配置，需要时随时继续。
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: 只为真正运行的时间付费。
+      description: 低廉的月费负责保留方案、世界、存档和配置；服务器开机游玩时才按小时计费。
+      playTitle: 需要时启动
+      playDescription: 朋友准备好后开机，按实际运行小时计费。
+      pauseTitle: 不玩就暂停
+      pauseDescription: 暂停后停止运行时计费，下次从原来的世界继续。
+    confirm:
+      serverNumber: '{plan} 服务器 #{number}'
+      addAnother: 再购买一台
+      close: 关闭
+      purchaseEyebrow: 创建新服务器
+      cancelEyebrow: 取消服务器
+      purchaseTitle: 确认购买 {plan}
+      purchaseDescription: 将立即扣除 {monthly} 月费；服务器运行时另收 {hourly}/小时，暂停后不收运行费。每台服务器独立计费并赠送 AI 服务。
+      regionLabel: 服务器地理位置
+      regionDescription: 请选择靠近大多数玩家的位置。当前配置兼容 {count} 个 Vultr 机房。
+      testRegions: 测速并推荐
+      testingRegions: 正在测速…
+      testComplete: 已选择延迟最低的 {location}（{latency} ms）。
+      testUnavailable: 暂时无法完成测速，请手动选择位置。
+      cancelTitle: 确认取消 {plan}
+      cancelDescription: 取消将在当前周期结束日 {date} 生效，在此之前仍可正常使用。
+      retentionTitle: 存档将转入冷存储并保留 30 天
+      retentionDescription: 可在 {date} 前前往「服务器管理 → 对应服务器 → 数据与导出」下载存档，逾期后将永久删除。
+      back: 返回
+      purchase: 确认购买
+      cancel: 确认取消
+    experienceEyebrow: TOGETHER HOME · 好友主机
+    experienceTitle: 少排查问题，多和朋友待在同一个世界。
+    experienceDescription: Together 帮你们解决整合包问题，并在无法直连时维持顺畅联机。
+    networkLocations: 个全球中继节点
+    automatic: 自动
+    nearestRelay: 选择就近节点
+    guided: 智能
+    modpackHelp: 排查整合包问题
+    signInTitle: 登录后管理 Together
+    signInDescription: Together 订阅和额度都属于你的 XMCL 账户。
+    disabled: 此部署未启用 Together。
+    loadError: 无法加载 Together 信息。
+    subscribeError: 无法创建 Together 订阅。
+    cancelError: 无法取消 Together 订阅。
+    subscribe: 订阅 Together
+    cancel: 取消订阅
+    addFunds: 充值
+    inactiveTitle: 开通 XMCL Together
+    inactiveDescription: 使用 XMCL 现金余额订阅，首月费用将立即扣除。
+    activeTitle: XMCL Together 已生效
+    paymentDueTitle: 等待付款
+    paymentDueDescription: 请向账单余额充值以恢复 Together。
+    renewsOn: 将于 {date} 续费。
+    cancelsOn: 权益将保留至 {date}。
+    status:
+      inactive: 未订阅
+      active: 已生效
+      payment_due: 等待付款
+      cancelled: 已取消
+    allowancesEyebrow: 你的每月用量
+    allowancesTitle: 体验背后的服务额度
+    aiAllowance: 剩余 AI 协助额度
+    aiUnits: 剩余加权 token units
+    aiUsage: '已使用 {consumed} / 共 {included}'
+    aiFormula: '用量 = 未命中缓存的输入 + ceil(命中缓存的输入 × 0.1) + 输出 × 4。'
+    turnAllowance: 联机中继
+    turnEgress: 认证中继流量
+    remainingUnavailable: 暂无剩余额度数据。
+    meteringUnavailable: 用量计量尚未接入；这里显示的是包含额度，不是剩余额度。
+    sourcesTitle: 当前额度来源
+    source:
+      plus: 'Together：{ai} AI units 和 {turn} 联机中继'
+      shared_hosting: '服务器套餐：{ai} AI units，不含 TURN'
+    serverBonus: 每个有效服务器套餐每月另赠 200,000 AI units，用于协助整合包和服务器配置。
+    aiTitle: 先把整合包顺利跑起来
+    aiDescription: 协助诊断崩溃、依赖冲突和配置问题，不必再让某个朋友兼职做全队的技术支持。
+    turnTitle: 再让每个人稳定连进来
+    turnDescription: XMCL 会优先尝试直连；遇到网络或路由器限制时，自动使用最近的可用中继节点。
+    serverEyebrow: 还不够？
+    serverTitle: 给大家一个随时在线的世界。
+    serverDescription: 当好友主机已经不够用时，可以租用带持久存储和可选性能配置的 XMCL 独立服务器。
+    serverAction: 查看服务器套餐
+  accountLinks:
+    title: XMCL 服务
+    plusTitle: 查看 Together
+    plusDescription: 解决整合包问题，和朋友稳定联机。
+    billingEyebrow: 账单
+    billingTitle: 余额与记录
+    billingDescription: 充值并查看扣费记录。
+    serverEyebrow: 服务器
+    serverTitle: 共享托管
+    serverDescription: 选择服务器套餐并管理订阅。
