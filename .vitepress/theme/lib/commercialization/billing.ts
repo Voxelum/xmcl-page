@@ -387,9 +387,14 @@ export class BillingApiClient implements BillingApi {
   }
 
   private async request<T>(path: string, init: { method: 'GET' | 'POST'; body?: string; idempotencyKey?: string; baseUrl?: string }): Promise<T> {
-    let session = this.options.getSession
+    const bearer = this.options.getSession
+      ? undefined
+      : await this.options.getSessionBearer?.()
+    let session: DpopSession | undefined = this.options.getSession
       ? await this.options.getSession()
-      : { accessToken: await this.options.getSessionBearer?.() }
+      : bearer
+        ? { accessToken: bearer }
+        : undefined
     if (!session?.accessToken) {
       throw new BillingApiError('Sign in to view billing information.', 401, 'authentication_required')
     }
@@ -462,7 +467,7 @@ export function formatIsoMoney(money: Money, locale = 'en-US') {
   const fractionDigits = new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: money.currency,
-  }).resolvedOptions().maximumFractionDigits
+  }).resolvedOptions().maximumFractionDigits ?? 2
   return new Intl.NumberFormat(locale, {
     style: 'currency',
     currency: money.currency,
