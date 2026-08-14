@@ -22,7 +22,7 @@
 
     <section v-if="error" class="error" role="alert">
       <span>{{ error }}</span>
-      <a v-if="authenticationError" :href="accountUrl">{{ copy.reauthenticate }}</a>
+      <button v-if="authenticationError" type="button" :disabled="signingIn" @click="signInToAdmin">{{ copy.reauthenticate }}</button>
     </section>
 
     <template v-if="overview">
@@ -263,7 +263,6 @@ const searchAttempted = ref(false)
 const authenticationError = ref(false)
 const signingIn = ref(false)
 let api: AdminApiClient | undefined
-const accountUrl = `../account/`
 
 const totalCollected = computed(() => overview.value?.accounts.reduce((sum, account) => sum + account.paidCashMinor, 0) || 0)
 const totalRefunded = computed(() => overview.value?.accounts.reduce((sum, account) => sum + account.refundedCashMinor, 0) || 0)
