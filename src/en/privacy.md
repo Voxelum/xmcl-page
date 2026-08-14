@@ -5,13 +5,13 @@ description: How XMCL collects, uses, shares, and protects information across th
 
 # XMCL Privacy Policy
 
-**Effective date: August 14, 2026 · Version: P1-2026-08-14**
+**Effective date: August 14, 2026 · Version: P2-2026-08-14**
 
-This policy explains how the maintainers of the Voxelum open-source project
-("XMCL", "we", "us") process information when you use X Minecraft Launcher,
-xmcl.app, an XMCL account, or related online services. It does not govern
-independent services you choose to connect, such as Microsoft, Mojang,
-third-party authentication servers, Modrinth, or CurseForge.
+This policy explains how **CI010**, operating as an individual operator under
+the Voxelum and XMCL names ("XMCL", "we", "us"), processes information when you
+use X Minecraft Launcher, xmcl.app, an XMCL account, or related online services.
+It does not govern independent services you choose to connect, such as
+Microsoft, Mojang, third-party authentication servers, Modrinth, or CurseForge.
 
 ## 1. Information we process
 
@@ -176,15 +176,13 @@ notice before a material change takes effect.
 
 ## 10. Contact
 
-Voxelum currently provides community support through:
+CI010 can be contacted through:
 
-- [GitHub Issues](https://github.com/voxelum/x-minecraft-launcher/issues) for
-  general, billing, and privacy requests that do not contain sensitive
-  information;
+- [cijhn@hotmail.com](mailto:cijhn@hotmail.com) for general, billing, refund,
+  legal, and privacy requests;
 - [GitHub private vulnerability reporting](https://github.com/voxelum/x-minecraft-launcher/security)
   for security reports;
-- [XMCL Discord](https://discord.gg/W5XVwYY7GQ) for initial contact and private
-  follow-up.
+- [XMCL Discord](https://discord.gg/W5XVwYY7GQ) for community support.
 
 For account, billing, refund, or privacy requests, include only the minimum
 account or transaction reference needed to locate the record. We may ask you to

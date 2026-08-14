@@ -5,13 +5,14 @@ description: Terms governing XMCL accounts, Together Home, account balance, Waff
 
 # XMCL Terms of Service
 
-**Effective date: August 14, 2026 · Version: T1-2026-08-14**
+**Effective date: August 14, 2026 · Version: T2-2026-08-14**
 
-These Terms of Service ("Terms") are an agreement between you and the
-maintainers of the Voxelum open-source project ("Voxelum", "XMCL", "we", "us").
-They govern XMCL accounts and paid or hosted online services available through X
-Minecraft Launcher and xmcl.app ("Services"). The open-source launcher remains
-subject to the license distributed with its source code.
+These Terms of Service ("Terms") are an agreement between you and **CI010**, who
+operates the Services as an individual operator under the Voxelum and XMCL names
+("XMCL", "we", "us"). They govern XMCL accounts and paid or hosted online
+services available through X Minecraft Launcher and xmcl.app ("Services"). The
+open-source launcher remains subject to the license distributed with its source
+code.
 
 By creating an XMCL account, purchasing account balance, subscribing to Together
 Home, or using a paid Service, you confirm that you can legally enter this
@@ -217,13 +218,11 @@ Failure to enforce a provision is not a waiver.
 
 ## 15. Contact
 
-- General, billing, refund, cancellation, and privacy support:
-  [GitHub Issues](https://github.com/voxelum/x-minecraft-launcher/issues) or
-  [XMCL Discord](https://discord.gg/W5XVwYY7GQ)
+- General, billing, refund, cancellation, legal, and privacy support:
+  [cijhn@hotmail.com](mailto:cijhn@hotmail.com)
 - Security reports:
   [GitHub private vulnerability reporting](https://github.com/voxelum/x-minecraft-launcher/security)
 - Subscription cancellation: the XMCL account interface
 
-Do not include payment-card details, passwords, access tokens, or other
-sensitive information in a public issue. We will arrange private follow-up when
-account or transaction verification is needed.
+Do not send payment-card details, passwords, access tokens, or other unnecessary
+sensitive information. We may request account or transaction verification.

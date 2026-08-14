@@ -5,11 +5,11 @@ description: 适用于 XMCL 账户、Together Home、账户余额、Waffo 支付
 
 # XMCL 服务条款
 
-**生效日期：2026 年 8 月 14 日 · 版本：T1-2026-08-14**
+**生效日期：2026 年 8 月 14 日 · 版本：T2-2026-08-14**
 
-本服务条款（“条款”）由你与 Voxelum
-开源项目维护者（“Voxelum”“XMCL”或“我们”）订立，适用于通过 X Minecraft Launcher
-和 xmcl.app 提供的 XMCL
+本服务由 **CI010** 以个人经营者身份运营，并使用 Voxelum 和 XMCL
+名称（“XMCL”或“我们”）。本服务条款（“条款”）由你与 CI010 订立，适用于通过 X
+Minecraft Launcher 和 xmcl.app 提供的 XMCL
 账户、付费及托管在线服务（“服务”）。开源启动器本身仍适用其源码附带的开源许可证。
 
 创建 XMCL 账户、购买账户余额、订阅 Together Home
@@ -134,10 +134,8 @@ AI 输出准确。
 
 ## 15. 联系方式
 
-- 一般、账单、退款、取消及隐私支持：[GitHub Issues](https://github.com/voxelum/x-minecraft-launcher/issues)
-  或 [XMCL Discord](https://discord.gg/W5XVwYY7GQ)
+- 一般、账单、退款、取消、法务及隐私支持：[cijhn@hotmail.com](mailto:cijhn@hotmail.com)
 - 安全报告：[GitHub 私密漏洞报告](https://github.com/voxelum/x-minecraft-launcher/security)
 - 取消订阅：XMCL 账户界面
 
-请勿在公开 issue
-中填写支付卡、密码、访问令牌或其他敏感信息。需要验证账户或交易时，我们会安排私下跟进。
+请勿发送支付卡、密码、访问令牌或其他非必要敏感信息。我们可能要求验证账户或交易。

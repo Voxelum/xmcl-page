@@ -5,9 +5,10 @@ description: XMCL 网站、启动器、账户、账单、AI 与联机服务如�
 
 # XMCL 隐私政策
 
-**生效日期：2026 年 8 月 14 日 · 版本：P1-2026-08-14**
+**生效日期：2026 年 8 月 14 日 · 版本：P2-2026-08-14**
 
-本政策说明 Voxelum 开源项目维护者（“XMCL”或“我们”）在你使用 X Minecraft
+本服务由 **CI010** 以个人经营者身份运营，并使用 Voxelum 和 XMCL
+名称（“XMCL”或“我们”）。本政策说明 CI010 在你使用 X Minecraft
 Launcher、xmcl.app、XMCL
 账户及相关在线服务时如何处理信息。本政策不适用于你主动连接的独立第三方服务，例如
 Microsoft、Mojang、第三方认证服务器、Modrinth 或 CurseForge。
@@ -113,8 +114,8 @@ Studios 或第三方 Minecraft 内容提供方不存在隶属或背书关系。
 
 ## 10. 联系方式
 
-- 一般、账单和不含敏感信息的隐私请求：[GitHub Issues](https://github.com/voxelum/x-minecraft-launcher/issues)
+- 一般、账单、退款、法务及隐私请求：[cijhn@hotmail.com](mailto:cijhn@hotmail.com)
 - 安全报告：[GitHub 私密漏洞报告](https://github.com/voxelum/x-minecraft-launcher/security)
-- 初次联系及私下跟进：[XMCL Discord](https://discord.gg/W5XVwYY7GQ)
+- 社区支持：[XMCL Discord](https://discord.gg/W5XVwYY7GQ)
 
 账户、账单、退款或隐私请求只需提供定位记录所需的最少账户或交易引用。我们可能通过私密渠道要求你验证账户控制权。
