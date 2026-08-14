@@ -202,6 +202,17 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
   },
   vite: {
     publicDir: resolve(__dirname, '../public'),
+    resolve: {
+      alias: [
+        {
+          find: /^\.\/components\/VPLocalNav\.vue$/,
+          replacement: resolve(
+            __dirname,
+            './theme/components/VPLocalNavHydrationSafe.vue',
+          ).replaceAll('\\', '/'),
+        },
+      ],
+    },
     plugins: [
       imagetools(),
       Unocss({
