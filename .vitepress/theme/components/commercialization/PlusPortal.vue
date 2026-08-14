@@ -411,7 +411,7 @@ const catalogPlans = computed(() => [
 ])
 
 onMounted(() => {
-  requestAnimationFrame(() => void initializePortal())
+  window.setTimeout(() => void initializePortal(), 0)
 })
 
 async function initializePortal() {
