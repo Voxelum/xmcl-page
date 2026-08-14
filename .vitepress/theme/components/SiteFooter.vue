@@ -31,7 +31,7 @@
     <div class="site-footer-bottom">
       <span>© {{ year }} X Minecraft Launcher</span>
       <span>{{ t('siteFooter.bottomNote') }}</span>
-      <span class="site-footer-legal"><a :href="privacyUrl">Privacy</a><a :href="termsUrl">Terms</a></span>
+      <span class="site-footer-legal"><a :href="privacyUrl">{{ legalLabels.privacy }}</a><a :href="termsUrl">{{ legalLabels.terms }}</a></span>
       <a :href="guideUrl">{{ t('siteFooter.readDocumentation') }} <span aria-hidden="true">+</span></a>
     </div>
   </footer>
@@ -56,7 +56,14 @@ const creatorsUrl = computed(() => pageUrl('modpack-creator'))
 const logViewerUrl = computed(() => pageUrl('log-viewer'))
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
-const legalLocale = computed(() => lang.value === 'zh' ? 'zh' : 'en')
+const legalLocale = computed(() => ['zh', 'zh-TW', 'ru', 'uk'].includes(lang.value) ? lang.value : 'en')
+const legalLabels = computed(() => {
+  if (legalLocale.value === 'zh') return { privacy: '隐私政策', terms: '服务条款' }
+  if (legalLocale.value === 'zh-TW') return { privacy: '隱私權政策', terms: '服務條款' }
+  if (legalLocale.value === 'ru') return { privacy: 'Конфиденциальность', terms: 'Условия' }
+  if (legalLocale.value === 'uk') return { privacy: 'Конфіденційність', terms: 'Умови' }
+  return { privacy: 'Privacy', terms: 'Terms' }
+})
 const privacyUrl = computed(() => `${site.value.base}${legalLocale.value}/privacy`)
 const termsUrl = computed(() => `${site.value.base}${legalLocale.value}/terms`)
 const year = new Date().getFullYear()
