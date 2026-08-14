@@ -348,12 +348,13 @@ function selectAccount(value: string) {
     })
   }
 
-  function clearSearch() {
-    accountQuery.value = ''
-    searchResults.value = []
-    selectedAccount.value = undefined
-    searchAttempted.value = false
-  }
+}
+
+function clearSearch() {
+  accountQuery.value = ''
+  searchResults.value = []
+  selectedAccount.value = undefined
+  searchAttempted.value = false
 }
 
 function identityLabel(account: AdminAccount) {
