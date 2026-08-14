@@ -2,11 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="robots" content="noindex">
-    <title>Completing XMCL sign-in</title>
-    <script>
-      window.location.replace(`/en/oauth/callback${window.location.search}${window.location.hash}`)
-    </script>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XMCL sign-in</title>
   </head>
-  <body>Completing XMCL sign-in...</body>
+  <body>
+    <p>Completing XMCL sign-in...</p>
+    <script>
+      (() => {
+        const storageKey = 'xmcl-account-pending-authorization/v1'
+        let locale = 'en'
+        try {
+          const pending = JSON.parse(window.sessionStorage.getItem(storageKey) || 'null')
+          const returnUrl = new URL(pending?.returnUrl || '/', window.location.origin)
+          const candidate = returnUrl.pathname.split('/').find((part) =>
+            ['en', 'zh', 'zh-TW'].includes(part))
+          if (candidate) locale = candidate
+        } catch {
+          // The localized callback will report invalid or expired state.
+        }
+        window.location.replace(`/${locale}/oauth/callback${window.location.search}${window.location.hash}`)
+      })()
+    </script>
+  </body>
 </html>
