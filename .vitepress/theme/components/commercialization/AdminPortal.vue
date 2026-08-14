@@ -9,19 +9,13 @@
       <span class="read-only">{{ copy.readOnly }}</span>
     </header>
 
-    <form class="connection" @submit.prevent="connect">
-      <label>
-        <span>{{ copy.apiBase }}</span>
-        <input v-model.trim="apiBaseUrl" type="url" required spellcheck="false">
-      </label>
-      <label>
-        <span>{{ copy.token }}</span>
-        <input v-model="accessToken" type="password" required autocomplete="off">
-      </label>
-      <button type="submit" :disabled="loading">
-        {{ loading ? copy.loading : copy.connect }}
+    <section class="connection">
+      <p>{{ accountSession.session ? copy.identityReady : copy.signInRequired }}</p>
+      <a v-if="!accountSession.session" :href="accountUrl">{{ copy.signIn }}</a>
+      <button v-else type="button" :disabled="loading" @click="connect">
+        {{ loading ? copy.loading : copy.reload }}
       </button>
-    </form>
+    </section>
     <p class="security-note">{{ copy.security }}</p>
 
     <section v-if="error" class="error" role="alert">{{ error }}</section>
@@ -50,9 +44,15 @@
         <div class="panel-heading">
           <div><p class="eyebrow">{{ copy.support }}</p><h2>{{ copy.lookup }}</h2></div>
           <form @submit.prevent="lookupAccount">
-            <input v-model.trim="accountId" :placeholder="copy.accountId" required spellcheck="false">
+            <input v-model.trim="accountQuery" :placeholder="copy.accountQuery" required spellcheck="false">
             <button type="submit" :disabled="accountLoading">{{ copy.lookupAction }}</button>
           </form>
+        </div>
+        <div v-if="searchResults.length > 1" class="search-results">
+          <button v-for="item in searchResults" :key="item.accountId" type="button" @click="selectAccount(item.accountId)">
+            <strong>{{ identityLabel(item) }}</strong>
+            <span>{{ item.accountId }}</span>
+          </button>
         </div>
         <div v-if="selectedAccount" class="account-result">
           <div><span>{{ copy.accountId }}</span><strong>{{ selectedAccount.accountId }}</strong></div>
@@ -61,6 +61,35 @@
           <div><span>{{ copy.collected }}</span><strong>{{ selectedBillingAccount ? money(selectedBillingAccount.paidCashMinor) : '—' }}</strong></div>
           <div><span>{{ copy.aiRemaining }}</span><strong>{{ selectedAllowance ? units(selectedAllowance.aiUnits.remaining) : '—' }}</strong></div>
           <div><span>{{ copy.turnRemaining }}</span><strong>{{ selectedAllowance ? bytes(selectedAllowance.turnEgressBytes.remaining) : '—' }}</strong></div>
+        </div>
+        <div v-if="selectedAccount" class="identity-list">
+          <article v-for="identity in selectedAccount.identities" :key="`${identity.provider}:${identity.email || identity.displayName}`">
+            <strong>{{ identity.provider }}</strong>
+            <span>{{ identity.displayName || '—' }}</span>
+            <span>{{ identity.email || '—' }}</span>
+          </article>
+        </div>
+        <div v-if="selectedAccount" class="account-activity">
+          <article>
+            <h3>{{ copy.accountPayments }}</h3>
+            <ul>
+              <li v-for="order in selectedOrders" :key="order.orderId">
+                <span>{{ date(order.updatedAt) }} · {{ order.provider }} · {{ order.status }}</span>
+                <strong>{{ money(order.cashAmount.amountMinor, order.cashAmount.currency) }}</strong>
+              </li>
+              <li v-if="!selectedOrders.length">{{ copy.noPayments }}</li>
+            </ul>
+          </article>
+          <article>
+            <h3>{{ copy.accountLedger }}</h3>
+            <ul>
+              <li v-for="entry in selectedLedger" :key="entry.ledgerEntryId">
+                <span>{{ date(entry.occurredAt) }} · {{ entry.kind }}</span>
+                <strong>{{ money(entry.amount.amountMinor, entry.amount.currency) }}</strong>
+              </li>
+              <li v-if="!selectedLedger.length">{{ copy.noLedger }}</li>
+            </ul>
+          </article>
         </div>
       </section>
 
@@ -119,14 +148,20 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import {
   AdminApiClient,
   AdminApiError,
+  type AdminAccount,
   type AdminAuditEvent,
   type AdminBillingAccount,
   type AdminBillingOverview,
 } from '../../lib/commercialization/admin'
+import {
+  accountSession,
+  authenticatedAccountRequest,
+  initializeAccountSession,
+} from '../../lib/accountSession'
 
 const language = typeof window === 'undefined'
   ? 'en'
@@ -136,38 +171,38 @@ const language = typeof window === 'undefined'
 const copies = {
   en: {
     title: 'Operations console', description: 'Inspect payments, balances, subscriptions, and audit activity before enabling production billing.',
-    readOnly: 'Read-only verification', apiBase: 'Admin API base URL', token: 'Admin access token', connect: 'Load operations data',
-    loading: 'Loading…', security: 'The token stays in memory and is cleared when this page closes.', accounts: 'Accounts',
+    readOnly: 'Read-only verification', reload: 'Reload operations data', signIn: 'Sign in', signInRequired: 'Sign in with an approved XMCL identity to access operations data.', identityReady: 'Your XMCL identity will be exchanged for a short-lived admin session.',
+    loading: 'Loading…', security: 'Admin access is verified from your OAuth identity and expires after 15 minutes.', accounts: 'Accounts',
     collected: 'Gross collected', refunded: 'Refunded', available: 'Available balance', support: 'Support lookup',
-    lookup: 'Inspect an account', accountId: 'Account ID', lookupAction: 'Look up', status: 'Status', billing: 'Billing',
+    lookup: 'Inspect an account', accountId: 'Account ID', accountQuery: 'Account ID, email, or display name', lookupAction: 'Search', status: 'Status', billing: 'Billing',
     payments: 'Payment activity', time: 'Updated', provider: 'Provider', amount: 'Amount', noPayments: 'No payment activity.',
     subscriptions: 'Subscriptions', noSubscriptions: 'No Together subscriptions.', audit: 'Audit', recentEvents: 'Recent admin events',
     noEvents: 'No admin events.', refunds: 'Refund controls', refundTitle: 'Locked during verification',
-    aiRemaining: 'AI remaining', turnRemaining: 'TURN remaining',
+    aiRemaining: 'AI remaining', turnRemaining: 'TURN remaining', accountPayments: 'Account payments', accountLedger: 'Account ledger', noLedger: 'No ledger activity.',
     refundDescription: 'Use the Waffo sandbox to initiate refunds. The signed refund webhook updates the immutable XMCL ledger. An in-console refund action will remain disabled until provider API and end-to-end idempotency tests pass.',
   },
   zh: {
     title: '运营控制台', description: '在开放生产计费前检查付款、余额、订阅和审计活动。',
-    readOnly: '只读验证', apiBase: 'Admin API 地址', token: '管理员访问令牌', connect: '加载运营数据',
-    loading: '加载中…', security: '令牌只保存在当前页面内存中，关闭页面后即清除。', accounts: '账户数',
+    readOnly: '只读验证', reload: '重新加载运营数据', signIn: '登录', signInRequired: '请使用获准的 XMCL 身份登录以访问运营数据。', identityReady: '系统会将你的 XMCL 身份换取短时管理员会话。',
+    loading: '加载中…', security: '管理员权限由 OAuth 身份验证，并在 15 分钟后过期。', accounts: '账户数',
     collected: '累计收款', refunded: '已退款', available: '可用余额', support: '客服查询',
-    lookup: '查询账户', accountId: '账户 ID', lookupAction: '查询', status: '状态', billing: '计费',
+    lookup: '查询账户', accountId: '账户 ID', accountQuery: '账户 ID、邮箱或显示名', lookupAction: '搜索', status: '状态', billing: '计费',
     payments: '付款记录', time: '更新时间', provider: '渠道', amount: '金额', noPayments: '暂无付款记录。',
     subscriptions: '订阅', noSubscriptions: '暂无 Together 订阅。', audit: '审计', recentEvents: '最近管理事件',
     noEvents: '暂无管理事件。', refunds: '退款控制', refundTitle: '验证期间保持锁定',
-    aiRemaining: 'AI 剩余额度', turnRemaining: 'TURN 剩余流量',
+    aiRemaining: 'AI 剩余额度', turnRemaining: 'TURN 剩余流量', accountPayments: '账户付款', accountLedger: '账户账本', noLedger: '暂无账本记录。',
     refundDescription: '目前请在 Waffo sandbox 发起退款，签名退款 Webhook 会更新 XMCL 的不可变账本。只有支付商退款 API 和端到端幂等测试通过后，才会开放控制台内退款按钮。',
   },
   'zh-TW': {
     title: '營運控制台', description: '在開放正式計費前檢查付款、餘額、訂閱與稽核活動。',
-    readOnly: '唯讀驗證', apiBase: 'Admin API 位址', token: '管理員存取權杖', connect: '載入營運資料',
-    loading: '載入中…', security: '權杖只保留在目前頁面的記憶體中，關閉頁面後即清除。', accounts: '帳戶數',
+    readOnly: '唯讀驗證', reload: '重新載入營運資料', signIn: '登入', signInRequired: '請使用獲准的 XMCL 身分登入以存取營運資料。', identityReady: '系統會將你的 XMCL 身分換取短效管理員工作階段。',
+    loading: '載入中…', security: '管理員權限由 OAuth 身分驗證，並於 15 分鐘後失效。', accounts: '帳戶數',
     collected: '累計收款', refunded: '已退款', available: '可用餘額', support: '客服查詢',
-    lookup: '查詢帳戶', accountId: '帳戶 ID', lookupAction: '查詢', status: '狀態', billing: '計費',
+    lookup: '查詢帳戶', accountId: '帳戶 ID', accountQuery: '帳戶 ID、信箱或顯示名稱', lookupAction: '搜尋', status: '狀態', billing: '計費',
     payments: '付款紀錄', time: '更新時間', provider: '管道', amount: '金額', noPayments: '暫無付款紀錄。',
     subscriptions: '訂閱', noSubscriptions: '暫無 Together 訂閱。', audit: '稽核', recentEvents: '最近管理事件',
     noEvents: '暫無管理事件。', refunds: '退款控制', refundTitle: '驗證期間維持鎖定',
-    aiRemaining: 'AI 剩餘額度', turnRemaining: 'TURN 剩餘流量',
+    aiRemaining: 'AI 剩餘額度', turnRemaining: 'TURN 剩餘流量', accountPayments: '帳戶付款', accountLedger: '帳戶帳本', noLedger: '暫無帳本紀錄。',
     refundDescription: '目前請在 Waffo sandbox 發起退款，簽名退款 Webhook 會更新 XMCL 的不可變帳本。只有支付商退款 API 與端對端冪等測試通過後，才會開放控制台內退款按鈕。',
   },
 } as const
@@ -180,9 +215,11 @@ const accountLoading = ref(false)
 const error = ref('')
 const overview = ref<AdminBillingOverview>()
 const auditEvents = ref<AdminAuditEvent[]>([])
-const accountId = ref('')
-const selectedAccount = ref<Record<string, unknown>>()
+const accountQuery = ref('')
+const selectedAccount = ref<AdminAccount>()
+const searchResults = ref<AdminAccount[]>([])
 let api: AdminApiClient | undefined
+const accountUrl = `../account/`
 
 const totalCollected = computed(() => overview.value?.accounts.reduce((sum, account) => sum + account.paidCashMinor, 0) || 0)
 const totalRefunded = computed(() => overview.value?.accounts.reduce((sum, account) => sum + account.refundedCashMinor, 0) || 0)
@@ -197,12 +234,28 @@ const selectedBillingAccount = computed<AdminBillingAccount | undefined>(() =>
 const selectedAllowance = computed(() =>
   overview.value?.allowances.find((allowance) => allowance.accountId === selectedAccount.value?.accountId)
 )
+const selectedOrders = computed(() =>
+  overview.value?.orders.filter((order) => order.accountId === selectedAccount.value?.accountId) || []
+)
+const selectedLedger = computed(() =>
+  overview.value?.ledger.filter((entry) => entry.accountId === selectedAccount.value?.accountId) || []
+)
+
+onMounted(async () => {
+  await initializeAccountSession()
+  if (accountSession.session) await connect()
+})
 
 async function connect() {
   loading.value = true
   error.value = ''
-  api = new AdminApiClient(apiBaseUrl.value, accessToken.value)
   try {
+    const session = await authenticatedAccountRequest<{ accessToken: string; expiresAt: string }>(
+      '/v1/admin/session',
+      { method: 'POST' },
+    )
+    accessToken.value = session.accessToken
+    api = new AdminApiClient(apiBaseUrl.value, accessToken.value)
     overview.value = await api.billingOverview()
     auditEvents.value = await api.auditEvents()
       .then((audit) => audit.items)
@@ -221,9 +274,11 @@ async function lookupAccount() {
   accountLoading.value = true
   error.value = ''
   try {
-    selectedAccount.value = await api.account(accountId.value)
+    searchResults.value = (await api.accounts(accountQuery.value)).items
+    selectedAccount.value = searchResults.value.length === 1 ? searchResults.value[0] : undefined
   } catch (cause) {
     selectedAccount.value = undefined
+    searchResults.value = []
     error.value = message(cause)
   } finally {
     accountLoading.value = false
@@ -231,8 +286,23 @@ async function lookupAccount() {
 }
 
 function selectAccount(value: string) {
-  accountId.value = value
-  void lookupAccount()
+  accountQuery.value = value
+  const result = searchResults.value.find((item) => item.accountId === value)
+  if (result) {
+    selectedAccount.value = result
+    searchResults.value = []
+  } else if (api) {
+    void api.account(value).then((account) => {
+      selectedAccount.value = account
+    }).catch((cause) => {
+      error.value = message(cause)
+    })
+  }
+}
+
+function identityLabel(account: AdminAccount) {
+  const identity = account.identities.find((item) => item.email || item.displayName)
+  return identity?.email || identity?.displayName || account.accountId
 }
 
 function money(amountMinor: number, currency = 'USD') {
@@ -271,7 +341,9 @@ function message(cause: unknown) {
 .admin-hero p { color: var(--xmcl-muted, var(--vp-c-text-2)); margin: 0; max-width: 700px; }
 .eyebrow { color: var(--xmcl-orange, #e45e42) !important; font-size: 11px; font-weight: 850; letter-spacing: .12em; margin: 0; text-transform: uppercase; }
 .read-only { background: color-mix(in srgb, #d8952c 15%, transparent); border: 1px solid #d8952c; border-radius: 999px; color: #9b6413; flex: 0 0 auto; font-size: 11px; font-weight: 850; padding: 7px 11px; text-transform: uppercase; }
-.connection { align-items: end; display: grid; gap: 14px; grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr) auto; margin-top: 28px; }
+.connection { align-items: center; display: flex; gap: 18px; justify-content: space-between; margin-top: 28px; }
+.connection p { color: var(--xmcl-muted, var(--vp-c-text-2)); margin: 0; }
+.connection a { background: var(--xmcl-lime, #c9f85a); border: 1px solid var(--xmcl-ink, #17211f); border-radius: 8px; color: #17211f; font-size: 12px; font-weight: 850; padding: 11px 15px; text-decoration: none; }
 label { display: grid; gap: 6px; }
 label span { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 11px; font-weight: 750; text-transform: uppercase; }
 input { background: var(--xmcl-panel, var(--vp-c-bg-soft)); border: 1px solid var(--xmcl-line, var(--vp-c-divider)); border-radius: 8px; color: inherit; font: inherit; min-width: 0; padding: 11px 12px; }
@@ -292,6 +364,19 @@ button:disabled { cursor: wait; opacity: .6; }
 .account-result { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); display: grid; grid-template-columns: repeat(4, 1fr); }
 .account-result div { display: grid; gap: 5px; padding: 18px 20px; }
 .account-result span { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 11px; text-transform: uppercase; }
+.search-results { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); display: grid; grid-template-columns: repeat(2, 1fr); padding: 10px; }
+.search-results button { background: transparent; border-color: transparent; color: inherit; display: grid; gap: 3px; text-align: left; }
+.search-results button:hover { border-color: var(--xmcl-line, var(--vp-c-divider)); }
+.search-results span, .identity-list span { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 11px; }
+.identity-list { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); display: flex; flex-wrap: wrap; gap: 10px; padding: 14px 20px; }
+.identity-list article { background: var(--vp-c-bg); border-radius: 8px; display: grid; gap: 2px; padding: 10px 12px; }
+.account-activity { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); display: grid; grid-template-columns: 1fr 1fr; }
+.account-activity > article { padding: 18px 20px; }
+.account-activity > article + article { border-left: 1px solid var(--xmcl-line, var(--vp-c-divider)); }
+.account-activity h3 { font-size: 14px; margin: 0 0 10px; }
+.account-activity ul { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.account-activity li { display: flex; font-size: 11px; gap: 12px; justify-content: space-between; }
+.account-activity li span { color: var(--xmcl-muted, var(--vp-c-text-2)); }
 .table-wrap { overflow-x: auto; }
 table { border-collapse: collapse; font-size: 12px; width: 100%; }
 th { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 10px; letter-spacing: .06em; text-align: left; text-transform: uppercase; }
@@ -312,11 +397,12 @@ th, td { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); padding: 1
 .refund-gate p:last-child { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 13px; margin: 0; max-width: 720px; }
 @media (max-width: 800px) {
   .admin-hero, .refund-gate { align-items: flex-start; flex-direction: column; }
-  .connection, .metrics, .two-column, .account-result { grid-template-columns: 1fr 1fr; }
-  .connection button { grid-column: 1 / -1; }
+  .metrics, .two-column, .account-result { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 560px) {
-  .connection, .metrics, .two-column, .account-result { grid-template-columns: 1fr; }
+  .connection { align-items: stretch; flex-direction: column; }
+  .metrics, .two-column, .account-result, .account-activity, .search-results { grid-template-columns: 1fr; }
+  .account-activity > article + article { border-left: 0; border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); }
   .panel-heading { align-items: flex-start; flex-direction: column; }
   .panel-heading form { width: 100%; }
   .panel-heading input { flex: 1; }

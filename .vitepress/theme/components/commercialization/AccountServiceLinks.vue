@@ -19,7 +19,7 @@ const { t } = useI18n()
 </script>
 
 <style scoped>
-.service-links { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); margin: -44px auto 72px; max-width: 760px; }
+.service-links { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); margin: 0 auto 72px; max-width: 760px; }
 .service-link { align-items: center; background: var(--xmcl-panel); border: 1px solid var(--xmcl-line); border-radius: 12px; color: var(--xmcl-ink); display: grid; gap: 14px; grid-template-columns: auto 1fr auto; padding: 20px; text-decoration: none; transition: border-color .2s ease, transform .2s ease; }
 .service-link.plus { background: linear-gradient(135deg, var(--xmcl-panel), color-mix(in srgb, var(--xmcl-lime) 12%, var(--xmcl-panel))); }
 .service-link:hover { border-color: var(--xmcl-ink); transform: translateY(-2px); }

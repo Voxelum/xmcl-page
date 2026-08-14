@@ -6,4 +6,8 @@ aside: false
 editLink: false
 ---
 
-<scene-landing kind="together" />
+<script setup>
+import PlusPortal from '../../../.vitepress/theme/components/commercialization/PlusPortal.vue'
+</script>
+
+<PlusPortal />

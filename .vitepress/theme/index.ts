@@ -28,7 +28,7 @@ import LogViewer from './components/LogViewer.vue'
 import SceneLanding from './components/SceneLanding.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import ImageZoomLightbox from './components/ImageZoomLightbox.vue'
-import TogetherButton from './components/TogetherButton.vue'
+import CommercialNavEntry from './components/CommercialNavEntry.vue'
 
 const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
 
@@ -85,7 +85,7 @@ export default {
 
     return () => [
       h(DefaultTheme.Layout, props, {
-        'nav-bar-content-after': () => h(TogetherButton),
+        'nav-bar-content-after': () => h(CommercialNavEntry),
         'layout-bottom': () => [h(SiteFooter), h(ImageZoomLightbox)],
       }),
     ]

@@ -199,6 +199,18 @@ export function refreshAccountSession() {
   return refreshPromise
 }
 
+export async function authenticatedAccountRequest<T>(
+  path: string,
+  init: RequestInit = {},
+) {
+  await initializeAccountSession()
+  if (!accountSession.session) throw new AccountApiError(401, 'Sign in required.')
+  if (accessTokenNeedsRefresh(accountSession.session) && !(await refreshSession())) {
+    throw new AccountApiError(401, 'Sign in required.')
+  }
+  return await request<T>(path, init)
+}
+
 async function loadAccount() {
   const [account, identities] = await Promise.all([
     request<Account>('/v1/account'),

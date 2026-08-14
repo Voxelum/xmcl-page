@@ -82,6 +82,20 @@ export interface AdminAuditEvent {
   occurredAt: string
 }
 
+export interface AdminAccount {
+  accountId: string
+  status: string
+  createdAt: string
+  deletionEffectiveAt?: string
+  identities: Array<{
+    provider: string
+    displayName?: string
+    email?: string
+    linkedBy: string
+    linkedAt: string
+  }>
+}
+
 export class AdminApiError extends Error {
   constructor(
     message: string,
@@ -105,8 +119,14 @@ export class AdminApiClient {
   }
 
   account(accountId: string) {
-    return this.read<Record<string, unknown>>(
+    return this.read<AdminAccount>(
       `/v1/admin/accounts/${encodeURIComponent(accountId)}`,
+    )
+  }
+
+  accounts(query: string) {
+    return this.read<{ items: AdminAccount[] }>(
+      `/v1/admin/accounts?query=${encodeURIComponent(query)}`,
     )
   }
 

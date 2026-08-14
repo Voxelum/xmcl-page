@@ -74,7 +74,7 @@ import {
   type OAuthProvider,
 } from '../lib/accountSession'
 
-const { lang, site } = useData()
+const { lang, site, page } = useData()
 const supportedAccountLocales = new Set(['en', 'zh', 'zh-TW'])
 const displayName = computed(accountDisplayName)
 const providers: OAuthProvider[] = ['microsoft', 'modrinth', 'google', 'discord']
@@ -84,7 +84,8 @@ const signingIn = ref<OAuthProvider>()
 const error = ref<string>()
 const accountUrl = computed(() => {
   const locale = supportedAccountLocales.has(lang.value) ? lang.value : 'en'
-  return `${site.value.base}${locale}/account/`
+  const together = page.value.relativePath.split('/').includes('together')
+  return `${site.value.base}${locale}/${together ? 'together/account/' : 'account/'}`
 })
 
 function handleClickOutside(event: MouseEvent) {

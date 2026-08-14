@@ -41,7 +41,7 @@
         <p v-if="allowanceStatus">{{ allowanceStatus }}</p>
       </section>
 
-      <section v-if="accountSession.session && serverServices.length" class="server-manager">
+      <section v-if="serverManagementEnabled && accountSession.session && serverServices.length" class="server-manager">
         <header>
           <div>
             <p class="eyebrow">{{ t('commercial.server.managerEyebrow') }}</p>
@@ -142,21 +142,7 @@
               <span v-else class="plan-state">{{ t('commercial.plus.cancelsOn', { date: date(subscription.currentPeriodEndsAt) }) }}</span>
             </template>
             <template v-else>
-              <div v-if="plan.subscriptions.length" class="server-subscriptions">
-                <div v-for="(item, index) in plan.subscriptions" :key="item.subscriptionId">
-                  <span>
-                    <strong>{{ t('commercial.plus.confirm.serverNumber', { plan: plan.name, number: index + 1 }) }}</strong>
-                    {{ subscriptionStatus(item) }}
-                  </span>
-                  <a v-if="item.status === 'payment_due'" :href="billingUrl">{{ t('commercial.plus.addFunds') }}</a>
-                  <button v-else-if="!item.cancelAtPeriodEnd" type="button" class="text-button" :disabled="mutating || loading" @click="openCancelDialog(item)">
-                    {{ t('commercial.server.cancel') }}
-                  </button>
-                </div>
-              </div>
-              <button type="button" :disabled="mutating || loading" @click="openPurchaseDialog(plan.planId!)">
-                {{ plan.subscriptions.length ? t('commercial.plus.confirm.addAnother') : t('commercial.server.select', { plan: `Together ${plan.name}` }) }}
-              </button>
+              <button type="button" disabled>{{ comingSoon }}</button>
             </template>
           </div>
         </article>
@@ -280,6 +266,7 @@ const regionLatencies = ref<Record<string, number>>({})
 const regionTestMessage = ref('')
 const regionTestController = ref<AbortController>()
 const purchaseRegions = ref<SharedHostingRegion[]>([])
+const serverManagementEnabled = false
 const confirmation = ref<
   | { kind: 'purchase'; planId: SharedHostingPlan['planId'] }
   | { kind: 'cancel'; subscription: SharedHostingSubscription }
@@ -298,6 +285,11 @@ const accountUrl = './account/'
 const billingUrl = './billing'
 const storyUrl = './story'
 const legalLocale = computed(() => ['zh', 'zh-TW'].includes(locale.value) ? locale.value : 'en')
+const comingSoon = computed(() => locale.value === 'zh'
+  ? '即将推出'
+  : locale.value === 'zh-TW'
+  ? '即將推出'
+  : 'Coming soon')
 const termsUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/terms`)
 const privacyUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/privacy`)
 const aiIncluded = computed(() => accountSession.session
@@ -430,15 +422,13 @@ async function refresh() {
   loading.value = true
   error.value = false
   try {
-    const [nextOffer, nextSubscription, nextAllowances, nextBalance, nextPlans, nextSubscriptions, nextServices, nextRegions] = await Promise.all([
+    const [nextOffer, nextSubscription, nextAllowances, nextBalance, nextPlans, nextSubscriptions] = await Promise.all([
       api.getXmclPlusOffer(),
       api.getXmclPlusStatus(),
       api.getXmclPlusAllowances(),
       api.getBalance(),
       api.getSharedHostingPlans(),
       api.listSharedHostingSubscriptions(),
-      api.listSharedHostingServices(),
-      api.getSharedHostingRegions(),
     ])
     offer.value = nextOffer
     subscription.value = nextSubscription
@@ -446,22 +436,8 @@ async function refresh() {
     balance.value = nextBalance
     hostingPlans.value = nextPlans
     serverSubscriptions.value = nextSubscriptions
-    serverServices.value = nextServices
-    purchaseRegions.value = nextRegions
-    if (!nextRegions.some(region => region.regionId === purchaseRegionId.value)) {
-      purchaseRegionId.value = nextRegions[0]?.regionId ?? ''
-    }
-    if (!serverServices.value.some(service => service.serviceId === selectedServiceId.value)) {
-      selectedServiceId.value = serverServices.value[0]?.serviceId ?? ''
-    }
-    const serviceSubscriptions = new Set(serverServices.value.map(service => service.subscriptionId))
-    const missingServices = serverSubscriptions.value.filter(item =>
-      item.status !== 'cancelled' && !serviceSubscriptions.has(item.subscriptionId))
-    if (missingServices.length) {
-      await Promise.all(missingServices.map(item => api.createSharedHostingService(item.subscriptionId)))
-      serverServices.value = await api.listSharedHostingServices()
-      selectedServiceId.value ||= serverServices.value[0]?.serviceId ?? ''
-    }
+    serverServices.value = []
+    purchaseRegions.value = []
     message.value = ''
   } catch (cause) {
     error.value = true
