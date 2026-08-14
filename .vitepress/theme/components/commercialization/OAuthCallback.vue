@@ -3,7 +3,7 @@
     <span class="callback-mark" aria-hidden="true">X</span>
     <h1>{{ failed ? 'Sign-in failed' : 'Completing sign-in' }}</h1>
     <p :class="{ error: failed }">{{ message }}</p>
-    <a v-if="failed" href="/billing-staging/en/together/account/">Return to XMCL Together Account</a>
+    <a v-if="failed" :href="accountUrl">Return to XMCL Together Account</a>
   </section>
 </template>
 
@@ -13,6 +13,13 @@ import { completeWebSignIn } from '../../lib/accountSession'
 
 const failed = ref(false)
 const message = ref('Verifying the authorization and binding this browser’s DPoP key…')
+const locale = typeof window === 'undefined'
+  ? 'en'
+  : window.location.pathname.split('/').find((part) => ['en', 'zh', 'zh-TW'].includes(part)) || 'en'
+const stagingPrefix = typeof window !== 'undefined' && window.location.pathname.startsWith('/billing-staging/')
+  ? '/billing-staging'
+  : ''
+const accountUrl = `${stagingPrefix}/${locale}/together/account/`
 
 onMounted(async () => {
   try {
