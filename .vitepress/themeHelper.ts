@@ -56,12 +56,6 @@ export function loadTheme(location: string, locale: string) {
         { text: localeMessages.coreDocument, link: '/en/core/' },
     ]
     nav.splice(1, 0, { text: localeMessages.features?.label || 'Features', link: `/${locale}/features/`, activeMatch: `/${locale}/features/(.+)?` })
-    const togetherLocale = existsSync(join(location, 'together', 'index.md')) ? locale : 'en'
-    nav.splice(2, 0, {
-        text: 'Together',
-        link: `/${togetherLocale}/together/`,
-        activeMatch: `/${togetherLocale}/together/(.+)?`,
-    })
 
     const guideSection = loadSidebarSection(location, locale, 'guide')
     const protocolSection = loadSidebarSection(location, locale, 'protocol')
