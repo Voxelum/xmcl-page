@@ -325,7 +325,7 @@ async function connect() {
     overview.value = undefined
     auditEvents.value = []
     error.value = message(cause)
-    authenticationError.value = cause instanceof AdminApiError && [401, 403].includes(cause.status)
+    authenticationError.value = isAuthenticationError(cause)
   } finally {
     loading.value = false
   }
@@ -419,6 +419,14 @@ function subscriptionPeriod(item: { cancelAtPeriodEnd?: true; currentPeriodEndsA
 function message(cause: unknown) {
   if (cause instanceof AdminApiError) return `${cause.code || cause.status}: ${cause.message}`
   return cause instanceof Error ? cause.message : String(cause)
+}
+
+function isAuthenticationError(cause: unknown) {
+  return typeof cause === 'object'
+    && cause !== null
+    && 'status' in cause
+    && typeof cause.status === 'number'
+    && [401, 403].includes(cause.status)
 }
 </script>
 
