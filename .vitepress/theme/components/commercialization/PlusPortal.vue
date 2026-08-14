@@ -429,20 +429,18 @@ async function refresh() {
   loading.value = true
   error.value = false
   try {
-    const [nextOffer, nextSubscription, nextAllowances, nextBalance, nextPlans, nextSubscriptions] = await Promise.all([
+    const [nextOffer, nextSubscription, nextAllowances, nextBalance] = await Promise.all([
       api.getXmclPlusOffer(),
       api.getXmclPlusStatus(),
       api.getXmclPlusAllowances(),
       api.getBalance(),
-      api.getSharedHostingPlans(),
-      api.listSharedHostingSubscriptions(),
     ])
     offer.value = nextOffer
     subscription.value = nextSubscription
     allowances.value = nextAllowances
     balance.value = nextBalance
-    hostingPlans.value = nextPlans
-    serverSubscriptions.value = nextSubscriptions
+    hostingPlans.value = []
+    serverSubscriptions.value = []
     serverServices.value = []
     purchaseRegions.value = []
     message.value = ''

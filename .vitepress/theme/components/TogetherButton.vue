@@ -27,7 +27,7 @@ const togetherUrl = computed(() => `${site.value.base}${locale.value}/together/`
   gap: 7px;
   height: 34px;
   letter-spacing: .04em;
-  margin-left: 10px;
+  margin-left: 18px;
   padding: 0 12px;
   text-decoration: none !important;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ const togetherUrl = computed(() => `${site.value.base}${locale.value}/together/`
 
 @media (max-width: 760px) {
   .together-button {
-    margin-left: 6px;
+    margin-left: 10px;
     padding-inline: 9px;
   }
 

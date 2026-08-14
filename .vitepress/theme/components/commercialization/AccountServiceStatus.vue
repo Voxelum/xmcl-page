@@ -127,12 +127,12 @@ async function refresh() {
   loading.value = true
   error.value = ''
   try {
-    [balance.value, allowances.value, subscription.value, subscriptions.value] = await Promise.all([
+    [balance.value, allowances.value, subscription.value] = await Promise.all([
       api.getBalance(),
       api.getXmclPlusAllowances(),
       api.getXmclPlusStatus(),
-      api.listSharedHostingSubscriptions(),
     ])
+    subscriptions.value = []
   } catch (cause) {
     error.value = cause instanceof BillingApiError ? cause.message : String(cause)
   } finally {

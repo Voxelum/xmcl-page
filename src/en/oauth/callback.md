@@ -1,7 +1,13 @@
 ---
 title: XMCL sign-in
 description: Complete XMCL account sign-in.
-noindex: true
+layout: page
+aside: false
+editLink: false
+head:
+  - - meta
+    - name: robots
+      content: noindex
 ---
 
 <script setup>
