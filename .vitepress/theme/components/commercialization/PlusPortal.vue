@@ -124,10 +124,10 @@
             {{ plan.runtime || t('commercial.plus.catalog.flatMonthly') }}
           </p>
           <dl>
-            <template v-for="spec in plan.specs" :key="spec.label">
+            <div v-for="spec in plan.specs" :key="spec.label" class="plan-spec">
               <dt>{{ spec.label }}</dt>
               <dd>{{ spec.value }}</dd>
-            </template>
+            </div>
           </dl>
           <div class="ai-included">
             <span aria-hidden="true">✦</span>
@@ -749,7 +749,8 @@ h1, h2, h3, p { margin: 0; }
 .plan-price span { color: var(--xmcl-muted); font-size: 12px; }
 .billing-model { background: color-mix(in srgb, var(--xmcl-lime) 18%, transparent); border-radius: 8px; font-size: 12px; font-weight: 750; padding: 10px 12px; }
 .billing-model.metered { background: color-mix(in srgb, var(--xmcl-orange) 10%, transparent); color: var(--xmcl-orange); }
-.plan-card dl { border-bottom: 1px solid var(--xmcl-line); border-top: 1px solid var(--xmcl-line); display: grid; grid-template-columns: 1fr auto; margin: 0; padding: 14px 0; row-gap: 10px; }
+.plan-card dl { border-bottom: 1px solid var(--xmcl-line); border-top: 1px solid var(--xmcl-line); display: grid; gap: 10px; margin: 0; padding: 14px 0; }
+.plan-spec { display: grid; grid-template-columns: 1fr auto; }
 .plan-card dt { color: var(--xmcl-muted); font-size: 11px; }
 .plan-card dd { font-size: 11px; font-weight: 750; margin: 0; text-align: right; }
 .ai-included { align-items: start; display: flex; gap: 10px; margin-top: auto; }
