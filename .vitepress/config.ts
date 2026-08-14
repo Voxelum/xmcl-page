@@ -147,11 +147,6 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
             image: imageUrl,
             applicationCategory: 'GameApplication',
             operatingSystem: 'Windows, macOS, Linux',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'USD',
-            },
           },
         ],
       }

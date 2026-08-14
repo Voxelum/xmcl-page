@@ -22,6 +22,7 @@
         <section class="site-footer-group">
           <h2>{{ t('siteFooter.resources.title') }}</h2>
           <a :href="logViewerUrl">{{ t('siteFooter.resources.logViewer') }}</a>
+          <a :href="togetherUrl">XMCL Together</a>
           <a :href="githubUrl" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.github') }}</a>
           <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.issue') }}</a>
           <a href="https://discord.gg/W5XVwYY7GQ" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.discord') }}</a>
@@ -31,7 +32,11 @@
     <div class="site-footer-bottom">
       <span>© {{ year }} XMCL</span>
       <span>{{ t('siteFooter.bottomNote') }}</span>
-      <span class="site-footer-legal"><a :href="privacyUrl">{{ legalLabels.privacy }}</a><a :href="termsUrl">{{ legalLabels.terms }}</a></span>
+      <span class="site-footer-legal">
+        <a :href="privacyUrl">{{ legalLabels.projectPrivacy }}</a>
+        <a :href="togetherPrivacyUrl">{{ legalLabels.togetherPrivacy }}</a>
+        <a :href="termsUrl">{{ legalLabels.terms }}</a>
+      </span>
       <a :href="guideUrl">{{ t('siteFooter.readDocumentation') }} <span aria-hidden="true">+</span></a>
     </div>
     <p class="site-footer-disclaimer">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
@@ -55,18 +60,21 @@ const prebuildsUrl = computed(() => pageUrl('prebuilds'))
 const linuxUrl = computed(() => pageUrl('linux-minecraft-launcher'))
 const creatorsUrl = computed(() => pageUrl('modpack-creator'))
 const logViewerUrl = computed(() => pageUrl('log-viewer'))
+const togetherLocale = computed(() => ['en', 'zh', 'zh-TW'].includes(lang.value) ? lang.value : 'en')
+const togetherUrl = computed(() => `${site.value.base}${togetherLocale.value}/together/`)
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
 const legalLocale = computed(() => ['zh', 'zh-TW', 'ru', 'uk'].includes(lang.value) ? lang.value : 'en')
 const legalLabels = computed(() => {
-  if (legalLocale.value === 'zh') return { privacy: '隐私政策', terms: '服务条款' }
-  if (legalLocale.value === 'zh-TW') return { privacy: '隱私權政策', terms: '服務條款' }
-  if (legalLocale.value === 'ru') return { privacy: 'Конфиденциальность', terms: 'Условия' }
-  if (legalLocale.value === 'uk') return { privacy: 'Конфіденційність', terms: 'Умови' }
-  return { privacy: 'Privacy', terms: 'Terms' }
+  if (legalLocale.value === 'zh') return { projectPrivacy: '项目隐私', togetherPrivacy: 'Together 隐私', terms: 'Together 条款' }
+  if (legalLocale.value === 'zh-TW') return { projectPrivacy: '專案隱私', togetherPrivacy: 'Together 隱私', terms: 'Together 條款' }
+  if (legalLocale.value === 'ru') return { projectPrivacy: 'Приватность проекта', togetherPrivacy: 'Приватность Together', terms: 'Условия Together' }
+  if (legalLocale.value === 'uk') return { projectPrivacy: 'Приватність проєкту', togetherPrivacy: 'Приватність Together', terms: 'Умови Together' }
+  return { projectPrivacy: 'Project Privacy', togetherPrivacy: 'Together Privacy', terms: 'Together Terms' }
 })
 const privacyUrl = computed(() => `${site.value.base}${legalLocale.value}/privacy`)
-const termsUrl = computed(() => `${site.value.base}${legalLocale.value}/terms`)
+const togetherPrivacyUrl = computed(() => `${site.value.base}${legalLocale.value}/together/privacy`)
+const termsUrl = computed(() => `${site.value.base}${legalLocale.value}/together/terms`)
 const year = new Date().getFullYear()
 </script>
 

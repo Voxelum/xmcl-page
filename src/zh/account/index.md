@@ -1,10 +1,12 @@
 ---
-title: 你的 XMCL 账户
-layout: page
+title: XMCL Together 账户
+noindex: true
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/zh/together/account/"
 ---
 
-<script setup>
-import AccountOAuth from '../../../.vitepress/theme/components/commercialization/AccountOAuth.vue'
-</script>
+# XMCL Together 账户
 
-<AccountOAuth locale="zh" />
+[前往你的 XMCL Together 账户](../together/account/)。
