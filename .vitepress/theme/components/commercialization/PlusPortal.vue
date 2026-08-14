@@ -21,7 +21,7 @@
       </header>
 
       <p v-if="message" :class="['notice', { error }]" role="status">{{ message }}</p>
-      <section v-if="accountSession.session && !loading" class="account-overview">
+      <section v-if="!initializing && accountSession.session && !loading" class="account-overview">
         <article>
           <small>{{ t('commercial.server.balance') }}</small>
           <strong>{{ balance ? money(balance.available) : '—' }}</strong>
@@ -41,7 +41,7 @@
         <p v-if="allowanceStatus">{{ allowanceStatus }}</p>
       </section>
 
-      <section v-if="serverManagementEnabled && accountSession.session && serverServices.length" class="server-manager">
+      <section v-if="!initializing && serverManagementEnabled && accountSession.session && serverServices.length" class="server-manager">
         <header>
           <div>
             <p class="eyebrow">{{ t('commercial.server.managerEyebrow') }}</p>
@@ -136,7 +136,7 @@
           <div v-if="plan.id !== 'home'" class="plan-action">
             <button type="button" disabled>{{ comingSoon }}</button>
           </div>
-          <div v-else-if="accountSession.session" class="plan-action">
+          <div v-else-if="!initializing && accountSession.session" class="plan-action">
             <template>
               <a v-if="subscription?.status === 'payment_due'" :href="billingUrl">{{ t('commercial.plus.addFunds') }}</a>
               <button v-else-if="!subscription || subscription.status === 'cancelled'" type="button" :disabled="mutating || loading" @click="subscribe">
@@ -410,11 +410,15 @@ const catalogPlans = computed(() => [
   },
 ])
 
-onMounted(async () => {
+onMounted(() => {
+  requestAnimationFrame(() => void initializePortal())
+})
+
+async function initializePortal() {
   await initializeAccountSession()
   initializing.value = false
   if (accountSession.session) await refresh()
-})
+}
 
 async function refresh() {
   if (!api) {
