@@ -84,4 +84,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          preCommands: pages project create ${{ vars.CLOUDFLARE_PAGES_STAGING_PROJECT || 'xmcl-page-staging' }} --production-branch=staging || true
           command: pages deploy .vitepress/dist --project-name=${{ vars.CLOUDFLARE_PAGES_STAGING_PROJECT || 'xmcl-page-staging' }} --branch=staging
