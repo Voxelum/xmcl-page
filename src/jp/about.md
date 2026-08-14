@@ -2,11 +2,11 @@
 outline: false
 layout: home
 hero:
-  name: X Minecraft Launcher
+  name: XMCL
   text: マインクラフトのランチャーの新しい体験を発見します。
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: ダウンロード

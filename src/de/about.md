@@ -2,11 +2,11 @@
 outline: false
 layout: home
 hero:
-  name: X Minecraft Launcher
+  name: XMCL
   text: Entdecken Sie neue Erfahrungen mit einem Minecraft-Launcher.
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: Herunterladen

@@ -1,6 +1,6 @@
 # Minecraft Bedrock Edition нұсқаулығы
 
-X Minecraft Launcher (XMCL) **Minecraft Bedrock Edition** (*Windows 10/11 Edition* / *UWP Edition*) нұсқасын басқаруды, жүктеуді және іске қосуды қолдайды.
+XMCL **Minecraft Bedrock Edition** (*Windows 10/11 Edition* / *UWP Edition*) нұсқасын басқаруды, жүктеуді және іске қосуды қолдайды.
 
 ---
 

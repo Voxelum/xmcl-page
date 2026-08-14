@@ -9,7 +9,7 @@ intro:
     diskEfficient: Disk Efficient
     mods: Mods
   description: >-
-    X Minecraft Launcher (XMCL) is a modern Minecraft launcher that lets you
+    XMCL is a modern Minecraft launcher that lets you
     manage your massive resources like modpacks, resource packs, mods, shader
     packs... It also has integration with Minecraft Forge, Fabric, Quilt,
     CurseForge and Modrinth.
@@ -363,7 +363,7 @@ sceneLanding:
     secondaryAction: See the Linux workflow
     heroNote: Native Linux builds, ARM64 options, and Flathub support
     visualLabel: XMCL · Linux workspace
-    heroAlt: X Minecraft Launcher home screen showing a library of Minecraft instances
+    heroAlt: XMCL home screen showing a library of Minecraft instances
     visualTag: 4K-ready workspace
     visualStatus: READY FOR YOUR NEXT WORLD
     workflowKicker: A LINUX-FIRST WORKFLOW
@@ -406,7 +406,7 @@ sceneLanding:
         point1: Flathub path designed for Steam Deck
         point2: A focused interface on 4K displays
         point3: Open source and built for Linux players
-        alt: X Minecraft Launcher home page with a large instance library
+        alt: XMCL home page with a large instance library
     download:
       kicker: DOWNLOAD FOR LINUX
       title: Install XMCL your way.
@@ -420,7 +420,7 @@ sceneLanding:
     secondaryAction: Open the feature catalog
     heroNote: Modrinth and CurseForge workflows, with AI-assisted diagnosis
     visualLabel: XMCL · creator workspace
-    heroAlt: X Minecraft Launcher modpack market with Modrinth and CurseForge projects
+    heroAlt: XMCL modpack market with Modrinth and CurseForge projects
     visualTag: MODRINTH ↔ CURSEFORGE
     visualStatus: WORKING SET IN SYNC
     workflowKicker: THE CREATOR LOOP

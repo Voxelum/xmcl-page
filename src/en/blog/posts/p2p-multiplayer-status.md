@@ -19,7 +19,7 @@ When attempting to create or join P2P rooms in XMCL, you may encounter `multipla
 
 ## Overview
 
-Over the past few days, many players have reported that creating or joining online multiplayer rooms through X Minecraft Launcher (XMCL) is currently failing. 
+Over the past few days, many players have reported that creating or joining online multiplayer rooms through XMCL is currently failing.
 
 We want to provide full transparency by explaining how XMCL's P2P multiplayer system works behind the scenes, how the launcher communicates with our backend ([`xmcl-web-api`](https://github.com/Voxelum/xmcl-web-api)), why changes in Deno Deploy's free tier quotas caused this service interruption, and how we are fixing it.
 

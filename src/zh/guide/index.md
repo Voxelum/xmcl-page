@@ -7,7 +7,7 @@ hero:
   tagline: 如果不能……非常欢迎提 PR 改进文档！
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: 安装指南

@@ -7,7 +7,7 @@ hero:
   tagline: 혹시 찾지 못하셨다면... 문서 개선을 위해 PR을 보내주세요! 언제든 환영합니다!
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: 설치 가이드

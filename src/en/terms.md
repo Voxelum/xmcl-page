@@ -10,7 +10,7 @@ description: Terms governing XMCL accounts, Together Home, account balance, Waff
 These Terms of Service ("Terms") are an agreement between you and **CI010**, who
 operates the Services as an individual operator under the Voxelum and XMCL names
 ("XMCL", "we", "us"). They govern XMCL accounts and paid or hosted online
-services available through X Minecraft Launcher and xmcl.app ("Services"). The
+services available through XMCL and xmcl.app ("Services"). The
 open-source launcher remains subject to the license distributed with its source
 code.
 

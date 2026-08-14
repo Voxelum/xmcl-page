@@ -157,7 +157,7 @@ In this document, we will explore popular mod loaders and client optimization mo
 
 ## Mod Loader & Mod Management in XMCL
 
-X Minecraft Launcher (XMCL) provides a native, highly integrated system for installing mod loaders and managing your mods. You do not need to download external `.jar` or `.exe` installers, nor run complex setup processes.
+XMCL provides a native, highly integrated system for installing mod loaders and managing your mods. You do not need to download external `.jar` or `.exe` installers, nor run complex setup processes.
 
 ### 1. One-Click Mod Loader Installation
 When creating a new instance, or editing an existing instance's version:

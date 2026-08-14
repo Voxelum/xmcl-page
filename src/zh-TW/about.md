@@ -2,11 +2,11 @@
 outline: false
 layout: home
 hero:
-  name: X Minecraft Launcher
+  name: XMCL
   text: 體驗不一樣的 Minecraft 啟動器。
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: 下載

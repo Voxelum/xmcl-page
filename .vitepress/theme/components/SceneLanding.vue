@@ -109,7 +109,7 @@ const legacyContent = computed(() => props.kind === 'linux' ? {
   visualIndex: '01 / 02',
   visualLabel: 'XMCL · Linux workspace',
   heroImage: homeProduction,
-  heroAlt: 'X Minecraft Launcher home screen showing a library of Minecraft instances',
+  heroAlt: 'XMCL home screen showing a library of Minecraft instances',
   visualTag: '4K-ready workspace',
   visualStatus: 'READY FOR YOUR NEXT WORLD',
   workflowKicker: 'A LINUX-FIRST WORKFLOW',
@@ -123,7 +123,7 @@ const legacyContent = computed(() => props.kind === 'linux' ? {
   features: [
     { label: '01 / CHOOSE YOUR INSTALL', title: 'Use the format your distribution understands.', description: 'Download a native package for your desktop or use Flathub when you want a portable, Steam Deck-friendly route. XMCL also offers ARM64 builds where the hardware calls for them.', points: ['DEB and RPM for mainstream Linux desktops', 'AppImage and tar.xz for portable installs', 'Flathub support for Steam Deck'], image: instanceCreate, alt: 'XMCL create instance dialog with Minecraft versions and mod loaders' },
     { label: '02 / KEEP IT ORGANIZED', title: 'Every instance gets its own clean runway.', description: 'Separate vanilla, modded, testing, and server setups without juggling folders by hand. Your versions, loaders, mods, saves, and settings stay together.', points: ['Independent game data and launch settings', 'Forge, Fabric, Quilt, NeoForge, and more', 'Fast switching between worlds and experiments'], image: homeExpanded, alt: 'XMCL instance library with organized Minecraft game profiles' },
-    { label: '03 / PLAY ANYWHERE', title: 'A desktop launcher that travels well.', description: 'Move from a Linux desktop to a Steam Deck session without giving up a clear library or a dependable setup. XMCL gives your collection room to grow without turning it into a spreadsheet.', points: ['Flathub path designed for Steam Deck', 'A focused interface on 4K displays', 'Open source and built for Linux players'], image: homeProduction, alt: 'X Minecraft Launcher home page with a large instance library' },
+    { label: '03 / PLAY ANYWHERE', title: 'A desktop launcher that travels well.', description: 'Move from a Linux desktop to a Steam Deck session without giving up a clear library or a dependable setup. XMCL gives your collection room to grow without turning it into a spreadsheet.', points: ['Flathub path designed for Steam Deck', 'A focused interface on 4K displays', 'Open source and built for Linux players'], image: homeProduction, alt: 'XMCL home page with a large instance library' },
   ],
 } : {
   eyebrow: 'XMCL / FOR MODPACK CREATORS',
@@ -135,7 +135,7 @@ const legacyContent = computed(() => props.kind === 'linux' ? {
   visualIndex: '02 / 02',
   visualLabel: 'XMCL · creator workspace',
   heroImage: modpackMarket,
-  heroAlt: 'X Minecraft Launcher modpack market with Modrinth and CurseForge projects',
+  heroAlt: 'XMCL modpack market with Modrinth and CurseForge projects',
   visualTag: 'MODRINTH ↔ CURSEFORGE',
   visualStatus: 'WORKING SET IN SYNC',
   workflowKicker: 'THE CREATOR LOOP',

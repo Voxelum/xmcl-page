@@ -1,6 +1,6 @@
 # دليل Minecraft Bedrock Edition
 
-يدعم X Minecraft Launcher (XMCL) إدارة وتنزيل وتشغيل **Minecraft Bedrock Edition** (المعروفة بـ *إصدار Windows 10/11*).
+يدعم XMCL إدارة وتنزيل وتشغيل **Minecraft Bedrock Edition** (المعروفة بـ *إصدار Windows 10/11*).
 
 ---
 

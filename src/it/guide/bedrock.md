@@ -1,6 +1,6 @@
 # Guida a Minecraft Bedrock Edition
 
-X Minecraft Launcher (XMCL) supporta la gestione, il download e l'avvio di **Minecraft Bedrock Edition** (*Windows 10/11 Edition* / *UWP Edition*).
+XMCL supporta la gestione, il download e l'avvio di **Minecraft Bedrock Edition** (*Windows 10/11 Edition* / *UWP Edition*).
 
 ---
 

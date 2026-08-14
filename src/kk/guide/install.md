@@ -1,6 +1,6 @@
 # Installation Guide
 
-X Minecraft Launcher (XMCL) provides multiple installation formats tailored for Windows, macOS, and Linux.
+XMCL provides multiple installation formats tailored for Windows, macOS, and Linux.
 
 :::tip Useful Guides
 - 💾 **Need to move the launcher or game data to drive D: or E:?** Read the [Drive Relocation Guide](./change-drive.md).
@@ -47,7 +47,7 @@ You can run XMCL on Windows 7 / 8 using the unofficial **VxKex** extended kernel
 
 ### DMG Package
 1. Download and open the `.dmg` file.
-2. Drag **X Minecraft Launcher.app** to your **Applications** folder.
+2. Drag **XMCL.app** to your **Applications** folder.
 
 :::warning Gatekeeper Clearance
 To clear the unsigned application warning on macOS, run this command in Terminal:

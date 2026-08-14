@@ -7,7 +7,7 @@ hero:
   tagline: Якщо ні... ви завжди можете надіслати PR для покращення документації!
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: Посібник із встановлення

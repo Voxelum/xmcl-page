@@ -1,5 +1,5 @@
 ---
 layout: auth
 description: Расширьте свои возможности в Minecraft с помощью современной пусковой установки
-title: X Minecraft Launcher - полнофункциональная программа для запуска Minecraft
+title: XMCL - полнофункциональная программа для запуска Minecraft
 ---

@@ -9,7 +9,7 @@ description: How XMCL collects, uses, shares, and protects information across th
 
 This policy explains how **CI010**, operating as an individual operator under
 the Voxelum and XMCL names ("XMCL", "we", "us"), processes information when you
-use X Minecraft Launcher, xmcl.app, an XMCL account, or related online services.
+use XMCL, xmcl.app, an XMCL account, or related online services.
 It does not govern independent services you choose to connect, such as
 Microsoft, Mojang, third-party authentication servers, Modrinth, or CurseForge.
 

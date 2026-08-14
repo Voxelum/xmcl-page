@@ -9,7 +9,7 @@ description: 適用於 XMCL 帳戶、Together Home、帳戶餘額、Waffo 付款
 
 本服務由 **CI010** 以個人經營者身分營運，並使用 Voxelum 和 XMCL
 名稱（「XMCL」或「我們」）。本服務條款（「條款」）由你與 CI010 訂立，適用於透過
-X Minecraft Launcher 和 xmcl.app 提供的 XMCL
+XMCL 和 xmcl.app 提供的 XMCL
 帳戶、付費及託管線上服務（「服務」）。開源啟動器本身仍適用其原始碼所附的開源授權。
 
 建立 XMCL 帳戶、購買帳戶餘額、訂閱 Together Home

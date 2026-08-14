@@ -1,5 +1,5 @@
 ---
 layout: welcome-modern
 description: Палепшыце свой вопыт у Minecraft з сучасным лаўнчарам
-title: X Minecraft Launcher - Поўнафункцыянальны лаўнчар Minecraft
+title: XMCL - Поўнафункцыянальны лаўнчар Minecraft
 ---

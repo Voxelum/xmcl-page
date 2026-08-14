@@ -29,11 +29,12 @@
       </nav>
     </div>
     <div class="site-footer-bottom">
-      <span>© {{ year }} X Minecraft Launcher</span>
+      <span>© {{ year }} XMCL</span>
       <span>{{ t('siteFooter.bottomNote') }}</span>
       <span class="site-footer-legal"><a :href="privacyUrl">{{ legalLabels.privacy }}</a><a :href="termsUrl">{{ legalLabels.terms }}</a></span>
       <a :href="guideUrl">{{ t('siteFooter.readDocumentation') }} <span aria-hidden="true">+</span></a>
     </div>
+    <p class="site-footer-disclaimer">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
   </footer>
 </template>
 
@@ -193,6 +194,13 @@ const year = new Date().getFullYear()
 .site-footer-legal {
   display: inline-flex;
   gap: 14px;
+}
+
+.site-footer-disclaimer {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  margin: 18px auto 0;
+  max-width: 1680px;
 }
 
 @media (max-width: 680px) {

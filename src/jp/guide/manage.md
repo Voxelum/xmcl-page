@@ -1,6 +1,6 @@
 # Data & Storage Management
 
-The data architecture of X Minecraft Launcher (XMCL) is divided into two distinct components:
+The data architecture of XMCL is divided into two distinct components:
 
 1. **System Configurations & XMCL Database** (settings, accounts, marketplace cache).
 2. **Minecraft Game Data** (versions, instances, mods, worlds, assets).

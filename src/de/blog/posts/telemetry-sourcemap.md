@@ -1,7 +1,7 @@
 ---
 date: 2023-12-18
-title: "Optimizing X Minecraft Launcher: Using Azure Application Insights and Azure Storage for Secure Sourcemap Management"
-description: Optimize X Minecraft Launcher with Azure Application Insights and Azure Storage. Learn sourcemap best practices, enhance performance monitoring, and secure production artifacts.
+title: "Optimizing XMCL: Using Azure Application Insights and Azure Storage for Secure Sourcemap Management"
+description: Optimize XMCL with Azure Application Insights and Azure Storage. Learn sourcemap best practices, enhance performance monitoring, and secure production artifacts.
 category: Article
 ---
 
@@ -13,7 +13,7 @@ Use azure applicationinsights in Electron with sourcemap configuration in azure 
 
 ## Sourcemap & Debugging
 
-In X Minecraft Launcher, we used to ship the sourcemap in production code. With the `source-map-support` package, the Error stack becomes signifcantly useful to address the problem.
+In XMCL, we used to ship the sourcemap in production code. With the `source-map-support` package, the Error stack becomes signifcantly useful to address the problem.
 
 <!-- image of the error stack -->
 

@@ -45,7 +45,7 @@ intro:
     diskEfficient: 磁碟空間最優選
     mods: 模組包
   description: >-
-    X Minecraft Launcher (XMCL) 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft
+    XMCL 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft
     Forge、 Fabric、Quilt、CurseForge 以及 Modrinth。
 launcher:
   manage:
@@ -247,7 +247,7 @@ sceneLanding:
     secondaryAction: 查看 Linux 工作流程
     heroNote: 原生 Linux 建置、ARM64 版本與 Flathub 支援
     visualLabel: XMCL · Linux 工作區
-    heroAlt: X Minecraft Launcher 實例庫首頁
+    heroAlt: XMCL 實例庫首頁
     visualTag: 4K 就緒工作區
     visualStatus: 準備進入下一個世界
     workflowKicker: LINUX 優先的工作流程

@@ -1,6 +1,6 @@
 # Minecraft 基岩版（Bedrock Edition）指南
 
-X Minecraft Launcher (XMCL) 支持管理、下载和启动 **Minecraft 基岩版**（即 *Windows 10/11 版* 或 *UWP 版*）。
+XMCL 支持管理、下载和启动 **Minecraft 基岩版**（即 *Windows 10/11 版* 或 *UWP 版*）。
 
 本指南将介绍如何在 XMCL 中设置基岩版、包文件的来源以及跨平台兼容性。
 

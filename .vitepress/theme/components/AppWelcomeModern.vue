@@ -7,7 +7,7 @@
           <span class="modern-kicker-dot"></span>
           <span>{{ t('modernHome.kicker') }}</span>
         </div>
-        <h1>X Minecraft Launcher</h1>
+        <h1>XMCL</h1>
         <i18n-t class="modern-hero-copy" keypath="intro.first.body" tag="p">
           <template #openSource>
             <span>{{ t('intro.first.openSource') }}</span>
@@ -43,7 +43,7 @@
             <span></span><span></span><span></span>
             <small>{{ t('modernHome.windowLabel') }}</small>
           </div>
-          <AppPicture :value="homePicture" alt="X Minecraft Launcher home page" loading="eager" decoding="async" />
+          <AppPicture :value="homePicture" alt="XMCL home page" loading="eager" decoding="async" />
         </div>
         <div class="modern-floating-card modern-floating-version">
           <span class="modern-card-overline">{{ t('modernHome.latestRelease') }}</span>

@@ -1,6 +1,6 @@
 # Гайд по Minecraft Bedrock Edition
 
-X Minecraft Launcher (XMCL) підтримує керування, завантаження та запуск **Minecraft Bedrock Edition** (також відомої як *Windows 10/11 Edition* або *UWP Edition*).
+XMCL підтримує керування, завантаження та запуск **Minecraft Bedrock Edition** (також відомої як *Windows 10/11 Edition* або *UWP Edition*).
 
 Цей гайд розповідає, як налаштувати Bedrock Edition у XMCL, звідки завантажуються файли та про сумісність з операційними системами.
 
@@ -26,7 +26,7 @@ Minecraft Bedrock Edition використовує архітектуру пак
 
 ## 2. Встановлення та запуск версій Bedrock у XMCL
 
-1. Відкрийте **X Minecraft Launcher**.
+1. Відкрийте **XMCL**.
 2. Натисніть **Створити екземпляр** або відкрийте **Налаштування екземпляра**.
 3. Змініть тип/видання гри на **Bedrock Edition**.
 4. У селекторі версій оберіть потрібний реліз, бету або Preview-збірку.

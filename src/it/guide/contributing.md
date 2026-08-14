@@ -1,4 +1,4 @@
-# Contributing to X Minecraft Launcher (XMCL)
+# Contributing to XMCL
 
 Thank you for your interest in contributing to XMCL! This guide provides an overview of the technical stack, monorepo architecture, development environment setup, editor configurations (**VS Code**, **Zed Editor**, **Neovim / Vim**, **Helix**, **JetBrains**), debugging workflows, testing procedures, and submission standards.
 

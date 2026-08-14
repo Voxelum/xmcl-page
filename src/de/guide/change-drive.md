@@ -1,6 +1,6 @@
 # So verschieben Sie XMCL & Spieldaten auf ein anderes Laufwerk
 
-Beim Installieren des X Minecraft Launchers oder beim Herunterladen vieler Minecraft-Versionen, Mods, Ressourcenpakete und Shader kann das Systemlaufwerk (`C:`) schnell voll werden.
+Beim Installieren des XMCLs oder beim Herunterladen vieler Minecraft-Versionen, Mods, Ressourcenpakete und Shader kann das Systemlaufwerk (`C:`) schnell voll werden.
 
 Diese Anleitung erklärt, wie Sie **die Launcher-Anwendung verschieben** und **Ihre Minecraft-Spieldaten** auf ein zweites Laufwerk (wie `D:` oder `E:`) verlegen.
 
@@ -15,7 +15,7 @@ Wenn Sie nur Speicherplatz auf `C:` freigeben möchten, müssen Sie lediglich da
 XMCL ermöglicht es Ihnen, alle großen Minecraft-Dateien auf einem beliebigen Laufwerk zu speichern, ohne den Launcher neu zu installieren.
 
 ### Schritte zum Ändern des Datenverzeichnisses:
-1. Starten Sie den **X Minecraft Launcher**.
+1. Starten Sie den **XMCL**.
 2. Öffnen Sie die **Einstellungen** (Zahnrad-Symbol ⚙️ unten links).
 3. Gehen Sie zu **Globale Einstellungen** -> **Allgemein / Speicher**.
 4. Suchen Sie die Einstellung **Datenverzeichnis / Pfad**.
@@ -32,10 +32,10 @@ Je nachdem, welches Paketformat Sie zur Installation verwendet haben, unterschei
 - Einfach den entpackten Ordner `XMCL` von `C:\` auf Ihr neues Laufwerk (z. B. `D:\Games\XMCL`) verschieben und `xmcl.exe` von dort starten.
 
 ### Option B: AppX / Online AppInstaller / WinGet
-- Öffnen Sie die **Windows-Einstellungen** (`Win + I`) -> **Apps** -> **Installierte Apps** -> **X Minecraft Launcher** -> `...` -> **Verschieben** -> Wählen Sie Laufwerk `D:`.
+- Öffnen Sie die **Windows-Einstellungen** (`Win + I`) -> **Apps** -> **Installierte Apps** -> **XMCL** -> `...` -> **Verschieben** -> Wählen Sie Laufwerk `D:`.
 
 ### Option C: macOS (DMG)
-- Verschieben Sie `X Minecraft Launcher.app` auf ein anderes Laufwerk oder ändern Sie das Spieldaten-Verzeichnis in den Einstellungen.
+- Verschieben Sie `XMCL.app` auf ein anderes Laufwerk oder ändern Sie das Spieldaten-Verzeichnis in den Einstellungen.
 
 ### Option D: Linux (AppImage / Flatpak / Deb / RPM)
 - Verschieben Sie die `.AppImage`-Datei oder ändern Sie das Spieldaten-Verzeichnis in den Einstellungen.

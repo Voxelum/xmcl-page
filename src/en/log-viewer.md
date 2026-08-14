@@ -1,5 +1,5 @@
 ---
-title: XMCL Log Viewer | X Minecraft Launcher
+title: XMCL Log Viewer | XMCL
 description: Read XMCL support report logs locally in your browser.
 ---
 

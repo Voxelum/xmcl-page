@@ -1,6 +1,6 @@
 # Гайд па Minecraft Bedrock Edition
 
-X Minecraft Launcher (XMCL) падтрымлівае кіраванне, загрузку і запуск **Minecraft Bedrock Edition** (*Windows 10/11 Edition* / *UWP Edition*).
+XMCL падтрымлівае кіраванне, загрузку і запуск **Minecraft Bedrock Edition** (*Windows 10/11 Edition* / *UWP Edition*).
 
 ---
 
