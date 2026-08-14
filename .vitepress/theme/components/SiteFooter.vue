@@ -28,7 +28,12 @@
         </section>
       </nav>
     </div>
-    <div class="site-footer-bottom"><span>© {{ year }} X Minecraft Launcher</span><span>{{ t('siteFooter.bottomNote') }}</span><a :href="guideUrl">{{ t('siteFooter.readDocumentation') }} <span aria-hidden="true">+</span></a></div>
+    <div class="site-footer-bottom">
+      <span>© {{ year }} X Minecraft Launcher</span>
+      <span>{{ t('siteFooter.bottomNote') }}</span>
+      <span class="site-footer-legal"><a :href="privacyUrl">Privacy</a><a :href="termsUrl">Terms</a></span>
+      <a :href="guideUrl">{{ t('siteFooter.readDocumentation') }} <span aria-hidden="true">+</span></a>
+    </div>
   </footer>
 </template>
 
@@ -51,6 +56,9 @@ const creatorsUrl = computed(() => pageUrl('modpack-creator'))
 const logViewerUrl = computed(() => pageUrl('log-viewer'))
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
+const legalLocale = computed(() => lang.value === 'zh' ? 'zh' : 'en')
+const privacyUrl = computed(() => `${site.value.base}${legalLocale.value}/privacy`)
+const termsUrl = computed(() => `${site.value.base}${legalLocale.value}/terms`)
 const year = new Date().getFullYear()
 </script>
 
@@ -173,6 +181,11 @@ const year = new Date().getFullYear()
 .site-footer-bottom a {
   color: #fff;
   font-weight: 700;
+}
+
+.site-footer-legal {
+  display: inline-flex;
+  gap: 14px;
 }
 
 @media (max-width: 680px) {
