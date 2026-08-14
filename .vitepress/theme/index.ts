@@ -27,7 +27,6 @@ import AppLabymodPicture from "./components/AppLabymodPicture.vue"
 import LogViewer from './components/LogViewer.vue'
 import SceneLanding from './components/SceneLanding.vue'
 import SiteFooter from './components/SiteFooter.vue'
-import TogetherButton from './components/TogetherButton.vue'
 import ImageZoomLightbox from './components/ImageZoomLightbox.vue'
 
 const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
@@ -85,7 +84,6 @@ export default {
 
     return () => [
       h(DefaultTheme.Layout, props, {
-        'nav-bar-content-after': () => h(TogetherButton),
         'layout-bottom': () => [h(SiteFooter), h(ImageZoomLightbox)],
       }),
     ]
