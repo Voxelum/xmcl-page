@@ -24,17 +24,16 @@ pnpm run build
 
 ## Deployment branches
 
-- `staging` deploys the commercial integration site to the
-  `xmcl-page-staging` Cloudflare Pages project. Its browser API URLs point to
-  `https://api-staging.xmcl.app`.
+- `staging` deploys a Cloudflare Pages branch preview from the production Pages
+  project. Its browser API URLs point to `https://api-staging.xmcl.app`.
 - `master` deploys the public production site and points commercial clients to
   `https://api.xmcl.app`.
 
 Changes move from feature branches to `staging` for verification, then from
 `staging` to `master` without rebuilding a separate release commit. GitHub
 Environments named `staging` and `production` own their respective deployment
-secrets. Configure `staging.xmcl.app` as the custom domain of the staging Pages
-project.
+secrets. The branch preview is isolated from the production deployment; a
+dedicated `staging.xmcl.app` route can be added after the preview is accepted.
 
 ## I18n
 
