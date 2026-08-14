@@ -57,7 +57,7 @@ const { t } = useI18n()
 const inviter = computed(() => query.inviter)
 
 useHead({
-  title: computed(() => 'X Minecraft Launcher - ' + t('joinPeer', { inviter: inviter.value })),
+  title: computed(() => 'XMCL - ' + t('joinPeer', { inviter: inviter.value })),
   meta: computed(() => [
     {
       name: 'keywords',

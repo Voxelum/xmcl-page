@@ -1,13 +1,13 @@
 ---
 date: 2026-07-11
-title: "X Minecraft Launcher is Now Verified on Flathub!"
+title: "XMCL is Now Verified on Flathub!"
 description: "We are excited to announce that XMCL has received its official verification badge on Flathub. Read about our journey to verify the app and configure metadata."
 category: Announcement
 ---
 
 <PostDetail>
 
-We are thrilled to announce that **X Minecraft Launcher (XMCL)** is now officially verified on **Flathub**! You will now see the blue verification badge next to our launcher on the store.
+We are thrilled to announce that **XMCL** is now officially verified on **Flathub**! You will now see the blue verification badge next to our launcher on the store.
 
 👉 Check us out at: **[app.xmcl.voxelum on Flathub](https://flathub.org/en/apps/app.xmcl.voxelum)**
 

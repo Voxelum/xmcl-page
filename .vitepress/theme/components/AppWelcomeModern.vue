@@ -7,7 +7,7 @@
           <span class="modern-kicker-dot"></span>
           <span>{{ t('modernHome.kicker') }}</span>
         </div>
-        <h1>X Minecraft Launcher</h1>
+        <h1>XMCL</h1>
         <i18n-t class="modern-hero-copy" keypath="intro.first.body" tag="p">
           <template #openSource>
             <span>{{ t('intro.first.openSource') }}</span>
@@ -20,7 +20,7 @@
         <div class="modern-hero-actions">
           <a class="modern-button modern-button-primary" href="#download">
             <span class="i-fa6-solid:download"></span>
-            <span>{{ t('downloadFor.windows').replace(':', '') }}</span>
+            <span>{{ t(primaryDownloadLabelKey).replace(':', '') }}</span>
           </a>
           <a class="modern-button modern-button-quiet" :href="guideUrl">
             <span>{{ t('guide') }}</span>
@@ -43,7 +43,7 @@
             <span></span><span></span><span></span>
             <small>{{ t('modernHome.windowLabel') }}</small>
           </div>
-          <AppPicture :value="homePicture" alt="X Minecraft Launcher home page" loading="eager" decoding="async" />
+          <AppPicture :value="homePicture" alt="XMCL home page" loading="eager" decoding="async" />
         </div>
         <div class="modern-floating-card modern-floating-version">
           <span class="modern-card-overline">{{ t('modernHome.latestRelease') }}</span>
@@ -182,7 +182,11 @@
           <div class="modern-download-heading"><span class="modern-live-dot"></span><span>{{ t('auto-source') }}</span></div>
           <ClientOnly>
             <component :is="downloadPlatform" class="modern-download-component" :organized="true" />
-            <p v-if="selectedDownloadPlatform === 'Mac'" class="modern-download-note">{{ t('downloadMacHint.content').replace('{link}', t('downloadMacHint.link')) }}</p>
+            <i18n-t v-if="selectedDownloadPlatform === 'Mac'" class="modern-download-note" keypath="downloadMacHint.content" tag="p">
+              <template #link>
+                <a :href="macInstallUrl">{{ t('downloadMacHint.link') }}</a>
+              </template>
+            </i18n-t>
           </ClientOnly>
         </div>
       </div>
@@ -231,6 +235,7 @@ const heroTransition = {
 }
 
 const guideUrl = computed(() => `${site.value.base}${locale.value}/guide/install`)
+const macInstallUrl = computed(() => `${guideUrl.value}#macos`)
 const prebuildsUrl = computed(() => `${site.value.base}${locale.value}/prebuilds`)
 const logViewerUrl = computed(() => `${site.value.base}en/log-viewer`)
 const featureCatalogUrl = computed(() => `${site.value.base}${locale.value}/features/`)
@@ -240,6 +245,7 @@ const downloadOptions = [
   { id: 'Mac' as const, labelKey: 'downloadFor.mac', icon: 'i-fa6-brands:apple' },
   { id: 'Linux' as const, labelKey: 'downloadFor.linux', icon: 'i-fa6-brands:linux' },
 ]
+const primaryDownloadLabelKey = computed(() => downloadOptions.find(option => option.id === platform)?.labelKey ?? 'downloadFor.windows')
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
 const supporters = [

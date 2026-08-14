@@ -1,59 +1,85 @@
-# Almacenamiento de Datos
+# Data & Storage Management
 
-Los datos de XMCL se dividen en dos categorías:
+The data architecture of XMCL is divided into two distinct components:
 
-1. Base de datos y caché de XMCL generadas por chromium.
-2. Datos relacionados con Minecraft.
+1. **System Configurations & XMCL Database** (settings, accounts, marketplace cache).
+2. **Minecraft Game Data** (versions, instances, mods, worlds, assets).
 
-## Caché y base de datos de XMCL
+:::tip Relocating Storage to Another Drive
+Running out of space on drive `C:`? You can easily relocate the entire Game Data Directory to drive `D:` or `E:`. See the [Drive Relocation Guide](./change-drive.md).
+:::
 
-Los archivos relacionados con el propio lanzador se guardan en la carpeta AppData del sistema. La ruta exacta varía según la plataforma:
+---
 
-::: code-group
-```cmd [Windows]
-%AppData%\xmcl
-```
-```cmd [Windows (APPX/appinstaller)]
-# Versión < 0.34
-%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
-# Versión >= 0.34 y < 0.40
+## 1. System Cache & XMCL Database
+
+:::tip 💡 Easiest Way to Open the Data Directory
+You don't need to manually search for hidden system folders! Inside the launcher, go to **Settings ⚙️** -> **Global Settings** -> **Storage** and click **"Open Data Directory"**. XMCL will automatically open the exact folder in Windows File Explorer!
+:::
+
+### Exact System Folder Paths by Installation Type:
+
+If you are navigating manually in File Explorer (press `Win + R` and paste the corresponding path):
+
+#### 🔹 Option 1: AppX / AppInstaller / WinGet Installation (Most Common)
+AppX packages run in a sandboxed environment on Windows 10/11. Their data is stored **NOT in the standard `Roaming` AppData**, but inside the Windows package sandbox:
+```cmd
 %LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
-```sh [macOS]
-~/Library/Application Support/xmcl
+*(Full path: `C:\Users\<Your_Username>\AppData\Local\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl`)*
+
+#### 🔹 Option 2: Standard EXE Installation
+```cmd
+%AppData%\xmcl
 ```
-```sh [Linux]
-~/.config/xmcl
-```
-:::
+*(Full path: `C:\Users\<Your_Username>\AppData\Roaming\xmcl`)*
 
-:::warning Nota
-No elimines estos archivos a menos que sepas exactamente lo que estás haciendo.
-:::
+#### 🔹 Option 3: Portable ZIP Package
+For the portable ZIP package, data is stored directly in the same folder where you extracted `XMCL` (alongside `xmcl.exe`), or in your selected Game Data Directory.
 
-Aquí encontrarás los archivos de configuración en formato `json` y la base de datos de recursos.
+#### 🔹 macOS & Linux:
+- **macOS**: `~/Library/Application Support/xmcl`
+- **Linux**: `~/.config/xmcl`
 
-- **Datos de usuario**: Cuentas, skins, enlaces, etc. Se guardan en `/user.json`.
-- **Configuración global**: Idioma, proxy, servidor de descarga, etc. Se guardan en `/settings.json`.
-- **Caché de instancias**: Guarda el historial de perfiles y sus rutas en `/instances.json`.
-- **Caché de Java**: Información sobre las rutas e instalaciones de Java detectadas en `/java.json`.
-- **Base de datos de recursos**: Metadatos de mods, paquetes de recursos, etc. Guardado en formato `leveldb` dentro de `/resources-v2`.
-- **Registros (Logs)**: Historial de registros del lanzador en la carpeta `/logs`.
+---
 
-## Datos relacionados con Minecraft
+### Key Configuration Files:
+- **`user.json`** — Account profiles (Microsoft, Yggdrasil, Offline), tokens, and skin links.
+- **`settings.json`** — Global launcher configuration (data path, language, theme, proxy, download nodes).
+- **`instances.json`** — Registry of all created instances and the last selected instance.
+- **`java.json`** — Cache of detected Java runtime installations.
+- **`resources-v2/`** — LevelDB database containing indexed metadata for mods, resource packs, shaders.
+- **`logs/`** — Launcher execution logs (`main.log`, `renderer.log`).
 
-La estructura del directorio de juego en XMCL difiere ligeramente de la carpeta estándar de Minecraft para optimizar el disco mediante enlaces duros:
+---
+
+## 2. Minecraft Game Data Directory
+
+All heavy game files are stored inside the **Game Data Directory**.
+
+### Directory Structure:
 
 ```sh
-"Carpeta pública de datos"
-└─ 📂mods # Carpeta de mods compartida para todas las instancias
-  └─ modA.jar # Archivo físico del mod, las instancias apuntarán aquí
-├─ 📂resourcepacks # Carpeta compartida de paquetes de recursos
-├─ 📂shaderpacks # Carpeta compartida de shaders
-├─ 📂versions # Versiones compartidas del juego
-├─ 📂assets # Activos de Minecraft compartidos
-├─ 📂libraries # Bibliotecas compartidas de Minecraft
-└─ 📂instances # Contiene tus instancias de juego creadas por XMCL
+📂 Game Data Directory
+ ├─ 📂 instances/        # Individual Minecraft instances
+ │   ├─ 📂 Fabric-1.20/  # Specific instance folder
+ │   │   ├─ 📂 saves/        # World save files for this instance
+ │   │   ├─ 📂 options.txt   # In-game settings for this instance
+ │   │   ├─ 📂 screenshots/  # Screenshots
+ │   │   └─ 📂 mods/         # Hardlinks/symlinks to shared mods
+ ├─ 📂 mods/             # Global shared mod pool
+ ├─ 📂 resourcepacks/    # Shared resource pack pool
+ ├─ 📂 shaderpacks/      # Shared shader pack pool
+ ├─ 📂 versions/         # Downloaded Minecraft versions (JAR, JSON)
+ ├─ 📂 assets/           # Minecraft game assets & textures
+ ├─ 📂 libraries/        # Shared Java libraries
+ └─ 📂 modpacks/         # Saved and exported modpacks
 ```
 
-La gran mayoría de los archivos son idénticos a los del juego clásico, pero la carpeta `instances` contiene de forma aislada los archivos de configuración y partidas de cada perfil de juego creado.
+---
+
+## 3. How XMCL Saves Storage Space (Hardlinks)
+
+1. Each mod file is downloaded **only once** into the global `mods/` pool.
+2. Adding a mod to multiple instances creates a lightweight **hardlink** in that instance's folder.
+3. **Result**: 10 instances using identical mods take up no extra disk space beyond a single instance!

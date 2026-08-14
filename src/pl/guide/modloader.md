@@ -151,7 +151,7 @@ W tym dokumencie przyjrzymy się czterem popularnym modloaderom: **Minecraft For
 
 ## Wybór i zarządzanie modami w XMCL
 
-X Minecraft Launcher (XMCL) zapewnia natywny, zintegrowany system instalacji modloaderów i zarządzania modami. Nie musisz pobierać zewnętrznych instalatorów `.jar` lub `.exe` ani przechodzić przez złożone procedury konfiguracji.
+XMCL zapewnia natywny, zintegrowany system instalacji modloaderów i zarządzania modami. Nie musisz pobierać zewnętrznych instalatorów `.jar` lub `.exe` ani przechodzić przez złożone procedury konfiguracji.
 
 ### 1. Instalacja modloadera jednym kliknięciem
 Podczas tworzenia nowej instancji lub edycji wersji istniejącej instancji:

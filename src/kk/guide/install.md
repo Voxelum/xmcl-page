@@ -1,98 +1,74 @@
-# Орнату нұсқаулығы
+# Installation Guide
 
-Launcher бірнеше орнату форматтарын ұсынады, олардың кейбіреулері аз таралған. Мұнда біз **аз таралған** немесе **арнайы** формат мүмкіндіктерін таныстыруға назар аударамыз.
+XMCL provides multiple installation formats tailored for Windows, macOS, and Linux.
+
+:::tip Useful Guides
+- 💾 **Need to move the launcher or game data to drive D: or E:?** Read the [Drive Relocation Guide](./change-drive.md).
+- 🧱 **Want to play Minecraft Bedrock Edition (Windows 10/11)?** Read the [Bedrock Edition Guide](./bedrock.md).
+:::
+
+---
 
 ## Windows
 
-:::info
-Windows пайдаланушылары үшін ұсынылатын орнату форматы - `APPX` немесе `Онлайн орнату (appinstaller)`.
+Several installation options are available for Windows:
+
+### 1. APPX & Online AppInstaller — Recommended
+- **APPX** is the modern Windows 10/11 sandboxed package format. Apps run in an isolated environment. When uninstalled, cache and registry changes are cleanly removed.
+- **AppInstaller** automatically downloads and updates the APPX package via secure Microsoft delivery channels with **incremental updates** support.
+
+### 2. Portable ZIP Package
+- Requires no installation or administrator privileges.
+- Extract the archive anywhere (e.g. `D:\Games\XMCL`) and run `xmcl.exe` directly.
+- Ideal for USB drives or secondary disk partitions.
+
+### 3. Running on Windows 7 / 8 / 8.1 (VxKex Extended Kernel)
+
+:::warning Important Compatibility Notice
+Modern XMCL is built on **Electron 43 / Chromium 130+**. Chromium and Microsoft have **officially dropped all support for Windows 7, 8, and 8.1**. The launcher will **not run natively** on legacy Windows versions out of the box.
 :::
 
-### APPX
+:::details Workaround using VxKex Extended Kernel
+You can run XMCL on Windows 7 / 8 using the unofficial **VxKex** extended kernel:
 
-APPX - бұл Windows 10 ұсынатын **орнату пакетінің** форматы, ол бағдарламаларға виртуалды/sandbox ортада жұмыс істеуге мүмкіндік береді. APPX арқылы орнатылған бағдарламалардың барлығы Windows sandbox ортасында жұмыс істейді.
+1. Download and install [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT).
+2. Right-click `xmcl.exe` -> **Properties** -> **VxKex** tab.
+3. Check **"Enable VxKex NEXT for this program"** and **"Report other versions of Windows"**, then apply.
 
-Пайдаланушылар үшін ең үлкен артықшылығы - қолданбаның `кэш файлдары`, `тіркелім өзгерістері` және басқа операциялар оқшауланады - қолданбаны жойған кезде, `кэш` және `тіркелім өзгерістері` бірге жойылады.
-
-:::info Жақсы жаңалық
-XMCL тіркелімге тек файл кеңейтімдерін байланыстыруды қосуы мүмкін болса да, бағдарламаның тіркелімде шатқаяқтауы туралы алаңдамаңыз.
+**What works and what doesn't on Windows 7/8:**
+- ✅ **Singleplayer (Java Edition)** — Works normally with an appropriate Java runtime (Java 8 / 17 / 21).
+- ❌ **P2P WebRTC Multiplayer** — Not supported (requires Windows 10+ network APIs).
+- ❌ **Bedrock Edition (UWP)** — Not supported (requires Windows 10/11 UWP framework).
 :::
 
-AppX appinstaller механизмі арқылы жаңартылады. Appinstaller-ге кіріктірілген [автоматты жаңарту](https://learn.microsoft.com/en-us/windows/msix/app-installer/auto-update-and-repair--overview#automatic-updates) стратегиясына сәйкес, XMCL пайдаланушы **қолданбаны іске қосқан** кезде жаңартуларды тексереді, және егер жаңарту болса, ол келесі іске қосу кезінде жаңартылады.
+---
 
-:::tip Жақсы жаңалық
-APPX-тің автоматты жаңартулары Windows-тың **оңтайландырылған жеткізу** және **инкрементальды жаңартулар** мүмкіндіктерін қолдайды - тек өзгертілген мазмұнды жаңартады.
-:::
+## macOS
 
-### Онлайн орнату (appinstaller)
+### DMG Package
+1. Download and open the `.dmg` file.
+2. Drag **XMCL.app** to your **Applications** folder.
 
-`appinstaller` іс жүзінде `APPX` форматымен бірдей. `appinstaller` өзі `APPX`-тің `URL` мекенжайын қамтитын `XML` мәтіндік файлы. Орнату интерфейсі пайда болған кезде, ол `APPX`-ті жүктеп, орнатуға тырысады. Сондықтан, оның жаңарту механизмі APPX-пен бірдей.
-
-### Windows 7/8
-
-Шешімді тапып, ұсынған [longteng](https://github.com/longteng-H)([bilibili](https://space.bilibili.com/1030667057))
-
-:::details Windows 10-нан төмен Windows жүйелерінде XMCL-ді қалай іске қосу керек
-Әдепкі бойынша, XMCL Windows 7-дің табиғи жұмысын қолдамайды. Қажетті орындау уақыты кітапханаларын толықтыру үшін VxKex кеңейтілген ядросын орнату арқылы бұл ескі жүйелерді әлі пайдаланып жүрген пайдаланушыларға шешім ұсынады. (Ескерту: Бұл әдіс ескі жүйелерде қалыпты жұмыс істей алмайтын кейбір бағдарламалық жасақтамаға да қолданылады)
-
-1. [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT) кеңейтілген ядросын жүктеп орнатыңыз. Бұл мұнда ұсынылған отандық тармақ.
-2. X Minecraft Launcher.exe табып, оған VxKex-ті қосыңыз. Қалай екенін білмесеңіз, видео дәстүрді қараңыз: [Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8).
-
-"Осы бағдарлама үшін VxKex NEXT қосу" және "Windows-тың басқа нұсқаларын хабарлау" екеуін де белгілеңіз, содан кейін қолданып растаңыз.
-
-Осы кезеңде XMCL Windows 7-де қалыпты жұмыс істей алады, көпқатысушы ойыннан басқа барлық функциялар қалыпты жұмыс істейді.
-:::
-
-## MacOS
-
-:::warning
-Mac пайдаланушылары қол қойылмаған бағдарламалық жасақтаманы орнатуға рұқсат беруі керек.
-XMCL қол қойылмаған болғандықтан, жүйе параметрлерінде оны іске қосуға рұқсат беруіңіз керек.
-:::
-
-### DMG
-
-Біз MacOS пайдаланушылары үшін тек DMG форматын ұсынамыз. DMG форматы виртуалды диск ретінде монтаждалатын дискінің бейне форматы. DMG-ны ашқаннан кейін, қолданбаны орнату үшін оны `Applications` қалтасына сүйреңіз.
-
-Қолданбаны іске қосу үшін, сіз келесі пәрменді қолдана аласыз.
+:::warning Gatekeeper Clearance
+To clear the unsigned application warning on macOS, run this command in Terminal:
 
 ```sh
-# кез-келген көзден бағдарламалық жасақтамаға рұқсат беру
-sudo spctl --master-disable
-# карантин атрибутын тазалау
 sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
 ```
+:::
 
-Егер сіз `X Minecraft Launcher.app`-ты басқа жерге орнатсаңыз, жолды `/Applications/X\ Minecraft\ Launcher.app` орнына ауыстырыңыз.
+---
 
 ## Linux
 
-:::info
-Linux көптеген дистрибуциялары бар, сондықтан әмбебап орнату әдісін ұсыну қиын. Мұнда біз тек `AppImage` туралы айтамыз.
-:::
-
 ### AppImage
+- Universal binary for Linux distributions (Ubuntu, Fedora, Arch, etc.).
+- Mark as executable: `chmod +x XMCL.AppImage` and launch.
 
-AppImage - бұл орнатусыз кез-келген Linux жұмыс үстелінде жұмыс істей алатын Linux қолданба форматы. AppImage файлы орындалатын файл, жай екі рет басыңыз немесе терминалдан іске қосыңыз.
+---
 
-Бұл XMCL ұсынатын жалғыз орнатылмайтын бағдарлама (~~шын мәнінде оны қолдағым келмейді~~). Сондықтан, оның жаңарту механизмі басқа форматтардан өзгеше, және пайдаланушылар жаңарту үшін жаңа AppImage-ті өздері жүктеп алуы керек.
+## Game Data Directory Selection
 
-## Басқа форматтар
-
-Қазіргі уақытта, басқа орнату форматтары [ыстық жаңартуларды] немесе electron-builder ұсынатын жаңарту әдісін қолдайды. Бұл жаңарту режимі әдетте тым көп назар аударуды қажет етпейді (~~егер жаңарта алмасаңыз, лаунчерді қайта жүктеп алуыңызға болады~~).
-
-:::tip Ыстық жаңарту
-Ыстық жаңарту дегеніміз, лаунчер негізгі asar файлын (~30MB) лаунчерді толық қайта жүктеп алмай-ақ өзі ауыстырады.
-:::
-
-## Қосымша: Ойын деректер каталогын таңдау
-
-Бастапқы орнату кезінде пайдаланушылар `Ойын деректер каталогын` таңдауы керек. XMCL жүктелген `ресурстарды`, `кітапханаларды`, `нұсқаларды` және т.б. осы каталогқа орналастырады.
-
-:::warning Ескерту
-Орнату бетінде айтылғандай, XMCL-дің арнайы файл құрылымына байланысты, **шикі** Minecraft ойын каталогын XMCL деректер каталогы ретінде пайдалану ұсынылмайды.
-:::
-
-Мұнда XMCL-дің `Ойын деректер каталогы` ретінде жаңа қалтаны таңдау ұсынылады.
-
-Ойын деректер каталогының құрылымы туралы қосымша ақпарат алу үшін [Деректерді басқару нұсқаулығын](/en/guide/manage.md#minecraft-related-data) қараңыз.
+During initial setup, XMCL prompts for a **Game Data Directory**.
+- It is recommended to choose a dedicated folder (e.g., `D:\XMCL-Data`).
+- For details, see the [Data Management Guide](./manage.md) and [Drive Relocation Guide](./change-drive.md).

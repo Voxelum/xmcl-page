@@ -7,7 +7,7 @@ hero:
   tagline: Jeśli nie... serdecznie zapraszamy do wysłania PR w celu ulepszenia dokumentacji!
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: Instrukcja instalacji

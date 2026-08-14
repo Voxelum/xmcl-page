@@ -1,5 +1,5 @@
 ---
-title: Modpack Workflows | X Minecraft Launcher
+title: Modpack Workflows | XMCL
 description: Discover, inspect, install, and export Minecraft modpacks in XMCL.
 ---
 

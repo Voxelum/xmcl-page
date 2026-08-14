@@ -1,98 +1,74 @@
-# インストールガイド
+# Installation Guide
 
-ランチャーは複数のインストール形式を提供しており、その中には一般的でないものもあります。ここでは、**一般的でない**または**特殊な**形式の機能を紹介します。
+XMCL provides multiple installation formats tailored for Windows, macOS, and Linux.
+
+:::tip Useful Guides
+- 💾 **Need to move the launcher or game data to drive D: or E:?** Read the [Drive Relocation Guide](./change-drive.md).
+- 🧱 **Want to play Minecraft Bedrock Edition (Windows 10/11)?** Read the [Bedrock Edition Guide](./bedrock.md).
+:::
+
+---
 
 ## Windows
 
-:::info
-Windows ユーザーには `APPX` または `オンラインインストール (appinstaller)` のインストール形式をお勧めします。
+Several installation options are available for Windows:
+
+### 1. APPX & Online AppInstaller — Recommended
+- **APPX** is the modern Windows 10/11 sandboxed package format. Apps run in an isolated environment. When uninstalled, cache and registry changes are cleanly removed.
+- **AppInstaller** automatically downloads and updates the APPX package via secure Microsoft delivery channels with **incremental updates** support.
+
+### 2. Portable ZIP Package
+- Requires no installation or administrator privileges.
+- Extract the archive anywhere (e.g. `D:\Games\XMCL`) and run `xmcl.exe` directly.
+- Ideal for USB drives or secondary disk partitions.
+
+### 3. Running on Windows 7 / 8 / 8.1 (VxKex Extended Kernel)
+
+:::warning Important Compatibility Notice
+Modern XMCL is built on **Electron 43 / Chromium 130+**. Chromium and Microsoft have **officially dropped all support for Windows 7, 8, and 8.1**. The launcher will **not run natively** on legacy Windows versions out of the box.
 :::
 
-### APPX
+:::details Workaround using VxKex Extended Kernel
+You can run XMCL on Windows 7 / 8 using the unofficial **VxKex** extended kernel:
 
-APPX は Windows 10 が提供する**インストールパッケージ**形式で、プログラムが仮想化/サンドボックス環境で実行できるようにします。APPX を通じてインストールされたプログラムはすべて Windows サンドボックス内で実行されます。
+1. Download and install [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT).
+2. Right-click `xmcl.exe` -> **Properties** -> **VxKex** tab.
+3. Check **"Enable VxKex NEXT for this program"** and **"Report other versions of Windows"**, then apply.
 
-ユーザーにとっての最大の利点は、アプリケーションの `キャッシュファイル`、`レジストリの変更`、その他の操作が分離されることです - アプリケーションをアンインストールすると、`キャッシュ`と`レジストリの変更`も一緒に削除されます。
-
-:::info 良いニュース
-XMCL がレジストリに追加するのはファイル拡張子の関連付けのみかもしれませんが、プログラムがレジストリを乱すことについて心配する必要はありません。
+**What works and what doesn't on Windows 7/8:**
+- ✅ **Singleplayer (Java Edition)** — Works normally with an appropriate Java runtime (Java 8 / 17 / 21).
+- ❌ **P2P WebRTC Multiplayer** — Not supported (requires Windows 10+ network APIs).
+- ❌ **Bedrock Edition (UWP)** — Not supported (requires Windows 10/11 UWP framework).
 :::
 
-AppX は appinstaller メカニズムを通じて更新されます。appinstaller に組み込まれている[自動更新](https://learn.microsoft.com/en-us/windows/msix/app-installer/auto-update-and-repair--overview#automatic-updates)戦略によると、XMCL はユーザーが**アプリケーションを起動**したときに更新をチェックし、更新がある場合は次回の起動時に更新されます。
+---
 
-:::tip 良いニュース
-APPX の自動更新は Windows の**最適化された配信**と**増分更新**をサポートしています - 変更されたコンテンツのみを更新します。
-:::
+## macOS
 
-### オンラインインストール (appinstaller)
+### DMG Package
+1. Download and open the `.dmg` file.
+2. Drag **XMCL.app** to your **Applications** folder.
 
-`appinstaller` は本質的に `APPX` 形式と同じです。`appinstaller` 自体は `APPX` の `URL` を含む `XML` テキストファイルです。インストール画面が表示されると、`APPX` をダウンロードしてインストールしようとします。したがって、その更新メカニズムは APPX と同じです。
-
-### Windows 7/8
-
-解決策を発見・提供：[longteng](https://github.com/longteng-H)([bilibili](https://space.bilibili.com/1030667057))
-
-:::details Windows 10以下のWindowsシステムでXMCLを実行する方法
-デフォルトでは、XMCLはネイティブWindows 7の動作をサポートしていません。必要なランタイムライブラリを補完するVxKex拡張カーネルをインストールすることで、レガシーシステムを使用しているユーザーに解決策を提供します。（注：この方法は、古いシステムで正常に動作しない一部のソフトウェアにも適用されます）
-
-1. [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT)拡張カーネルをダウンロードしてインストールします。これはここで提供される国内ブランチです。
-2. X Minecraft Launcher.exeを見つけて、VxKexを有効にします。方法がわからない場合は、ビデオチュートリアルを参照してください：[Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8)。
-
-「このプログラムでVxKex NEXTを有効にする」と「他のWindowsバージョンを報告する」の両方にチェックを入れ、適用して確認します。
-
-この時点で、XMCLはWindows 7で正常に動作し、マルチプレイヤー以外のすべての機能が正常に動作します。
-:::
-
-## MacOS
-
-:::warning
-Mac ユーザーは非署名ソフトウェアのインストールを許可する必要があります。
-XMCL は署名されていないため、システム設定で実行を許可する必要があります。
-:::
-
-### DMG
-
-MacOS ユーザー向けには DMG 形式のみを提供しています。DMG 形式は仮想ディスクとしてマウントされるディスクイメージ形式です。DMG を開いた後、アプリケーションを `Applications` フォルダにドラッグしてインストールします。
-
-アプリケーションを実行するには、次のコマンドを使用して許可する必要があります。
+:::warning Gatekeeper Clearance
+To clear the unsigned application warning on macOS, run this command in Terminal:
 
 ```sh
-# あらゆるソースからのソフトウェアを許可
-sudo spctl --master-disable
-# 検疫属性をクリア
 sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
 ```
+:::
 
-`X Minecraft Launcher.app` を他の場所にインストールした場合は、パスを `/Applications/X\ Minecraft\ Launcher.app` に置き換えるだけです。
+---
 
 ## Linux
 
-:::info
-Linux には多くのディストリビューションがあるため、普遍的なインストール方法を提供することは困難です。ここでは `AppImage` のみを言及します。
-:::
-
 ### AppImage
+- Universal binary for Linux distributions (Ubuntu, Fedora, Arch, etc.).
+- Mark as executable: `chmod +x XMCL.AppImage` and launch.
 
-AppImage は、インストールなしで任意の Linux デスクトップ上で実行できる Linux アプリケーション形式です。AppImage ファイルは実行可能で、ダブルクリックまたはターミナルから実行するだけです。
+---
 
-これは XMCL が提供する唯一の非インストールプログラムです（~~実際にはサポートしたくない~~）。そのため、その更新メカニズムは他の形式とは異なり、ユーザーは自分で新しい AppImage をダウンロードして更新する必要があります。
+## Game Data Directory Selection
 
-## その他の形式
-
-現在、他のインストール形式は [ホットアップデート] または electron-builder が提供する更新方法をサポートしています。この更新モードは一般的にあまり注意を必要としません（~~更新できない場合は、ランチャーを再ダウンロードするだけです~~）。
-
-:::tip ホットアップデート
-ホットアップデートとは、ランチャーがコア asar ファイル（〜30MB）を自分で置き換えることを意味し、ランチャーの完全な再ダウンロードは必要ありません。
-:::
-
-## 付録：ゲームデータディレクトリの選択
-
-初期インストール時、ユーザーは `ゲームデータディレクトリ` を選択する必要があります。XMCL はダウンロードした `アセット`、`ライブラリ`、`バージョン` などをこのディレクトリに配置します。
-
-:::warning 注意
-セットアップページで述べられているように、XMCL の特殊なファイル構造のため、**生の** Minecraft ゲームディレクトリを XMCL のデータディレクトリとして使用することはお勧めしません。
-:::
-
-ここでは、新しいフォルダを XMCL の `ゲームデータディレクトリ` として選択することをお勧めします。
-
-ゲームデータディレクトリの構造についての詳細は、[データ管理ガイド](/en/guide/manage.md#minecraft-related-data) を参照してください。
+During initial setup, XMCL prompts for a **Game Data Directory**.
+- It is recommended to choose a dedicated folder (e.g., `D:\XMCL-Data`).
+- For details, see the [Data Management Guide](./manage.md) and [Drive Relocation Guide](./change-drive.md).

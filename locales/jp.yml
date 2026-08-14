@@ -9,7 +9,7 @@ intro:
     diskEfficient: "ディスク効率的"
     mods: "MOD"
   description: >-
-    X Minecraft Launcher (XMCL)は、MODパック、リソースパック、MOD、シェーダーパックなどの大量のリソースを
+    XMCLは、MODパック、リソースパック、MOD、シェーダーパックなどの大量のリソースを
     管理できる現代的なMinecraftランチャーです。また、Minecraft Forge、Fabric、Quilt、
     CurseForge、Modrinthとの連携も備えています。
 label: 日本語

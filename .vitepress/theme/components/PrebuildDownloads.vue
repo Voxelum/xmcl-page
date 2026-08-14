@@ -1,8 +1,8 @@
 <template>
     <div class="downloads-container">
         <div class="platforms-grid">
-            <div class="platform-card windows" :class="{ active: platform === 'Win32', loading: fetching }">
-                <button @click="onDownload(windowsArtifact)" class="download-btn">
+            <div class="platform-card windows" :class="{ active: platform === 'Win32', loading }">
+                <button @click="onDownload(windowsArtifact)" class="download-btn" :disabled="!windowsArtifact || loading">
                     <div class="platform-icon">
                         <div class="i-fa6-brands-windows w-6 h-6"></div>
                     </div>
@@ -11,14 +11,14 @@
                         <span class="platform-arch">x64</span>
                     </div>
                     <div class="download-indicator">
-                        <div class="i-fa6-solid-download w-5 h-5" v-if="!fetching"></div>
+                        <div class="i-fa6-solid-download w-5 h-5" v-if="!loading"></div>
                         <div class="loading-spinner" v-else></div>
                     </div>
                 </button>
             </div>
 
-            <div class="platform-card macos" :class="{ active: platform === 'Mac', loading: fetching }">
-                <button @click="onDownload(macArtifact)" class="download-btn">
+            <div class="platform-card macos" :class="{ active: platform === 'Mac', loading }">
+                <button @click="onDownload(macArtifact)" class="download-btn" :disabled="!macArtifact || loading">
                     <div class="platform-icon">
                         <div class="i-fa6-brands-apple w-6 h-6"></div>
                     </div>
@@ -27,17 +27,17 @@
                         <span class="platform-arch">Intel</span>
                     </div>
                     <div class="download-indicator">
-                        <div class="i-fa6-solid-download w-5 h-5" v-if="!fetching"></div>
+                        <div class="i-fa6-solid-download w-5 h-5" v-if="!loading"></div>
                         <div class="loading-spinner" v-else></div>
                     </div>
                 </button>
-                <button @click="onDownload(macArm64Artifact)" class="arch-btn" :class="{ disabled: fetching }">
+                <button @click="onDownload(macArm64Artifact)" class="arch-btn" :class="{ disabled: loading }" :disabled="!macArm64Artifact || loading">
                     <span>Apple Silicon</span>
                 </button>
             </div>
 
-            <div class="platform-card linux" :class="{ active: platform === 'Linux', loading: fetching }">
-                <button @click="onDownload(linuxArtifact)" class="download-btn">
+            <div class="platform-card linux" :class="{ active: platform === 'Linux', loading }">
+                <button @click="onDownload(linuxArtifact)" class="download-btn" :disabled="!linuxArtifact || loading">
                     <div class="platform-icon">
                         <div class="i-fa6-brands-linux w-6 h-6"></div>
                     </div>
@@ -46,11 +46,11 @@
                         <span class="platform-arch">x64</span>
                     </div>
                     <div class="download-indicator">
-                        <div class="i-fa6-solid-download w-5 h-5" v-if="!fetching"></div>
+                        <div class="i-fa6-solid-download w-5 h-5" v-if="!loading"></div>
                         <div class="loading-spinner" v-else></div>
                     </div>
                 </button>
-                <button @click="onDownload(linuxArm64Artifact)" class="arch-btn" :class="{ disabled: fetching }">
+                <button @click="onDownload(linuxArm64Artifact)" class="arch-btn" :class="{ disabled: loading }" :disabled="!linuxArm64Artifact || loading">
                     <span>ARM64</span>
                 </button>
             </div>
@@ -67,7 +67,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { usePlatform } from '../composables/usePlatform';
 import { useAsyncState } from '@vueuse/core';
@@ -98,11 +98,19 @@ const tSuffix = (name: string) => {
     if (name.endsWith('-arm64')) return ' Arm64.zip'
     return '.zip'
 }
-const macArtifact = computed(() => artifacts.value.find(a => a.name.startsWith('mac-')))
+const isArm64 = (artifact: Artifact) => artifact.name.endsWith('-arm64')
+const macArtifact = computed(() => artifacts.value.find(a => a.name.startsWith('mac-') && !isArm64(a)))
 const windowsArtifact = computed(() => artifacts.value.find(a => a.name.startsWith('win-')))
-const linuxArtifact = computed(() => artifacts.value.find(a => a.name.startsWith('linux-')))
-const linuxArm64Artifact = computed(() => artifacts.value.find(a => a.name.startsWith('linux-') && a.name.endsWith('-arm64')))
-const macArm64Artifact = computed(() => artifacts.value.find(a => a.name.startsWith('mac-') && a.name.endsWith('-arm64')))
+const linuxArtifact = computed(() => artifacts.value.find(a => a.name.startsWith('linux-') && !isArm64(a)))
+const linuxArm64Artifact = computed(() => artifacts.value.find(a => a.name.startsWith('linux-') && isArm64(a)))
+const macArm64Artifact = computed(() => artifacts.value.find(a => a.name.startsWith('mac-') && isArm64(a)))
+
+const githubToken = import.meta.env.VITE_GITHUB_TOKEN
+const githubHeaders = {
+    Accept: 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    ...(githubToken ? { Authorization: `Bearer ${githubToken}` } : {}),
+}
 
 const getPercentage = (v: number) => {
     return Math.round(v * 100)
@@ -119,9 +127,7 @@ const onDownload = async (a?: Artifact) => {
     fetching.value = true
     try {
         const response = await fetch(a.archive_download_url, {
-            headers: {
-                Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
-            },
+            headers: githubHeaders,
         })
         if (response.ok) {
             const reader = response.body?.getReader()!
@@ -161,23 +167,37 @@ const onDownload = async (a?: Artifact) => {
 async function getLatestWorkflowArtifacts(): Promise<Artifact[]> {
     const runId: number = props.id;
 
-    const artifactsResponse = await fetch(`https://api.xmcl.app/prebuilds/${runId}`, {
-        headers: {
-            Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
-        },
-    });
+    const artifactsResponse = await fetch(`https://api.xmcl.app/prebuilds/${runId}`);
 
-    const runData: { artifacts: Artifact[] } = await artifactsResponse.json();
+    if (artifactsResponse.ok) {
+        const runData: { artifacts?: Artifact[] } = await artifactsResponse.json();
+        if (Array.isArray(runData.artifacts)) return runData.artifacts
+    }
 
-    console.log('Artifacts:', runData.artifacts)
-    return runData.artifacts
+    if (!githubToken) {
+        throw new Error(`Failed to load artifacts for workflow run ${runId}`)
+    }
+
+    const fallbackResponse = await fetch(
+        `https://api.github.com/repos/voxelum/x-minecraft-launcher/actions/runs/${runId}/artifacts`,
+        { headers: githubHeaders },
+    )
+    if (!fallbackResponse.ok) {
+        throw new Error(`GitHub returned ${fallbackResponse.status} for workflow run ${runId}`)
+    }
+
+    const runData: { artifacts?: Artifact[] } = await fallbackResponse.json();
+    return Array.isArray(runData.artifacts) ? runData.artifacts : []
 }
 
-const { state } = useAsyncState(getLatestWorkflowArtifacts, [], {
+const { state, execute, isLoading } = useAsyncState(getLatestWorkflowArtifacts, [], {
     shallow: true
 })
 
+watch(() => props.id, () => execute())
+
 const artifacts = computed(() => state.value?.filter(a => a.name !== 'build') ?? [])
+const loading = computed(() => fetching.value || isLoading.value)
 
 </script>
 

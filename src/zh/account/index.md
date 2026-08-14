@@ -7,4 +7,6 @@ head:
       content: "0; url=/zh/together/account/"
 ---
 
+# XMCL Together 账户
+
 [前往你的 XMCL Together 账户](../together/account/)。

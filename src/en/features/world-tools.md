@@ -1,5 +1,5 @@
 ---
-title: World Tools | X Minecraft Launcher
+title: World Tools | XMCL
 description: Preview Minecraft worlds, select Chunks, and inspect Blueprints in XMCL.
 ---
 

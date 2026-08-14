@@ -10,7 +10,7 @@ intro:
     diskEfficient: eficiente en disco
     mods: mods
   description: >-
-    X Minecraft Launcher (XMCL) es un lanzador moderno de Minecraft que permite
+    XMCL es un lanzador moderno de Minecraft que permite
     gestionar recursos masivos como modpacks, paquetes de recursos, mods,
     shaders... También está integrado con Minecraft Forge, Fabric, Quilt,
     CurseForge y Modrinth.

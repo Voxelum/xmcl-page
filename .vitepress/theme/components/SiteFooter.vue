@@ -33,9 +33,9 @@
       <span>© {{ year }} XMCL</span>
       <span>{{ t('siteFooter.bottomNote') }}</span>
       <span class="site-footer-legal">
-        <a :href="projectPrivacyUrl">{{ legalLabels.projectPrivacy }}</a>
+        <a :href="privacyUrl">{{ legalLabels.projectPrivacy }}</a>
         <a :href="togetherPrivacyUrl">{{ legalLabels.togetherPrivacy }}</a>
-        <a :href="togetherTermsUrl">{{ legalLabels.terms }}</a>
+        <a :href="termsUrl">{{ legalLabels.terms }}</a>
       </span>
       <a :href="guideUrl">{{ t('siteFooter.readDocumentation') }} <span aria-hidden="true">+</span></a>
     </div>
@@ -61,11 +61,10 @@ const linuxUrl = computed(() => pageUrl('linux-minecraft-launcher'))
 const creatorsUrl = computed(() => pageUrl('modpack-creator'))
 const logViewerUrl = computed(() => pageUrl('log-viewer'))
 const togetherLocale = computed(() => ['en', 'zh', 'zh-TW'].includes(lang.value) ? lang.value : 'en')
-const legalLocale = computed(() => ['zh', 'zh-TW', 'ru', 'uk'].includes(lang.value) ? lang.value : 'en')
 const togetherUrl = computed(() => `${site.value.base}${togetherLocale.value}/together/`)
-const projectPrivacyUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/privacy`)
-const togetherPrivacyUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/privacy`)
-const togetherTermsUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/terms`)
+const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
+const githubIssuesUrl = `${githubUrl}/issues`
+const legalLocale = computed(() => ['zh', 'zh-TW', 'ru', 'uk'].includes(lang.value) ? lang.value : 'en')
 const legalLabels = computed(() => {
   if (legalLocale.value === 'zh') return { projectPrivacy: '项目隐私', togetherPrivacy: 'Together 隐私', terms: 'Together 条款' }
   if (legalLocale.value === 'zh-TW') return { projectPrivacy: '專案隱私', togetherPrivacy: 'Together 隱私', terms: 'Together 條款' }
@@ -73,8 +72,9 @@ const legalLabels = computed(() => {
   if (legalLocale.value === 'uk') return { projectPrivacy: 'Приватність проєкту', togetherPrivacy: 'Приватність Together', terms: 'Умови Together' }
   return { projectPrivacy: 'Project Privacy', togetherPrivacy: 'Together Privacy', terms: 'Together Terms' }
 })
-const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
-const githubIssuesUrl = `${githubUrl}/issues`
+const privacyUrl = computed(() => `${site.value.base}${legalLocale.value}/privacy`)
+const togetherPrivacyUrl = computed(() => `${site.value.base}${legalLocale.value}/together/privacy`)
+const termsUrl = computed(() => `${site.value.base}${legalLocale.value}/together/terms`)
 const year = new Date().getFullYear()
 </script>
 
@@ -198,8 +198,18 @@ const year = new Date().getFullYear()
   color: #fff;
   font-weight: 700;
 }
-.site-footer-legal { display: inline-flex; gap: 14px; }
-.site-footer-disclaimer { font-size: 10px; letter-spacing: .04em; margin: 18px auto 0; max-width: 1680px; }
+
+.site-footer-legal {
+  display: inline-flex;
+  gap: 14px;
+}
+
+.site-footer-disclaimer {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  margin: 18px auto 0;
+  max-width: 1680px;
+}
 
 @media (max-width: 680px) {
   .site-footer {

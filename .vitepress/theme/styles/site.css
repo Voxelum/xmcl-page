@@ -343,3 +343,17 @@ body .VPFooter {
     box-shadow: 3px 3px 0 var(--xmcl-line);
   }
 }
+
+/* Image Lightbox Zoom Hint */
+.vp-doc img:not(.no-zoom),
+main img:not(.no-zoom),
+.content img:not(.no-zoom) {
+  cursor: zoom-in;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.vp-doc img:not(.no-zoom):hover,
+main img:not(.no-zoom):hover,
+.content img:not(.no-zoom):hover {
+  filter: brightness(1.04);
+}

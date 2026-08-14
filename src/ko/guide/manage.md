@@ -1,62 +1,85 @@
+# Data & Storage Management
 
+The data architecture of XMCL is divided into two distinct components:
 
-# 데이터 관리
+1. **System Configurations & XMCL Database** (settings, accounts, marketplace cache).
+2. **Minecraft Game Data** (versions, instances, mods, worlds, assets).
 
-XMCL 데이터는 두 부분으로 나뉩니다:
+:::tip Relocating Storage to Another Drive
+Running out of space on drive `C:`? You can easily relocate the entire Game Data Directory to drive `D:` or `E:`. See the [Drive Relocation Guide](./change-drive.md).
+:::
 
-1. Chromium이 생성한 XMCL 자체 캐시 및 데이터베이스
-2. Minecraft 관련 데이터
+---
 
-## XMCL 캐시 및 데이터베이스
+## 1. System Cache & XMCL Database
 
-XMCL 자체와 관련된 캐시는 시스템의 앱 데이터 경로에 저장됩니다. 플랫폼에 따라 경로가 달라요.
+:::tip 💡 Easiest Way to Open the Data Directory
+You don't need to manually search for hidden system folders! Inside the launcher, go to **Settings ⚙️** -> **Global Settings** -> **Storage** and click **"Open Data Directory"**. XMCL will automatically open the exact folder in Windows File Explorer!
+:::
 
-::: code-group
-```cmd [Windows]
-%AppData%\xmcl
-```
-```cmd [Windows (APPX/appinstaller)]
-# Version < 0.34
-%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
-# Version >= 0.34 and < 0.40
+### Exact System Folder Paths by Installation Type:
+
+If you are navigating manually in File Explorer (press `Win + R` and paste the corresponding path):
+
+#### 🔹 Option 1: AppX / AppInstaller / WinGet Installation (Most Common)
+AppX packages run in a sandboxed environment on Windows 10/11. Their data is stored **NOT in the standard `Roaming` AppData**, but inside the Windows package sandbox:
+```cmd
 %LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
-```sh [macOS]
-~/Library/Application Support/xmcl
+*(Full path: `C:\Users\<Your_Username>\AppData\Local\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl`)*
+
+#### 🔹 Option 2: Standard EXE Installation
+```cmd
+%AppData%\xmcl
 ```
-```sh [Linux]
-~/.config/xmcl
-```
-:::
+*(Full path: `C:\Users\<Your_Username>\AppData\Roaming\xmcl`)*
 
-:::warning 알아두기
-여기 있는 파일들은 사용법을 잘 모르면 삭제하지 마세요.
-:::
+#### 🔹 Option 3: Portable ZIP Package
+For the portable ZIP package, data is stored directly in the same folder where you extracted `XMCL` (alongside `xmcl.exe`), or in your selected Game Data Directory.
 
-여기에는 다양한 설정을 저장하는 `json` 파일과 데이터베이스가 있습니다.
+#### 🔹 macOS & Linux:
+- **macOS**: `~/Library/Application Support/xmcl`
+- **Linux**: `~/.config/xmcl`
 
-- [사용자 데이터](../protocol/user.md) : 사용자의 계정, 스킨 링크 등을 저장합니다. `/user.json` 파일에 저장됩니다.
-- [글로벌 설정](../protocol/setting.md) : 언어, 프록시 URL, 다운로드 노드 등 전역 설정을 저장합니다. `/settings.json` 파일에 저장됩니다.
-- [인스턴스 캐시](../protocol/instance.md) : 마지막으로 선택한 인스턴스 경로와 모든 알려진 인스턴스의 경로를 기록합니다. `/instances.json` 파일에 저장됩니다.
-- [Java 캐시](../protocol/java.md) : 감지된 Java 경로, 버전 정보 등을 기록합니다. `/java.json` 파일에 저장됩니다.
-- [리소스 데이터베이스](../protocol/resources.md) : 리소스 파일의 메타데이터(예: 파싱된 모드 정보)를 저장합니다. `leveldb` 포맷으로 `/resources-v2` 폴더에 저장됩니다.
-- [로그](../protocol/logs.md) : XMCL의 과거 로그를 저장합니다. `/logs` 폴더에 저장됩니다.
+---
 
-## Minecraft 관련 데이터
+### Key Configuration Files:
+- **`user.json`** — Account profiles (Microsoft, Yggdrasil, Offline), tokens, and skin links.
+- **`settings.json`** — Global launcher configuration (data path, language, theme, proxy, download nodes).
+- **`instances.json`** — Registry of all created instances and the last selected instance.
+- **`java.json`** — Cache of detected Java runtime installations.
+- **`resources-v2/`** — LevelDB database containing indexed metadata for mods, resource packs, shaders.
+- **`logs/`** — Launcher execution logs (`main.log`, `renderer.log`).
 
-Minecraft 데이터 디렉토리 구조는 이미 익숙할 것으로 생각할게요.
-XMCL의 데이터 디렉토리는 Minecraft와 약간 달라요.
+---
+
+## 2. Minecraft Game Data Directory
+
+All heavy game files are stored inside the **Game Data Directory**.
+
+### Directory Structure:
 
 ```sh
-"Public Data folder"
-└─ 📂mods # 모든 인스턴스에서 공유되는 모드 폴더
-  └─ modA.jar # 특정 모드 파일, 인스턴스가 이 파일을 링크할 수 있음
-├─ 📂resourcepacks # 모든 인스턴스에서 공유되는 리소스팩 폴더
-├─ 📂shaderpacks # 모든 인스턴스에서 공유되는 쉐이더팩 폴더
-├─ 📂versions # 모든 인스턴스에서 공유되는 버전 폴더
-├─ 📂assets # 모든 인스턴스에서 공유되는 에셋 폴더
-├─ 📂libraries # 모든 인스턴스에서 공유되는 라이브러리 폴더
-└─ 📂instances # XMCL에서 생성한 인스턴스를 포함
+📂 Game Data Directory
+ ├─ 📂 instances/        # Individual Minecraft instances
+ │   ├─ 📂 Fabric-1.20/  # Specific instance folder
+ │   │   ├─ 📂 saves/        # World save files for this instance
+ │   │   ├─ 📂 options.txt   # In-game settings for this instance
+ │   │   ├─ 📂 screenshots/  # Screenshots
+ │   │   └─ 📂 mods/         # Hardlinks/symlinks to shared mods
+ ├─ 📂 mods/             # Global shared mod pool
+ ├─ 📂 resourcepacks/    # Shared resource pack pool
+ ├─ 📂 shaderpacks/      # Shared shader pack pool
+ ├─ 📂 versions/         # Downloaded Minecraft versions (JAR, JSON)
+ ├─ 📂 assets/           # Minecraft game assets & textures
+ ├─ 📂 libraries/        # Shared Java libraries
+ └─ 📂 modpacks/         # Saved and exported modpacks
 ```
 
-대부분의 내용은 실제 Minecraft와 동일하며, 그중 `instances` 폴더는 모든 인스턴스 파일을 포함합니다.
+---
+
+## 3. How XMCL Saves Storage Space (Hardlinks)
+
+1. Each mod file is downloaded **only once** into the global `mods/` pool.
+2. Adding a mod to multiple instances creates a lightweight **hardlink** in that instance's folder.
+3. **Result**: 10 instances using identical mods take up no extra disk space beyond a single instance!

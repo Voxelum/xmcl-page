@@ -36,7 +36,7 @@ AppX обновляется через механизм appinstaller. В соо�
 По умолчанию XMCL не поддерживает работу на Windows 7. Устанавливая расширенное ядро VxKex для дополнения необходимых библиотек времени выполнения, это обеспечивает решение для пользователей, которые все еще используют устаревшие системы. (Примечание: Этот метод также применим к некоторому программному обеспечению, которое не может нормально работать на старых системах)
 
 1. Загрузите и установите расширенное ядро [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT). Это отечественная ветка, предоставленная здесь.
-2. Найдите X Minecraft Launcher.exe и включите VxKex для него. Если вы не знаете как, пожалуйста, обратитесь к видео-уроку: [Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8).
+2. Найдите XMCL.exe и включите VxKex для него. Если вы не знаете как, пожалуйста, обратитесь к видео-уроку: [Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8).
 
 Отметьте оба пункта "Включить VxKex NEXT для этой программы" и "Сообщать о других версиях Windows", затем примените и подтвердите.
 
@@ -63,7 +63,7 @@ sudo spctl --master-disable
 sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
 ```
 
-Если вы устанавливаете `X Minecraft Launcher.app` в другое место, просто замените `/Applications/X\ Minecraft\ Launcher.app` на путь к нему.
+Если вы устанавливаете `XMCL.app` в другое место, просто замените `/Applications/X\ Minecraft\ Launcher.app` на путь к нему.
 
 ## Linux
 

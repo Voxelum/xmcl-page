@@ -157,7 +157,7 @@ Dans ce document, nous allons explorer les chargeurs de mods et les modification
 
 ## Modloader & Gestion des Mods dans XMCL
 
-Le lanceur X Minecraft Launcher (XMCL) intègre un système natif complet pour installer des chargeurs de mods (modloaders) et gérer vos mods. Vous n'avez pas besoin de télécharger des programmes d'installation externes `.jar` ou `.exe`, ni de suivre des étapes de configuration complexes.
+Le lanceur XMCL intègre un système natif complet pour installer des chargeurs de mods (modloaders) et gérer vos mods. Vous n'avez pas besoin de télécharger des programmes d'installation externes `.jar` ou `.exe`, ni de suivre des étapes de configuration complexes.
 
 ### 1. Installation en un clic du chargeur de mods
 Lors de la création d'une nouvelle instance ou de la modification de la version d'une instance existante :

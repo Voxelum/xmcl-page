@@ -1,8 +1,8 @@
-# X Minecraft Launcher Privacy Terms
+# XMCL Privacy Terms
 
 ## 1. Introduction
 
-Thank you for using the X Minecraft Launcher ("the Launcher"), developed by XMCL developer team ("the Organization"). This document outlines the privacy terms and practices governing the collection, use, and protection of certain information when you use the Launcher. By using the Launcher, you agree to the terms outlined in this document.
+Thank you for using the XMCL ("the Launcher"), developed by XMCL developer team ("the Organization"). This document outlines the privacy terms and practices governing the collection, use, and protection of certain information when you use the Launcher. By using the Launcher, you agree to the terms outlined in this document.
 
 ## 2. Information Collection and Use
 

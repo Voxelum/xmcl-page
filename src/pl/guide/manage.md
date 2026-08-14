@@ -1,61 +1,85 @@
-# Przechowywanie danych
+# Data & Storage Management
 
-Dane XMCL dzielą się na dwie części:
+The data architecture of XMCL is divided into two distinct components:
 
-1. Dane XMCL jako pamięć podręczna i baza danych generowana przez Chromium
-2. Dane związane z Minecraft
+1. **System Configurations & XMCL Database** (settings, accounts, marketplace cache).
+2. **Minecraft Game Data** (versions, instances, mods, worlds, assets).
 
-## Pamięć podręczna i baza danych XMCL
+:::tip Relocating Storage to Another Drive
+Running out of space on drive `C:`? You can easily relocate the entire Game Data Directory to drive `D:` or `E:`. See the [Drive Relocation Guide](./change-drive.md).
+:::
 
-Pamięć podręczna związana z XMCL jest zapisywana w folderze AppData systemu, który różni się w zależności od platformy.
+---
 
-::: code-group
-```cmd [Windows]
-%AppData%\xmcl
-```
-```cmd [Windows (APPX/appinstaller)]
-# Wersja < 0.34
-%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
-# Wersja >= 0.34 i < 0.40
+## 1. System Cache & XMCL Database
+
+:::tip 💡 Easiest Way to Open the Data Directory
+You don't need to manually search for hidden system folders! Inside the launcher, go to **Settings ⚙️** -> **Global Settings** -> **Storage** and click **"Open Data Directory"**. XMCL will automatically open the exact folder in Windows File Explorer!
+:::
+
+### Exact System Folder Paths by Installation Type:
+
+If you are navigating manually in File Explorer (press `Win + R` and paste the corresponding path):
+
+#### 🔹 Option 1: AppX / AppInstaller / WinGet Installation (Most Common)
+AppX packages run in a sandboxed environment on Windows 10/11. Their data is stored **NOT in the standard `Roaming` AppData**, but inside the Windows package sandbox:
+```cmd
 %LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
 ```
-```sh [macOS]
-~/Library/Application Support/xmcl
+*(Full path: `C:\Users\<Your_Username>\AppData\Local\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl`)*
+
+#### 🔹 Option 2: Standard EXE Installation
+```cmd
+%AppData%\xmcl
 ```
-```sh [Linux]
-~/.config/xmcl
-```
-:::
+*(Full path: `C:\Users\<Your_Username>\AppData\Roaming\xmcl`)*
 
-:::warning Uwaga
-Nie usuwaj tych plików, chyba że wiesz, co robisz.
-:::
+#### 🔹 Option 3: Portable ZIP Package
+For the portable ZIP package, data is stored directly in the same folder where you extracted `XMCL` (alongside `xmcl.exe`), or in your selected Game Data Directory.
 
-Znajdziesz tu kilka plików `json` służących do przechowywania różnych ustawień; baza danych również jest tu przechowywana.
+#### 🔹 macOS & Linux:
+- **macOS**: `~/Library/Application Support/xmcl`
+- **Linux**: `~/.config/xmcl`
 
-- [Dane użytkownika](../protocol/user.md). Przechowuje konta użytkowników, linki do skinów itp. Zapisane w `/user.json`.
-- [Ustawienia globalne](../protocol/setting.md). Ustawienia globalne, takie jak język, adres proxy, węzeł pobierania itp. Zapisane w `/settings.json`.
-- [Pamięć podręczna instancji](../protocol/instance.md). Zawiera ostatnio wybraną ścieżkę instancji oraz ścieżki wszystkich znanych instancji. Zapisane w `/instances.json`.
-- [Pamięć podręczna Java](../protocol/java.md). Zawiera wykryte ścieżki Javy, informacje o wersjach itp. Zapisane w `/java.json`.
-- [Baza zasobów](../protocol/resources.md). Metadane plików zasobów, np. informacje o modach. W formacie `leveldb`, zapisane w katalogu `/resources-v2`.
-- [Logi](../protocol/logs.md). Historyczne logi XMCL. Zapisane w katalogu `/logs`.
+---
 
-## Dane związane z Minecraft
+### Key Configuration Files:
+- **`user.json`** — Account profiles (Microsoft, Yggdrasil, Offline), tokens, and skin links.
+- **`settings.json`** — Global launcher configuration (data path, language, theme, proxy, download nodes).
+- **`instances.json`** — Registry of all created instances and the last selected instance.
+- **`java.json`** — Cache of detected Java runtime installations.
+- **`resources-v2/`** — LevelDB database containing indexed metadata for mods, resource packs, shaders.
+- **`logs/`** — Launcher execution logs (`main.log`, `renderer.log`).
 
-Zakładam, że jesteś dobrze zaznajomiony ze strukturą katalogu danych Minecraft.
-Katalog danych XMCL różni się nieco od standardowego katalogu Minecraft:
+---
+
+## 2. Minecraft Game Data Directory
+
+All heavy game files are stored inside the **Game Data Directory**.
+
+### Directory Structure:
 
 ```sh
-.
-├─ mods
-│  ├─ modA.jar # Rzeczywisty plik, do którego instancja może robić odnośniki
-│  └─ modB.jar
-├─ resourcepacks # Prawdziwe lokalizacje resourcepacks, do których odwołują się instancje
-├─ shaderpacks # Prawdziwe lokalizacje shaderpacks, do których odwołują się instancje
-├─ versions # Folder przechowujący wszystkie wersje
-├─ assets # Folder przechowujący wszystkie zasoby gry
-├─ instances # Wszystkie instancje utworzone automatycznie przez XMCL (oprócz importowanych)
-└─ libraries # Folder z bibliotekami
+📂 Game Data Directory
+ ├─ 📂 instances/        # Individual Minecraft instances
+ │   ├─ 📂 Fabric-1.20/  # Specific instance folder
+ │   │   ├─ 📂 saves/        # World save files for this instance
+ │   │   ├─ 📂 options.txt   # In-game settings for this instance
+ │   │   ├─ 📂 screenshots/  # Screenshots
+ │   │   └─ 📂 mods/         # Hardlinks/symlinks to shared mods
+ ├─ 📂 mods/             # Global shared mod pool
+ ├─ 📂 resourcepacks/    # Shared resource pack pool
+ ├─ 📂 shaderpacks/      # Shared shader pack pool
+ ├─ 📂 versions/         # Downloaded Minecraft versions (JAR, JSON)
+ ├─ 📂 assets/           # Minecraft game assets & textures
+ ├─ 📂 libraries/        # Shared Java libraries
+ └─ 📂 modpacks/         # Saved and exported modpacks
 ```
 
-Większość zawartości jest taka sama jak w Minecraft; folder `instances` zawiera wszystkie pliki instancji.
+---
+
+## 3. How XMCL Saves Storage Space (Hardlinks)
+
+1. Each mod file is downloaded **only once** into the global `mods/` pool.
+2. Adding a mod to multiple instances creates a lightweight **hardlink** in that instance's folder.
+3. **Result**: 10 instances using identical mods take up no extra disk space beyond a single instance!

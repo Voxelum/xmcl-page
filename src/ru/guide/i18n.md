@@ -7,7 +7,7 @@ hero:
   tagline: If you can't ...... you are more than welcome to send PR to improvement the documentation!
   image:
     src: /logo.png
-    alt: X Minecraft Launcher
+    alt: XMCL
   actions:
     - theme: brand
       text: Installation guide

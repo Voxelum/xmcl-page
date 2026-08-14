@@ -1,98 +1,74 @@
-# Instrukcja instalacji
+# Installation Guide
 
-Launcher oferuje wiele formatów instalacji, z których niektóre są mniej powszechne. Tutaj skupimy się na przedstawieniu funkcji formatów **mniej powszechnych** lub **specjalnych**.
+XMCL provides multiple installation formats tailored for Windows, macOS, and Linux.
+
+:::tip Useful Guides
+- 💾 **Need to move the launcher or game data to drive D: or E:?** Read the [Drive Relocation Guide](./change-drive.md).
+- 🧱 **Want to play Minecraft Bedrock Edition (Windows 10/11)?** Read the [Bedrock Edition Guide](./bedrock.md).
+:::
+
+---
 
 ## Windows
 
-:::info
-Zalecany format instalacji dla użytkowników systemu Windows to `APPX` lub `Instalacja online (appinstaller)`.
+Several installation options are available for Windows:
+
+### 1. APPX & Online AppInstaller — Recommended
+- **APPX** is the modern Windows 10/11 sandboxed package format. Apps run in an isolated environment. When uninstalled, cache and registry changes are cleanly removed.
+- **AppInstaller** automatically downloads and updates the APPX package via secure Microsoft delivery channels with **incremental updates** support.
+
+### 2. Portable ZIP Package
+- Requires no installation or administrator privileges.
+- Extract the archive anywhere (e.g. `D:\Games\XMCL`) and run `xmcl.exe` directly.
+- Ideal for USB drives or secondary disk partitions.
+
+### 3. Running on Windows 7 / 8 / 8.1 (VxKex Extended Kernel)
+
+:::warning Important Compatibility Notice
+Modern XMCL is built on **Electron 43 / Chromium 130+**. Chromium and Microsoft have **officially dropped all support for Windows 7, 8, and 8.1**. The launcher will **not run natively** on legacy Windows versions out of the box.
 :::
 
-### APPX
+:::details Workaround using VxKex Extended Kernel
+You can run XMCL on Windows 7 / 8 using the unofficial **VxKex** extended kernel:
 
-APPX to **format pakietu instalacyjnego** dostarczany przez Windows 10, który umożliwia programom działanie w zwirtualizowanym/sandboxowym środowisku. Programy zainstalowane przez APPX będą działać w sandboxie Windows.
+1. Download and install [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT).
+2. Right-click `xmcl.exe` -> **Properties** -> **VxKex** tab.
+3. Check **"Enable VxKex NEXT for this program"** and **"Report other versions of Windows"**, then apply.
 
-Największą korzyścią dla użytkowników jest to, że `pliki pamięci podręcznej`, `modyfikacje rejestru` i inne operacje aplikacji będą izolowane - po odinstalowaniu aplikacji, `pamięć podręczna` i `modyfikacje rejestru` zostaną usunięte razem.
-
-:::info Dobra wiadomość
-Nie martw się, że program będzie manipulować rejestrem, chociaż jedynym dodatkiem do rejestru XMCL może być skojarzenie rozszerzeń plików.
+**What works and what doesn't on Windows 7/8:**
+- ✅ **Singleplayer (Java Edition)** — Works normally with an appropriate Java runtime (Java 8 / 17 / 21).
+- ❌ **P2P WebRTC Multiplayer** — Not supported (requires Windows 10+ network APIs).
+- ❌ **Bedrock Edition (UWP)** — Not supported (requires Windows 10/11 UWP framework).
 :::
 
-AppX jest aktualizowany za pośrednictwem mechanizmu appinstaller. Zgodnie ze [strategią automatycznych aktualizacji](https://learn.microsoft.com/en-us/windows/msix/app-installer/auto-update-and-repair--overview#automatic-updates) wbudowaną w appinstaller, XMCL sprawdza aktualizacje, gdy użytkownik **uruchamia aplikację**, a jeśli jest aktualizacja, zostanie ona zainstalowana przy następnym uruchomieniu.
+---
 
-:::tip Dobra wiadomość
-Automatyczne aktualizacje APPX obsługują **zoptymalizowane dostarczanie** i **przyrostowe aktualizacje** Windows - aktualizując tylko zmienioną zawartość.
-:::
+## macOS
 
-### Instalacja online (appinstaller)
+### DMG Package
+1. Download and open the `.dmg` file.
+2. Drag **XMCL.app** to your **Applications** folder.
 
-`appinstaller` jest zasadniczo taki sam jak format `APPX`. `appinstaller` sam w sobie jest plikiem tekstowym `XML`, który zawiera `URL` do `APPX`. Gdy pojawi się interfejs instalacji, próbuje pobrać `APPX` i zainstalować. Dlatego jego mechanizm aktualizacji jest taki sam jak w przypadku APPX.
-
-### Windows 7/8
-
-Rozwiązanie odkryte i dostarczone przez [longteng](https://github.com/longteng-H)([bilibili](https://space.bilibili.com/1030667057))
-
-:::details Jak uruchomić XMCL na systemach Windows poniżej Windows 10
-Domyślnie XMCL nie obsługuje natywnej pracy Windows 7. Poprzez zainstalowanie rozszerzonego jądra VxKex w celu uzupełnienia wymaganych bibliotek środowiska uruchomieniowego, zapewnia to rozwiązanie dla użytkowników, którzy nadal korzystają ze starszych systemów. (Uwaga: Ta metoda ma również zastosowanie do niektórych programów, które nie mogą działać normalnie na starszych systemach)
-
-1. Pobierz i zainstaluj rozszerzone jądro [VxKex-NEXT](https://github.com/YuZhouRen86/VxKex-NEXT). To jest gałąź krajowa dostarczona tutaj.
-2. Znajdź X Minecraft Launcher.exe i włącz dla niego VxKex. Jeśli nie wiesz jak, proszę zapoznaj się z tutorialem wideo: [Modern Apps on Windows 7 | Windows 7 Extended Kernel](https://www.youtube.com/watch?v=zl7AsxtoPV8).
-
-Zaznacz zarówno "Włącz VxKex NEXT dla tego programu" i "Zgłaszaj inne wersje Windows", następnie zastosuj i potwierdź.
-
-W tym momencie XMCL może działać normalnie na Windows 7, a wszystkie funkcje oprócz multiplayer działają normalnie.
-:::
-
-## MacOS
-
-:::warning
-Użytkownicy Mac muszą pozwolić na instalację niepodpisanego oprogramowania.
-Ponieważ XMCL nie jest podpisany, musisz zezwolić na jego uruchomienie w ustawieniach systemowych.
-:::
-
-### DMG
-
-Dla użytkowników MacOS oferujemy tylko format DMG. Format DMG to format obrazu dysku, który jest montowany jako wirtualny dysk. Po otwarciu DMG, przeciągnij aplikację do folderu `Applications`, aby ją zainstalować.
-
-Aby uruchomić aplikację, musisz pozwolić na jej działanie. Możesz użyć następującego polecenia:
+:::warning Gatekeeper Clearance
+To clear the unsigned application warning on macOS, run this command in Terminal:
 
 ```sh
-# zezwól na oprogramowanie z dowolnego źródła
-sudo spctl --master-disable
-# wyczyść atrybut kwarantanny
 sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
 ```
+:::
 
-Jeśli zainstalujesz `X Minecraft Launcher.app` w innym miejscu, po prostu użyj tej ścieżki zamiast `/Applications/X\ Minecraft\ Launcher.app`.
+---
 
 ## Linux
 
-:::info
-Linux ma tak wiele dystrybucji, że trudno jest dostarczyć uniwersalną metodę instalacji. Tutaj wspominamy tylko o `AppImage`.
-:::
-
 ### AppImage
+- Universal binary for Linux distributions (Ubuntu, Fedora, Arch, etc.).
+- Mark as executable: `chmod +x XMCL.AppImage` and launch.
 
-AppImage to format aplikacji Linux, który może działać na dowolnym pulpicie Linux bez instalacji. Plik AppImage jest wykonywalny, wystarczy dwukrotnie kliknąć lub uruchomić z terminala.
+---
 
-Jest to jedyny nieinstalacyjny program, który oferuje XMCL (~~właściwie nie chcemy go wspierać~~). Dlatego jego mechanizm aktualizacji różni się od innych formatów, a użytkownicy muszą sami pobrać nowy AppImage, aby go zaktualizować.
+## Game Data Directory Selection
 
-## Inne formaty
-
-Obecnie inne formaty instalacji obsługują albo [aktualizacje na gorąco], albo metodę aktualizacji dostarczoną przez electron-builder. Ten tryb aktualizacji generalnie nie wymaga zbyt dużej uwagi (~~jeśli nie możesz zaktualizować, możesz po prostu ponownie pobrać launcher~~).
-
-:::tip Aktualizacja na gorąco
-Aktualizacja na gorąco oznacza, że launcher samodzielnie zastępuje podstawowy plik asar (~30MB), bez potrzeby ponownego pobierania całego launchera.
-:::
-
-## Dodatek: Wybór katalogu danych gry
-
-Podczas początkowej instalacji użytkownicy muszą wybrać `Katalog danych gry`. XMCL umieści pobrane `zasoby`, `biblioteki`, `wersje` itp. w tym katalogu.
-
-:::warning Uwaga
-Jak wspomniano na stronie konfiguracji, ze względu na specjalną strukturę plików XMCL, nie zaleca się używania **surowego** katalogu gry Minecraft jako katalogu danych XMCL.
-:::
-
-W tym miejscu zaleca się wybranie nowego folderu jako `Katalogu danych gry` XMCL.
-
-Aby uzyskać więcej informacji na temat struktury katalogu danych gry, zobacz [Przewodnik zarządzania danymi](/en/guide/manage.md#minecraft-related-data).
+During initial setup, XMCL prompts for a **Game Data Directory**.
+- It is recommended to choose a dedicated folder (e.g., `D:\XMCL-Data`).
+- For details, see the [Data Management Guide](./manage.md) and [Drive Relocation Guide](./change-drive.md).

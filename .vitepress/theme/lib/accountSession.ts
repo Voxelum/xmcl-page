@@ -43,7 +43,6 @@ interface PendingAuthorization {
   codeVerifier: string
   returnUrl: string
   createdAt: number
-  apiBaseUrl: string
   dpopJwk?: JsonWebKey
 }
 
@@ -53,9 +52,16 @@ interface ApiErrorBody {
   requestId?: string
 }
 
+class AccountApiError extends Error {
+  constructor(readonly status: number, message: string) {
+    super(message)
+  }
+}
+
 const sessionStorageKey = 'xmcl-account-session/v1'
 const pendingAuthorizationKey = 'xmcl-account-pending-authorization/v1'
 const accessTokenRefreshLeewayMs = 60_000
+const authorizationLifetimeMs = 10 * 60_000
 const apiBaseUrl = (
   import.meta.env.VITE_COMMERCIAL_API_BASE ||
   'https://api.xmcl.app'
@@ -88,19 +94,16 @@ function readStoredSession() {
   }
 }
 
+function persistSession(session: PublicSession) {
+  browserStorage()?.setItem(sessionStorageKey, JSON.stringify({ session }))
+}
+
 function readPendingAuthorization() {
   const value = browserStorage()?.getItem(pendingAuthorizationKey)
   if (!value) return undefined
   try {
     const pending = JSON.parse(value) as PendingAuthorization
-    const isRecent = Date.now() - pending.createdAt < 15 * 60_000
-    if (
-      !isRecent ||
-      pending.apiBaseUrl !== apiBaseUrl ||
-      !pending.transactionId ||
-      !pending.state ||
-      !pending.codeVerifier
-    ) {
+    if (Date.now() - pending.createdAt > authorizationLifetimeMs) {
       browserStorage()?.removeItem(pendingAuthorizationKey)
       return undefined
     }
@@ -111,32 +114,36 @@ function readPendingAuthorization() {
   }
 }
 
-function persistSession(session: PublicSession) {
-  browserStorage()?.setItem(sessionStorageKey, JSON.stringify({ session }))
-}
-
 function apiError(body: ApiErrorBody | undefined, status: number) {
-  return new Error(body?.message || body?.error || `Request failed with HTTP ${status}.`)
+  return new AccountApiError(
+    status,
+    body?.message || body?.error || `Request failed with HTTP ${status}.`,
+  )
 }
 
 async function request<T>(
   path: string,
   init: RequestInit = {},
-  accessToken: string | null | undefined = accountSession.session?.accessToken,
+  accessToken: string | null | undefined = undefined,
+  includeAth = true,
   proofWithoutAccessToken = false,
 ) {
   const headers = new Headers(init.headers)
   headers.set('Accept', 'application/json')
   const url = new URL(path, apiBaseUrl).toString()
-  if (isDpopSession(accountSession.session) && (accessToken || proofWithoutAccessToken)) {
-    if (accessToken) headers.set('Authorization', `DPoP ${accessToken}`)
+  const session = accountSession.session
+  const resolvedAccessToken = accessToken === undefined
+    ? session?.accessToken
+    : accessToken ?? undefined
+  if (isDpopSession(session) && (resolvedAccessToken || proofWithoutAccessToken)) {
+    if (resolvedAccessToken) headers.set('Authorization', `DPoP ${resolvedAccessToken}`)
     headers.set('DPoP', await createDpopProof({
       method: init.method ?? 'GET',
       url,
-      accessToken: accessToken || undefined,
+      accessToken: includeAth ? resolvedAccessToken : undefined,
     }))
-  } else if (accessToken) {
-    headers.set('Authorization', `${['Bear', 'er'].join('')} ${accessToken}`)
+  } else if (resolvedAccessToken) {
+    headers.set('Authorization', `${['Bear', 'er'].join('')} ${resolvedAccessToken}`)
   }
   const response = await fetch(url, {
     ...init,
@@ -171,23 +178,24 @@ async function refreshSession() {
         sessionId: current.sessionId,
         refreshToken: current.refreshToken,
       }),
-    }, null, isDpopSession(current))
+    }, null, false, true)
     setSession(response.session)
     return true
-  } catch {
-    clearSessionState()
-    return false
+  } catch (error) {
+    if (error instanceof AccountApiError && error.status === 401) {
+      clearSessionState()
+      return false
+    }
+    throw error
   }
 }
 
 export function refreshAccountSession() {
-  if (!refreshPromise) {
-    refreshPromise = (async () =>
-      await refreshSession() ? accountSession.session : undefined
-    )().finally(() => {
-      refreshPromise = undefined
-    })
-  }
+  refreshPromise ??= (async () =>
+    await refreshSession() ? accountSession.session : undefined
+  )().finally(() => {
+    refreshPromise = undefined
+  })
   return refreshPromise
 }
 
@@ -207,8 +215,8 @@ function accessTokenNeedsRefresh(session: PublicSession) {
 export function initializeAccountSession() {
   if (typeof window === 'undefined') return Promise.resolve()
   if (
-    accountSession.initialized &&
-    (!accountSession.session || !accessTokenNeedsRefresh(accountSession.session))
+    accountSession.initialized
+    && (!accountSession.session || !accessTokenNeedsRefresh(accountSession.session))
   ) {
     return Promise.resolve()
   }
@@ -223,15 +231,18 @@ export function initializeAccountSession() {
         if (stored) accountSession.session = stored.session
       }
       if (!accountSession.session) return
-      if (accessTokenNeedsRefresh(accountSession.session) && !(await refreshAccountSession())) return
+      if (accessTokenNeedsRefresh(accountSession.session) && !(await refreshSession())) return
       try {
         await loadAccount()
-      } catch {
-        if (!(await refreshAccountSession())) return
+      } catch (error) {
+        if (!(error instanceof AccountApiError) || error.status !== 401) {
+          throw error
+        }
+        if (!(await refreshSession())) return
         await loadAccount()
       }
     } catch (error) {
-      accountSession.error = error instanceof Error ? error.message : 'Unable to load your XMCL Together account.'
+      accountSession.error = error instanceof Error ? error.message : 'Unable to load your XMCL account.'
     } finally {
       accountSession.initialized = true
       accountSession.loading = false
@@ -244,7 +255,12 @@ export function initializeAccountSession() {
 }
 
 export async function beginWebSignIn(provider: OAuthProvider, returnUrl: string) {
-  const dpopJwk = await getDpopPublicJwk()
+  let dpopJwk: JsonWebKey | undefined
+  try {
+    dpopJwk = await getDpopPublicJwk()
+  } catch {
+    dpopJwk = undefined
+  }
   const state = randomValue()
   const codeVerifier = randomValue()
   const redirectUri = new URL('/oauth/callback', window.location.origin).toString()
@@ -252,12 +268,12 @@ export async function beginWebSignIn(provider: OAuthProvider, returnUrl: string)
     redirectUri,
     state,
     codeChallenge: await sha256(codeVerifier),
-    dpopJwk: JSON.stringify(dpopJwk),
   })
+  if (dpopJwk) query.set('dpopJwk', JSON.stringify(dpopJwk))
   const authorization = await request<{
     transactionId: string
     authorizationUrl: string
-  }>(`/v1/auth/${provider}/authorize?${query.toString()}`, {}, undefined)
+  }>(`/v1/auth/${provider}/authorize?${query.toString()}`, {}, null)
   browserStorage()?.setItem(pendingAuthorizationKey, JSON.stringify({
     provider,
     transactionId: authorization.transactionId,
@@ -265,8 +281,7 @@ export async function beginWebSignIn(provider: OAuthProvider, returnUrl: string)
     codeVerifier,
     returnUrl,
     createdAt: Date.now(),
-    apiBaseUrl,
-    dpopJwk,
+    ...(dpopJwk ? { dpopJwk } : {}),
   } satisfies PendingAuthorization))
   window.location.assign(authorization.authorizationUrl)
 }
@@ -276,14 +291,18 @@ export async function completeWebSignIn(search: string) {
   const code = params.get('code')
   const state = params.get('state')
   const pending = readPendingAuthorization()
-  if (!code || !state || !pending || pending.state !== state || !pending.dpopJwk) {
+  if (!code || !state || !pending || pending.state !== state) {
     throw new Error('This sign-in callback is invalid or has expired. Start sign-in again.')
   }
-  const dpopJwk = await getDpopPublicJwk()
-  if (!sameDpopPublicJwk(dpopJwk, pending.dpopJwk)) {
-    throw new Error('The sign-in key changed while authorization was pending. Start sign-in again.')
-  }
+
   try {
+    let dpopJwk: JsonWebKey | undefined
+    if (pending.dpopJwk) {
+      dpopJwk = await getDpopPublicJwk()
+      if (!sameDpopPublicJwk(dpopJwk, pending.dpopJwk)) {
+        throw new Error('The sign-in key changed while authorization was pending. Start sign-in again.')
+      }
+    }
     const result = await request<{ session: PublicSession }>(
       `/v1/auth/${pending.provider}/exchange`,
       {
@@ -294,7 +313,7 @@ export async function completeWebSignIn(search: string) {
           state,
           codeVerifier: pending.codeVerifier,
           code,
-          dpopJwk,
+          ...(dpopJwk ? { dpopJwk } : {}),
         }),
       },
       null,
@@ -308,19 +327,13 @@ export async function completeWebSignIn(search: string) {
 }
 
 export async function signOut() {
+  const current = accountSession.session
   try {
-    if (
-      accountSession.session &&
-      accessTokenNeedsRefresh(accountSession.session) &&
-      !(await refreshAccountSession())
-    ) {
-      return
-    }
-    if (accountSession.session) {
+    if (current) {
       await request('/v1/sessions/revoke', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sessionId: accountSession.session.sessionId }),
+        body: JSON.stringify({ sessionId: current.sessionId }),
       })
     }
   } finally {
