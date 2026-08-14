@@ -735,7 +735,7 @@ commercial:
     loadError: 无法加载 Together 信息。
     subscribeError: 无法创建 Together 订阅。
     cancelError: 无法取消 Together 订阅。
-    subscribe: 订阅 Together
+    subscribe: 购买 Together Home
     cancel: 取消订阅
     addFunds: 充值
     inactiveTitle: 开通 XMCL Together

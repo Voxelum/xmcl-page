@@ -136,8 +136,10 @@
           <div v-if="plan.id !== 'home'" class="plan-action">
             <button type="button" disabled>{{ comingSoon }}</button>
           </div>
-          <div v-else-if="!initializing && accountSession.session" class="plan-action">
-            <template>
+          <div v-else class="plan-action">
+            <button v-if="initializing" type="button" disabled>{{ t('commercial.common.loading') }}</button>
+            <a v-else-if="!accountSession.session" :href="accountUrl">{{ t('commercial.common.signIn') }}</a>
+            <template v-else>
               <a v-if="subscription?.status === 'payment_due'" :href="billingUrl">{{ t('commercial.plus.addFunds') }}</a>
               <button v-else-if="!subscription || subscription.status === 'cancelled'" type="button" :disabled="mutating || loading" @click="subscribe">
                 {{ t('commercial.plus.subscribe') }}

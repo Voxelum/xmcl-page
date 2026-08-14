@@ -723,7 +723,7 @@ commercial:
     loadError: Together information could not be loaded.
     subscribeError: The Together subscription could not be created.
     cancelError: The Together subscription could not be cancelled.
-    subscribe: Subscribe to Together
+    subscribe: Purchase Together Home
     cancel: Cancel subscription
     addFunds: Add funds
     inactiveTitle: Start XMCL Together
