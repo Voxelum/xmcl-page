@@ -24,8 +24,8 @@ notFound:
   code: '404'
 outline: 本頁包含
 darkModeSwitchLabel: 顏色主題
-darkModeSwitchTitle: 切換至暗色
-lightModeSwitchTitle: 切換至亮色
+darkModeSwitchTitle: ''
+lightModeSwitchTitle: ''
 sidebarMenuLabel: 目錄
 returnToTopLabel: 返回頂部
 langMenuLabel: 語言

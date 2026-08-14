@@ -42,7 +42,7 @@
           <strong>{{ planName(subscription.planId) }}</strong>
           <span>{{ subscription.status }}</span>
         </div>
-        <small>{{ periodLabel(subscription.currentPeriodEndsAt) }}</small>
+        <small>{{ periodLabel(subscription.currentPeriodEndsAt, subscription.cancelAtPeriodEnd) }}</small>
       </article>
     </section>
     <p v-else-if="balance && allowances" class="coming-soon">{{ copy.hostedComingSoon }}</p>
@@ -69,19 +69,19 @@ const copies = {
     title: 'Services and remaining allowance', refresh: 'Refresh', signIn: 'Sign in above to view your Together services.',
     balance: 'Available balance', addFunds: 'Add funds', ai: 'AI remaining', turn: 'TURN remaining',
     hosted: 'Hosted server subscriptions', hostedComingSoon: 'Camp, Lodge, and Village are coming soon. No hosted server can be purchased or controlled during staging verification.',
-    active: 'Active', inactive: 'Not subscribed', renews: 'Renews or ends',
+    active: 'Active', inactive: 'Not subscribed', renews: 'Renews', cancels: 'Cancels on',
   },
   zh: {
     title: '服务与剩余额度', refresh: '刷新', signIn: '请先在上方登录，以查看你的 Together 服务。',
     balance: '可用余额', addFunds: '充值', ai: 'AI 剩余额度', turn: 'TURN 剩余流量',
     hosted: '托管服务器订阅', hostedComingSoon: 'Camp、Lodge 和 Village 即将推出；staging 验证期间无法购买或控制托管服务器。',
-    active: '已开通', inactive: '未订阅', renews: '续费或结束于',
+    active: '已开通', inactive: '未订阅', renews: '续费于', cancels: '将取消于',
   },
   'zh-TW': {
     title: '服務與剩餘額度', refresh: '重新整理', signIn: '請先在上方登入，以查看你的 Together 服務。',
     balance: '可用餘額', addFunds: '儲值', ai: 'AI 剩餘額度', turn: 'TURN 剩餘流量',
     hosted: '託管伺服器訂閱', hostedComingSoon: 'Camp、Lodge 與 Village 即將推出；staging 驗證期間無法購買或控制託管伺服器。',
-    active: '已啟用', inactive: '未訂閱', renews: '續費或結束於',
+    active: '已啟用', inactive: '未訂閱', renews: '續費於', cancels: '將取消於',
   },
 } as const
 const copy = computed(() => copies[locale.value as keyof typeof copies] || copies.en)
@@ -102,11 +102,15 @@ const api = baseUrl ? new BillingApiClient({
   refreshSession: refreshAccountSession,
 }) : undefined
 const plusStatus = computed(() =>
-  subscription.value && subscription.value.status !== 'cancelled' ? copy.value.active : copy.value.inactive
+  subscription.value?.cancelAtPeriodEnd
+    ? copy.value.cancels
+    : subscription.value && subscription.value.status !== 'cancelled'
+    ? copy.value.active
+    : copy.value.inactive
 )
 const plusPeriod = computed(() =>
   subscription.value && subscription.value.status !== 'cancelled'
-    ? periodLabel(subscription.value.currentPeriodEndsAt)
+    ? periodLabel(subscription.value.currentPeriodEndsAt, subscription.value.cancelAtPeriodEnd)
     : '—'
 )
 
@@ -151,8 +155,9 @@ function usage(consumed: number, included: number) {
 function usageBytes(consumed: number, included: number) {
   return `${bytes(consumed)} / ${bytes(included)}`
 }
-function periodLabel(value: string) {
-  return `${copy.value.renews} ${new Intl.DateTimeFormat(locale.value, { dateStyle: 'medium' }).format(new Date(value))}`
+function periodLabel(value: string, cancels = false) {
+  const prefix = cancels ? copy.value.cancels : copy.value.renews
+  return `${prefix} ${new Intl.DateTimeFormat(locale.value, { dateStyle: 'medium' }).format(new Date(value))}`
 }
 function planName(planId: string) {
   return ({ 'shared-small': 'Together Camp', 'shared-medium': 'Together Lodge', 'shared-large': 'Together Village' } as Record<string, string>)[planId] || planId

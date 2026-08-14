@@ -106,7 +106,10 @@
         <article v-for="plan in catalogPlans" :key="plan.id" :class="['plan-card', { recommended: plan.recommended, selected: plan.selected }]">
           <div class="plan-topline">
             <span>{{ plan.location }}</span>
-            <small v-if="plan.selected" class="selected-badge">{{ t('commercial.server.current') }}</small>
+            <small v-if="plan.id === 'home' && subscription?.cancelAtPeriodEnd" class="ending-badge">
+              {{ t('commercial.plus.cancelsOn', { date: date(subscription.currentPeriodEndsAt) }) }}
+            </small>
+            <small v-else-if="plan.selected" class="selected-badge">{{ t('commercial.server.current') }}</small>
             <small v-else-if="plan.recommended">{{ t('commercial.plus.catalog.recommended') }}</small>
           </div>
           <div>
@@ -738,6 +741,7 @@ h1, h2, h3, p { margin: 0; }
 .plan-topline > span { color: var(--xmcl-orange); font-size: 9px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
 .plan-topline small { background: var(--xmcl-lime); border-radius: 999px; color: #17211f; font-size: 9px; font-weight: 850; padding: 4px 7px; }
 .plan-topline .selected-badge { background: var(--xmcl-orange); color: white; }
+.plan-topline .ending-badge { background: color-mix(in srgb, var(--xmcl-orange) 16%, var(--xmcl-panel)); color: var(--xmcl-orange); }
 .plan-card h3 { font-size: 25px; letter-spacing: -.035em; }
 .plan-description { color: var(--xmcl-muted); font-size: 13px; line-height: 1.5; margin-top: 8px; min-height: 58px; }
 .plan-price { align-items: baseline; display: flex; gap: 6px; }

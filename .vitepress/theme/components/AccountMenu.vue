@@ -16,12 +16,12 @@
       <svg aria-hidden="true" viewBox="0 0 24 24">
         <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5Z" />
       </svg>
-      <span>Sign in</span>
+      <span>{{ copy.signIn }}</span>
     </button>
 
     <transition name="menu-fade">
       <div v-if="isOpen" class="account-provider-menu" role="menu">
-        <p class="menu-header">Sign in with</p>
+        <p class="menu-header">{{ copy.signInWith }}</p>
         <div class="provider-list">
           <button
             v-for="provider in providers"
@@ -54,7 +54,7 @@
               </svg>
             </span>
             <span class="provider-label">
-              {{ signingIn === provider ? 'Redirecting...' : providerLabel(provider) }}
+              {{ signingIn === provider ? copy.redirecting : providerLabel(provider) }}
             </span>
           </button>
         </div>
@@ -82,6 +82,15 @@ const isOpen = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
 const signingIn = ref<OAuthProvider>()
 const error = ref<string>()
+const copy = computed(() => ({
+  zh: { signIn: '登录', signInWith: '登录方式', redirecting: '正在跳转…' },
+  'zh-TW': { signIn: '登入', signInWith: '登入方式', redirecting: '正在跳轉…' },
+  en: { signIn: 'Sign in', signInWith: 'Sign in with', redirecting: 'Redirecting…' },
+}[lang.value as 'zh' | 'zh-TW' | 'en'] || {
+  signIn: 'Sign in',
+  signInWith: 'Sign in with',
+  redirecting: 'Redirecting…',
+}))
 const accountUrl = computed(() => {
   const locale = supportedAccountLocales.has(lang.value) ? lang.value : 'en'
   const together = page.value.relativePath.split('/').includes('together')

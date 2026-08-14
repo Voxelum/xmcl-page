@@ -58,21 +58,23 @@ export default {
     if (!import.meta.env.SSR) {
       redirectRootToLocale()
       const router = useRouter()
-      const promise = import('@microsoft/applicationinsights-web').then(({ ApplicationInsights }) => {
-        const appInsights = new ApplicationInsights({
-          config: {
-            connectionString: 'InstrumentationKey=7a526b34-c173-43f6-9641-1e4c98863368;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/'
-          }
-        })
-        appInsights.loadAppInsights()
-        router.onAfterRouteChanged = (to) => {
-          appInsights.trackPageView({ name: to })
-        }
-        return appInsights
-      })
+      const promise = window.location.hostname.startsWith('staging.')
+        ? Promise.resolve(undefined)
+        : import('@microsoft/applicationinsights-web').then(({ ApplicationInsights }) => {
+            const appInsights = new ApplicationInsights({
+              config: {
+                connectionString: 'InstrumentationKey=7a526b34-c173-43f6-9641-1e4c98863368;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/'
+              }
+            })
+            appInsights.loadAppInsights()
+            router.onAfterRouteChanged = (to) => {
+              appInsights.trackPageView({ name: to })
+            }
+            return appInsights
+          })
       const trackDownload = (platform: string, type: string) => {
         promise.then((app) => {
-          app.trackEvent({ name: 'download', properties: { platform, type } })
+          app?.trackEvent({ name: 'download', properties: { platform, type } })
         })
       }
       provide('telemetry', trackDownload)
