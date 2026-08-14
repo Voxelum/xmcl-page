@@ -332,6 +332,7 @@ commercial:
     debt: 之後儲值時會先償還 {amount} 欠款。
     available: 可用餘額
     availableHint: 可用於各項 XMCL 服務
+    homeFundingRequired: 目前餘額不足以購買 Together Home。請至少儲值 {amount}，然後返回 Together 完成購買。
     reserved: 已保留
     reservedHint: 為使用中的服務保留
     history: 歷史紀錄

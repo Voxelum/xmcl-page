@@ -137,10 +137,8 @@
             <button type="button" disabled>{{ comingSoon }}</button>
           </div>
           <div v-else class="plan-action">
-            <button v-if="initializing" type="button" disabled>{{ t('commercial.common.loading') }}</button>
-            <a v-else-if="!accountSession.session" :href="accountUrl">{{ t('commercial.common.signIn') }}</a>
-            <template v-else>
-              <a v-if="subscription?.status === 'payment_due'" :href="billingUrl">{{ t('commercial.plus.addFunds') }}</a>
+            <template v-if="accountSession.session">
+              <a v-if="subscription?.status === 'payment_due'" :href="homeFundingUrl">{{ t('commercial.plus.addFunds') }}</a>
               <button v-else-if="!subscription || subscription.status === 'cancelled'" type="button" :disabled="mutating || loading" @click="subscribe">
                 {{ t('commercial.plus.subscribe') }}
               </button>
@@ -149,6 +147,9 @@
               </button>
               <span v-else class="plan-state">{{ t('commercial.plus.cancelsOn', { date: date(subscription.currentPeriodEndsAt) }) }}</span>
             </template>
+            <button v-else type="button" :disabled="mutating" @click="subscribe">
+              {{ t('commercial.plus.subscribe') }}
+            </button>
           </div>
         </article>
       </div>
@@ -289,6 +290,16 @@ const api = billingBaseUrl ? new BillingApiClient({
 const accountUrl = './account/'
 const billingUrl = './billing'
 const storyUrl = './story'
+const homeFundingUrl = computed(() => {
+  const requiredMinor = offer.value?.monthlyPrice.amountMinor ?? 299
+  const availableMinor = balance.value?.available.amountMinor ?? 0
+  const params = new URLSearchParams({
+    reason: 'home-insufficient-balance',
+    amountMinor: String(Math.max(1, requiredMinor - availableMinor)),
+    currency: offer.value?.monthlyPrice.currency ?? 'USD',
+  })
+  return `${billingUrl}?${params}`
+})
 const legalLocale = computed(() => ['zh', 'zh-TW'].includes(locale.value) ? locale.value : 'en')
 const comingSoon = computed(() => locale.value === 'zh'
   ? '即将推出'
@@ -456,17 +467,45 @@ async function refresh() {
 
 async function subscribe() {
   if (!api) return
+  await initializeAccountSession()
+  if (!accountSession.session) {
+    window.location.assign(accountUrl)
+    return
+  }
+  const requiredMinor = offer.value?.monthlyPrice.amountMinor ?? 299
+  const availableMinor = balance.value?.available.amountMinor
+  if (availableMinor !== undefined && availableMinor < requiredMinor) {
+    redirectToBilling(requiredMinor - availableMinor, offer.value?.monthlyPrice.currency ?? 'USD')
+    return
+  }
   mutating.value = true
   error.value = false
   try {
     await api.subscribeXmclPlus()
     await refresh()
   } catch (cause) {
+    if (cause instanceof BillingApiError && cause.code === 'insufficient_balance') {
+      redirectToBilling(
+        Math.max(1, requiredMinor - (balance.value?.available.amountMinor ?? 0)),
+        offer.value?.monthlyPrice.currency ?? 'USD',
+      )
+      return
+    }
     error.value = true
     message.value = cause instanceof BillingApiError ? cause.message : t('commercial.plus.subscribeError')
   } finally {
     mutating.value = false
   }
+}
+
+function redirectToBilling(amountMinor: number, currency: string) {
+  const target = new URL(billingUrl, window.location.href)
+  target.search = new URLSearchParams({
+    reason: 'home-insufficient-balance',
+    amountMinor: String(amountMinor),
+    currency,
+  }).toString()
+  window.location.assign(target)
 }
 
 async function cancel() {

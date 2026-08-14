@@ -25,9 +25,10 @@
       <a :href="accountUrl">{{ t('commercial.common.signIn') }}</a>
     </section>
     <template v-else>
+      <p v-if="fundingNotice" class="funding-notice" role="status">{{ fundingNotice }}</p>
       <BillingAccount ref="billingAccount" :api="api">
         <template #topup>
-          <WaffoCheckout :api="api" @refreshed="refreshAccount" />
+          <WaffoCheckout :api="api" :currency="topUpCurrency" :initial-amount-minor="initialAmountMinor" @refreshed="refreshAccount" />
         </template>
       </BillingAccount>
       <aside class="merchant-note">
@@ -45,14 +46,17 @@
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { accountSession, initializeAccountSession, refreshAccountSession } from '../../lib/accountSession'
-import { BillingApiClient } from '../../lib/commercialization/billing'
+import { BillingApiClient, formatIsoMoney } from '../../lib/commercialization/billing'
 import BillingAccount from './BillingAccount.vue'
 import WaffoCheckout from './WaffoCheckout.vue'
 
 const billingBaseUrl = (import.meta.env.VITE_BILLING_API_BASE || '').replace(/\/$/, '')
-const { t } = useI18n()
+const { locale, t } = useI18n()
 const initializing = ref(true)
 const billingAccount = ref<{ refresh(): Promise<void> }>()
+const fundingNotice = ref('')
+const initialAmountMinor = ref(1000)
+const topUpCurrency = ref('USD')
 const accountUrl = computed(() => {
   if (typeof window === 'undefined') return '/en/together/account/'
   const locale = window.location.pathname.split('/').filter(Boolean)[0]
@@ -76,6 +80,23 @@ const api = billingBaseUrl
   : undefined
 
 onMounted(async () => {
+  const params = new URLSearchParams(window.location.search)
+  if (params.get('reason') === 'home-insufficient-balance') {
+    const amountMinor = Number(params.get('amountMinor'))
+    const currency = params.get('currency')
+    if (Number.isSafeInteger(amountMinor) && amountMinor > 0 && amountMinor <= 1_000_000) {
+      initialAmountMinor.value = amountMinor
+    }
+    if (currency && /^[A-Z]{3}$/.test(currency)) {
+      topUpCurrency.value = currency
+    }
+    fundingNotice.value = t('commercial.billing.homeFundingRequired', {
+      amount: formatIsoMoney({
+        currency: topUpCurrency.value,
+        amountMinor: initialAmountMinor.value,
+      }, locale.value),
+    })
+  }
   await initializeAccountSession()
   initializing.value = false
 })
@@ -109,6 +130,13 @@ async function refreshAccount() {
   margin: 8px 0 12px;
 }
 .portal-hero p { margin: 0; }
+.funding-notice {
+  background: color-mix(in srgb, var(--xmcl-orange) 10%, var(--xmcl-panel));
+  border: 1px solid var(--xmcl-orange);
+  border-radius: var(--billing-radius);
+  margin: 0 0 24px;
+  padding: 16px 18px;
+}
 .eyebrow {
   color: var(--xmcl-orange);
   font-size: 11px;

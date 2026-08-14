@@ -514,6 +514,7 @@ commercial:
     debt: Future top-ups first settle {amount} of outstanding balance.
     available: Available balance
     availableHint: Ready to use across XMCL services
+    homeFundingRequired: Your balance is not enough for Together Home. Add at least {amount}, then return to Together to purchase it.
     reserved: Reserved
     reservedHint: Held for active usage
     history: History
