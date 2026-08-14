@@ -80,6 +80,7 @@ function getJsonLdScript(data: Record<string, unknown>): HeadConfig {
 
 export default defineConfigWithTheme<DefaultTheme.Config>({
   title: "XMCL",
+  appearance: process.env.VITE_DISABLE_APPEARANCE !== 'true',
   base: process.env.VITEPRESS_BASE || '/',
   srcDir: 'src',
   lastUpdated: true,

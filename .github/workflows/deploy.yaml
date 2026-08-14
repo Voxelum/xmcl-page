@@ -57,6 +57,7 @@ jobs:
           VITE_BILLING_API_BASE: ${{ github.ref_name == 'staging' && 'https://api-staging.xmcl.app' || 'https://api.xmcl.app' }}
           VITE_SHARED_HOSTING_API_BASE: ${{ github.ref_name == 'staging' && 'https://api-staging.xmcl.app' || 'https://api.xmcl.app' }}
           VITE_ADMIN_API_BASE: ${{ github.ref_name == 'staging' && 'https://api-staging.xmcl.app' || 'https://api.xmcl.app' }}
+          VITE_DISABLE_APPEARANCE: ${{ github.ref_name == 'staging' && 'true' || 'false' }}
       - name: Deploy Azure
         if: github.ref_name == 'master'
         id: builddeploy
