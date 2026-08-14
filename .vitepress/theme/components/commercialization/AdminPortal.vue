@@ -203,12 +203,10 @@ async function connect() {
   error.value = ''
   api = new AdminApiClient(apiBaseUrl.value, accessToken.value)
   try {
-    const [billing, audit] = await Promise.all([
-      api.billingOverview(),
-      api.auditEvents(),
-    ])
-    overview.value = billing
-    auditEvents.value = audit.items
+    overview.value = await api.billingOverview()
+    auditEvents.value = await api.auditEvents()
+      .then((audit) => audit.items)
+      .catch(() => [])
   } catch (cause) {
     overview.value = undefined
     auditEvents.value = []
