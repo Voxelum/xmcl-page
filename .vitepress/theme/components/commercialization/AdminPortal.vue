@@ -18,7 +18,10 @@
     </section>
     <p class="security-note">{{ copy.security }}</p>
 
-    <section v-if="error" class="error" role="alert">{{ error }}</section>
+    <section v-if="error" class="error" role="alert">
+      <span>{{ error }}</span>
+      <a v-if="authenticationError" :href="accountUrl">{{ copy.reauthenticate }}</a>
+    </section>
 
     <template v-if="overview">
       <section class="metrics" aria-label="Billing summary">
@@ -54,13 +57,18 @@
             <span>{{ item.accountId }}</span>
           </button>
         </div>
+        <div v-else-if="searchAttempted && searchResults.length === 0 && !selectedAccount" class="search-empty">
+          <span>{{ copy.noAccountResults }}</span>
+          <button type="button" class="text-button" @click="clearSearch">{{ copy.clearSearch }}</button>
+        </div>
         <div v-if="selectedAccount" class="account-result">
           <div><span>{{ copy.accountId }}</span><strong>{{ selectedAccount.accountId }}</strong></div>
           <div><span>{{ copy.status }}</span><strong>{{ selectedAccount.status || '—' }}</strong></div>
           <div><span>{{ copy.available }}</span><strong>{{ selectedBillingAccount ? money(selectedBillingAccount.balance.available.amountMinor) : '—' }}</strong></div>
           <div><span>{{ copy.collected }}</span><strong>{{ selectedBillingAccount ? money(selectedBillingAccount.paidCashMinor) : '—' }}</strong></div>
-          <div><span>{{ copy.aiRemaining }}</span><strong>{{ selectedAllowance ? units(selectedAllowance.aiUnits.remaining) : '—' }}</strong></div>
-          <div><span>{{ copy.turnRemaining }}</span><strong>{{ selectedAllowance ? bytes(selectedAllowance.turnEgressBytes.remaining) : '—' }}</strong></div>
+          <div><span>{{ copy.refunded }}</span><strong>{{ selectedBillingAccount ? money(selectedBillingAccount.refundedCashMinor) : '—' }}</strong></div>
+          <div><span>{{ copy.aiRemaining }}</span><strong>{{ selectedAllowance ? units(selectedAllowance.aiUnits.remaining) : '—' }}</strong><small>{{ selectedAllowance ? allowanceUsage(selectedAllowance.aiUnits) : '—' }}</small></div>
+          <div><span>{{ copy.turnRemaining }}</span><strong>{{ selectedAllowance ? bytes(selectedAllowance.turnEgressBytes.remaining) : '—' }}</strong><small>{{ selectedAllowance ? allowanceBytesUsage(selectedAllowance.turnEgressBytes) : '—' }}</small></div>
         </div>
         <div v-if="selectedAccount" class="identity-list">
           <article v-for="identity in selectedAccount.identities" :key="`${identity.provider}:${identity.email || identity.displayName}`">
@@ -89,6 +97,24 @@
               </li>
               <li v-if="!selectedLedger.length">{{ copy.noLedger }}</li>
             </ul>
+          </article>
+        </div>
+        <div v-if="selectedAccount" class="selected-subscriptions">
+          <article>
+            <h3>Together Home</h3>
+            <div v-for="item in selectedPlusSubscriptions" :key="item.subscriptionId">
+              <span class="status" :data-status="item.status">{{ item.status }}</span>
+              <strong>{{ subscriptionPeriod(item) }}</strong>
+            </div>
+            <p v-if="!selectedPlusSubscriptions.length">{{ copy.noHomeSubscription }}</p>
+          </article>
+          <article>
+            <h3>{{ copy.hostedSubscriptions }}</h3>
+            <div v-for="item in selectedSharedSubscriptions" :key="item.subscriptionId">
+              <span>{{ item.planId || 'Shared hosting' }}</span>
+              <strong>{{ subscriptionPeriod(item) }}</strong>
+            </div>
+            <p v-if="!selectedSharedSubscriptions.length">{{ copy.noHostedSubscriptions }}</p>
           </article>
         </div>
       </section>
@@ -179,6 +205,10 @@ const copies = {
     subscriptions: 'Subscriptions', noSubscriptions: 'No Together subscriptions.', audit: 'Audit', recentEvents: 'Recent admin events',
     noEvents: 'No admin events.', refunds: 'Refund controls', refundTitle: 'Locked during verification',
     aiRemaining: 'AI remaining', turnRemaining: 'TURN remaining', accountPayments: 'Account payments', accountLedger: 'Account ledger', noLedger: 'No ledger activity.',
+    noAccountResults: 'No account matched this query.', clearSearch: 'Clear search', reauthenticate: 'Manage sign-in',
+    usageSummary: '{consumed} used of {included}', hostedSubscriptions: 'Hosted subscriptions',
+    noHomeSubscription: 'No Together Home subscription.', noHostedSubscriptions: 'No hosted server subscriptions.',
+    cancelsOn: 'Cancels on {date}', renewsOn: 'Renews on {date}',
     refundDescription: 'Use the Waffo sandbox to initiate refunds. The signed refund webhook updates the immutable XMCL ledger. An in-console refund action will remain disabled until provider API and end-to-end idempotency tests pass.',
   },
   zh: {
@@ -191,6 +221,10 @@ const copies = {
     subscriptions: '订阅', noSubscriptions: '暂无 Together 订阅。', audit: '审计', recentEvents: '最近管理事件',
     noEvents: '暂无管理事件。', refunds: '退款控制', refundTitle: '验证期间保持锁定',
     aiRemaining: 'AI 剩余额度', turnRemaining: 'TURN 剩余流量', accountPayments: '账户付款', accountLedger: '账户账本', noLedger: '暂无账本记录。',
+    noAccountResults: '没有找到匹配的账户。', clearSearch: '清空搜索', reauthenticate: '管理登录状态',
+    usageSummary: '已用 {consumed} / 共 {included}', hostedSubscriptions: '托管服务器订阅',
+    noHomeSubscription: '未订阅 Together Home。', noHostedSubscriptions: '没有托管服务器订阅。',
+    cancelsOn: '将取消于 {date}', renewsOn: '续费于 {date}',
     refundDescription: '目前请在 Waffo sandbox 发起退款，签名退款 Webhook 会更新 XMCL 的不可变账本。只有支付商退款 API 和端到端幂等测试通过后，才会开放控制台内退款按钮。',
   },
   'zh-TW': {
@@ -203,6 +237,10 @@ const copies = {
     subscriptions: '訂閱', noSubscriptions: '暫無 Together 訂閱。', audit: '稽核', recentEvents: '最近管理事件',
     noEvents: '暫無管理事件。', refunds: '退款控制', refundTitle: '驗證期間維持鎖定',
     aiRemaining: 'AI 剩餘額度', turnRemaining: 'TURN 剩餘流量', accountPayments: '帳戶付款', accountLedger: '帳戶帳本', noLedger: '暫無帳本紀錄。',
+    noAccountResults: '找不到符合的帳戶。', clearSearch: '清除搜尋', reauthenticate: '管理登入狀態',
+    usageSummary: '已用 {consumed} / 共 {included}', hostedSubscriptions: '託管伺服器訂閱',
+    noHomeSubscription: '未訂閱 Together Home。', noHostedSubscriptions: '沒有託管伺服器訂閱。',
+    cancelsOn: '將取消於 {date}', renewsOn: '續費於 {date}',
     refundDescription: '目前請在 Waffo sandbox 發起退款，簽名退款 Webhook 會更新 XMCL 的不可變帳本。只有支付商退款 API 與端對端冪等測試通過後，才會開放控制台內退款按鈕。',
   },
 } as const
@@ -218,6 +256,8 @@ const auditEvents = ref<AdminAuditEvent[]>([])
 const accountQuery = ref('')
 const selectedAccount = ref<AdminAccount>()
 const searchResults = ref<AdminAccount[]>([])
+const searchAttempted = ref(false)
+const authenticationError = ref(false)
 let api: AdminApiClient | undefined
 const accountUrl = `../account/`
 
@@ -240,6 +280,12 @@ const selectedOrders = computed(() =>
 const selectedLedger = computed(() =>
   overview.value?.ledger.filter((entry) => entry.accountId === selectedAccount.value?.accountId) || []
 )
+const selectedPlusSubscriptions = computed(() =>
+  overview.value?.plusSubscriptions.filter((item) => item.accountId === selectedAccount.value?.accountId) || []
+)
+const selectedSharedSubscriptions = computed(() =>
+  overview.value?.sharedHostingSubscriptions.filter((item) => item.accountId === selectedAccount.value?.accountId) || []
+)
 
 onMounted(async () => {
   await initializeAccountSession()
@@ -249,6 +295,7 @@ onMounted(async () => {
 async function connect() {
   loading.value = true
   error.value = ''
+  authenticationError.value = false
   try {
     const session = await authenticatedAccountRequest<{ accessToken: string; expiresAt: string }>(
       '/v1/admin/session',
@@ -264,6 +311,7 @@ async function connect() {
     overview.value = undefined
     auditEvents.value = []
     error.value = message(cause)
+    authenticationError.value = cause instanceof AdminApiError && [401, 403].includes(cause.status)
   } finally {
     loading.value = false
   }
@@ -273,6 +321,7 @@ async function lookupAccount() {
   if (!api) return
   accountLoading.value = true
   error.value = ''
+  searchAttempted.value = true
   try {
     searchResults.value = (await api.accounts(accountQuery.value)).items
     selectedAccount.value = searchResults.value.length === 1 ? searchResults.value[0] : undefined
@@ -297,6 +346,13 @@ function selectAccount(value: string) {
     }).catch((cause) => {
       error.value = message(cause)
     })
+  }
+
+  function clearSearch() {
+    accountQuery.value = ''
+    searchResults.value = []
+    selectedAccount.value = undefined
+    searchAttempted.value = false
   }
 }
 
@@ -328,6 +384,23 @@ function allowanceSummary(value: string) {
     : '—'
 }
 
+function allowanceUsage(value: { consumed: number; included: number }) {
+  return copy.usageSummary
+    .replace('{consumed}', units(value.consumed))
+    .replace('{included}', units(value.included))
+}
+
+function allowanceBytesUsage(value: { consumed: number; included: number }) {
+  return copy.usageSummary
+    .replace('{consumed}', bytes(value.consumed))
+    .replace('{included}', bytes(value.included))
+}
+
+function subscriptionPeriod(item: { cancelAtPeriodEnd?: true; currentPeriodEndsAt: string }) {
+  return (item.cancelAtPeriodEnd ? copy.cancelsOn : copy.renewsOn)
+    .replace('{date}', date(item.currentPeriodEndsAt))
+}
+
 function message(cause: unknown) {
   if (cause instanceof AdminApiError) return `${cause.code || cause.status}: ${cause.message}`
   return cause instanceof Error ? cause.message : String(cause)
@@ -350,7 +423,8 @@ input { background: var(--xmcl-panel, var(--vp-c-bg-soft)); border: 1px solid va
 button { background: var(--xmcl-lime, #c9f85a); border: 1px solid var(--xmcl-ink, #17211f); border-radius: 8px; color: #17211f; cursor: pointer; font: inherit; font-size: 12px; font-weight: 850; padding: 11px 15px; }
 button:disabled { cursor: wait; opacity: .6; }
 .security-note { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 12px; margin: 9px 0 0; }
-.error { background: color-mix(in srgb, #c6453d 12%, transparent); border: 1px solid #c6453d; border-radius: 10px; color: #a22d28; margin-top: 22px; padding: 14px 16px; }
+.error { align-items: center; background: color-mix(in srgb, #c6453d 12%, transparent); border: 1px solid #c6453d; border-radius: 10px; color: #a22d28; display: flex; gap: 16px; justify-content: space-between; margin-top: 22px; padding: 14px 16px; }
+.error a { color: inherit; font-weight: 800; white-space: nowrap; }
 .metrics { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); margin: 32px 0 18px; }
 .metrics article, .panel { background: var(--xmcl-panel, var(--vp-c-bg-soft)); border: 1px solid var(--xmcl-line, var(--vp-c-divider)); border-radius: 13px; }
 .metrics article { display: grid; gap: 5px; padding: 18px; }
@@ -364,6 +438,8 @@ button:disabled { cursor: wait; opacity: .6; }
 .account-result { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); display: grid; grid-template-columns: repeat(4, 1fr); }
 .account-result div { display: grid; gap: 5px; padding: 18px 20px; }
 .account-result span { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 11px; text-transform: uppercase; }
+.account-result small { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 10px; }
+.search-empty { align-items: center; border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); color: var(--xmcl-muted, var(--vp-c-text-2)); display: flex; justify-content: space-between; padding: 18px 20px; }
 .search-results { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); display: grid; grid-template-columns: repeat(2, 1fr); padding: 10px; }
 .search-results button { background: transparent; border-color: transparent; color: inherit; display: grid; gap: 3px; text-align: left; }
 .search-results button:hover { border-color: var(--xmcl-line, var(--vp-c-divider)); }
@@ -377,6 +453,12 @@ button:disabled { cursor: wait; opacity: .6; }
 .account-activity ul { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
 .account-activity li { display: flex; font-size: 11px; gap: 12px; justify-content: space-between; }
 .account-activity li span { color: var(--xmcl-muted, var(--vp-c-text-2)); }
+.selected-subscriptions { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); display: grid; grid-template-columns: 1fr 1fr; }
+.selected-subscriptions article { padding: 18px 20px; }
+.selected-subscriptions article + article { border-left: 1px solid var(--xmcl-line, var(--vp-c-divider)); }
+.selected-subscriptions h3 { font-size: 14px; margin: 0 0 12px; }
+.selected-subscriptions article > div { align-items: center; display: flex; gap: 12px; justify-content: space-between; margin-top: 8px; }
+.selected-subscriptions article > div strong, .selected-subscriptions p { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 11px; margin: 0; }
 .table-wrap { overflow-x: auto; }
 table { border-collapse: collapse; font-size: 12px; width: 100%; }
 th { color: var(--xmcl-muted, var(--vp-c-text-2)); font-size: 10px; letter-spacing: .06em; text-align: left; text-transform: uppercase; }
@@ -401,8 +483,9 @@ th, td { border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); padding: 1
 }
 @media (max-width: 560px) {
   .connection { align-items: stretch; flex-direction: column; }
-  .metrics, .two-column, .account-result, .account-activity, .search-results { grid-template-columns: 1fr; }
+  .metrics, .two-column, .account-result, .account-activity, .search-results, .selected-subscriptions { grid-template-columns: 1fr; }
   .account-activity > article + article { border-left: 0; border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); }
+  .selected-subscriptions article + article { border-left: 0; border-top: 1px solid var(--xmcl-line, var(--vp-c-divider)); }
   .panel-heading { align-items: flex-start; flex-direction: column; }
   .panel-heading form { width: 100%; }
   .panel-heading input { flex: 1; }
