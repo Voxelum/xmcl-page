@@ -35,6 +35,7 @@ coreDocument: 核心文件（英文）
 protocol: 協議
 editLink: 在 GitHub 上編輯此頁
 changelogs: 更新日誌
+blogs: 部落格
 intro:
   first:
     body: 一個 {openSource} 啟動器，擁有 {modernUx} 的使用者體驗.

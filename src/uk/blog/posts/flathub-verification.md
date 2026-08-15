@@ -3,6 +3,12 @@ date: 2026-07-11
 title: "XMCL тепер верифіковано на Flathub!"
 description: "Ми раді оголосити, що XMCL отримав свій офіційний значок верифікації на Flathub. Читайте про наш шлях до верифікації додатка та налаштування метаданих."
 category: Announcement
+author: BANSAFAn
+authorRole: Technical Writer & Contributor
+coAuthors:
+  - name: VolodiaKraplich
+    role: Flatpak & Metadata Packaging
+    gitlab: https://gitlab.com/VolodiaKraplich
 ---
 
 <PostDetail>

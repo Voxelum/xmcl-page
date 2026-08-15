@@ -3,6 +3,12 @@ date: 2026-07-11
 title: "XMCL is Now Verified on Flathub!"
 description: "We are excited to announce that XMCL has received its official verification badge on Flathub. Read about our journey to verify the app and configure metadata."
 category: Announcement
+author: BANSAFAn
+authorRole: Technical Writer & Contributor
+coAuthors:
+  - name: VolodiaKraplich
+    role: Flatpak & Metadata Packaging
+    gitlab: https://gitlab.com/VolodiaKraplich
 ---
 
 <PostDetail>

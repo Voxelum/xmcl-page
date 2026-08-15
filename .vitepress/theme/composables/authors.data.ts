@@ -23,8 +23,10 @@ export { data }
 async function load(): Promise<Author[]>
 async function load() {
   md = md || (await createMarkdownRenderer(process.cwd()))
+  if (!fs.existsSync(dir)) return []
   return fs
     .readdirSync(dir)
+    .filter(file => file.endsWith('.md'))
     .map(file => getAuthor(file, dir))
     .sort((a, b) => a.name.localeCompare(b.name))
 }

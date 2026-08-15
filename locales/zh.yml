@@ -35,6 +35,7 @@ coreDocument: 核心文档 (英文)
 protocol: 协议
 editLink: 在 GitHub 上编辑此页
 changelogs: 更新日志
+blogs: 博客
 intro:
   first:
     body: 一个 {openSource} 启动器，拥有 {modernUx} 的 UX.
