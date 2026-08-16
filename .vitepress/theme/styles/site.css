@@ -283,7 +283,11 @@ body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc div[class*='language
 
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc table {
   border: 1px solid var(--xmcl-line);
-  display: table;
+  border-collapse: collapse;
+  display: block;
+  margin: 16px 0;
+  max-width: 100%;
+  overflow-x: auto;
   width: 100%;
 }
 
@@ -293,12 +297,17 @@ body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc th {
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc td,
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc th {
   border: 1px solid var(--xmcl-line);
-  padding: 12px 14px;
+  padding: 10px 14px;
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDoc td code {
+  word-break: break-all;
 }
 
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPDocAsideOutline {
