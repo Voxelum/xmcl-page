@@ -29,6 +29,7 @@ import SceneLanding from './components/SceneLanding.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import ImageZoomLightbox from './components/ImageZoomLightbox.vue'
 import CommercialNavEntry from './components/CommercialNavEntry.vue'
+import BlogTierCards from './components/BlogTierCards.vue'
 
 const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
 
@@ -101,6 +102,7 @@ export default {
     app.component('PostIcon', PostIcon)
     app.component('PostAuthor', PostAuthor)
     app.component('AuthorDetail', AuthorDetail)
+    app.component('BlogTierCards', BlogTierCards)
     app.component('welcome-modern', AppWelcomeModern)
     app.component('scene-landing', SceneLanding)
     app.component('SiteFooter', SiteFooter)

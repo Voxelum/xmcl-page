@@ -3,18 +3,19 @@ date: 2026-08-12
 title: "P2P Multiplayer Reborn: Cloudflare Workers, DPoP Security & Zero-Trust Privacy"
 description: "XMCL's P2P online multiplayer is officially restored in v0.66.0 & v0.66.1! Discover our new backend architecture built on Cloudflare Workers with Durable Objects, client-side DPoP cryptographic authentication, and uncompromising zero-trust privacy."
 category: Major Update
-author: XMCL Core Team
+author: BANSAFAn
+authorRole: Technical Writer & Contributor
+coAuthors:
+  - name: CI010
+    role: P2P Architecture & Implementation
+    github: https://github.com/ci010
 ---
 
-# P2P Multiplayer Reborn: Cloudflare Workers, DPoP Security & Zero-Trust Privacy
+<PostDetail>
 
 We are thrilled to announce that **P2P Online Multiplayer is officially back and fully operational** in [XMCL v0.66.0](https://github.com/Voxelum/x-minecraft-launcher/releases/tag/v0.66.0) and [v0.66.1](https://github.com/Voxelum/x-minecraft-launcher/releases/tag/v0.66.1)!
 
 Following the [temporary downtime](/en/blog/posts/p2p-multiplayer-status) caused by Deno Deploy quota exhaustion, we completely rebuilt our WebRTC signaling infrastructure from the ground up. The new system is powered by **Cloudflare Workers with Durable Objects**, client-side **DPoP cryptographic authentication (RFC 9449)**, and an architecture designed around strict **zero-trust privacy**.
-
----
-
-<PostDetail>
 
 :::tip SERVICE STATUS: ONLINE
 **P2P Multiplayer Room Hosting is Fully Restored!**
@@ -76,17 +77,14 @@ The XMCL account system was introduced in v0.66.0 (`add account system #1619`). 
 
 We understand that introducing user accounts raises privacy questions. We designed our authentication and session system under a strict **Zero-Trust Privacy Model**.
 
-```
-+-----------------------------------------------------------------------------------+
-|                        XMCL ZERO-TRUST PRIVACY ARCHITECTURE                       |
-+-----------------------------------------------------------------------------------+
-|  1. Client-Side DPoP  : Private keys generated & stored on your device only.      |
-|  2. Developer Access   : ZERO access to private keys, tokens, or credentials.     |
-|  3. Cloudflare Managed : Auth & signaling run in isolated Cloudflare Workers.      |
-|  4. Ephemeral Rooms    : Durable Objects evicted when rooms close or idle out.     |
-|  5. No Data Harvesting : Zero tracking, zero IP logging, zero activity selling.    |
-+-----------------------------------------------------------------------------------+
-```
+| Principle | Security Guarantee |
+| :--- | :--- |
+| **1. Client-Side DPoP** | Private cryptographic keys generated and stored on your device only *(RFC 9449)*. |
+| **2. Developer Access** | **Zero access** to private keys, session tokens, or user credentials. |
+| **3. Cloudflare Managed** | Authentication and room signaling run in sandboxed Cloudflare Workers. |
+| **4. Ephemeral Rooms** | Durable Objects are immediately destroyed and evicted when rooms close. |
+| **5. No Data Harvesting** | Zero activity tracking, zero IP logging, and zero data monetization. |
+
 
 ### 1. Client-Side DPoP Cryptographic Security (RFC 9449)
 XMCL v0.66.1 implements **DPoP (Demonstrating Proof-of-Possession)** as a client-side authentication mechanism for Web Account sessions.

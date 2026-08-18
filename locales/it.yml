@@ -22,9 +22,10 @@ downloadFor:
   windows: 'Scarica per Windows:'
   mac: 'Scarica per Mac:'
   linux: 'Scarica per Linux:'
-guide: Guia
+guide: Guida
 protocol: Protocollo
 changelogs: Elenco delle modifiche
+blogs: Blog
 outline: In questa pagina
 coreDocument: Documentazione di base
 author: Contatta l'autore

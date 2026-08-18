@@ -357,3 +357,50 @@ main img:not(.no-zoom):hover,
 .content img:not(.no-zoom):hover {
   filter: brightness(1.04);
 }
+
+
+body:has(.blog-article-wrapper) .VPDocFooter {
+  display: none !important;
+}
+
+body:has(.blog-article-wrapper) .VPDoc > .container > .content {
+  margin: 0 auto !important;
+  max-width: 880px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+body:has(.blog-article-wrapper) .VPDocAsideOutline {
+  border-left: 1px solid var(--xmcl-line);
+  padding-left: 16px;
+}
+
+body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-title {
+  color: var(--xmcl-orange);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+html.dark body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-title {
+  color: var(--xmcl-lime);
+}
+
+body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link {
+  font-size: 12.5px;
+  line-height: 1.5;
+  padding: 4px 0;
+  transition: color 150ms ease;
+}
+
+body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link:hover,
+body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link.active {
+  color: var(--xmcl-orange);
+  font-weight: 600;
+}
+
+html.dark body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link:hover,
+html.dark body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link.active {
+  color: var(--xmcl-lime);
+}

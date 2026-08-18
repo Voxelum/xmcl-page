@@ -3,14 +3,13 @@ date: 2026-07-30
 title: "Status Update: P2P Multiplayer Service Downtime & Backend Migration"
 description: An in-depth technical explanation of XMCL's P2P multiplayer architecture, why Deno API limits caused a temporary outage, and our ongoing migration to Cloudflare Durable Objects.
 category: Maintenance
-author: XMCL Team
----
-
-An in-depth update regarding the temporary outage of XMCL's Peer-to-Peer (P2P) online multiplayer service, how the launcher interacts with `xmcl-web-api`, why Deno API limits were exhausted, and our current backend migration.
-
+author: BANSAFAn
+authorRole: Technical Writer & Contributor
 ---
 
 <PostDetail>
+
+An in-depth update regarding the temporary outage of XMCL's Peer-to-Peer (P2P) online multiplayer service, how the launcher interacts with `xmcl-web-api`, why Deno API limits were exhausted, and our current backend migration.
 
 :::warning SERVICE NOTICE
 **P2P Online Room Hosting is Temporarily Unavailable.**

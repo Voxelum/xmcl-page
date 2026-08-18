@@ -15,12 +15,17 @@ export interface Post {
   author: string
   href: string
   locale: string
+  slug: string
   date: {
     time: number
     string: string
     since: string
   }
   excerpt: string | undefined
+  category: string
+  readingTime: string
+  description?: string
+  cover?: string
   data: Record<string, any>
 }
 
@@ -58,16 +63,24 @@ const cache = new Map()
 function getPost(file: string, postDir: string, locale: string): Post {
   const fullPath = path.join(postDir, file)
   const timestamp = fs.statSync(fullPath).mtimeMs
+  const slug = file.replace(/\.md$/, '')
 
-  const { data, excerpt } = readFrontMatter(file, postDir, cache)
+  const { data, excerpt, content } = readFrontMatter(file, postDir, cache)
+  const wordCount = (content || '').trim().split(/\s+/).filter(Boolean).length
+  const minutes = Math.max(1, Math.ceil(wordCount / 200))
 
   const post: Post = {
-    title: data.title,
-    author: data.author ? data.author : 'Unknown',
-    href: `/posts/${file.replace(/\.md$/, '')}`,
+    title: data.title || slug,
+    author: data.author ? data.author : 'XMCL Core Team',
+    href: `/posts/${slug}`,
     locale,
+    slug,
     date: safeFormatDate(data.date, timestamp),
-    excerpt: excerpt && md.render(excerpt),
+    excerpt: excerpt ? md.render(excerpt) : (data.description ? `<p>${data.description}</p>` : undefined),
+    category: data.category || 'Article',
+    readingTime: `${minutes} min read`,
+    description: data.description,
+    cover: data.cover || data.image,
     data,
   }
 
