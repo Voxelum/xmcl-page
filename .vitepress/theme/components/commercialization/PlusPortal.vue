@@ -35,8 +35,9 @@
         </article>
         <article>
           <small>{{ t('commercial.plus.turnAllowance') }}</small>
-          <strong>{{ bytes(turnIncluded) }}</strong>
+          <strong>{{ bytes(turnRemaining) }}</strong>
           <span>{{ t('commercial.plus.turnEgress') }}</span>
+          <span>{{ t('commercial.plus.turnUsage', { consumed: bytes(turnConsumed), included: bytes(turnIncluded) }) }}</span>
         </article>
         <p v-if="allowanceStatus">{{ allowanceStatus }}</p>
       </section>
@@ -316,6 +317,8 @@ const aiRemaining = computed(() => allowances.value?.aiUnits.remaining ?? 0)
 const turnIncluded = computed(() => accountSession.session
   ? allowances.value?.turnEgressBytes.included ?? 0
   : offer.value?.turnEgressBytesPerPeriod ?? 20_000_000_000)
+const turnConsumed = computed(() => allowances.value?.turnEgressBytes.consumed ?? 0)
+const turnRemaining = computed(() => allowances.value?.turnEgressBytes.remaining ?? 0)
 const allowanceStatus = computed(() => allowances.value?.aiUnits.meteringStatus === 'not_configured'
   ? t('commercial.plus.meteringUnavailable')
   : '')

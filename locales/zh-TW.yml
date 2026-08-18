@@ -566,6 +566,7 @@ commercial:
     aiFormula: '用量 = 未命中快取的輸入 + ceil(命中快取的輸入 × 0.1) + 輸出 × 4。'
     turnAllowance: 連線中繼
     turnEgress: 驗證中繼流量
+    turnUsage: '已使用 {consumed} / 共 {included}'
     remainingUnavailable: 暫無剩餘額度資料。
     meteringUnavailable: 用量計量尚未接入；這裡顯示的是包含額度，不是剩餘額度。
     sourcesTitle: 目前額度來源

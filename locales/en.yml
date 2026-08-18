@@ -747,6 +747,7 @@ commercial:
     aiFormula: 'Usage = cache-miss input + ceil(cache-hit input × 0.1) + output × 4.'
     turnAllowance: Multiplayer relay
     turnEgress: authenticated relay traffic
+    turnUsage: '{consumed} used of {included}'
     remainingUnavailable: Remaining usage is not available.
     meteringUnavailable: Usage metering is not connected yet; this is the included allowance, not a remaining balance.
     sourcesTitle: Active allowance sources
