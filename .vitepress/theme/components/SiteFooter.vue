@@ -66,15 +66,29 @@ const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
 const legalLocale = computed(() => ['zh', 'zh-TW', 'ru', 'uk'].includes(lang.value) ? lang.value : 'en')
 const legalLabels = computed(() => {
-  if (legalLocale.value === 'zh') return { projectPrivacy: '项目隐私', togetherPrivacy: 'Together 隐私', terms: 'Together 条款' }
-  if (legalLocale.value === 'zh-TW') return { projectPrivacy: '專案隱私', togetherPrivacy: 'Together 隱私', terms: 'Together 條款' }
-  if (legalLocale.value === 'ru') return { projectPrivacy: 'Приватность проекта', togetherPrivacy: 'Приватность Together', terms: 'Условия Together' }
-  if (legalLocale.value === 'uk') return { projectPrivacy: 'Приватність проєкту', togetherPrivacy: 'Приватність Together', terms: 'Умови Together' }
-  return { projectPrivacy: 'Project Privacy', togetherPrivacy: 'Together Privacy', terms: 'Together Terms' }
+  switch (lang.value) {
+    case 'uk': return { projectPrivacy: 'Приватність проєкту', togetherPrivacy: 'Приватність Together', terms: 'Умови Together' }
+    case 'ru': return { projectPrivacy: 'Приватность проекта', togetherPrivacy: 'Приватность Together', terms: 'Условия Together' }
+    case 'zh': return { projectPrivacy: '项目隐私', togetherPrivacy: 'Together 隐私', terms: 'Together 条款' }
+    case 'zh-TW': return { projectPrivacy: '專案隱私', togetherPrivacy: 'Together 隱私', terms: 'Together 條款' }
+    case 'de': return { projectPrivacy: 'Projektdatenschutz', togetherPrivacy: 'Together-Datenschutz', terms: 'Together-Bedingungen' }
+    case 'fr': return { projectPrivacy: 'Confidentialité du projet', togetherPrivacy: 'Confidentialité Together', terms: 'Conditions Together' }
+    case 'es': return { projectPrivacy: 'Privacidad del proyecto', togetherPrivacy: 'Privacidad de Together', terms: 'Términos de Together' }
+    case 'it': return { projectPrivacy: 'Privacy del progetto', togetherPrivacy: 'Privacy Together', terms: 'Termini di Together' }
+    case 'pl': return { projectPrivacy: 'Prywatność projektu', togetherPrivacy: 'Prywatność Together', terms: 'Warunki Together' }
+    case 'ar': return { projectPrivacy: 'خصوصية المشروع', togetherPrivacy: 'خصوصية Together', terms: 'شروط Together' }
+    case 'jp': return { projectPrivacy: 'プロジェクトのプライバシー', togetherPrivacy: 'Together プライバシー', terms: 'Together 利用規約' }
+    case 'ko': return { projectPrivacy: '프로젝트 개인정보 처리방침', togetherPrivacy: 'Together 개인정보 처리방침', terms: 'Together 이용약관' }
+    case 'kk': return { projectPrivacy: 'Жоба құпиялылығы', togetherPrivacy: 'Together құпиялылығы', terms: 'Together шарттары' }
+    case 'be': return { projectPrivacy: 'Прыватнасць праекта', togetherPrivacy: 'Прыватнасць Together', terms: 'Умовы Together' }
+    default: return { projectPrivacy: 'Project Privacy', togetherPrivacy: 'Together Privacy', terms: 'Together Terms' }
+  }
 })
-const privacyUrl = computed(() => `${site.value.base}${legalLocale.value}/privacy`)
-const togetherPrivacyUrl = computed(() => `${site.value.base}${legalLocale.value}/together/privacy`)
-const termsUrl = computed(() => `${site.value.base}${legalLocale.value}/together/terms`)
+const privacyUrl = computed(() => `${site.value.base}${lang.value}/privacy`)
+const togetherPrivacyLocales = ['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'ar', 'jp', 'ko']
+const togetherPrivacyUrl = computed(() => `${site.value.base}${togetherPrivacyLocales.includes(lang.value) ? lang.value : 'en'}/together/privacy`)
+const termsLocales = ['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'ar']
+const termsUrl = computed(() => `${site.value.base}${termsLocales.includes(lang.value) ? lang.value : 'en'}/together/terms`)
 const year = new Date().getFullYear()
 </script>
 
