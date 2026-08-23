@@ -85,7 +85,7 @@ const legalLabels = computed(() => {
   }
 })
 const privacyUrl = computed(() => `${site.value.base}${lang.value}/privacy`)
-const togetherPrivacyLocales = ['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'ar', 'jp', 'ko']
+const togetherPrivacyLocales = ['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'ar', 'jp', 'ko', 'kk', 'be']
 const togetherPrivacyUrl = computed(() => `${site.value.base}${togetherPrivacyLocales.includes(lang.value) ? lang.value : 'en'}/together/privacy`)
 const termsLocales = ['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'ar']
 const termsUrl = computed(() => `${site.value.base}${termsLocales.includes(lang.value) ? lang.value : 'en'}/together/terms`)
