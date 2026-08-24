@@ -148,7 +148,7 @@ At XMCL, we believe that open-source software must champion digital sovereignty.
 - 🔓 **100% Free & Open-Source Software (FOSS)**: The launcher requires **no account and no subscription** to manage instances, install mods, download shaders, or play free P2P LAN multiplayer.
 - 🚫 **No Data Selling Ever**: XMCL will never sell user data or share information for behavioral advertising.
 
-You can inspect the customized legal policies for your language in our [Privacy Notice](/privacy) and [Together Portal](/together/privacy).
+You can inspect the customized legal policies for your language in our [Privacy Notice](/en/privacy) and [Together Legal Portal](/en/together/privacy).
 
 ---
 
