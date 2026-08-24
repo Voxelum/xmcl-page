@@ -86,6 +86,7 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
   srcDir: 'src',
   lastUpdated: true,
   cleanUrls: true,
+  metaChunk: true,
   sitemap: {
     hostname: 'https://xmcl.app',
   },
