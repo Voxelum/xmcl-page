@@ -390,3 +390,145 @@ sceneLanding:
       export: { number: '1 CLIQUE', label: 'Exportação do pack', description: 'Crie um pacote MR ou CF distribuível em poucos passos.' }
       ai: { number: 'IA', label: 'Assistência a crashes', description: 'Transforme um relatório de falha em uma próxima ação útil.' }
     cta: { kicker: 'UMA BANCADA PARA SEU PRÓXIMO LANÇAMENTO', title: 'Crie o pack. Lance o pack. Mantenha-o saudável.', description: 'O XMCL dá aos criadores um ciclo local rápido para descoberta, testes, diagnóstico e exportação nos dois ecossistemas que seus jogadores já usam.', button: 'Explorar todas as funcionalidades' }
+commercial:
+  common:
+    loading: Carregando…
+    refresh: Atualizar
+    refreshing: Atualizando…
+    signIn: Entrar
+  billing:
+    eyebrow: COBRANÇA XMCL
+    title: Faturamento e saldo
+    description: Gerencie seu saldo, pagamentos e atividades de faturamento.
+    accountSettings: Configurações da conta
+    disabled: O faturamento não está ativado nesta implantação.
+    loadingTitle: Carregando faturamento
+    loadingDescription: Obtendo seu saldo e atividades…
+    signInTitle: Entre para gerenciar o faturamento
+    signInDescription: Seu saldo, pagamentos e uso pertencem à sua conta XMCL.
+    overview: Visão geral
+    accountTitle: Sua conta de faturamento
+    available: Saldo disponível
+    availableHint: Pronto para uso nos serviços XMCL
+    reserved: Reservado
+    reservedHint: Retido para uso ativo
+    history: Histórico
+    activity: Atividade de cobrança
+    transactions: Transações
+    payments: Pagamentos
+    usage: Uso
+    descriptionLabel: Descrição
+    reference: Referência
+    date: Data
+    amount: Valor
+    payment: Pagamento
+    status: Status
+    charged: Cobrado
+    noTransactions: Nenhuma transação ainda.
+    noPayments: Nenhum pagamento ainda.
+    noUsage: Nenhum uso medido ainda.
+    loadError: Não foi possível carregar os dados de faturamento.
+    securedTitle: Pagamentos seguros
+    securedDescription: Os detalhes do cartão são processados em gateway seguro. O XMCL nunca recebe o número do seu cartão.
+  server:
+    managerEyebrow: Seus servidores hospedados
+    managerTitle: Gerenciamento de servidores
+    managerDescription: Cada servidor funciona e é cobrado de forma independente. Verifique o status e ligue-o ou desligue-o aqui.
+    serverNumber: 'Servidor {plan} {number}'
+    start: Iniciar servidor
+    stop: Parar servidor
+    cpuUsage: Uso de CPU
+    memoryUsage: Uso de memória
+    launcherGuide: Use o launcher XMCL para alterar mods, modpacks, mundos e outras configurações detalhadas.
+    operationError: Não foi possível alterar o estado do servidor.
+    status:
+      pending: Aguardando capacidade
+      queued: Aguardando capacidade
+      ready: Parado
+      starting: Iniciando
+      running: Em execução
+      stopping: Parando e salvando
+      payment_due: Pagamento pendente
+      failed: Requer atenção
+      retained: Arquivo retido
+      deleted: Excluído
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: A melhor configuração do Minecraft são os amigos com quem você joga.
+    description: Da criação do modpack e conexão estável à manutenção do servidor, o XMCL Together permite que você aproveite modpacks de Minecraft com amigos.
+    storyLink: A história do XMCL
+    projectBoundary: O XMCL continua gratuito e de código aberto. O Together é opcional e o launcher funciona sem uma conta Together.
+    catalog:
+      heroNote: Quatro planos. Um deles se encaixa no seu grupo.
+      eyebrow: Escolha um plano
+      title: Decida onde o mundo roda.
+      description: 'Todos os quatro planos atendem ao mesmo objetivo: ajudar seu grupo a manter e jogar em um mundo compartilhado de modpacks.'
+      recommended: Para a maioria dos modpacks
+      perMonth: / mês
+      flatMonthly: 20 GB de relay incluídos · $0.08 / GB depois
+      runtime: '{price} por hora de execução · pause a qualquer momento'
+      hosted: Hospedado pelo XMCL
+      runsOn: Roda em
+      bestFor: Ideal para
+      connection: Conexão
+      memory: Memória
+      cpu: CPU
+      storage: Armazenamento persistente
+      aiIncluded: Serviço de IA cortesia
+      aiIncludedDescription: Ajuda para criar modpacks, solucionar problemas e manter servidores
+      home:
+        location: Hospedado por amigo
+        description: Multiplayer com relay global para amigos com conexões P2P difíceis ou instáveis; 20 GB normalmente dão a 3 amigos cerca de 65 horas por mês.
+        runsOn: Seu próprio computador
+        bestFor: Grupos que jogam ocasionalmente
+        connection: 300+ locais de relay globais
+      camp:
+        description: Um ponto de partida compacto e capaz para 2–4 amigos jogando um modpack leve.
+      lodge:
+        description: Desempenho e preço equilibrados para 4–6 amigos jogando um modpack típico.
+      village:
+        description: Espaço para 6–10 amigos, modpacks maiores e mais jogadores simultâneos.
+    shared:
+      eyebrow: Incluído em cada plano
+      title: Mais do que manter um servidor online.
+      description: O Together ajuda em toda a jornada, do modpack ao mundo compartilhado, sem deixar um amigo com todos os problemas técnicos.
+      aiTitle: Criação e manutenção assistidas por IA
+      aiDescription: Obtenha ajuda para escolher e ajustar mods, resolver dependências e crashes e lidar com a configuração do servidor.
+      worldTitle: O mundo permanece com o grupo
+      worldDescription: O Home facilita a hospedagem com amigos; os planos hospedados preservam o mundo e a configuração até o grupo retornar.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Pague pelas horas em que o servidor realmente funciona.
+      description: Uma taxa mensal baixa mantém o plano, mundo, saves e configuração. Cobranças por hora aplicam-se apenas enquanto o servidor estiver rodando.
+      playTitle: Inicie quando necessário
+      playDescription: Ligue quando os amigos estiverem prontos e pague pelas horas reais de execução.
+      pauseTitle: Pause quando ninguém estiver jogando
+      pauseDescription: As cobranças de execução param enquanto pausado; continue no mesmo mundo da próxima vez.
+    confirm:
+      serverNumber: 'Servidor {plan} #{number}'
+      addAnother: Adicionar outro servidor
+      close: Fechar
+      purchaseEyebrow: Criar um servidor
+      cancelEyebrow: Cancelar um servidor
+      purchaseTitle: Confirmar compra do {plan}
+      purchaseDescription: A taxa mensal de {monthly} é cobrada imediatamente. O tempo de execução custa {hourly}/hora e para enquanto pausado.
+      regionLabel: Localização do servidor
+      regionDescription: Escolha a localização mais próxima da maioria dos jogadores.
+      testRegions: Testar e recomendar
+      testingRegions: Testando…
+      testComplete: Selecionado {location}, com a menor latência ({latency} ms).
+      testUnavailable: Teste de velocidade indisponível. Escolha uma localização manualmente.
+      cancelTitle: Confirmar cancelamento do {plan}
+      cancelDescription: O cancelamento entra em vigor no final do período atual em {date}.
+      retentionTitle: Os saves permanecem no armazenamento frio por 30 dias
+      retentionDescription: Baixe o save antes de {date} em Gerenciamento de servidores.
+      back: Voltar
+      purchase: Confirmar compra
+      cancel: Confirmar cancelamento
+    aiAllowance: Assistência de IA restante
+    aiUnits: unidades ponderadas restantes
+    aiUsage: '{consumed} usado de {included}'
+    turnAllowance: Relay multiplayer
+    turnEgress: tráfego de relay autenticado
+    turnUsage: '{consumed} usado de {included}'
+

@@ -75,22 +75,36 @@ import {
 } from '../lib/accountSession'
 
 const { lang, site, page } = useData()
-const supportedAccountLocales = new Set(['en', 'zh', 'zh-TW'])
+const supportedAccountLocales = new Set([
+  'en', 'zh', 'zh-TW', 'uk', 'de', 'fr', 'es', 'it', 'pl', 'pt', 'ar', 'jp', 'ko', 'kk', 'be', 'ru'
+])
 const displayName = computed(accountDisplayName)
 const providers: OAuthProvider[] = ['microsoft', 'modrinth', 'google', 'discord']
 const isOpen = ref(false)
 const menuRef = ref<HTMLElement | null>(null)
 const signingIn = ref<OAuthProvider>()
 const error = ref<string>()
-const copy = computed(() => ({
-  zh: { signIn: '登录', signInWith: '登录方式', redirecting: '正在跳转…' },
-  'zh-TW': { signIn: '登入', signInWith: '登入方式', redirecting: '正在跳轉…' },
-  en: { signIn: 'Sign in', signInWith: 'Sign in with', redirecting: 'Redirecting…' },
-}[lang.value as 'zh' | 'zh-TW' | 'en'] || {
-  signIn: 'Sign in',
-  signInWith: 'Sign in with',
-  redirecting: 'Redirecting…',
-}))
+const copy = computed(() => {
+  const map: Record<string, { signIn: string; signInWith: string; redirecting: string }> = {
+    zh: { signIn: '登录', signInWith: '登录方式', redirecting: '正在跳转…' },
+    'zh-TW': { signIn: '登入', signInWith: '登入方式', redirecting: '正在跳轉…' },
+    uk: { signIn: 'Увійти', signInWith: 'Увійти через', redirecting: 'Перенаправлення…' },
+    de: { signIn: 'Anmelden', signInWith: 'Anmelden mit', redirecting: 'Weiterleitung…' },
+    fr: { signIn: 'Se connecter', signInWith: 'Se connecter avec', redirecting: 'Redirection…' },
+    es: { signIn: 'Iniciar sesión', signInWith: 'Iniciar sesión con', redirecting: 'Redirigiendo…' },
+    it: { signIn: 'Accedi', signInWith: 'Accedi con', redirecting: 'Reindirizzamento…' },
+    pl: { signIn: 'Zaloguj się', signInWith: 'Zaloguj przez', redirecting: 'Przekierowywanie…' },
+    pt: { signIn: 'Entrar', signInWith: 'Entrar com', redirecting: 'Redirecionando…' },
+    ar: { signIn: 'تسجيل الدخول', signInWith: 'تسجيل الدخول عبر', redirecting: 'جارٍ التحويل…' },
+    jp: { signIn: 'ログイン', signInWith: 'ログイン方法', redirecting: 'リダイレクト中…' },
+    ko: { signIn: '로그인', signInWith: '로그인 방법', redirecting: '이동 중…' },
+    kk: { signIn: 'Кіру', signInWith: 'Кіру әдісі', redirecting: 'Бағытталуда…' },
+    be: { signIn: 'Увайсці', signInWith: 'Увайсці праз', redirecting: 'Перанакіраванне…' },
+    ru: { signIn: 'Войти', signInWith: 'Войти через', redirecting: 'Перенаправление…' },
+    en: { signIn: 'Sign in', signInWith: 'Sign in with', redirecting: 'Redirecting…' },
+  }
+  return map[lang.value] || map.en
+})
 const accountUrl = computed(() => {
   const locale = supportedAccountLocales.has(lang.value) ? lang.value : 'en'
   const together = page.value.relativePath.split('/').includes('together')

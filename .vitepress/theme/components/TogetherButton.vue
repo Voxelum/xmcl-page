@@ -10,7 +10,7 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 
 const { lang, site } = useData()
-const locale = computed(() => ['en', 'zh', 'zh-TW'].includes(lang.value) ? lang.value : 'en')
+const locale = computed(() => lang.value || 'en')
 const togetherUrl = computed(() => `${site.value.base}${locale.value}/together/`)
 </script>
 

@@ -59,8 +59,7 @@ const featuresUrl = computed(() => pageUrl('features/'))
 const prebuildsUrl = computed(() => pageUrl('prebuilds'))
 const linuxUrl = computed(() => pageUrl('linux-minecraft-launcher'))
 const creatorsUrl = computed(() => pageUrl('modpack-creator'))
-const logViewerUrl = computed(() => pageUrl('log-viewer'))
-const togetherLocale = computed(() => ['en', 'zh', 'zh-TW'].includes(lang.value) ? lang.value : 'en')
+const togetherLocale = computed(() => lang.value || 'en')
 const togetherUrl = computed(() => `${site.value.base}${togetherLocale.value}/together/`)
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`

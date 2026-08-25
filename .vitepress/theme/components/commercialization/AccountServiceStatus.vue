@@ -71,6 +71,30 @@ const copies = {
     hosted: 'Hosted server subscriptions', hostedComingSoon: 'Camp, Lodge, and Village are coming soon. No hosted server can be purchased or controlled during staging verification.',
     active: 'Active', inactive: 'Not subscribed', renews: 'Renews', cancels: 'Cancels on',
   },
+  uk: {
+    title: 'Сервіси та залишок лімітів', refresh: 'Оновити', signIn: 'Увійдіть вище, щоб переглянути ваші сервіси Together.',
+    balance: 'Доступний баланс', addFunds: 'Поповнити', ai: 'Залишок ШІ', turn: 'Залишок TURN',
+    hosted: 'Підписки на хмарні сервери', hostedComingSoon: 'Тарифи Camp, Lodge та Village з’являться незабаром.',
+    active: 'Активний', inactive: 'Не підписано', renews: 'Поновлюється', cancels: 'Скасовується',
+  },
+  de: {
+    title: 'Dienste und verbleibendes Kontingent', refresh: 'Aktualisieren', signIn: 'Melden Sie sich oben an, um Ihre Together-Dienste anzuzeigen.',
+    balance: 'Verfügbares Guthaben', addFunds: 'Guthaben aufladen', ai: 'Verbleibende KI', turn: 'Verbleibendes TURN',
+    hosted: 'Gehostete Server-Abonnements', hostedComingSoon: 'Camp, Lodge und Village sind in Kürze verfügbar.',
+    active: 'Aktiv', inactive: 'Nicht abonniert', renews: 'Verlängert sich', cancels: 'Kündigung am',
+  },
+  fr: {
+    title: 'Services et quota restant', refresh: 'Actualiser', signIn: 'Connectez-vous ci-dessus pour voir vos services Together.',
+    balance: 'Solde disponible', addFunds: 'Ajouter des fonds', ai: 'IA restante', turn: 'TURN restant',
+    hosted: 'Abonnements serveurs hébergés', hostedComingSoon: 'Camp, Lodge et Village arrivent bientôt.',
+    active: 'Actif', inactive: 'Non abonné', renews: 'Renouvellement', cancels: 'Annulation le',
+  },
+  es: {
+    title: 'Servicios y cuota restante', refresh: 'Actualizar', signIn: 'Inicia sesión arriba para ver tus servicios de Together.',
+    balance: 'Saldo disponible', addFunds: 'Añadir fondos', ai: 'IA restante', turn: 'TURN restante',
+    hosted: 'Suscripciones de servidores alojados', hostedComingSoon: 'Camp, Lodge y Village estarán disponibles pronto.',
+    active: 'Activo', inactive: 'No suscrito', renews: 'Renueva', cancels: 'Cancela el',
+  },
   zh: {
     title: '服务与剩余额度', refresh: '刷新', signIn: '请先在上方登录，以查看你的 Together 服务。',
     balance: '可用余额', addFunds: '充值', ai: 'AI 剩余额度', turn: 'TURN 剩余流量',
@@ -83,8 +107,13 @@ const copies = {
     hosted: '託管伺服器訂閱', hostedComingSoon: 'Camp、Lodge 與 Village 即將推出；staging 驗證期間無法購買或控制託管伺服器。',
     active: '已啟用', inactive: '未訂閱', renews: '續費於', cancels: '將取消於',
   },
-} as const
-const copy = computed(() => copies[locale.value as keyof typeof copies] || copies.en)
+} as Record<string, {
+  title: string; refresh: string; signIn: string;
+  balance: string; addFunds: string; ai: string; turn: string;
+  hosted: string; hostedComingSoon: string;
+  active: string; inactive: string; renews: string; cancels: string;
+}>
+const copy = computed(() => copies[locale.value] || copies.en)
 const loading = ref(true)
 const error = ref('')
 const balance = ref<BillingBalance>()
