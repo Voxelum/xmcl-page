@@ -1,147 +1,144 @@
-# Microsoft аккаунтына кіру және демо режимі нұсқаулығы
+# Microsoft кіру, Bedrock және Java айырмашылығы мен лицензия мәселелерін шешу
 
-Бұл нұсқаулықта Microsoft аккаунтын XMCL-ге қалай қосу керектігі, аутентификация процесі қалай жұмыс істейтіні және **"failed to exchange Xbox token"** сияқты жүйеге кірудегі жиі кездесетін қателерді немесе **демо режимде (Demo Mode)** қалып қою мәселелерін қалай шешуге болатыны сипатталған.
+Бұл нұсқаулықта XMCL-дегі Microsoft тіркелгісінің аутентификациясы қалай жұмыс істейтіні, неліктен кіру қателері (**"failed to exchange Xbox token"** немесе сатып алынбаған) шығатыны, ойын не себепті **Демо режимінде (Demo Mode)** іске қосылуы мүмкін екені, **Bedrock Edition (телефон/консольдер)** мен **Java Edition (ДК)** арасындағы маңызды айырмашылық және тіркелгі мәселелерін шешу жолдары түсіндіріледі.
 
 ---
 
-## 🔑 1. Microsoft аккаунтын қалай қосуға болады
+## 🔑 1. Microsoft тіркелгісімен кіру
 
-Ресми аккаунтыңыз арқылы Minecraft ойнау үшін жүйеге кіруіңіз керек:
+Ресми Minecraft лицензиясымен кіру үшін келесі қадамдарды орындаңыз:
 
-1. Тіркелгі менеджерін ашу үшін жоғарғы оң жақ бұрыштағы профиліңізді/аватарыңызды (немесе **"Аккаунтты басқару"**) басыңыз:
+1. Тіркелгі менеджерін ашу үшін жоғарғы оң жақтағы аватарыңызды (немесе **«Тіркелгілерді басқару»**) басыңыз:
 
    <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
-2. **"Аккаунт қосу"** түймесін басып, **Microsoft** таңдап, жүйеге кіруді жалғастырыңыз:
+2. **«Тіркелгі қосу»** батырмасын басып, **Microsoft** таңдап, кіруді орындаңыз:
 
    <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
-> 💡 **Құрылғы коды арқылы кіру (Device Code):**  
-> Егер құпия сөзіңізді лаунчер ішінде тергіңіз келмесе, **"Login by Device Code"** (Құрылғы коды арқылы кіру) опциясын белгілеңіз. XMCL бірегей кодты көрсетеді; веб-шолғышыңызда `microsoft.com/link` сілтемесіне өтіп, кодты енгізіп, кіруді растаңыз.
+> 💡 **Құрылғы кодымен кіру (Device Code):**  
+> Лаунчер ішінде құпия сөзді енгізгіңіз келмесе, **«Құрылғы кодымен кіру»** құсбелгісін қойыңыз. XMCL 8 таңбалы кодты көрсетеді; браузерде [microsoft.com/link](https://microsoft.com/link) сілтемесіне өтіп, кодты енгізіп, растаңыз.
 
 ---
 
-## 🔍 2. Аутентификация процесі қалай жұмыс істейді
+## 🔍 2. Microsoft үш сатылы тексеру жүйесі
 
-Лицензияланған Minecraft нұсқасын іске қосу үшін лаунчер сіздің жеке басыңызды үш бөлек қауіпсіздік деңгейінде тексеруі керек:
+Кіру кезінде лаунчер үш бөлек тексеру кезеңінен өтеді:
 
 <div style="display: flex; flex-direction: column; gap: 16px; margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
   <div style="display: flex; align-items: center; gap: 8px;">
-    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 Аутентификация алмасуы (Handshake):</span>
+    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 3 сатылы тексеру реті:</span>
   </div>
   <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; margin: 10px 0;">
     <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #3b82f6; font-size: 0.85rem;">1-ҚАДАМ</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Microsoft жүйесіне кіру</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Құпия сөзді тексереді</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Microsoft OAuth</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Email және құпия сөзді тексеру</div>
     </div>
     <div style="color: var(--vp-c-text-3); font-weight: bold;">➔</div>
     <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #10b981; font-size: 0.85rem;">2-ҚАДАМ</div>
       <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Xbox Live қызметтері</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Gamertag-ты алады</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Xbox Gamertag алу</div>
     </div>
-    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ Қате осында</div>
+    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ Негізгі қате орны</div>
     <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #ef4444; font-size: 0.85rem;">3-ҚАДАМ (Алмасу)</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Minecraft токені</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Лицензияны тексереді</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Mojang Java лицензиясы</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">ДК Java бар-жоғын тексеру</div>
     </div>
   </div>
   <p style="font-size: 0.9rem; color: var(--vp-c-text-2); margin: 0; text-align: center; line-height: 1.6;">
-    <strong>"failed to exchange Xbox token"</strong> қатесі 1-қадам мен 2-қадамның сәтті аяқталғанын, бірақ 3-қадамда Mojang аутентификация серверлері токенді алмасудан бас тартқанын білдіреді.
+    Егер 3-қадам сәтсіз аяқталса, лаунчер <strong>"failed to exchange Xbox token"</strong> қатесін береді немесе ойын <strong>Демо режимінде</strong> ашылады. Бұл Mojang серверлері бұл Microsoft тіркелгісінен белсенді <strong>Minecraft: Java Edition</strong> лицензиясын таба алмағанын білдіреді.
   </p>
 </div>
 
 ---
 
-## 🛠 3. Үш негізгі себеп және олардың шешімдері
+## 🛑 3. Ең жиі кездесетін қате түсінік: Bedrock пен Java айырмашылығы
 
-### 1. Осы аккаунтта Minecraft лицензиясы жоқ
+**XMCL — тек Minecraft: Java Edition (Windows, macOS және Linux ДК) үшін арналған лаунчер.**
+
+Көптеген ойыншылар ойынды смартфонда немесе консольдерде сатып алып, кейін XMCL-ге кіруге тырысады:
+
+| Сатып алынған платформа | Иеленген басылым | XMCL-мен үйлесімді ме? | Себебі |
+| :--- | :--- | :--- | :--- |
+| 📱 **Телефон / Планшет (iOS / Android)** | Bedrock Edition | ❌ Жоқ | Мобильді нұсқа ДК-дегі Java басылымын бермейді. |
+| 🎮 **PlayStation 4 / 5 консолі** | Bedrock Edition | ❌ Жоқ | PSN сатып алуы тек консольге жарамды. |
+| 🎮 **Xbox One / Series X\|S консолі** | Bedrock Edition | ❌ Жоқ | Консольдік нұсқа ДК Java-ға ауыспайды. |
+| 🕹️ **Nintendo Switch** | Bedrock Edition | ❌ Жоқ | Nintendo eShop сатып алуы тек Switch-ке арналған. |
+| 💻 **ДК (Minecraft: Java & Bedrock жинағы)** | Java + Bedrock | ✅ **Иә** | Толық ресми қолдау! |
+| 🟢 **PC Game Pass / Ultimate жазылымы** | Java + Bedrock | ✅ **Иә** | Жазылым мерзімінде қолдау көрсетіледі. |
+
+> ⚠️ **Маңызды:**  
+> Егер сіз Minecraft-ты тек **смартфонда**, **PlayStation**, **Xbox консолінде** немесе **Switch-те** сатып алған болсаңыз, Mojang бұл тіркелгіде **Java Edition жоқ** деп жауап береді.  
+> ДК-де ресми Java Edition ойнау үшін [Minecraft.net](https://www.minecraft.net/) сайтынан **"Minecraft: Java & Bedrock Edition for PC"** жинағын сатып алу немесе **PC Game Pass** жазылымы қажет.
+
+---
+
+## 🛠 4. Кіру ақауларын шешу жолдары
+
+### А себебі: Бұл тіркелгіде Java Edition лицензиясы жоқ
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(239, 68, 68, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #ef4444; font-weight: bold; font-size: 1.25rem;">
     🎮
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Себебі: Mojang серверлері сатып алынған ойынды таппады</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Бұл ең жиі кездесетін себеп. Сіз Microsoft аккаунтына сәтті кірдіңіз, бірақ Mojang лаунчерге бұл нақты аккаунттың Minecraft лицензиясына ие емес екенін хабарлайды.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Mojang ДК сатып алуын таппады</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Microsoft тіркелгісі сәтті расталды, бірақ Mojang базасында Java Edition сатып алу жазбасы жоқ.</p>
   </div>
 </div>
 
-#### Шешу жолы:
-* **Сатып алуды тексеру:** [Minecraft.net](https://www.minecraft.net/) сайтына өтіп, Microsoft аккаунтыңызбен кіріңіз. Ойынды сатып алу ұсынысының орнына жүктеу батырмасын көріп тұрғаныңызды тексеріңіз.
-* **Game Pass күйін тексеру:** Егер сіз **Xbox Game Pass** арқылы ойнасаңыз, жазылымыңыздың белсенді екенін және белсенді жазылымы бар нақты Microsoft аккаунтымен кіргеніңізді тексеріңіз.
-* **Электрондық поштаны қайта тексеру:** Сатып алу жасалған жеке аккаунттың орнына басқа Microsoft аккаунтымен (мысалы, мектеп немесе жұмыс поштасы) кірмегеніңізге көз жеткізіңіз.
+#### Тексеру және түзету:
+* **Minecraft.net сайтында тексеру:** [Minecraft.net](https://www.minecraft.net/) сайтына кіріп, профильде ойын аты тұр ма, әлде «Қазір сатып алу» батырмасы шығып тұр ма, соны тексеріңіз.
+* **Тапсырыстар тарихы:** [account.microsoft.com/billing/orders](https://account.microsoft.com/billing/orders) сілтемесіне өтіп, сатып алынған өнімді тексеріңіз.
+* **Email тексеру:** Ойын сатып алынбаған мектеп немесе жұмыс поштасымен кіріп тұрмағаныңызға көз жеткізіңіз.
+* **Game Pass күйі:** Жазылымыңыз белсенді екенін және ДК-ге жарамды екенін тексеріңіз.
 
 ---
 
-### 2. Аккаунтта Xbox профилі жоқ (Gamertag жоқ)
+### Б себебі: Xbox Live профилі (Gamertag) жасалмаған
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(245, 158, 11, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #f59e0b; font-weight: bold; font-size: 1.25rem;">
-    👾
+    👤
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Себебі: Microsoft аккаунты ойын ойнауға реттелмеген</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Minecraft токендерін алу үшін Microsoft аккаунтыңызға байланыстырылған белсенді Xbox Live профилі қажет. Егер сіз Minecraft-ты жақында сатып алсаңыз немесе ойынды бұрын ешқашан іске қоспаған болсаңыз, бұл профиль әлі жасалмаған болуы мүмкін, бұл сізді **демо режимде** қалдырады.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Тіркелгіде Xbox Gamertag жоқ</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Жаңа жасалған Microsoft тіркелгілерінде Xbox профилі іске қосылмаған болуы мүмкін.</p>
   </div>
 </div>
 
-#### Шешу жолы:
-1. Ресми [Xbox.com](https://www.xbox.com/) сайтына өтіңіз.
-2. Microsoft аккаунтыңыздың деректерімен кіріңіз.
-3. Ұсынылған жағдайда тегін Xbox Live профилін жасаңыз (Gamertag пен аватарды таңдау арқылы).
-4. Профиль жасалғаннан кейін XMCL лаунчерін қайта іске қосып, қайта кіріп көріңіз.
+#### Шешімі:
+1. Браузерде [Xbox.com](https://www.xbox.com/) сайтын ашыңыз.
+2. Жоғарғы оң жақтағы **Кіру** батырмасын басыңыз.
+3. Шарттарды қабылдап, **Gamertag** (ойын лақап атын) жасаңыз.
+4. 1–2 минут күтіп, XMCL-ге қайта кіріп көріңіз.
 
 ---
 
-### 3. Желілік қателер немесе блокталған қосылымдар
+### В себебі: Желі мен DNS бұғатталуы
 
-<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); margin: 20px 0;">
-  <div style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #3b82f6; font-weight: bold; font-size: 1.25rem;">
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: rgba(139, 92, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #8b5cf6; font-weight: bold; font-size: 1.25rem;">
     🌐
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Себебі: DNS мәселелері немесе аймақтық желілік шектеулер</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Кейбір аймақтарда немесе шектеулері бар интернет провайдерлерінде Xbox Live немесе Mojang аутентификация серверлеріне қосылу блокталған немесе бұзылған болуы мүмкін.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Mojang / Xbox серверлерімен байланыс бұғатталған</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Брандмауэр немесе провайдер DNS ақаулары <code>api.minecraftservices.com</code> байланысын тежейді.</p>
   </div>
 </div>
 
-#### Шешу жолы:
-* **VPN пайдаланыңыз:** Егер сіз интернет шектеулері бар елде болсаңыз, Microsoft аутентификация процесін аяқтау үшін VPN пайдаланыңыз.
-* **DNS серверлерін өзгертіңіз:** Жүйеңіздің DNS параметрлерін қоғамдық және жылдам серверлерге ауыстырыңыз (мысалы, Google DNS: `8.8.8.8` және `8.8.4.4` немесе Cloudflare DNS: `1.1.1.1`).
-* **Кейінірек қайталап көріңіз:** Microsoft аутентификация серверлерінде уақытша жүктеме көп болуы мүмкін. Бірнеше минут күтіп, әрекетті қайталаңыз.
+#### Шешімі:
+* **VPN пайдалану:** Кіру алдында тұрақты VPN қосыңыз.
+* **XMCL ішінде прокси баптау:** **Баптаулар** -> **Желі баптаулары** бөлімінде проксиді (HTTP/HTTPS/SOCKS5) енгізіңіз.
+* **hosts файлын тексеру:** Жүйелік hosts файлында `mojang.com` бағыттаулары жоқ екеніне көз жеткізіңіз.
 
 ---
 
-## 🚪 4. Офлайн режимі және балама кіру опциялары (Microsoft аккаунтынсыз ойнау)
+## 🎮 Ресми лицензияңыз жоқ па?
 
-Егер сізде ресми Microsoft аккаунты болмаса немесе желісіз ойнағыңыз келсе не жеке/жергілікті серверді пайдалансаңыз, XMCL жүйеге кірудің балама әдістерін ұсынады.
+Егер сізде әзірге ресми лицензия болмаса, **Офлайн режим** немесе қауымдастық скин жүйелері арқылы ойнауға болады.
 
-### А опциясы: Жергілікті ойнау / Офлайн (Әзірлеуші режимі)
-
-**Әзірлеуші режимі** (Developer Mode) кез келген таңдалған лақап атпен құпия сөзсіз офлайн ойнауға мүмкіндік береді.
-
-1. Жоғарғы оң жақ бұрыштағы аккаунт менеджерін ашыңыз.
-2. **"Аккаунт қосу"** (Add Account) түймесін басыңыз.
-3. Тізімнен **Әзірлеуші** (Developer) опциясын таңдаңыз:
-
-   <img src="/guidephoto/developer-mode.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. Қалаған пайдаланушы атын енгізіп, растаңыз.
-5. Енді ойынды іске қосуға болады. **Ескерту:** Офлайн тіркелгі ресми тексеру өшірілген (яғни сервер конфигурациясында `online-mode=false` орнатылған) серверлерге ғана кіруге мүмкіндік береді, сонымен қатар сіздің кейіпкеріңіз Minecraft-тың әдепкі терісін (скинін) пайдаланады.
-
----
-
-### Б опциясы: Жеке терілер платформалары (Yggdrasil API)
-
-Егер сіз жеке серверлерде өзіңіздің теңшелген теріңізбен (скиніңізбен) ойнағыңыз келсе, XMCL **LittleSkin**, **Ely.by** немесе басқа жеке Yggdrasil серверлері сияқты баламалы аутентификация қызметтерін қолдайды.
-
-1. Аккаунт менеджерінде **"Аккаунт қосу"** батырмасын басыңыз.
-2. Қажетті платформаны таңдаңыз (мысалы, **LittleSkin** немесе жеке API сілтемесін енгізу үшін **Yggdrasil**).
-3. Осы қызметпен байланысты кіру деректерін енгізіңіз:
-
-   <img src="/guidephoto/reg-account.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. Лаунчер сіздің теріңіз бен профиль деректеріңізді осы платформадан автоматты түрде жүктейді.
+👉 **[Толық нұсқаулық: Лицензиясыз ойнау (Офлайн режим және балама тіркелгілер)](./offline-mode)**

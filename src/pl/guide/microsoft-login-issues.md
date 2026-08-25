@@ -1,147 +1,144 @@
-# Logowanie na konto Microsoft i tryb demonstracyjny
+# Logowanie Microsoft, Bedrock vs Java oraz problemy z licencją
 
-Ten poradnik wyjaśnia, jak dodać konto Microsoft do XMCL, jak działa proces uwierzytelniania oraz jak rozwiązać typowe problemy z logowaniem, takie jak błąd **"failed to exchange Xbox token"** lub utknięcie w **trybie demonstracyjnym (Demo Mode)**.
+Ten poradnik wyjaśnia działanie uwierzytelniania Microsoft w XMCL, przyczyny błędów logowania (takich jak **„failed to exchange Xbox token”** lub brak licencji), dlaczego gra uruchamia się w **Trybie Demo (Demo Mode)**, zasadniczą różnicę między **Bedrock Edition (telefon/konsole)** a **Java Edition (PC)** oraz sposoby rozwiązywania problemów z kontem.
 
 ---
 
-## 🔑 1. Jak dodać konto Microsoft
+## 🔑 1. Logowanie za pomocą konta Microsoft
 
-Aby grać w Minecraft przy użyciu oficjalnego konta, musisz się zalogować:
+Aby zalogować się za pomocą oficjalnej licencji Minecraft:
 
-1. Kliknij na swój profil/awatar (lub **"Zarządzaj kontem"**) w prawym górnym rogu, aby otworzyć menedżera kont:
+1. Kliknij swój awatar (lub **„Zarządzaj kontem”**) w prawym górnym rogu, aby otworzyć Menedżer kont:
 
    <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
-2. Kliknij **"Dodaj konto"**, wybierz **Microsoft** i przejdź do logowania:
+2. Kliknij **„Dodaj konto”**, wybierz **Microsoft** i postępuj zgodnie z instrukcjami:
 
    <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
-> 💡 **Logowanie przez kod urządzenia (Device Code):**  
-> Jeśli nie chcesz wpisywać swojego hasła bezpośrednio w launcherze, zaznacz opcję **"Login by Device Code"** (Logowanie kodem urządzenia). XMCL wyświetli kod; wystarczy wejść na stronę `microsoft.com/link` w przeglądarce, wpisać kod i zatwierdzić logowanie.
+> 💡 **Logowanie kodem urządzenia (Device Code):**  
+> Jeśli nie chcesz wpisywać hasła w launcherze, zaznacz **„Logowanie kodem urządzenia”**. XMCL wygeneruje 8-cyfrowy kod; przejdź na stronę [microsoft.com/link](https://microsoft.com/link) w przeglądarce i zatwierdź logowanie.
 
 ---
 
-## 🔍 2. Jak działa proces uwierzytelniania
+## 🔍 2. 3-etapowy proces weryfikacji Microsoft
 
-Aby uruchomić licencjonowaną kopię Minecraft, launcher musi zweryfikować Twoją tożsamość na trzech osobnych poziomach zabezpieczeń:
+Podczas logowania launcher komunikuje się z trzema niezależnymi usługami:
 
 <div style="display: flex; flex-direction: column; gap: 16px; margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
   <div style="display: flex; align-items: center; gap: 8px;">
-    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 Uwierzytelnianie (Handshake):</span>
+    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 3 etapy weryfikacji licencji:</span>
   </div>
   <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; margin: 10px 0;">
     <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #3b82f6; font-size: 0.85rem;">KROK 1</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Logowanie Microsoft</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Weryfikacja hasła</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Microsoft OAuth</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Sprawdza e-mail i hasło</div>
     </div>
     <div style="color: var(--vp-c-text-3); font-weight: bold;">➔</div>
     <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #10b981; font-size: 0.85rem;">KROK 2</div>
       <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Usługi Xbox Live</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Pobieranie Gamertaga</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Pobiera Gamertag Xbox</div>
     </div>
-    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ Błąd tutaj</div>
+    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ Częsty błąd</div>
     <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #ef4444; font-size: 0.85rem;">KROK 3 (Wymiana)</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Token Minecraft</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Sprawdzenie licencji</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Licencja Mojang Java</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Sprawdza zakup na PC</div>
     </div>
   </div>
   <p style="font-size: 0.9rem; color: var(--vp-c-text-2); margin: 0; text-align: center; line-height: 1.6;">
-    Błąd <strong>"failed to exchange Xbox token"</strong> oznacza, że Krok 1 i Krok 2 zakończyły się sukcesem, ale serwery autoryzacyjne Mojang odrzuciły próbę uwierzytelnienia w Kroku 3.
+    Jeśli krok 3 zakończy się niepowodzeniem, logowanie zwróci błąd <strong>„failed to exchange Xbox token”</strong> lub gra uruchomi się w <strong>Trybie Demo</strong>. Oznacza to, że serwery Mojang nie znalazły aktywnej licencji <strong>Minecraft: Java Edition</strong> na tym koncie Microsoft.
   </p>
 </div>
 
 ---
 
-## 🛠 3. Trzy główne przyczyny i rozwiązania
+## 🛑 3. Najczęstsza pomyłka: Bedrock Edition vs. Java Edition
 
-### 1. Brak licencji Minecraft na tym koncie
+**XMCL jest launcherem przeznaczonym wyłącznie dla Minecraft: Java Edition (PC z systemami Windows, macOS i Linux).**
+
+Wielu graczy kupuje grę na telefonie lub konsoli i próbuje zalogować się w XMCL:
+
+| Platforma zakupu | Posiadana edycja | Zgodność z XMCL? | Wyjaśnienie |
+| :--- | :--- | :--- | :--- |
+| 📱 **Telefon / Tablet (iOS / Android)** | Bedrock Edition | ❌ Nie | Zakup na smartfonie nie daje licencji Java na PC. |
+| 🎮 **Konsola PlayStation 4 / 5** | Bedrock Edition | ❌ Nie | Zakup w PSN dotyczy wyłącznie konsoli. |
+| 🎮 **Konsola Xbox One / Series X\|S** | Bedrock Edition | ❌ Nie | Zakup na konsoli nie przenosi się na PC Java. |
+| 🕹️ **Nintendo Switch** | Bedrock Edition | ❌ Nie | Zakup w Nintendo eShop działa tylko na Switchu. |
+| 💻 **PC (Zestaw Minecraft: Java & Bedrock)** | Java & Bedrock | ✅ **Tak** | Pełne wsparcie! |
+| 🟢 **Subskrypcja PC Game Pass / Ultimate** | Java & Bedrock | ✅ **Tak** | Wspierane, dopóki subskrypcja jest aktywna. |
+
+> ⚠️ **Ważne:**  
+> Jeśli zakupiłeś grę tylko na **smartfonie**, **PlayStation**, **konsoli Xbox** lub **Nintendo Switch**, serwery Mojang zgłoszą brak licencji **Java Edition**.  
+> Aby grać w oficjalną wersję Java na PC, musisz posiadać zestaw **„Minecraft: Java & Bedrock Edition for PC”** na [Minecraft.net](https://www.minecraft.net/) lub posiadać aktywną subskrypcję **PC Game Pass**.
+
+---
+
+## 🛠 4. Rozwiązywanie problemów z logowaniem
+
+### Przyczyna A: Brak licencji Java Edition na koncie
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(239, 68, 68, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #ef4444; font-weight: bold; font-size: 1.25rem;">
     🎮
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Przyczyna: Serwery Mojang nie znalazły zakupionej gry</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Jest to najczęstsza przyczyna. Zalogowałeś się na konto Microsoft, ale Mojang informuje launcher, że to konkretne konto nie posiada licencji na Minecraft Java Edition.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Mojang nie widzi licencji PC</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Konto Microsoft zostało pomyślnie uwierzytelnione, ale w bazie Mojang brak wpisu o zakupie Java Edition.</p>
   </div>
 </div>
 
-#### Jak to naprawić:
-* **Zweryfikuj zakup:** Zaloguj się na swoje konto Microsoft na stronie [Minecraft.net](https://www.minecraft.net/). Sprawdź, czy widzisz opcję pobrania gry zamiast prośby o jej zakup.
-* **Sprawdź stan Game Pass:** Jeśli grasz przez subskrypcję **Xbox Game Pass**, upewnij się, że abonament jest aktywny i logujesz się na dokładnie to samo konto, na którym znajduje się aktywny Game Pass.
-* **Sprawdź adres e-mail:** Upewnij się, że nie logujesz się na inne konto Microsoft (np. szkolne lub służbowe) zamiast konta prywatnego, na którym gra została zakupiona.
+#### Rozwiązanie:
+* **Sprawdź na Minecraft.net:** Zaloguj się na [Minecraft.net](https://www.minecraft.net/). Jeśli widzisz przycisk „Kup teraz” zamiast nazwy profilu Java, konto nie posiada gry.
+* **Historia zamówień:** Wejdź na [account.microsoft.com/billing/orders](https://account.microsoft.com/billing/orders) i upewnij się, jaką wersję zakupiłeś.
+* **Weryfikacja adresu e-mail:** Upewnij się, że nie logujesz się kontem szkolnym lub służbowym zamiast konta prywatnego.
+* **Status Game Pass:** Sprawdź, czy Twoja subskrypcja jest aktywna i obejmuje PC.
 
 ---
 
-### 2. Konto nie posiada profilu Xbox (Brak Gamertaga)
+### Przyczyna B: Brak aktywnego profilu Xbox Live
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(245, 158, 11, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #f59e0b; font-weight: bold; font-size: 1.25rem;">
-    👾
+    👤
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Przyczyna: Konto Microsoft nie ma utworzonego profilu gracza</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Twoje konto Microsoft potrzebuje powiązanego profilu Xbox Live, aby launcher mógł pobrać tokeny gry. Jeśli dopiero co kupiłeś grę lub nigdy wcześniej jej nie uruchamiałeś, ten profil może jeszcze nie istnieć, co powoduje uruchamianie gry w <strong>trybie demo</strong>.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Konto nie posiada Gamertagu Xbox</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Nowo utworzone konta Microsoft często nie posiadają zainicjowanego profilu Xbox Live.</p>
   </div>
 </div>
 
-#### Jak to naprawić:
-1. Wejdź na oficjalną stronę [Xbox.com](https://www.xbox.com/).
-2. Zaloguj się swoimi danymi konta Microsoft.
-3. Jeśli pojawi się monit, utwórz darmowy profil Xbox Live (wybierając swój Gamertag i awatar).
-4. Po utworzeniu profilu zrestartuj XMCL i spróbuj zalogować się ponownie.
+#### Rozwiązanie:
+1. Wejdź na [Xbox.com](https://www.xbox.com/).
+2. Kliknij **Zaloguj się** w prawym górnym rogu.
+3. Zaakceptuj warunki i utwórz swój **Gamertag**.
+4. Odczekaj 1–2 minuty i spróbuj ponownie w XMCL.
 
 ---
 
-### 3. Problemy sieciowe lub zablokowane połączenia
+### Przyczyna C: Blokady sieciowe i problemy z DNS
 
-<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); margin: 20px 0;">
-  <div style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #3b82f6; font-weight: bold; font-size: 1.25rem;">
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: rgba(139, 92, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #8b5cf6; font-weight: bold; font-size: 1.25rem;">
     🌐
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Przyczyna: Problemy z DNS lub regionalne blokady sieci</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">W niektórych regionach lub u niektórych restrykcyjnych dostawców internetu połączenia z serwerami uwierzytelniania Xbox Live lub Mojang mogą być blokowane bądź zakłócane.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Zablokowane połączenie z serwerami Mojang / Xbox</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Zapora sieciowa lub błędny DNS blokują połączenie z <code>api.minecraftservices.com</code>.</p>
   </div>
 </div>
 
-#### Jak to naprawić:
-* **Użyj VPN:** Jeśli połączenia w Twojej sieci są blokowane, skorzystaj z VPN, aby pomyślnie przejść proces uwierzytelniania Microsoft.
-* **Zmień serwery DNS:** Zmień DNS w ustawieniach systemu na publiczne i szybkie (np. Google DNS: `8.8.8.8` i `8.8.4.4` lub Cloudflare DNS: `1.1.1.1`).
-* **Spróbuj ponownie później:** Serwery Microsoftu mogą być chwilowo przeciążone. Odczekaj kilka minut i spróbuj ponownie.
+#### Rozwiązanie:
+* **Użyj VPN:** Włącz stabilny VPN przed próbą logowania.
+* **Skonfiguruj Proxy w XMCL:** W **Ustawieniach** -> **Ustawienia sieci** wprowadź dane swojego proxy (HTTP/HTTPS/SOCKS5).
+* **Sprawdź plik hosts:** Upewnij się, że w systemowym pliku hosts nie ma starych przekierowań dla `mojang.com`.
 
 ---
 
-## 🚪 4. Tryb offline i alternatywne opcje logowania (Gra bez konta Microsoft)
+## 🎮 Nie posiadasz płatnej licencji?
 
-Jeśli nie posiadasz oficjalnego konta Microsoft, chcesz grać offline lub korzystasz z prywatnego/lokalnego serwera, XMCL oferuje alternatywne metody logowania.
+Jeśli nie posiadasz oficjalnej licencji, możesz grać w **Trybie Offline** lub korzystać z alternatywnych sieci skinów.
 
-### Opcja A: Gra lokalna / Offline (Tryb Dewelopera)
-
-**Tryb Dewelopera** (Developer Mode) umożliwia grę lokalną offline pod dowolnym wybranym pseudonimem, bez potrzeby wpisywania hasła.
-
-1. Otwórz menedżera kont w prawym górnym rogu.
-2. Kliknij **"Dodaj konto"** (Add Account).
-3. Wybierz opcję **Deweloper** (Developer) z listy:
-
-   <img src="/guidephoto/developer-mode.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. Wpisz dowolną nazwę użytkownika i zatwierdź.
-5. Możesz teraz uruchomić Minecraft. **Uwaga:** Konto offline pozwala na grę wyłącznie na serwerach offline (z opcją `online-mode=false` w pliku konfiguracyjnym serwera), a Twoja postać będzie używać domyślnego wyglądu (steve/alex).
-
----
-
-### Opcja B: Zewnętrzne serwery skórek (API Yggdrasil)
-
-Jeśli chcesz grać z własną skórką (skinem) na prywatnych serwerach, XMCL wspiera zewnętrzne usługi uwierzytelniania takie jak **LittleSkin**, **Ely.by** lub własne serwery Yggdrasil.
-
-1. W menedżerze kont kliknij **"Dodaj konto"**.
-2. Wybierz odpowiednią platformę (np. **LittleSkin** lub **Yggdrasil**, aby wpisać własny adres URL API).
-3. Podaj dane logowania powiązane z daną usługą:
-
-   <img src="/guidephoto/reg-account.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. Launcher automatycznie pobierze Twoją skórkę i informacje o profilu bezpośrednio z tej platformy.
+👉 **[Pełny poradnik: Gra bez licencji (Tryb offline i alternatywne konta)](./offline-mode)**

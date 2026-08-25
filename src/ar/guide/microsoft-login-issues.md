@@ -1,147 +1,144 @@
-# دليل تسجيل الدخول إلى حساب Microsoft ووضع العرض التجريبي
+# تسجيل الدخول عبر Microsoft والفرق بين Bedrock و Java وحل مشاكل الترخيص
 
-يوضح هذا الدليل كيفية إضافة حساب Microsoft الخاص بك إلى XMCL، وكيفية عمل عملية المصادقة، وكيفية حل أخطاء تسجيل الدخول الشائعة مثل **"failed to exchange Xbox token"** أو التوقف في **وضع العرض التجريبي (Demo Mode)**.
+يشرح هذا الدليل آلية المصادقة لحسابات Microsoft في XMCL، وأسباب ظهور أخطاء تسجيل الدخول (مثل **"failed to exchange Xbox token"** أو غير مشترى)، ولماذا قد تفتح اللعبة في **الوضع التجريبي (Demo Mode)**، والفرق الجوهري بين **Bedrock Edition (الهاتف والمنصات)** و **Java Edition (الكمبيوتر)**، وكيفية حل مشاكل الحساب.
 
 ---
 
-## 🔑 1. كيفية إضافة حساب Microsoft
+## 🔑 1. تسجيل الدخول باستخدام حساب Microsoft
 
-لتلعب ماينكرافت باستخدام حسابك الرسمي، يجب عليك تسجيل الدخول:
+لتسجيل الدخول باستخدام ترخيص Minecraft الرسمي الخاص بك:
 
-1. انقر فوق ملفك الشخصي/الصورة الرمزية (أو **"إدارة الحساب"**) في الجزء العلوي الأيمن لفتح مدير الحساب:
+1. انقر على صورة ملفك الشخصي (أو **"إدارة الحساب"**) في الزاوية العلوية لفتح مدير الحسابات:
 
    <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
-2. انقر فوق **"إضافة حساب"**، واختر **Microsoft**، ثم تابع عملية تسجيل الدخول:
+2. انقر فوق **"إضافة حساب"**، واختر **Microsoft**، ثم أكمل تسجيل الدخول:
 
    <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
-> 💡 **تسجيل الدخول عبر رمز الجهاز (Device Code):**  
-> إذا كنت لا ترغب في كتابة كلمة المرور الخاصة بك داخل اللانشر، فحدد خيار **"تسجيل الدخول عبر رمز الجهاز"** (Login by Device Code). سيعرض XMCL رمزًا فريدًا؛ ما عليك سوى زيارة الرابط `microsoft.com/link` في متصفح الويب الخاص بك، وإدخال الرمز، وتأكيد تسجيل الدخول.
+> 💡 **تسجيل الدخول برمز الجهاز (Device Code):**  
+> إذا كنت تفضل عدم كتابة كلمة المرور داخل المشغل، حدد **"تسجيل الدخول برمز الجهاز"**. سيعرض XMCL رمزاً مكوناً من 8 أرقام؛ تفضل بزيارة [microsoft.com/link](https://microsoft.com/link) في متصفحك وأدخل الرمز للتأكيد.
 
 ---
 
-## 🔍 2. كيف تعمل عملية المصادقة
+## 🔍 2. خطوات التحقق الثلاثية لحسابات Microsoft
 
-لتشغيل نسخة مرخصة من ماينكرافت، يجب على اللانشر التحقق من هويتك عبر ثلاث طبقات أمان منفصلة:
+عند تسجيل الدخول، يتواصل المشغل عبر 3 مراحل تحقق متتالية:
 
 <div style="display: flex; flex-direction: column; gap: 16px; margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
   <div style="display: flex; align-items: center; gap: 8px;">
-    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 مصافحة المصادقة (Handshake):</span>
+    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 مراحل التحقق الثلاث:</span>
   </div>
   <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; margin: 10px 0;">
     <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #3b82f6; font-size: 0.85rem;">الخطوة 1</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">تسجيل دخول Microsoft</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">التحقق من كلمة المرور</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">مصادقة Microsoft</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">التحقق من البريد وكلمة المرور</div>
     </div>
     <div style="color: var(--vp-c-text-3); font-weight: bold;">➔</div>
     <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #10b981; font-size: 0.85rem;">الخطوة 2</div>
       <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">خدمات Xbox Live</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">جلب الـ Gamertag</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">جلب الاسم المستعار Gamertag</div>
     </div>
-    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ فشل هنا</div>
+    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ الفشل الشائع</div>
     <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #ef4444; font-size: 0.85rem;">الخطوة 3 (التبادل)</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">رمز ماينكرافت المميز</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">التحقق من الرخصة</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">ترخيص Mojang Java</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">التحقق من ملكية اللعبة للكمبيوتر</div>
     </div>
   </div>
   <p style="font-size: 0.9rem; color: var(--vp-c-text-2); margin: 0; text-align: center; line-height: 1.6;">
-    الخطأ <strong>"failed to exchange Xbox token"</strong> يعني أن الخطوتين 1 و 2 قد تمتا بنجاح، ولكن خوادم مصادقة Mojang رفضت عملية تبادل الرمز المميز في الخطوة 3.
+    إذا فشلت الخطوة 3، سيعرض المشغل خطأ <strong>"failed to exchange Xbox token"</strong> أو ستفتح اللعبة في <strong>الوضع التجريبي (Demo Mode)</strong>. هذا يعني أن خوادم Mojang لم تعثر على ترخيص نشط لـ <strong>Minecraft: Java Edition</strong> على هذا الحساب.
   </p>
 </div>
 
 ---
 
-## 🛠 3. ثلاثة أسباب رئيسية وحلولها
+## 🛑 3. الخطأ الشائع: الفرق بين Bedrock Edition و Java Edition
 
-### 1. لا توجد رخصة ماينكرافت على هذا الحساب
+**مشغل XMCL مخصص حصرياً لنسخة Minecraft: Java Edition (الكمبيوتر الشخصي Windows و macOS و Linux).**
+
+يقوم العديد من المستخدمين بشراء اللعبة على الهواتف أو أجهزة الكونسول ثم يحاولون تسجيل الدخول في XMCL:
+
+| منصة الشراء | النسخة المملوكة | هل يدعمها XMCL؟ | سبب المشكلة |
+| :--- | :--- | :--- | :--- |
+| 📱 **الهاتف / الجهاز اللوحي (iOS / Android)** | Bedrock Edition | ❌ لا | شراء الهاتف لا يمنح ترخيص نسخة Java للكمبيوتر. |
+| 🎮 **منصة PlayStation 4 / 5** | Bedrock Edition | ❌ لا | الشراء من متجر PSN خاص بالكونسول فقط. |
+| 🎮 **منصة Xbox One / Series X\|S** | Bedrock Edition | ❌ لا | شراء نسخة الكونسول لا ينتقل إلى كمبيوتر Java. |
+| 🕹️ **جهاز Nintendo Switch** | Bedrock Edition | ❌ لا | الشراء من متجر Nintendo eShop مخصص لجهاز Switch. |
+| 💻 **الكمبيوتر (حزمة Minecraft: Java & Bedrock)** | Java + Bedrock | ✅ **نعم** | مدعوم رسمياً بالكامل! |
+| 🟢 **اشتراك PC Game Pass / Ultimate** | Java + Bedrock | ✅ **نعم** | مدعوم طوال فترة سريان الاشتراك. |
+
+> ⚠️ **تنبيه هام:**  
+> إذا كنت قد اشتريت Minecraft فقط على **الهاتف** أو **PlayStation** أو **Xbox** أو **Switch**، فإن خوادم Mojang ستؤكد أن حسابك **لا يمتلك نسخة Java Edition**.  
+> للعب نسخة Java الرسمية على الكمبيوتر، يجب شراء حزمة **"Minecraft: Java & Bedrock Edition for PC"** من موقع [Minecraft.net](https://www.minecraft.net/) أو الحصول على اشتراك نشط في **PC Game Pass**.
+
+---
+
+## 🛠 4. استكشاف أخطاء تسجيل الدخول وحلها
+
+### السبب أ: عدم وجود ترخيص Java Edition على هذا الحساب
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(239, 68, 68, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #ef4444; font-weight: bold; font-size: 1.25rem;">
     🎮
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">السبب: لم تعثر خوادم Mojang على اللعبة المشتراة</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">هذا هو السبب الأكثر شيوعًا. لقد قمت بتسجيل الدخول بنجاح إلى حساب Microsoft، ولكن Mojang تخبر اللانشر أن هذا الحساب المحدد لا يمتلك ترخيصًا للعبة ماينكرافت.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Mojang لا تعثر على ترخيص للكمبيوتر</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">تم توثيق الحساب بنجاح، لكن قاعدة بيانات Mojang لا تحتوي على أي سجل شراء لنسخة Java Edition.</p>
   </div>
 </div>
 
-#### كيفية الإصلاح:
-* **التحقق من الشراء:** قم بتسجيل الدخول باستخدام حساب Microsoft الخاص بك على موقع [Minecraft.net](https://www.minecraft.net/). تحقق مما إذا كنت ترى خيار التنزيل بدلاً من مطالبة لشراء اللعبة.
-* **التحقق من حالة Game Pass:** إذا كنت تلعب عبر **Xbox Game Pass**، فتأكد من أن اشتراكك نشط وأنك تسجل الدخول باستخدام حساب Microsoft الدقيق المرتبط بالاشتراك النشط.
-* **التحقق المزدوج من البريد الإلكتروني:** تأكد من أنك لا تسجل الدخول باستخدام حساب Microsoft آخر (مثل بريد إلكتروني مدرسي أو عمل) بدلاً من الحساب الشخصي الذي تم الشراء من خلاله.
+#### خطوات التحقق والحل:
+* **التحقق من موقع Minecraft.net:** سجل الدخول إلى [Minecraft.net](https://www.minecraft.net/). إذا ظهر زر "اشترِ الآن" بدلاً من اسم ملفك الشخصي، فإن هذا الحساب لا يملك اللعبة.
+* **سجل الطلبات:** تفضل بزيارة [account.microsoft.com/billing/orders](https://account.microsoft.com/billing/orders) للتأكد من تفاصيل الشراء.
+* **التحقق من البريد الإلكتروني:** تأكد من عدم استخدام بريد إلكتروني مدرسي أو للعمل بدلاً من حسابك الشخصي الأساسي.
+* **حالة Game Pass:** تأكد من أن اشتراكك سارٍ ويتضمن الكمبيوتر (PC Game Pass أو Ultimate).
 
 ---
 
-### 2. لا يمتلك الحساب ملف تعريف Xbox (الـ Gamertag مفقود)
+### السبب ب: عدم إنشاء ملف شخصي لـ Xbox Live
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(245, 158, 11, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #f59e0b; font-weight: bold; font-size: 1.25rem;">
-    👾
+    👤
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">السبب: حساب Microsoft غير مهيأ للألعاب بعد</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">يحتاج حساب Microsoft الخاص بك إلى ملف تعريف Xbox Live مرتبط لجلب رموز ماينكرافت. إذا قمت بشراء ماينكرافت مؤخرًا أو لم تشغل اللعبة من قبل مطلقًا، فقد لا يكون هذا الملف التعريفي قد تم إنشاؤه بعد، مما يؤدي إلى تشغيل اللعبة في **وضع العرض التجريبي**.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">الحساب يفتقر إلى Gamertag</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">الحسابات الجديدة غالباً لا تحتوي على ملف Xbox Live نشط، مما يمنع إنشاء رمز المصادقة.</p>
   </div>
 </div>
 
-#### كيفية الإصلاح:
-1. انتقل إلى الموقع الرسمي [Xbox.com](https://www.xbox.com/).
-2. قم بتسجيل الدخول باستخدام تفاصيل حساب Microsoft الخاص بك.
-3. إذا طُلب منك ذلك، قم بإنشاء ملف تعريف Xbox Live مجاني (عبر تحديد Gamertag والصورة الرمزية الخاصة بك).
-4. بمجرد إنشاء الملف التعريفي، قم بإعادة تشغيل XMCL وحاول تسجيل الدخول مجددًا.
+#### الحل:
+1. افتح موقع [Xbox.com](https://www.xbox.com/).
+2. انقر على **تسجيل الدخول** في الأعلى.
+3. وافق على الشروط وأنشئ **Gamertag** (اسم اللاعب).
+4. انتظر دقيقة واحدة ثم أعد المحاولة في XMCL.
 
 ---
 
-### 3. أخطاء الشبكة أو الاتصالات المحظورة
+### السبب ج: قيود الشبكة وحجب خوادم التوثيق
 
-<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); margin: 20px 0;">
-  <div style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #3b82f6; font-weight: bold; font-size: 1.25rem;">
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: rgba(139, 92, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #8b5cf6; font-weight: bold; font-size: 1.25rem;">
     🌐
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">السبب: مشاكل الـ DNS أو القيود الشبكية الإقليمية</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">في مناطق معينة أو مع بعض مزودي خدمة الإنترنت المقيدين، قد يتم حظر أو تعطيل الاتصال بخوادم مصادقة Xbox Live أو Mojang.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">تعذر الاتصال بخوادم Mojang أو Xbox</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">تمنع قيود مزود الإنترنت أو الجدار الناري الاتصال بالنطاق <code>api.minecraftservices.com</code>.</p>
   </div>
 </div>
 
-#### كيفية الإصلاح:
-* **استخدم شبكة افتراضية خاصة (VPN):** إذا كنت في منطقة تطبق قيودًا على الإنترنت، فاستخدم VPN لإكمال عملية مصادقة Microsoft بنجاح.
-* **تغيير خوادم الـ DNS:** قم بتغيير خوادم الـ DNS الخاصة بنظامك إلى خوادم عامة وسريعة (مثل Google DNS: `8.8.8.8` و `8.8.4.4` أو Cloudflare DNS: `1.1.1.1`).
-* **أعد المحاولة لاحقًا:** قد تواجه خوادم Microsoft ضغطًا مؤقتًا. انتظر بضع دقائق وحاول مرة أخرى.
+#### الحل:
+* **استخدام VPN:** اتصل بشبكة VPN موثوقة قبل تسجيل الدخول.
+* **إعداد البروكسي في XMCL:** في **الإعدادات** -> **إعدادات الشبكة**، أدخل بيانات الخادم الوكيل (HTTP/HTTPS/SOCKS5).
+* **فحص ملف hosts:** تأكد من عدم وجود توجيهات قديمة لنطاق `mojang.com` في ملف hosts بالنظام.
 
 ---
 
-## 🚪 4. وضع الأوفلاين وخيارات تسجيل الدخول البديلة (اللعب بدون حساب Microsoft)
+## 🎮 هل لا تمتلك ترخيصاً مدفوعاً؟
 
-إذا كنت لا تملك حساب Microsoft رسميًا، أو ترغب في اللعب دون اتصال بالإنترنت على خادم محلي خاص بك، فإن XMCL يوفر طرق تسجيل دخول بديلة.
+إذا كنت لا تمتلك ترخيصاً رسمياً حالياً، يمكنك اللعب باستخدام **الوضع غير المتصل (Offline Mode)** أو خوادم السكنات البديلة.
 
-### الخيار أ: اللعب المحلي / بدون اتصال بالإنترنت (وضع المطور)
-
-يسمح لك **وضع المطور** (Developer Mode) باللعب محليًا دون اتصال بالإنترنت باستخدام أي اسم مستخدم تريده ودون كلمة مرور.
-
-1. افتح مدير الحساب في الجزء العلوي الأيمن.
-2. انقر فوق **"إضافة حساب"** (Add Account).
-3. اختر خيار **مطور** (Developer) من القائمة المتاحة:
-
-   <img src="/guidephoto/developer-mode.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. أدخل أي اسم مستخدم ترغب فيه وأكد الخطوة.
-5. يمكنك الآن تشغيل اللعبة. **ملاحظة:** يسمح حساب الأوفلاين بالدخول فقط إلى الخوادم التي تم تعطيل التحقق الرسمي بها (أي `online-mode=false` في ملف إعدادات الخادم)، وستستخدم شخصيتك المظهر الافتراضي للعبة (Steve/Alex).
-
----
-
-### الخيار ب: خوادم المظاهر الخارجية (Yggdrasil API)
-
-إذا كنت ترغب في اللعب بمظهرك المخصص (Skin) على خوادم خاصة، فإن XMCL يدعم خدمات مصادقة بديلة مثل **LittleSkin** أو **Ely.by** أو أي خوادم Yggdrasil مخصصة.
-
-1. في مدير الحساب، انقر فوق **"إضافة حساب"**.
-2. اختر المنصة التي تريدها (مثال: **LittleSkin** أو **Yggdrasil** لكتابة عنوان API مخصص).
-3. أدخل تفاصيل تسجيل الدخول الخاصة بك المرتبطة بهذه الخدمة:
-
-   <img src="/guidephoto/reg-account.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. سيقوم اللانشر تلقائيًا بجلب مظهرك وتفاصيل ملفك التعريفي مباشرة من هذه المنصة.
+👉 **[الدليل الكامل: اللعب بدون ترخيص (الوضع غير المتصل والحسابات البديلة)](./offline-mode)**

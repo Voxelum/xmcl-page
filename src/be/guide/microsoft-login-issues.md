@@ -1,147 +1,144 @@
-# Кіраўніцтва па ўваходзе ў Microsoft і дэма-рэжыме
+# Праблемы з уваходам праз Microsoft, Bedrock vs Java і ліцэнзіяй
 
-Гэтае кіраўніцтва тлумачыць, як дадаць свой акаўнт Microsoft у XMCL, як працуе працэс аўтарызацыі і як вырашыць распаўсюджаныя памылкі ўваходу, такія як **"failed to exchange Xbox token"** або праблема, калі акаўнт запускаецца толькі ў **дэма-рэжыме (Demo Mode)**.
+Гэты даведнік тлумачыць, як працуе аўтарызацыя Microsoft у XMCL, чаму ўзнікаюць памылкі ўваходу (напрыклад, **"failed to exchange Xbox token"** або не набыта), чаму гульня можа запускацца ў **Дэма-рэжыме (Demo Mode)**, прынцыповую розніцу паміж **Bedrock Edition (тэлефон/кансолі)** і **Java Edition (ПК)**, а таксама спосабы вырашэння праблем з уліковым запісам.
 
 ---
 
-## 🔑 1. Як дадаць акаўнт Microsoft
+## 🔑 1. Уваход праз уліковы запіс Microsoft
 
-Каб гуляць у Minecraft з выкарыстаннем афіцыйнага акаўнта, трэба ўвайсці ў сістэму:
+Каб увайсці з афіцыйнай ліцэнзіяй Minecraft:
 
-1. Націсніце на свой профіль/аватар (або **"Кіраванне акаўнтам"**) уверсе справа, каб адкрыць менеджэр акаўнтаў:
+1. Націсніце на свой аватар (або **«Кіраванне ўліковымі запісамі»**) у правым верхнім куце лаўнчара:
 
    <video src="/guidephoto/My%20stuff.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
-2. Націсніце **"Дадаць акаўнт"**, абярыце **Microsoft** і прайдзіце аўтарызацыю:
+2. Націсніце **«Дадаць уліковы запіс»**, абярыце **Microsoft** і выканайце ўваход:
 
    <video src="/guidephoto/add%20account.mp4" controls autoplay loop muted playsinline style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;"></video>
 
 > 💡 **Уваход праз код прылады (Device Code):**  
-> Калі вы не хочаце ўводзіць свой пароль непасрэдна ў лаўнчары, адзначце опцыю **"Login by Device Code"** (Уваход праз код прылады). XMCL пакажа код; вам трэба будзе перайсці на старонку `microsoft.com/link` у браўзеры, увайсці там і ўвесці код для пацверджання.
+> Калі вы не жадаеце ўводзіць пароль у лаўнчары, адзначце **«Уваход па кодзе прылады»**. XMCL згенеруе 8-значны код; адкрыйце [microsoft.com/link](https://microsoft.com/link) у браўзеры і пацвердзіце ўваход.
 
 ---
 
-## 🔍 2. Як працуе працэс аўтарызацыі
+## 🔍 2. Трохузроўневы працэс праверкі Microsoft
 
-Каб запусціць ліцэнзійную копію Minecraft, лаўнчар павінен пацвердзіць вашу асобу на трох розных узроўнях бяспекі:
+Падчас уваходу лаўнчар праходзіць праз тры паслядоўныя этапы:
 
 <div style="display: flex; flex-direction: column; gap: 16px; margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
   <div style="display: flex; align-items: center; gap: 8px;">
-    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 Сеткавы поціск рук (Handshake):</span>
+    <span style="font-weight: 600; font-size: 1.1rem; color: var(--vp-c-text-1);">🔑 3 крокі праверкі ліцэнзіі:</span>
   </div>
   <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; margin: 10px 0;">
     <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #3b82f6; font-size: 0.85rem;">КРОК 1</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Уваход Microsoft</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Праверка пароля</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Microsoft OAuth</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Праверка лагіна і пароля</div>
     </div>
     <div style="color: var(--vp-c-text-3); font-weight: bold;">➔</div>
     <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #10b981; font-size: 0.85rem;">КРОК 2</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Службы Xbox Live</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Атрыманне Gamertag</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Сэрвісы Xbox Live</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Атрыманне Xbox Gamertag</div>
     </div>
-    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ Памылка тут</div>
+    <div style="color: var(--vp-c-text-3); font-weight: bold; color: #ef4444;">➔ ❌ Частая памылка</div>
     <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); padding: 12px; border-radius: 8px; text-align: center; min-width: 150px;">
       <div style="font-weight: 600; color: #ef4444; font-size: 0.85rem;">КРОК 3 (Абмен)</div>
-      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Токен Minecraft</div>
-      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Праверка ліцэнзіі</div>
+      <div style="font-size: 0.9rem; margin-top: 4px; color: var(--vp-c-text-1);">Ліцэнзія Mojang Java</div>
+      <div style="font-size: 0.75rem; color: var(--vp-c-text-3);">Праверка пакупкі на ПК</div>
     </div>
   </div>
   <p style="font-size: 0.9rem; color: var(--vp-c-text-2); margin: 0; text-align: center; line-height: 1.6;">
-    Памылка <strong>"failed to exchange Xbox token"</strong> азначае, што Крок 1 і Крок 2 прайшлі паспяхова, але серверы аўтарызацыі Mojang адхілілі абмен токенамі на Кроку 3.
+    Калі Крок 3 завяршаецца памылкай, лаўнчар паведамляе <strong>"failed to exchange Xbox token"</strong> або гульня адкрываецца ў <strong>Дэма-рэжыме</strong>. Гэта значыць, што Mojang не знайшоў ліцэнзіі <strong>Minecraft: Java Edition</strong> на гэтым уліковым запісе.
   </p>
 </div>
 
 ---
 
-## 🛠 3. Тры галоўныя прычыны і іх вырашэнне
+## 🛑 3. Галоўная памылка: Bedrock Edition супраць Java Edition
 
-### 1. Няма ліцэнзіі Minecraft на гэтым акаўнце
+**XMCL прызначаны выключна для Minecraft: Java Edition (ПК пад кіраваннем Windows, macOS і Linux).**
+
+Часта гульцы купляюць гульню на іншай платформе і сутыкаюцца з памылкай уваходу:
+
+| Дзе набыты Minecraft | Купленае выданне | Сумяшчальна з XMCL? | Тлумачэнне |
+| :--- | :--- | :--- | :--- |
+| 📱 **Тэлефон / Планшэт (iOS / Android)** | Bedrock Edition | ❌ Не | Мабільная версія не дае ліцэнзіі на ПК Java Edition. |
+| 🎮 **Кансоль PlayStation 4 / 5** | Bedrock Edition | ❌ Не | Пакупка ў PSN дзейнічае толькі на кансолі. |
+| 🎮 **Кансоль Xbox One / Series X\|S** | Bedrock Edition | ❌ Не | Пакупка для кансолі не пераносіцца на ПК Java. |
+| 🕹️ **Nintendo Switch** | Bedrock Edition | ❌ Не | Пакупка ў Nintendo eShop прызначана толькі для Switch. |
+| 💻 **ПК (Комплект Minecraft: Java & Bedrock)** | Java + Bedrock | ✅ **Так** | Поўная афіцыйная падтрымка! |
+| 🟢 **Падпіска PC Game Pass / Ultimate** | Java + Bedrock | ✅ **Так** | Падтрымліваецца на час дзеяння падпіскі. |
+
+> ⚠️ **Важна:**  
+> Калі вы куплялі Minecraft толькі на **смартфоне**, **PlayStation**, **Xbox** або **Switch**, серверам Mojang вядома, што на вашым уліковым запісе **няма Java Edition**.  
+> Каб гуляць у афіцыйную Java Edition на ПК, неабходна набыць камплект **«Minecraft: Java & Bedrock Edition for PC»** на [Minecraft.net](https://www.minecraft.net/) або аформіць **PC Game Pass**.
+
+---
+
+## 🛠 4. Вырашэнне праблем з уваходам
+
+### Прычына А: Няма ліцэнзіі Java Edition на гэтым акаўнце
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(239, 68, 68, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #ef4444; font-weight: bold; font-size: 1.25rem;">
     🎮
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Прычына: Серверы Mojang не знайшлі набытую гульню</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Гэта самая частая прычына. Вы паспяхова ўвайшлі ў акаўнт Microsoft, але Mojang паведамляе лаўнчару, што гэты акаўнт не мае ліцэнзіі на Minecraft Java Edition.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Mojang не бачыць купленай версіі для ПК</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Уліковы запіс Microsoft пацверджаны, але ў базе Mojang няма запісу аб набыцці Java Edition.</p>
   </div>
 </div>
 
-#### Як гэта выправіць:
-* **Праверце набыццё:** Увайдзіце з вашым акаўнтам Microsoft на сайце [Minecraft.net](https://www.minecraft.net/). Пераканайцеся, што вы бачыце кнопку спампоўвання гульні, а не прапанову купіць яе.
-* **Праверце стан Game Pass:** Калі вы гуляеце праз **Xbox Game Pass**, пераканайцеся, што ваша падпіска актыўная і вы ўваходзіце менавіта з тым акаўнтам Microsoft, які звязаны з падпіскай.
-* **Праверце пошту:** Пераканайцеся, што вы не ўвайшлі з іншай поштай (напрыклад, рабочай ці вучэбнай) замест асабістай, на якую куплялі гульню.
+#### Як выправіць:
+* **Праверце на Minecraft.net:** Увайдзіце на [Minecraft.net](https://www.minecraft.net/). Калі замест нікнейма адлюстроўваецца кнопка «Купіць зараз», на гэтым акаўнце няма гульні.
+* **Гісторыя заказаў:** Праверце пакупкі на [account.microsoft.com/billing/orders](https://account.microsoft.com/billing/orders).
+* **Праверка пошты:** Пераканайцеся, што вы не ўваходзіце праз працоўную або школьную пошту.
+* **Статус Game Pass:** Праверце, ці актыўная падпіска і ці ўключае яна ПК.
 
 ---
 
-### 2. Акаўнт не мае профілю Xbox (Адсутнічае Gamertag)
+### Прычына Б: Адсутнічае профіль Xbox Live
 
 <div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); margin: 20px 0;">
   <div style="flex-shrink: 0; background: rgba(245, 158, 11, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #f59e0b; font-weight: bold; font-size: 1.25rem;">
-    👾
+    👤
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Прычына: Акаўнт Microsoft не настроены для гульняў</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Вашаму акаўнту Microsoft патрэбны звязаны профіль Xbox Live для атрымання токенаў гульні. Калі вы набылі гульню нядаўна або ніколі не запускалі яе раней, гэты профіль яшчэ не створаны, што прыводзіць да запуску ў **дэма-рэжыме**.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">На акаўнце няма Xbox Gamertag</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">На новых акаўнтах Microsoft часта адсутнічае створаны профіль Xbox Live.</p>
   </div>
 </div>
 
-#### Як гэта выправіць:
-1. Перайдзіце на афіцыйны сайт [Xbox.com](https://www.xbox.com/).
-2. Увайдзіце з дадзенымі вашага акаўнта Microsoft.
-3. Калі з'явіцца прапанова, стварыце бясплатны профіль Xbox Live (абярыце Gamertag і аватар).
-4. Пасля стварэння профілю перазапусціце XMCL і паспрабуйце ўвайсці зноў.
+#### Вырашэнне:
+1. Адкрыйце [Xbox.com](https://www.xbox.com/).
+2. Націсніце **Увайсці** ўверсе справа.
+3. Прыміце ўмовы і прыдумайце **Gamertag**.
+4. Пачакайце 1–2 хвіліны і паўтарыце ўваход у XMCL.
 
 ---
 
-### 3. Памылкі сеткі або заблакаваныя злучэнні
+### Прычына В: Сеткавыя абмежаванні і DNS
 
-<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); margin: 20px 0;">
-  <div style="flex-shrink: 0; background: rgba(59, 130, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #3b82f6; font-weight: bold; font-size: 1.25rem;">
+<div style="display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: 12px; background: rgba(139, 92, 246, 0.05); border: 1px solid rgba(139, 92, 246, 0.2); margin: 20px 0;">
+  <div style="flex-shrink: 0; background: rgba(139, 92, 246, 0.1); padding: 8px; border-radius: 8px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #8b5cf6; font-weight: bold; font-size: 1.25rem;">
     🌐
   </div>
   <div>
-    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Прычына: Праблемы з DNS або рэгіянальныя сеткавыя блакіроўкі</h4>
-    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">У некаторых рэгіёнах ці ў асобных інтэрнэт-праўдараў доступ да сервераў аўтарызацыі Xbox Live ці Mojang можа блакавацца або працаваць са збоямі.</p>
+    <h4 style="margin-top: 0 !important; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1);">Блакаванне сувязі з серварамі Mojang / Xbox</h4>
+    <p style="color: var(--vp-c-text-2); font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">Брандмаўэр або памылкі DNS перашкаджаюць злучэнню з <code>api.minecraftservices.com</code>.</p>
   </div>
 </div>
 
-#### Як гэта выправіць:
-* **Выкарыстоўвайце VPN:** Калі злучэнне ў вашай сетцы блакуецца, выкарыстоўвайце VPN для праходжання працэсу аўтарызацыі Microsoft.
-* **Змяніце DNS:** Выкарыстоўвайце хуткія публічныя DNS (напрыклад, Google DNS: `8.8.8.8` і `8.8.4.4` або Cloudflare DNS: `1.1.1.1`).
-* **Паспрабуйце пазней:** Серверы Microsoft могуць быць часова перагружаныя. Пачакайце некалькі хвілін і паспрабуйце зноў.
+#### Вырашэнне:
+* **Выкарыстоўвайце VPN:** Падключыце надзейны VPN перад уваходам.
+* **Наладзьце проксі ў XMCL:** У **Наладах** -> **Налады сеткі** ўвядзіце адрас проксі (HTTP/HTTPS/SOCKS5).
+* **Праверце файл hosts:** Пераканайцеся, што ў файле hosts няма старых запісаў для `mojang.com`.
 
 ---
 
-## 🚪 4. Офлайн-рэжым і альтэрнатыўныя варыянты ўваходу (Гульня без акаўнта Microsoft)
+## 🎮 Няма афіцыйнай ліцэнзіі?
 
-Калі ў вас няма ліцэнзійнага акаўнта Microsoft, вы хочаце гуляць без інтэрнэту або на прыватным лакальным серверы, XMCL прапануе іншыя метады ўваходу.
+Калі ў вас пакуль няма ліцэнзіі, вы можаце гуляць праз **Афлайн-рэжым** або іншыя сістэмы скінаў.
 
-### Варыянт А: Лакальная гульня / Офлайн (Рэжым распрацоўшчыка)
-
-**Рэжым распрацоўшчыка** (Developer Mode) дазваляе гуляць лакальна без пароля пад любым імем карыстальніка.
-
-1. Адкрыйце менеджэр акаўнтаў уверсе справа.
-2. Націснуць **"Дадаць акаўнт"** (Add Account).
-3. Абярыце варыянт **Распрацоўшчык** (Developer) са спісу:
-
-   <img src="/guidephoto/developer-mode.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. Увядзіце жаданае імя гульца і пацвердзіце.
-5. Цяпер вы можаце запускаць гульню. **Заўвага:** У офлайн-рэжыме вы можаце гуляць толькі на серверах з адключанай праверкай ліцэнзіі (`online-mode=false` у наладках сервера), а ваш персанаж будзе мець стандартны скін.
-
----
-
-### Варыянт Б: Альтэрнатыўныя сістэмы скінаў (Yggdrasil API)
-
-Калі вы хочаце гуляць з уласным скінам на прыватных серверах, XMCL падтрымлівае іншыя сэрвісы аўтарызацыі, такія як **LittleSkin**, **Ely.by** або іншыя кастомныя серверы Yggdrasil.
-
-1. У менеджэры акаўнтаў націсніце **Дадаць акаўнт**.
-2. Выберыце патрабаваную платформу (напрыклад, **LittleSkin** або **Yggdrasil** для ўводу адраса кастомнага API).
-3. Увядзіце дадзеныя ўваходу ад гэтага сэрвісу:
-
-   <img src="/guidephoto/reg-account.png" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
-
-4. Лаўнчар аўтаматычна загрузіць ваш скін і налады профілю з выбранай платформы.
+👉 **[Поўны даведнік: Гульня без ліцэнзіі (Афлайн-рэжым і альтэрнатыўныя акаўнты)](./offline-mode)**
