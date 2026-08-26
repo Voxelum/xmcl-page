@@ -35,7 +35,7 @@ Chaque offre Together donne accès à un assistant IA capable d'analyser les rap
 | 🏡 **Together Lodge** *(Recommandé)* | **6 \$** / mois + **0,09 \$** / h | 4 à 6 amis (Grands modpacks) | 6 Gio RAM, 3/6 vCPU, 48 Gio NVMe |
 | 🏰 **Together Village** | **8 \$** / mois + **0,12 \$** / h | 6 à 10 amis (Modpacks techniques/magiques) | 8 Gio RAM, 4/8 vCPU, 64 Gio NVMe |
 
-👉 **[Voir les offres sur le portail Together](/fr/together/)**
+👉 **[Voir les offres sur le portail Together](/en/together/)**
 
 ---
 
@@ -57,7 +57,7 @@ Lors de l'achat d'un forfait ou du rechargement du solde, une erreur de paiement
 #### Étape 1 : Utiliser une connexion VPN stable
 Si la page de paiement refuse de se charger ou bloque l'opération :
 1. Activez un **VPN** fiable et connectez-vous à une région prise en charge (**Allemagne, Royaume-Uni, États-Unis ou pays de l'UE**).
-2. Actualisez la [page de paiement XMCL Together](/fr/together/) avec le VPN activé.
+2. Actualisez la [page de paiement XMCL Together](/en/together/) avec le VPN activé.
 3. Finalisez le paiement par carte.
 
 #### Étape 2 : Vérifier les paiements en ligne & 3D Secure
@@ -72,8 +72,8 @@ Effacez le cache ou ouvrez la page en mode navigation privée avec le VPN actif.
 ## 🛡️ 4. Sécurité, confidentialité et remboursement
 
 * **Certification PCI-DSS** : XMCL ne stocke aucun numéro de carte bancaire ni code CVV.
-* **Remboursement du solde sous 7 jours** : Selon nos [Conditions d'utilisation](/fr/together/terms), le solde non utilisé peut être remboursé sur demande dans les 7 jours.
-* **Conformité RGPD** : Respect total du [RGPD européen](/fr/together/privacy). Les journaux techniques sont conservés 90 jours au maximum.
+* **Remboursement du solde sous 7 jours** : Selon nos [Conditions d'utilisation](/en/together/terms), le solde non utilisé peut être remboursé sur demande dans les 7 jours.
+* **Conformité RGPD** : Respect total du [RGPD européen](/en/together/privacy). Les journaux techniques sont conservés 90 jours au maximum.
 
 ---
 

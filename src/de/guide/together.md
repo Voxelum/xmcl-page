@@ -35,7 +35,7 @@ Jeder Together-Plan enthält Zugriff auf den KI-Copiloten zur automatischen Anal
 | 🏡 **Together Lodge** *(Empfohlen)* | **\$6** / Mo + **\$0.09** / Std | 4–6 Freunde (Große Modpacks) | 6 GiB RAM, 3/6 vCPU, 48 GiB NVMe |
 | 🏰 **Together Village** | **\$8** / Mo + **\$0.12** / Std | 6–10 Freunde (Tech/Magie-Modpacks) | 8 GiB RAM, 4/8 vCPU, 64 GiB NVMe |
 
-👉 **[Pläne auf dem offiziellen Together-Portal ansehen](/de/together/)**
+👉 **[Pläne auf dem offiziellen Together-Portal ansehen](/en/together/)**
 
 ---
 
@@ -57,7 +57,7 @@ Beim Versuch, ein Paket zu kaufen oder Guthaben aufzuladen, kann ein Zahlungsfeh
 #### Schritt 1: Stabile VPN-Verbindung nutzen
 Wenn der Checkout regional blockiert wird:
 1. Aktivieren Sie ein zuverlässiges **VPN** und verbinden Sie sich mit einer unterstützten Region (**z. B. Deutschland, Großbritannien, USA oder ein EU-Land**).
-2. Laden Sie die [XMCL Together-Zahlungsseite](/de/together/) bei aktiver VPN-Verbindung neu.
+2. Laden Sie die [XMCL Together-Zahlungsseite](/en/together/) bei aktiver VPN-Verbindung neu.
 3. Führen Sie die Zahlung erneut durch.
 
 #### Schritt 2: Online-Zahlungen & 3D Secure prüfen
@@ -72,8 +72,8 @@ Löschen Sie den Browser-Cache oder nutzen Sie ein privates Fenster bei aktivem 
 ## 🛡️ 4. Sicherheit, Datenschutz & Rückerstattung
 
 * **PCI-DSS-Zertifizierung**: XMCL speichert niemals Kartennummern oder Bankdaten.
-* **7 Tage Rückgaberecht für Guthaben**: Gemäß den [Nutzungsbedingungen](/de/together/terms) kann ungenutztes Guthaben innerhalb von 7 Tagen erstattet werden.
-* **Datenschutzkonform nach DSGVO**: Vollständige Einhaltung der [EU-DSGVO](/de/together/privacy). Technische Logs werden maximal 90 Tage gespeichert.
+* **7 Tage Rückgaberecht für Guthaben**: Gemäß den [Nutzungsbedingungen](/en/together/terms) kann ungenutztes Guthaben innerhalb von 7 Tagen erstattet werden.
+* **Datenschutzkonform nach DSGVO**: Vollständige Einhaltung der [EU-DSGVO](/en/together/privacy). Technische Logs werden maximal 90 Tage gespeichert.
 
 ---
 

@@ -35,7 +35,7 @@ Każdy pakiet Together zawiera dostęp do asystenta AI, który analizuje raporty
 | 🏡 **Together Lodge** *(Polecany)* | **\$6** / mies. + **\$0.09** / godz. | 4–6 Znajomych (Duże paczki modów) | 6 GiB RAM, 3/6 vCPU, 48 GiB NVMe |
 | 🏰 **Together Village** | **\$8** / mies. + **\$0.12** / godz. | 6–10 Znajomych (Zaawansowane paczki techniczne) | 8 GiB RAM, 4/8 vCPU, 64 GiB NVMe |
 
-👉 **[Przejdź do portalu Together](/pl/together/)**
+👉 **[Przejdź do portalu Together](/en/together/)**
 
 ---
 
@@ -57,7 +57,7 @@ Podczas zakupu pakietu lub doładowania portfela może pojawić się błąd bram
 #### Krok 1: Użyj stabilnego połączenia VPN
 Jeśli bramka płatności nie ładuje się lub odrzuca transakcję z powodu lokalizacji:
 1. Włącz sprawdzony **VPN** i połącz się z obsługiwanym krajem (**np. Niemcy, Wielka Brytania, USA lub inny kraj UE**).
-2. Odśwież [stronę płatności XMCL Together](/pl/together/) przy włączonym VPN.
+2. Odśwież [stronę płatności XMCL Together](/en/together/) przy włączonym VPN.
 3. Wprowadź dane karty i zatwierdź płatność.
 
 #### Krok 2: Sprawdź limity i płatności internetowe w banku
@@ -72,8 +72,8 @@ Wyczyść pamięć podręczną lub otwórz okno prywatne z włączonym VPN.
 ## 🛡️ 4. Bezpieczeństwo, prywatność i zwroty
 
 * **Certyfikacja PCI-DSS**: XMCL nigdy nie przechowuje numerów kart ani kodów CVV.
-* **7 dni na zwrot niewykorzystanych środków**: Zgodnie z [Regulaminem świadczenia usług](/pl/together/terms), niewykorzystane środki z portfela można zwrócić na wniosek w ciągu 7 dni.
-* **Zgodność z RODO**: Pełna zgodność z europejskim [RODO](/pl/together/privacy). Dzienniki diagnostyczne przechowywane są maksymalnie przez 90 dni.
+* **7 dni na zwrot niewykorzystanych środków**: Zgodnie z [Regulaminem świadczenia usług](/en/together/terms), niewykorzystane środki z portfela można zwrócić na wniosek w ciągu 7 dni.
+* **Zgodność z RODO**: Pełna zgodność z europejskim [RODO](/en/together/privacy). Dzienniki diagnostyczne przechowywane są maksymalnie przez 90 dni.
 
 ---
 

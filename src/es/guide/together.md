@@ -35,7 +35,7 @@ Todos los planes incluyen un asistente de IA para analizar registros de fallos (
 | 🏡 **Together Lodge** *(Recomendado)* | **\$6** / mes + **\$0.09** / h | 4–6 Amigos (Modpacks pesados) | 6 GiB RAM, 3/6 vCPU, 48 GiB NVMe |
 | 🏰 **Together Village** | **\$8** / mes + **\$0.12** / h | 6–10 Amigos (Grandes modpacks técnicos) | 8 GiB RAM, 4/8 vCPU, 64 GiB NVMe |
 
-👉 **[Ver planes en el portal Together](/es/together/)**
+👉 **[Ver planes en el portal Together](/en/together/)**
 
 ---
 
@@ -57,7 +57,7 @@ Al intentar comprar un plan o recargar saldo, puede aparecer un error de pasarel
 #### Paso 1: Conectarse mediante una VPN estable
 Si la pasarela no carga o rechaza la compra por ubicación:
 1. Active una **VPN** estable y conéctese a una región compatible (**Alemania, Reino Unido, Estados Unidos o país de la UE**).
-2. Recargue la [página de pago de XMCL Together](/es/together/) con la VPN activa.
+2. Recargue la [página de pago de XMCL Together](/en/together/) con la VPN activa.
 3. Complete el pago con tarjeta.
 
 #### Paso 2: Verificar pagos internacionales y 3D Secure
@@ -72,8 +72,8 @@ Borre la caché o abra una ventana privada con la VPN encendida.
 ## 🛡️ 4. Seguridad, privacidad y reembolsos
 
 * **Certificación PCI-DSS**: XMCL nunca guarda números de tarjeta ni datos bancarios.
-* **Garantía de reembolso de saldo en 7 días**: Según nuestros [Términos de servicio](/es/together/terms), el saldo no utilizado puede ser reembolsado dentro de los 7 días posteriores a la recarga.
-* **Cumplimiento de privacidad**: Cumplimiento estricto con el [RGPD europeo](/es/together/privacy). Los registros técnicos se conservan un máximo de 90 días.
+* **Garantía de reembolso de saldo en 7 días**: Según nuestros [Términos de servicio](/en/together/terms), el saldo no utilizado puede ser reembolsado dentro de los 7 días posteriores a la recarga.
+* **Cumplimiento de privacidad**: Cumplimiento estricto con el [RGPD europeo](/en/together/privacy). Los registros técnicos se conservan un máximo de 90 días.
 
 ---
 

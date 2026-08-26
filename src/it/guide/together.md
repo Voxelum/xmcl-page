@@ -35,7 +35,7 @@ Ogni piano Together include un assistente IA per analizzare i crash log, trovare
 | 🏡 **Together Lodge** *(Consigliato)* | **\$6** / mese + **\$0.09** / h | 4–6 Amici (Modpack pesanti) | 6 GiB RAM, 3/6 vCPU, 48 GiB NVMe |
 | 🏰 **Together Village** | **\$8** / mese + **\$0.12** / h | 6–10 Amici (Grandi modpack tecnici) | 8 GiB RAM, 4/8 vCPU, 64 GiB NVMe |
 
-👉 **[Consulta i piani sul portale Together](/it/together/)**
+👉 **[Consulta i piani sul portale Together](/en/together/)**
 
 ---
 
@@ -57,7 +57,7 @@ Durante l'acquisto di un piano o la ricarica del saldo, potrebbe verificarsi un 
 #### Passaggio 1: Usa una connessione VPN stabile
 Se il gateway non si carica o blocca la transazione per posizione geografica:
 1. Attiva una **VPN** affidabile e connettiti a una regione supportata (**Germania, Regno Unito, Stati Uniti o un paese UE**).
-2. Ricarica la [pagina di pagamento di XMCL Together](/it/together/) con la VPN attiva.
+2. Ricarica la [pagina di pagamento di XMCL Together](/en/together/) con la VPN attiva.
 3. Completa la transazione con la carta.
 
 #### Passaggio 2: Abilita acquisti online all'estero & 3D Secure
@@ -72,8 +72,8 @@ Cancella la cache o apri la pagina in una finestra anonima con la VPN attiva.
 ## 🛡️ 4. Sicurezza, privacy e rimborso
 
 * **Certificazione PCI-DSS**: XMCL non memorizza mai numeri di carte o credenziali bancarie.
-* **Rimborso del saldo entro 7 giorni**: Come specificato nei [Termini di servizio](/it/together/terms), il saldo inutilizzato può essere rimborsato su richiesta entro 7 giorni.
-* **Conformità GDPR**: Piena conformità con il [GDPR europeo](/it/together/privacy). I registri tecnici vengono conservati per un massimo di 90 giorni.
+* **Rimborso del saldo entro 7 giorni**: Come specificato nei [Termini di servizio](/en/together/terms), il saldo inutilizzato può essere rimborsato su richiesta entro 7 giorni.
+* **Conformità GDPR**: Piena conformità con il [GDPR europeo](/en/together/privacy). I registri tecnici vengono conservati per un massimo di 90 giorni.
 
 ---
 

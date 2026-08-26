@@ -35,7 +35,7 @@ Todos os planos incluem assistência por IA para analisar relatórios de crash, 
 | 🏡 **Together Lodge** *(Recomendado)* | **\$6** / mês + **\$0.09** / h | 4–6 Amigos (Modpacks pesados) | 6 GiB RAM, 3/6 vCPU, 48 GiB NVMe |
 | 🏰 **Together Village** | **\$8** / mês + **\$0.12** / h | 6–10 Amigos (Grandes modpacks técnicos) | 8 GiB RAM, 4/8 vCPU, 64 GiB NVMe |
 
-👉 **[Acessar o portal oficial do Together](/pt/together/)**
+👉 **[Acessar o portal oficial do Together](/en/together/)**
 
 ---
 
@@ -57,7 +57,7 @@ Ao tentar assinar um plano ou recarregar saldo, pode ocorrer um erro na finaliza
 #### Passo 1: Conectar-se usando uma VPN estável
 Se a página de pagamento não carregar ou recusar a operação:
 1. Ative uma **VPN** confiável e conecte-se a uma região suportada (**como Alemanha, Reino Unido, Estados Unidos ou outro país da UE**).
-2. Atualize a [página de pagamento do XMCL Together](/pt/together/) com a VPN ativa.
+2. Atualize a [página de pagamento do XMCL Together](/en/together/) com a VPN ativa.
 3. Conclua o pagamento com cartão.
 
 #### Passo 2: Habilitar compras internacionais e 3D Secure
@@ -72,8 +72,8 @@ Limpe o cache ou abra uma janela privada com a VPN ativada.
 ## 🛡️ 4. Segurança, Privacidade e Reembolsos
 
 * **Padrão PCI-DSS**: O XMCL nunca armazena números de cartão de crédito nem dados bancários.
-* **Garantia de reembolso do saldo em 7 dias**: Conforme os [Termos de Serviço](/pt/together/terms), o saldo não utilizado pode ser reembolsado dentro de 7 dias após o depósito.
-* **Conformidade de Privacidade**: Total conformidade com o [GDPR europeu](/pt/together/privacy). Logs técnicos são mantidos por no máximo 90 dias.
+* **Garantia de reembolso do saldo em 7 dias**: Conforme os [Termos de Serviço](/en/together/terms), o saldo não utilizado pode ser reembolsado dentro de 7 dias após o depósito.
+* **Conformidade de Privacidade**: Total conformidade com o [GDPR europeu](/en/together/privacy). Logs técnicos são mantidos por no máximo 90 dias.
 
 ---
 
