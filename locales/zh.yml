@@ -602,6 +602,8 @@ commercial:
     cancelsOn: 将于 {date} 取消。
     renewsOn: 将于 {date} 续期。
     cancel: 取消套餐
+    create: 创建服务器
+    createError: 无法创建服务器。
     plansEyebrow: 共享托管
     choosePlan: 选择套餐
     planDescription: 月费加服务器运行时计费；每个有效套餐都赠送用于整合包与服务器配置的 AI 协助额度。

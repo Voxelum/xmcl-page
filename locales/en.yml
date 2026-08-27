@@ -589,6 +589,8 @@ commercial:
     cancelsOn: Cancels on {date}.
     renewsOn: Renews on {date}.
     cancel: Cancel plan
+    create: Create server
+    createError: The server could not be created.
     plansEyebrow: Shared hosting
     choosePlan: Choose a plan
     planDescription: Monthly access plus metered runtime. Every active plan includes AI assistance for modpack and server setup.

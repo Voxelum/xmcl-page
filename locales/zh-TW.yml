@@ -408,6 +408,8 @@ commercial:
     cancelsOn: 將於 {date} 取消。
     renewsOn: 將於 {date} 續期。
     cancel: 取消方案
+    create: 建立伺服器
+    createError: 無法建立伺服器。
     plansEyebrow: 共享託管
     choosePlan: 選擇方案
     planDescription: 月費加伺服器執行時計費；每個有效方案都贈送用於整合包與伺服器設定的 AI 協助額度。

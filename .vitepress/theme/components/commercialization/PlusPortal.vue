@@ -135,7 +135,29 @@
             <p><strong>{{ t('commercial.plus.catalog.aiIncluded') }}</strong>{{ t('commercial.plus.catalog.aiIncludedDescription') }}</p>
           </div>
           <div v-if="plan.id !== 'home'" class="plan-action">
-            <button type="button" disabled>{{ comingSoon }}</button>
+            <template v-if="serverManagementEnabled && accountSession.session">
+              <button
+                v-if="plan.subscriptions.length === 0"
+                type="button"
+                :disabled="mutating || loading"
+                @click="openPurchaseDialog(plan.planId!)"
+              >{{ t('commercial.server.select', { plan: plan.name }) }}</button>
+              <button
+                v-else-if="!serviceFor(plan.subscriptions[0]) && plan.subscriptions[0].status === 'active'"
+                type="button"
+                :disabled="mutating || loading"
+                @click="createServer(plan.subscriptions[0])"
+              >{{ t('commercial.server.create') }}</button>
+              <button
+                v-else-if="!plan.subscriptions[0].cancelAtPeriodEnd"
+                type="button"
+                class="secondary"
+                :disabled="mutating || loading"
+                @click="openCancelDialog(plan.subscriptions[0])"
+              >{{ t('commercial.server.cancel') }}</button>
+              <span v-else class="plan-state">{{ subscriptionStatus(plan.subscriptions[0]) }}</span>
+            </template>
+            <button v-else type="button" disabled>{{ comingSoon }}</button>
           </div>
           <div v-else class="plan-action">
             <template v-if="accountSession.session">
@@ -273,7 +295,7 @@ const regionLatencies = ref<Record<string, number>>({})
 const regionTestMessage = ref('')
 const regionTestController = ref<AbortController>()
 const purchaseRegions = ref<SharedHostingRegion[]>([])
-const serverManagementEnabled = false
+const serverManagementEnabled = import.meta.env.VITE_SHARED_HOSTING_ENABLED === 'true'
 const confirmation = ref<
   | { kind: 'purchase'; planId: SharedHostingPlan['planId'] }
   | { kind: 'cancel'; subscription: SharedHostingSubscription }
@@ -445,20 +467,39 @@ async function refresh() {
   loading.value = true
   error.value = false
   try {
-    const [nextOffer, nextSubscription, nextAllowances, nextBalance] = await Promise.all([
+    const [
+      nextOffer,
+      nextSubscription,
+      nextAllowances,
+      nextBalance,
+      nextHostingPlans,
+      nextServerSubscriptions,
+      nextServerServices,
+      nextPurchaseRegions,
+    ] = await Promise.all([
       api.getXmclPlusOffer(),
       api.getXmclPlusStatus(),
       api.getXmclPlusAllowances(),
       api.getBalance(),
+      serverManagementEnabled ? api.getSharedHostingPlans() : Promise.resolve([]),
+      serverManagementEnabled ? api.listSharedHostingSubscriptions() : Promise.resolve([]),
+      serverManagementEnabled ? api.listSharedHostingServices() : Promise.resolve([]),
+      serverManagementEnabled ? api.getSharedHostingRegions() : Promise.resolve([]),
     ])
     offer.value = nextOffer
     subscription.value = nextSubscription
     allowances.value = nextAllowances
     balance.value = nextBalance
-    hostingPlans.value = []
-    serverSubscriptions.value = []
-    serverServices.value = []
-    purchaseRegions.value = []
+    hostingPlans.value = nextHostingPlans
+    serverSubscriptions.value = nextServerSubscriptions
+    serverServices.value = nextServerServices
+    purchaseRegions.value = nextPurchaseRegions
+    if (
+      !selectedServiceId.value ||
+      !nextServerServices.some(service => service.serviceId === selectedServiceId.value)
+    ) {
+      selectedServiceId.value = nextServerServices[0]?.serviceId ?? ''
+    }
     message.value = ''
   } catch (cause) {
     error.value = true
@@ -531,11 +572,37 @@ async function subscribeServer(planId: SharedHostingPlan['planId'], regionId: st
   mutating.value = true
   error.value = false
   try {
-    await api.createSharedHostingSubscription(planId, regionId)
+    const created = await api.createSharedHostingSubscription(planId, regionId)
+    if (created.status === 'active') {
+      try {
+        await api.createSharedHostingService(created.subscriptionId)
+      } catch (cause) {
+        await refresh()
+        throw cause
+      }
+    }
     await refresh()
   } catch (cause) {
     error.value = true
     message.value = cause instanceof BillingApiError ? cause.message : t('commercial.server.subscribeError')
+  } finally {
+    mutating.value = false
+  }
+
+}
+
+async function createServer(subscription: SharedHostingSubscription) {
+  if (!api || subscription.status !== 'active') return
+  mutating.value = true
+  error.value = false
+  try {
+    await api.createSharedHostingService(subscription.subscriptionId)
+    await refresh()
+  } catch (cause) {
+    error.value = true
+    message.value = cause instanceof BillingApiError
+      ? cause.message
+      : t('commercial.server.createError')
   } finally {
     mutating.value = false
   }
@@ -612,6 +679,13 @@ function serverPrice(planId: SharedHostingPlan['planId'], kind: 'monthly' | 'hou
 
 function activeSubscriptionsFor(planId: SharedHostingPlan['planId']) {
   return serverSubscriptions.value.filter(item => item.planId === planId && item.status !== 'cancelled')
+}
+
+function serviceFor(subscription: SharedHostingSubscription) {
+  return serverServices.value.find(item =>
+    item.subscriptionId === subscription.subscriptionId &&
+    item.status !== 'deleted'
+  )
 }
 
 function subscriptionStatus(item: SharedHostingSubscription) {
