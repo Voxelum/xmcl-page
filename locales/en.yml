@@ -697,7 +697,7 @@ commercial:
       purchaseTitle: Confirm {plan} purchase
       purchaseDescription: The {monthly} monthly fee is charged immediately. Runtime costs {hourly}/hour and stops while paused. Each server is billed independently and includes complimentary AI service.
       regionLabel: Server location
-      regionDescription: Choose the location closest to most players. The current configuration supports {count} Vultr locations.
+      regionDescription: Choose the location closest to most players. The current configuration supports {count} server locations.
       testRegions: Test and recommend
       testingRegions: Testing…
       testComplete: Selected {location}, with the lowest measured latency ({latency} ms).

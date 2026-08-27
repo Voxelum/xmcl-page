@@ -294,9 +294,9 @@ const api = billingBaseUrl ? new BillingApiClient({
   },
   refreshSession: refreshAccountSession,
 }) : undefined
-const accountUrl = './account/'
-const billingUrl = './billing'
-const storyUrl = './story'
+const accountUrl = computed(() => `/${locale.value}/together/account/`)
+const billingUrl = computed(() => `/${locale.value}/together/billing`)
+const storyUrl = computed(() => `/${locale.value}/together/`)
 const legalLocale = computed(() => ['zh', 'zh-TW'].includes(locale.value) ? locale.value : 'en')
 const termsUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/terms`)
 const privacyUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/privacy`)

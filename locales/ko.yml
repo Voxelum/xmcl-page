@@ -347,7 +347,7 @@ commercial:
       purchaseTitle: '{plan} 구매 확인'
       purchaseDescription: 월 요금 {monthly}가 즉시 결제됩니다. 실행 중에는 시간당 {hourly}이며 일시정지 중에는 실행 요금이 없습니다. 서버별로 별도 결제되고 AI 서비스를 증정합니다.
       regionLabel: 서버 위치
-      regionDescription: 대부분의 플레이어와 가까운 위치를 선택하세요. 현재 구성은 {count}개의 Vultr 위치를 지원합니다.
+      regionDescription: 대부분의 플레이어와 가까운 위치를 선택하세요. 현재 구성은 {count}개의 서버 위치를 지원합니다.
       testRegions: 속도 측정 및 추천
       testingRegions: 측정 중…
       testComplete: 측정 지연 시간이 가장 낮은 {location}({latency} ms)을 선택했습니다.

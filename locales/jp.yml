@@ -363,7 +363,7 @@ commercial:
       purchaseTitle: '{plan} の購入を確認'
       purchaseDescription: 月額 {monthly} はすぐに請求されます。稼働中は {hourly}/時間、停止中は稼働料金がかかりません。サーバーごとに個別請求され、AI サービスが付与されます。
       regionLabel: サーバーの地域
-      regionDescription: 多くのプレイヤーに近い地域を選択してください。現在の構成では {count} か所の Vultr ロケーションに対応しています。
+      regionDescription: 多くのプレイヤーに近い地域を選択してください。現在の構成では {count} か所のサーバーロケーションに対応しています。
       testRegions: 測定しておすすめ
       testingRegions: 測定中…
       testComplete: 測定遅延が最も低い {location}（{latency} ms）を選択しました。

@@ -380,7 +380,7 @@ commercial:
       purchaseTitle: Confirmer l'achat de {plan}
       purchaseDescription: Les frais mensuels de {monthly} sont débités immédiatement. L'exécution coûte {hourly}/heure et n'est pas facturée en pause. Chaque serveur est facturé séparément et offre un service IA.
       regionLabel: Emplacement du serveur
-      regionDescription: Choisissez l’emplacement le plus proche de la majorité des joueurs. La configuration actuelle prend en charge {count} emplacements Vultr.
+      regionDescription: Choisissez l’emplacement le plus proche de la majorité des joueurs. La configuration actuelle prend en charge {count} emplacements de serveur.
       testRegions: Tester et recommander
       testingRegions: Test en cours…
       testComplete: "{location}, qui offre la latence mesurée la plus faible ({latency} ms), a été sélectionné."

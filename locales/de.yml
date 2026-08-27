@@ -374,7 +374,7 @@ commercial:
       purchaseTitle: Kauf von {plan} bestätigen
       purchaseDescription: Die Monatsgebühr von {monthly} wird sofort berechnet. Die Laufzeit kostet {hourly}/Stunde und wird in der Pause nicht berechnet. Jeder Server wird separat abgerechnet und enthält einen geschenkten KI-Service.
       regionLabel: Serverstandort
-      regionDescription: Wähle den Standort, der den meisten Spielern am nächsten liegt. Die aktuelle Konfiguration unterstützt {count} Vultr-Standorte.
+      regionDescription: Wähle den Standort, der den meisten Spielern am nächsten liegt. Die aktuelle Konfiguration unterstützt {count} Serverstandorte.
       testRegions: Testen und empfehlen
       testingRegions: Test läuft…
       testComplete: "{location} mit der niedrigsten gemessenen Latenz ({latency} ms) wurde ausgewählt."

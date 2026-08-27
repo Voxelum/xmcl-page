@@ -313,7 +313,7 @@ commercial:
       purchaseTitle: تأكيد شراء {plan}
       purchaseDescription: تُخصم الرسوم الشهرية {monthly} فورًا. تبلغ كلفة التشغيل {hourly}/ساعة ولا تُحسب أثناء الإيقاف المؤقت. يُحاسب كل خادم بشكل مستقل ويحصل على خدمة AI هدية.
       regionLabel: موقع الخادم
-      regionDescription: اختر الموقع الأقرب إلى معظم اللاعبين. يدعم الإعداد الحالي {count} موقعًا من Vultr.
+      regionDescription: اختر الموقع الأقرب إلى معظم اللاعبين. يدعم الإعداد الحالي {count} موقعًا للخوادم.
       testRegions: اختبار واقتراح
       testingRegions: جارٍ الاختبار…
       testComplete: تم اختيار {location} بأقل زمن استجابة مقاس ({latency} مللي ثانية).

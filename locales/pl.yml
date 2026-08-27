@@ -329,7 +329,7 @@ commercial:
       purchaseTitle: Potwierdź zakup {plan}
       purchaseDescription: Opłata miesięczna {monthly} jest pobierana od razu. Działanie kosztuje {hourly}/godzinę, a podczas pauzy opłata godzinowa nie jest naliczana. Każdy serwer jest rozliczany osobno i otrzymuje usługę AI w prezencie.
       regionLabel: Lokalizacja serwera
-      regionDescription: Wybierz lokalizację najbliższą większości graczy. Obecna konfiguracja obsługuje {count} lokalizacji Vultr.
+      regionDescription: Wybierz lokalizację najbliższą większości graczy. Obecna konfiguracja obsługuje {count} lokalizacji serwerów.
       testRegions: Przetestuj i poleć
       testingRegions: Testowanie…
       testComplete: Wybrano {location} z najniższym zmierzonym opóźnieniem ({latency} ms).

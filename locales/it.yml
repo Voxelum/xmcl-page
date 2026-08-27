@@ -370,7 +370,7 @@ commercial:
       purchaseTitle: Conferma l'acquisto di {plan}
       purchaseDescription: La quota mensile di {monthly} viene addebitata subito. L'esecuzione costa {hourly}/ora e non viene addebitata durante la pausa. Ogni server è fatturato separatamente e include un servizio IA in omaggio.
       regionLabel: Posizione del server
-      regionDescription: Scegli la posizione più vicina alla maggior parte dei giocatori. La configurazione attuale supporta {count} località Vultr.
+      regionDescription: Scegli la posizione più vicina alla maggior parte dei giocatori. La configurazione attuale supporta {count} località server.
       testRegions: Testa e consiglia
       testingRegions: Test in corso…
       testComplete: È stata selezionata {location}, con la latenza misurata più bassa ({latency} ms).

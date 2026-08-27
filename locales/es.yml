@@ -370,7 +370,7 @@ commercial:
       purchaseTitle: Confirmar compra de {plan}
       purchaseDescription: La cuota mensual de {monthly} se cobra inmediatamente. La ejecución cuesta {hourly}/hora y no se cobra mientras está pausado. Cada servidor se factura por separado e incluye un servicio de IA de regalo.
       regionLabel: Ubicación del servidor
-      regionDescription: Elige la ubicación más cercana a la mayoría de los jugadores. La configuración actual admite {count} ubicaciones de Vultr.
+      regionDescription: Elige la ubicación más cercana a la mayoría de los jugadores. La configuración actual admite {count} ubicaciones de servidor.
       testRegions: Probar y recomendar
       testingRegions: Probando…
       testComplete: Se eligió {location}, con la latencia medida más baja ({latency} ms).

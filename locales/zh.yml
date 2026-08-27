@@ -709,7 +709,7 @@ commercial:
       purchaseTitle: 确认购买 {plan}
       purchaseDescription: 将立即扣除 {monthly} 月费；服务器运行时另收 {hourly}/小时，暂停后不收运行费。每台服务器独立计费并赠送 AI 服务。
       regionLabel: 服务器地理位置
-      regionDescription: 请选择靠近大多数玩家的位置。当前配置兼容 {count} 个 Vultr 机房。
+      regionDescription: 请选择靠近大多数玩家的位置。当前提供 {count} 个服务器区域。
       testRegions: 测速并推荐
       testingRegions: 正在测速…
       testComplete: 已选择延迟最低的 {location}（{latency} ms）。

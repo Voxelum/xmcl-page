@@ -515,7 +515,7 @@ commercial:
       purchaseTitle: 確認購買 {plan}
       purchaseDescription: 將立即扣除 {monthly} 月費；伺服器運行時另收 {hourly}/小時，暫停後不收運行費。每台伺服器獨立計費並贈送 AI 服務。
       regionLabel: 伺服器地理位置
-      regionDescription: 請選擇靠近大多數玩家的位置。目前設定相容 {count} 個 Vultr 機房。
+      regionDescription: 請選擇靠近大多數玩家的位置。目前提供 {count} 個伺服器區域。
       testRegions: 測速並推薦
       testingRegions: 正在測速…
       testComplete: 已選擇延遲最低的 {location}（{latency} ms）。
