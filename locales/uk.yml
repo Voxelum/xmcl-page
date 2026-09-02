@@ -268,7 +268,128 @@ sceneLanding:
       description: XMCL дає творцям швидкий локальний цикл пошуку, тестування, діагностики та експорту.
       button: Відкрити всі можливості
 commercial:
+  common:
+    loading: Завантаження…
+    refresh: Оновити
+    refreshing: Оновлення…
+    signIn: Увійти
+  playModes:
+    label: Оберіть спосіб гри вашої компанії
+    plusEyebrow: ХОСТИНГ У ДРУГА
+    plusTitle: Together Home
+    plusDescription: Запускайте світ локально та використовуйте Together, коли пряме з'єднання потребує допомоги.
+    serverEyebrow: ЗАВЖДИ ОНЛАЙН
+    serverTitle: Together Camp, Lodge або Village
+    serverDescription: Підтримуйте постійний спільний світ доступним навіть тоді, коли хост офлайн.
+  billing:
+    eyebrow: БІЛІНГ XMCL
+    title: Баланс та оплата
+    description: Керування грошовим балансом, платежами та історією транзакцій.
+    accountSettings: Налаштування акаунта
+    disabled: Білінг наразі не увімкнено на цьому сервері.
+    loadingTitle: Завантаження білінгу
+    loadingDescription: Отримання інформації про баланс та транзакції…
+    signInTitle: Увійдіть, щоб керувати рахунком
+    signInDescription: Ваш баланс, платежі та історія прив'язані до вашого акаунта XMCL.
+    overview: Огляд
+    accountTitle: Ваш рахунок
+    debt: Наступні поповнення спочатку покриють {amount} заборгованості.
+    available: Доступний баланс
+    availableHint: Готовий для використання в сервісах XMCL
+    homeFundingRequired: Вашого балансу недостатньо для Together Home. Поповніть щонайменше на {amount}, потім поверніться до Together для оформлення.
+    reserved: Зарезервовано
+    reservedHint: Утримується для активного використання
+    history: Історія
+    activity: Історія рахунку
+    activityViews: Перегляд активності
+    transactions: Транзакції
+    payments: Платежі
+    usage: Використання
+    descriptionLabel: Опис
+    reference: Номер
+    date: Дата
+    amount: Сума
+    payment: Оплата
+    status: Статус
+    usageEvent: Подія використання
+    rate: Тариф
+    charged: Списано
+    noTransactions: Транзакцій ще немає.
+    noPayments: Платежів ще немає.
+    noUsage: Використання ще немає.
+    loadError: Не вдалося завантажити дані рахунку.
+    securedTitle: Безпечні платежі
+    securedDescription: Дані банківських карток обробляються захищеним міжнародним шлюзом. XMCL ніколи не отримує номер вашої картки.
+  checkout:
+    title: Поповнити баланс
+    description: Безпечне поповнення балансу XMCL.
+    amount: Сума
+    preparing: Підготовка оплати…
+    add: Поповнити на {amount}
+    providerNote: Ви перейдете на захищену сторінку оплати для завершення платежу.
+    legalNote: Продовжуючи, ви погоджуєтеся з XMCL Together
+    terms: Умовами
+    and: та
+    privacy: Політикою конфіденційності
+    openCheckout: Перейти до оплати
+    cancelledReturned: Я скасував або повернувся
+    newTopUp: Почати нове поповнення
+    invalidAmount: Введіть додатне ціле число перед продовженням.
+    unsafeUrl: Сервіс не повернув безпечну URL-адресу для оплати.
+    opened: Завершіть оплату на захищеній сторінці та поверніться сюди. XMCL автоматично оновить баланс.
+    blocked: Вікно підтвердження було заблоковано. Дозвольте спливаючі вікна та повторіть спробу.
+    returnRecorded: Повернення з оплати зафіксовано.
+    returnDetected: Виявлено повернення з оплати.
+    refreshFailed: XMCL спробував оновити замовлення та баланс.
+    restoreFailed: Не вдалося відновити попередній платіж.
+    newIntent: Тепер можна створити новий платіж.
   server:
+    eyebrow: XMCL PLAY / ЗАВЖДИ ОНЛАЙН
+    title: Світ, який готовий до гри тоді, коли й ви.
+    description: Надайте своїй компанії постійно доступний світ з модами, не змушуючи одного друга тримати ПК увімкненим.
+    storyLink: Сумна передісторія XMCL
+    billingLink: Баланс та оплата
+    from: Від
+    priceSuffix: / місяць + час роботи
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: Без хост-гравця. Без очікування, поки хтось зайде в мережу.
+    experienceDescription: Зберігайте світ на хмарній інфраструктурі та обирайте потужність, яка підходить для вашого модпака.
+    alwaysAvailable: доступність світу
+    performancePlans: конфігурації потужності
+    aiBonus: ШІ-одиниць включено / місяць
+    alwaysOnTitle: Світ залишається вашій компанії
+    alwaysOnDescription: Друзі можуть повертатися в той самий світ, не залежачи від комп'ютера чи розкладу одного гравця.
+    rightSizeTitle: Підбирайте потужність під модпак
+    rightSizeDescription: Обирайте параметри CPU, пам'яті та диска під ваш поточний модпак і збільшуйте, коли компанії потрібно більше.
+    signInTitle: Увійдіть, щоб керувати серверами
+    signInDescription: Плани серверів та підписки прив'язані до вашого акаунта XMCL.
+    overview: Підписка на сервер
+    yourServer: Ваш тариф сервера
+    balance: Баланс
+    addFunds: Поповнити
+    paymentDue: Очікується оплата. Поповніть рахунок, щоб автоматично відновити підписку.
+    cancelsOn: Скасовується {date}.
+    renewsOn: Поновлюється {date}.
+    cancel: Скасувати план
+    plansEyebrow: Хмарний хостинг
+    choosePlan: Оберіть план
+    planDescription: Щомісячний доступ плюс оплата фактичного часу роботи. Кожен активний план містить ШІ-допомогу.
+    current: Поточний
+    perMonth: / місяць
+    runtimePrice: '+ {amount} за годину роботи'
+    cpu: CPU
+    cpuValue: '{count} vCPU'
+    memory: Пам'ять
+    storage: Постійне сховище
+    includedAi: ШІ-допомога у подарунок
+    includedAiValue: 200,000 одиниць / місяць
+    select: Обрати {plan}
+    selected: Обрано
+    unavailable: Недоступно
+    noPlans: Наразі немає опублікованих планів.
+    loadError: Не вдалося завантажити плани серверів.
+    subscribeError: Не вдалося оформити підписку.
+    cancelError: Не вдалося скасувати підписку.
     managerEyebrow: Ваші розміщені сервери
     managerTitle: Керування серверами
     managerDescription: Кожен сервер працює й оплачується окремо. Тут можна перевірити стан і ввімкнути або вимкнути його.
@@ -280,11 +401,20 @@ commercial:
     launcherGuide: Моди, модпаки, світи та інші детальні налаштування змінюються в лаунчері XMCL.
     operationError: Не вдалося змінити стан сервера.
     status: { pending: Очікування ресурсів, queued: Очікування ресурсів, ready: Зупинено, starting: Запускається, running: Працює, stopping: Зупинка й збереження, payment_due: Потрібна оплата, failed: Потребує уваги, retained: Архів збережено, deleted: Видалено }
+    plusEyebrow: БАЖАЄТЕ ХОСТИНГ У ДРУГА?
+    plusTitle: Запускайте зі свого комп'ютера.
+    plusDescription: Together забезпечує надійне пряме з'єднання та містить ту саму ШІ-допомогу для вирішення проблем.
+    plusAction: Дослідити гру з друзями
   plus:
     eyebrow: XMCL TOGETHER
     title: Найкраща конфігурація для Minecraft — друзі, з якими ви граєте.
     description: Від створення модпака й стабільного з'єднання до обслуговування сервера — XMCL Together дає змогу насолоджуватися модпаками Minecraft із друзями.
+    projectBoundary: XMCL залишається безкоштовним та з відкритим кодом. Together є необов'язковим, і лаунчер працює без акаунта Together.
+    serviceOperator: XMCL Together — це необов'язковий онлайн-сервіс від CI010.
     storyLink: Сумна передісторія XMCL
+    perMonth: / місяць
+    from: Від
+    priceSuffix: / місяць
     catalog:
       heroNote: Чотири плани — один точно підійде вашій компанії.
       eyebrow: Оберіть план
@@ -344,3 +474,66 @@ commercial:
       back: Назад
       purchase: Підтвердити придбання
       cancel: Підтвердити скасування
+    experienceEyebrow: TOGETHER HOME · ХОСТИНГ У ДРУГА
+    experienceTitle: Менше технічних проблем. Більше часу у спільному світі.
+    experienceDescription: Together допомагає вашій компанії вирішувати проблеми з модпаками та підтримувати гру, коли пряме з'єднання не працює.
+    networkLocations: глобальних вузлів ретрансляції
+    automatic: Автоматично
+    nearestRelay: маршрутизація через найближчий вузол
+    guided: Покроково
+    modpackHelp: діагностика модпака
+    signInTitle: Увійдіть, щоб керувати Together
+    signInDescription: Ваша підписка Together та ліміти належать вашому акаунту XMCL.
+    disabled: Together не увімкнено на цьому сервері.
+    loadError: Не вдалося завантажити інформацію Together.
+    subscribeError: Не вдалося оформити підписку Together.
+    cancelError: Не вдалося скасувати підписку Together.
+    subscribe: Придбати Together Home
+    cancel: Скасувати підписку
+    addFunds: Поповнити баланс
+    inactiveTitle: Активувати XMCL Together
+    inactiveDescription: Оформіть підписку з грошового балансу XMCL. Перший місяць списується одразу.
+    activeTitle: XMCL Together активний
+    paymentDueTitle: Потрібна оплата
+    paymentDueDescription: Поповніть рахунок, щоб відновити роботу Together.
+    renewsOn: Поновлюється {date}.
+    cancelsOn: Доступ залишається активним до {date}.
+    status:
+      inactive: Неактивний
+      active: Активний
+      payment_due: Потрібна оплата
+      cancelled: Скасовано
+    allowancesEyebrow: Ваше щомісячне використання
+    allowancesTitle: Доступні ліміти
+    aiAllowance: Залишок ШІ-допомоги
+    aiUnits: зважених одиниць токенів залишилося
+    aiUsage: '{consumed} використано з {included}'
+    aiFormula: 'Використання = запити повз кеш + ceil(запити в кеш × 0.1) + відповідь × 4.'
+    turnAllowance: Ретрансляція мультиплеєра
+    turnEgress: авторизований трафік релею
+    turnUsage: '{consumed} використано з {included}'
+    remainingUnavailable: Залишок використання недоступний.
+    meteringUnavailable: Облік використання ще не підключено; це включений ліміт, а не залишок балансу.
+    sourcesTitle: Активні джерела лімітів
+    source:
+      plus: 'Together: {ai} ШІ-одиниць та {turn} релею'
+      shared_hosting: 'План сервера: {ai} ШІ-одиниць без TURN'
+    serverBonus: Кожен активний план сервера окремо включає 200 000 ШІ-одиниць щомісяця для налаштування модпаків і сервера.
+    aiTitle: Запустіть модпак без проблем
+    aiDescription: Діагностуйте краші, конфлікти залежностей та помилки конфігурації без перетворення одного друга на цілодобову техпідтримку.
+    turnTitle: Тримайте всіх на зв'язку
+    turnDescription: XMCL спочатку намагається встановити пряме з'єднання, а потім автоматично використовує найближчий релей, коли заважають роутери чи провайдери.
+    serverEyebrow: ПОТРІБНО БІЛЬШЕ?
+    serverTitle: Надайте компанії постійно доступний світ.
+    serverDescription: Орендуйте виділений сервер XMCL з постійним диском та вибором потужності.
+    serverAction: Переглянути плани серверів
+  accountLinks:
+    title: Сервіси XMCL
+    plusTitle: Відкрийте Together
+    plusDescription: Вирішуйте проблеми з модпаками та грайте з друзями.
+    billingEyebrow: Білінг
+    billingTitle: Баланс та активність
+    billingDescription: Поповнюйте баланс та переглядайте списання.
+    serverEyebrow: Сервери
+    serverTitle: Хмарний хостинг
+    serverDescription: Оберіть план сервера та керуйте підпискою.

@@ -13,9 +13,10 @@ import { completeWebSignIn } from '../../lib/accountSession'
 
 const failed = ref(false)
 const message = ref('Verifying the authorization and binding this browser’s DPoP key…')
+const supportedLocales = ['en', 'uk', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'pt', 'ar', 'jp', 'ko', 'kk', 'be', 'ru']
 const locale = typeof window === 'undefined'
   ? 'en'
-  : window.location.pathname.split('/').find((part) => ['en', 'zh', 'zh-TW'].includes(part)) || 'en'
+  : window.location.pathname.split('/').find((part) => supportedLocales.includes(part)) || 'en'
 const stagingPrefix = typeof window !== 'undefined' && window.location.pathname.startsWith('/billing-staging/')
   ? '/billing-staging'
   : ''

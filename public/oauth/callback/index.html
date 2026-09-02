@@ -15,8 +15,9 @@
         try {
           const pending = JSON.parse(window.sessionStorage.getItem(storageKey) || 'null')
           const returnUrl = new URL(pending?.returnUrl || '/', window.location.origin)
+          const supportedLocales = ['en', 'uk', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'pt', 'ar', 'jp', 'ko', 'kk', 'be', 'ru']
           const candidate = returnUrl.pathname.split('/').find((part) =>
-            ['en', 'zh', 'zh-TW'].includes(part))
+            supportedLocales.includes(part))
           if (candidate) locale = candidate
         } catch {
           // The localized callback will report invalid or expired state.

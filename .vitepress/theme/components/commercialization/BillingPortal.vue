@@ -66,7 +66,8 @@ const accountUrl = computed(() => {
   const pathLocale = stagingPrefix
     ? window.location.pathname.split('/').filter(Boolean)[1]
     : locale
-  return `${stagingPrefix}/${['en', 'zh', 'zh-TW'].includes(pathLocale) ? pathLocale : 'en'}/together/account/`
+  const targetLocale = pathLocale || 'en'
+  return `${stagingPrefix}/${targetLocale}/together/account/`
 })
 const api = billingBaseUrl
   ? new BillingApiClient({
