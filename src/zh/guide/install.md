@@ -13,7 +13,7 @@ XMCL 为 Windows、macOS 和 Linux 提供了多种安装方式。
 
 Windows 提供多种安装方式：
 
-### 1. APPX & AppInstaller 在线安装 — 推荐
+### 1. APPX 和在线 AppInstaller — 推荐
 - **APPX** 是 Windows 10/11 的现代沙盒应用程序包格式。应用程序会在隔离环境中运行。卸载后，缓存和注册表更改也会被彻底清除。
 - **AppInstaller** 会通过微软安全的交付渠道自动下载和更新 APPX 软件包，并支持 **增量更新**。
 
@@ -25,7 +25,7 @@ Windows 提供多种安装方式：
 ### 3. 在 Windows 7 / 8 / 8.1 上运行（VxKex 扩展内核）
 
 :::warning 重要兼容性须知
-现代版本的 XMCL 基于 **Electron 43 / Chromium 130+** 构建。Chromium 和微软已 **正式停止对 Windows 7、8 和 8.1 的支持**。启动器 **无法原生运行** 在这些旧版 Windows 上。
+现代版本的 XMCL 基于 **Electron 43 / Chromium 130+** 构建。Chromium 和微软已 **正式停止对 Windows 7、8 和 8.1 的支持**。启动器 **无法在这些旧版 Windows 上原生运行**。
 :::
 
 :::details 使用 VxKex 扩展内核的替代方案
@@ -47,7 +47,7 @@ Windows 提供多种安装方式：
 
 ### DMG 软件包
 1. 下载并打开 `.dmg` 文件。
-2. 将 **XMCL.app** 拖动到你的 **Applications（应用程序）** 文件夹中。
+2. 将 **XMCL.app** 拖动到 **Applications（应用程序）** 文件夹中。
 
 :::warning Gatekeeper 放行指南
 要解除 macOS 对未签名应用程序的警告，请在终端中运行以下命令：
