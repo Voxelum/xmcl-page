@@ -31,10 +31,12 @@ returnToTopLabel: 返回顶部
 langMenuLabel: 语言
 lastUpdatedText: 上次更新
 guide: 指南
+logViewer: 日志查看器
 coreDocument: 核心文档 (英文)
 protocol: 协议
 editLink: 在 GitHub 上编辑此页
 changelogs: 更新日志
+fullChangelog: 更新内容
 blogs: 博客
 intro:
   first:
@@ -67,6 +69,7 @@ download-snap: Snap
 download-appimage: AppImage
 download-deb: Deb
 download-rpm: RPM
+download-flathub: Flathub
 azure-source: 从 Azure CDN 下载
 azure-ms-source: 从 Azure 微软 CDN 下载
 github-source: 从 Github 下载

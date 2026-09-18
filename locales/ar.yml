@@ -8,8 +8,7 @@ intro:
     body: يوفر طريقة {diskEfficient} لإدارة جميع {mods} الخاصة بك!
     diskEfficient: موفرة للمساحة
     mods: المودات
-  description: >-
-    XMCL هو لانشر ماينكرافت حديث يتيح لك إدارة مواردك الهائلة مثل حزم المودات، حزم الموارد، المودات، وحزم الشادر... كما أنه يتكامل مع Minecraft Forge و Fabric و Quilt و CurseForge و Modrinth.
+  description: XMCL هو لانشر ماينكرافت حديث يتيح لك إدارة مواردك الهائلة مثل حزم المودات، حزم الموارد، المودات، وحزم الشادر... كما أنه يتكامل مع Minecraft Forge و Fabric و Quilt و CurseForge و Modrinth.
 label: العربية
 guide: الدليل
 protocol: البروتوكول
@@ -22,9 +21,9 @@ launcher:
     intro: أدر لعبة ماينكرافت الخاصة بك بفعالية.
   description: لانشر ماينكرافت بسيط ومفتوح المصدر وموجه نحو الوظائف
 downloadFor:
-  windows: 'التنزيل لنظام التشغيل Windows:'
-  mac: 'التنزيل لنظام التشغيل Mac:'
-  linux: 'التنزيل لنظام التشغيل Linux:'
+  windows: "التنزيل لنظام التشغيل Windows:"
+  mac: "التنزيل لنظام التشغيل Mac:"
+  linux: "التنزيل لنظام التشغيل Linux:"
 author: الاتصال بالمؤلف
 download-zip: Zip
 download-zip-32: Zip (32 بت)
@@ -43,10 +42,8 @@ github-source: التنزيل من Github
 auto-source: الكشف التلقائي عن مصدر التنزيل
 authSuccess: تم بنجاح!
 authSuccessTitle: تمت المصادقة بنجاح. سيتم توجيهك مرة أخرى إلى اللانشر!
-redirectHelperTitle: >-
-  إذا لم يتم توجيهك تلقائياً، يمكنك النقر على زر "الفتح في التطبيق" للتوجيه يدوياً.
-redirectHelperMessage: >-
-  سيظهر لك مربع حوار يطلب منك فتح اللانشر. إذا كان لا يزال لا يعمل، يمكنك محاولة سحب الزر إلى نافذة اللانشر!
+redirectHelperTitle: إذا لم يتم توجيهك تلقائياً، يمكنك النقر على زر "الفتح في التطبيق" للتوجيه يدوياً.
+redirectHelperMessage: سيظهر لك مربع حوار يطلب منك فتح اللانشر. إذا كان لا يزال لا يعمل، يمكنك محاولة سحب الزر إلى نافذة اللانشر!
 notWork: لا يعمل؟
 openInAppButton: الفتح في اللانشر
 nothingWork: إذا لم يعمل أي مما سبق، فقد ترغب في إعادة تنزيل أحدث إصدار من اللانشر
@@ -54,45 +51,51 @@ gameInstall:
   title:
     body: لا داعي للقلق بشأن {gameInstall} بعد الآن
     gameInstall: تثبيت اللعبة
-  description: >-
-    يدعم XMCL تثبيت ماينكرافت الأصلية (Vanilla)، و Minecraft Forge، و Fabric، وحتى Optifine الكل في واحد! يمكنك تثبيتهم في مكان واحد داخل اللانشر. كما أنه يدعم رابط المرآة التابع لجهات خارجية BMCL API. ويمكنك حتى تخصيص المرآة الخاصة بك في اللانشر.
+  description: يدعم XMCL تثبيت ماينكرافت الأصلية (Vanilla)، و Minecraft Forge، و Fabric، وحتى Optifine الكل في واحد! يمكنك تثبيتهم في مكان واحد داخل اللانشر. كما أنه يدعم رابط المرآة التابع لجهات خارجية BMCL API. ويمكنك حتى تخصيص المرآة الخاصة بك في اللانشر.
 optimalDisk:
   title:
     body: مساحة قرص {optimal} مع {massiveResources}
     optimal: مثالية
     massiveResources: موارد هائلة
-  description: >-
-    سيقوم XMCL بتخزين جميع المودات وحزم الموارد وحزم الشادر وحزم المودات في موقع تخزين واحد. عندما تحاول استخدام أي مورد معروف، سيستخدم الرابط الصلب (hard link) لتثبيت المورد في النسخة دون نسخه. هذا يعني أنك لن ترى أي نسخة مكررة في مجلد /mods بعد الآن.
+  description: سيقوم XMCL بتخزين جميع المودات وحزم الموارد وحزم الشادر وحزم المودات في موقع تخزين واحد. عندما تحاول استخدام أي مورد معروف، سيستخدم الرابط الصلب (hard link) لتثبيت المورد في النسخة دون نسخه. هذا يعني أنك لن ترى أي نسخة مكررة في مجلد /mods بعد الآن.
 cleanWorkspace:
   title:
     body: حافظ على مساحة عملك {clean} باستخدام النسخ المتعددة
     clean: نظيفة
-  description: >-
-    يحتوي XMCL على دعم مدمج للنسخ المتعددة. يمكنك إنشاء نسخ متعددة بسهولة. لذلك لا داعي للقلق بشأن تداخل إعدادات التشغيل المختلفة.
+  description: يحتوي XMCL على دعم مدمج للنسخ المتعددة. يمكنك إنشاء نسخ متعددة بسهولة. لذلك لا داعي للقلق بشأن تداخل إعدادات التشغيل المختلفة.
 communityIntegration:
   title:
     body: متكامل مع {multipleCommunities}
     multipleCommunities: مجتمعات متعددة
-  description: >-
-    يدعم XMCL بشكل مدمج كلاً من Curseforge و Modrinth. كما يوفر القدرة على دعم حسابات المستخدمين المخصصة / وأنظمة السكنات مثل blessing skin.
+  description: يدعم XMCL بشكل مدمج كلاً من Curseforge و Modrinth. كما يوفر القدرة على دعم حسابات المستخدمين المخصصة / وأنظمة السكنات مثل blessing skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: الانضمام إلى مجموعة {inviter}
-joinPeerDescription: >-
-  لقد دعاك {inviter} للانضمام إلى مجموعته {group} للعب ماينكرافت معاً! سيتم توجيهك مرة أخرى إلى اللانشر!
+joinPeerDescription: لقد دعاك {inviter} للانضمام إلى مجموعته {group} للعب ماينكرافت معاً! سيتم توجيهك مرة أخرى إلى اللانشر!
 fullChangelog: ما الجديد؟
 privacy: خصوصية البرنامج
 prebuild:
   history: تاريخ البناء
   historyDescription: عمليات البناء والإصدارات السابقة
   download: تنزيل نسخ التطوير
-  downloadDescription: >-
-    نسخ التطوير (Prebuild) هي ملفات يتم إنشاؤها أثناء عملية التطوير. قد تكون غير مستقرة. استخدمها على مسؤوليتك الخاصة!
+  downloadDescription: نسخ التطوير (Prebuild) هي ملفات يتم إنشاؤها أثناء عملية التطوير. قد تكون غير مستقرة. استخدمها على مسؤوليتك الخاصة!
   entryHint: ملفات نسخ التطوير؟
   ready: جاهز
   selected: تم الاختيار
   selectBuild: اختر البناء
   downloading: جارٍ التنزيل...
+  kicker: قناة البناء التجريبي
+  developmentBuilds: بنيات التطوير
+  tryNext: جرّب ما سيأتي بعد ذلك.
+  unstableDescription: ملفات غير مستقرة لاختبار تغييرات XMCL القادمة.
+  selectedBuild: البنية المحددة
+  buildsAvailable: "{count} بنية متاحة"
+  selectABuild: اختر بنية
+  noBuilds: لم يتم العثور على أي بنية
+  noBuildsDescription: لا توجد ملفات بناء تجريبي متاحة حالياً.
+  checkBack: يرجى التحقق لاحقاً بعد اكتمال سير عمل التطوير التالي.
+  yesterday: أمس
+  daysAgo: منذ {count} يوماً
 downloadMacHint:
   content: لمستخدمي Mac، يرجى اتباع {link} للتثبيت.
   link: تعليمات التثبيت
@@ -144,48 +147,92 @@ features:
   items:
     instance-library:
       title: مكتبة نسخ منظمة
+      benefit: شاهد العوالم الأصلية والمعدّلة والتجريبية معاً في واجهة واحدة جاهزة للتشغيل.
+      capabilities: فصل إصدارات اللعبة ومُحمّلاتها|الاطلاع على التعديلات وملفات الحفظ والموارد بنظرة سريعة|تشغيل الإعداد الذي تحتاجه
     instance-create-modloaders:
       title: إنشاء نسخ Java وBedrock
+      benefit: ابدأ إعداداً جديداً بالمُحمّل والإصدار المتوافقين مع العالم الذي تريد لعبه.
+      capabilities: دعم Java Edition ودعم Bedrock التجريبي|Forge وFabric وQuilt وNeoForge وOptiFine وLabyMod|مصادر إصدارات Minecraft والمصادر المحلية
     instance-folder-groups:
       title: مجموعات النسخ في مجلدات
+      benefit: رتّب النسخ المتعددة في مجلدات لتظل العوالم والإعدادات المختلفة سهلة الاستعراض.
+      capabilities: تجميع النسخ حسب الغرض أو المشروع|إبقاء الإعدادات المرتبطة معاً|التبديل بين المجلدات من الشريط الجانبي للنسخ
     instance-settings:
       title: إعدادات النسخة
+      benefit: اضبط Java والذاكرة والإصدارات والمُحمّلات وسلوك التشغيل دون المساس بأي إعداد آخر.
+      capabilities: تكوين مستقل لكل نسخة|اختيار الإصدار والمُحمّل|عناصر تحكم في المظهر لكل نسخة
     instance-theme:
       title: سمة النسخة
+      benefit: امنح كل عالم هويته الخاصة بخلفيات وألوان وتأثيرات ضبابية وخطوط وتنسيق CSS مخصص.
+      capabilities: صورة الخلفية والطبقة الشفافة|حواف مستديرة وعناصر تحكم في الخطوط|تصدير السمة واستيرادها
     local-server:
       title: تشغيل خادم محلي
+      benefit: حوّل أي نسخة إلى خادم محلي قابل للتكوين مع تحديد العالم والحد الأقصى للاعبين وملفات قابلة للتصدير.
+      capabilities: رسالة MOTD والمنفذ والحد الأقصى للاعبين|تحديد العالم وملفات الخادم|تصدير حزمة خادم
     server-list:
       title: قائمة الخوادم
+      benefit: احتفظ بوجهات اللعب الجماعي بالقرب من النسخة التي تستخدمها واطّلع على حالة اتصالها.
+      capabilities: حالة الخادم وعدد اللاعبين|تثبيت الوجهات وإزالتها|إظهار حالات فشل الاتصال بوضوح
     modpack-market:
       title: سوق حزم التعديلات
+      benefit: تصفح محتوى Modrinth وCurseForge وFTB من سوق واحد يدعم البحث.
+      capabilities: عوامل تصفية حسب المصدر والإصدار والمُحمّل والفئة|اكتشاف الحزم الشائعة والأحدث|فتح صفحة تفاصيل الحزمة
     online-mod-search:
       title: البحث عن التعديلات عبر الإنترنت
+      benefit: اعثر على التعديلات المتوافقة عبر منصات المجتمع الرئيسية قبل تثبيتها في نسختك.
+      capabilities: مصادر Modrinth وCurseForge|عوامل تصفية إصدار Minecraft والمُحمّل|عوامل تصفية البيئة والفئة
     modpack-detail:
       title: تفاصيل حزمة التعديلات
+      benefit: تعرّف على الحزمة قبل تثبيتها، من لقطات الشاشة والمؤلفين إلى المتطلبات التقنية.
+      capabilities: لقطات شاشة ووسوم وإحصاءات المشروع|إجراءات التثبيت والتشغيل|معلومات تقنية وموارد خارجية
     mod-collections:
       title: مجموعات التعديلات
+      benefit: احفظ المشاريع التي ترغب في العودة إليها وحوّل أي مجموعة إلى إعداد قابل لإعادة الاستخدام.
+      capabilities: مجموعات المشغّل|مشاريع Modrinth المُتابَعة|تثبيت دفعي وإدارة المجموعات
     mod-detail:
       title: تفاصيل التعديل
+      benefit: افحص التعديل قبل إضافته لنسختك وتعرّف على إصداراته وتبعياته ومصادره.
+      capabilities: اختيار الإصدار والتبعيات|المُحمّلات والفئات وروابط المصدر|الوصف والموارد الخارجية
     local-mods:
       title: إدارة التعديلات المثبتة
+      benefit: اطّلع على ما هو مفعّل، وصَفّه بسرعة، وحافظ على استقرار مجموعة العمل.
+      capabilities: البحث في التعديلات وفرزها وتصفيتها|فحص التبعيات والمحتوى غير المستخدم|اختيار سياسة التحديث
     custom-mod-groups:
       title: مجموعات تعديلات مخصصة
+      benefit: أنشئ مجموعاتك الخاصة واحفظ القواعد التي تنظم النسخ المعقدة.
+      capabilities: تطبيق قواعد التجميع وحفظها|تجميع التعديلات من القائمة السياقية|تفعيل الملفات أو تعطيلها أو فحصها
     save-preview:
       title: معاينة الحفظ وأدوات المقاطع
+      benefit: استعرض العالم بصرياً قبل تشغيله وأجرِ تغييرات دقيقة على مستوى القطع (Chunks).
+      capabilities: التنقل وفحص خرائط العالم|تحديد القطع أو نسخها أو حذفها|قراءة خصائص العالم والمواد المستخدمة
     blueprint-preview:
       title: معاينة المخطط
+      benefit: عاين الهياكل ثلاثية الأبعاد وتحقق من التوافق والمواد قبل وضعها داخل اللعبة.
+      capabilities: تنسيقات Litematica وWorldEdit|حالة التوافق والتعديلات المفقودة|قائمة المواد وتحويل التنسيقات
     modpack-export:
       title: تصدير حزمة التعديلات
+      benefit: احزم نسختك للاعبين الآخرين دون فقدان البيانات الوصفية والملفات اللازمة لتشغيلها.
+      capabilities: تصدير إلى CurseForge وModrinth|البيانات الوصفية للمؤلف والوصف ورابط URL|اختيار الملفات والأصول المطلوب تضمينها
     server-export:
       title: تصدير الخادم
+      benefit: حدد العالم المناسب وملفات الخادم، ثم صدّر خادماً محلياً بتكوين واضح.
+      capabilities: تصدير إلى مجلد أو رفع|تحديد ملفات الخادم|تكوين رسالة MOTD وخيارات الخادم
     account-login:
       title: خدمات مصادقة متعددة
+      benefit: اختر خدمة الحسابات التي تناسب طريقتك في اللعب، من Microsoft إلى الحسابات غير المتصلة وخدمات الطرف الثالث.
+      capabilities: حسابات Microsoft والحسابات غير المتصلة|خدمات Ely.by وLittleSkin|إضافة خدمات المصادقة وإدارتها
     quick-action:
       title: إجراءات سريعة
+      benefit: اعثر على النسخ والأوامر دون مغادرة الصفحة التي تعمل عليها.
+      capabilities: البحث في الأوامر والنسخ والتعديلات|تشغيل نسخة أو إنشاؤها|تنقل سريع عبر لوحة المفاتيح باستخدام Ctrl+K
     crash-diagnosis:
       title: تقارير التعطل وفشل التشغيل
+      benefit: اقرأ السجلات الفعلية وتقارير التعطل ومخرجات الخادم وراء أي تشغيل غير ناجح.
+      capabilities: السجلات وتقارير التعطل وفشل التشغيل|أخطاء حل التعديلات ورموز الخروج|نسخ مطالبة لأدوات AI الخارجية
     ai-agent:
       title: وكيل AI مدمج
+      benefit: دع وكيلاً يفحص نظام الملفات الافتراضي للنسخة ويشرح حلاً قابلاً للتطبيق.
+      capabilities: قراءة ملفات النسخة وتقاريرها|التحقيق قبل التوصل إلى استنتاج|تطبيق إصلاح عملي متى أمكن
 siteFooter:
   ariaLabel: تذييل الموقع
   navigation: تنقل التذييل
@@ -229,6 +276,44 @@ sceneLanding:
       title: ثبّت XMCL بطريقتك.
       description: اختر الحزمة المناسبة لنظامك أو استخدم Flathub على Steam Deck.
       link: عرض كل الإصدارات والبنيات
+    signals:
+      packages:
+        number: "05"
+        label: حزم Linux
+        description: DEB وRPM وAppImage وtar.xz وFlathub.
+      scale:
+        number: 4K
+        label: وضوح فائق بأي مقياس
+        description: مكتبة غنية تظل مقروءة بوضوح على الشاشات الكبيرة.
+      worlds:
+        number: ∞
+        label: عوالم مستقلة
+        description: تمنع تداخل الإصدارات والمُحمّلات وملفات الحفظ.
+    features:
+      install:
+        label: 01 / اختر طريقة التثبيت
+        title: استخدم التنسيق المتوافق مع توزيعتك.
+        description: نزّل حزمة أصلية لسطح مكتبك أو استخدم Flathub لخيار محمول ومناسب لجهاز Steam Deck. كما يوفر XMCL بنيات ARM64 عندما تتطلب أجهزتك ذلك.
+        point1: DEB وRPM لتوزيعات Linux المكتبية الشائعة
+        point2: AppImage وtar.xz للتثبيتات المحمولة
+        point3: دعم Flathub لجهاز Steam Deck
+        alt: مربع حوار إنشاء نسخة في XMCL مع إصدارات Minecraft ومُحمّلات التعديلات
+      organize:
+        label: 02 / حافظ على الترتيب
+        title: مسار مستقل ومنظم لكل نسخة.
+        description: افصل بين إعدادات الفانيلا والتعديلات والاختبار والخوادم دون عناء تنظيم المجلدات يدوياً. لتبقى إصداراتك ومُحمّلاتك وتعديلاتك وحفظك وإعداداتك متماسكة معاً.
+        point1: بيانات لعبة وإعدادات تشغيل مستقلة
+        point2: Forge وFabric وQuilt وNeoForge والمزيد
+        point3: تبديل سريع بين العوالم والتجارب
+        alt: مكتبة نسخ XMCL مع ملفات تعريف منظمة للعبة Minecraft
+      anywhere:
+        label: 03 / العب في أي مكان
+        title: مشغل مكتبي ينتقل معك بسلاسة.
+        description: انتقل من سطح مكتب Linux إلى جلسة على Steam Deck دون التخلي عن مكتبة واضحة أو إعداد موثوق. يمنح XMCL مجموعتك مساحة للنمو دون أن تتحول إلى فوضى بيانات.
+        point1: مسار Flathub مصمم لجهاز Steam Deck
+        point2: واجهة مريحة ومركزة على شاشات 4K
+        point3: مفتوح المصدر ومصمم للاعبي Linux
+        alt: صفحة XMCL الرئيسية مع مكتبة نسخ كبيرة
   creators:
     eyebrow: XMCL / لمنشئي حزم التعديلات
     title: ابنِ حزم Minecraft مع دورة الإصدار كاملة في مكان واحد.
@@ -248,19 +333,133 @@ sceneLanding:
       title: ابنِ. انشر. حافظ على سلامة الحزمة.
       description: يمنح XMCL المنشئين دورة محلية سريعة للاكتشاف والاختبار والتشخيص والتصدير.
       button: استكشف كل الميزات
+    signals:
+      sources:
+        number: 2×
+        label: مصادر المشاريع
+        description: ابحث في Modrinth وCurseForge من مساحة عمل واحدة.
+      export:
+        number: بنقرة واحدة
+        label: تصدير الحزم
+        description: أنشئ حزمة قابلة للتوزيع لـ Modrinth أو CurseForge في خطوات معدودة.
+      ai:
+        number: AI
+        label: المساعدة في الأعطال
+        description: حوّل تقرير الفشل إلى إجراء تالٍ مفيد.
+    features:
+      discover:
+        label: 01 / اكتشف
+        title: ابحث في كلا النظامين البيئيين دون تشتيت تركيزك.
+        description: اعثر على المشاريع عبر Modrinth وCurseForge باستخدام عوامل تصفية الإصدار والمُحمّل والبيئة والفئة. يطابق XMCL المشاريع بين كلا المصدرين حتى تتمكن من مقارنة نفس العمل دون تخمين.
+        point1: بحث Modrinth وCurseForge في مسار واحد
+        point2: عوامل تصفية توافق إصدار Minecraft والمُحمّل
+        point3: مطابقة المشاريع عبر المنصات
+        alt: بحث التعديلات عبر الإنترنت في XMCL مع عوامل تصفية المصدر والتوافق
+      build:
+        label: 02 / ابنِ
+        title: اجعل التبعيات جزءاً من الخطة.
+        description: عندما يحتاج تعديل إلى تعديل آخر، يمكن لـ XMCL تثبيت التبعية معه تلقائياً. وعندما تفعّل مشروعاً أو تعطله، يساعدك المشغّل في الحفاظ على ترابط المجموعة الناتجة بدلاً من تتبع المخطط يدوياً.
+        point1: تثبيت تلقائي للتبعيات
+        point2: إجراءات تفعيل وتعطيل تراعي التبعيات
+        point3: فحص الإصدارات والمُحمّلات والبيانات الوصفية للمشروع
+        alt: عرض تفاصيل التعديل في XMCL مع إظهار الإصدارات والتبعيات
+      curate:
+        label: 03 / نظّم وانتقِ
+        title: حافظ على تركيز مجموعة العمل وخلوها من الزوائد.
+        description: ابحث وافرز وجَمّع وحدّث وأزل التعديلات التي لم تعد بحاجة إليها. تسهّل المجموعات المخصصة اختبار المحتوى الاختياري، أو مقارنة الملفات الشخصية، أو إبقاء الإصدار المرشح مركزاً.
+        point1: فحص تلقائي لتحديثات التعديلات
+        point2: مجموعات مخصصة للمحتوى الاختياري والتجريبي
+        point3: العثور على التعديلات غير المستخدمة وإزالتها
+        alt: واجهة إدارة التعديلات المثبتة في XMCL مع عناصر التحكم في البحث والتحديث
+      export:
+        label: 04 / صدّر
+        title: أطلق حزمتك بالتنسيق الذي يحتاجه لاعبوك.
+        description: صدّر حزمة تعديلات متقنة لـ Modrinth أو CurseForge مع البيانات الوصفية الصحيحة والملفات المحددة. لتصبح خطوة الإصدار جزءاً متكرراً من سير عملك، وليست مجرد عملية أرشفة في اللحظة الأخيرة.
+        point1: تصدير بنقرة واحدة إلى Modrinth وCurseForge
+        point2: البيانات الوصفية للمؤلف والوصف ورابط URL والإصدار
+        point3: تحديد الملفات والأصول المطلوبة للإصدار بدقة
+        alt: شاشة تصدير حزمة التعديلات في XMCL لتنسيقات Modrinth وCurseForge
+      diagnose:
+        label: 05 / شخّص
+        title: دع الذكاء الاصطناعي يساعدك في تحويل تقارير التعطل إلى حلول.
+        description: عندما يفشل تشغيل تجريبي، يضع XMCL السجلات وتقارير التعطل ووكيل AI في نفس المكان. يستطيع الوكيل فحص سياق النسخة واقتراح خطوة تالية قابلة للتنفيذ.
+        point1: قراءة سجلات التشغيل وتقارير التعطل في سياقها
+        point2: فحص ملفات النسخة بمساعدة AI
+        point3: حل تعارضات التعديلات قبل الإصدار
+        alt: وكيل AI في XMCL يحقق في فشل تشغيل Minecraft
 commercial:
   server:
     managerEyebrow: خوادمك المستضافة
     managerTitle: إدارة الخوادم
     managerDescription: يعمل كل خادم وتتم محاسبته بشكل مستقل. تحقق من حالته وشغّله أو أوقفه من هنا.
-    serverNumber: 'خادم {plan} رقم {number}'
+    serverNumber: خادم {plan} رقم {number}
     start: تشغيل الخادم
     stop: إيقاف الخادم
     cpuUsage: استخدام المعالج
     memoryUsage: استخدام الذاكرة
     launcherGuide: استخدم مشغّل XMCL لتعديل الإضافات والحزم والعوالم والإعدادات التفصيلية الأخرى.
     operationError: تعذر تغيير حالة الخادم.
-    status: { pending: بانتظار السعة, queued: بانتظار السعة, ready: متوقف, starting: جارٍ التشغيل, running: يعمل, stopping: جارٍ الإيقاف والحفظ, payment_due: الدفع مطلوب, failed: يحتاج إلى تدخل, retained: الأرشيف محفوظ, deleted: محذوف }
+    status:
+      pending: بانتظار السعة
+      queued: بانتظار السعة
+      ready: متوقف
+      starting: جارٍ التشغيل
+      running: يعمل
+      stopping: جارٍ الإيقاف والحفظ
+      payment_due: الدفع مطلوب
+      failed: يحتاج إلى تدخل
+      retained: الأرشيف محفوظ
+      deleted: محذوف
+    eyebrow: XMCL PLAY / متاح دائماً على الإنترنت
+    title: عالم جاهز كلما كانت مجموعتكم مستعدة.
+    description: امنح مجموعتكم عالماً معدّلاً متاحاً على مدار الساعة، دون إجبار أحد الأصدقاء على إبقاء حاسوبه قيد التشغيل دائماً.
+    storyLink: القصة الحزينة وراء XMCL
+    billingLink: الفواتير والرصيد
+    from: يبدأ من
+    priceSuffix: / شهر + وقت التشغيل
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: بلا لاعب مضيف. وبلا انتظار حتى يتصل أحدهم بالإنترنت.
+    experienceDescription: احتفظ بعالم المجموعة المعدّل على بنية تحتية دائمة واختر السعة التي تناسب حزمتك.
+    alwaysAvailable: إتاحة العالم
+    performancePlans: تكوينات الأداء
+    aiBonus: وحدات AI مضمّنة / شهر
+    alwaysOnTitle: يبقى العالم ملكاً للمجموعة
+    alwaysOnDescription: يمكن للأصدقاء العودة إلى نفس العالم الدائم دون الاعتماد على حاسوب لاعب واحد أو جدول مواعيده.
+    rightSizeTitle: وافق الخادم مع حزمة التعديلات
+    rightSizeDescription: اختر الأداء والذاكرة وسعة التخزين التي تناسب الحزمة اليوم، ثم قم بالترقية متى احتاجت المجموعة للمزيد.
+    signInTitle: سجّل الدخول لإدارة الخوادم
+    signInDescription: ترتبط خطط الخوادم والاشتراكات بحسابك في XMCL.
+    overview: اشتراك الخادم
+    yourServer: خطة الخادم الخاصة بك
+    balance: الرصيد
+    addFunds: إضافة رصيد
+    paymentDue: الدفع مستحق. أضف رصيداً لاستعادة هذا الاشتراك تلقائياً.
+    cancelsOn: يُلغى في {date}.
+    renewsOn: يتجدد في {date}.
+    cancel: إلغاء الخطة
+    plansEyebrow: استضافة مشتركة
+    choosePlan: اختر خطة
+    planDescription: وصول شهري بالإضافة إلى وقت التشغيل المحتسب. تتضمن كل خطة نشطة مساعدة الذكاء الاصطناعي (AI) لإعداد حزم التعديلات والخادم.
+    current: الحالية
+    perMonth: / شهر
+    runtimePrice: + {amount} لكل ساعة تشغيل
+    cpu: CPU
+    cpuValue: "{count} vCPU"
+    memory: الذاكرة
+    storage: تخزين دائم
+    includedAi: مساعدة AI مضمّنة
+    includedAiValue: 200,000 وحدة / شهر
+    select: اختيار {plan}
+    selected: تم الاختيار
+    unavailable: غير متاح
+    noPlans: لا توجد خطط استضافة مشتركة منشورة حالياً.
+    loadError: تعذر تحميل خطط الخوادم.
+    subscribeError: تعذر إنشاء الاشتراك.
+    cancelError: تعذر إلغاء الاشتراك.
+    plusEyebrow: تفضل الاستضافة لدى صديق؟
+    plusTitle: ابدأ من حاسوبك الخاص بدلاً من ذلك.
+    plusDescription: يحافظ Together على موثوقية اللعب الجماعي المباشر مع الأصدقاء ويتضمن نفس الدعم لاستكشاف أخطاء حزم التعديلات وحلها.
+    plusAction: استكشف اللعب الجماعي مع الأصدقاء
   plus:
     eyebrow: XMCL TOGETHER
     title: أفضل مواصفات Minecraft هي الأصدقاء الذين تلعب معهم.
@@ -274,7 +473,7 @@ commercial:
       recommended: لمعظم حزم التعديلات
       perMonth: / شهر
       flatMonthly: يتضمن 20 GB للترحيل · ثم 0.08 $ / GB
-      runtime: '{price} لكل ساعة تشغيل · أوقفه مؤقتًا متى شئت'
+      runtime: "{price} لكل ساعة تشغيل · أوقفه مؤقتًا متى شئت"
       hosted: مستضاف لدى XMCL
       runsOn: يعمل على
       bestFor: الأنسب لـ
@@ -284,10 +483,18 @@ commercial:
       storage: تخزين دائم
       aiIncluded: خدمة AI هدية
       aiIncludedDescription: مساعدة في إنشاء حزم التعديلات وحل المشكلات وصيانة الخوادم
-      home: { location: استضافة لدى صديق, description: 'لعب جماعي معزز بترحيل عالمي للأصدقاء الذين يعانون من اتصال P2P صعب أو غير مستقر؛ تكفي 20 GB عادةً لثلاثة أصدقاء لنحو 65 ساعة شهريًا.', runsOn: حاسوبك, bestFor: المجموعات التي تلعب أحيانًا, connection: أكثر من 300 موقع ترحيل عالمي }
-      camp: { description: بداية صغيرة وكافية لصديقين إلى 4 أصدقاء مع حزمة تعديلات خفيفة. }
-      lodge: { description: توازن في الأداء والسعر لـ4 إلى 6 أصدقاء مع حزمة تعديلات معتادة. }
-      village: { description: مساحة لـ6 إلى 10 أصدقاء وحزم أكبر وعدد أكبر من اللاعبين المتزامنين. }
+      home:
+        location: استضافة لدى صديق
+        description: لعب جماعي معزز بترحيل عالمي للأصدقاء الذين يعانون من اتصال P2P صعب أو غير مستقر؛ تكفي 20 GB عادةً لثلاثة أصدقاء لنحو 65 ساعة شهريًا.
+        runsOn: حاسوبك
+        bestFor: المجموعات التي تلعب أحيانًا
+        connection: أكثر من 300 موقع ترحيل عالمي
+      camp:
+        description: بداية صغيرة وكافية لصديقين إلى 4 أصدقاء مع حزمة تعديلات خفيفة.
+      lodge:
+        description: توازن في الأداء والسعر لـ4 إلى 6 أصدقاء مع حزمة تعديلات معتادة.
+      village:
+        description: مساحة لـ6 إلى 10 أصدقاء وحزم أكبر وعدد أكبر من اللاعبين المتزامنين.
     shared:
       eyebrow: متاح مع كل خطة
       title: أكثر من مجرد تشغيل خادم.
@@ -305,7 +512,7 @@ commercial:
       pauseTitle: أوقفوه عندما لا يلعب أحد
       pauseDescription: تتوقف رسوم التشغيل أثناء الإيقاف المؤقت، ويمكنكم المتابعة في العالم نفسه لاحقًا.
     confirm:
-      serverNumber: 'خادم {plan} رقم {number}'
+      serverNumber: خادم {plan} رقم {number}
       addAnother: إضافة خادم آخر
       close: إغلاق
       purchaseEyebrow: إنشاء خادم
@@ -325,3 +532,219 @@ commercial:
       back: رجوع
       purchase: تأكيد الشراء
       cancel: تأكيد الإلغاء
+    projectBoundary: يظل XMCL مجانياً ومفتوح المصدر. خدمة Together اختيارية، ويعمل المشغّل دون الحاجة إلى حساب Together.
+    serviceOperator: خدمة XMCL Together هي خدمة اختيارية عبر الإنترنت تديرها CI010.
+    perMonth: / شهر
+    from: يبدأ من
+    priceSuffix: / شهر
+    experienceEyebrow: TOGETHER HOME · استضافة لدى صديق
+    experienceTitle: استكشاف أخطاء أقل. ووقت أطول معاً في نفس العالم.
+    experienceDescription: يساعد Together مجموعتكم في حل مشكلات حزم التعديلات ويضمن استمرار اللعب الجماعي عندما يتعذر الاتصال المباشر.
+    networkLocations: مواقع ترحيل عالمية
+    automatic: تلقائي
+    nearestRelay: توجيه لأقرب موقع
+    guided: إرشادي
+    modpackHelp: استكشاف أخطاء حزم التعديلات
+    signInTitle: سجّل الدخول لإدارة Together
+    signInDescription: يرتبط اشتراك Together ومخصصاتك بحسابك في XMCL.
+    disabled: خدمة Together غير مفعّلة في هذا التثبيت.
+    loadError: تعذر تحميل معلومات Together.
+    subscribeError: تعذر إنشاء اشتراك Together.
+    cancelError: تعذر إلغاء اشتراك Together.
+    subscribe: شراء Together Home
+    cancel: إلغاء الاشتراك
+    addFunds: إضافة رصيد
+    inactiveTitle: بدء XMCL Together
+    inactiveDescription: اشترك باستخدام رصيدك النقدي في XMCL. يتم خصم الشهر الأول فوراً.
+    activeTitle: اشتراك XMCL Together نشط
+    paymentDueTitle: الدفع مطلوب
+    paymentDueDescription: أضف رصيداً إلى حساب الفواتير لاستئناف خدمة Together.
+    renewsOn: يتجدد في {date}.
+    cancelsOn: يظل الوصول نشطاً حتى {date}.
+    status:
+      inactive: غير نشط
+      active: نشط
+      payment_due: الدفع مطلوب
+      cancelled: ملغى
+    allowancesEyebrow: استخدامك الشهري
+    allowancesTitle: المخصصات الداعمة لتجربتك
+    aiAllowance: مساعدة AI المتبقية
+    aiUnits: وحدات توكن مرجحة متبقية
+    aiUsage: تم استخدام {consumed} من أصل {included}
+    aiFormula: الاستخدام = مدخلات cache-miss + ceil(مدخلات cache-hit × 0.1) + المخرجات × 4.
+    turnAllowance: ترحيل اللعب الجماعي
+    turnEgress: حركة مرور ترحيل مصادق عليها
+    turnUsage: تم استخدام {consumed} من أصل {included}
+    remainingUnavailable: الاستخدام المتبقي غير متاح.
+    meteringUnavailable: قياس الاستخدام غير متصل بعد؛ هذه هي الحصة المضمّنة وليست الرصيد المتبقي.
+    sourcesTitle: مصادر المخصصات النشطة
+    source:
+      plus: "Together: {ai} وحدة AI وترحيل {turn}"
+      shared_hosting: "خطة الخادم: {ai} وحدة AI وبدون TURN"
+    serverBonus: تتضمن كل خطة خادم نشطة بشكل مستقل 200,000 وحدة AI كل شهر للمساعدة في إعداد حزم التعديلات والخادم.
+    aiTitle: تشغيل حزمة التعديلات بنجاح
+    aiDescription: شخّص الأعطال وتعارضات التبعيات ومشكلات التكوين دون تحويل أحد الأصدقاء إلى مكتب دعم فني دائم للمجموعة.
+    turnTitle: إبقاء الجميع على اتصال
+    turnDescription: يحاول XMCL إجراء اتصال مباشر أولاً، ثم يستخدم تلقائياً أقرب خادم ترحيل متاح عندما تعيق الشبكات أو أجهزة التوجيه الاتصال.
+    serverEyebrow: هل تحتاج إلى المزيد؟
+    serverTitle: امنح المجموعة عالماً متاحاً على مدار الساعة.
+    serverDescription: استأجر خادم XMCL مخصصاً عندما لا تكفي استضافة الأقران، مع تخزين دائم وأداء يمكنك اختياره.
+    serverAction: عرض خطط الخوادم
+  common:
+    loading: جارٍ التحميل…
+    refresh: تحديث
+    refreshing: جارٍ التحديث…
+    signIn: تسجيل الدخول
+  playModes:
+    label: اختر طريقة لعب مجموعتكم
+    plusEyebrow: استضافة لدى صديق
+    plusTitle: Together Home
+    plusDescription: ابدأ عالماً محلياً واستخدم Together عندما يحتاج اللعب الجماعي المباشر إلى مساعدة.
+    serverEyebrow: متاح دائماً على الإنترنت
+    serverTitle: Together Camp أو Lodge أو Village
+    serverDescription: حافظ على عالم دائم متاح حتى عندما يكون مالك المجموعة غير متصل.
+  billing:
+    eyebrow: فواتير XMCL
+    title: الفواتير والرصيد
+    description: أدر رصيدك النقدي ومدفوعاتك وسجل نشاط الفواتير.
+    accountSettings: إعدادات الحساب
+    disabled: نظام الفواتير غير مفعّل في هذا التثبيت.
+    loadingTitle: جارٍ تحميل الفواتير
+    loadingDescription: جارٍ استرداد رصيدك وسجل نشاطك…
+    signInTitle: سجّل الدخول لإدارة الفواتير
+    signInDescription: يرتبط رصيدك ومدفوعاتك واستخدامك بحسابك في XMCL.
+    overview: نظرة عامة
+    accountTitle: حساب الفواتير الخاص بك
+    debt: عمليات شحن الرصيد المستقبلية تسدد أولاً {amount} من الرصيد المستحق.
+    available: الرصيد المتاح
+    availableHint: جاهز للاستخدام عبر خدمات XMCL
+    homeFundingRequired: رصيدك غير كافٍ لـ Together Home. أضف على الأقل {amount}، ثم عُد إلى Together لإتمام الشراء.
+    reserved: محجوز
+    reservedHint: محجوز للاستخدام النشط
+    history: السجل
+    activity: نشاط الفواتير
+    activityViews: طرق عرض نشاط الفواتير
+    transactions: المعاملات
+    payments: المدفوعات
+    usage: الاستخدام
+    descriptionLabel: الوصف
+    reference: المرجع
+    date: التاريخ
+    amount: المبلغ
+    payment: الدفعة
+    status: الحالة
+    usageEvent: حدث الاستخدام
+    rate: السعر
+    charged: المبلغ المحتسب
+    noTransactions: لا توجد معاملات حتى الآن.
+    noPayments: لا توجد مدفوعات عبر Waffo حتى الآن.
+    noUsage: لا يوجد استخدام مقاس حتى الآن.
+    loadError: تعذر تحميل بيانات الفواتير.
+    securedTitle: مدفوعات آمنة بواسطة Waffo
+    securedDescription: تتم معالجة بيانات البطاقة والمشتري عبر صفحة الدفع المستضافة من Waffo Pancake. لا يستلم XMCL رقم بطاقتك أبداً.
+  checkout:
+    title: إضافة رصيد
+    description: اشحن رصيد XMCL بأمان عبر Waffo Pancake.
+    amount: المبلغ
+    preparing: جارٍ تجهيز صفحة الدفع…
+    add: إضافة {amount}
+    providerNote: ستنتقل إلى صفحة الدفع المستضافة لدى Waffo لإتمام الدفع.
+    legalNote: بمتابعتك، فإنك توافق على
+    terms: الشروط
+    and: و
+    privacy: سياسة الخصوصية
+    openCheckout: فتح صفحة الدفع
+    cancelledReturned: لقد ألغيت العملية أو عدت
+    newTopUp: بدء عملية شحن جديدة
+    invalidAmount: أدخل مبلغاً صحيحاً موجباً قبل المتابعة.
+    unsafeUrl: لم تُرجع الخدمة رابط دفع آمناً من Waffo.
+    opened: أتمم العملية أو ألغِها في صفحة دفع Waffo، ثم عُد إلى هنا. سيقوم XMCL بتحديث الطلب والرصيد.
+    blocked: تم حظر نافذة الموافقة المنبثقة. اسمح بها، ثم حاول مرة أخرى بنفس طلب الدفع.
+    returnRecorded: تم تسجيل العودة من صفحة الدفع.
+    returnDetected: تم رصد العودة من صفحة الدفع.
+    refreshFailed: حاول XMCL تحديث الطلب والرصيد.
+    restoreFailed: تعذر استعادة عملية الدفع السابقة. ستستخدم إعادة المحاولة نفس طلب الدفع.
+    newIntent: يمكن الآن إنشاء طلب دفع جديد. لا تستخدم رابط دفع Waffo السابق.
+  accountLinks:
+    title: خدمات XMCL
+    plusTitle: استكشف Together
+    plusDescription: حل مشكلات حزم التعديلات وحافظ على اتصال مجموعتك.
+    billingEyebrow: الفواتير
+    billingTitle: الرصيد والنشاط
+    billingDescription: أضف رصيداً وراجع الرسوم.
+    serverEyebrow: الخوادم
+    serverTitle: استضافة مشتركة
+    serverDescription: اختر خطة خادم وأدر اشتراكها.
+logViewer: عارض السجلات
+modernHome:
+  kicker: مشغل MINECRAFT مفتوح المصدر
+  visualLabel: مصمم للعوالم المعدّلة
+  windowLabel: XMCL / الرئيسية
+  latestRelease: أحدث إصدار
+  readyToPlay: جاهز للعب
+  libraryTitle: مكتبة واحدة منظمة
+  librarySubtitle: التعديلات والحزم والنسخ
+  proofLabel: إمكانيات المشغّل
+  proof:
+    fastTitle: إعداد سريع
+    fastDescription: من الفانيلا إلى التعديلات
+    libraryTitle: مكتبة واحدة
+    libraryDescription: تبقى الموارد منظمة
+    ecosystemTitle: منظومتك المتكاملة
+    ecosystemDescription: Modrinth وCurseForge
+  workflow:
+    kicker: سير عمل XMCL
+    title: كل ما تحتاجه عوالمك.
+    description: مصمم للاعبين الذين يريدون قوة البيئة المعدّلة دون أعباء الصيانة.
+    stageLabel: XMCL / سير العمل
+    scrollHint: مرّر للاستكشاف
+  openSource:
+    kicker: نبض المصدر المفتوح
+    title: يُبنى علناً وبشفافية.
+    viewOnGitHub: عرض على GitHub
+    repository: مستودع GITHUB
+    snapshot: لقطة البناء
+    downloads: التنزيلات
+    stars: النجوم
+    forks: التفرعات
+    openIssues: المشكلات المفتوحة
+    statsNote: مؤشرات مشروع GitHub تم جمعها أثناء بناء هذا الموقع.
+    contributors: المساهمون
+    inView: المعروض
+    contributorsCopy: تساهم كل مشكلة وطلب سحب وترجمة وفكرة في تشكيل الإصدار التالي.
+  sponsor:
+    label: دعم XMCL
+    title: استمر في دفع المشغّل للأمام.
+    description: ادعم الصيانة والإصدارات ومن يبنون XMCL في العلن.
+    supportedBy: بدعم من
+  download:
+    kicker: مغامرتك القادمة
+    title: جاهز عندما تكون مستعداً.
+    platforms: منصات التنزيل
+  footer:
+    issues: المشكلات
+  features:
+    setup:
+      title: كل إعداد في مشغّل واحد
+      short: مُحمّلات متعددة، نُسخ متعددة
+      description: أنشئ وأدر نسخ Minecraft المستقلة عبر Forge وFabric وQuilt وNeoForge وOptiFine وLabyMod ودعم Bedrock التجريبي، مع تولي عملية التثبيت بالكامل.
+      alt: مربع حوار إنشاء لعبة في XMCL مع مُحمّلات تعديلات متعددة ونسخة Bedrock
+      link: استكشف إعداد النسخ
+    discover:
+      title: اعثر على محتوى المجتمع
+      short: Modrinth وCurseForge وFTB
+      description: تصفح حزم التعديلات ومشاريع المجتمع، وصَفّها حسب الإصدار والمُحمّل، وانتقل من الاكتشاف إلى اللعب.
+      alt: سوق حزم تعديلات XMCL مع عوامل تصفية محتوى المجتمع
+      link: استكشف محتوى المجتمع
+    mods:
+      title: أحكم السيطرة على الإعدادات المعدّلة
+      short: بحث، تجميع، تحديث
+      description: أدر التعديلات المثبتة، وافحص التبعيات، ونظّم مجموعات مخصصة، وحافظ على وضوح الإعدادات الكبيرة.
+      alt: واجهة إدارة التعديلات المحلية في XMCL مع عوامل التصفية وعناصر التحكم في التحديث
+      link: استكشف إدارة التعديلات
+    accounts:
+      title: حساباتك بطريقتك
+      short: Microsoft وحسابات غير متصلة والمزيد
+      description: اربط خدمة الحسابات التي تناسب إعدادك، من حسابات Microsoft والملفات الشخصية غير المتصلة إلى خدمات المصادقة التابعة لجهات خارجية، دون مغادرة المشغّل.
+      alt: مربع حوار تسجيل الدخول للحساب في XMCL مع خدمات مصادقة متعددة
+      link: استكشف دعم الحسابات

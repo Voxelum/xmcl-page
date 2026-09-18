@@ -21,7 +21,7 @@ notFound:
   quote: 這裡什麼都沒有
   linkLabel: 返回首頁
   linkText: 返回首頁
-  code: '404'
+  code: "404"
 outline: 本頁包含
 darkModeSwitchLabel: 顏色主題
 darkModeSwitchTitle: 切換至暗色
@@ -45,9 +45,7 @@ intro:
     body: 提供一種 {diskEfficient} 的方式來管理你的所有 {mods}!
     diskEfficient: 磁碟空間最優選
     mods: 模組包
-  description: >-
-    XMCL 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft
-    Forge、 Fabric、Quilt、CurseForge 以及 Modrinth。
+  description: XMCL 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft Forge、 Fabric、Quilt、CurseForge 以及 Modrinth。
 launcher:
   manage:
     intro: 有效管理你的 Minecraft.
@@ -82,17 +80,13 @@ gameInstall:
   title:
     body: 輕鬆處理所有 {gameInstall}
     gameInstall: 遊戲安裝
-  description: >-
-    XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
-    你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方 BMCL API。
+  description: XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！ 你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方 BMCL API。
 optimalDisk:
   title:
     body: 磁碟空間 {optimal} 選，輕鬆處理 {massiveResources}
     optimal: 最優選
     massiveResources: 大量資源
-  description: >-
-    XMCL 會在統一位置儲存所有模組、資源包、光影包、模組包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。
-    所以副本檔案不會被存放在 /mods 資料夾中。
+  description: XMCL 會在統一位置儲存所有模組、資源包、光影包、模組包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。 所以副本檔案不會被存放在 /mods 資料夾中。
 cleanWorkspace:
   title:
     body: 多版本實例，讓你的各版本 Minecraft {clean}
@@ -102,13 +96,11 @@ communityIntegration:
   title:
     body: 支援 {multipleCommunities}
     multipleCommunities: 各種第三方模組網站
-  description: >-
-    XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如 Blessin
-    Skin。
+  description: XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如 Blessin Skin。
 download-tarxz: 壓縮檔 (tar.xz)
 download-linuxZip: 壓縮檔 (zip)
 joinPeer: 和 {inviter} 一起玩
-joinPeerDescription: '{inviter} 邀請你加入 Minecraft 聯機群組 {group}，瀏覽器將自動開啟啟動器並加入群組。'
+joinPeerDescription: "{inviter} 邀請你加入 Minecraft 聯機群組 {group}，瀏覽器將自動開啟啟動器並加入群組。"
 privacy: 隱私協議
 prebuild:
   history: 構建歷史
@@ -123,6 +115,18 @@ prebuild:
   selected: 已選擇
   selectBuild: 選擇構建
   downloading: 正在下載...
+  kicker: 預構建頻道
+  developmentBuilds: 開發構建
+  tryNext: 體驗即將推出的新版本。
+  unstableDescription: 用於測試 XMCL 即將推出變更的不穩定構建產物。
+  selectedBuild: 目前選取的構建
+  buildsAvailable: 共有 {count} 個構建
+  selectABuild: 選擇一個構建
+  noBuilds: 未找到構建
+  noBuildsDescription: 目前沒有可用的預構建產物。
+  checkBack: 請在下一個開發工作流程完成後再回來查看。
+  yesterday: 昨天
+  daysAgo: "{count} 天前"
 downloadMacHint:
   link: 安裝指令
   content: 對於Mac用戶，請按照{link}進行安裝。
@@ -174,48 +178,92 @@ features:
   items:
     instance-library:
       title: 統一的實例庫
+      benefit: 在一個隨時可啟動的統一首頁中，集中查看原版、模組與實驗性世界。
+      capabilities: 隔離不同遊戲版本與載入器|模組、存檔與資源一目了然|啟動所需的遊戲設定
     instance-create-modloaders:
       title: 建立 Java 與 Bedrock 實例
+      benefit: 選擇適合目標世界的載入器與版本，快速建立新的遊戲設定。
+      capabilities: 支援 Java Edition 與實驗性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine 與 LabyMod|Minecraft 與本機版本來源
     instance-folder-groups:
       title: 實例資料夾分組
+      benefit: 將大量實例按資料夾整理，讓不同世界與設定更容易瀏覽查找。
+      capabilities: 按專案或用途將實例分組|將相關設定放在一起|從實例側邊欄切換資料夾
     instance-settings:
       title: 實例設定
+      benefit: 獨立微調 Java、記憶體、版本、載入器與啟動行為，完全不影響其他設定。
+      capabilities: 獨立的實例設定|版本與載入器選擇|個別實例的外觀控制
     instance-theme:
       title: 實例主題
+      benefit: 使用背景、顏色、模糊、字型與自訂 CSS，為每個世界賦予專屬風格。
+      capabilities: 背景圖片與重疊圖層|圓角與字型控制|匯出與匯入主題
     local-server:
       title: 啟動本機伺服器
+      benefit: 將實例轉換為可自訂設定的本機伺服器，並配置世界、玩家人數上限與可匯出的檔案。
+      capabilities: MOTD、連接埠與玩家人數上限|世界與伺服器檔案選取|匯出伺服器套件
     server-list:
       title: 伺服器列表
+      benefit: 將多人遊戲伺服器緊鄰對應實例放置，並即時查看連線狀態。
+      capabilities: 伺服器狀態與玩家人數|釘選與移除連線目的地|清楚顯示連線失敗原因
     modpack-market:
       title: 整合包市場
+      benefit: 在單一可搜尋的市集中，瀏覽 Modrinth、CurseForge 與 FTB 內容。
+      capabilities: 來源、版本、載入器與分類篩選|發掘熱門與最新整合包|開啟整合包詳細頁面
     online-mod-search:
       title: 線上模組搜尋
+      benefit: 在模組加入實例前，先在各大主流社群平台中找到相容的模組。
+      capabilities: Modrinth 與 CurseForge 來源|Minecraft 版本與載入器篩選|環境與分類篩選
     modpack-detail:
       title: 整合包詳情
+      benefit: 在安裝前全面了解整合包，涵蓋螢幕截圖、作者、統計數據到技術需求。
+      capabilities: 螢幕截圖、標籤與專案統計|安裝與啟動操作|技術資訊與外部資源
     mod-collections:
       title: 模組收藏
+      benefit: 收藏想再次查看的專案，並將收藏清單轉換為可重複使用的設定。
+      capabilities: 啟動器收藏|已追蹤的 Modrinth 專案|批次安裝與收藏管理
     mod-detail:
       title: 模組詳情
+      benefit: 在修改實例前先檢視模組，掌握其版本、依賴項目與來源資訊。
+      capabilities: 版本選擇與相依性|載入器、分類與來源連結|描述與外部資源
     local-mods:
       title: 已安裝模組管理
+      benefit: 快速查看已啟用的內容、進行篩選，並保持目前運行的模組配置健全。
+      capabilities: 搜尋、排序與篩選模組|檢查依賴項目與未使用的內容|選擇更新策略
     custom-mod-groups:
       title: 自訂模組分組
+      benefit: 建立專屬分組並儲存分類規則，讓複雜的實例井井有條。
+      capabilities: 套用與儲存分組規則|從右鍵選單將模組分組|啟用、停用或檢查檔案
     save-preview:
       title: 存檔預覽與區塊工具
+      benefit: 啟動世界前先以視覺化方式檢視地圖，並進行精確的區塊級調整。
+      capabilities: 平移與檢視世界地圖|選取、複製或刪除區塊|查看世界屬性與材料
     blueprint-preview:
       title: 藍圖預覽
+      benefit: 在放入遊戲前以 3D 預覽建築結構，並確認相容性與所需材料。
+      capabilities: Litematica 與 WorldEdit 格式|相容性與缺失模組狀態|材料清單與格式轉換
     modpack-export:
       title: 整合包匯出
+      benefit: 將實例打包分享給其他玩家，完整保留使其正常運作的中繼資料與檔案。
+      capabilities: CurseForge 與 Modrinth 匯出|作者、描述與 URL 中繼資料|選擇要包含的檔案與資產
     server-export:
       title: 伺服器匯出
+      benefit: 選擇正確的世界與伺服器檔案，匯出設定清晰的本機伺服器。
+      capabilities: 匯出至資料夾或上傳|選取伺服器檔案|設定 MOTD 與伺服器選項
     account-login:
       title: 多種驗證服務
+      benefit: 選擇適合你遊玩習慣的帳號服務，從 Microsoft、離線帳號到第三方驗證服務皆可支援。
+      capabilities: Microsoft 與離線帳號|Ely.by 與 LittleSkin 服務|新增與管理驗證服務
     quick-action:
       title: 快速操作
+      benefit: 無需離開目前頁面，即可搜尋實例與執行指令。
+      capabilities: 搜尋指令、實例與模組|啟動或建立實例|使用 Ctrl+K 快速鍵導航
     crash-diagnosis:
       title: 當機與啟動失敗報告
+      benefit: 查看啟動失敗背後的實際記錄、當機報告與伺服器輸出。
+      capabilities: 記錄、當機報告與啟動失敗|模組解析錯誤與結束代碼|複製 Prompt 給外部 AI 工具
     ai-agent:
       title: 內建 AI Agent
+      benefit: 讓 Agent 檢查實例的虛擬檔案系統，並解釋具體可行的修復方案。
+      capabilities: 讀取實例檔案與報告|深入分析後再得出結論|在可行時套用修復方案
 siteFooter:
   ariaLabel: 網站頁尾
   navigation: 頁尾導覽
@@ -256,15 +304,15 @@ sceneLanding:
     workflowDescription: XMCL 將 Linux 玩家在意的體驗放在一起：可靠的安裝方式、清晰的介面，以及彼此獨立、方便切換的遊戲環境。
     signals:
       packages:
-        number: '05'
+        number: "05"
         label: Linux 安裝包
         description: DEB、RPM、AppImage、tar.xz 與 Flathub。
       scale:
-        number: '4K'
+        number: 4K
         label: 任意尺寸都清晰
         description: 在大螢幕上也能輕鬆瀏覽實例庫。
       worlds:
-        number: '∞'
+        number: ∞
         label: 世界彼此獨立
         description: 版本、載入器與存檔不會互相干擾。
     download:
@@ -272,6 +320,31 @@ sceneLanding:
       title: 按你的方式安裝 XMCL。
       description: 選擇適合系統的安裝包，也可以透過 Flathub 將 XMCL 帶到 Steam Deck。
       link: 查看所有發行版與預先建置版本
+    features:
+      install:
+        label: 01 / 選擇安裝方式
+        title: 使用發行版熟悉的格式。
+        description: 為桌面下載原生安裝包，或透過 Flathub 以更便攜的方式在 Steam Deck 上使用 XMCL。XMCL 也在硬體有需求時提供 ARM64 建置版本。
+        point1: 主流 Linux 桌面的 DEB 與 RPM
+        point2: 便攜安裝的 AppImage 與 tar.xz
+        point3: 面向 Steam Deck 的 Flathub 支援
+        alt: 包含 Minecraft 版本與模組載入器的 XMCL 建立實例對話方塊
+      organize:
+        label: 02 / 保持整潔
+        title: 每個實例都有獨立整潔的啟動空間。
+        description: 無需手動整理資料夾，即可分開管理原版、模組、測試與伺服器環境。你的版本、載入器、模組、存檔與設定始終整合在一起。
+        point1: 獨立的遊戲資料與啟動設定
+        point2: 支援 Forge、Fabric、Quilt、NeoForge 等載入器
+        point3: 快速切換不同世界與實驗環境
+        alt: XMCL 整理後的 Minecraft 實例庫
+      anywhere:
+        label: 03 / 隨處暢玩
+        title: 從桌面到 Steam Deck 都好用。
+        description: 在 Linux 桌面與 Steam Deck 之間切換時，依然保留清晰的實例庫與可靠的遊戲設定。XMCL 讓你的收藏自由擴展，無需面對繁瑣的試算表。
+        point1: 為 Steam Deck 打造的 Flathub 途徑
+        point2: 適合 4K 螢幕的清晰介面
+        point3: 面向 Linux 玩家打造的開源專案
+        alt: 展示大型實例庫的 XMCL 首頁
   creators:
     eyebrow: XMCL / 整合包製作者
     title: 在一個工作流程中完成整合包的建置與發布。
@@ -288,7 +361,7 @@ sceneLanding:
     workflowDescription: XMCL 將整合包視為持續演進的系統：瀏覽兩個平台，進行有把握的修改，並讓啟動器幫助你維持發布品質。
     signals:
       sources:
-        number: '2×'
+        number: 2×
         label: 專案來源
         description: 在一個工作區搜尋 Modrinth 與 CurseForge。
       export:
@@ -304,6 +377,47 @@ sceneLanding:
       title: 建立整合包、發布整合包，讓它一直保持健康。
       description: XMCL 為製作者提供從發現、測試、診斷到匯出的快速本地循環，覆蓋玩家常用的兩個模組生態。
       button: 探索全部功能
+    features:
+      discover:
+        label: 01 / 發現專案
+        title: 不切換平台，同時搜尋兩個生態。
+        description: 按版本、載入器、環境與分類篩選 Modrinth 與 CurseForge 專案，並透過雙向映射比較同一個專案。
+        point1: 單一流程同時搜尋 Modrinth 與 CurseForge
+        point2: Minecraft 版本與載入器相容性篩選
+        point3: 跨平台專案雙向映射
+        alt: 具備來源與相容性篩選的 XMCL 線上模組搜尋
+      build:
+        label: 02 / 建置設定
+        title: 讓依賴成為建置計畫的一部分。
+        description: 安裝模組時自動處理依賴，啟用或停用專案時也會考量關聯性，避免手動追蹤相依關聯圖。
+        point1: 自動安裝依賴
+        point2: 啟用與停用時感知依賴關係
+        point3: 查看版本、載入器與專案中繼資料
+        alt: 展示版本與依賴關係的 XMCL 模組詳情
+      curate:
+        label: 03 / 整理內容
+        title: 保持工作集精簡且具針對性。
+        description: 搜尋、排序、分組、更新並移除不再需要的模組。自訂分組能輕鬆測試選用內容、比對設定檔，或讓發布候選版本保持精確。
+        point1: 自動檢查模組更新
+        point2: 為選用與測試內容建立自訂分組
+        point3: 找出並移除未使用的模組
+        alt: 具備搜尋與更新控制項的 XMCL 已安裝模組管理
+      export:
+        label: 04 / 匯出發布
+        title: 按玩家需要的格式發布整合包。
+        description: 匯出帶有完整中繼資料與精選檔案的 Modrinth 或 CurseForge 整合包，讓發布成為可重複的工作流程步驟。
+        point1: 一鍵匯出 Modrinth 與 CurseForge 整合包
+        point2: 作者、描述、網址與版本中繼資料
+        point3: 精確挑選要發布的檔案與資產
+        alt: XMCL Modrinth 與 CurseForge 整合包匯出頁面
+      diagnose:
+        label: 05 / 分析問題
+        title: 讓 AI 幫你把當機報告變成修復方案。
+        description: 測試啟動失敗時，在同一個地方查看記錄、當機報告並使用 AI Agent 分析實例環境。Agent 能直接檢查實例環境內容，並說明具體可行的下一步修復操作。
+        point1: 在上下文脈絡中查看啟動記錄與當機報告
+        point2: AI 輔助檢查實例檔案
+        point3: 在發布前排查並解決模組衝突
+        alt: XMCL AI Agent 分析 Minecraft 啟動失敗
 commercial:
   common:
     loading: 正在載入…
@@ -415,7 +529,7 @@ commercial:
     perMonth: / 月
     runtimePrice: + 每執行小時 {amount}
     cpu: CPU
-    cpuValue: '{count} vCPU'
+    cpuValue: "{count} vCPU"
     memory: 記憶體
     storage: 持久儲存
     includedAi: 贈送 AI 協助
@@ -430,7 +544,7 @@ commercial:
     managerEyebrow: 你的託管伺服器
     managerTitle: 伺服器管理
     managerDescription: 每台伺服器獨立執行和計費；在這裡查看狀態並控制開關。
-    serverNumber: '{plan} 伺服器 {number}'
+    serverNumber: "{plan} 伺服器 {number}"
     start: 啟動伺服器
     stop: 停止伺服器
     cpuUsage: CPU 使用率
@@ -509,7 +623,7 @@ commercial:
       pauseTitle: 不玩就暫停
       pauseDescription: 暫停後停止運行時計費，下次從原來的世界繼續。
     confirm:
-      serverNumber: '{plan} 伺服器 #{number}'
+      serverNumber: "{plan} 伺服器 #{number}"
       addAnother: 再購買一台
       close: 關閉
       purchaseEyebrow: 建立新伺服器
@@ -562,17 +676,17 @@ commercial:
     allowancesTitle: 體驗背後的服務額度
     aiAllowance: 剩餘 AI 協助額度
     aiUnits: 剩餘加權 token units
-    aiUsage: '已使用 {consumed} / 共 {included}'
-    aiFormula: '用量 = 未命中快取的輸入 + ceil(命中快取的輸入 × 0.1) + 輸出 × 4。'
+    aiUsage: 已使用 {consumed} / 共 {included}
+    aiFormula: 用量 = 未命中快取的輸入 + ceil(命中快取的輸入 × 0.1) + 輸出 × 4。
     turnAllowance: 連線中繼
     turnEgress: 驗證中繼流量
-    turnUsage: '已使用 {consumed} / 共 {included}'
+    turnUsage: 已使用 {consumed} / 共 {included}
     remainingUnavailable: 暫無剩餘額度資料。
     meteringUnavailable: 用量計量尚未接入；這裡顯示的是包含額度，不是剩餘額度。
     sourcesTitle: 目前額度來源
     source:
-      plus: 'Together：{ai} AI units 和 {turn} 連線中繼'
-      shared_hosting: '伺服器方案：{ai} AI units，不含 TURN'
+      plus: Together：{ai} AI units 和 {turn} 連線中繼
+      shared_hosting: 伺服器方案：{ai} AI units，不含 TURN
     serverBonus: 每個有效伺服器方案每月另贈 200,000 AI units，用於協助整合包和伺服器設定。
     aiTitle: 先把整合包順利跑起來
     aiDescription: 協助診斷崩潰、相依衝突和設定問題，不必再讓某個朋友兼職做全隊的技術支援。
@@ -592,3 +706,78 @@ commercial:
     serverEyebrow: 伺服器
     serverTitle: 共享託管
     serverDescription: 選擇伺服器方案並管理訂閱。
+logViewer: 記錄檢視器
+download-flathub: Flathub
+fullChangelog: 更新內容
+modernHome:
+  kicker: 開源 MINECRAFT 啟動器
+  visualLabel: 為模組世界而生
+  windowLabel: XMCL / 首頁
+  latestRelease: 最新版本
+  readyToPlay: 準備開始
+  libraryTitle: 統一的資源庫
+  librarySubtitle: 模組、整合包與實例
+  proofLabel: 啟動器能力
+  proof:
+    fastTitle: 快速設定
+    fastDescription: 從原版到模組
+    libraryTitle: 統一資源庫
+    libraryDescription: 資源集中管理
+    ecosystemTitle: 你的生態
+    ecosystemDescription: Modrinth 與 CurseForge
+  workflow:
+    kicker: XMCL 工作流程
+    title: 滿足你的世界所需的一切。
+    description: 為希望擁有模組強大功能、又不想承擔維護負擔的玩家而設計。
+    stageLabel: XMCL / 工作流程
+    scrollHint: 捲動以探索
+  openSource:
+    kicker: 開源脈搏
+    title: 在公開協作中建置。
+    viewOnGitHub: 在 GitHub 上查看
+    repository: GITHUB 倉庫
+    snapshot: 建置快照
+    downloads: 下載量
+    stars: Stars
+    forks: Forks
+    openIssues: 未解決 Issue
+    statsNote: GitHub 專案數據於本站建置時擷取。
+    contributors: 貢獻者
+    inView: 位貢獻者
+    contributorsCopy: 每個 Issue、Pull Request、翻譯與想法，都在幫助塑造下一個版本。
+  sponsor:
+    label: 贊助 XMCL
+    title: 讓啟動器持續前進。
+    description: 支持維護、發布，以及公開建置 XMCL 的人們。
+    supportedBy: 支持方
+  download:
+    kicker: 下一場冒險
+    title: 準備好就出發。
+    platforms: 下載平台
+  footer:
+    issues: Issue
+  features:
+    setup:
+      title: 一個啟動器，管理所有設定
+      short: 多載入器，多實例
+      description: 支援 Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod 與實驗性 Bedrock，並自動完成安裝與設定。
+      alt: XMCL 建立遊戲對話方塊，展示多個 Mod Loader 與 Bedrock Edition
+      link: 查看實例設定
+    discover:
+      title: 發現社群內容
+      short: Modrinth、CurseForge 與 FTB
+      description: 瀏覽整合包與社群專案，按版本與載入器篩選，從發現直接進入遊戲。
+      alt: XMCL 整合包市場與社群內容篩選器
+      link: 查看社群內容
+    mods:
+      title: 輕鬆掌控模組設定
+      short: 搜尋、分組、更新
+      description: 管理已安裝模組、檢查依賴、整理自訂分組，讓大型模組環境保持清晰。
+      alt: XMCL 本機模組管理與篩選控制
+      link: 查看模組管理
+    accounts:
+      title: 按你的方式使用帳號
+      short: Microsoft、離線帳號及更多
+      description: 在啟動器中連結適合你的帳號服務，包括 Microsoft、離線帳號與第三方驗證服務。
+      alt: XMCL 登入對話方塊，展示多種驗證服務
+      link: 查看帳號支援

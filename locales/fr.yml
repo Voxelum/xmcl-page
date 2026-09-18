@@ -8,10 +8,7 @@ intro:
     body: Un {diskEfficient} de gérer tous vos {mods} !
     diskEfficient: Moyen Efficace
     mods: Mods
-  description: XMCL est un launcher Minecraft moderne permettant de gérer  de très
-    grands volumes de données comme des modpacks, des packs de textures,  des
-    mods et même des packs de shaders... Il est conçu pour fonctionner avec
-    Forge,  Fabric, Quilt ainsi que CurseForge, Modrinth et FeedTheBeast (FTB).
+  description: XMCL est un launcher Minecraft moderne permettant de gérer  de très grands volumes de données comme des modpacks, des packs de textures,  des mods et même des packs de shaders... Il est conçu pour fonctionner avec Forge,  Fabric, Quilt ainsi que CurseForge, Modrinth et FeedTheBeast (FTB).
 label: Français
 guide: Guide
 protocol: Protocole
@@ -45,67 +42,60 @@ github-source: Télécharger sur Github
 auto-source: Détection Automatique de la source de téléchargement
 authSuccess: Succès !
 authSuccessTitle: Autorisation exécutée avec succès. Vous allez être redirigé vers le Launcher !
-redirectHelperTitle: Si vous n'êtes pas redirigé, essayez de cliquer sur le
-  bouton « Ouvrir dans l'Application » pour être manuellement redirigé.
-redirectHelperMessage: Une fenêtre contextuelle vous demandera d'ouvrir le
-  launcher. Si cela ne marche pas non plus, vous pouvez essayer de faire glisser
-  le bouton sur la fenêtre du launcher !
+redirectHelperTitle: Si vous n'êtes pas redirigé, essayez de cliquer sur le bouton « Ouvrir dans l'Application » pour être manuellement redirigé.
+redirectHelperMessage: Une fenêtre contextuelle vous demandera d'ouvrir le launcher. Si cela ne marche pas non plus, vous pouvez essayer de faire glisser le bouton sur la fenêtre du launcher !
 notWork: Ça ne marche pas ?
 openInAppButton: Ouvrir dans le Launcher
-nothingWork: Si rien ne fonctionne, essayez de télécharger à nouveau la dernière
-  version du launcher
+nothingWork: Si rien ne fonctionne, essayez de télécharger à nouveau la dernière version du launcher
 gameInstall:
   title:
     body: Plus d'inquiétude lors de votre choix de {gameInstall}
     gameInstall: Versions de Minecraft
-  description: XMCL prend entièrement en charge l'installation des versions
-    vanilla, Forge, Fabric et même Optifine de Minecraft ! Ils sont tous
-    regrouper au même endroit dans le Launcher. Il prend également en charge le
-    lien miroir tiers BMCL API. Vous pouvez même personnaliser votre propre
-    mirror dans le launcher.
+  description: XMCL prend entièrement en charge l'installation des versions vanilla, Forge, Fabric et même Optifine de Minecraft ! Ils sont tous regrouper au même endroit dans le Launcher. Il prend également en charge le lien miroir tiers BMCL API. Vous pouvez même personnaliser votre propre mirror dans le launcher.
 optimalDisk:
   title:
     body: Espace disque {optimal} même avec les {massiveResources}
     optimal: Optimisé
     massiveResources: Ressources Volumineuses
-  description: XMCL stockera tous les mods, packs de textures, packs de shaders et
-    modpacks dans un emplacement de stockage unique. Lorsque vous essayez
-    d'utiliser une  ressource déjà existante, il utilisera un lien direct pour
-    utiliser la ressource dans l'instance choisie sans avoir à la copier. Cela
-    signifie que vous ne verrez plus de mods dupliqués dans le dossier /mods.
+  description: XMCL stockera tous les mods, packs de textures, packs de shaders et modpacks dans un emplacement de stockage unique. Lorsque vous essayez d'utiliser une  ressource déjà existante, il utilisera un lien direct pour utiliser la ressource dans l'instance choisie sans avoir à la copier. Cela signifie que vous ne verrez plus de mods dupliqués dans le dossier /mods.
 cleanWorkspace:
   title:
     body: Gardez votre espace de travail {clean} avec différentes instances
     clean: Propre
-  description: XMCL peut gérer l'utilisation de plusieurs instances. Vous pouvez
-    ainsi créer plusieurs instances facilement. Vous n'avez donc plus à vous
-    soucier d'utiliser différents paramètres de lancement.
+  description: XMCL peut gérer l'utilisation de plusieurs instances. Vous pouvez ainsi créer plusieurs instances facilement. Vous n'avez donc plus à vous soucier d'utiliser différents paramètres de lancement.
 communityIntegration:
   title:
     body: Une intégration {multipleCommunities}
     multipleCommunities: Multicommunautaire
-  description: XMCL prend en charge Curseforge, Modrinth et FeedTheBeast (FTB). Il
-    offre également le support  des comptes utilisateurs/skins personnalisés
-    comme « Blessing Skin ».
+  description: XMCL prend en charge Curseforge, Modrinth et FeedTheBeast (FTB). Il offre également le support  des comptes utilisateurs/skins personnalisés comme « Blessing Skin ».
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Rejoidre la partie de {inviter}
-joinPeerDescription: "{inviter} vous invite à rejoindre leur groupe {group} pour
-  jouer ensemble à Minecraft ! Vous serez redirigé vers le Launcher !"
+joinPeerDescription: "{inviter} vous invite à rejoindre leur groupe {group} pour jouer ensemble à Minecraft ! Vous serez redirigé vers le Launcher !"
 fullChangelog: Quoi de Neuf ?
 privacy: Protection de la Vie Privée
 prebuild:
   history: Historique des Compilations
   historyDescription: Compilations et versions précédentes
   download: Télécharger une Pré-Compilation
-  downloadDescription: Les versions « Pré-Compilation » (ou Prebuild) est le
-    produit obtenu au cours du processus de  développement. Ils peuvent être
-    instables. Utilisez-les à vos risques et périls !
+  downloadDescription: Les versions « Pré-Compilation » (ou Prebuild) est le produit obtenu au cours du processus de  développement. Ils peuvent être instables. Utilisez-les à vos risques et périls !
   entryHint: Artefacts de Pré-Compilation ?
   ready: Prêt
   selected: Sélectionné
   selectBuild: Sélectionner la compilation
   downloading: Téléchargement...
+  kicker: CANAL DE PRÉ-COMPILATION
+  developmentBuilds: BUILDS DE DÉVELOPPEMENT
+  tryNext: Testez les prochaines nouveautés.
+  unstableDescription: Des artefacts instables pour tester les futurs changements de XMCL.
+  selectedBuild: BUILD SÉLECTIONNÉ
+  buildsAvailable: "{count} builds disponibles"
+  selectABuild: SÉLECTIONNER UN BUILD
+  noBuilds: AUCUN BUILD TROUVÉ
+  noBuildsDescription: Aucun artefact de pré-compilation n'est disponible pour le moment.
+  checkBack: Veuillez revenir une fois le prochain workflow de développement terminé.
+  yesterday: Hier
+  daysAgo: Il y a {count} jours
 downloadMacHint:
   link: installer des instructions
   content: Pour les utilisateurs de Mac, veuillez suivre le {link} à installer.
@@ -114,8 +104,7 @@ features:
   ui:
     kicker: XMCL / CATALOGUE DES FONCTIONNALITÉS
     heading: Le launcher en un coup d'œil
-    description: Explorez les workflows qui simplifient la création, la
-      compréhension et le partage d'une installation Minecraft modifiée.
+    description: Explorez les workflows qui simplifient la création, la compréhension et le partage d'une installation Minecraft modifiée.
     all: Toutes les fonctionnalités
     search: Rechercher une fonctionnalité...
     features: fonctionnalités
@@ -130,176 +119,124 @@ features:
     instances:
       short: Instances
       title: Instances et profils
-      description: Gardez chaque configuration Minecraft indépendante, visible et
-        prête à démarrer.
+      description: Gardez chaque configuration Minecraft indépendante, visible et prête à démarrer.
     community:
       short: Communauté
       title: Mods et contenu communautaire
-      description: Découvrez, examinez et installez les projets qui transforment une
-        version de Minecraft en nouveau monde.
+      description: Découvrez, examinez et installez les projets qui transforment une version de Minecraft en nouveau monde.
     mods:
       short: Gestion des mods
       title: Gestion des mods
-      description: Gardez une grande configuration de mods claire grâce à la
-        recherche, aux groupes et aux contrôles de dépendances.
+      description: Gardez une grande configuration de mods claire grâce à la recherche, aux groupes et aux contrôles de dépendances.
     world-tools:
       short: Outils du monde
       title: Outils du monde
-      description: Inspectez les mondes, sélectionnez leurs parties et comprenez leurs
-        matériaux.
+      description: Inspectez les mondes, sélectionnez leurs parties et comprenez leurs matériaux.
     sharing:
       short: Partage
       title: Partage et multijoueur
-      description: Déplacez une configuration fonctionnelle vers un ami, un serveur ou
-        une autre installation avec ses détails.
+      description: Déplacez une configuration fonctionnelle vers un ami, un serveur ou une autre installation avec ses détails.
     accounts:
       short: Comptes
       title: Comptes et productivité
-      description: Gardez identité, personnalisation et actions fréquentes près des
-        mondes que vous jouez.
+      description: Gardez identité, personnalisation et actions fréquentes près des mondes que vous jouez.
     diagnostics:
       short: Diagnostic
       title: Diagnostic et assistance
-      description: Quand le lancement échoue, XMCL rassemble les preuves et l'action
-        suivante au même endroit.
+      description: Quand le lancement échoue, XMCL rassemble les preuves et l'action suivante au même endroit.
   items:
     instance-library:
       title: Une bibliothèque d'instances organisée
-      benefit: Voyez les mondes vanilla, moddés et expérimentaux dans un accueil prêt
-        à lancer.
-      capabilities: Séparer les versions et loaders|Voir mods, sauvegardes et
-        ressources|Lancer la configuration voulue
+      benefit: Voyez les mondes vanilla, moddés et expérimentaux dans un accueil prêt à lancer.
+      capabilities: Séparer les versions et loaders|Voir mods, sauvegardes et ressources|Lancer la configuration voulue
     instance-create-modloaders:
       title: Créer des instances Java et Bedrock
-      benefit: Commencez une configuration avec l'édition et le loader adaptés au
-        monde souhaité.
-      capabilities: Java Edition et prise en charge expérimentale de Bedrock|Forge,
-        Fabric, Quilt, NeoForge, OptiFine et LabyMod|Sources Minecraft et
-        versions locales
+      benefit: Commencez une configuration avec l'édition et le loader adaptés au monde souhaité.
+      capabilities: Java Edition et prise en charge expérimentale de Bedrock|Forge, Fabric, Quilt, NeoForge, OptiFine et LabyMod|Sources Minecraft et versions locales
     instance-folder-groups:
       title: Groupes d'instances par dossiers
-      benefit: Classez de nombreuses instances dans des dossiers pour retrouver
-        rapidement mondes et configurations.
-      capabilities: Grouper par projet ou usage|Garder les configurations liées
-        ensemble|Changer de dossier depuis la barre des instances
+      benefit: Classez de nombreuses instances dans des dossiers pour retrouver rapidement mondes et configurations.
+      capabilities: Grouper par projet ou usage|Garder les configurations liées ensemble|Changer de dossier depuis la barre des instances
     instance-settings:
       title: Paramètres de l'instance
-      benefit: Réglez Java, la mémoire, les versions, les loaders et le lancement
-        indépendamment.
-      capabilities: Configuration indépendante|Choix de la version et du
-        loader|Apparence propre à l'instance
+      benefit: Réglez Java, la mémoire, les versions, les loaders et le lancement indépendamment.
+      capabilities: Configuration indépendante|Choix de la version et du loader|Apparence propre à l'instance
     instance-theme:
       title: Thème de l'instance
-      benefit: Donnez à chaque monde son identité avec arrière-plans, couleurs, flou,
-        polices et CSS personnalisé.
-      capabilities: Image d'arrière-plan et overlay|Coins arrondis et polices|Importer
-        et exporter un thème
+      benefit: Donnez à chaque monde son identité avec arrière-plans, couleurs, flou, polices et CSS personnalisé.
+      capabilities: Image d'arrière-plan et overlay|Coins arrondis et polices|Importer et exporter un thème
     local-server:
       title: Lancer un serveur local
-      benefit: Transformez une instance en serveur local configurable avec monde,
-        limite de joueurs et fichiers exportables.
-      capabilities: MOTD, port et limite de joueurs|Choix du monde et des fichiers
-        serveur|Exporter un paquet serveur
+      benefit: Transformez une instance en serveur local configurable avec monde, limite de joueurs et fichiers exportables.
+      capabilities: MOTD, port et limite de joueurs|Choix du monde et des fichiers serveur|Exporter un paquet serveur
     server-list:
       title: Liste des serveurs
-      benefit: Gardez les destinations multijoueur près de l'instance concernée et
-        voyez leur état de connexion.
-      capabilities: État du serveur et nombre de joueurs|Épingler et
-        supprimer|Afficher clairement les échecs de connexion
+      benefit: Gardez les destinations multijoueur près de l'instance concernée et voyez leur état de connexion.
+      capabilities: État du serveur et nombre de joueurs|Épingler et supprimer|Afficher clairement les échecs de connexion
     modpack-market:
       title: Marché des modpacks
-      benefit: Parcourez le contenu Modrinth, CurseForge et FTB depuis un marché
-        unique et searchable.
-      capabilities: Filtres de source, version, loader et catégorie|Découvrir les
-        packs populaires et récents|Ouvrir les détails d'un pack
+      benefit: Parcourez le contenu Modrinth, CurseForge et FTB depuis un marché unique et searchable.
+      capabilities: Filtres de source, version, loader et catégorie|Découvrir les packs populaires et récents|Ouvrir les détails d'un pack
     online-mod-search:
       title: Recherche de mods en ligne
-      benefit: Trouvez des mods compatibles sur les principales plateformes
-        communautaires avant de les ajouter.
-      capabilities: Sources Modrinth et CurseForge|Filtres de version Minecraft et
-        loader|Filtres d'environnement et catégorie
+      benefit: Trouvez des mods compatibles sur les principales plateformes communautaires avant de les ajouter.
+      capabilities: Sources Modrinth et CurseForge|Filtres de version Minecraft et loader|Filtres d'environnement et catégorie
     modpack-detail:
       title: Détails du modpack
-      benefit: Consultez captures, auteurs, statistiques et exigences techniques avant
-        l'installation.
-      capabilities: Captures, tags et statistiques|Installer et lancer|Informations
-        techniques et ressources externes
+      benefit: Consultez captures, auteurs, statistiques et exigences techniques avant l'installation.
+      capabilities: Captures, tags et statistiques|Installer et lancer|Informations techniques et ressources externes
     mod-collections:
       title: Collections de mods
-      benefit: Enregistrez les projets à revoir et transformez une collection en
-        configuration réutilisable.
-      capabilities: Collections du launcher|Projets Modrinth suivis|Installation
-        groupée et gestion de collection
+      benefit: Enregistrez les projets à revoir et transformez une collection en configuration réutilisable.
+      capabilities: Collections du launcher|Projets Modrinth suivis|Installation groupée et gestion de collection
     mod-detail:
       title: Détails du mod
-      benefit: Examinez versions, dépendances, sources et compatibilité avant de
-        modifier l'instance.
-      capabilities: Sélection de version et dépendances|Loaders, catégories et liens
-        sources|Description et ressources externes
+      benefit: Examinez versions, dépendances, sources et compatibilité avant de modifier l'instance.
+      capabilities: Sélection de version et dépendances|Loaders, catégories et liens sources|Description et ressources externes
     local-mods:
       title: Gestion des mods installés
-      benefit: Voyez le contenu activé, filtrez-le rapidement et gardez la
-        configuration saine.
-      capabilities: Rechercher, trier et filtrer|Vérifier dépendances et contenu
-        inutilisé|Choisir une politique de mise à jour
+      benefit: Voyez le contenu activé, filtrez-le rapidement et gardez la configuration saine.
+      capabilities: Rechercher, trier et filtrer|Vérifier dépendances et contenu inutilisé|Choisir une politique de mise à jour
     custom-mod-groups:
       title: Groupes de mods personnalisés
-      benefit: Créez vos groupes et enregistrez les règles qui organisent une instance
-        complexe.
-      capabilities: Appliquer et enregistrer des règles|Grouper depuis le menu
-        contextuel|Activer, désactiver ou inspecter les fichiers
+      benefit: Créez vos groupes et enregistrez les règles qui organisent une instance complexe.
+      capabilities: Appliquer et enregistrer des règles|Grouper depuis le menu contextuel|Activer, désactiver ou inspecter les fichiers
     save-preview:
       title: Aperçu de sauvegarde et outils de chunks
-      benefit: Consultez un monde avant son lancement et modifiez précisément ses
-        chunks.
-      capabilities: Déplacer et inspecter les cartes|Sélectionner, copier ou supprimer
-        des chunks|Voir propriétés et matériaux
+      benefit: Consultez un monde avant son lancement et modifiez précisément ses chunks.
+      capabilities: Déplacer et inspecter les cartes|Sélectionner, copier ou supprimer des chunks|Voir propriétés et matériaux
     blueprint-preview:
       title: Aperçu de blueprint
-      benefit: Prévisualisez une structure en 3D et vérifiez compatibilité et
-        matériaux avant de la placer.
-      capabilities: Formats Litematica et WorldEdit|Compatibilité et mods
-        manquants|Liste des matériaux et conversion
+      benefit: Prévisualisez une structure en 3D et vérifiez compatibilité et matériaux avant de la placer.
+      capabilities: Formats Litematica et WorldEdit|Compatibilité et mods manquants|Liste des matériaux et conversion
     modpack-export:
       title: Exporter un modpack
-      benefit: Partagez une instance sans perdre les métadonnées et fichiers
-        nécessaires.
-      capabilities: Export CurseForge et Modrinth|Auteur, description et URL|Choisir
-        fichiers et assets inclus
+      benefit: Partagez une instance sans perdre les métadonnées et fichiers nécessaires.
+      capabilities: Export CurseForge et Modrinth|Auteur, description et URL|Choisir fichiers et assets inclus
     server-export:
       title: Exporter un serveur
-      benefit: Choisissez monde et fichiers serveur puis exportez un serveur local
-        clairement configuré.
-      capabilities: Exporter vers un dossier ou téléverser|Choisir les fichiers
-        serveur|Configurer MOTD et options
+      benefit: Choisissez monde et fichiers serveur puis exportez un serveur local clairement configuré.
+      capabilities: Exporter vers un dossier ou téléverser|Choisir les fichiers serveur|Configurer MOTD et options
     account-login:
       title: Plusieurs services d'authentification
-      benefit: Choisissez Microsoft, hors ligne ou un service tiers selon votre façon
-        de jouer.
-      capabilities: Comptes Microsoft et hors ligne|Services Ely.by et
-        LittleSkin|Ajouter et gérer les services
+      benefit: Choisissez Microsoft, hors ligne ou un service tiers selon votre façon de jouer.
+      capabilities: Comptes Microsoft et hors ligne|Services Ely.by et LittleSkin|Ajouter et gérer les services
     quick-action:
       title: Actions rapides
       benefit: Recherchez instances et commandes sans quitter la page actuelle.
-      capabilities: Rechercher commandes, instances et mods|Lancer ou créer une
-        instance|Navigation clavier avec Ctrl+K
+      capabilities: Rechercher commandes, instances et mods|Lancer ou créer une instance|Navigation clavier avec Ctrl+K
     crash-diagnosis:
       title: Rapports de crash et d'échec de lancement
-      benefit: Lisez les logs, rapports de crash et sorties serveur derrière un
-        lancement échoué.
-      capabilities: Logs, crashes et échecs de lancement|Erreurs de résolution et
-        codes de sortie|Copier un prompt vers une IA externe
+      benefit: Lisez les logs, rapports de crash et sorties serveur derrière un lancement échoué.
+      capabilities: Logs, crashes et échecs de lancement|Erreurs de résolution et codes de sortie|Copier un prompt vers une IA externe
     ai-agent:
       title: Agent IA intégré
-      benefit: Laissez un agent inspecter le système de fichiers virtuel et expliquer
-        une solution concrète.
-      capabilities: Lire fichiers et rapports|Analyser avant de conclure|Appliquer une
-        solution si possible
+      benefit: Laissez un agent inspecter le système de fichiers virtuel et expliquer une solution concrète.
+      capabilities: Lire fichiers et rapports|Analyser avant de conclure|Appliquer une solution si possible
 siteFooter:
   ariaLabel: Pied de page
   navigation: Navigation du pied de page
-  description: Une infrastructure Minecraft open source pour les joueurs, les
-    bureaux Linux et les personnes qui créent nos mondes.
+  description: Une infrastructure Minecraft open source pour les joueurs, les bureaux Linux et les personnes qui créent nos mondes.
   status: Open source · développé publiquement
   explore:
     title: Explorer
@@ -323,8 +260,7 @@ sceneLanding:
   linux:
     eyebrow: XMCL / ÉDITION LINUX
     title: Le launcher Minecraft qui semble natif sous Linux.
-    lede: Un launcher open source soigné pour les bureaux Linux et Steam Deck.
-      Choisissez votre paquet et lancez chaque monde en un clic.
+    lede: Un launcher open source soigné pour les bureaux Linux et Steam Deck. Choisissez votre paquet et lancez chaque monde en un clic.
     primaryAction: Télécharger pour Linux
     secondaryAction: Voir le workflow Linux
     heroNote: Builds Linux natifs, ARM64 et support Flathub
@@ -334,8 +270,7 @@ sceneLanding:
     visualStatus: PRÊT POUR VOTRE PROCHAIN MONDE
     workflowKicker: WORKFLOW LINUX-FIRST
     workflowTitle: Du paquet à la partie sans friction.
-    workflowDescription: XMCL réunit des installations prévisibles, une interface
-      claire et des environnements de jeu indépendants pour les joueurs Linux.
+    workflowDescription: XMCL réunit des installations prévisibles, une interface claire et des environnements de jeu indépendants pour les joueurs Linux.
     signals:
       packages:
         number: "05"
@@ -354,12 +289,35 @@ sceneLanding:
       title: Installez XMCL à votre façon.
       description: Choisissez le paquet adapté ou utilisez Flathub sur Steam Deck.
       link: Voir toutes les versions et builds
+    features:
+      install:
+        label: 01 / CHOISISSEZ VOTRE INSTALLATION
+        title: Utilisez le format compris par votre distribution.
+        description: Téléchargez un paquet natif pour votre bureau ou passez par Flathub pour une option portable et adaptée au Steam Deck. XMCL propose également des builds ARM64 pour le matériel compatible.
+        point1: DEB et RPM pour les distributions Linux courantes
+        point2: AppImage et tar.xz pour les installations portables
+        point3: Prise en charge de Flathub pour Steam Deck
+        alt: Boîte de dialogue de création d'instance XMCL avec versions Minecraft et mod loaders
+      organize:
+        label: 02 / GARDEZ TOUT ORGANISÉ
+        title: Chaque instance dispose de son propre espace dédié.
+        description: Séparez les configurations vanilla, moddées, de test et de serveur sans manipuler les dossiers à la main. Vos versions, loaders, mods, sauvegardes et paramètres restent groupés.
+        point1: Données de jeu et paramètres de lancement indépendants
+        point2: Forge, Fabric, Quilt, NeoForge et plus encore
+        point3: Bascule rapide entre vos mondes et vos tests
+        alt: Bibliothèque d'instances XMCL avec profils de jeu Minecraft organisés
+      anywhere:
+        label: 03 / JOUEZ PARTOUT
+        title: Un launcher de bureau qui vous suit partout.
+        description: Passez d'un bureau Linux à une session sur Steam Deck sans renoncer à une bibliothèque claire ou à une configuration fiable. XMCL laisse votre collection s'agrandir sans se transformer en feuille de calcul.
+        point1: Option Flathub conçue pour le Steam Deck
+        point2: Une interface soignée sur les écrans 4K
+        point3: Open source et conçu pour les joueurs Linux
+        alt: Page d'accueil XMCL avec une grande bibliothèque d'instances
   creators:
     eyebrow: XMCL / POUR LES CRÉATEURS DE MODPACKS
-    title: Construisez vos modpacks avec toute la boucle de publication au même
-      endroit.
-    lede: Trouvez des projets, résolvez les dépendances, testez, analysez les crashs
-      et exportez un pack Modrinth ou CurseForge propre.
+    title: Construisez vos modpacks avec toute la boucle de publication au même endroit.
+    lede: Trouvez des projets, résolvez les dépendances, testez, analysez les crashs et exportez un pack Modrinth ou CurseForge propre.
     primaryAction: Explorer les workflows créateur
     secondaryAction: Ouvrir le catalogue des fonctionnalités
     heroNote: Workflows Modrinth, CurseForge et diagnostic assisté par IA
@@ -369,8 +327,7 @@ sceneLanding:
     visualStatus: ENSEMBLE DE TRAVAIL SYNCHRONISÉ
     workflowKicker: LA BOUCLE DU CRÉATEUR
     workflowTitle: De l’idée au pack que les joueurs peuvent réellement lancer.
-    workflowDescription: XMCL traite le modpack comme un système vivant et vous aide
-      à suivre les catalogues, les changements et les dépendances.
+    workflowDescription: XMCL traite le modpack comme un système vivant et vous aide à suivre les catalogues, les changements et les dépendances.
     signals:
       sources:
         number: 2×
@@ -387,22 +344,60 @@ sceneLanding:
     cta:
       kicker: POUR VOTRE PROCHAINE VERSION
       title: Construire. Publier. Garder le pack sain.
-      description: XMCL offre aux créateurs une boucle locale rapide pour découvrir,
-        tester, diagnostiquer et exporter.
+      description: XMCL offre aux créateurs une boucle locale rapide pour découvrir, tester, diagnostiquer et exporter.
       button: Explorer toutes les fonctionnalités
+    features:
+      discover:
+        label: 01 / DÉCOUVRIR
+        title: Explorez les deux écosystèmes sans disperser votre attention.
+        description: Trouvez des projets sur Modrinth et CurseForge grâce aux filtres de version, loader, environnement et catégorie. XMCL met en correspondance les projets des deux plateformes pour vous permettre de comparer facilement le même contenu.
+        point1: Recherche Modrinth et CurseForge en un seul flux
+        point2: Filtres de compatibilité de version Minecraft et de loader
+        point3: Correspondance des projets entre plateformes
+        alt: Recherche de mods en ligne XMCL avec filtres de source et de compatibilité
+      build:
+        label: 02 / CONSTRUIRE
+        title: Intégrez les dépendances dès le départ.
+        description: Lorsqu'un mod en nécessite un autre, XMCL peut installer la dépendance automatiquement. Lorsque vous activez ou désactivez un projet, le launcher préserve la cohérence de l'ensemble au lieu de vous laisser suivre le graphe à la main.
+        point1: Installation automatique des dépendances
+        point2: Actions d'activation et de désactivation prenant en compte les dépendances
+        point3: Inspection des versions, loaders et métadonnées de projet
+        alt: Vue détaillée du mod XMCL montrant les versions et les dépendances
+      curate:
+        label: 03 / ORGANISER
+        title: Conservez un ensemble de travail épuré et maîtrisé.
+        description: Recherchez, triez, groupez, mettez à jour et supprimez les mods superflus. Les groupes personnalisés facilitent le test de contenus optionnels, la comparaison de profils ou la préparation d'une release candidate.
+        point1: Vérification automatique des mises à jour de mods
+        point2: Groupes personnalisés pour les contenus optionnels et de test
+        point3: Recherche et suppression des mods inutilisés
+        alt: Vue de gestion des mods installés XMCL avec contrôles de recherche et de mise à jour
+      export:
+        label: 04 / EXPORTER
+        title: Distribuez un modpack au format souhaité par vos joueurs.
+        description: Exportez un modpack Modrinth ou CurseForge soigné avec les métadonnées requises et les fichiers sélectionnés. La publication devient une étape répétable du workflow, et non une archive bricolée à la dernière minute.
+        point1: Export en un clic vers Modrinth et CurseForge
+        point2: Métadonnées d'auteur, description, URL et version
+        point3: Choix précis des fichiers et assets à inclure
+        alt: Écran d'export de modpack XMCL pour les formats Modrinth et CurseForge
+      diagnose:
+        label: 05 / DIAGNOSTIQUER
+        title: Laissez l'AI vous aider à transformer les rapports de crash en correctifs.
+        description: Quand un lancement de test échoue, XMCL regroupe logs, rapports de crash et agent AI au même endroit. L'agent peut inspecter le contexte de l'instance et expliquer une solution concrète.
+        point1: Lecture des logs de lancement et rapports de crash en contexte
+        point2: Investigation assistée par AI des fichiers de l'instance
+        point3: Résolution des conflits de mods avant publication
+        alt: Agent AI de XMCL analysant un échec de lancement de Minecraft
 commercial:
   server:
     managerEyebrow: Vos serveurs hébergés
     managerTitle: Gestion des serveurs
-    managerDescription: Chaque serveur fonctionne et est facturé séparément.
-      Consultez son état et démarrez-le ou arrêtez-le ici.
+    managerDescription: Chaque serveur fonctionne et est facturé séparément. Consultez son état et démarrez-le ou arrêtez-le ici.
     serverNumber: Serveur {plan} {number}
     start: Démarrer le serveur
     stop: Arrêter le serveur
     cpuUsage: Utilisation du CPU
     memoryUsage: Utilisation de la mémoire
-    launcherGuide: Utilisez le lanceur XMCL pour modifier les mods, modpacks, mondes
-      et autres réglages détaillés.
+    launcherGuide: Utilisez le lanceur XMCL pour modifier les mods, modpacks, mondes et autres réglages détaillés.
     operationError: Impossible de modifier l’état du serveur.
     status:
       pending: En attente de capacité
@@ -415,19 +410,66 @@ commercial:
       failed: Intervention requise
       retained: Archive conservée
       deleted: Supprimé
+    eyebrow: XMCL PLAY / TOUJOURS EN LIGNE
+    title: Un monde toujours prêt pour votre groupe.
+    description: Offrez à votre groupe un monde moddé toujours disponible, sans forcer un ami à laisser son ordinateur allumé.
+    storyLink: La triste histoire de XMCL
+    billingLink: Facturation & solde
+    from: À partir de
+    priceSuffix: / mois + exécution
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: Aucun joueur hôte requis. N'attendez plus que quelqu'un se connecte.
+    experienceDescription: Conservez le monde moddé de votre groupe sur une infrastructure persistante et choisissez la capacité adaptée à votre pack.
+    alwaysAvailable: disponibilité du monde
+    performancePlans: configurations de performance
+    aiBonus: unités AI incluses / mois
+    alwaysOnTitle: Le monde reste à la disposition du groupe
+    alwaysOnDescription: Vos amis peuvent retourner dans le même monde persistant sans dépendre de l'ordinateur ou des horaires d'un joueur.
+    rightSizeTitle: Adaptez le serveur au modpack
+    rightSizeDescription: Choisissez la puissance, la mémoire et le stockage adaptés au pack aujourd'hui, puis passez à une offre supérieure quand le groupe grandit.
+    signInTitle: Connectez-vous pour gérer les serveurs
+    signInDescription: Les offres et abonnements de serveurs sont liés à votre compte XMCL.
+    overview: Abonnement au serveur
+    yourServer: Votre offre de serveur
+    balance: Solde
+    addFunds: Ajouter des fonds
+    paymentDue: Paiement requis. Ajoutez des fonds pour réactiver automatiquement cet abonnement.
+    cancelsOn: Prend fin le {date}.
+    renewsOn: Renouvellement le {date}.
+    cancel: Résilier l'offre
+    plansEyebrow: Hébergement partagé
+    choosePlan: Choisir une offre
+    planDescription: Accès mensuel plus temps d'utilisation mesuré. Chaque offre active inclut l'assistance AI pour la configuration du modpack et du serveur.
+    current: Actuel
+    perMonth: / mois
+    runtimePrice: + {amount} par heure active
+    cpu: CPU
+    cpuValue: "{count} vCPU"
+    memory: Mémoire
+    storage: Stockage persistant
+    includedAi: Aide AI incluse
+    includedAiValue: 200 000 unités / mois
+    select: Sélectionner {plan}
+    selected: Sélectionné
+    unavailable: Indisponible
+    noPlans: Aucune offre d'hébergement partagé n'est actuellement publiée.
+    loadError: Impossible de charger les offres de serveur.
+    subscribeError: Impossible de créer l'abonnement.
+    cancelError: Impossible de résilier l'abonnement.
+    plusEyebrow: VOUS PRÉFÉREZ L'HÉBERGEMENT ENTRE AMIS ?
+    plusTitle: Lancez-vous plutôt depuis votre propre ordinateur.
+    plusDescription: Together maintient un multijoueur direct et fiable entre amis et comprend la même assistance de dépannage de modpacks.
+    plusAction: Découvrir le multijoueur entre amis
   plus:
     eyebrow: XMCL TOGETHER
     title: La meilleure configuration Minecraft, ce sont les amis avec qui vous jouez.
-    description: De la création du modpack à la maintenance du serveur en passant
-      par une connexion stable, XMCL Together vous permet de profiter des
-      modpacks Minecraft entre amis.
+    description: De la création du modpack à la maintenance du serveur en passant par une connexion stable, XMCL Together vous permet de profiter des modpacks Minecraft entre amis.
     storyLink: La triste histoire de XMCL
     catalog:
       heroNote: Quatre offres, dont une faite pour votre groupe.
       eyebrow: Choisir une offre
       title: Décidez où votre monde fonctionnera.
-      description: Les quatre offres ont le même objectif — permettre à votre groupe
-        d'entretenir et de jouer dans un même monde moddé.
+      description: Les quatre offres ont le même objectif — permettre à votre groupe d'entretenir et de jouer dans un même monde moddé.
       recommended: La plupart des modpacks
       perMonth: / mois
       flatMonthly: 20 Go de relais inclus · puis 0,08 $ / Go
@@ -440,48 +482,36 @@ commercial:
       cpu: CPU
       storage: Stockage persistant
       aiIncluded: Service IA offert
-      aiIncludedDescription: Aide à créer les modpacks, résoudre les problèmes et
-        maintenir les serveurs
+      aiIncludedDescription: Aide à créer les modpacks, résoudre les problèmes et maintenir les serveurs
       home:
         location: Hébergé par un ami
-        description: Un multijoueur renforcé par relais pour les connexions P2P
-          difficiles ou instables ; 20 Go offrent généralement environ 65 heures
-          par mois à 3 amis.
+        description: Un multijoueur renforcé par relais pour les connexions P2P difficiles ou instables ; 20 Go offrent généralement environ 65 heures par mois à 3 amis.
         runsOn: Votre propre ordinateur
         bestFor: Les groupes qui jouent occasionnellement
         connection: Plus de 300 relais dans le monde
       camp:
-        description: Un point de départ compact et suffisant pour 2 à 4 amis avec un
-          modpack léger.
+        description: Un point de départ compact et suffisant pour 2 à 4 amis avec un modpack léger.
       lodge:
-        description: Un équilibre prix-performances pour 4 à 6 amis avec un modpack
-          standard.
+        description: Un équilibre prix-performances pour 4 à 6 amis avec un modpack standard.
       village:
         description: Plus d'espace pour 6 à 10 amis
         de gros modpacks et davantage de joueurs simultanés.: null
     shared:
       eyebrow: Inclus dans chaque offre
       title: Bien plus que démarrer un serveur.
-      description: Together accompagne tout le parcours du modpack au monde partagé,
-        sans laisser tous les problèmes techniques à un seul ami.
+      description: Together accompagne tout le parcours du modpack au monde partagé, sans laisser tous les problèmes techniques à un seul ami.
       aiTitle: Création et maintenance assistées par IA
-      aiDescription: Aide au choix et au réglage des mods, aux dépendances, aux
-        crashs, à la configuration et à la maintenance du serveur.
+      aiDescription: Aide au choix et au réglage des mods, aux dépendances, aux crashs, à la configuration et à la maintenance du serveur.
       worldTitle: Le monde reste au groupe
-      worldDescription: Home simplifie l'hébergement par un ami ; les offres hébergées
-        conservent le monde et sa configuration jusqu'à votre retour.
+      worldDescription: Home simplifie l'hébergement par un ami ; les offres hébergées conservent le monde et sa configuration jusqu'à votre retour.
     runtime:
       eyebrow: CAMP · LODGE · VILLAGE
       title: Payez uniquement les heures réellement utilisées.
-      description: Un petit abonnement mensuel conserve l'offre, le monde, les
-        sauvegardes et la configuration. La facturation horaire ne s'applique
-        que lorsque le serveur fonctionne.
+      description: Un petit abonnement mensuel conserve l'offre, le monde, les sauvegardes et la configuration. La facturation horaire ne s'applique que lorsque le serveur fonctionne.
       playTitle: Démarrez quand vous en avez besoin
-      playDescription: Lancez le serveur lorsque vos amis sont prêts et payez les
-        heures réellement utilisées.
+      playDescription: Lancez le serveur lorsque vos amis sont prêts et payez les heures réellement utilisées.
       pauseTitle: Mettez en pause quand personne ne joue
-      pauseDescription: La facturation horaire s'arrête en pause ; reprenez le même
-        monde la prochaine fois.
+      pauseDescription: La facturation horaire s'arrête en pause ; reprenez le même monde la prochaine fois.
     confirm:
       serverNumber: "Serveur {plan} #{number}"
       addAnother: Ajouter un autre serveur
@@ -489,29 +519,78 @@ commercial:
       purchaseEyebrow: Créer un serveur
       cancelEyebrow: Résilier un serveur
       purchaseTitle: Confirmer l'achat de {plan}
-      purchaseDescription: Les frais mensuels de {monthly} sont débités immédiatement.
-        L'exécution coûte {hourly}/heure et n'est pas facturée en pause. Chaque
-        serveur est facturé séparément et offre un service IA.
+      purchaseDescription: Les frais mensuels de {monthly} sont débités immédiatement. L'exécution coûte {hourly}/heure et n'est pas facturée en pause. Chaque serveur est facturé séparément et offre un service IA.
       regionLabel: Emplacement du serveur
-      regionDescription: Choisissez l’emplacement le plus proche de la majorité des
-        joueurs. La configuration actuelle prend en charge {count} emplacements
-        Vultr.
+      regionDescription: Choisissez l’emplacement le plus proche de la majorité des joueurs. La configuration actuelle prend en charge {count} emplacements Vultr.
       testRegions: Tester et recommander
       testingRegions: Test en cours…
-      testComplete: "{location}, qui offre la latence mesurée la plus faible
-        ({latency} ms), a été sélectionné."
-      testUnavailable: Le test de débit est indisponible. Choisissez un emplacement
-        manuellement.
+      testComplete: "{location}, qui offre la latence mesurée la plus faible ({latency} ms), a été sélectionné."
+      testUnavailable: Le test de débit est indisponible. Choisissez un emplacement manuellement.
       cancelTitle: Confirmer la résiliation de {plan}
-      cancelDescription: La résiliation prendra effet à la fin de la période actuelle,
-        le {date}. Le serveur reste disponible jusque-là.
+      cancelDescription: La résiliation prendra effet à la fin de la période actuelle, le {date}. Le serveur reste disponible jusque-là.
       retentionTitle: Les sauvegardes sont conservées 30 jours en stockage froid
-      retentionDescription: Téléchargez la sauvegarde avant le {date} depuis Gestion
-        des serveurs → ce serveur → Données et export. Elle sera ensuite
-        définitivement supprimée.
+      retentionDescription: Téléchargez la sauvegarde avant le {date} depuis Gestion des serveurs → ce serveur → Données et export. Elle sera ensuite définitivement supprimée.
       back: Retour
       purchase: Confirmer l'achat
       cancel: Confirmer la résiliation
+    projectBoundary: XMCL reste gratuit et open source. Together est facultatif, et le launcher fonctionne sans compte Together.
+    serviceOperator: XMCL Together est un service en ligne facultatif opéré par CI010.
+    perMonth: / mois
+    from: À partir de
+    priceSuffix: / mois
+    experienceEyebrow: TOGETHER HOME · HÉBERGÉ PAR UN AMI
+    experienceTitle: Moins de dépannage. Plus de temps dans le même monde.
+    experienceDescription: Together aide votre groupe à résoudre les problèmes de modpacks et assure la continuité du multijoueur quand une connexion directe échoue.
+    networkLocations: relais dans le monde entier
+    automatic: Automatique
+    nearestRelay: routage vers le relais le plus proche
+    guided: Guidé
+    modpackHelp: dépannage de modpacks
+    signInTitle: Connectez-vous pour gérer Together
+    signInDescription: Votre abonnement Together et vos quotas sont liés à votre compte XMCL.
+    disabled: Together n'est pas activé sur ce déploiement.
+    loadError: Impossible de charger les informations de Together.
+    subscribeError: Impossible de créer l'abonnement Together.
+    cancelError: Impossible de résilier l'abonnement Together.
+    subscribe: Acheter Together Home
+    cancel: Résilier l'abonnement
+    addFunds: Ajouter des fonds
+    inactiveTitle: Démarrer XMCL Together
+    inactiveDescription: Abonnez-vous avec votre solde XMCL. Le premier mois est débité immédiatement.
+    activeTitle: XMCL Together est actif
+    paymentDueTitle: Paiement requis
+    paymentDueDescription: Ajoutez des fonds à votre solde de facturation pour réactiver Together.
+    renewsOn: Renouvellement le {date}.
+    cancelsOn: L'accès reste actif jusqu'au {date}.
+    status:
+      inactive: Inactif
+      active: Actif
+      payment_due: Paiement requis
+      cancelled: Résilié
+    allowancesEyebrow: Votre utilisation mensuelle
+    allowancesTitle: Quotas inclus dans l'offre
+    aiAllowance: Assistance AI restante
+    aiUnits: unités de tokens pondérées restantes
+    aiUsage: "{consumed} utilisés sur {included}"
+    aiFormula: Utilisation = entrée cache-miss + ceil(entrée cache-hit × 0.1) + sortie × 4.
+    turnAllowance: Relais multijoueur
+    turnEgress: trafic relais authentifié
+    turnUsage: "{consumed} utilisés sur {included}"
+    remainingUnavailable: L'utilisation restante n'est pas disponible.
+    meteringUnavailable: Le suivi d'utilisation n'est pas encore connecté ; il s'agit du quota inclus, et non d'un solde restant.
+    sourcesTitle: Sources de quotas actifs
+    source:
+      plus: "Together : {ai} unités AI et relais {turn}"
+      shared_hosting: "Offre de serveur : {ai} unités AI et sans TURN"
+    serverBonus: Chaque offre de serveur active inclut séparément 200 000 unités AI chaque mois pour faciliter la configuration du modpack et du serveur.
+    aiTitle: Faites fonctionner le modpack
+    aiDescription: Diagnostiquez les crashs, les conflits de dépendances et les problèmes de configuration sans obliger un ami à devenir le support technique du groupe.
+    turnTitle: Gardez tout le monde connecté
+    turnDescription: XMCL tente d'abord une connexion directe, puis utilise automatiquement le relais disponible le plus proche lorsque les réseaux ou routeurs posent problème.
+    serverEyebrow: BESOIN DE PLUS ?
+    serverTitle: Offrez au groupe un monde toujours disponible.
+    serverDescription: Louez un serveur XMCL dédié lorsque l'hébergement pair-à-pair ne suffit plus, avec stockage persistant et performances personnalisables.
+    serverAction: Voir les offres de serveurs
   common:
     loading: Chargement…
     refresh: Actualiser
@@ -563,8 +642,7 @@ commercial:
     noUsage: Aucune utilisation pour le moment.
     loadError: Impossible de charger la facturation.
     securedTitle: Paiements sécurisés
-    securedDescription: Les détails de paiement sont traités par une passerelle
-      sécurisée. XMCL ne reçoit jamais votre numéro de carte.
+    securedDescription: Les détails de paiement sont traités par une passerelle sécurisée. XMCL ne reçoit jamais votre numéro de carte.
   accountLinks:
     title: Services XMCL
     plusTitle: Découvrir Together
@@ -575,3 +653,99 @@ commercial:
     serverEyebrow: Serveurs
     serverTitle: Hébergement cloud
     serverDescription: Choisir et gérer un serveur.
+  checkout:
+    title: Ajouter des fonds
+    description: Rechargez votre solde XMCL en toute sécurité avec Waffo Pancake.
+    amount: Montant
+    preparing: Préparation du paiement…
+    add: Ajouter {amount}
+    providerNote: Vous allez être redirigé vers la page de paiement sécurisée de Waffo pour finaliser votre achat.
+    legalNote: En continuant, vous acceptez les
+    terms: Conditions de XMCL Together
+    and: et sa
+    privacy: Politique de confidentialité
+    openCheckout: Ouvrir la page de paiement
+    cancelledReturned: J'ai annulé ou je suis revenu
+    newTopUp: Démarrer une nouvelle recharge
+    invalidAmount: Entrez un montant entier positif avant de continuer.
+    unsafeUrl: Le service n'a pas renvoyé d'URL de paiement Waffo sécurisée.
+    opened: Complétez ou annulez sur la page de paiement Waffo, puis revenez ici. XMCL actualisera la commande et le solde.
+    blocked: La fenêtre de validation a été bloquée. Autorisez-la, puis réessayez avec la même intention de paiement.
+    returnRecorded: Retour du paiement enregistré.
+    returnDetected: Retour du paiement détecté.
+    refreshFailed: XMCL a tenté d'actualiser la commande et le solde.
+    restoreFailed: Le paiement précédent n'a pas pu être restauré. La nouvelle tentative utilise la même intention de paiement.
+    newIntent: Une nouvelle intention de paiement peut maintenant être créée. N'utilisez pas le lien de paiement Waffo précédent.
+logViewer: Lecteur de logs
+modernHome:
+  kicker: LANCEUR MINECRAFT OPEN SOURCE
+  visualLabel: CONÇU POUR LES MONDES MODDÉS
+  windowLabel: XMCL / ACCUEIL
+  latestRelease: DERNIÈRE VERSION
+  readyToPlay: PRÊT À JOUER
+  libraryTitle: Une bibliothèque claire
+  librarySubtitle: Mods, packs et instances
+  proofLabel: Capacités du lanceur
+  proof:
+    fastTitle: CONFIGURATION RAPIDE
+    fastDescription: Du vanilla au moddé
+    libraryTitle: UNE SEULE BIBLIOTHÈQUE
+    libraryDescription: Des ressources toujours organisées
+    ecosystemTitle: VOTRE ÉCOSYSTÈME
+    ecosystemDescription: Modrinth et CurseForge
+  workflow:
+    kicker: LE WORKFLOW XMCL
+    title: Tout ce dont vos mondes ont besoin.
+    description: Conçu pour les joueurs qui veulent la puissance d'une configuration moddée sans la charge de maintenance.
+    stageLabel: XMCL / WORKFLOW
+    scrollHint: DÉFILEZ POUR EXPLORER
+  openSource:
+    kicker: LE POULS DE L'OPEN SOURCE
+    title: Développé publiquement.
+    viewOnGitHub: Voir sur GitHub
+    repository: DÉPÔT GITHUB
+    snapshot: APERÇU DU BUILD
+    downloads: Téléchargements
+    stars: Étoiles
+    forks: Forks
+    openIssues: Tickets ouverts
+    statsNote: Statistiques du projet GitHub relevées lors de la compilation du site.
+    contributors: CONTRIBUTEURS
+    inView: AFFICHÉS
+    contributorsCopy: Chaque issue, pull request, traduction et idée contribue à façonner la prochaine version.
+  sponsor:
+    label: SPONSORISER XMCL
+    title: Faites avancer le launcher.
+    description: Soutenez la maintenance, les versions et ceux qui développent XMCL ouvertement.
+    supportedBy: SOUTENU PAR
+  download:
+    kicker: VOTRE PROCHAINE AVENTURE
+    title: Prêt quand vous l'êtes.
+    platforms: Plateformes de téléchargement
+  footer:
+    issues: Tickets
+  features:
+    setup:
+      title: Chaque configuration, un seul launcher
+      short: Multi-loader, multi-instance
+      description: Créez et gérez des instances Minecraft distinctes avec Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod et la prise en charge expérimentale de Bedrock, avec une installation prise en charge pour vous.
+      alt: Boîte de dialogue Créer un jeu XMCL avec plusieurs Mod Loaders et Bedrock Edition
+      link: Explorer la configuration d'instances
+    discover:
+      title: Trouvez du contenu communautaire
+      short: Modrinth, CurseForge et FTB
+      description: Parcourez les modpacks et projets communautaires, filtrez-les par version et loader, et passez directement de la découverte au jeu.
+      alt: Marché des modpacks XMCL avec filtres de contenu communautaire
+      link: Explorer le contenu communautaire
+    mods:
+      title: Gardez le contrôle sur vos configurations moddées
+      short: Rechercher, grouper, mettre à jour
+      description: Gérez les Mods installés, inspectez les dépendances, organisez des groupes personnalisés et gardez une grande configuration compréhensible.
+      alt: Gestion des Mods locaux XMCL avec filtres et contrôles de mise à jour
+      link: Explorer la gestion des Mods
+    accounts:
+      title: Vos comptes, à votre façon
+      short: Microsoft, hors-ligne et plus encore
+      description: Connectez le service de compte qui convient à votre configuration, des profils Microsoft et hors-ligne aux services d'authentification tiers, sans quitter le launcher.
+      alt: Boîte de dialogue de connexion aux comptes XMCL avec plusieurs services d'authentification
+      link: Explorer la prise en charge des comptes

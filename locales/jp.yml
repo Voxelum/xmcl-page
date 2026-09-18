@@ -2,16 +2,13 @@ repository: ソースコードリポジトリ
 intro:
   first:
     body: "{modernUx}なUXを備えた{openSource} Minecraftランチャー"
-    openSource: "オープンソース"
-    modernUx: "モダン"
+    openSource: オープンソース
+    modernUx: モダン
   second:
-    body: "すべての{mods}を管理するための{diskEfficient}な方法を提供します！"
-    diskEfficient: "ディスク効率的"
-    mods: "MOD"
-  description: >-
-    XMCLは、MODパック、リソースパック、MOD、シェーダーパックなどの大量のリソースを
-    管理できる現代的なMinecraftランチャーです。また、Minecraft Forge、Fabric、Quilt、
-    CurseForge、Modrinthとの連携も備えています。
+    body: すべての{mods}を管理するための{diskEfficient}な方法を提供します！
+    diskEfficient: ディスク効率的
+    mods: MOD
+  description: XMCLは、MODパック、リソースパック、MOD、シェーダーパックなどの大量のリソースを 管理できる現代的なMinecraftランチャーです。また、Minecraft Forge、Fabric、Quilt、 CurseForge、Modrinthとの連携も備えています。
 label: 日本語
 guide: ガイド
 protocol: プロトコル
@@ -24,9 +21,9 @@ launcher:
     intro: Minecraftを効率的に管理します。
   description: シンプル、オープンソース、機能重視のMinecraftランチャー
 downloadFor:
-  windows: 'Windows版のダウンロード:'
-  mac: 'Mac版のダウンロード:'
-  linux: 'Linux版のダウンロード:'
+  windows: "Windows版のダウンロード:"
+  mac: "Mac版のダウンロード:"
+  linux: "Linux版のダウンロード:"
 author: 作者に連絡
 download-zip: Zip
 download-zip-32: Zip (32ビット)
@@ -44,62 +41,60 @@ github-source: Githubからダウンロード
 auto-source: ダウンロードソースを自動検出
 authSuccess: 成功！
 authSuccessTitle: 認証が成功しました。ランチャーに戻ります！
-redirectHelperTitle: >-
-  リダイレクトされない場合は、「アプリで開く」ボタンをクリックして手動でリダイレクトしてみてください。
-redirectHelperMessage: >-
-  ポップアップが表示され、ランチャーを開くように要求されます。それでも機能しない場合は、
-  ボタンをランチャーウィンドウにドラッグしてみてください！
+redirectHelperTitle: リダイレクトされない場合は、「アプリで開く」ボタンをクリックして手動でリダイレクトしてみてください。
+redirectHelperMessage: ポップアップが表示され、ランチャーを開くように要求されます。それでも機能しない場合は、 ボタンをランチャーウィンドウにドラッグしてみてください！
 notWork: 動作しませんか？
 openInAppButton: ランチャーで開く
 nothingWork: 上記のどれも機能しない場合は、最新のランチャーを再ダウンロードしてみてください
 gameInstall:
   title:
     body: "{gameInstall}について心配する必要はもうありません"
-    gameInstall: "ゲームのインストール"
-  description: >-
-    XMCLは、バニラMinecraft、Minecraft Forge、Fabric、さらにOptifineのインストールをサポートしています！
-    ランチャー内の1つの場所ですべてをインストールできます。また、サードパーティのミラーリンクBMCL APIもサポートしています。
-    ランチャーで独自のミラーをカスタマイズすることもできます。
+    gameInstall: ゲームのインストール
+  description: XMCLは、バニラMinecraft、Minecraft Forge、Fabric、さらにOptifineのインストールをサポートしています！ ランチャー内の1つの場所ですべてをインストールできます。また、サードパーティのミラーリンクBMCL APIもサポートしています。 ランチャーで独自のミラーをカスタマイズすることもできます。
 optimalDisk:
   title:
     body: "{massiveResources}でも{optimal}なディスク容量"
-    optimal: "最適化された"
-    massiveResources: "大量のリソース"
-  description: >-
-    XMCLはすべてのMOD、リソースパック、シェーダーパック、MODパックを単一の保存場所に保存します。
-    既知のリソースを使用しようとすると、コピーせずにハードリンクを使用してインスタンスにリソースをインストールします。
-    これにより、/modsフォルダに重複したコピーが表示されなくなります。
+    optimal: 最適化された
+    massiveResources: 大量のリソース
+  description: XMCLはすべてのMOD、リソースパック、シェーダーパック、MODパックを単一の保存場所に保存します。 既知のリソースを使用しようとすると、コピーせずにハードリンクを使用してインスタンスにリソースをインストールします。 これにより、/modsフォルダに重複したコピーが表示されなくなります。
 cleanWorkspace:
   title:
-    body: "マルチインスタンスでワークスペースを{clean}に保つ"
-    clean: "クリーン"
-  description: >-
-    XMCLにはマルチインスタンスのサポートが組み込まれています。複数のインスタンスを簡単に作成できます。
-    異なる起動設定の混在について心配する必要はありません。
+    body: マルチインスタンスでワークスペースを{clean}に保つ
+    clean: クリーン
+  description: XMCLにはマルチインスタンスのサポートが組み込まれています。複数のインスタンスを簡単に作成できます。 異なる起動設定の混在について心配する必要はありません。
 communityIntegration:
   title:
     body: "{multipleCommunities}との統合"
-    multipleCommunities: "複数のコミュニティ"
-  description: >-
-    XMCLはCurseforgeとModrinthをサポートしています。また、Blessing Skinのようなカスタムユーザーアカウント/スキンシステムをサポートする機能も提供しています。
+    multipleCommunities: 複数のコミュニティ
+  description: XMCLはCurseforgeとModrinthをサポートしています。また、Blessing Skinのようなカスタムユーザーアカウント/スキンシステムをサポートする機能も提供しています。
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: "{inviter}のパーティに参加"
-joinPeerDescription: >-
-  {inviter}があなたをグループ{group}に招待して、一緒にMinecraftをプレイしています！ランチャーに戻ります！
+joinPeerDescription: "{inviter}があなたをグループ{group}に招待して、一緒にMinecraftをプレイしています！ランチャーに戻ります！"
 fullChangelog: 新機能は？
 privacy: ソフトウェアプライバシー
 prebuild:
   history: ビルド履歴
   historyDescription: 以前のビルドとリリース
   download: プレビルドをダウンロード
-  downloadDescription: >-
-    プレビルドは開発プロセス中に生成されたアーティファクトです。不安定な可能性があります。自己責任で使用してください！
+  downloadDescription: プレビルドは開発プロセス中に生成されたアーティファクトです。不安定な可能性があります。自己責任で使用してください！
   entryHint: プレビルドアーティファクト？
   ready: 準備完了
   selected: 選択済み
   selectBuild: ビルドを選択
   downloading: ダウンロード中...
+  kicker: プレビルドチャンネル
+  developmentBuilds: 開発版ビルド
+  tryNext: 次の新機能をいち早く体験。
+  unstableDescription: 今後の XMCL の変更をテストするための不安定なアーティファクトです。
+  selectedBuild: 選択中のビルド
+  buildsAvailable: "{count} 件のビルドが利用可能"
+  selectABuild: ビルドを選択
+  noBuilds: ビルドが見つかりません
+  noBuildsDescription: 現在利用可能なプレビルドアーティファクトはありません。
+  checkBack: 次の開発ワークフロー完了後に再度ご確認ください。
+  yesterday: 昨日
+  daysAgo: "{count} 日前"
 downloadMacHint:
   content: Macユーザーの場合は、{link}に従ってインストールしてください。
   link: インストール手順
@@ -276,10 +271,48 @@ sceneLanding:
     workflowTitle: パッケージの導入からプレイまで、迷いなく。
     workflowDescription: XMCL は Linux ユーザーが重視する確実なインストール、見やすい画面、独立したゲーム環境をまとめて提供します。
     signals:
-      packages: { number: '05', label: Linux パッケージ, description: DEB、RPM、AppImage、tar.xz、Flathub。 }
-      scale: { number: '4K', label: どのサイズでも鮮明, description: 大画面でも見やすいインスタンスライブラリ。 }
-      worlds: { number: '∞', label: 独立したワールド, description: バージョン、ローダー、セーブデータを分離。 }
-    download: { kicker: LINUX 版をダウンロード, title: XMCL を好きな方法でインストール。, description: システムに合うパッケージ、または Steam Deck 向けの Flathub を選択してください。, link: すべてのリリースとビルドを見る }
+      packages:
+        number: "05"
+        label: Linux パッケージ
+        description: DEB、RPM、AppImage、tar.xz、Flathub。
+      scale:
+        number: 4K
+        label: どのサイズでも鮮明
+        description: 大画面でも見やすいインスタンスライブラリ。
+      worlds:
+        number: ∞
+        label: 独立したワールド
+        description: バージョン、ローダー、セーブデータを分離。
+    download:
+      kicker: LINUX 版をダウンロード
+      title: XMCL を好きな方法でインストール。
+      description: システムに合うパッケージ、または Steam Deck 向けの Flathub を選択してください。
+      link: すべてのリリースとビルドを見る
+    features:
+      install:
+        label: 01 / インストール方法を選択
+        title: ディストリビューションに適した形式を選択。
+        description: デスクトップ向けにネイティブパッケージをダウンロードするか、Steam Deck に適したポータブルな方法として Flathub を利用できます。対応ハードウェア向けの ARM64 ビルドも提供しています。
+        point1: 主要な Linux デスクトップ向けの DEB および RPM
+        point2: ポータブルに使える AppImage と tar.xz
+        point3: Steam Deck に適した Flathub 対応
+        alt: Minecraft のバージョンと Mod Loader を表示する XMCL のインスタンス作成ダイアログ
+      organize:
+        label: 02 / 常に整理整頓
+        title: 各インスタンスに独立した実行環境を。
+        description: フォルダーを手作業で分けることなく、バニラ、Mod 環境、テスト用、サーバー用の構成を分離できます。バージョン、Loader、Mod、セーブデータ、設定がそれぞれまとまって管理されます。
+        point1: 独立したゲームデータと起動設定
+        point2: Forge、Fabric、Quilt、NeoForge などに対応
+        point3: ワールドや実験環境のすばやい切り替え
+        alt: 整理された Minecraft ゲームプロファイルを表示する XMCL のインスタンスライブラリ
+      anywhere:
+        label: 03 / どこでもプレイ
+        title: デスクトップから持ち歩きまで快適に。
+        description: Linux デスクトップから Steam Deck へ移っても、見やすいライブラリや信頼できる環境設定をそのまま使えます。煩雑な管理に悩まされることなく、コレクションを自由に拡張できます。
+        point1: Steam Deck 向けに設計された Flathub 利用ルート
+        point2: 4K ディスプレイでも見やすい洗練されたインターフェース
+        point3: オープンソースで Linux プレイヤーのために開発
+        alt: 大規模なインスタンスライブラリを表示する XMCL ホーム画面
   creators:
     eyebrow: XMCL / MODPACK CREATOR 向け
     title: Modpack のリリースサイクルを一つの場所で構築。
@@ -295,23 +328,137 @@ sceneLanding:
     workflowTitle: アイデアから、プレイヤーが起動できる pack までを短く。
     workflowDescription: XMCL は modpack を変化するシステムとして扱い、カタログ、変更、依存関係を把握しやすくします。
     signals:
-      sources: { number: '2×', label: プロジェクトソース, description: Modrinth と CurseForge を一つの画面で検索。 }
-      export: { number: ワンクリック, label: Pack 書き出し, description: 配布可能な MR または CF パッケージを数ステップで作成。 }
-      ai: { number: AI, label: クラッシュ支援, description: エラーレポートを次のアクションに変換。 }
-    cta: { kicker: 次のリリースのためのワークベンチ, title: 作る。届ける。健全な pack を保つ。, description: XMCL は発見、テスト、診断、書き出しを素早く行える creator 向けのローカルループを提供します。, button: すべての機能を見る }
+      sources:
+        number: 2×
+        label: プロジェクトソース
+        description: Modrinth と CurseForge を一つの画面で検索。
+      export:
+        number: ワンクリック
+        label: Pack 書き出し
+        description: 配布可能な MR または CF パッケージを数ステップで作成。
+      ai:
+        number: AI
+        label: クラッシュ支援
+        description: エラーレポートを次のアクションに変換。
+    cta:
+      kicker: 次のリリースのためのワークベンチ
+      title: 作る。届ける。健全な pack を保つ。
+      description: XMCL は発見、テスト、診断、書き出しを素早く行える creator 向けのローカルループを提供します。
+      button: すべての機能を見る
+    features:
+      discover:
+        label: 01 / プロジェクトを発見
+        title: 視点を分散させずに、2 つのエコシステムを同時に検索。
+        description: バージョン、Loader、動作環境、カテゴリのフィルターを使って Modrinth と CurseForge のプロジェクトを横断検索できます。XMCL が両方のソースのプロジェクトを相互に対応付けるため、迷うことなく同じ作品を比較できます。
+        point1: Modrinth と CurseForge をひとつの流れで検索
+        point2: Minecraft バージョンと Loader の互換性フィルター
+        point3: クロスプラットフォームのプロジェクト対応付け
+        alt: ソースと互換性フィルターを備えた XMCL のオンライン Mod 検索
+      build:
+        label: 02 / 構成の構築
+        title: 依存関係の解決もワークフローの一部に。
+        description: Mod が別の Mod を必要とする場合、XMCL はその前提 Mod も一緒にインストールできます。プロジェクトを有効化または無効化する際も、依存関係グラフを手動で追跡することなく整合性を保てるようランチャーが支援します。
+        point1: 依存関係の自動インストール
+        point2: 依存関係を考慮した有効化・無効化の切り替え
+        point3: バージョン、Loader、プロジェクトのメタデータを確認
+        alt: バージョンと依存関係を表示する XMCL の Mod 詳細画面
+      curate:
+        label: 03 / 構成の整理
+        title: 作業セットを常に無駄なく整理。
+        description: 検索、並べ替え、グループ化、更新を行い、不要になった Mod を削除できます。カスタムグループを活用すれば、オプション機能のテスト、プロファイルの比較、リリース候補の絞り込みが容易になります。
+        point1: Mod の自動更新チェック
+        point2: オプションやテスト用のカスタムグループ
+        point3: 未使用の Mod を検出して削除
+        alt: 検索と更新操作を備えた XMCL のインストール済み Mod 管理画面
+      export:
+        label: 04 / エクスポートと配布
+        title: プレイヤーが必要とする形式で Modpack を配布。
+        description: 適切なメタデータと選択したファイルを含んだ、完成度の高い Modrinth または CurseForge 形式の Modpack をエクスポートできます。リリースの作業が、直前の手作業アーカイブではなく再現可能なワークフローの一部になります。
+        point1: Modrinth と CurseForge へのワンクリックエクスポート
+        point2: 作者、説明、URL、バージョンのメタデータ設定
+        point3: 配布に含めるファイルやアセットを正確に選択
+        alt: Modrinth および CurseForge 形式の XMCL Modpack エクスポート画面
+      diagnose:
+        label: 05 / 問題の診断
+        title: AI がクラッシュレポートを解決策へと変換。
+        description: テスト起動が失敗した際、XMCL はログ、クラッシュレポート、AI Agent を同じ画面にまとめます。Agent がインスタンス環境を調査し、実行可能な次の解決ステップを提示します。
+        point1: コンテキストとともに起動ログとクラッシュレポートを確認
+        point2: AI によるインスタンスファイルの調査支援
+        point3: リリース前に Mod の競合を解決
+        alt: Minecraft の起動失敗を調査する XMCL AI Agent
 commercial:
   server:
     managerEyebrow: ホスト中のサーバー
     managerTitle: サーバー管理
     managerDescription: 各サーバーは個別に稼働・課金されます。ここで状態確認と起動・停止ができます。
-    serverNumber: '{plan} サーバー {number}'
+    serverNumber: "{plan} サーバー {number}"
     start: サーバーを起動
     stop: サーバーを停止
     cpuUsage: CPU 使用率
     memoryUsage: メモリ使用量
     launcherGuide: Mod、Modpack、ワールド、その他の詳細設定は XMCL ランチャーで変更してください。
     operationError: サーバーの状態を変更できませんでした。
-    status: { pending: 容量待ち, queued: 容量待ち, ready: 停止中, starting: 起動中, running: 稼働中, stopping: 停止して保存中, payment_due: 支払い待ち, failed: 対応が必要, retained: アーカイブ保管中, deleted: 削除済み }
+    status:
+      pending: 容量待ち
+      queued: 容量待ち
+      ready: 停止中
+      starting: 起動中
+      running: 稼働中
+      stopping: 停止して保存中
+      payment_due: 支払い待ち
+      failed: 対応が必要
+      retained: アーカイブ保管中
+      deleted: 削除済み
+    eyebrow: XMCL プレイ / 常時オンライン
+    title: 仲間が集まればいつでも遊べるワールド。
+    description: 誰か一人のパソコンを常時起動させることなく、いつでも参加できる Mod ワールドを仲間に提供します。
+    storyLink: XMCL の悲しい原点
+    billingLink: 請求と残高
+    from: から
+    priceSuffix: / 月 + 稼働料金
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: ホスト役は不要。誰かがオンラインになるのを待つ必要もありません。
+    experienceDescription: 仲間の Mod ワールドを永続的なインフラ上で維持し、Modpack に合った性能を選択できます。
+    alwaysAvailable: ワールド常時利用可能
+    performancePlans: 段階の性能プラン
+    aiBonus: 毎月の付属 AI ユニット
+    alwaysOnTitle: ワールドはいつでも仲間と共に
+    alwaysOnDescription: 特定のプレイヤーのパソコンや都合に左右されることなく、仲間全員がいつでも同じ永続ワールドに戻れます。
+    rightSizeTitle: Modpack に合わせた最適なサーバー構成
+    rightSizeDescription: 現在の Modpack に合わせた性能、メモリ、ストレージを選び、必要に応じていつでも上位プランに移行できます。
+    signInTitle: ログインしてサーバーを管理
+    signInDescription: サーバープランとサブスクリプションはお使いの XMCL アカウントに紐付けられています。
+    overview: サーバーサブスクリプション
+    yourServer: 利用中のサーバープラン
+    balance: 残高
+    addFunds: 残高をチャージ
+    paymentDue: お支払い期限が過ぎています。残高をチャージすると、このサブスクリプションは自動的に復旧します。
+    cancelsOn: "{date} に解約されます。"
+    renewsOn: "{date} に更新されます。"
+    cancel: プランを解約
+    plansEyebrow: 共有ホスティング
+    choosePlan: プランを選択
+    planDescription: 月額利用料に加え、稼働時間に応じた従量課金です。有効なすべてのプランに、Modpack やサーバー設定を支援する AI アシスタントが含まれています。
+    current: 利用中
+    perMonth: / 月
+    runtimePrice: + 稼働 1 時間あたり {amount}
+    cpu: CPU
+    cpuValue: "{count} vCPU"
+    memory: メモリ
+    storage: 永続ストレージ
+    includedAi: 付属の AI アシスタント
+    includedAiValue: 毎月 200,000 ユニット
+    select: "{plan} を選択"
+    selected: 選択中
+    unavailable: 利用不可
+    noPlans: 現在公開されている共有ホスティングプランはありません。
+    loadError: サーバープランを読み込めませんでした。
+    subscribeError: サブスクリプションを作成できませんでした。
+    cancelError: サブスクリプションを解約できませんでした。
+    plusEyebrow: フレンドホストをお好みですか？
+    plusTitle: 自分のパソコンから開始することもできます。
+    plusDescription: Together はフレンド間の直接マルチプレイの安定性を保ち、同様の Modpack トラブルシューティング支援も含まれています。
+    plusAction: フレンドマルチプレイを見る
   plus:
     eyebrow: XMCL TOGETHER
     title: Minecraft で最高の構成は、一緒に遊ぶ仲間です。
@@ -325,7 +472,7 @@ commercial:
       recommended: 一般的な Modpack 向け
       perMonth: / 月
       flatMonthly: リレー 20 GB 込み · 超過後は 0.08 ドル / GB
-      runtime: '稼働 1 時間あたり {price} · いつでも一時停止'
+      runtime: 稼働 1 時間あたり {price} · いつでも一時停止
       hosted: XMCL ホスティング
       runsOn: 実行場所
       bestFor: おすすめ
@@ -335,10 +482,18 @@ commercial:
       storage: 永続ストレージ
       aiIncluded: AI サービスをプレゼント
       aiIncludedDescription: Modpack 作成、トラブル解決、サーバー保守を支援
-      home: { location: フレンドホスト, description: 'P2P 接続が難しい、または不安定な仲間向けのグローバルリレー強化マルチプレイ。20 GB で通常、3 人の仲間が月約 65 時間遊べます。', runsOn: 自分の PC, bestFor: ときどき集まって遊ぶグループ, connection: 世界 300 か所以上のリレー }
-      camp: { description: 軽量 Modpack を遊ぶ 2～4 人向けの、小さく十分な入門プラン。 }
-      lodge: { description: 一般的な Modpack を遊ぶ 4～6 人向けの、性能と価格のバランス型。 }
-      village: { description: 大型 Modpack と同時接続に余裕を持たせた 6～10 人向けプラン。 }
+      home:
+        location: フレンドホスト
+        description: P2P 接続が難しい、または不安定な仲間向けのグローバルリレー強化マルチプレイ。20 GB で通常、3 人の仲間が月約 65 時間遊べます。
+        runsOn: 自分の PC
+        bestFor: ときどき集まって遊ぶグループ
+        connection: 世界 300 か所以上のリレー
+      camp:
+        description: 軽量 Modpack を遊ぶ 2～4 人向けの、小さく十分な入門プラン。
+      lodge:
+        description: 一般的な Modpack を遊ぶ 4～6 人向けの、性能と価格のバランス型。
+      village:
+        description: 大型 Modpack と同時接続に余裕を持たせた 6～10 人向けプラン。
     shared:
       eyebrow: すべてのプランに含まれるもの
       title: サーバーを起動するだけではありません。
@@ -356,12 +511,12 @@ commercial:
       pauseTitle: 遊ばないときは一時停止
       pauseDescription: 一時停止中は時間料金が止まり、次回も同じワールドから再開できます。
     confirm:
-      serverNumber: '{plan} サーバー #{number}'
+      serverNumber: "{plan} サーバー #{number}"
       addAnother: サーバーを追加
       close: 閉じる
       purchaseEyebrow: サーバーを作成
       cancelEyebrow: サーバーを解約
-      purchaseTitle: '{plan} の購入を確認'
+      purchaseTitle: "{plan} の購入を確認"
       purchaseDescription: 月額 {monthly} はすぐに請求されます。稼働中は {hourly}/時間、停止中は稼働料金がかかりません。サーバーごとに個別請求され、AI サービスが付与されます。
       regionLabel: サーバーの地域
       regionDescription: 多くのプレイヤーに近い地域を選択してください。現在の構成では {count} か所の Vultr ロケーションに対応しています。
@@ -369,10 +524,227 @@ commercial:
       testingRegions: 測定中…
       testComplete: 測定遅延が最も低い {location}（{latency} ms）を選択しました。
       testUnavailable: 現在速度を測定できません。地域を手動で選択してください。
-      cancelTitle: '{plan} の解約を確認'
+      cancelTitle: "{plan} の解約を確認"
       cancelDescription: 解約は現在の期間が終了する {date} に有効になります。それまでは利用できます。
       retentionTitle: セーブデータはコールドストレージに 30 日間保存
-      retentionDescription: '{date} までに「サーバー管理 → 対象サーバー → データとエクスポート」からダウンロードしてください。期限後は完全に削除されます。'
+      retentionDescription: "{date} までに「サーバー管理 → 対象サーバー → データとエクスポート」からダウンロードしてください。期限後は完全に削除されます。"
       back: 戻る
       purchase: 購入を確定
       cancel: 解約を確定
+    projectBoundary: XMCL は今後も無料でオープンソースであり続けます。Together はオプションのサービスであり、Together アカウントがなくてもランチャーは利用可能です。
+    serviceOperator: XMCL Together は CI010 が運営するオプションのオンラインサービスです。
+    perMonth: / 月
+    from: から
+    priceSuffix: / 月
+    experienceEyebrow: TOGETHER HOME · フレンドホスト
+    experienceTitle: トラブルシューティングの時間を減らし、同じワールドで遊ぶ時間を増やす。
+    experienceDescription: Together は仲間の Modpack の問題を解決し、直接接続ができない場合でもマルチプレイを快適に継続できるようにします。
+    networkLocations: か所のグローバルリレー拠点
+    automatic: 自動
+    nearestRelay: 最寄りのリレーへのルーティング
+    guided: スマート支援
+    modpackHelp: Modpack トラブルシューティング
+    signInTitle: ログインして Together を管理
+    signInDescription: Together のサブスクリプションと利用枠はお使いの XMCL アカウントに紐付けられています。
+    disabled: このデプロイでは Together が有効になっていません。
+    loadError: Together の情報を読み込めませんでした。
+    subscribeError: Together サブスクリプションを作成できませんでした。
+    cancelError: Together サブスクリプションを解約できませんでした。
+    subscribe: Together Home を購入
+    cancel: サブスクリプションを解約
+    addFunds: 残高をチャージ
+    inactiveTitle: XMCL Together を開始
+    inactiveDescription: XMCL の残高を使用して登録します。初月分は即時に請求されます。
+    activeTitle: XMCL Together は有効です
+    paymentDueTitle: お支払いが必要です
+    paymentDueDescription: 請求残高にチャージして Together を再開してください。
+    renewsOn: "{date} に更新されます。"
+    cancelsOn: "{date} まで引き続きご利用いただけます。"
+    status:
+      inactive: 未加入
+      active: 有効
+      payment_due: 支払い待ち
+      cancelled: 解約済み
+    allowancesEyebrow: 月間利用状況
+    allowancesTitle: 体験を支える利用枠
+    aiAllowance: 残りの AI 支援枠
+    aiUnits: 残りの重み付けトークンユニット
+    aiUsage: "{included} 中 {consumed} を使用"
+    aiFormula: 使用量 = キャッシュミス入力 + ceil(キャッシュヒット入力 × 0.1) + 出力 × 4。
+    turnAllowance: マルチプレイリレー
+    turnEgress: 認証済みリレートラフィック
+    turnUsage: "{included} 中 {consumed} を使用"
+    remainingUnavailable: 残りの利用可能枠のデータはありません。
+    meteringUnavailable: 利用量の測定はまだ連携されていません。これはプランに含まれる利用枠であり、残高ではありません。
+    sourcesTitle: 有効な利用枠の内訳
+    source:
+      plus: "Together: {ai} AI ユニット、{turn} リレー"
+      shared_hosting: "サーバープラン: {ai} AI ユニット、TURN なし"
+    serverBonus: 有効なすべてのサーバープランには、Modpack やサーバーの設定を支援するために毎月 200,000 AI ユニットが別途含まれています。
+    aiTitle: Modpack を確実に起動させる
+    aiDescription: クラッシュ、依存関係の競合、設定の不具合を診断し、特定の仲間がグループ専任のサポート窓口になるのを防ぎます。
+    turnTitle: 全員の接続を維持
+    turnDescription: XMCL はまず直接接続を試み、ネットワークやルーターの制限がある場合は、最も近い利用可能なリレーを自動的に使用します。
+    serverEyebrow: さらに必要ですか？
+    serverTitle: 仲間に常時利用可能なワールドを。
+    serverDescription: ピアホスティングでは物足りなくなった場合は、永続ストレージと選択可能な性能を備えた専用の XMCL サーバーをレンタルできます。
+    serverAction: サーバープランを見る
+  common:
+    loading: 読み込み中…
+    refresh: 更新
+    refreshing: 更新中…
+    signIn: ログイン
+  playModes:
+    label: マルチプレイの方法を選択
+    plusEyebrow: フレンドホスト
+    plusTitle: Together Home
+    plusDescription: ワールドをローカルで起動し、直接のマルチプレイ接続に問題がある場合は Together がサポートします。
+    serverEyebrow: 常時オンライン
+    serverTitle: Together Camp、Lodge、Village
+    serverDescription: グループのオーナーがオフラインのときでも、ひとつの永続ワールドをいつでも利用可能に保ちます。
+  billing:
+    eyebrow: XMCL 請求
+    title: 請求と残高
+    description: 残高、支払い、請求履歴を管理します。
+    accountSettings: アカウント設定
+    disabled: このデプロイでは請求機能が有効になっていません。
+    loadingTitle: 請求情報を読み込み中
+    loadingDescription: 残高と利用履歴を取得しています…
+    signInTitle: ログインして請求を管理
+    signInDescription: 残高、お支払い、利用状況はお使いの XMCL アカウントに紐付けられています。
+    overview: 概要
+    accountTitle: 請求アカウント
+    debt: 次回以降のチャージ時に、未払い残高 {amount} が優先して清算されます。
+    available: 利用可能残高
+    availableHint: 各種 XMCL サービスですぐに利用できます
+    homeFundingRequired: 残高が Together Home の購入に不足しています。少なくとも {amount} をチャージしてから、Together に戻って購入してください。
+    reserved: 確保済み
+    reservedHint: 利用中のサービスのために確保されています
+    history: 履歴
+    activity: 請求履歴
+    activityViews: 請求履歴の表示
+    transactions: 取引履歴
+    payments: 支払い履歴
+    usage: 利用量
+    descriptionLabel: 説明
+    reference: 参照番号
+    date: 日付
+    amount: 金額
+    payment: 支払い
+    status: ステータス
+    usageEvent: 利用イベント
+    rate: 料金率
+    charged: 請求額
+    noTransactions: 取引履歴はまだありません。
+    noPayments: Waffo でのお支払いはまだありません。
+    noUsage: 従量課金の利用履歴はまだありません。
+    loadError: 請求データを読み込めませんでした。
+    securedTitle: Waffo による安全な決済
+    securedDescription: クレジットカードおよび購入者の情報は Waffo Pancake のホスト型決済ページで処理されます。XMCL がカード番号を取得することはありません。
+  checkout:
+    title: 残高をチャージ
+    description: Waffo Pancake を通じて安全に XMCL 残高をチャージします。
+    amount: 金額
+    preparing: 決済を準備中…
+    add: "{amount} をチャージ"
+    providerNote: お支払いを完了するために、Waffo のホスト型決済ページへ移動します。
+    legalNote: 続行すると、XMCL Together の次の規約に同意したことになります：
+    terms: 利用規約
+    and: および
+    privacy: プライバシーポリシー
+    openCheckout: 決済ページを開く
+    cancelledReturned: キャンセルした、または戻った
+    newTopUp: 新しくチャージを開始
+    invalidAmount: 正の整数で金額を入力してください。
+    unsafeUrl: サービスから安全な Waffo 決済 URL が返されませんでした。
+    opened: Waffo 決済ページで完了またはキャンセル後、ここに戻ってください。XMCL が注文と残高を更新します。
+    blocked: 決済ウィンドウがブロックされました。ポップアップを許可し、同じ決済で再試行してください。
+    returnRecorded: 決済ページからの復帰が記録されました。
+    returnDetected: 決済ページからの復帰が検出されました。
+    refreshFailed: XMCL が注文と残高の更新を試みました。
+    restoreFailed: 前回の決済を復元できませんでした。再試行すると同じ決済情報が使用されます。
+    newIntent: 新しい決済を作成できるようになりました。以前の Waffo 決済リンクは使用しないでください。
+  accountLinks:
+    title: XMCL サービス
+    plusTitle: Together を見る
+    plusDescription: Modpack の問題を解決し、仲間との安定した接続を維持します。
+    billingEyebrow: 請求
+    billingTitle: 残高と利用履歴
+    billingDescription: 残高をチャージし、請求額を確認します。
+    serverEyebrow: サーバー
+    serverTitle: 共有ホスティング
+    serverDescription: サーバープランを選択し、サブスクリプションを管理します。
+logViewer: ログビューア
+download-flathub: Flathub
+modernHome:
+  kicker: オープンソース Minecraft ランチャー
+  visualLabel: Mod の世界のために設計
+  windowLabel: XMCL / ホーム
+  latestRelease: 最新リリース
+  readyToPlay: すぐにプレイ可能
+  libraryTitle: すっきりまとまるライブラリ
+  librarySubtitle: Mod、Modpack、インスタンス
+  proofLabel: ランチャーの機能
+  proof:
+    fastTitle: すばやいセットアップ
+    fastDescription: バニラから Mod 環境まで
+    libraryTitle: ひとつのライブラリ
+    libraryDescription: リソースを常に整理整頓
+    ecosystemTitle: あなたのエコシステム
+    ecosystemDescription: Modrinth と CurseForge
+  workflow:
+    kicker: XMCL のワークフロー
+    title: あなたのワールドに必要なすべてがここに。
+    description: Mod 環境の強力な自由度を求めつつ、管理の手間を減らしたいプレイヤーのために設計されています。
+    stageLabel: XMCL / ワークフロー
+    scrollHint: スクロールして探索
+  openSource:
+    kicker: オープンソースの鼓動
+    title: 公開開発で構築。
+    viewOnGitHub: GitHub で見る
+    repository: GitHub リポジトリ
+    snapshot: ビルドスナップショット
+    downloads: ダウンロード数
+    stars: Star
+    forks: Fork
+    openIssues: 未解決の Issue
+    statsNote: このサイトのビルド時に取得された GitHub プロジェクトデータです。
+    contributors: コントリビューター
+    inView: 人表示中
+    contributorsCopy: すべての Issue、Pull Request、翻訳、そしてアイデアが次のリリースの力になります。
+  sponsor:
+    label: XMCL をスポンサー
+    title: ランチャーの開発継続を支援。
+    description: メンテナンスやリリース、そして XMCL をオープンに開発している人々を支援しましょう。
+    supportedBy: 支援者
+  download:
+    kicker: 次の冒険へ
+    title: 準備ができたら出発しましょう。
+    platforms: ダウンロードプラットフォーム
+  footer:
+    issues: Issue
+  features:
+    setup:
+      title: すべての構成を、ひとつのランチャーで
+      short: マルチローダー、マルチインスタンス
+      description: Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod、さらに実験的な Bedrock 対応まで、独立した Minecraft インスタンスを作成・管理でき、インストールも自動で行われます。
+      alt: 複数の Mod Loader と Bedrock Edition を表示する XMCL のゲーム作成ダイアログ
+      link: インスタンス設定を見る
+    discover:
+      title: コミュニティコンテンツを見つける
+      short: Modrinth、CurseForge、FTB
+      description: Modpack やコミュニティプロジェクトを閲覧し、バージョンや Loader で絞り込んで、発見からプレイまでスムーズに進められます。
+      alt: コミュニティコンテンツのフィルターを備えた XMCL の Modpack マーケット
+      link: コミュニティコンテンツを見る
+    mods:
+      title: Mod 環境を思いのままに管理
+      short: 検索、グループ化、更新
+      description: インストール済み Mod の管理、依存関係の確認、カスタムグループの整理を行い、大規模な構成でも常にわかりやすく保ちます。
+      alt: フィルターと更新操作を備えた XMCL のローカル Mod 管理画面
+      link: Mod 管理を見る
+    accounts:
+      title: あなたに合ったアカウントの利用法
+      short: Microsoft、オフライン、その他
+      description: Microsoft やオフラインプロファイルからサードパーティの認証サービスまで、ランチャーを離れることなく環境に合ったアカウントを接続できます。
+      alt: 複数の認証サービスを表示する XMCL のアカウントログインダイアログ
+      link: アカウント対応を見る
