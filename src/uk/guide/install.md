@@ -54,7 +54,7 @@
 
 ```sh
 # Зняти атрибут карантину macOS
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+sudo xattr -c /Applications/XMCL.app
 ```
 :::
 

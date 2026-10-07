@@ -53,7 +53,7 @@ Windows 提供多种安装方式：
 要解除 macOS 对未签名应用程序的警告，请在终端中运行以下命令：
 
 ```sh
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+sudo xattr -c /Applications/XMCL.app
 ```
 :::
 

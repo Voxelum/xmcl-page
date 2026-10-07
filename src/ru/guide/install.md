@@ -60,10 +60,10 @@ AppX обновляется через механизм appinstaller. В соо�
 # разрешить программы из любого источника
 sudo spctl --master-disable
 # удалить атрибут карантина
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+sudo xattr -c /Applications/XMCL.app
 ```
 
-Если вы устанавливаете `XMCL.app` в другое место, просто замените `/Applications/X\ Minecraft\ Launcher.app` на путь к нему.
+Если вы устанавливаете `XMCL.app` в другое место, просто замените `/Applications/XMCL.app` на путь к нему.
 
 ## Linux
 

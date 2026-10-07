@@ -53,7 +53,7 @@ You can run XMCL on Windows 7 / 8 using the unofficial **VxKex** extended kernel
 To clear the unsigned application warning on macOS, run this command in Terminal:
 
 ```sh
-sudo xattr -c /Applications/X\ Minecraft\ Launcher.app
+sudo xattr -c /Applications/XMCL.app
 ```
 :::
 

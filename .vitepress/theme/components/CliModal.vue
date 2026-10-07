@@ -637,7 +637,7 @@ const currentConfig = computed(() => {
     commandsArr = [
       { cmd: 'brew tap voxelum/xmcl' },
       { cmd: 'brew install --cask voxelum/xmcl/xmcl' },
-      { cmd: 'sudo xattr -rd com.apple.quarantine /Applications/X\\ Minecraft\\ Launcher.app' },
+      { cmd: 'sudo xattr -rd com.apple.quarantine /Applications/XMCL.app' },
     ];
   } else {
     item = dict.flathub;
