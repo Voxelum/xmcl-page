@@ -1,5 +1,18 @@
 repository: Репозиторій вихідного коду
 label: Українська
+search:
+  button:
+    buttonText: Пошук
+    buttonAriaLabel: Пошук у документації
+  modal:
+    noResultsText: Нічого не знайдено за запитом
+    resetButtonTitle: Очистити запит
+    displayDetails: Показати детальний список
+    backButtonTitle: Закрити пошук
+    footer:
+      selectText: вибрати
+      navigateText: переміщення
+      closeText: закрити
 intro:
   first:
     body: Лаунчер Minecraft з {openSource} та {modernUx} інтерфейсом.

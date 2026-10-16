@@ -1,6 +1,7 @@
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
-import { existsSync, readdirSync } from 'fs'
+import { existsSync, readdirSync, readFileSync } from 'fs'
 import { join, resolve } from 'path'
+import { parse } from 'yaml'
 import Unocss from 'unocss/vite'
 import { LocaleConfig, defineConfigWithTheme } from 'vitepress'
 import type { HeadConfig } from 'vitepress'
@@ -27,6 +28,22 @@ for (const locale of locales) {
 }
 if (localeConfig['en']) {
   localeConfig['root'] = localeConfig['en']
+}
+
+const searchLocales: Record<string, { translations: DefaultTheme.LocalSearchTranslations }> = {}
+for (const locale of locales) {
+  const localeFile = join(__dirname, '../locales', locale + '.yml')
+  if (existsSync(localeFile)) {
+    try {
+      const parsed = parse(readFileSync(localeFile, 'utf-8'))
+      if (parsed?.search) {
+        searchLocales[locale] = { translations: parsed.search }
+      }
+    } catch {}
+  }
+}
+if (searchLocales['en']) {
+  searchLocales['root'] = searchLocales['en']
 }
 
 const siteUrl = 'https://xmcl.app'
@@ -91,6 +108,21 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
     hostname: 'https://xmcl.app',
   },
   description: 'XMCL is an open-source launcher for Minecraft.',
+  themeConfig: {
+    search: {
+      provider: 'local',
+      options: {
+        locales: searchLocales,
+        miniSearch: {
+          searchOptions: {
+            fuzzy: 0.2,
+            prefix: true,
+            boost: { title: 4, text: 2, titles: 1 },
+          },
+        },
+      },
+    },
+  },
   transformHead({ pageData, title, description, head }) {
     const relativePath = normalizeRelativePath(pageData.relativePath)
     const locale = getLocale(relativePath)
@@ -211,6 +243,34 @@ export default defineConfigWithTheme<DefaultTheme.Config>({
           replacement: resolve(
             __dirname,
             './theme/components/VPLocalNavHydrationSafe.vue',
+          ).replaceAll('\\', '/'),
+        },
+        {
+          find: /^\.\/components\/VPNavBarSearch\.vue$/,
+          replacement: resolve(
+            __dirname,
+            './theme/components/VPNavBarSearch.vue',
+          ).replaceAll('\\', '/'),
+        },
+        {
+          find: /^\.\/VPNavBarSearch\.vue$/,
+          replacement: resolve(
+            __dirname,
+            './theme/components/VPNavBarSearch.vue',
+          ).replaceAll('\\', '/'),
+        },
+        {
+          find: /^\.\/components\/VPLocalSearchBox\.vue$/,
+          replacement: resolve(
+            __dirname,
+            './theme/components/VPLocalSearchBox.vue',
+          ).replaceAll('\\', '/'),
+        },
+        {
+          find: /^\.\/VPLocalSearchBox\.vue$/,
+          replacement: resolve(
+            __dirname,
+            './theme/components/VPLocalSearchBox.vue',
           ).replaceAll('\\', '/'),
         },
       ],

@@ -14,6 +14,19 @@ intro:
     packs... It also has integration with Minecraft Forge, Fabric, Quilt,
     CurseForge and Modrinth.
 label: English
+search:
+  button:
+    buttonText: Search
+    buttonAriaLabel: Search documentation
+  modal:
+    noResultsText: No results for
+    resetButtonTitle: Reset search
+    displayDetails: Display detailed list
+    backButtonTitle: Close search
+    footer:
+      selectText: to select
+      navigateText: to navigate
+      closeText: to close
 guide: Guide
 logViewer: Log Viewer
 protocol: Protocol
