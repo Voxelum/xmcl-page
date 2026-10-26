@@ -28,6 +28,26 @@ search:
       navigateText: to navigate
       closeText: to close
 guide: Guide
+documentation: Documentation
+docHub:
+  kicker: Official Documentation
+  title: XMCL Documentation Hub
+  description: Everything you need to install, configure, mod, play together, and understand XMCL architecture.
+  searchPlaceholder: Search documentation, guides, settings, keywords...
+  quickTopics: Quick topics
+  viewSection: Explore section
+  articlesCount: "{count} articles"
+  backToHub: Back to Documentation Hub
+  needHelp: Need Help?
+  needHelpDesc: Can't find what you are looking for? Join our community or contribute to the docs.
+  joinDiscord: Join Discord
+  githubRepo: GitHub Repository
+  contributeDocs: Edit or Improve Docs
+docGroups:
+  gettingStarted: "01 / Getting Started"
+  gameAndMods: "02 / Game & Mods"
+  multiplayerAndTroubleshooting: "03 / Multiplayer & Diagnostics"
+  coreAndDev: "04 / Core Architecture & API"
 logViewer: Log Viewer
 protocol: Protocol
 changelogs: Changelogs

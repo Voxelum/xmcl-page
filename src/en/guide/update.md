@@ -1,40 +1,80 @@
-
-
 # Update Guide
 
-> Under construction
+This guide covers how to update XMCL across Windows, macOS, and Linux, and how to verify that your game instances, saves, and accounts remain completely safe during updates.
 
-Because the launcher is still in the `beta` stage, data backup is particularly important... Here we will introduce how to solve problems encountered during updates and how to backup if you want to reinstall.
+:::tip Data Safety Guarantee
+Updating XMCL **never wipes your game instances, saves, modpacks, or login credentials**. User data is stored separately from the launcher executable files in dedicated system directories.
+:::
 
-## APPX update requires reinstallation
+---
 
-Because the old version launcher of the `APPX` format has expired certificates, when upgrading from the old version to the new version, it will require uninstalling the old version. In this case, please backup your XMCL data folder.
+## Windows
 
-Suppose `foo` is your username:
+### 1. In-App Automatic Updates (Standard)
+1. When a new release is published, XMCL displays an update notification badge on the top title bar.
+2. Click the update notification to review release notes and begin the background download.
+3. Once downloaded, click **Restart & Apply Update**. XMCL will restart with the new version.
 
-::: code-group
-```[Windows (APPX)]
-%LocalAppData%\Packages\XMCL_ncdvebj03zfcm\LocalCache\Roaming\xmcl
+### 2. AppInstaller & APPX Packages
+- If you installed XMCL via the `xmcl.appinstaller` package, Windows automatically checks for and installs updates in the background on app launch using Windows Delivery Optimization.
+- Only differential, changed binary blocks are downloaded, saving bandwidth.
+- If an update fails, download the latest `xmcl.appinstaller` from the official website and run it to repair the installation.
+
+### 3. Portable ZIP & DeskGap Builds
+- **Portable ZIP**: Download the latest `xmcl-*-win32-x64.zip` from our releases page, extract it, and replace the existing launcher executable files. Your instances, settings, and worlds will be immediately detected since data lives in `%AppData%\xmcl`.
+- **DeskGap (v0.72.0+)**: Extract the new `xmcl-*-deskgap-win32-x64.zip` over your current folder.
+
+---
+
+## macOS
+
+### 1. In-App Update
+- XMCL automatically queries GitHub release channels for macOS builds.
+- When notified, download and install the update with a single click.
+
+### 2. Manual DMG Update
+1. Download the latest `.dmg` matching your Mac's processor:
+   - **Apple Silicon (M1 / M2 / M3 / M4)**: `arm64.dmg`
+   - **Intel Core Macs**: `x64.dmg`
+2. Open the `.dmg` file.
+3. Drag **XMCL.app** into your **Applications** folder and select **Replace**.
+
+:::warning Clearing macOS Gatekeeper Quarantine
+If macOS prevents opening the newly updated app with a warning stating the file is damaged or from an unidentified developer, run this command in **Terminal**:
+
+```sh
+sudo xattr -cr /Applications/XMCL.app
 ```
 :::
 
-You can copy it out and put it on the desktop. After reinstallation, the new version of XMCL should have the following file path:
+---
 
-::: code-group
-```[Windows (APPX)]
-%LocalAppData%\Packages\XMCL_68mcaawk44tpj\LocalCache\Roaming\xmcl
+## Linux & Steam Deck
+
+### 1. AppImage
+- **Direct Replacement**: Download the latest `xmcl-*.AppImage`, make it executable, and run:
+  ```sh
+  chmod +x xmcl-*.AppImage
+  ./xmcl-*.AppImage
+  ```
+- **AppImageUpdate**: If you use desktop integration tools like AppImageUpdate or Geary, XMCL supports binary delta-updates directly.
+- **Steam Deck**: In SteamOS Desktop Mode, replace your existing `xmcl.AppImage` in your `Applications` or `Games` directory.
+
+### 2. Flatpak (Flathub) — Recommended
+Flatpak is the officially maintained, primary distribution format on Linux (including Arch Linux, Fedora, Ubuntu, and SteamOS). Update it via your system Software Center (GNOME Software, KDE Discover) or run:
+
+```sh
+flatpak update app.xmcl.XMCL
 ```
-:::
 
-Just put your backup files back in.
+### 3. Native Tarball & Distribution Packages
+For `.tar.xz`, `.deb`, or `.rpm` packages, download the latest package from our GitHub Releases page and install over your previous version.
 
-## APPX update failed
+---
 
-The APPX update should also open a folder, where there is a downloaded `xmcl.appinstaller` file. You can manually double-click this file to install the update.
+## Backup & Storage Locations
 
-## Other updates require reinstallation
-
-This situation does not actually require backup, because only `APPX` will clear XMCL's data files. Of course, you can back up if you want to, and the data files will be located in the following locations:
+If you want to perform a manual safety backup before an update, your data is stored in the following directories:
 
 ::: code-group
 ```cmd [Windows]
@@ -48,6 +88,4 @@ This situation does not actually require backup, because only `APPX` will clear 
 ```
 :::
 
-## Other version updates failed
-
-Just redownload it...
+You can simply copy this folder to an external drive or cloud storage to create a full backup of all instances, accounts, and configurations.

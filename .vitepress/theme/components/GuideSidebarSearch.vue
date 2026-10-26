@@ -11,9 +11,9 @@ onMounted(() => {
   isMac.value = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
 })
 
-const isGuide = computed(() => {
+const isDoc = computed(() => {
   const path = route.path || ''
-  return path.includes('/guide/')
+  return path.includes('/guide/') || path.includes('/core/') || path.includes('/protocol/')
 })
 
 const placeholder = computed(() => {
@@ -22,7 +22,7 @@ const placeholder = computed(() => {
     return 'Пошук...'
   }
   if (currentLang.startsWith('zh')) {
-    return '搜索...'
+    return '搜索文档...'
   }
   if (currentLang.startsWith('de')) {
     return 'Suchen...'
@@ -33,12 +33,12 @@ const placeholder = computed(() => {
   if (currentLang.startsWith('ru')) {
     return 'Поиск...'
   }
-  return 'Search...'
+  return 'Search docs...'
 })
 </script>
 
 <template>
-  <div v-if="isGuide" class="guide-search-tool-wrapper">
+  <div v-if="isDoc" class="guide-search-tool-wrapper">
     <button
       type="button"
       class="guide-search-tool-btn"

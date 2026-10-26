@@ -11,33 +11,38 @@ onMounted(() => {
   isMac.value = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
 })
 
-const isGuide = computed(() => {
+const isDoc = computed(() => {
   const path = route.path || ''
-  return path.includes('/guide/')
+  const onDoc = path.includes('/guide/') || path.includes('/core/') || path.includes('/protocol/')
+  const isLanding = path.endsWith('/guide/') || path.endsWith('/guide/index.html')
+  return onDoc && !isLanding
 })
 
 const label = computed(() => {
   const currentLang = (lang.value || 'en').toLowerCase()
   if (currentLang.startsWith('uk')) {
-    return 'Пошук у Guide'
+    return 'Пошук у документації'
   }
   if (currentLang.startsWith('zh')) {
-    return '搜索指南'
+    return '搜索文档'
   }
   if (currentLang.startsWith('de')) {
-    return 'Guide-Suche'
+    return 'Dokumentation suchen'
   }
   if (currentLang.startsWith('fr')) {
-    return 'Rechercher Guide'
+    return 'Rechercher'
   }
-  return 'Search Guide'
+  if (currentLang.startsWith('ru')) {
+    return 'Поиск по документации'
+  }
+  return 'Search Documentation'
 })
 </script>
 
 <template>
   <Transition name="fade">
     <div
-      v-if="isGuide && !isSearchModalOpen"
+      v-if="isDoc && !isSearchModalOpen"
       class="guide-floating-tool"
     >
       <button

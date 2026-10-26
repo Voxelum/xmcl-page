@@ -130,15 +130,17 @@ html:not(.dark) .VPNavBarMenuLink:hover {
 }
 
 /* Custom Vector SVG Icons for Nav Links (No Lucide) */
-/* Guide: Map / Route Icon */
-.VPNavBarMenuLink[href*="/guide/"]::before {
+/* Documentation: Book Open Icon */
+.VPNavBarMenuLink[href*="/guide/"]::before,
+.VPNavBarMenuLink[href*="/core/"]::before,
+.VPNavBarMenuLink[href*="/protocol/"]::before {
   content: '';
   display: inline-block;
   width: 1.15em;
   height: 1.15em;
   background-color: #10b981;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M565.6 36.2C572.1 40.7 576 48.1 576 56V392c0 10-6.2 18.9-15.5 22.4l-168 64c-5.2 2-10.9 2.1-16.1 .3L192 416 32.5 477.4C23 481 12.2 478.4 5.6 470.9S-1.5 452.6 1.9 443.4L177.9 27.4c5.2-2 10.9-2.1 16.1-.3L384 96 543.5 34.6c9.5-3.6 20.3-1 26.9 6.5zM384 144v272l144-54.9V89.1L384 144zM192 368V96L48 150.9V422.9L192 368z'/%3E%3C/svg%3E") no-repeat center / contain;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M565.6 36.2C572.1 40.7 576 48.1 576 56V392c0 10-6.2 18.9-15.5 22.4l-168 64c-5.2 2-10.9 2.1-16.1 .3L192 416 32.5 477.4C23 481 12.2 478.4 5.6 470.9S-1.5 452.6 1.9 443.4L177.9 27.4c5.2-2 10.9-2.1 16.1-.3L384 96 543.5 34.6c9.5-3.6 20.3-1 26.9 6.5zM384 144v272l144-54.9V89.1L384 144zM192 368V96L48 150.9V422.9L192 368z'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11L221.7 32C209.1 20.8 192.4 16 175.7 16H64C28.7 16 0 44.7 0 80v352c0 26.5 21.5 48 48 48h147.2c19.1 0 37.8-5.3 54.4-8.5zm76.8 0c16.6 3.2 35.3 8.5 54.4 8.5H528c26.5 0 48-21.5 48-48V80c0-35.3-28.7-64-64-64H400.3c-16.7 0-33.4 4.8-46 16L309 67.6c-3.4 2.6-5 6.8-5 11v377.4c0 11.4 11.6 19.3 22.4 15.5z'/%3E%3C/svg%3E") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='currentColor' d='M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11L221.7 32C209.1 20.8 192.4 16 175.7 16H64C28.7 16 0 44.7 0 80v352c0 26.5 21.5 48 48 48h147.2c19.1 0 37.8-5.3 54.4-8.5zm76.8 0c16.6 3.2 35.3 8.5 54.4 8.5H528c26.5 0 48-21.5 48-48V80c0-35.3-28.7-64-64-64H400.3c-16.7 0-33.4 4.8-46 16L309 67.6c-3.4 2.6-5 6.8-5 11v377.4c0 11.4 11.6 19.3 22.4 15.5z'/%3E%3C/svg%3E") no-repeat center / contain;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
@@ -306,4 +308,12 @@ html:not(.dark) .VPSocialLink {
 
 .VPSwitchAppearance:hover {
   box-shadow: 0 0 12px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* When active or hovered with lime background, icon matches dark text */
+.VPNavBarMenuLink:hover::before,
+.VPNavBarMenuLink.active::before,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink:hover::before,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink.active::before {
+  background-color: #17211f !important;
 }

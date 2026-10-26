@@ -102,12 +102,16 @@ body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarTitle .title {
 
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink {
   border: 1px solid transparent !important;
-  border-radius: 6px !important;
+  border-radius: 8px !important;
   font-size: 12px !important;
   font-weight: 700 !important;
   height: 34px !important;
+  padding: 0 12px !important;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
 }
 
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink:hover,
@@ -165,6 +169,35 @@ body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavScreenMenuLink {
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebar {
   background: var(--xmcl-paper) !important;
   border-right: 1px solid var(--xmcl-line) !important;
+  z-index: 10 !important;
+}
+
+.VPSidebar,
+.VPSidebar .nav {
+  padding-bottom: 96px !important;
+  box-sizing: border-box !important;
+}
+
+/* Compact & elegant nested submenu items */
+.VPSidebarItem.level-2 .text,
+.VPSidebarItem.level-3 .text {
+  font-size: 13px !important;
+  line-height: 20px !important;
+  padding: 3px 0 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.VPSidebarItem.level-2 > .item,
+.VPSidebarItem.level-3 > .item {
+  min-height: 26px !important;
+  padding: 1px 0 !important;
+}
+
+.VPSidebarItem.level-1 .items {
+  padding-left: 12px !important;
+  margin: 2px 0 4px !important;
 }
 
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPSidebarItem .item .link {
@@ -403,4 +436,113 @@ body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link.active {
 html.dark body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link:hover,
 html.dark body:has(.blog-article-wrapper) .VPDocAsideOutline .outline-link.active {
   color: var(--xmcl-lime);
+}
+
+/* Footer stays on top of everything (sidebar, background, indicators) */
+.site-doc-footer,
+.site-footer {
+  position: relative !important;
+  z-index: 1000 !important;
+  background: #111714 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+@media (min-width: 960px) {
+  .has-sidebar .site-footer {
+    padding-left: calc(var(--vp-sidebar-width, 272px) + clamp(24px, 4vw, 64px)) !important;
+  }
+}
+
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink:hover::before,
+body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink.active::before {
+  background-color: #17211f !important;
+}
+
+
+/* Clean Documentation Footer (No redundant line, timestamp moved to right aside) */
+.VPDocFooter {
+  border-top: none !important;
+  padding-top: 12px !important;
+  margin-top: 28px !important;
+}
+
+.VPDocFooter .edit-info {
+  display: none !important;
+}
+
+
+/* ==========================================================================
+   Custom Technical Cyberpunk Scrollbars (XMCL Dark Brutalist Style)
+   ========================================================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2e3d35 transparent;
+}
+
+html:not(.dark) * {
+  scrollbar-color: #c2c9bf transparent;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b3a32;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #42564a;
+  border-color: rgba(201, 248, 90, 0.25);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #c9f85a;
+  border-color: #c9f85a;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #c2c9bf;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #9fa99b;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:active {
+  background: #e45e42;
+}
+
+.VPSidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.VPSidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  background: #25332b;
+  border-radius: 3px;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb:hover {
+  background: #3e5246;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb:active {
+  background: #c9f85a;
 }

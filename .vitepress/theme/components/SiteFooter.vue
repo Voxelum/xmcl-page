@@ -1,5 +1,33 @@
 <template>
-  <footer class="site-footer" :aria-label="t('siteFooter.ariaLabel')">
+  <!-- Dedicated Minimal Documentation Footer -->
+  <footer v-if="isDoc" class="site-doc-footer">
+    <div class="site-doc-footer-inner">
+      <div class="site-doc-meta">
+        <a class="site-doc-logo" :href="homeUrl">
+          <img src="/logo.svg" alt="XMCL" width="20" height="20" />
+          <span>XMCL</span>
+        </a>
+        <span class="site-doc-badge">OPEN SOURCE // RUNTIME SPEC</span>
+      </div>
+      <div class="site-doc-links">
+        <span class="site-doc-copy">© {{ year }} XMCL</span>
+        <span class="doc-sep">/</span>
+        <a :href="privacyUrl">{{ legalLabels.projectPrivacy }}</a>
+        <span class="doc-sep">/</span>
+        <a :href="togetherPrivacyUrl">{{ legalLabels.togetherPrivacy }}</a>
+        <span class="doc-sep">/</span>
+        <a :href="termsUrl">{{ legalLabels.terms }}</a>
+        <span class="doc-sep">/</span>
+        <a href="https://github.com/voxelum/xmcl-page" target="_blank" rel="noreferrer">GitHub (xmcl-page)</a>
+      </div>
+    </div>
+    <p class="site-doc-disclaimer">
+      NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+    </p>
+  </footer>
+
+  <!-- Standard Marketing Footer (Landing, Features, Prebuilds) -->
+  <footer v-else class="site-footer" :aria-label="t('siteFooter.ariaLabel')">
     <div class="site-footer-main">
       <div class="site-footer-brand">
         <a class="site-footer-logo" :href="homeUrl"><img src="/logo.svg" alt="" /> <span>XMCL</span></a>
@@ -49,9 +77,16 @@ import { useData } from 'vitepress'
 import { useI18n } from 'vue-i18n'
 import { useI18nSync } from '../composables/useI18nSync'
 
-const { lang, site } = useData()
+const { lang, site, page, frontmatter } = useData()
 const { t } = useI18n()
 useI18nSync()
+
+const isDoc = computed(() => {
+  if (frontmatter.value.layout === 'home') return false
+  const p = page.value.filePath || ''
+  return p.includes('guide/') || p.includes('core/') || p.includes('protocol/')
+})
+
 const pageUrl = (path: string) => `${site.value.base}${lang.value}/${path}`
 const homeUrl = computed(() => `${site.value.base}${lang.value}/`)
 const guideUrl = computed(() => pageUrl('guide/install'))
@@ -63,6 +98,7 @@ const togetherLocale = computed(() => lang.value || 'en')
 const togetherUrl = computed(() => `${site.value.base}${togetherLocale.value}/together/`)
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
+const logViewerUrl = computed(() => pageUrl('log-viewer'))
 const legalLocale = computed(() => ['zh', 'zh-TW', 'ru', 'uk'].includes(lang.value) ? lang.value : 'en')
 const legalLabels = computed(() => {
   switch (lang.value) {
@@ -92,6 +128,93 @@ const year = new Date().getFullYear()
 </script>
 
 <style scoped>
+/* ==========================================================================
+   Dedicated Minimal Documentation Footer
+   ========================================================================== */
+.site-doc-footer {
+  background: #111714 !important;
+  border-top: 1px solid var(--vp-c-divider, rgba(255, 255, 255, 0.12));
+  padding: 14px clamp(24px, 5vw, 64px) 12px;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  color: var(--vp-c-text-2, #8b9991);
+  box-sizing: border-box;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+.site-doc-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.site-doc-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-doc-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--vp-c-text-1, #edf3ed);
+  font-weight: 800;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-doc-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: rgba(201, 248, 90, 0.1);
+  border: 1px solid rgba(201, 248, 90, 0.3);
+  color: var(--xmcl-lime, #c9f85a);
+}
+
+.site-doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.site-doc-links a {
+  color: var(--vp-c-text-2, #8b9991);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.site-doc-links a:hover {
+  color: var(--xmcl-lime, #c9f85a);
+}
+
+.doc-sep {
+  color: var(--vp-c-divider, #334139);
+}
+
+.site-doc-disclaimer {
+  max-width: 1440px;
+  margin: 6px auto 0;
+  font-size: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.06em;
+  color: var(--vp-c-text-3, #57655d);
+}
+
+/* ==========================================================================
+   Standard Marketing Footer
+   ========================================================================== */
 .site-footer {
   --footer-ink: #17211f;
   --footer-muted: #a7b2aa;

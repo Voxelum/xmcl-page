@@ -13,6 +13,12 @@ After completing this page, you should be able to:
 - diagnose crash logs with the built-in agent;
 - run agent tools (mod toggle, install, config search/edit, etc.).
 
+::: info Dedicated Guides for Other Models:
+In addition to Agnes AI, you can connect other models:
+* [Cloud Models (Gemini, ChatGPT, Claude, Qwen, Z.ai)](./ai-cloud-models)
+* [Local Offline Models (Ollama, LM Studio)](./ai-local-models)
+:::
+
 ## What You Need
 
 - XMCL latest version.

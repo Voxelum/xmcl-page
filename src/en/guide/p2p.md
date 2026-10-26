@@ -1,89 +1,93 @@
-# Minecraft LAN Multiplayer Guide
+# P2P LAN Multiplayer Guide
 
-This guide will help you set up and play Minecraft with your friends over a local network or even the internet using the launcher's built-in features.
+This guide explains how to play Minecraft with friends across different networks using XMCL's built-in **P2P (Peer-to-Peer) WebRTC** system without third-party VPN tools (Hamachi, Radmin) or router port forwarding.
 
-## What is P2P (Peer-to-Peer)? A Simple Explanation
+---
 
-P2P stands for "Peer-to-Peer". Think of it like this: instead of everyone connecting to one big central server (like a main computer in the sky), players connect *directly* to each other's computers. It's like having a direct phone line between friends instead of everyone calling through one operator.
+## 1. What is XMCL P2P Multiplayer?
 
-- **Direct Connection:** Your computer talks *directly* to your friend's computer.
-- **No Central Server:** Unlike online servers, you don't need a dedicated machine running 24/7.
-- **LAN:** Works best on the same local network (e.g., same WiFi at home).
-- **Internet Play:** Can work over the internet, but requires specific network configurations (like the launcher's relay system described below).
+Traditional Minecraft LAN play requires all computers to be physically connected to the same home Wi-Fi or Ethernet router. Playing over the internet historically required renting a dedicated server, manually configuring router NAT port forwarding, or installing third-party virtual network software like Hamachi or Radmin VPN.
 
-This is what allows players to join a game hosted on one person's computer without needing a complex server setup.
+XMCL solves this natively by implementing a **direct WebRTC peer-to-peer mesh networking stack**:
+- **Zero Third-Party Software**: No extra drivers, virtual network adapters, or administrative privileges required.
+- **Direct Encrypted Data Pipe**: Traffic travels point-to-point directly between players with DTLS/SRTP encryption.
+- **Automatic LAN Emulation**: When you connect, the host's singleplayer world automatically appears inside your friend's in-game **Multiplayer** menu just like a local home LAN game.
 
-## Getting Started: Opening the Multiplayer Window
+---
 
-First, open the "Multiplayer on LAN" window in the launcher:
+## 2. Step-by-Step Guide for the Host
 
-![Multiplayer](/guidephoto/multi.png)
+### Step 1: Launch Your Game
+Launch your desired Minecraft instance (Vanilla, Forge, Fabric, NeoForge, or Quilt) from XMCL.
 
-## Understanding Your Connection Status
+### Step 2: Open the World to LAN
+1. Enter your singleplayer world.
+2. Press `Esc` and click **Open to LAN**.
+3. Choose your preferred game mode and whether cheats are allowed, then click **Start LAN World**.
+4. Minecraft will display a message in chat showing the local port number (e.g. `Local game hosted on port 54321`).
 
-Once opened, you'll see your status, IP address, and router information. The most important part is your **status**:
+### Step 3: Create a P2P Room in XMCL
+1. Switch to the XMCL launcher window.
+2. Click **Multiplayer (P2P)** on the left navigation sidebar.
+3. Click **Host Room** / **Create Room**.
+4. XMCL will automatically detect the active LAN game running on your PC.
+5. Click **Copy Room Code** (or copy the one-click invite link) and send it to your friends via Discord, Telegram, or chat.
 
-![Windows](/guidephoto/windows-mul.png)
+---
 
-- **Status 1 or 2:** You're good to go! You can play with friends without issues.
-- **Other Statuses:** If you see a different status number, it means your connection type might not be ideal for direct play. You'll need to look up solutions specific to your internet setup or firewall. (Try refreshing the status in the launcher first - sometimes it helps!)
+## 3. Step-by-Step Guide for the Guest (Friends Joining)
 
-## How to Play: With or Without a License
+### Step 1: Match Game Version & Mods
+Ensure you have the same Minecraft version and the same modpack installed as the host.
 
-### Option 1: Licensed Players
-If everyone has a Minecraft license, you can use the standard LAN multiplayer:
-1. One person starts a world in Minecraft and opens it to LAN.
-2. The other players look for the game in their Minecraft multiplayer list.
+### Step 2: Join the Room in XMCL
+1. Open XMCL and navigate to **Multiplayer (P2P)** on the left sidebar.
+2. Click **Join Room** and paste the Room Code or invite link provided by the host.
+3. Wait a few seconds while XMCL performs the WebRTC handshake and STUN hole-punching. The room status will update to **Connected (Direct P2P)**.
 
-### Option 2: Using the Relay Server (For Unlicensed Players or Difficult Connections)
-If you don't have a license or have connection issues, the launcher provides a relay server feature:
-1. Go to **Global Settings**.
-2. Enable the **Relay Server** function.
-   - *Note:* If this option isn't available, your internet provider might be blocking access to it.
+### Step 3: Launch Minecraft and Join
+1. Launch your matching Minecraft instance in XMCL.
+2. In the Minecraft main menu, click **Multiplayer**.
+3. Scroll to the bottom of the server list under **Scanning for games on your local network**.
+4. The host's world will appear automatically under **LAN Worlds**! Click it and press **Join Server**.
 
-![Relay Server](/guidephoto/relay-server.png)
+---
 
-## Setting Up the Connection
+## 4. Playing with Offline Profiles (No Microsoft License)
 
-### Method 1: Using Connection IDs (Easier)
-1. **Create an ID:** Click the `+` button in the multiplayer window.
-2. **Share the ID:** Send your generated ID to your friend.
+XMCL P2P multiplayer works seamlessly whether all players have official Microsoft accounts or use offline profiles:
 
-![ID](/guidephoto/ID.png)
+1. **Unique Usernames**: Ensure every player sets a distinct username in XMCL's account manager. Duplicate usernames will cause connection conflicts.
+2. **Online Mode Configuration**:
+   - If playing a vanilla world where some players use offline profiles, install a lightweight server mod like **LAN World Plug-n-Play** or **e4mc** that allows setting `online-mode: false` on LAN worlds.
+   - For modpacks with built-in auth mods, players can join instantly without Microsoft session validation.
 
-3. **Friend joins:** Your friend clicks `+` and enters your ID in the appropriate field.
-4. **Connected:** Your friend should now be connected to you!
+---
 
-### Method 2: Manual Connection (If Method 1 Fails)
-If the ID method doesn't work, use the manual connection settings:
+## 5. Automatic Mod Synchronization (Manifest Sync)
 
-1. Click on the **settings** icon.
-![Settings](/guidephoto/token.png)
-2. One person uses **"Initiale-Connection"** (creates the connection).
-![Initiale-Connection](/guidephoto/intiale.png)
-3. The other uses **"Join"** (connects to the host).
-4. The host needs to send their connection key, and the friend needs to accept it.
+When connected to a room, XMCL compares the client mods between the Host and the Guest:
+- **Compatible**: All required gameplay mods match; you can join immediately.
+- **Mod Mismatch Warning**: If the host has added mods that the guest is missing (or version numbers differ), XMCL displays a notification highlighting the exact mismatched `.jar` files so you can install them before launching.
 
-## Sharing Worlds
+---
 
-Once connected, you can share world instances with your friends using the dedicated button in the interface.
+## 6. Troubleshooting Common Connection Issues
 
-![Share World](/guidephoto/share.png)
-![Share World 2](/guidephoto/Share2.png)
+### 1. Game Does Not Appear in Minecraft's Multiplayer List
+- Make sure the guest clicked **Join Room** in XMCL *before* entering Minecraft's Multiplayer menu.
+- If it still doesn't scan automatically, look at the room details in XMCL: XMCL displays a local fallback proxy address (e.g. `127.0.0.1:49152`).
+- In Minecraft, click **Direct Connection**, enter `127.0.0.1:49152` (replace with your port), and click **Join Server**.
 
-## Starting the Game
+### 2. Windows Defender Firewall Blocking Java or XMCL
+Windows Firewall often blocks incoming UDP/TCP traffic for new Java runtimes:
+1. Open Windows **Control Panel** -> **Windows Defender Firewall** -> **Allow an app through firewall**.
+2. Look for **Java(TM) Platform SE binary** (`javaw.exe`) and **XMCL**.
+3. Ensure both **Private** and **Public** checkboxes are ticked.
+4. Restart the Minecraft instance.
 
-1. **Host:** Open Minecraft, start a world, and open it to LAN.
-2. **Players:** Go to Multiplayer in Minecraft, and the hosted game should appear at the bottom of your server list!
-
-## Network Optimization
-### For the best experience, consider these network settings:
-
-* Use a stable internet connection with at least 5 Mbps upload speed
-* Prefer wired connections over WiFi when possible
-* **Close bandwidth-intensive applications during gameplay**
-* **Disable unnecessary background services**
-
-## Need Help?
-
-If you encounter problems, feel free to ask for help on Discord, Reddit, or other Minecraft communities.
+### 3. Symmetric NAT & TURN Relay Fallback
+If both you and your friend are behind strict, symmetric carrier-grade NATs (CGNAT) that block direct hole-punching:
+- XMCL will automatically switch the connection to an encrypted **TURN Relay**.
+- You will see the connection status change from **Direct P2P** to **Relay**.
+- The game will still work without manual port forwarding, though latency (ping) may be slightly higher depending on relay distance.

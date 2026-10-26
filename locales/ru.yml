@@ -16,6 +16,12 @@ changelogs: Список изменений
 blogs: Блог
 outline: На этой странице
 coreDocument: Основной документ
+documentation: Документация
+docGroups:
+  gettingStarted: "01 / Начало работы"
+  gameAndMods: "02 / Управление игрой и моды"
+  multiplayerAndTroubleshooting: "03 / Мультиплеер и диагностика"
+  coreAndDev: "04 / Архитектура и ядро"
 launcher:
   manage:
     intro: Эффективно управляйте своим Minecraft.

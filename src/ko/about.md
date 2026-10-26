@@ -76,7 +76,7 @@ brew install --cask --no-quarantine voxelum/xmcl
 
 기능 추가나 버그 수정을 원한다면 다음을 확인하세요: [기여하기](/ko/guide/contributing)
 
-번역에 도움을 주고 싶으시다면, 다음을 따라주세요 [현지화 시작하기](/ko/guide/i18n).
+번역에 도움을 주고 싶으시다면, 다음을 따라주세요 [현지화 시작하기](https://github.com/voxelum/xmcl-page).
 
 
 ## 후원

@@ -27,3 +27,5 @@ yarn-error.log*
 **/.vitepress/cache/**
 **/.vitepress/dist/**
 **/.vitepress/.temp/**
+
+src/en/core

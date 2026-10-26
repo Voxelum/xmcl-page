@@ -32,6 +32,26 @@ downloadFor:
   mac: "Завантажити для Mac:"
   linux: "Завантажити для Linux:"
 guide: Посібник
+documentation: Документація
+docHub:
+  kicker: Офіційний хаб документації
+  title: Центр документації XMCL
+  description: Все про встановлення, налаштування, модифікації, мережеву гру та архітектуру лаунчера в одному місці.
+  searchPlaceholder: Пошук статей, параметрів, ключових слів...
+  quickTopics: Популярні запити
+  viewSection: До розділу
+  articlesCount: "{count} статей"
+  backToHub: Назад до хабу документації
+  needHelp: Потрібна допомога?
+  needHelpDesc: Не знайшли відповіді на своє питання? Приєднуйтесь до нашої спільноти або допоможіть покращити документацію.
+  joinDiscord: Наш Discord
+  githubRepo: Репозиторій GitHub
+  contributeDocs: Запропонувати правку
+docGroups:
+  gettingStarted: "01 / Початок роботи"
+  gameAndMods: "02 / Керування грою та моди"
+  multiplayerAndTroubleshooting: "03 / Мультиплеєр та діагностика"
+  coreAndDev: "04 / Архітектура та ядро"
 protocol: Протокол
 changelogs: Список змін
 blogs: Блог

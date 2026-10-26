@@ -12,12 +12,12 @@ WebRTC was originally designed for real-time audio and video streaming between b
 
 So why choose WebRTC over other technologies? The following table compares three ways of implementing online play:
 
-                    
-|                     | WebRTC             | Handwritten Hole Punching (Custom Protocol) | Hiper and other third-party software |
+ 
+| | WebRTC | Handwritten Hole Punching (Custom Protocol) | Hiper and other third-party software |
 | ------------------- | ------------------ | ------------------------- | ---------------------------- |
-| Customization       | High               | Highest                   | -                            | - |
-| Implementation Difficulty | Low           | High                       | Lowest                      |
-| Ease of Use for Users    | Dependent on Implementation | Dependent on Implementation | Requires Admin Permissions, cost involved |
+| Customization | High | Highest | - | - |
+| Implementation Difficulty | Low | High | Lowest |
+| Ease of Use for Users | Dependent on Implementation | Dependent on Implementation | Requires Admin Permissions, cost involved |
 
 ### Customization
 
@@ -78,13 +78,13 @@ WebRTC needs to obtain local network information from an STUN server in order to
 Many STUN servers are free, such as `stun:stun.qq.com` used by QQ.
 
 A TURN server is responsible for relaying traffic. It is usually self-deployed and requires payment.
-## 🔄 Connection Flow and Signaling Architecture
+## Connection Flow and Signaling Architecture
 
 The following diagram illustrates how the P2P connection is coordinated, NAT hole-punching is completed, and game traffic is securely tunneled between two Minecraft clients:
 
 <div style="margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
 <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1); display: flex; align-items: center; gap: 8px;">
-<span>🔄 Connection & Data Flow Sequence</span>
+<span> Connection & Data Flow Sequence</span>
 </h3>
 <div style="display: flex; flex-direction: column; gap: 16px;">
 <!-- Step 1 -->
@@ -152,73 +152,73 @@ Here is a pseudo-code example:
 ```ts
 // "id" here represents the ID of the person you want to connect to, which can be generated arbitrarily as long as it is unique
 function initiateConnection(id: string) {
-    // create a new connection
-    let connection = new PeerConnection(id, {
-        iceServers: [
-            // You can use your own STUN/TURN servers to help establish a connection
-            // But having too many servers is not recommended - usually 1-2 is enough
-            "stun:stun.qq.com",
-        ]
-        iceTransportPolicy: 'all',
-    });
+ // create a new connection
+ let connection = new PeerConnection(id, {
+ iceServers: [
+ // You can use your own STUN/TURN servers to help establish a connection
+ // But having too many servers is not recommended - usually 1-2 is enough
+ "stun:stun.qq.com",
+ ]
+ iceTransportPolicy: 'all',
+ });
 
-    // Some WebRTC implementations will automatically generate a local Description after creating a data channel
-    // If so, you only need to listen for local Description changes
-    connection.onLocalDescription((description) => {
-        // Send your Description to the other person through the coordination server
-        sendDescription(id, description);
-    });
+ // Some WebRTC implementations will automatically generate a local Description after creating a data channel
+ // If so, you only need to listen for local Description changes
+ connection.onLocalDescription((description) => {
+ // Send your Description to the other person through the coordination server
+ sendDescription(id, description);
+ });
 
-    // As the initiator, you need to actively create the data channel
-    const channel = connection.createDataChannel(id, {
-        ordered: true, // order means that this channel is reliable
-        protocol: 'metadata'
-    })
+ // As the initiator, you need to actively create the data channel
+ const channel = connection.createDataChannel(id, {
+ ordered: true, // order means that this channel is reliable
+ protocol: 'metadata'
+ })
 
-    // Communicate with the remote endpoint through the channel in the future
+ // Communicate with the remote endpoint through the channel in the future
 }
 ```
 
 Some WebRTC implementations do not create a local Description automatically, in which case you must create an Offer and send it to the other person:
 
 ```ts
-    const offer = await connection.createOffer()
-    sendDescription(id, offer);
+ const offer = await connection.createOffer()
+ sendDescription(id, offer);
 ```
 
 B as the recipient of the connection needs to create a PeerConnection after receiving A's Description. The process is similar to the above, and here is the pseudo-code:
 
 ```ts
 function onGetOtherDescription(id: string, description: Description) {
-    let connection = new PeerConnection(id, {
-        iceServers,
-        iceTransportPolicy: 'all',
-    });
+ let connection = new PeerConnection(id, {
+ iceServers,
+ iceTransportPolicy: 'all',
+ });
 
-    // Set the remote Description directly
-    connection.setRemoteDescription(description);
+ // Set the remote Description directly
+ connection.setRemoteDescription(description);
 
-    // Listen for data channel creation
-    connection.onDataChannel((channel) => {
-        if (channel.protocol === 'metadata') {
-            // This is the metadata channel
-        }
-        // You can also handle data channels of many other protocols here
-    });
+ // Listen for data channel creation
+ connection.onDataChannel((channel) => {
+ if (channel.protocol === 'metadata') {
+ // This is the metadata channel
+ }
+ // You can also handle data channels of many other protocols here
+ });
 
-    // Like the initiator, when a local Description is available, send it to the other person
-    connection.onLocalDescription((description) => {
-        // Send your Description to the other person through the coordination server
-        sendDescription(id, description);
-    });
+ // Like the initiator, when a local Description is available, send it to the other person
+ connection.onLocalDescription((description) => {
+ // Send your Description to the other person through the coordination server
+ sendDescription(id, description);
+ });
 }
 ```
 
 Some WebRTC implementations do not create a local Description automatically, in which case you must create an Answer and send it to the other person:
 
 ```ts
-    const answer = await connection.createAnswer()
-    sendDescription(id, answer);
+ const answer = await connection.createAnswer()
+ sendDescription(id, answer);
 ```
 
 When the metadata data channel between both parties is successfully established, the connection is also established (hole-punching successful!). However, you can use the `ConnectionState` changes on the PeerConnection to determine the connection status.
@@ -239,8 +239,8 @@ The format of communication information is a UTF-8 JSON string. The JSON format 
 
 ```ts
 interface Message {
-    type: string
-    payload: object
+ type: string
+ payload: object
 }
 ```
 
@@ -250,13 +250,13 @@ The following **pseudo-code** shows how to send a message to the other party thr
 
 ```ts
 send<T>(type: string, payload: object) {
-    // Convert message to JSON string
-    const messageString = JSON.stringify({
-        type: type,
-        payload: payload
-    })
-    // Send the string via the metadata channel
-    this.channel.sendMessage(messageString)
+ // Convert message to JSON string
+ const messageString = JSON.stringify({
+ type: type,
+ payload: payload
+ })
+ // Send the string via the metadata channel
+ this.channel.sendMessage(messageString)
 }
 ```
 
@@ -270,10 +270,10 @@ The type of Ping message is `heartbeat-ping`, and its payload contains only one 
 
 ```json
 {
-    "type": "heartbeat-ping",
-    "payload": {
-        "time": 12391724789
-    }
+ "type": "heartbeat-ping",
+ "payload": {
+ "time": 12391724789
+ }
 }
 ```
 
@@ -282,10 +282,10 @@ The format of Pong is the same as that of Ping message, except that the `type` i
 
 ```json
 {
-    "type": "heartbeat-pong",
-    "payload": {
-        "time": 12391724789
-    }
+ "type": "heartbeat-pong",
+ "payload": {
+ "time": 12391724789
+ }
 }
 ```
 
@@ -297,17 +297,17 @@ Among them, `textures` stores the player's skin information, which makes it easy
 
 ```json
 {
-    "type": "identity",
-    "payload": {
-        "name": "username",
-        "id": "user uuid",
-        "textures": {
-            "SKIN": {
-                "url": "skin url",
-                "metadata": { "model": "slim" }
-            }
-        }
-    }
+ "type": "identity",
+ "payload": {
+ "name": "username",
+ "id": "user uuid",
+ "textures": {
+ "SKIN": {
+ "url": "skin url",
+ "metadata": { "model": "slim" }
+ }
+ }
+ }
 }
 ```
 
@@ -321,11 +321,11 @@ The following is the format of the message:
 
 ```json
 {
-    "type": "lan",
-    "payload": {
-        "motd": "your server's motd",
-        "port": 34631
-    }
+ "type": "lan",
+ "payload": {
+ "motd": "your server's motd",
+ "port": 34631
+ }
 }
 ```
 
@@ -341,32 +341,32 @@ The following **pseudo-code** demonstrates the process:
 
 ```ts
 function createMinecraftProxyServer(motd: string, port: number) {
-    // Create a proxy server
-    const server = createServer((socket) => {
-        // This socket is the socket when the Minecraft game connects to your local proxy server.
+ // Create a proxy server
+ const server = createServer((socket) => {
+ // This socket is the socket when the Minecraft game connects to your local proxy server.
 
-        // This DataChannel needs to use the expected port as the label.
-        const gameChannel = this.connection.createDataChannel(port, {
-            protocol: 'minecraft', // You need to specify the protocol as minecraft.
-            order: true, // order represents reliability.
-        })
+ // This DataChannel needs to use the expected port as the label.
+ const gameChannel = this.connection.createDataChannel(port, {
+ protocol: 'minecraft', // You need to specify the protocol as minecraft.
+ order: true, // order represents reliability.
+ })
 
-        // Listen to data from Minecraft and send it directly to the other party through DataChannel
-        socket.on('data', (buf) => gameChannel.sendMessageBinary(buf))
-        // Listen to data from the other party and feed it directly to Minecraft
-        gameChannel.onMessage((data) => socket.write(Buffer.from(data)))
+ // Listen to data from Minecraft and send it directly to the other party through DataChannel
+ socket.on('data', (buf) => gameChannel.sendMessageBinary(buf))
+ // Listen to data from the other party and feed it directly to Minecraft
+ gameChannel.onMessage((data) => socket.write(Buffer.from(data)))
 
-        // When one party closes, close the other party as well
-        socket.on('close', () => gameChannel.close())
-        gameChannel.onClosed(() => socket.destroy())
-    })
+ // When one party closes, close the other party as well
+ socket.on('close', () => gameChannel.close())
+ gameChannel.onClosed(() => socket.destroy())
+ })
 
-    // You need to try to make the server listen to the port that needs to be listened to
-    // The actual proxy server port may be different from the expected port.
-    const port = tryListenTo(server, info.port)
+ // You need to try to make the server listen to the port that needs to be listened to
+ // The actual proxy server port may be different from the expected port.
+ const port = tryListenTo(server, info.port)
 
-    // Send the real proxy server port and MOTD pretending to be Minecraft open to the LAN information to local Minecraft
-    broadcastLanMessageToMinecraft(info.motd, port)
+ // Send the real proxy server port and MOTD pretending to be Minecraft open to the LAN information to local Minecraft
+ broadcastLanMessageToMinecraft(info.motd, port)
 }
 ```
 
@@ -380,28 +380,28 @@ The following **pseudo-code** shows how to establish a connection after listenin
 ```ts
 // When a new DataChannel is created
 this.connection.onDataChannel((channel) => {
-    // When the DataChannel is minecraft
-    if (channel.protocol === 'minecraft') {
-        // Get the port by label of the channel
-        const port = Number.parseInt(channel.label)!
+ // When the DataChannel is minecraft
+ if (channel.protocol === 'minecraft') {
+ // Get the port by label of the channel
+ const port = Number.parseInt(channel.label)!
 
-        // Establish a TCP connection to the corresponding port number on the local machine.
-        // This is equivalent to connecting to the Minecraft LAN server opened on the local machine.
-        const socket = createConnection(port)
+ // Establish a TCP connection to the corresponding port number on the local machine.
+ // This is equivalent to connecting to the Minecraft LAN server opened on the local machine.
+ const socket = createConnection(port)
 
-        // Listen to the data from this Minecraft connection and send it directly to the remote party.
-        socket.on('data', (buf) => channel.sendMessageBinary(buf))
-        // Listen to data from the remote end and forward it directly to Minecraft.
-        channel.onMessage((data) => socket.write(Buffer.from(data)))
+ // Listen to the data from this Minecraft connection and send it directly to the remote party.
+ socket.on('data', (buf) => channel.sendMessageBinary(buf))
+ // Listen to data from the remote end and forward it directly to Minecraft.
+ channel.onMessage((data) => socket.write(Buffer.from(data)))
 
-        // When one party closes, close the other party as well
-        socket.on('close', () => channel.close())
-        channel.onClosed(() => socket.destroy())
-    } else if (channel.protocol === 'metadata') {
-        // As metadata channel handling
-    } else {
-        // Other protocols...
-    }
+ // When one party closes, close the other party as well
+ socket.on('close', () => channel.close())
+ channel.onClosed(() => socket.destroy())
+ } else if (channel.protocol === 'metadata') {
+ // As metadata channel handling
+ } else {
+ // Other protocols...
+ }
 })
 ```
 
@@ -441,14 +441,14 @@ For example:
 
 ```ts
 let connection = new PeerConnection(id, {
-    iceServers: [
-        {
-            urls: 'turn:my-turn-server.mycompany.com:19403',
-            username: 'Your TURN server username',
-            credentials: 'Login token'
-        }
-    ], // This is
-    iceTransportPolicy: 'all',
+ iceServers: [
+ {
+ urls: 'turn:my-turn-server.mycompany.com:19403',
+ username: 'Your TURN server username',
+ credentials: 'Login token'
+ }
+ ], // This is
+ iceTransportPolicy: 'all',
 });
 ```
 

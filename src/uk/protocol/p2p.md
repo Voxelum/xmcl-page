@@ -4,7 +4,7 @@
 
 ---
 
-## 🌐 Що таке WebRTC? Чому саме він?
+## Що таке WebRTC? Чому саме він?
 
 WebRTC (Web Real-Time Communication) — це технологія для однорангового (peer-to-peer) зв'язку в реальному часі. Цитата з [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API):
 
@@ -24,7 +24,7 @@ WebRTC (Web Real-Time Communication) — це технологія для одн
 
 ---
 
-## 📑 Деталі протоколу та базові концепції
+## Деталі протоколу та базові концепції
 
 Протокол складається з трьох основних частин:
 1. **Встановлення з'єднання**: Обмін описами сесій (SDP) для погодження обходу NAT.
@@ -33,22 +33,22 @@ WebRTC (Web Real-Time Communication) — це технологія для одн
 
 ### Основні концепції
 
-*   **PeerConnection**: Представляє з'єднання, встановлене між двома гравцями. Керує обходом NAT, ICE-кандидатами та шифруванням.
-*   **DataChannel**: Двосторонній канал передачі даних всередині `PeerConnection`. Одне P2P-з'єднання може мати кілька каналів даних (наприклад, один для метаданих та по одному на кожне ігрове підключення).
-*   **SDP Description**: Рядок протоколу опису сесії (Session Description Protocol), що містить інформацію про підтримувані кодеки, параметры з'єднання та адреси кандидатів.
-*   **ICEServer (STUN/TURN)**:
-    *   **STUN**: Використовується для визначення публічної IP-адреси гравця та типу NAT. Доступно багато безкоштовних публічних STUN-серверів (наприклад, від Google або Tencent).
-    *   **TURN**: Сервер-ретранслятор, який використовується, якщо пряме з'єднання неможливе (наприклад, обидва гравці за симетричним NAT). Ретрансляція трафіку потребує значної пропускної здатності серверів.
+* **PeerConnection**: Представляє з'єднання, встановлене між двома гравцями. Керує обходом NAT, ICE-кандидатами та шифруванням.
+* **DataChannel**: Двосторонній канал передачі даних всередині `PeerConnection`. Одне P2P-з'єднання може мати кілька каналів даних (наприклад, один для метаданих та по одному на кожне ігрове підключення).
+* **SDP Description**: Рядок протоколу опису сесії (Session Description Protocol), що містить інформацію про підтримувані кодеки, параметры з'єднання та адреси кандидатів.
+* **ICEServer (STUN/TURN)**:
+ * **STUN**: Використовується для визначення публічної IP-адреси гравця та типу NAT. Доступно багато безкоштовних публічних STUN-серверів (наприклад, від Google або Tencent).
+ * **TURN**: Сервер-ретранслятор, який використовується, якщо пряме з'єднання неможливе (наприклад, обидва гравці за симетричним NAT). Ретрансляція трафіку потребує значної пропускної здатності серверів.
 
 ---
 
-## 🔄 Схема роботи протоколу та архітектура сигналізації
+## Схема роботи протоколу та архітектура сигналізації
 
 Наступна діаграма ілюструє, як координується P2P-з'єднання, виконується обхід NAT та тунелюється ігровий трафік між двома клієнтами Minecraft:
 
 <div style="margin: 24px 0; padding: 20px; border-radius: 12px; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider);">
 <h3 style="margin-top: 0; margin-bottom: 16px; font-size: 1.1rem; font-weight: 600; color: var(--vp-c-text-1); display: flex; align-items: center; gap: 8px;">
-<span>🔄 Послідовність підключення та обміну даними</span>
+<span> Послідовність підключення та обміну даними</span>
 </h3>
 <div style="display: flex; flex-direction: column; gap: 16px;">
 <!-- Step 1 -->
@@ -100,7 +100,7 @@ WebRTC (Web Real-Time Communication) — це технологія для одн
 </div>
 </div>
 
-## 🔑 Встановлення з'єднання між користувачами
+## Встановлення з'єднання між користувачами
 
 З'єднання встановлюються за допомогою моделі Offer/Answer (Пропозиція/Відповідь). Лаунчер-ініціатор створює Offer, а отримувач повертає Answer.
 
@@ -111,28 +111,28 @@ WebRTC (Web Real-Time Communication) — це технологія для одн
 ```ts
 // "id" представляє унікальний ідентифікатар цільового піра
 async function initiateConnection(id: string) {
-    const connection = new PeerConnection(id, {
-        iceServers: [
-            { urls: "stun:stun.qq.com" }
-        ],
-        iceTransportPolicy: 'all'
-    });
+ const connection = new PeerConnection(id, {
+ iceServers: [
+ { urls: "stun:stun.qq.com" }
+ ],
+ iceTransportPolicy: 'all'
+ });
 
-    // Створюємо канал метаданих для керуючих команд
-    const channel = connection.createDataChannel("metadata", {
-        ordered: true,
-        protocol: 'metadata'
-    });
+ // Створюємо канал метаданих для керуючих команд
+ const channel = connection.createDataChannel("metadata", {
+ ordered: true,
+ protocol: 'metadata'
+ });
 
-    // Слухаємо локальні зміни опису / ICE-кандидатів
-    connection.onLocalDescription((description) => {
-        // Надсилаємо цей SDP offer отримувачу через сигнальний сервер
-        sendDescription(id, description);
-    });
+ // Слухаємо локальні зміни опису / ICE-кандидатів
+ connection.onLocalDescription((description) => {
+ // Надсилаємо цей SDP offer отримувачу через сигнальний сервер
+ sendDescription(id, description);
+ });
 
-    // Якщо бібліотека WebRTC вимагає ручної генерації пропозиції:
-    const offer = await connection.createOffer();
-    await connection.setLocalDescription(offer);
+ // Якщо бібліотека WebRTC вимагає ручної генерації пропозиції:
+ const offer = await connection.createOffer();
+ await connection.setLocalDescription(offer);
 }
 ```
 
@@ -142,75 +142,75 @@ async function initiateConnection(id: string) {
 
 ```ts
 async function onReceiveOffer(id: string, offer: Description) {
-    const connection = new PeerConnection(id, {
-        iceServers: [{ urls: "stun:stun.qq.com" }],
-        iceTransportPolicy: 'all'
-    });
+ const connection = new PeerConnection(id, {
+ iceServers: [{ urls: "stun:stun.qq.com" }],
+ iceTransportPolicy: 'all'
+ });
 
-    await connection.setRemoteDescription(offer);
+ await connection.setRemoteDescription(offer);
 
-    // Слухаємо вхідний канал метаданих
-    connection.onDataChannel((channel) => {
-        if (channel.protocol === 'metadata') {
-            console.log("Канал метаданих встановлено!");
-        }
-    });
+ // Слухаємо вхідний канал метаданих
+ connection.onDataChannel((channel) => {
+ if (channel.protocol === 'metadata') {
+ console.log("Канал метаданих встановлено!");
+ }
+ });
 
-    connection.onLocalDescription((description) => {
-        // Надсилаємо відповідь SDP назад ініціатору
-        sendDescription(id, description);
-    });
+ connection.onLocalDescription((description) => {
+ // Надсилаємо відповідь SDP назад ініціатору
+ sendDescription(id, description);
+ });
 
-    const answer = await connection.createAnswer();
-    await connection.setLocalDescription(answer);
+ const answer = await connection.createAnswer();
+ await connection.setLocalDescription(answer);
 }
 ```
 
 ---
 
-## ✉️ Формат зв'язку в каналі метаданих
+## ️ Формат зв'язку в каналі метаданих
 
 Після встановлення P2P-з'єднання канал метаданих (`protocol: 'metadata'`) використовується для передачі команд кімнати. Формат повідомлень — це рядок JSON у кодуванні UTF-8:
 
 ```ts
 interface Message {
-    type: string;
-    payload: any;
+ type: string;
+ payload: any;
 }
 ```
 
 ### 1. Повідомлення серцебиття (Ping/Pong)
 Використовується для вимірювання затримки мережі (пінгу) та підтримання зв'язку NAT активним.
 - **`heartbeat-ping`** (Надсилається щосекунди):
-  ```json
-  {
-      "type": "heartbeat-ping",
-      "payload": { "time": 1718000000000 }
-  }
-  ```
+ ```json
+ {
+ "type": "heartbeat-ping",
+ "payload": { "time": 1718000000000 }
+ }
+ ```
 - **`heartbeat-pong`** (Відповідь, що повертається негайно з тим самим міткою часу):
-  ```json
-  {
-      "type": "heartbeat-pong",
-      "payload": { "time": 1718000000000 }
-  }
-  ```
+ ```json
+ {
+ "type": "heartbeat-pong",
+ "payload": { "time": 1718000000000 }
+ }
+ ```
 
 ### 2. Повідомлення про ідентичність гравця
 Передає профіль гравця (ім'я користувача, UUID та URL-адреси скінів/плащів), щоб правильно відображати аватари в лобі.
 ```json
 {
-    "type": "identity",
-    "payload": {
-        "name": "Steve",
-        "id": "e067c29e-29e2-498c-a1d2-e0d1655b3ff1",
-        "textures": {
-            "SKIN": {
-                "url": "http://textures.minecraft.net/texture/...",
-                "metadata": { "model": "slim" }
-            }
-        }
-    }
+ "type": "identity",
+ "payload": {
+ "name": "Steve",
+ "id": "e067c29e-29e2-498c-a1d2-e0d1655b3ff1",
+ "textures": {
+ "SKIN": {
+ "url": "http://textures.minecraft.net/texture/...",
+ "metadata": { "model": "slim" }
+ }
+ }
+ }
 }
 ```
 
@@ -218,17 +218,17 @@ interface Message {
 Надсилається хостом, калі його локальний клієнт Minecraft публікує гру в локальній мережі.
 ```json
 {
-    "type": "lan",
-    "payload": {
-        "motd": "Steve's World",
-        "port": 54321
-    }
+ "type": "lan",
+ "payload": {
+ "motd": "Steve's World",
+ "port": 54321
+ }
 }
 ```
 
 ---
 
-## 🎮 Тунелювання TCP-трафіку Minecraft через DataChannel
+## Тунелювання TCP-трафіку Minecraft через DataChannel
 
 Оскільки Minecraft використовує TCP для підключень до мультиплеєру, а WebRTC працює через UDP, лаунчер виступає в ролі **локального TCP-проксі**.
 
@@ -237,33 +237,33 @@ interface Message {
 
 ```ts
 function startGuestProxy(motd: string, remotePort: number) {
-    const proxyServer = net.createServer((tcpSocket) => {
-        // Створюємо надійний впорядкований бінарний DataChannel для цього з'єднання
-        const gameChannel = peerConnection.createDataChannel(remotePort.toString(), {
-            protocol: 'minecraft',
-            ordered: true
-        });
+ const proxyServer = net.createServer((tcpSocket) => {
+ // Створюємо надійний впорядкований бінарний DataChannel для цього з'єднання
+ const gameChannel = peerConnection.createDataChannel(remotePort.toString(), {
+ protocol: 'minecraft',
+ ordered: true
+ });
 
-        // Передаємо дані TCP з локального Minecraft у DataChannel WebRTC
-        tcpSocket.on('data', (data) => {
-            gameChannel.sendBinary(data);
-        });
+ // Передаємо дані TCP з локального Minecraft у DataChannel WebRTC
+ tcpSocket.on('data', (data) => {
+ gameChannel.sendBinary(data);
+ });
 
-        // Передаємо бінарні дані WebRTC назад у локальний сокет TCP
-        gameChannel.onMessage((data) => {
-            tcpSocket.write(Buffer.from(data));
-        });
+ // Передаємо бінарні дані WebRTC назад у локальний сокет TCP
+ gameChannel.onMessage((data) => {
+ tcpSocket.write(Buffer.from(data));
+ });
 
-        tcpSocket.on('close', () => gameChannel.close());
-        gameChannel.onClose(() => tcpSocket.destroy());
-    });
+ tcpSocket.on('close', () => gameChannel.close());
+ gameChannel.onClose(() => tcpSocket.destroy());
+ });
 
-    // Слухаємо випадковий вільний локальний порт
-    proxyServer.listen(0, () => {
-        const localPort = proxyServer.address().port;
-        // Транслюємо цей порт локально, щоб меню мультиплеєру Minecraft його побачило
-        broadcastLanDiscovery(motd, localPort);
-    });
+ // Слухаємо випадковий вільний локальний порт
+ proxyServer.listen(0, () => {
+ const localPort = proxyServer.address().port;
+ // Транслюємо цей порт локально, щоб меню мультиплеєру Minecraft його побачило
+ broadcastLanDiscovery(motd, localPort);
+ });
 }
 ```
 
@@ -272,30 +272,30 @@ function startGuestProxy(motd: string, remotePort: number) {
 
 ```ts
 peerConnection.onDataChannel((channel) => {
-    if (channel.protocol === 'minecraft') {
-        const actualGamePort = parseInt(channel.label);
+ if (channel.protocol === 'minecraft') {
+ const actualGamePort = parseInt(channel.label);
 
-        // Відкриваємо пряме TCP-з'єднання з локальною грою Minecraft
-        const gameSocket = net.createConnection({ port: actualGamePort });
+ // Відкриваємо пряме TCP-з'єднання з локальною грою Minecraft
+ const gameSocket = net.createConnection({ port: actualGamePort });
 
-        // Передаємо бінарні дані між сокетом та каналом
-        gameSocket.on('data', (data) => {
-            channel.sendBinary(data);
-        });
+ // Передаємо бінарні дані між сокетом та каналом
+ gameSocket.on('data', (data) => {
+ channel.sendBinary(data);
+ });
 
-        channel.onMessage((data) => {
-            gameSocket.write(Buffer.from(data));
-        });
+ channel.onMessage((data) => {
+ gameSocket.write(Buffer.from(data));
+ });
 
-        gameSocket.on('close', () => gameSocket.destroy());
-        channel.onClose(() => gameSocket.destroy());
-    }
+ gameSocket.on('close', () => gameSocket.destroy());
+ channel.onClose(() => gameSocket.destroy());
+ }
 });
 ```
 
 ---
 
-## 📖 Додаток та примітки до реалізації
+## Додаток та примітки до реалізації
 
 ### Трансляція інформації про виявлення LAN
 Minecraft виявляє ігри в локальній мережі за допомогою UDP multicast. Лаунчер транслює інформацію про сервер у такому форматі:
