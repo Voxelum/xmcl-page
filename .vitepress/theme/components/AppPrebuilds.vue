@@ -93,7 +93,7 @@ import '../styles/progress.min.css';
 import PrebuildDownloads from './PrebuildDownloads.vue';
 import { useI18nSync } from '../composables/useI18nSync';
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 useI18nSync()
 
 const { state } = useAsyncState(async () => data, [], {

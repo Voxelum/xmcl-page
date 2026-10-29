@@ -53,7 +53,7 @@ import { useGithubInfoStore, usePlatform } from "~/composables";
 
 const query = useUrlSearchParams()
 const github = useGithubInfoStore()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const inviter = computed(() => query.inviter)
 
 useHead({

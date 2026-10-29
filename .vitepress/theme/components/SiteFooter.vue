@@ -78,7 +78,7 @@ import { useI18n } from 'vue-i18n'
 import { useI18nSync } from '../composables/useI18nSync'
 
 const { lang, site, page, frontmatter } = useData()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 useI18nSync()
 
 const isDoc = computed(() => {

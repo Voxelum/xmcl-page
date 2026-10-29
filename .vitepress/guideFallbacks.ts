@@ -2,6 +2,30 @@ import { writeFileSync, existsSync, readdirSync, readFileSync, copyFileSync, mkd
 import { resolve, join } from "path";
 
 const fallbackNotices: Record<string, { title: string; body: string }> = {
+    lol: {
+        title: 'Dis cat scroll haz not been translated 2 LOLCAT yet!',
+        body: 'Teh scroll iz in English. If u wanna help teh cat clowdr translate, chek [xmcl-page on GitHub](https://github.com/voxelum/xmcl-page).'
+    },
+    hi: {
+        title: 'यह अनुभाग अभी तक हिन्दी में उपलब्ध नहीं है',
+        body: 'सामग्री अंग्रेजी में प्रदर्शित की जा रही है। यदि आप अनुवाद में मदद करना चाहते हैं, तो कृपया [GitHub पर xmcl-page रिपॉजिटरी](https://github.com/voxelum/xmcl-page) में योगदान दें।'
+    },
+    bn: {
+        title: 'এই বিভাগটি এখনও বাংলায় অনূদিত হয়নি',
+        body: 'বিষয়বস্তু ইংরেজিতে প্রদর্শিত হচ্ছে। আপনি যদি অনুবাদে সহায়তা করতে চান, তবে অনুগ্রহ করে [GitHub-এ xmcl-page রিপোজিটরি](https://github.com/voxelum/xmcl-page)-তে অবদান রাখুন।'
+    },
+    jv: {
+        title: 'Bagean iki durung kasedhiya ing Basa Jawa',
+        body: 'Konten ditampilake ing Basa Inggris. Yen sampeyan pengin mbantu nerjemahake, monggo gabung ing repositori [xmcl-page ing GitHub](https://github.com/voxelum/xmcl-page).'
+    },
+    vi: {
+        title: 'Mục này chưa có bản dịch Tiếng Việt',
+        body: 'Nội dung đang được hiển thị bằng tiếng Anh. Nếu bạn muốn đóng góp bản dịch, vui lòng tham gia tại kho lưu trữ [xmcl-page trên GitHub](https://github.com/voxelum/xmcl-page).'
+    },
+    tr: {
+        title: "Bu bölüm henüz Türkçe'ye çevrilmemiştir",
+        body: 'İçerik İngilizce olarak gösterilmektedir. Çeviriye katkıda bulunmak isterseniz lütfen [GitHub üzerindeki xmcl-page deposunu](https://github.com/voxelum/xmcl-page) ziyaret edin.'
+    },
     ru: {
         title: 'Этот раздел ещё не переведён на русский язык',
         body: 'Текст отображается на украинском языке. Если вы хотите помочь сообществу и сделать перевод, присоединяйтесь к репозиторию [xmcl-page на GitHub](https://github.com/voxelum/xmcl-page).'

@@ -36,14 +36,14 @@
         </div>
       </div>
 
-      <div class="modern-hero-visual" v-motion :initial="{ opacity: 0, y: 24 }" :visibleOnce="heroTransition">
+      <div class="modern-hero-visual">
         <div class="modern-visual-label modern-visual-label-top">{{ t('modernHome.visualLabel') }}</div>
         <div class="modern-screenshot-frame">
           <div class="modern-window-bar">
             <span></span><span></span><span></span>
             <small>{{ t('modernHome.windowLabel') }}</small>
           </div>
-          <AppPicture :value="homePicture" alt="XMCL home page" loading="eager" decoding="async" />
+          <AppPicture :value="homePicture" alt="XMCL home page" loading="eager" decoding="async" fetchpriority="high" />
         </div>
         <div class="modern-floating-card modern-floating-version">
           <span class="modern-card-overline">{{ t('modernHome.latestRelease') }}</span>
@@ -215,7 +215,7 @@ import modpackMarketPicture from '../../../src/assets/modpack-market-candidate.p
 import localModPicture from '../../../src/assets/local-mod-management-candidate.png?w=400;800&format=avif;webp;jpg&as=picture'
 import accountLoginPicture from '../../../src/assets/account-login-dialog-candidate.png?w=400;800&format=avif;webp;jpg&as=picture'
 
-const { t, locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'global' })
 const { site } = useData()
 const platform = usePlatform()
 const activeFeature = ref('setup')

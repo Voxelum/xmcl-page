@@ -15,7 +15,9 @@ import { imagetools } from 'vite-imagetools'
 
 const src = resolve(__dirname, '../src')
 const files = readdirSync(src)
-const localesOrder = ['en', 'de', 'fr', 'pt', 'pl', 'uk', 'ru', 'kk', 'ar', 'zh', 'zh-TW', 'ko', 'jp']
+const localesOrder = [
+  'uk', 'en', 'lol', 'zh', 'zh-TW', 'es', 'hi', 'bn', 'jp', 'jv', 'ko', 'vi', 'it', 'tr', 'pt', 'de', 'fr', 'pl', 'ru', 'kk', 'be', 'ar'
+]
 const locales = files
   .filter(f => f !== 'assets' && !f.endsWith('.md'))
   .sort((a, b) => {
@@ -54,18 +56,24 @@ const siteUrl = 'https://xmcl.app'
 const localeMetadata: Record<string, { hreflang: string; ogLocale: string }> = {
   ar: { hreflang: 'ar', ogLocale: 'ar_AR' },
   be: { hreflang: 'be', ogLocale: 'be_BY' },
+  bn: { hreflang: 'bn', ogLocale: 'bn_BD' },
   de: { hreflang: 'de', ogLocale: 'de_DE' },
   en: { hreflang: 'en', ogLocale: 'en_US' },
   es: { hreflang: 'es', ogLocale: 'es_ES' },
   fr: { hreflang: 'fr', ogLocale: 'fr_FR' },
+  hi: { hreflang: 'hi', ogLocale: 'hi_IN' },
   it: { hreflang: 'it', ogLocale: 'it_IT' },
   jp: { hreflang: 'ja', ogLocale: 'ja_JP' },
+  jv: { hreflang: 'jv', ogLocale: 'jv_ID' },
   kk: { hreflang: 'kk', ogLocale: 'kk_KZ' },
   ko: { hreflang: 'ko', ogLocale: 'ko_KR' },
+  lol: { hreflang: 'x-lolcat', ogLocale: 'en_US' },
   pl: { hreflang: 'pl', ogLocale: 'pl_PL' },
   pt: { hreflang: 'pt-BR', ogLocale: 'pt_BR' },
   ru: { hreflang: 'ru', ogLocale: 'ru_RU' },
+  tr: { hreflang: 'tr', ogLocale: 'tr_TR' },
   uk: { hreflang: 'uk', ogLocale: 'uk_UA' },
+  vi: { hreflang: 'vi', ogLocale: 'vi_VN' },
   'zh-TW': { hreflang: 'zh-Hant', ogLocale: 'zh_TW' },
   zh: { hreflang: 'zh-Hans', ogLocale: 'zh_CN' },
 }

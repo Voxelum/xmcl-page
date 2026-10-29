@@ -1,3 +1,4 @@
+documentation: ドキュメント
 repository: ソースコードリポジトリ
 intro:
   first:
@@ -8,7 +9,9 @@ intro:
     body: すべての{mods}を管理するための{diskEfficient}な方法を提供します！
     diskEfficient: ディスク効率的
     mods: MOD
-  description: XMCLは、MODパック、リソースパック、MOD、シェーダーパックなどの大量のリソースを 管理できる現代的なMinecraftランチャーです。また、Minecraft Forge、Fabric、Quilt、 CurseForge、Modrinthとの連携も備えています。
+  description: XMCLは、MODパック、リソースパック、MOD、シェーダーパックなどの大量のリソースを
+    管理できる現代的なMinecraftランチャーです。また、Minecraft Forge、Fabric、Quilt、
+    CurseForge、Modrinthとの連携も備えています。
 label: 日本語
 guide: ガイド
 protocol: プロトコル
@@ -50,23 +53,30 @@ gameInstall:
   title:
     body: "{gameInstall}について心配する必要はもうありません"
     gameInstall: ゲームのインストール
-  description: XMCLは、バニラMinecraft、Minecraft Forge、Fabric、さらにOptifineのインストールをサポートしています！ ランチャー内の1つの場所ですべてをインストールできます。また、サードパーティのミラーリンクBMCL APIもサポートしています。 ランチャーで独自のミラーをカスタマイズすることもできます。
+  description: XMCLは、バニラMinecraft、Minecraft
+    Forge、Fabric、さらにOptifineのインストールをサポートしています！
+    ランチャー内の1つの場所ですべてをインストールできます。また、サードパーティのミラーリンクBMCL APIもサポートしています。
+    ランチャーで独自のミラーをカスタマイズすることもできます。
 optimalDisk:
   title:
     body: "{massiveResources}でも{optimal}なディスク容量"
     optimal: 最適化された
     massiveResources: 大量のリソース
-  description: XMCLはすべてのMOD、リソースパック、シェーダーパック、MODパックを単一の保存場所に保存します。 既知のリソースを使用しようとすると、コピーせずにハードリンクを使用してインスタンスにリソースをインストールします。 これにより、/modsフォルダに重複したコピーが表示されなくなります。
+  description: XMCLはすべてのMOD、リソースパック、シェーダーパック、MODパックを単一の保存場所に保存します。
+    既知のリソースを使用しようとすると、コピーせずにハードリンクを使用してインスタンスにリソースをインストールします。
+    これにより、/modsフォルダに重複したコピーが表示されなくなります。
 cleanWorkspace:
   title:
     body: マルチインスタンスでワークスペースを{clean}に保つ
     clean: クリーン
-  description: XMCLにはマルチインスタンスのサポートが組み込まれています。複数のインスタンスを簡単に作成できます。 異なる起動設定の混在について心配する必要はありません。
+  description: XMCLにはマルチインスタンスのサポートが組み込まれています。複数のインスタンスを簡単に作成できます。
+    異なる起動設定の混在について心配する必要はありません。
 communityIntegration:
   title:
     body: "{multipleCommunities}との統合"
     multipleCommunities: 複数のコミュニティ
-  description: XMCLはCurseforgeとModrinthをサポートしています。また、Blessing Skinのようなカスタムユーザーアカウント/スキンシステムをサポートする機能も提供しています。
+  description: XMCLはCurseforgeとModrinthをサポートしています。また、Blessing
+    Skinのようなカスタムユーザーアカウント/スキンシステムをサポートする機能も提供しています。
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: "{inviter}のパーティに参加"
@@ -151,7 +161,8 @@ features:
     instance-create-modloaders:
       title: Java と Bedrock のインスタンスを作成
       benefit: プレイしたいワールドに合うエディションと Loader で環境を作成します。
-      capabilities: Java Edition と実験的な Bedrock 対応|Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod|Minecraft とローカル版のソース
+      capabilities: Java Edition と実験的な Bedrock
+        対応|Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod|Minecraft とローカル版のソース
     instance-folder-groups:
       title: インスタンスのフォルダーグループ
       benefit: 多数のインスタンスをフォルダーに整理し、ワールドをすばやく見つけられます。
@@ -259,7 +270,8 @@ sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION
     title: Linux でネイティブのように使える Minecraft ランチャー。
-    lede: Linux デスクトップと Steam Deck のための洗練されたオープンソースランチャー。環境に合うパッケージを選び、すべてのワールドをすぐに起動できます。
+    lede: Linux デスクトップと Steam Deck
+      のための洗練されたオープンソースランチャー。環境に合うパッケージを選び、すべてのワールドをすぐに起動できます。
     primaryAction: Linux 版をダウンロード
     secondaryAction: Linux のワークフローを見る
     heroNote: Linux ネイティブビルド、ARM64、Flathub に対応
@@ -292,7 +304,8 @@ sceneLanding:
       install:
         label: 01 / インストール方法を選択
         title: ディストリビューションに適した形式を選択。
-        description: デスクトップ向けにネイティブパッケージをダウンロードするか、Steam Deck に適したポータブルな方法として Flathub を利用できます。対応ハードウェア向けの ARM64 ビルドも提供しています。
+        description: デスクトップ向けにネイティブパッケージをダウンロードするか、Steam Deck に適したポータブルな方法として Flathub
+          を利用できます。対応ハードウェア向けの ARM64 ビルドも提供しています。
         point1: 主要な Linux デスクトップ向けの DEB および RPM
         point2: ポータブルに使える AppImage と tar.xz
         point3: Steam Deck に適した Flathub 対応
@@ -300,7 +313,8 @@ sceneLanding:
       organize:
         label: 02 / 常に整理整頓
         title: 各インスタンスに独立した実行環境を。
-        description: フォルダーを手作業で分けることなく、バニラ、Mod 環境、テスト用、サーバー用の構成を分離できます。バージョン、Loader、Mod、セーブデータ、設定がそれぞれまとまって管理されます。
+        description: フォルダーを手作業で分けることなく、バニラ、Mod
+          環境、テスト用、サーバー用の構成を分離できます。バージョン、Loader、Mod、セーブデータ、設定がそれぞれまとまって管理されます。
         point1: 独立したゲームデータと起動設定
         point2: Forge、Fabric、Quilt、NeoForge などに対応
         point3: ワールドや実験環境のすばやい切り替え
@@ -308,7 +322,8 @@ sceneLanding:
       anywhere:
         label: 03 / どこでもプレイ
         title: デスクトップから持ち歩きまで快適に。
-        description: Linux デスクトップから Steam Deck へ移っても、見やすいライブラリや信頼できる環境設定をそのまま使えます。煩雑な管理に悩まされることなく、コレクションを自由に拡張できます。
+        description: Linux デスクトップから Steam Deck
+          へ移っても、見やすいライブラリや信頼できる環境設定をそのまま使えます。煩雑な管理に悩まされることなく、コレクションを自由に拡張できます。
         point1: Steam Deck 向けに設計された Flathub 利用ルート
         point2: 4K ディスプレイでも見やすい洗練されたインターフェース
         point3: オープンソースで Linux プレイヤーのために開発
@@ -349,7 +364,8 @@ sceneLanding:
       discover:
         label: 01 / プロジェクトを発見
         title: 視点を分散させずに、2 つのエコシステムを同時に検索。
-        description: バージョン、Loader、動作環境、カテゴリのフィルターを使って Modrinth と CurseForge のプロジェクトを横断検索できます。XMCL が両方のソースのプロジェクトを相互に対応付けるため、迷うことなく同じ作品を比較できます。
+        description: バージョン、Loader、動作環境、カテゴリのフィルターを使って Modrinth と CurseForge
+          のプロジェクトを横断検索できます。XMCL が両方のソースのプロジェクトを相互に対応付けるため、迷うことなく同じ作品を比較できます。
         point1: Modrinth と CurseForge をひとつの流れで検索
         point2: Minecraft バージョンと Loader の互換性フィルター
         point3: クロスプラットフォームのプロジェクト対応付け
@@ -357,7 +373,8 @@ sceneLanding:
       build:
         label: 02 / 構成の構築
         title: 依存関係の解決もワークフローの一部に。
-        description: Mod が別の Mod を必要とする場合、XMCL はその前提 Mod も一緒にインストールできます。プロジェクトを有効化または無効化する際も、依存関係グラフを手動で追跡することなく整合性を保てるようランチャーが支援します。
+        description: Mod が別の Mod を必要とする場合、XMCL はその前提 Mod
+          も一緒にインストールできます。プロジェクトを有効化または無効化する際も、依存関係グラフを手動で追跡することなく整合性を保てるようランチャーが支援します。
         point1: 依存関係の自動インストール
         point2: 依存関係を考慮した有効化・無効化の切り替え
         point3: バージョン、Loader、プロジェクトのメタデータを確認
@@ -365,7 +382,8 @@ sceneLanding:
       curate:
         label: 03 / 構成の整理
         title: 作業セットを常に無駄なく整理。
-        description: 検索、並べ替え、グループ化、更新を行い、不要になった Mod を削除できます。カスタムグループを活用すれば、オプション機能のテスト、プロファイルの比較、リリース候補の絞り込みが容易になります。
+        description: 検索、並べ替え、グループ化、更新を行い、不要になった Mod
+          を削除できます。カスタムグループを活用すれば、オプション機能のテスト、プロファイルの比較、リリース候補の絞り込みが容易になります。
         point1: Mod の自動更新チェック
         point2: オプションやテスト用のカスタムグループ
         point3: 未使用の Mod を検出して削除
@@ -373,7 +391,8 @@ sceneLanding:
       export:
         label: 04 / エクスポートと配布
         title: プレイヤーが必要とする形式で Modpack を配布。
-        description: 適切なメタデータと選択したファイルを含んだ、完成度の高い Modrinth または CurseForge 形式の Modpack をエクスポートできます。リリースの作業が、直前の手作業アーカイブではなく再現可能なワークフローの一部になります。
+        description: 適切なメタデータと選択したファイルを含んだ、完成度の高い Modrinth または CurseForge 形式の Modpack
+          をエクスポートできます。リリースの作業が、直前の手作業アーカイブではなく再現可能なワークフローの一部になります。
         point1: Modrinth と CurseForge へのワンクリックエクスポート
         point2: 作者、説明、URL、バージョンのメタデータ設定
         point3: 配布に含めるファイルやアセットを正確に選択
@@ -381,7 +400,8 @@ sceneLanding:
       diagnose:
         label: 05 / 問題の診断
         title: AI がクラッシュレポートを解決策へと変換。
-        description: テスト起動が失敗した際、XMCL はログ、クラッシュレポート、AI Agent を同じ画面にまとめます。Agent がインスタンス環境を調査し、実行可能な次の解決ステップを提示します。
+        description: テスト起動が失敗した際、XMCL はログ、クラッシュレポート、AI Agent を同じ画面にまとめます。Agent
+          がインスタンス環境を調査し、実行可能な次の解決ステップを提示します。
         point1: コンテキストとともに起動ログとクラッシュレポートを確認
         point2: AI によるインスタンスファイルの調査支援
         point3: リリース前に Mod の競合を解決
@@ -517,7 +537,8 @@ commercial:
       purchaseEyebrow: サーバーを作成
       cancelEyebrow: サーバーを解約
       purchaseTitle: "{plan} の購入を確認"
-      purchaseDescription: 月額 {monthly} はすぐに請求されます。稼働中は {hourly}/時間、停止中は稼働料金がかかりません。サーバーごとに個別請求され、AI サービスが付与されます。
+      purchaseDescription: 月額 {monthly} はすぐに請求されます。稼働中は
+        {hourly}/時間、停止中は稼働料金がかかりません。サーバーごとに個別請求され、AI サービスが付与されます。
       regionLabel: サーバーの地域
       regionDescription: 多くのプレイヤーに近い地域を選択してください。現在の構成では {count} か所の Vultr ロケーションに対応しています。
       testRegions: 測定しておすすめ
@@ -531,7 +552,8 @@ commercial:
       back: 戻る
       purchase: 購入を確定
       cancel: 解約を確定
-    projectBoundary: XMCL は今後も無料でオープンソースであり続けます。Together はオプションのサービスであり、Together アカウントがなくてもランチャーは利用可能です。
+    projectBoundary: XMCL は今後も無料でオープンソースであり続けます。Together はオプションのサービスであり、Together
+      アカウントがなくてもランチャーは利用可能です。
     serviceOperator: XMCL Together は CI010 が運営するオプションのオンラインサービスです。
     perMonth: / 月
     from: から
@@ -617,7 +639,8 @@ commercial:
     debt: 次回以降のチャージ時に、未払い残高 {amount} が優先して清算されます。
     available: 利用可能残高
     availableHint: 各種 XMCL サービスですぐに利用できます
-    homeFundingRequired: 残高が Together Home の購入に不足しています。少なくとも {amount} をチャージしてから、Together に戻って購入してください。
+    homeFundingRequired: 残高が Together Home の購入に不足しています。少なくとも {amount}
+      をチャージしてから、Together に戻って購入してください。
     reserved: 確保済み
     reservedHint: 利用中のサービスのために確保されています
     history: 履歴
@@ -640,7 +663,8 @@ commercial:
     noUsage: 従量課金の利用履歴はまだありません。
     loadError: 請求データを読み込めませんでした。
     securedTitle: Waffo による安全な決済
-    securedDescription: クレジットカードおよび購入者の情報は Waffo Pancake のホスト型決済ページで処理されます。XMCL がカード番号を取得することはありません。
+    securedDescription: クレジットカードおよび購入者の情報は Waffo Pancake のホスト型決済ページで処理されます。XMCL
+      がカード番号を取得することはありません。
   checkout:
     title: 残高をチャージ
     description: Waffo Pancake を通じて安全に XMCL 残高をチャージします。
@@ -727,7 +751,8 @@ modernHome:
     setup:
       title: すべての構成を、ひとつのランチャーで
       short: マルチローダー、マルチインスタンス
-      description: Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod、さらに実験的な Bedrock 対応まで、独立した Minecraft インスタンスを作成・管理でき、インストールも自動で行われます。
+      description: Forge、Fabric、Quilt、NeoForge、OptiFine、LabyMod、さらに実験的な Bedrock
+        対応まで、独立した Minecraft インスタンスを作成・管理でき、インストールも自動で行われます。
       alt: 複数の Mod Loader と Bedrock Edition を表示する XMCL のゲーム作成ダイアログ
       link: インスタンス設定を見る
     discover:
@@ -748,3 +773,22 @@ modernHome:
       description: Microsoft やオフラインプロファイルからサードパーティの認証サービスまで、ランチャーを離れることなく環境に合ったアカウントを接続できます。
       alt: 複数の認証サービスを表示する XMCL のアカウントログインダイアログ
       link: アカウント対応を見る
+docHub:
+  kicker: 公式ドキュメント
+  title: XMCL ドキュメントハブ
+  description: XMCL のインストール、設定、MOD管理、マルチプレイ、アーキテクチャのすべて。
+  searchPlaceholder: ドキュメント、ガイド、設定を検索...
+  quickTopics: クイックトピック
+  viewSection: セクションを見る
+  articlesCount: "{count} 件の記事"
+  backToHub: ドキュメントハブに戻る
+  needHelp: お困りですか？
+  needHelpDesc: 探している情報が見つかりませんか？公式コミュニティに参加するか、ドキュメントに貢献してください。
+  joinDiscord: Discord に参加
+  githubRepo: GitHub リポジトリ
+  contributeDocs: ドキュメントを編集・改善
+docGroups:
+  gettingStarted: 01 / はじめに
+  gameAndMods: 02 / ゲームとMOD
+  multiplayerAndTroubleshooting: 03 / マルチプレイと診断
+  coreAndDev: 04 / コアアーキテクチャとAPI

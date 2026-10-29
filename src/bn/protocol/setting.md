@@ -1,0 +1,69 @@
+# Global Settings
+
+<!-- xmcl-auto-fallback -->
+::: info এই বিভাগটি এখনও বাংলায় অনূদিত হয়নি
+বিষয়বস্তু ইংরেজিতে প্রদর্শিত হচ্ছে। আপনি যদি অনুবাদে সহায়তা করতে চান, তবে অনুগ্রহ করে [GitHub-এ xmcl-page রিপোজিটরি](https://github.com/voxelum/xmcl-page)-তে অবদান রাখুন।
+:::
+
+> Under construction
+
+Global data is stored in [xmcl data directory](/en/guide/manage#xmcl-cache-and-database).
+
+```sh
+xmcl data directory
+└─ setting.json # user configuration file
+```
+
+## Global Settings JSON Format
+
+```json5
+{
+    // The current selected language
+    "locale": "en",
+    // Not enabled
+    "autoInstallOnAppQuit": false,
+    // Not enabled
+    "autoDownload": false,
+    // Not enabled
+    "allowPrerelease": false,
+    // List of known BMCL APIs
+    "apiSets": [
+        {
+            "name": "mcbbs",
+            "url": "https://download.mcbbs.net"
+        },
+        {
+            "name": "bmcl",
+            "url": "https://bmclapi2.bangbang93.com"
+        }
+    ],
+    // Preferred BCML API, empty means auto select
+    "apiSetsPreference": "",
+    // Local proxy url
+    "httpProxy": "http://127.0.0.1:7890",
+    // Whether to use proxy
+    "httpProxyEnabled": true,
+    // Theme, light or dark
+    "theme": "dark",
+    // Max HTTP socket count for downloading
+    "maxSockets": 16,
+    "globalMinMemory": 0,
+    "globalMaxMemory": 0,
+    "globalAssignMemory": false,
+    "globalVmOptions": [
+        ""
+    ],
+    "globalMcOptions": [
+        ""
+    ],
+    "globalFastLaunch": false,
+    "globalHideLauncher": true,
+    "globalShowLog": false,
+    // Whether to enable Discord presence
+    "discordPresence": true,
+    // Whether to enable developer mode
+    "developerMode": false,
+    // Max HTTP socket count for API requests
+    "maxAPISockets": 16
+}
+```

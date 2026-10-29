@@ -35,7 +35,7 @@ import CliModal from './CliModal.vue';
 const { title, organized } = defineProps({ title: Boolean, organized: Boolean })
 
 const artifacts = useDownloads()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 const telemetry = inject<any>('telemetry', inject<any>('telemtry', { trackDownload: (category: string, action: string) => { } }))
 const trackDownload = telemetry?.trackDownload || ((category: string, action: string) => { })
 

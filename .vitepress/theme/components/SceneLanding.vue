@@ -20,7 +20,7 @@
           <div class="scene-visual-index">{{ content.visualIndex }}</div>
           <div class="scene-window">
             <div class="scene-window-bar"><span></span><span></span><span></span><small>{{ content.visualLabel }}</small></div>
-            <img :src="content.heroImage" :alt="content.heroAlt" loading="eager" decoding="async" />
+            <img :src="content.heroImage" :alt="content.heroAlt" loading="eager" decoding="async" fetchpriority="high" />
           </div>
           <div class="scene-visual-tag scene-visual-tag-top">{{ content.visualTag }}</div>
           <div class="scene-visual-tag scene-visual-tag-bottom"><span class="scene-live-dot"></span>{{ content.visualStatus }}</div>
@@ -108,7 +108,7 @@ import onlineModSearch from '../../../src/assets/online-mod-search-candidate.png
 
 const props = defineProps<{ kind: 'linux' | 'creators' | 'together' }>()
 const { lang, site } = useData()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 useI18nSync()
 const pageUrl = (path: string) => `${site.value.base}${lang.value}/${path}`
 const prebuildsUrl = computed(() => pageUrl('prebuilds'))

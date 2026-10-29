@@ -1,3 +1,4 @@
+documentation: 文档
 repository: 仓库地址
 label: 简体中文
 search:
@@ -21,7 +22,7 @@ notFound:
   quote: 这里什么都没有
   linkLabel: 返回首页
   linkText: 返回首页
-  code: '404'
+  code: "404"
 outline: 本页包含
 darkModeSwitchLabel: 颜色主题
 darkModeSwitchTitle: 切换至暗色
@@ -47,9 +48,8 @@ intro:
     body: 提供一种 {diskEfficient} 的方式来管理你的所有 {mods}!
     diskEfficient: 磁盘空间最优
     mods: 模组
-  description: >-
-    XMCL 是一个便于你管理多种整合包、模组、资源包、光影包的现代化启动器。它还支持 Minecraft
-    Forge、 Fabric、Quilt、CurseForge 和 Modrinth。
+  description: XMCL 是一个便于你管理多种整合包、模组、资源包、光影包的现代化启动器。它还支持 Minecraft Forge、
+    Fabric、Quilt、CurseForge 和 Modrinth。
 launcher:
   manage:
     intro: 有效管理你的 Minecraft.
@@ -85,16 +85,14 @@ gameInstall:
   title:
     body: 轻松处理所有 {gameInstall}
     gameInstall: 游戏安装
-  description: >-
-    XMCL 支持安装原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
+  description: XMCL 支持安装原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
     你可以在单个界面处理所有基本的游戏安装。它同样支持第三方镜像源，如 BMCL API。
 optimalDisk:
   title:
     body: 磁盘空间 {optimal} 选，轻松处理 {massiveResources}
     optimal: 最优
     massiveResources: 大量资源
-  description: >-
-    XMCL 会在统一位置存储所有模组、资源包、光影包、整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。
+  description: XMCL 会在统一位置存储所有模组、资源包、光影包、整合包。当你尝试安装任何已有资源，启动器会使用链接来安装资源，以节省磁盘空间。
     所以副本文件不会被存放在 /mods 文件夹中。
 cleanWorkspace:
   title:
@@ -105,13 +103,12 @@ communityIntegration:
   title:
     body: 有效集成 {multipleCommunities}
     multipleCommunities: 知名第三方社区
-  description: >-
-    XMCL 目前支持 CurseForge 和 Modrinth，可以在启动器内访问并下载资源。启动器同样支持自定义的账号皮肤系统，如 Blessin
-    Skin。
+  description: XMCL 目前支持 CurseForge 和 Modrinth，可以在启动器内访问并下载资源。启动器同样支持自定义的账号皮肤系统，如
+    Blessin Skin。
 download-tarxz: 压缩包 (tar.xz)
 download-linuxZip: 压缩包 (zip)
 joinPeer: 和 {inviter} 一起玩
-joinPeerDescription: '{inviter} 邀请你加入 Minecraft 联机群组 {group}，浏览器将自动打开启动器并加入群组。'
+joinPeerDescription: "{inviter} 邀请你加入 Minecraft 联机群组 {group}，浏览器将自动打开启动器并加入群组。"
 privacy: 隐私协议
 prebuild:
   history: 构建历史
@@ -127,13 +124,13 @@ prebuild:
   tryNext: 试试即将到来的版本。
   unstableDescription: 用于测试 XMCL 新功能的不稳定构建产物。
   selectedBuild: 当前选中的构建
-  buildsAvailable: '共有 {count} 个构建'
+  buildsAvailable: 共有 {count} 个构建
   selectABuild: 选择一个构建
   noBuilds: 未找到构建
   noBuildsDescription: 当前没有可用的预构建产物。
   checkBack: 请在下一次开发工作流完成后再回来查看。
   yesterday: 昨天
-  daysAgo: '{count} 天前'
+  daysAgo: "{count} 天前"
   ready: 就绪
   selected: 已选择
   selectBuild: 选择构建
@@ -194,7 +191,8 @@ features:
     instance-create-modloaders:
       title: 创建 Java 与 Bedrock 实例
       benefit: 选择适合目标世界的版本和加载器，快速创建新的游戏配置。
-      capabilities: 支持 Java Edition 和实验性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine 与 LabyMod|使用 Minecraft 或本地版本
+      capabilities: 支持 Java Edition 和实验性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine
+        与 LabyMod|使用 Minecraft 或本地版本
     instance-folder-groups:
       title: 实例文件夹分组
       benefit: 将大量实例按文件夹整理，让不同世界和配置更容易查找。
@@ -387,15 +385,15 @@ sceneLanding:
     workflowDescription: XMCL 将 Linux 玩家在意的体验放在一起：可靠的安装方式、清晰的界面，以及彼此独立、方便切换的游戏环境。
     signals:
       packages:
-        number: '05'
+        number: "05"
         label: Linux 安装包
         description: DEB、RPM、AppImage、tar.xz 和 Flathub。
       scale:
-        number: '4K'
+        number: 4K
         label: 任意尺寸都清晰
         description: 在大屏幕上也能轻松浏览实例库。
       worlds:
-        number: '∞'
+        number: ∞
         label: 世界彼此独立
         description: 版本、加载器和存档不会互相干扰。
     features:
@@ -444,7 +442,7 @@ sceneLanding:
     workflowDescription: XMCL 将整合包视为一个持续演进的系统：浏览两个平台，进行有把握的修改，并让启动器帮助你维护发布质量。
     signals:
       sources:
-        number: '2×'
+        number: 2×
         label: 项目来源
         description: 在一个工作区搜索 Modrinth 和 CurseForge。
       export:
@@ -612,7 +610,7 @@ commercial:
     perMonth: / 月
     runtimePrice: + 每运行小时 {amount}
     cpu: CPU
-    cpuValue: '{count} vCPU'
+    cpuValue: "{count} vCPU"
     memory: 内存
     storage: 持久存储
     includedAi: 赠送 AI 协助
@@ -627,7 +625,7 @@ commercial:
     managerEyebrow: 你的托管服务器
     managerTitle: 服务器管理
     managerDescription: 每台服务器独立运行和计费；在这里查看状态并控制开关。
-    serverNumber: '{plan} 服务器 {number}'
+    serverNumber: "{plan} 服务器 {number}"
     start: 启动服务器
     stop: 停止服务器
     cpuUsage: CPU 使用率
@@ -706,7 +704,7 @@ commercial:
       pauseTitle: 不玩就暂停
       pauseDescription: 暂停后停止运行时计费，下次从原来的世界继续。
     confirm:
-      serverNumber: '{plan} 服务器 #{number}'
+      serverNumber: "{plan} 服务器 #{number}"
       addAnother: 再购买一台
       close: 关闭
       purchaseEyebrow: 创建新服务器
@@ -759,17 +757,17 @@ commercial:
     allowancesTitle: 体验背后的服务额度
     aiAllowance: 剩余 AI 协助额度
     aiUnits: 剩余加权 token units
-    aiUsage: '已使用 {consumed} / 共 {included}'
-    aiFormula: '用量 = 未命中缓存的输入 + ceil(命中缓存的输入 × 0.1) + 输出 × 4。'
+    aiUsage: 已使用 {consumed} / 共 {included}
+    aiFormula: 用量 = 未命中缓存的输入 + ceil(命中缓存的输入 × 0.1) + 输出 × 4。
     turnAllowance: 联机中继
     turnEgress: 认证中继流量
-    turnUsage: '已使用 {consumed} / 共 {included}'
+    turnUsage: 已使用 {consumed} / 共 {included}
     remainingUnavailable: 暂无剩余额度数据。
     meteringUnavailable: 用量计量尚未接入；这里显示的是包含额度，不是剩余额度。
     sourcesTitle: 当前额度来源
     source:
-      plus: 'Together：{ai} AI units 和 {turn} 联机中继'
-      shared_hosting: '服务器套餐：{ai} AI units，不含 TURN'
+      plus: Together：{ai} AI units 和 {turn} 联机中继
+      shared_hosting: 服务器套餐：{ai} AI units，不含 TURN
     serverBonus: 每个有效服务器套餐每月另赠 200,000 AI units，用于协助整合包和服务器配置。
     aiTitle: 先把整合包顺利跑起来
     aiDescription: 协助诊断崩溃、依赖冲突和配置问题，不必再让某个朋友兼职做全队的技术支持。
@@ -789,3 +787,22 @@ commercial:
     serverEyebrow: 服务器
     serverTitle: 共享托管
     serverDescription: 选择服务器套餐并管理订阅。
+docHub:
+  kicker: 官方文档
+  title: XMCL 文档中心
+  description: 关于安装、配置、模组管理、联机与 XMCL 架构的一切内容。
+  searchPlaceholder: 搜索文档、指南、设置、关键词...
+  quickTopics: 快捷主题
+  viewSection: 浏览章节
+  articlesCount: "{count} 篇文章"
+  backToHub: 返回文档中心
+  needHelp: 需要帮助？
+  needHelpDesc: 没有找到所需内容？欢迎加入官方社群或为文档贡献内容。
+  joinDiscord: 加入 Discord
+  githubRepo: GitHub 仓库
+  contributeDocs: 编辑与改进文档
+docGroups:
+  gettingStarted: 01 / 新手入门
+  gameAndMods: 02 / 游戏与模组
+  multiplayerAndTroubleshooting: 03 / 联机与故障诊断
+  coreAndDev: 04 / 核心架构与 API

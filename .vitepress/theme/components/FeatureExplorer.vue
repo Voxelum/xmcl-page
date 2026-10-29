@@ -111,7 +111,7 @@ const feature = (group: string, groupLabel: string, values: Omit<Feature, 'group
 })
 
 const { lang, site } = useData()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 useI18nSync()
 const featuresRoot = computed(() => `${site.value.base}${lang.value}/features/`)
 const featuresPath = (path: string) => `${site.value.base}${lang.value === 'en' ? lang.value : 'en'}/features/${path}`

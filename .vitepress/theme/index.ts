@@ -34,8 +34,9 @@ import GuideFloatingSearch from './components/GuideFloatingSearch.vue'
 import GuideDocFooter from './components/GuideDocFooter.vue'
 import DocumentationHub from './components/DocumentationHub.vue'
 import AsideLastUpdated from './components/AsideLastUpdated.vue'
+import NavLanguageSelector from './components/NavLanguageSelector.vue'
 
-const supportedLocales = ['ar', 'be', 'de', 'en', 'es', 'fr', 'it', 'jp', 'kk', 'ko', 'pl', 'ru', 'uk', 'zh-TW', 'zh']
+const supportedLocales = ['ar', 'be', 'bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'jp', 'jv', 'kk', 'ko', 'lol', 'pl', 'pt', 'ru', 'tr', 'uk', 'vi', 'zh-TW', 'zh']
 
 function resolveLocale(language: string) {
   const normalizedLanguage = language.trim().replace('_', '-')
@@ -63,20 +64,36 @@ export default {
     if (!import.meta.env.SSR) {
       redirectRootToLocale()
       const router = useRouter()
-      const promise = window.location.hostname.startsWith('staging.')
+      const isLocalhost = Boolean(
+        typeof window !== 'undefined' &&
+        (window.location.hostname === 'localhost' ||
+         window.location.hostname === '127.0.0.1' ||
+         window.location.hostname === '::1' ||
+         window.location.hostname.endsWith('.local') ||
+         window.location.hostname.startsWith('staging.'))
+      )
+      const promise = (import.meta.env.DEV || isLocalhost)
         ? Promise.resolve(undefined)
         : import('@microsoft/applicationinsights-web').then(({ ApplicationInsights }) => {
-            const appInsights = new ApplicationInsights({
-              config: {
-                connectionString: 'InstrumentationKey=7a526b34-c173-43f6-9641-1e4c98863368;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/'
+            try {
+              const appInsights = new ApplicationInsights({
+                config: {
+                  connectionString: 'InstrumentationKey=7a526b34-c173-43f6-9641-1e4c98863368;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/',
+                  disableFetchTracking: true,
+                  enableUnhandledPromiseRejectionTracking: false
+                }
+              })
+              appInsights.loadAppInsights()
+              router.onAfterRouteChanged = (to) => {
+                try {
+                  appInsights.trackPageView({ name: to })
+                } catch {}
               }
-            })
-            appInsights.loadAppInsights()
-            router.onAfterRouteChanged = (to) => {
-              appInsights.trackPageView({ name: to })
+              return appInsights
+            } catch {
+              return undefined
             }
-            return appInsights
-          })
+          }).catch(() => undefined)
       const trackDownload = (platform: string, type: string) => {
         promise.then((app) => {
           app?.trackEvent({ name: 'download', properties: { platform, type } })
@@ -92,7 +109,7 @@ export default {
 
     return () => [
       h(DefaultTheme.Layout, props, {
-        'nav-bar-content-after': () => h(CommercialNavEntry),
+        'nav-bar-content-after': () => [h(NavLanguageSelector), h(CommercialNavEntry)],
         'layout-bottom': () => [h(SiteFooter), h(ImageZoomLightbox), h(GuideFloatingSearch)],
         'doc-after': () => h(GuideDocFooter),
         'aside-outline-after': () => h(AsideLastUpdated),

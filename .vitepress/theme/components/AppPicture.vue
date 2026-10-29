@@ -2,7 +2,7 @@
     <picture>
         <source v-for="[format, images] of Object.entries(value.sources)" :srcset="images" :type="`image/${format}`" />
         <img :src="value.img.src" :alt="alt" :width="value.img.w" :height="value.img.h" :loading="loading"
-            :decoding="decoding">
+            :decoding="decoding" :fetchpriority="fetchpriority">
     </picture>
 </template>
 
@@ -22,5 +22,6 @@ defineProps<{
     alt?: string;
     loading?: "eager" | "lazy";
     decoding?: "async" | "auto" | "sync";
+    fetchpriority?: "high" | "low" | "auto";
 }>()
 </script>

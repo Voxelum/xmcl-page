@@ -92,7 +92,7 @@ const emit = defineEmits<{
   (e: 'close'): void;
 }>();
 
-const { locale } = useI18n();
+const { locale } = useI18n({ useScope: 'global' });
 
 const effectiveLang = computed(() => {
   const current = locale.value || 'en';

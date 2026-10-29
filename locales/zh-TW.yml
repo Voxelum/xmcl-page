@@ -1,3 +1,4 @@
+documentation: 文件
 repository: 倉庫地址
 label: 繁體中文
 search:
@@ -45,7 +46,8 @@ intro:
     body: 提供一種 {diskEfficient} 的方式來管理你的所有 {mods}!
     diskEfficient: 磁碟空間最優選
     mods: 模組包
-  description: XMCL 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft Forge、 Fabric、Quilt、CurseForge 以及 Modrinth。
+  description: XMCL 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft Forge、
+    Fabric、Quilt、CurseForge 以及 Modrinth。
 launcher:
   manage:
     intro: 有效管理你的 Minecraft.
@@ -80,13 +82,15 @@ gameInstall:
   title:
     body: 輕鬆處理所有 {gameInstall}
     gameInstall: 遊戲安裝
-  description: XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！ 你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方 BMCL API。
+  description: XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
+    你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方 BMCL API。
 optimalDisk:
   title:
     body: 磁碟空間 {optimal} 選，輕鬆處理 {massiveResources}
     optimal: 最優選
     massiveResources: 大量資源
-  description: XMCL 會在統一位置儲存所有模組、資源包、光影包、模組包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。 所以副本檔案不會被存放在 /mods 資料夾中。
+  description: XMCL 會在統一位置儲存所有模組、資源包、光影包、模組包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。
+    所以副本檔案不會被存放在 /mods 資料夾中。
 cleanWorkspace:
   title:
     body: 多版本實例，讓你的各版本 Minecraft {clean}
@@ -96,7 +100,8 @@ communityIntegration:
   title:
     body: 支援 {multipleCommunities}
     multipleCommunities: 各種第三方模組網站
-  description: XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如 Blessin Skin。
+  description: XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如
+    Blessin Skin。
 download-tarxz: 壓縮檔 (tar.xz)
 download-linuxZip: 壓縮檔 (zip)
 joinPeer: 和 {inviter} 一起玩
@@ -183,7 +188,8 @@ features:
     instance-create-modloaders:
       title: 建立 Java 與 Bedrock 實例
       benefit: 選擇適合目標世界的載入器與版本，快速建立新的遊戲設定。
-      capabilities: 支援 Java Edition 與實驗性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine 與 LabyMod|Minecraft 與本機版本來源
+      capabilities: 支援 Java Edition 與實驗性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine
+        與 LabyMod|Minecraft 與本機版本來源
     instance-folder-groups:
       title: 實例資料夾分組
       benefit: 將大量實例按資料夾整理，讓不同世界與設定更容易瀏覽查找。
@@ -324,7 +330,8 @@ sceneLanding:
       install:
         label: 01 / 選擇安裝方式
         title: 使用發行版熟悉的格式。
-        description: 為桌面下載原生安裝包，或透過 Flathub 以更便攜的方式在 Steam Deck 上使用 XMCL。XMCL 也在硬體有需求時提供 ARM64 建置版本。
+        description: 為桌面下載原生安裝包，或透過 Flathub 以更便攜的方式在 Steam Deck 上使用 XMCL。XMCL 也在硬體有需求時提供
+          ARM64 建置版本。
         point1: 主流 Linux 桌面的 DEB 與 RPM
         point2: 便攜安裝的 AppImage 與 tar.xz
         point3: 面向 Steam Deck 的 Flathub 支援
@@ -340,7 +347,8 @@ sceneLanding:
       anywhere:
         label: 03 / 隨處暢玩
         title: 從桌面到 Steam Deck 都好用。
-        description: 在 Linux 桌面與 Steam Deck 之間切換時，依然保留清晰的實例庫與可靠的遊戲設定。XMCL 讓你的收藏自由擴展，無需面對繁瑣的試算表。
+        description: 在 Linux 桌面與 Steam Deck 之間切換時，依然保留清晰的實例庫與可靠的遊戲設定。XMCL
+          讓你的收藏自由擴展，無需面對繁瑣的試算表。
         point1: 為 Steam Deck 打造的 Flathub 途徑
         point2: 適合 4K 螢幕的清晰介面
         point3: 面向 Linux 玩家打造的開源專案
@@ -413,7 +421,8 @@ sceneLanding:
       diagnose:
         label: 05 / 分析問題
         title: 讓 AI 幫你把當機報告變成修復方案。
-        description: 測試啟動失敗時，在同一個地方查看記錄、當機報告並使用 AI Agent 分析實例環境。Agent 能直接檢查實例環境內容，並說明具體可行的下一步修復操作。
+        description: 測試啟動失敗時，在同一個地方查看記錄、當機報告並使用 AI Agent 分析實例環境。Agent
+          能直接檢查實例環境內容，並說明具體可行的下一步修復操作。
         point1: 在上下文脈絡中查看啟動記錄與當機報告
         point2: AI 輔助檢查實例檔案
         point3: 在發布前排查並解決模組衝突
@@ -781,3 +790,22 @@ modernHome:
       description: 在啟動器中連結適合你的帳號服務，包括 Microsoft、離線帳號與第三方驗證服務。
       alt: XMCL 登入對話方塊，展示多種驗證服務
       link: 查看帳號支援
+docHub:
+  kicker: 官方文件
+  title: XMCL 文件中心
+  description: 關於安裝、設定、模組管理、連線與 XMCL 架構的一切內容。
+  searchPlaceholder: 搜尋文件、指南、設定、關鍵字...
+  quickTopics: 快捷主題
+  viewSection: 瀏覽章節
+  articlesCount: "{count} 篇文章"
+  backToHub: 返回文件中心
+  needHelp: 需要協助？
+  needHelpDesc: 沒有找到所需內容？歡迎加入官方社群或為文件貢獻內容。
+  joinDiscord: 加入 Discord
+  githubRepo: GitHub 倉庫
+  contributeDocs: 編輯與改進文件
+docGroups:
+  gettingStarted: 01 / 新手入門
+  gameAndMods: 02 / 遊戲與模組
+  multiplayerAndTroubleshooting: 03 / 連線與故障診斷
+  coreAndDev: 04 / 核心架構與 API

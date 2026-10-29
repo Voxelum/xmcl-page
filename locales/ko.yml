@@ -1,3 +1,4 @@
+documentation: 문서
 repository: 소스 코드 리포지터리
 intro:
   first:
@@ -8,7 +9,8 @@ intro:
     body: 모든 {mods}를 {diskEfficient}으로 관리할 수 있는 방법
     diskEfficient: 효율적
     mods: 모드
-  description: XMCL는 모드팩, 리소스 팩, 모드, 셰이더 팩 등 방대한 리소스를 관리할 수 있는 현대적인 마인크래프트 런처입니다.  또한 마인크래프트 Forge, Quilt CurseForge, Modrinth와 통합됩니다.
+  description: XMCL는 모드팩, 리소스 팩, 모드, 셰이더 팩 등 방대한 리소스를 관리할 수 있는 현대적인 마인크래프트
+    런처입니다.  또한 마인크래프트 Forge, Quilt CurseForge, Modrinth와 통합됩니다.
 label: 한국어
 guide: 가이드
 protocol: 프로토콜
@@ -50,23 +52,29 @@ gameInstall:
   title:
     body: "{gameInstall}에 대한 걱정 끝"
     gameInstall: 게임 설치
-  description: XMCL은 기본 마인크래프트, 마인크래프트 Forge, Fabric, 심지어 Optifine 올인원까지 설치할 수 있습니다! 런처 내에서 한 곳에서 모두 설치할 수 있습니다. 또한 제3자 미러 링크 BMCL API를 지원합니다. 런처에서 직접 미러를 커스터마이징할 수도 있습니다.
+  description: XMCL은 기본 마인크래프트, 마인크래프트 Forge, Fabric, 심지어 Optifine 올인원까지 설치할 수
+    있습니다! 런처 내에서 한 곳에서 모두 설치할 수 있습니다. 또한 제3자 미러 링크 BMCL API를 지원합니다. 런처에서 직접 미러를
+    커스터마이징할 수도 있습니다.
 optimalDisk:
   title:
     body: 디스크 공간을 {optimal}로 사용하여 {massiveResources}를 관리
     optimal: 최적화
     massiveResources: 방대한 리소스
-  description: XMCL은 모든 모드, 리소스 팩, 셰이더 팩 및 모드팩을 하나의 저장소에 보관합니다. 사용자가 어떤 리소스를 사용하려고 할 때, XMCL은 하드 링크를 이용해  인스턴스에 리소스를 설치하며, 복사하지 않습니다. 즉, 이제 /mods 폴더에서 중복된 복사본을 더 이상 볼 수 없게 됩니다.
+  description: XMCL은 모든 모드, 리소스 팩, 셰이더 팩 및 모드팩을 하나의 저장소에 보관합니다. 사용자가 어떤 리소스를 사용하려고
+    할 때, XMCL은 하드 링크를 이용해  인스턴스에 리소스를 설치하며, 복사하지 않습니다. 즉, 이제 /mods 폴더에서 중복된 복사본을
+    더 이상 볼 수 없게 됩니다.
 cleanWorkspace:
   title:
     body: 멀티 인스턴스로 {clean} 작업 공간 유지
     clean: 깨끗한
-  description: XMCL은 멀티 인스턴스를 기본적으로 지원합니다. 여러 개의 인스턴스를 쉽게 생성할 수 있어, 서로 다른 런처 설정이 섞일까 걱정할 필요가 없습니다.
+  description: XMCL은 멀티 인스턴스를 기본적으로 지원합니다. 여러 개의 인스턴스를 쉽게 생성할 수 있어, 서로 다른 런처 설정이
+    섞일까 걱정할 필요가 없습니다.
 communityIntegration:
   title:
     body: "{multipleCommunities}와 함께 즐기세요"
     multipleCommunities: 여러 커뮤니티
-  description: "XMCL은 CurseForge와 Modrinth를 기본적으로 지원합니다. 또한, 사용자 지정 계정이나 스킨 시스템(예: Blessing Skin)도 지원할 수 있는 기능을 제공합니다."
+  description: "XMCL은 CurseForge와 Modrinth를 기본적으로 지원합니다. 또한, 사용자 지정 계정이나 스킨 시스템(예:
+    Blessing Skin)도 지원할 수 있는 기능을 제공합니다."
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: "{inviter}의 파티에 참가"
@@ -151,7 +159,8 @@ features:
     instance-create-modloaders:
       title: Java 및 Bedrock 인스턴스 만들기
       benefit: 플레이하려는 월드에 맞는 로더와 에디션으로 새로운 환경을 시작하세요.
-      capabilities: Java Edition 및 실험적 Bedrock 지원|Forge, Fabric, Quilt, NeoForge, OptiFine 및 LabyMod|Minecraft 및 로컬 버전 소스
+      capabilities: Java Edition 및 실험적 Bedrock 지원|Forge, Fabric, Quilt, NeoForge,
+        OptiFine 및 LabyMod|Minecraft 및 로컬 버전 소스
     instance-folder-groups:
       title: 인스턴스 폴더 그룹
       benefit: 수많은 인스턴스를 폴더로 정리하여 다양한 월드와 설정을 쉽게 둘러보세요.
@@ -259,7 +268,8 @@ sceneLanding:
   linux:
     eyebrow: XMCL / LINUX EDITION
     title: Linux에 자연스럽게 녹아드는 Minecraft 런처.
-    lede: Linux 데스크톱과 Steam Deck을 위한 세련된 오픈 소스 런처입니다. 배포판에 맞는 패키지를 선택하고 모든 월드를 한 번에 실행하세요.
+    lede: Linux 데스크톱과 Steam Deck을 위한 세련된 오픈 소스 런처입니다. 배포판에 맞는 패키지를 선택하고 모든 월드를 한 번에
+      실행하세요.
     primaryAction: Linux용 다운로드
     secondaryAction: Linux 워크플로 보기
     heroNote: 네이티브 Linux 빌드, ARM64, Flathub 지원
@@ -292,7 +302,8 @@ sceneLanding:
       install:
         label: 01 / 설치 방식 선택
         title: 배포판에 맞는 형식을 사용하세요.
-        description: 데스크톱용 네이티브 패키지를 다운로드하거나, 휴대성과 Steam Deck 편의성을 원할 때는 Flathub를 사용하세요. 하드웨어 요구 사항에 맞춰 XMCL은 ARM64 빌드도 제공합니다.
+        description: 데스크톱용 네이티브 패키지를 다운로드하거나, 휴대성과 Steam Deck 편의성을 원할 때는 Flathub를 사용하세요.
+          하드웨어 요구 사항에 맞춰 XMCL은 ARM64 빌드도 제공합니다.
         point1: 주류 Linux 데스크톱을 위한 DEB 및 RPM
         point2: 포터블 설치를 위한 AppImage 및 tar.xz
         point3: Steam Deck을 위한 Flathub 지원
@@ -300,7 +311,8 @@ sceneLanding:
       organize:
         label: 02 / 체계적인 정리
         title: 모든 인스턴스에 독립적이고 깔끔한 실행 환경을 제공합니다.
-        description: 폴더를 직접 정리할 필요 없이 바닐라, 모드, 테스트 및 서버 설정을 분리하세요. 버전, 로더, 모드, 세이브 및 설정이 하나로 유지됩니다.
+        description: 폴더를 직접 정리할 필요 없이 바닐라, 모드, 테스트 및 서버 설정을 분리하세요. 버전, 로더, 모드, 세이브 및 설정이
+          하나로 유지됩니다.
         point1: 독립적인 게임 데이터 및 실행 설정
         point2: Forge, Fabric, Quilt, NeoForge 등 지원
         point3: 월드 및 실험 간의 빠른 전환
@@ -308,7 +320,8 @@ sceneLanding:
       anywhere:
         label: 03 / 어디서나 플레이
         title: 어디서나 원활하게 작동하는 데스크톱 런처.
-        description: 깔끔한 라이브러리나 안정적인 구성을 포기하지 않고 Linux 데스크톱에서 Steam Deck 세션으로 자유롭게 전환하세요. XMCL은 복잡한 스프레드시트처럼 변하지 않으면서도 컬렉션을 확장할 수 있는 공간을 제공합니다.
+        description: 깔끔한 라이브러리나 안정적인 구성을 포기하지 않고 Linux 데스크톱에서 Steam Deck 세션으로 자유롭게
+          전환하세요. XMCL은 복잡한 스프레드시트처럼 변하지 않으면서도 컬렉션을 확장할 수 있는 공간을 제공합니다.
         point1: Steam Deck을 위해 설계된 Flathub 경로
         point2: 4K 디스플레이에 최적화된 인터페이스
         point3: 오픈 소스 및 Linux 플레이어를 위한 설계
@@ -349,7 +362,8 @@ sceneLanding:
       discover:
         label: 01 / 탐색
         title: 분산된 관심사 없이 두 생태계를 모두 검색하세요.
-        description: 버전, 로더, 환경 및 카테고리 필터를 사용하여 Modrinth와 CurseForge 전반의 프로젝트를 찾으세요. XMCL은 두 소스 간의 프로젝트를 매핑하여 번거로운 추측 없이 동일한 작업을 비교할 수 있습니다.
+        description: 버전, 로더, 환경 및 카테고리 필터를 사용하여 Modrinth와 CurseForge 전반의 프로젝트를 찾으세요.
+          XMCL은 두 소스 간의 프로젝트를 매핑하여 번거로운 추측 없이 동일한 작업을 비교할 수 있습니다.
         point1: 하나의 흐름에서 Modrinth 및 CurseForge 검색
         point2: Minecraft 버전 및 로더 호환성 필터
         point3: 크로스 플랫폼 프로젝트 매핑
@@ -357,7 +371,8 @@ sceneLanding:
       build:
         label: 02 / 빌드
         title: 의존성 관리도 계획의 일부로 만드세요.
-        description: 모드에 다른 모드가 필요할 때 XMCL이 의존성을 함께 설치해 줍니다. 프로젝트를 활성화하거나 비활성화할 때 의존성 그래프를 수동으로 추적할 필요 없이 전체 모드 세트의 일관성을 유지해 줍니다.
+        description: 모드에 다른 모드가 필요할 때 XMCL이 의존성을 함께 설치해 줍니다. 프로젝트를 활성화하거나 비활성화할 때 의존성
+          그래프를 수동으로 추적할 필요 없이 전체 모드 세트의 일관성을 유지해 줍니다.
         point1: 자동 의존성 설치
         point2: 의존성을 고려한 활성화 및 비활성화 작업
         point3: 버전, 로더 및 프로젝트 메타데이터 검사
@@ -365,7 +380,8 @@ sceneLanding:
       curate:
         label: 03 / 관리
         title: 작업 세트를 군더더기 없이 목적에 맞게 유지하세요.
-        description: 더 이상 필요하지 않은 모드를 검색, 정렬, 그룹화, 업데이트 및 삭제하세요. 사용자 지정 그룹을 사용하면 선택적 콘텐츠를 테스트하고, 프로필을 비교하거나, 릴리스 후보 버전에 집중하기 쉽습니다.
+        description: 더 이상 필요하지 않은 모드를 검색, 정렬, 그룹화, 업데이트 및 삭제하세요. 사용자 지정 그룹을 사용하면 선택적
+          콘텐츠를 테스트하고, 프로필을 비교하거나, 릴리스 후보 버전에 집중하기 쉽습니다.
         point1: 자동 모드 업데이트 확인
         point2: 선택적 및 테스트 콘텐츠를 위한 사용자 지정 그룹
         point3: 미사용 모드 검색 및 제거
@@ -373,7 +389,8 @@ sceneLanding:
       export:
         label: 04 / 내보내기
         title: 플레이어에게 필요한 형식으로 하나의 팩을 배포하세요.
-        description: 올바른 메타데이터와 선택한 파일로 완성도 높은 Modrinth 또는 CurseForge 모드팩을 내보내세요. 릴리스 단계가 마지막 순간의 임기응변식 압축 작업이 아닌, 반복 가능한 워크플로의 일부가 됩니다.
+        description: 올바른 메타데이터와 선택한 파일로 완성도 높은 Modrinth 또는 CurseForge 모드팩을 내보내세요. 릴리스
+          단계가 마지막 순간의 임기응변식 압축 작업이 아닌, 반복 가능한 워크플로의 일부가 됩니다.
         point1: 원클릭 Modrinth 및 CurseForge 내보내기
         point2: 작성자, 설명, URL 및 버전 메타데이터
         point3: 배포할 파일과 애셋을 정밀하게 선택
@@ -381,7 +398,8 @@ sceneLanding:
       diagnose:
         label: 05 / 진단
         title: AI의 도움을 받아 충돌 보고서를 해결책으로 전환하세요.
-        description: 테스트 실행이 실패하면 XMCL은 로그, 충돌 보고서 및 AI 에이전트를 한자리에 모아줍니다. 에이전트가 인스턴스 컨텍스트를 검사하고 실행 가능한 다음 조치를 설명할 수 있습니다.
+        description: 테스트 실행이 실패하면 XMCL은 로그, 충돌 보고서 및 AI 에이전트를 한자리에 모아줍니다. 에이전트가 인스턴스
+          컨텍스트를 검사하고 실행 가능한 다음 조치를 설명할 수 있습니다.
         point1: 컨텍스트 내에서 실행 로그 및 충돌 보고서 확인
         point2: 인스턴스 파일에 대한 AI 지원 조사
         point3: 릴리스 전 모드 충돌 해결
@@ -484,7 +502,8 @@ commercial:
       aiIncludedDescription: 모드팩 제작, 문제 해결, 서버 유지보수 지원
       home:
         location: 친구 호스팅
-        description: P2P 연결이 어렵거나 불안정한 친구들을 위한 글로벌 릴레이 강화 멀티플레이입니다. 20 GB는 보통 친구 3명이 한 달 약 65시간 플레이하기에 충분합니다.
+        description: P2P 연결이 어렵거나 불안정한 친구들을 위한 글로벌 릴레이 강화 멀티플레이입니다. 20 GB는 보통 친구 3명이 한 달
+          약 65시간 플레이하기에 충분합니다.
         runsOn: 내 컴퓨터
         bestFor: 가끔 함께 플레이하는 그룹
         connection: 전 세계 300개 이상의 릴레이
@@ -517,7 +536,8 @@ commercial:
       purchaseEyebrow: 서버 만들기
       cancelEyebrow: 서버 구독 취소
       purchaseTitle: "{plan} 구매 확인"
-      purchaseDescription: 월 요금 {monthly}가 즉시 결제됩니다. 실행 중에는 시간당 {hourly}이며 일시정지 중에는 실행 요금이 없습니다. 서버별로 별도 결제되고 AI 서비스를 증정합니다.
+      purchaseDescription: 월 요금 {monthly}가 즉시 결제됩니다. 실행 중에는 시간당 {hourly}이며 일시정지 중에는 실행
+        요금이 없습니다. 서버별로 별도 결제되고 AI 서비스를 증정합니다.
       regionLabel: 서버 위치
       regionDescription: 대부분의 플레이어와 가까운 위치를 선택하세요. 현재 구성은 {count}개의 Vultr 위치를 지원합니다.
       testRegions: 속도 측정 및 추천
@@ -584,7 +604,8 @@ commercial:
     aiTitle: 모드팩을 완벽하게 실행하세요
     aiDescription: 한 친구가 그룹 전체의 전담 기술 지원팀이 될 필요 없이, 충돌, 의존성 충돌 및 구성 문제를 진단하세요.
     turnTitle: 모두가 끊김 없이 연결되도록
-    turnDescription: XMCL은 먼저 직접 연결을 시도하고, 네트워크나 공유기 문제로 연결이 어려울 경우 가장 가까운 사용 가능한 릴레이를 자동으로 사용합니다.
+    turnDescription: XMCL은 먼저 직접 연결을 시도하고, 네트워크나 공유기 문제로 연결이 어려울 경우 가장 가까운 사용 가능한
+      릴레이를 자동으로 사용합니다.
     serverEyebrow: 더 많은 기능이 필요하신가요?
     serverTitle: 그룹을 위한 상시 이용 가능한 월드를 마련하세요.
     serverDescription: 피어 호스팅으로 부족할 때 영구 저장 공간과 맞춤형 성능을 갖춘 전용 XMCL 서버를 대여하세요.
@@ -617,7 +638,8 @@ commercial:
     debt: 향후 충전 금액은 미결제 잔액 {amount}을(를) 먼저 정산하는 데 사용됩니다.
     available: 사용 가능한 잔액
     availableHint: XMCL 서비스 전반에서 바로 사용 가능
-    homeFundingRequired: 잔액이 Together Home을 구매하기에 부족합니다. 최소 {amount}을(를) 충전한 후 Together로 돌아와 구매를 진행해 주세요.
+    homeFundingRequired: 잔액이 Together Home을 구매하기에 부족합니다. 최소 {amount}을(를) 충전한 후
+      Together로 돌아와 구매를 진행해 주세요.
     reserved: 예약됨
     reservedHint: 활성 사용량을 위해 보류됨
     history: 내역
@@ -640,7 +662,8 @@ commercial:
     noUsage: 종량제 사용량이 아직 없습니다.
     loadError: 결제 데이터를 불러올 수 없습니다.
     securedTitle: Waffo가 안전하게 보호하는 결제
-    securedDescription: 카드 및 구매자 정보는 Waffo Pancake의 호스팅된 결제 페이지에서 처리됩니다. XMCL은 카드 번호를 수집하거나 저장하지 않습니다.
+    securedDescription: 카드 및 구매자 정보는 Waffo Pancake의 호스팅된 결제 페이지에서 처리됩니다. XMCL은 카드
+      번호를 수집하거나 저장하지 않습니다.
   checkout:
     title: 잔액 충전
     description: Waffo Pancake을 통해 안전하게 XMCL 잔액을 충전하세요.
@@ -727,7 +750,8 @@ modernHome:
     setup:
       title: 모든 설정을 하나의 런처로
       short: 멀티 로더, 멀티 인스턴스
-      description: Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod 및 실험적 Bedrock 지원을 아우르는 개별 Minecraft 인스턴스를 생성하고 관리하세요. 설치는 런처가 알아서 처리합니다.
+      description: Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod 및 실험적 Bedrock 지원을
+        아우르는 개별 Minecraft 인스턴스를 생성하고 관리하세요. 설치는 런처가 알아서 처리합니다.
       alt: 여러 모드 로더와 Bedrock Edition이 표시된 XMCL 게임 생성 대화상자
       link: 인스턴스 설정 알아보기
     discover:
@@ -748,3 +772,22 @@ modernHome:
       description: 런처를 벗어나지 않고 Microsoft 및 오프라인 프로필부터 타사 인증 서비스까지 내 환경에 맞는 계정 서비스를 연결하세요.
       alt: 여러 인증 서비스가 있는 XMCL 계정 로그인 대화상자
       link: 지원 계정 알아보기
+docHub:
+  kicker: 공식 문서
+  title: XMCL 문서 허브
+  description: XMCL 설치, 설정, 모드 관리, 함께 플레이 및 핵심 아키텍처에 대한 모든 것.
+  searchPlaceholder: 문서, 가이드, 설정 검색...
+  quickTopics: 빠른 주제
+  viewSection: 섹션 탐색
+  articlesCount: "{count}개 문서"
+  backToHub: 문서 허브로 돌아가기
+  needHelp: 도움이 필요하신가요?
+  needHelpDesc: 원하는 내용을 찾을 수 없나요? 커뮤니티에 참여하거나 문서 작성에 기여하세요.
+  joinDiscord: Discord 참여
+  githubRepo: GitHub 저장소
+  contributeDocs: 문서 개선 및 기여
+docGroups:
+  gettingStarted: 01 / 시작하기
+  gameAndMods: 02 / 게임 및 모드
+  multiplayerAndTroubleshooting: 03 / 멀티플레이 및 진단
+  coreAndDev: 04 / 코어 아키텍처 및 API

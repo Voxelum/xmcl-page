@@ -62,7 +62,7 @@ import { useI18nSync } from '../composables/useI18nSync';
 import { useGFW } from '../composables/useGFW';
 
 const { isDark } = useData()
-const { t } = useI18n()
+const { t } = useI18n({ useScope: 'global' })
 useGFW()
 useI18nSync()
 

@@ -28,12 +28,12 @@ html:not(.dark) .VPNav {
   }
 
   .VPNavBarAppearance {
-    margin-left: 16px;
+    margin-left: 0 !important;
   }
 
   .VPNavBarSocialLinks {
     gap: 8px;
-    margin-left: 12px;
+    margin-left: 0 !important;
   }
 }
 
@@ -49,7 +49,7 @@ html:not(.dark) .VPNav {
   }
 
   .VPNavBarAppearance {
-    margin-left: 10px !important;
+    margin-left: 0 !important;
   }
 
   .VPNavBarSocialLinks {
@@ -316,4 +316,220 @@ html:not(.dark) .VPSocialLink {
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink:hover::before,
 body:not(:has(.xmcl-modern)):not(:has(.xmcl-legacy)) .VPNavBarMenuLink.active::before {
   background-color: #17211f !important;
+}
+
+
+/* Custom Cyberpunk Language Selector & Navbar Flex Ordering */
+.VPNavBarTranslations {
+  display: none !important;
+}
+
+.VPNavBar .content-body {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.VPNavBar .content-body .VPNavBarSearch,
+.VPNavBar .content-body .search {
+  order: 1 !important;
+}
+
+.VPNavBar .content-body .VPNavBarMenu,
+.VPNavBar .content-body .menu {
+  order: 2 !important;
+}
+
+.VPNavBar .content-body .nav-language-selector {
+  order: 3 !important;
+}
+
+.VPNavBar .content-body .VPNavBarAppearance,
+.VPNavBar .content-body .appearance {
+  order: 4 !important;
+}
+
+.VPNavBar .content-body .VPNavBarSocialLinks,
+.VPNavBar .content-body .social-links {
+  order: 5 !important;
+}
+
+.VPNavBar .content-body .VPNavBarExtra,
+.VPNavBar .content-body .extra {
+  order: 6 !important;
+}
+
+.VPNavBar .content-body .commercial-nav-entry,
+.VPNavBar .content-body .together-button,
+.VPNavBar .content-body > button.together-nav-btn {
+  order: 7 !important;
+}
+
+.VPNavBar .content-body .VPNavBarHamburger,
+.VPNavBar .content-body .hamburger {
+  order: 8 !important;
+}
+
+/* Hide duplicate default divider between menu and appearance if present */
+.menu + .appearance::before {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Refined Cyberpunk Navbar Dividers (Unified, Straight, Mathematically Centered)
+   ========================================================================== */
+
+/* Reset conflicting margins from parent containers so all dividers have identical spacing */
+.VPNavBar .content-body .VPNavBarAppearance,
+.VPNavBar .content-body .appearance {
+  margin-left: 0 !important;
+}
+
+.VPNavBar .content-body .VPNavBarSocialLinks,
+.VPNavBar .content-body .social-links {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 
+   Three Uniform Dividers in Desktop Navbar:
+   1) Before Language Selector: .nav-language-selector::before
+   2) Before Theme Switch:      .translations + .appearance::before / .VPNavBarAppearance::before
+   3) Before Social Links:      .appearance + .social-links::before / .VPNavBarSocialLinks::before
+*/
+.nav-language-selector::before,
+.VPNavBar .content-body .VPNavBarAppearance::before,
+.VPNavBar .content-body .appearance::before,
+.VPNavBar .content-body .VPNavBarSocialLinks::before,
+.VPNavBar .content-body .social-links::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 1px !important;
+  height: 22px !important;
+  min-height: 22px !important;
+  max-height: 22px !important;
+  margin: 0 14px !important;
+  padding: 0 !important;
+  vertical-align: middle !important;
+  align-self: center !important;
+  flex-shrink: 0 !important;
+  border: none !important;
+  border-radius: 1px !important;
+  /* Glowing gradient: soft cyberpunk fade at top and bottom */
+  background: linear-gradient(
+    180deg,
+    rgba(201, 248, 90, 0.04) 0%,
+    rgba(201, 248, 90, 0.42) 50%,
+    rgba(201, 248, 90, 0.04) 100%
+  ) !important;
+  box-shadow: 0 0 6px rgba(201, 248, 90, 0.16) !important;
+  opacity: 0.9 !important;
+  transition: all 0.25s ease !important;
+}
+
+/* Subtle interactive glow when nearby components are hovered */
+.nav-language-selector:hover::before,
+.VPNavBar .content-body .VPNavBarAppearance:hover::before,
+.VPNavBar .content-body .appearance:hover::before,
+.VPNavBar .content-body .VPNavBarSocialLinks:hover::before,
+.VPNavBar .content-body .social-links:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(201, 248, 90, 0.1) 0%,
+    rgba(201, 248, 90, 0.7) 50%,
+    rgba(201, 248, 90, 0.1) 100%
+  ) !important;
+  box-shadow: 0 0 8px rgba(201, 248, 90, 0.28) !important;
+  opacity: 1 !important;
+}
+
+/* Light Theme: Clean, elegant neutral gradient with smooth taper */
+html:not(.dark) .nav-language-selector::before,
+html:not(.dark) .VPNavBar .content-body .VPNavBarAppearance::before,
+html:not(.dark) .VPNavBar .content-body .appearance::before,
+html:not(.dark) .VPNavBar .content-body .VPNavBarSocialLinks::before,
+html:not(.dark) .VPNavBar .content-body .social-links::before {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.02) 100%
+  ) !important;
+  box-shadow: none !important;
+  opacity: 0.85 !important;
+}
+
+html:not(.dark) .nav-language-selector:hover::before,
+html:not(.dark) .VPNavBar .content-body .VPNavBarAppearance:hover::before,
+html:not(.dark) .VPNavBar .content-body .appearance:hover::before,
+html:not(.dark) .VPNavBar .content-body .VPNavBarSocialLinks:hover::before,
+html:not(.dark) .VPNavBar .content-body .social-links:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.04) 100%
+  ) !important;
+  box-shadow: none !important;
+}
+
+/* On mobile (< 960px), hide divider before language selector if menu links are hidden */
+@media (max-width: 960px) {
+  .nav-language-selector::before {
+    display: none !important;
+  }
+}
+
+/* Mobile Screen Translations Grid */
+.VPNavScreenTranslations {
+  padding: 16px !important;
+  border-top: 1px solid #1c2a20 !important;
+}
+
+.VPNavScreenTranslations .title {
+  font-family: var(--vp-font-family-mono, monospace) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  color: #c9f85a !important;
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.VPNavScreenTranslations .title::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9f85a;
+  box-shadow: 0 0 8px #c9f85a;
+}
+
+.VPNavScreenTranslations .items {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 8px !important;
+  max-height: 280px !important;
+  overflow-y: auto !important;
+  padding-right: 4px !important;
+}
+
+.VPNavScreenTranslations .VPMenuLink {
+  padding: 8px 10px !important;
+  border-radius: 6px !important;
+  background: #111814 !important;
+  border: 1px solid #1f2e23 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #d1ded5 !important;
+  transition: all 0.15s ease !important;
+}
+
+.VPNavScreenTranslations .VPMenuLink:hover {
+  background: #17241c !important;
+  border-color: #c9f85a !important;
+  color: #c9f85a !important;
 }
