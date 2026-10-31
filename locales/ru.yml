@@ -18,18 +18,18 @@ outline: На этой странице
 coreDocument: Основной документ
 documentation: Документация
 docGroups:
-  gettingStarted: "01 / Начало работы"
-  gameAndMods: "02 / Управление игрой и моды"
-  multiplayerAndTroubleshooting: "03 / Мультиплеер и диагностика"
-  coreAndDev: "04 / Архитектура и ядро"
+  gettingStarted: 01 / Начало работы
+  gameAndMods: 02 / Управление игрой и моды
+  multiplayerAndTroubleshooting: 03 / Мультиплеер и диагностика
+  coreAndDev: 04 / Архитектура и ядро
 launcher:
   manage:
     intro: Эффективно управляйте своим Minecraft.
   description: Простой, с открытым исходным кодом и функциональный лаунчер Minecraft
 downloadFor:
-  windows: "Скачать для Windows:"
-  mac: "Скачать для Mac:"
-  linux: "Скачать для Linux:"
+  windows: 'Скачать для Windows:'
+  mac: 'Скачать для Mac:'
+  linux: 'Скачать для Linux:'
 author: Связь с автором
 download-zip: Zip
 download-zip-32: Zip (32 бита)
@@ -59,7 +59,7 @@ gameInstall:
   description: XMCL поддерживает установку чистого Minecraft'а, а также Forge, Fabric и даже Optifine! Всё это можно установить в одном месте, в лаунчере. Он также поддерживает сторонние зеркальные ссылки BMCL API. В лаунчере можно даже настроить собственное зеркало.
 optimalDisk:
   title:
-    body: "{optimal} дисковое пространство с {massiveResources}"
+    body: '{optimal} дисковое пространство с {massiveResources}'
     optimal: Оптимальное
     massiveResources: огромными ресурсами
   description: XMCL сохранит все моды, текстурпаки, шейдеры и модпаки в одном месте. Когда вы воспользуетесь любым известным ресурсом, лаунчер использует жёсткую ссылку для установки ресурса в экземпляр без копирования. Это значит, что вы больше не увидите дубликатов в папке /mods.
@@ -76,7 +76,7 @@ communityIntegration:
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Присоединяйтесь к пати {inviter}
-joinPeerDescription: "{inviter} пригласил тебя присоединиться к его группе {group}, чтобы вместе поиграть в Minecraft! Вы будете перенаправлены обратно в лаунчер!"
+joinPeerDescription: '{inviter} пригласил тебя присоединиться к его группе {group}, чтобы вместе поиграть в Minecraft! Вы будете перенаправлены обратно в лаунчер!'
 fullChangelog: Что нового?
 privacy: Конфиденциальность программного обеспечения
 prebuild:
@@ -94,13 +94,13 @@ prebuild:
   tryNext: Попробуйте то, что будет дальше.
   unstableDescription: Нестабильные артефакты для тестирования предстоящих изменений XMCL.
   selectedBuild: ВЫБРАННАЯ СБОРКА
-  buildsAvailable: "{count} сборок доступно"
+  buildsAvailable: '{count} сборок доступно'
   selectABuild: ВЫБЕРИТЕ СБОРКУ
   noBuilds: СБОРКИ НЕ НАЙДЕНЫ
   noBuildsDescription: В данный момент нет доступных предварительных сборок.
   checkBack: Пожалуйста, проверьте позже, после завершения следующего процесса разработки.
   yesterday: Вчера
-  daysAgo: "{count} дн. назад"
+  daysAgo: '{count} дн. назад'
 downloadMacHint:
   link: установить инструкцию
   content: Для пользователей Mac, пожалуйста, перейдите по {link} для установки.
@@ -188,7 +188,7 @@ features:
       capabilities: Источники Modrinth и CurseForge|Фильтры по версии Minecraft и загрузчику|Фильтры по окружению и категориям
     modpack-detail:
       title: Подробности модпака
-      benefit: "Узнайте всё о модпаке перед установкой: от скриншотов и авторов до технических требований."
+      benefit: 'Узнайте всё о модпаке перед установкой: от скриншотов и авторов до технических требований.'
       capabilities: Скриншоты, теги и статистика проекта|Действия по установке и запуску|Техническая информация и внешние ресурсы
     mod-collections:
       title: Коллекции модов
@@ -196,7 +196,7 @@ features:
       capabilities: Коллекции лаунчера|Отслеживаемые проекты Modrinth|Пакетная установка и управление коллекциями
     mod-detail:
       title: Подробности мода
-      benefit: "Изучите мод перед добавлением в сборку: версии, зависимости и источники."
+      benefit: 'Изучите мод перед добавлением в сборку: версии, зависимости и источники.'
       capabilities: Выбор версии и зависимости|Загрузчики, категории и ссылки на источники|Описание и внешние ресурсы
     local-mods:
       title: Управление установленными модами
@@ -217,14 +217,14 @@ features:
     modpack-export:
       title: Экспорт модпака
       benefit: Упакуйте сборку для других игроков, сохранив все метаданные и необходимые файлы.
-      capabilities: "Экспорт для CurseForge и Modrinth|Метаданные: автор, описание и URL|Выбор включаемых файлов и ресурсов"
+      capabilities: 'Экспорт для CurseForge и Modrinth|Метаданные: автор, описание и URL|Выбор включаемых файлов и ресурсов'
     server-export:
       title: Экспорт сервера
       benefit: Выберите нужный мир и файлы сервера, а затем экспортируйте локальный сервер с готовой конфигурацией.
       capabilities: Экспорт в папку или загрузка|Выбор файлов сервера|Настройка MOTD и параметров сервера
     account-login:
       title: Несколько сервисов авторизации
-      benefit: "Выберите подходящий сервис аккаунтов: Microsoft, автономный режим или сторонние службы."
+      benefit: 'Выберите подходящий сервис аккаунтов: Microsoft, автономный режим или сторонние службы.'
       capabilities: Аккаунты Microsoft и автономные аккаунты|Сервисы Ely.by и LittleSkin|Добавление и управление службами авторизации
     quick-action:
       title: Быстрые действия
@@ -259,6 +259,7 @@ siteFooter:
     github: GitHub
     issue: Сообщить о проблеме
     discord: Discord
+    status: Статус API
   bottomNote: Создано для вашего способа играть и создавать.
   readDocumentation: Читать документацию
 sceneLanding:
@@ -278,7 +279,7 @@ sceneLanding:
     workflowDescription: XMCL объединяет предсказуемую установку, ясный интерфейс и независимые игровые окружения для пользователей Linux.
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Пакеты Linux
         description: DEB, RPM, AppImage, tar.xz и Flathub.
       scale:
@@ -381,7 +382,7 @@ sceneLanding:
         title: Выпускайте сборку в удобном для ваших игроков формате.
         description: Экспортируйте готовый модпак для Modrinth или CurseForge с корректными метаданными и выбранными файлами. Выпуск релиза становится предсказуемой частью рабочего процесса, а не судорожной архивацией в последний момент.
         point1: Экспорт для Modrinth и CurseForge в один клик
-        point2: "Метаданные: автор, описание, URL и версия"
+        point2: 'Метаданные: автор, описание, URL и версия'
         point3: Точный выбор экспортируемых файлов и ресурсов
         alt: Экран экспорта модпака XMCL для форматов Modrinth и CurseForge
       diagnose:
@@ -449,7 +450,7 @@ commercial:
     perMonth: / месяц
     runtimePrice: + {amount} за час работы
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: Память
     storage: Постоянное хранилище
     includedAi: Включённая помощь AI
@@ -478,7 +479,7 @@ commercial:
       recommended: Для большинства модпаков
       perMonth: / месяц
       flatMonthly: 20 ГБ ретрансляции включено · далее 0,08 $ / ГБ
-      runtime: "{price} за час работы · можно приостановить"
+      runtime: '{price} за час работы · можно приостановить'
       hosted: Хостинг XMCL
       runsOn: Работает на
       bestFor: Подходит для
@@ -576,17 +577,17 @@ commercial:
     allowancesTitle: Лимиты, обеспечивающие работу сервиса
     aiAllowance: Оставшаяся помощь AI
     aiUnits: осталось взвешенных единиц токенов
-    aiUsage: "{consumed} из {included} использовано"
+    aiUsage: '{consumed} из {included} использовано'
     aiFormula: Расход = входные токены без кэша + ceil(входные токены из кэша × 0.1) + выходные токены × 4.
     turnAllowance: Ретрансляция мультиплеера
     turnEgress: авторизованный трафик ретрансляции
-    turnUsage: "{consumed} из {included} использовано"
+    turnUsage: '{consumed} из {included} использовано'
     remainingUnavailable: Остаток лимита недоступен.
     meteringUnavailable: Учёт расхода пока не подключён; это включённый лимит, а не остаток баланса.
     sourcesTitle: Источники действующих лимитов
     source:
-      plus: "Together: {ai} ед. AI и {turn} ретрансляции"
-      shared_hosting: "Серверный тариф: {ai} ед. AI без TURN"
+      plus: 'Together: {ai} ед. AI и {turn} ретрансляции'
+      shared_hosting: 'Серверный тариф: {ai} ед. AI без TURN'
     serverBonus: Каждый активный серверный тариф дополнительно включает 200 000 единиц AI ежемесячно для помощи в настройке модпака и сервера.
     aiTitle: Заставьте модпак работать
     aiDescription: Диагностируйте сбои, конфликты зависимостей и ошибки конфигурации, не взваливая роль техподдержки на одного друга.

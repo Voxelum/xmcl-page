@@ -360,6 +360,7 @@ siteFooter:
     github: GitHub
     issue: Report an issue
     discord: Discord
+    status: Status API
   bottomNote: Built for the way you play and create.
   readDocumentation: Read the documentation
 sceneLanding:

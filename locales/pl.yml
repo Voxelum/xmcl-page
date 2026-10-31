@@ -2,7 +2,7 @@ documentation: Dokumentacja
 repository: Repozytorium kodu źródłowego
 intro:
   first:
-    body: "{openSource} launcher Minecraft z {modernUx} interfejsem UX"
+    body: '{openSource} launcher Minecraft z {modernUx} interfejsem UX'
     openSource: otwartoźródłowy
     modernUx: nowoczesnym
   second:
@@ -22,9 +22,9 @@ launcher:
     intro: Zarządzaj swoim Minecraft efektywnie.
   description: Prosty, otwarty i funkcjonalny launcher Minecraft
 downloadFor:
-  windows: "Pobierz dla Windows:"
-  mac: "Pobierz dla Mac:"
-  linux: "Pobierz dla Linux:"
+  windows: 'Pobierz dla Windows:'
+  mac: 'Pobierz dla Mac:'
+  linux: 'Pobierz dla Linux:'
 author: Kontakt z autorem
 download-zip: Zip
 download-zip-32: Zip (32 bity)
@@ -55,7 +55,7 @@ gameInstall:
   description: XMCL obsługuje instalację czystego Minecraft, Minecraft Forge, Fabric, a nawet Optifine - wszystko w jednym! Możesz je zainstalować w jednym miejscu w launcherze. Obsługuje również linki lustrzane innych firm, takie jak BMCL API. Możesz nawet dostosować własne lustro w launcherze.
 optimalDisk:
   title:
-    body: "{optimal} przestrzeń dyskowa przy {massiveResources}"
+    body: '{optimal} przestrzeń dyskowa przy {massiveResources}'
     optimal: Optymalna
     massiveResources: masowych zasobach
   description: XMCL przechowuje wszystkie mody, paczki zasobów, shadery i paczki modów w jednej lokalizacji. Kiedy próbujesz użyć znanego zasobu, użyje twardego dowiązania, aby zainstalować zasób w instancji bez kopiowania. To oznacza, że nigdy więcej nie zobaczysz zduplikowanych kopii w folderze /mods.
@@ -72,7 +72,7 @@ communityIntegration:
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Dołącz do grupy {inviter}
-joinPeerDescription: "{inviter} zaprosił cię do dołączenia do grupy {group}, aby razem grać w Minecraft! Zostaniesz przekierowany z powrotem do launchera!"
+joinPeerDescription: '{inviter} zaprosił cię do dołączenia do grupy {group}, aby razem grać w Minecraft! Zostaniesz przekierowany z powrotem do launchera!'
 fullChangelog: Co nowego?
 privacy: Polityka prywatności
 prebuild:
@@ -90,13 +90,13 @@ prebuild:
   tryNext: Wypróbuj to, co nadchodzi.
   unstableDescription: Niestabilne artefakty do testowania nadchodzących zmian w XMCL.
   selectedBuild: WYBRANY BUILD
-  buildsAvailable: "Dostępne kompilacje: {count}"
+  buildsAvailable: 'Dostępne kompilacje: {count}'
   selectABuild: WYBIERZ BUILD
   noBuilds: NIE ZNALEZIONO KOMPILACJI
   noBuildsDescription: W tej chwili nie ma dostępnych artefaktów prebuild.
   checkBack: Sprawdź ponownie po zakończeniu kolejnego workflow deweloperskiego.
   yesterday: Wczoraj
-  daysAgo: "{count} dni temu"
+  daysAgo: '{count} dni temu'
 downloadMacHint:
   content: W przypadku systemu macOS postępuj zgodnie z {link}, aby zainstalować program.
   link: instrukcją instalacji
@@ -255,6 +255,7 @@ siteFooter:
     github: GitHub
     issue: Zgłoś problem
     discord: Discord
+    status: Status API
   bottomNote: Stworzone dla Twojego sposobu grania i tworzenia.
   readDocumentation: Czytaj dokumentację
 sceneLanding:
@@ -279,7 +280,7 @@ sceneLanding:
       link: Zobacz wszystkie wydania i buildy
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Pakiety dla Linuxa
         description: DEB, RPM, AppImage, tar.xz oraz Flathub.
       scale:
@@ -445,7 +446,7 @@ commercial:
     perMonth: / miesiąc
     runtimePrice: + {amount} za godzinę działania
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: Pamięć
     storage: Trwała przestrzeń
     includedAi: Wsparcie AI w pakiecie
@@ -474,7 +475,7 @@ commercial:
       recommended: Dla większości modpacków
       perMonth: / miesiąc
       flatMonthly: 20 GB przekaźnika w cenie · potem 0,08 $ / GB
-      runtime: "{price} za godzinę działania · pauza w każdej chwili"
+      runtime: '{price} za godzinę działania · pauza w każdej chwili'
       hosted: Hosting XMCL
       runsOn: Działa na
       bestFor: Najlepszy dla
@@ -515,7 +516,7 @@ commercial:
       pauseTitle: Wstrzymajcie, gdy nikt nie gra
       pauseDescription: Po wstrzymaniu opłaty godzinowe ustają; następnym razem wrócicie do tego samego świata.
     confirm:
-      serverNumber: "Serwer {plan} #{number}"
+      serverNumber: 'Serwer {plan} #{number}'
       addAnother: Dodaj kolejny serwer
       close: Zamknij
       purchaseEyebrow: Utwórz serwer
@@ -582,8 +583,8 @@ commercial:
     meteringUnavailable: Pomiar zużycia nie jest jeszcze podłączony; jest to limit zawarty w pakiecie, a nie pozostałe saldo.
     sourcesTitle: Aktywne źródła pakietów zasobów
     source:
-      plus: "Together: {ai} jednostek AI i {turn} przekaźnika"
-      shared_hosting: "Plan serwera: {ai} jednostek AI i brak TURN"
+      plus: 'Together: {ai} jednostek AI i {turn} przekaźnika'
+      shared_hosting: 'Plan serwera: {ai} jednostek AI i brak TURN'
     serverBonus: Każdy aktywny plan serwera zawiera osobno 200 000 jednostek AI miesięcznie na pomoc w konfiguracji modpacka i serwera.
     aiTitle: Spraw, by modpack działał
     aiDescription: Diagnozuj crashe, konflikty zależności i problemy z konfiguracją bez zrzucania całej pomocy technicznej na jednego znajomego.

@@ -22,9 +22,9 @@ launcher:
     intro: أدر لعبة ماينكرافت الخاصة بك بفعالية.
   description: لانشر ماينكرافت بسيط ومفتوح المصدر وموجه نحو الوظائف
 downloadFor:
-  windows: "التنزيل لنظام التشغيل Windows:"
-  mac: "التنزيل لنظام التشغيل Mac:"
-  linux: "التنزيل لنظام التشغيل Linux:"
+  windows: 'التنزيل لنظام التشغيل Windows:'
+  mac: 'التنزيل لنظام التشغيل Mac:'
+  linux: 'التنزيل لنظام التشغيل Linux:'
 author: الاتصال بالمؤلف
 download-zip: Zip
 download-zip-32: Zip (32 بت)
@@ -90,7 +90,7 @@ prebuild:
   tryNext: جرّب ما سيأتي بعد ذلك.
   unstableDescription: ملفات غير مستقرة لاختبار تغييرات XMCL القادمة.
   selectedBuild: البنية المحددة
-  buildsAvailable: "{count} بنية متاحة"
+  buildsAvailable: '{count} بنية متاحة'
   selectABuild: اختر بنية
   noBuilds: لم يتم العثور على أي بنية
   noBuildsDescription: لا توجد ملفات بناء تجريبي متاحة حالياً.
@@ -255,6 +255,7 @@ siteFooter:
     github: GitHub
     issue: الإبلاغ عن مشكلة
     discord: Discord
+    status: حالة واجهة برمجة التطبيقات
   bottomNote: صُمم لطريقتك في اللعب والإبداع.
   readDocumentation: قراءة التوثيق
 sceneLanding:
@@ -279,7 +280,7 @@ sceneLanding:
       link: عرض كل الإصدارات والبنيات
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: حزم Linux
         description: DEB وRPM وAppImage وtar.xz وFlathub.
       scale:
@@ -445,7 +446,7 @@ commercial:
     perMonth: / شهر
     runtimePrice: + {amount} لكل ساعة تشغيل
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: الذاكرة
     storage: تخزين دائم
     includedAi: مساعدة AI مضمّنة
@@ -474,7 +475,7 @@ commercial:
       recommended: لمعظم حزم التعديلات
       perMonth: / شهر
       flatMonthly: يتضمن 20 GB للترحيل · ثم 0.08 $ / GB
-      runtime: "{price} لكل ساعة تشغيل · أوقفه مؤقتًا متى شئت"
+      runtime: '{price} لكل ساعة تشغيل · أوقفه مؤقتًا متى شئت'
       hosted: مستضاف لدى XMCL
       runsOn: يعمل على
       bestFor: الأنسب لـ
@@ -580,8 +581,8 @@ commercial:
     meteringUnavailable: قياس الاستخدام غير متصل بعد؛ هذه هي الحصة المضمّنة وليست الرصيد المتبقي.
     sourcesTitle: مصادر المخصصات النشطة
     source:
-      plus: "Together: {ai} وحدة AI وترحيل {turn}"
-      shared_hosting: "خطة الخادم: {ai} وحدة AI وبدون TURN"
+      plus: 'Together: {ai} وحدة AI وترحيل {turn}'
+      shared_hosting: 'خطة الخادم: {ai} وحدة AI وبدون TURN'
     serverBonus: تتضمن كل خطة خادم نشطة بشكل مستقل 200,000 وحدة AI كل شهر للمساعدة في إعداد حزم التعديلات والخادم.
     aiTitle: تشغيل حزمة التعديلات بنجاح
     aiDescription: شخّص الأعطال وتعارضات التبعيات ومشكلات التكوين دون تحويل أحد الأصدقاء إلى مكتب دعم فني دائم للمجموعة.

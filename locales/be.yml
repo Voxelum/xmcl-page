@@ -16,9 +16,9 @@ launcher:
     intro: Эфектыўна кіруйце сваім Minecraft.
   description: Просты, адкрыты і функцыянальны лаўнчар Minecraft
 downloadFor:
-  windows: "Спампаваць для Windows:"
-  mac: "Спампаваць для Mac:"
-  linux: "Спампаваць для Linux:"
+  windows: 'Спампаваць для Windows:'
+  mac: 'Спампаваць для Mac:'
+  linux: 'Спампаваць для Linux:'
 guide: Дапаможнік
 protocol: Пратакол
 changelogs: Спіс змен
@@ -55,7 +55,7 @@ gameInstall:
   description: XMCL падтрымлівае ўсталёўку ванільнага Minecraft, Forge, Fabric і нават OptiFine — усё ў адным месцы! Вы можаце ўсталяваць іх прама ў лаўнчары.
 optimalDisk:
   title:
-    body: "{optimal} дыскавая прастора з {massiveResources}"
+    body: '{optimal} дыскавая прастора з {massiveResources}'
     optimal: Аптымальная
     massiveResources: масіўнымі рэсурсамі
   description: XMCL захоўвае ўсе моды, пакеты рэсурсаў, шэйдары і модпакі ў адным месцы. Замест капіявання файлаў для кожнага гульнявога профілю выкарыстоўваюцца жорсткія спасылкі. Гэта азначае, што вы больш ніколі не ўбачыце дублікатаў файлаў у папцы /mods, што значна эканоміць месца на дыску.
@@ -71,8 +71,8 @@ communityIntegration:
   description: XMCL падтрымлівае CurseForge і Modrinth. Таксама ёсць магчымасць выкарыстоўваць староннія сістэмы аўтарызацыі і скінаў, такія як Blessing Skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: "Далучыцца да партыі: {inviter}"
-joinPeerDescription: "{inviter} запрасіў вас далучыцца да групы {group}, каб разам гуляць у Minecraft! Вас будзе перанакіравана назад у лаўнчар!"
+joinPeer: 'Далучыцца да партыі: {inviter}'
+joinPeerDescription: '{inviter} запрасіў вас далучыцца да групы {group}, каб разам гуляць у Minecraft! Вас будзе перанакіравана назад у лаўнчар!'
 fullChangelog: Што новага?
 privacy: Канфідэнцыяльнасць праграмы
 prebuild:
@@ -99,7 +99,7 @@ prebuild:
   noBuildsDescription: Зараз няма даступных артэфактаў prebuild.
   checkBack: Калі ласка, праверце пазней, пасля завяршэння наступнага працэсу распрацоўкі.
   yesterday: Учора
-  daysAgo: "{count} дзён таму"
+  daysAgo: '{count} дзён таму'
 downloadMacHint:
   link: Інструкцыя па ўсталёўцы
   content: Для карыстальнікаў MAC, калі ласка, выконвайце {link} для ўсталёўкі.
@@ -187,7 +187,7 @@ features:
       capabilities: Крыніцы Modrinth і CurseForge|Фільтры па версіях Minecraft і загрузчыках|Фільтры па асяроддзі і катэгорыях
     modpack-detail:
       title: Падрабязнасці модпака
-      benefit: "Вывучыце модпак перад устаноўкай: ад скрыншотаў і аўтараў да тэхнічных патрабаванняў."
+      benefit: 'Вывучыце модпак перад устаноўкай: ад скрыншотаў і аўтараў да тэхнічных патрабаванняў.'
       capabilities: Скрыншоты, тэгі і статыстыка праекта|Дзеянні па ўстаноўцы і запуску|Тэхнічная інфармацыя і знешнія рэсурсы
     mod-collections:
       title: Калекцыі модаў
@@ -223,7 +223,7 @@ features:
       capabilities: Экспарт у папку або запампоўка|Выбар файлаў сервера|Налада MOTD і параметраў сервера
     account-login:
       title: Некалькі сэрвісаў аўтэнтыфікацыі
-      benefit: "Выбірайце сэрвіс акаўнтаў пад свой стыль гульні: ад Microsoft да афлайн-профіляў і іншых сэрвісаў."
+      benefit: 'Выбірайце сэрвіс акаўнтаў пад свой стыль гульні: ад Microsoft да афлайн-профіляў і іншых сэрвісаў.'
       capabilities: Акаўнты Microsoft і афлайн-профілі|Сэрвісы Ely.by і LittleSkin|Даданне сэрвісаў аўтэнтыфікацыі і кіраванне імі
     quick-action:
       title: Хуткія дзеянні
@@ -258,6 +258,7 @@ siteFooter:
     github: GitHub
     issue: Паведаміць пра праблему
     discord: Discord
+    status: Статус API
   bottomNote: Створана для вашага спосабу гуляць і ствараць.
   readDocumentation: Чытаць дакументацыю
 sceneLanding:
@@ -282,7 +283,7 @@ sceneLanding:
       link: Паглядзець усе рэлізы і зборкі
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Пакеты для Linux
         description: DEB, RPM, AppImage, tar.xz і Flathub.
       scale:
@@ -448,7 +449,7 @@ commercial:
     perMonth: / месяц
     runtimePrice: + {amount} за гадзіну працы
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: Памяць
     storage: Пастаяннае сховішча
     includedAi: Уключаная дапамога AI
@@ -477,7 +478,7 @@ commercial:
       recommended: Для большасці модпакаў
       perMonth: / месяц
       flatMonthly: 20 ГБ рэтрансляцыі ўключана · далей 0,08 $ / ГБ
-      runtime: "{price} за гадзіну працы · можна прыпыніць"
+      runtime: '{price} за гадзіну працы · можна прыпыніць'
       hosted: Хостынг XMCL
       runsOn: Працуе на
       bestFor: Падыходзіць для
@@ -576,17 +577,17 @@ commercial:
     allowancesTitle: Ліміты, уключаныя ў сэрвіс
     aiAllowance: Астатак дапамогі AI
     aiUnits: засталося ўзважаных адзінак токенаў
-    aiUsage: "{consumed} выкарыстана з {included}"
+    aiUsage: '{consumed} выкарыстана з {included}'
     aiFormula: Выкарыстанне = увод cache-miss + ceil(увод cache-hit × 0.1) + вывад × 4.
     turnAllowance: Мультыплэерная рэтрансляцыя
     turnEgress: трафік аўтарызаванай рэтрансляцыі
-    turnUsage: "{consumed} выкарыстана з {included}"
+    turnUsage: '{consumed} выкарыстана з {included}'
     remainingUnavailable: Звесткі аб астатку недаступныя.
     meteringUnavailable: Улік выкарыстання пакуль не падключаны; гэта ўключаны ліміт, а не рэшткавы баланс.
     sourcesTitle: Актыўныя крыніцы лімітаў
     source:
-      plus: "Together: {ai} адзінак AI і {turn} рэтрансляцыі"
-      shared_hosting: "Серверны план: {ai} адзінак AI без TURN"
+      plus: 'Together: {ai} адзінак AI і {turn} рэтрансляцыі'
+      shared_hosting: 'Серверны план: {ai} адзінак AI без TURN'
     serverBonus: Кожны актыўны серверны план асобна ўключае 200 000 адзінак AI штомесяц для дапамогі з наладай модпака і сервера.
     aiTitle: Запуск і праца модпака
     aiDescription: Дыягнастуйце збоі, канфлікты залежнасцей і праблемы канфігурацыі без неабходнасці аднаму сябру станавіцца кругласутачнай службай падтрымкі.

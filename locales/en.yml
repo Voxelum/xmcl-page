@@ -8,11 +8,7 @@ intro:
     body: Provide a {diskEfficient} way to manage all your {mods}!
     diskEfficient: Disk Efficient
     mods: Mods
-  description: >-
-    XMCL is a modern Minecraft launcher that lets you
-    manage your massive resources like modpacks, resource packs, mods, shader
-    packs... It also has integration with Minecraft Forge, Fabric, Quilt,
-    CurseForge and Modrinth.
+  description: XMCL is a modern Minecraft launcher that lets you manage your massive resources like modpacks, resource packs, mods, shader packs... It also has integration with Minecraft Forge, Fabric, Quilt, CurseForge and Modrinth.
 label: English
 search:
   button:
@@ -36,7 +32,7 @@ docHub:
   searchPlaceholder: Search documentation, guides, settings, keywords...
   quickTopics: Quick topics
   viewSection: Explore section
-  articlesCount: "{count} articles"
+  articlesCount: '{count} articles'
   backToHub: Back to Documentation Hub
   needHelp: Need Help?
   needHelpDesc: Can't find what you are looking for? Join our community or contribute to the docs.
@@ -44,10 +40,10 @@ docHub:
   githubRepo: GitHub Repository
   contributeDocs: Edit or Improve Docs
 docGroups:
-  gettingStarted: "01 / Getting Started"
-  gameAndMods: "02 / Game & Mods"
-  multiplayerAndTroubleshooting: "03 / Multiplayer & Diagnostics"
-  coreAndDev: "04 / Core Architecture & API"
+  gettingStarted: 01 / Getting Started
+  gameAndMods: 02 / Game & Mods
+  multiplayerAndTroubleshooting: 03 / Multiplayer & Diagnostics
+  coreAndDev: 04 / Core Architecture & API
 logViewer: Log Viewer
 protocol: Protocol
 changelogs: Changelogs
@@ -80,12 +76,8 @@ github-source: Download From Github
 auto-source: Auto Detect The Download Source
 authSuccess: Succeed!
 authSuccessTitle: Authorization was successful. You will be redirected back to the Launcher!
-redirectHelperTitle: >-
-  If you aren't redirected, you can try to click Open In App button to manually
-  redirect.
-redirectHelperMessage: >-
-  It will create a popup and ask you to open the launcher. If it still doesn't
-  work, you can try to drag the button to the launcher window!
+redirectHelperTitle: If you aren't redirected, you can try to click Open In App button to manually redirect.
+redirectHelperMessage: It will create a popup and ask you to open the launcher. If it still doesn't work, you can try to drag the button to the launcher window!
 notWork: Doesn't Work?
 openInAppButton: Open In Launcher
 nothingWork: If none of above works, you might want to re-download the latest Launcher
@@ -93,51 +85,34 @@ gameInstall:
   title:
     body: No more worry about the {gameInstall}
     gameInstall: Game Install
-  description: >-
-    XMCL supports installation of vanilla Minecraft, Minecraft Forge, Fabric,
-    and even Optifine All in One! You can install them in a single place within
-    the Launcher. It also supports the third party mirror link BMCL API. You can
-    even customize your own mirror in the launcher.
+  description: XMCL supports installation of vanilla Minecraft, Minecraft Forge, Fabric, and even Optifine All in One! You can install them in a single place within the Launcher. It also supports the third party mirror link BMCL API. You can even customize your own mirror in the launcher.
 optimalDisk:
   title:
     body: '{optimal} disk space with {massiveResources}'
     optimal: Optimal
     massiveResources: Massive Resources
-  description: >-
-    XMCL will store all the mods, resource packs, shader packs and modpacks to a
-    single store location. While you try to use any known resource, it will use
-    hard link to install the resource to the instance without copying. It means
-    you will never see any duplicated copy in /mods folder anymore.
+  description: XMCL will store all the mods, resource packs, shader packs and modpacks to a single store location. While you try to use any known resource, it will use hard link to install the resource to the instance without copying. It means you will never see any duplicated copy in /mods folder anymore.
 cleanWorkspace:
   title:
     body: Keep your workspace {clean} with multi-instances
     clean: Clean
-  description: >-
-    XMCL has built in support of multi-instances. You can create multiple
-    instances easily. So you don't need to be worried about the mixture of the
-    different launch settings.
+  description: XMCL has built in support of multi-instances. You can create multiple instances easily. So you don't need to be worried about the mixture of the different launch settings.
 communityIntegration:
   title:
     body: Integrated with {multipleCommunities}
     multipleCommunities: Multiple Communities
-  description: >-
-    XMCL built in supports with Curseforge & Modrinth. It also provides the
-    ability to support custom user accounts/skin systems like blessing skin.
+  description: XMCL built in supports with Curseforge & Modrinth. It also provides the ability to support custom user accounts/skin systems like blessing skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Join {inviter}'s Party
-joinPeerDescription: >-
-  {inviter} has invited you to join their group {group} to play Minecraft
-  together! You will be redirected back to the Launcher!
+joinPeerDescription: '{inviter} has invited you to join their group {group} to play Minecraft together! You will be redirected back to the Launcher!'
 fullChangelog: What's New?
 privacy: Software Privacy
 prebuild:
   history: Build History
   historyDescription: Previous builds and releases
   download: Download Prebuilds
-  downloadDescription: >-
-    Prebuild is the artifacts generated during development process. It might be
-    unstable. Use it with your own risk!
+  downloadDescription: Prebuild is the artifacts generated during development process. It might be unstable. Use it with your own risk!
   entryHint: Prebuild artifacts?
   ready: Ready
   selected: Selected
@@ -190,7 +165,7 @@ features:
     world-tools:
       short: World tools
       title: World tools
-      description: "Work with the worlds behind your instances: inspect their shape, select their pieces, and understand their materials."
+      description: 'Work with the worlds behind your instances: inspect their shape, select their pieces, and understand their materials.'
     sharing:
       short: Sharing
       title: Sharing and multiplayer
@@ -385,6 +360,7 @@ siteFooter:
     github: GitHub
     issue: Report an issue
     discord: Discord
+    status: API Status
   bottomNote: Built for the way you play and create.
   readDocumentation: Read the documentation
 sceneLanding:
@@ -408,11 +384,11 @@ sceneLanding:
         label: Linux packages
         description: DEB, RPM, AppImage, tar.xz, and Flathub.
       scale:
-        number: '4K'
+        number: 4K
         label: Clear at any scale
         description: A dense library that stays readable on a large display.
       worlds:
-        number: '∞'
+        number: ∞
         label: Separate worlds
         description: Keep versions, loaders, and saves from colliding.
     features:
@@ -458,18 +434,18 @@ sceneLanding:
     visualStatus: WORKING SET IN SYNC
     workflowKicker: THE CREATOR LOOP
     workflowTitle: A faster path from rough idea to a pack players can actually launch.
-    workflowDescription: 'XMCL treats a modpack as a living system. Explore both catalogs, make deliberate changes, and let the launcher surface the relationships that keep your release healthy.'
+    workflowDescription: XMCL treats a modpack as a living system. Explore both catalogs, make deliberate changes, and let the launcher surface the relationships that keep your release healthy.
     signals:
       sources:
-        number: '2×'
+        number: 2×
         label: Project sources
         description: Search Modrinth and CurseForge from one workspace.
       export:
-        number: '1-CLICK'
+        number: 1-CLICK
         label: Pack export
         description: Build a distributable MR or CF package in a few steps.
       ai:
-        number: 'AI'
+        number: AI
         label: Crash assistance
         description: Turn a failure report into a useful next action.
     features:
@@ -777,7 +753,7 @@ commercial:
     aiAllowance: Remaining AI assistance
     aiUnits: weighted token units remaining
     aiUsage: '{consumed} used of {included}'
-    aiFormula: 'Usage = cache-miss input + ceil(cache-hit input × 0.1) + output × 4.'
+    aiFormula: Usage = cache-miss input + ceil(cache-hit input × 0.1) + output × 4.
     turnAllowance: Multiplayer relay
     turnEgress: authenticated relay traffic
     turnUsage: '{consumed} used of {included}'

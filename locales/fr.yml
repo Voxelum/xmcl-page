@@ -22,9 +22,9 @@ launcher:
     intro: Gérez votre Minecraft efficacement.
   description: Un Launcher Minecraft Simple, Open Source et Riche en Fonctionnalités
 downloadFor:
-  windows: "Téléchargement pour Windows :"
-  mac: "Téléchargement pour Mac :"
-  linux: "Téléchargement pour Linux :"
+  windows: 'Téléchargement pour Windows :'
+  mac: 'Téléchargement pour Mac :'
+  linux: 'Téléchargement pour Linux :'
 author: Contacter l'Auteur
 download-zip: Zip
 download-zip-32: Zip (32 bits)
@@ -72,7 +72,7 @@ communityIntegration:
 download-tarxz: Tar.xz
 download-linuxZip: Zip
 joinPeer: Rejoidre la partie de {inviter}
-joinPeerDescription: "{inviter} vous invite à rejoindre leur groupe {group} pour jouer ensemble à Minecraft ! Vous serez redirigé vers le Launcher !"
+joinPeerDescription: '{inviter} vous invite à rejoindre leur groupe {group} pour jouer ensemble à Minecraft ! Vous serez redirigé vers le Launcher !'
 fullChangelog: Quoi de Neuf ?
 privacy: Protection de la Vie Privée
 prebuild:
@@ -90,7 +90,7 @@ prebuild:
   tryNext: Testez les prochaines nouveautés.
   unstableDescription: Des artefacts instables pour tester les futurs changements de XMCL.
   selectedBuild: BUILD SÉLECTIONNÉ
-  buildsAvailable: "{count} builds disponibles"
+  buildsAvailable: '{count} builds disponibles'
   selectABuild: SÉLECTIONNER UN BUILD
   noBuilds: AUCUN BUILD TROUVÉ
   noBuildsDescription: Aucun artefact de pré-compilation n'est disponible pour le moment.
@@ -255,6 +255,7 @@ siteFooter:
     github: GitHub
     issue: Signaler un problème
     discord: Discord
+    status: Statut de l'API
   bottomNote: Conçu pour votre façon de jouer et de créer.
   readDocumentation: Lire la documentation
 sceneLanding:
@@ -274,7 +275,7 @@ sceneLanding:
     workflowDescription: XMCL réunit des installations prévisibles, une interface claire et des environnements de jeu indépendants pour les joueurs Linux.
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Paquets Linux
         description: DEB, RPM, AppImage, tar.xz et Flathub.
       scale:
@@ -445,7 +446,7 @@ commercial:
     perMonth: / mois
     runtimePrice: + {amount} par heure active
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: Mémoire
     storage: Stockage persistant
     includedAi: Aide AI incluse
@@ -474,7 +475,7 @@ commercial:
       recommended: La plupart des modpacks
       perMonth: / mois
       flatMonthly: 20 Go de relais inclus · puis 0,08 $ / Go
-      runtime: "{price} par heure active · pause à tout moment"
+      runtime: '{price} par heure active · pause à tout moment'
       hosted: Hébergé par XMCL
       runsOn: Fonctionne sur
       bestFor: Idéal pour
@@ -514,7 +515,7 @@ commercial:
       pauseTitle: Mettez en pause quand personne ne joue
       pauseDescription: La facturation horaire s'arrête en pause ; reprenez le même monde la prochaine fois.
     confirm:
-      serverNumber: "Serveur {plan} #{number}"
+      serverNumber: 'Serveur {plan} #{number}'
       addAnother: Ajouter un autre serveur
       close: Fermer
       purchaseEyebrow: Créer un serveur
@@ -525,7 +526,7 @@ commercial:
       regionDescription: Choisissez l’emplacement le plus proche de la majorité des joueurs. La configuration actuelle prend en charge {count} emplacements Vultr.
       testRegions: Tester et recommander
       testingRegions: Test en cours…
-      testComplete: "{location}, qui offre la latence mesurée la plus faible ({latency} ms), a été sélectionné."
+      testComplete: '{location}, qui offre la latence mesurée la plus faible ({latency} ms), a été sélectionné.'
       testUnavailable: Le test de débit est indisponible. Choisissez un emplacement manuellement.
       cancelTitle: Confirmer la résiliation de {plan}
       cancelDescription: La résiliation prendra effet à la fin de la période actuelle, le {date}. Le serveur reste disponible jusque-là.
@@ -572,17 +573,17 @@ commercial:
     allowancesTitle: Quotas inclus dans l'offre
     aiAllowance: Assistance AI restante
     aiUnits: unités de tokens pondérées restantes
-    aiUsage: "{consumed} utilisés sur {included}"
+    aiUsage: '{consumed} utilisés sur {included}'
     aiFormula: Utilisation = entrée cache-miss + ceil(entrée cache-hit × 0.1) + sortie × 4.
     turnAllowance: Relais multijoueur
     turnEgress: trafic relais authentifié
-    turnUsage: "{consumed} utilisés sur {included}"
+    turnUsage: '{consumed} utilisés sur {included}'
     remainingUnavailable: L'utilisation restante n'est pas disponible.
     meteringUnavailable: Le suivi d'utilisation n'est pas encore connecté ; il s'agit du quota inclus, et non d'un solde restant.
     sourcesTitle: Sources de quotas actifs
     source:
-      plus: "Together : {ai} unités AI et relais {turn}"
-      shared_hosting: "Offre de serveur : {ai} unités AI et sans TURN"
+      plus: 'Together : {ai} unités AI et relais {turn}'
+      shared_hosting: 'Offre de serveur : {ai} unités AI et sans TURN'
     serverBonus: Chaque offre de serveur active inclut séparément 200 000 unités AI chaque mois pour faciliter la configuration du modpack et du serveur.
     aiTitle: Faites fonctionner le modpack
     aiDescription: Diagnostiquez les crashs, les conflits de dépendances et les problèmes de configuration sans obliger un ami à devenir le support technique du groupe.

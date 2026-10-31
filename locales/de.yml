@@ -20,9 +20,9 @@ launcher:
     intro: Verwalte dein Minecraft effektiv.
   description: Ein einfacher, quelloffener und funktionaler Minecraft-Launcher
 downloadFor:
-  windows: "Herunterladen für Windows:"
-  mac: "Herunterladen für Mac:"
-  linux: "Herunterladen für Linux:"
+  windows: 'Herunterladen für Windows:'
+  mac: 'Herunterladen für Mac:'
+  linux: 'Herunterladen für Linux:'
 author: Kontakt aufnehmen
 download-zip: Zip
 download-zip-32: Zip (32-bit)
@@ -53,7 +53,7 @@ gameInstall:
   description: XMCL unterstützt die Installation von Vanilla-Minecraft, Forge, Fabric und sogar OptiFine! Du kannst alles an einem einzigen Ort im Launcher installieren. Auch Drittanbieter-Spiegelserver wie die BMCL-API werden unterstützt, und du kannst eigene Spiegelserver im Launcher hinzufügen.
 optimalDisk:
   title:
-    body: "{optimal}er Speicherplatz trotz {massiveResources}"
+    body: '{optimal}er Speicherplatz trotz {massiveResources}'
     optimal: Optimal
     massiveResources: massiver Ressourcen
   description: XMCL speichert alle Mods, Ressourcenpakete, Shader und Modpacks an einem einzigen Ort. Anstatt Dateien für jedes Profil zu kopieren, werden Hardlinks verwendet. Dadurch hast du nie wieder Duplikate im mods-Ordner, was enorm viel Speicherplatz spart.
@@ -69,8 +69,8 @@ communityIntegration:
   description: XMCL bietet native Unterstützung für CurseForge und Modrinth. Zudem können benutzerdefinierte Konten und Skin-Systeme wie Blessing Skin eingebunden werden.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: "{inviter}'s Party beitreten"
-joinPeerDescription: "{inviter} hat dich eingeladen, der Gruppe {group} beizutreten, um gemeinsam Minecraft zu spielen! Du wirst zurück zum Launcher weitergeleitet!"
+joinPeer: '{inviter}''s Party beitreten'
+joinPeerDescription: '{inviter} hat dich eingeladen, der Gruppe {group} beizutreten, um gemeinsam Minecraft zu spielen! Du wirst zurück zum Launcher weitergeleitet!'
 fullChangelog: Was gibt's Neues?
 privacy: Software-Datenschutz
 prebuild:
@@ -88,7 +88,7 @@ prebuild:
   tryNext: Probiere das Neueste aus.
   unstableDescription: Instabile Artefakte zum Testen anstehender XMCL-Änderungen.
   selectedBuild: AUSGEWÄHLTER BUILD
-  buildsAvailable: "{count} Builds verfügbar"
+  buildsAvailable: '{count} Builds verfügbar'
   selectABuild: EINEN BUILD AUSWÄHLEN
   noBuilds: KEINE BUILDS GEFUNDEN
   noBuildsDescription: Derzeit sind keine Prebuild-Artefakte verfügbar.
@@ -254,6 +254,7 @@ siteFooter:
     github: GitHub
     issue: Problem melden
     discord: Discord
+    status: API-Status
   bottomNote: Für deine Art zu spielen und zu erstellen.
   readDocumentation: Dokumentation lesen
 sceneLanding:
@@ -273,7 +274,7 @@ sceneLanding:
     workflowDescription: XMCL verbindet zuverlässige Installationen, eine klare Oberfläche und unabhängige Spielumgebungen für Linux-Spieler.
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Linux-Pakete
         description: DEB, RPM, AppImage, tar.xz und Flathub.
       scale:
@@ -392,7 +393,7 @@ commercial:
     managerEyebrow: Deine gehosteten Server
     managerTitle: Serververwaltung
     managerDescription: Jeder Server läuft und wird separat abgerechnet. Hier siehst du den Status und kannst ihn ein- oder ausschalten.
-    serverNumber: "{plan}-Server {number}"
+    serverNumber: '{plan}-Server {number}'
     start: Server starten
     stop: Server stoppen
     cpuUsage: CPU-Auslastung
@@ -444,12 +445,12 @@ commercial:
     perMonth: / Monat
     runtimePrice: + {amount} pro Betriebsstunde
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: Arbeitsspeicher
     storage: Dauerhafter Speicher
     includedAi: Enthaltene KI-Hilfe
     includedAiValue: 200.000 Einheiten / Monat
-    select: "{plan} auswählen"
+    select: '{plan} auswählen'
     selected: Ausgewählt
     unavailable: Nicht verfügbar
     noPlans: Derzeit sind keine Shared-Hosting-Tarife veröffentlicht.
@@ -473,7 +474,7 @@ commercial:
       recommended: Für die meisten Modpacks
       perMonth: / Monat
       flatMonthly: 20 GB Relay inklusive · danach 0,08 $ / GB
-      runtime: "{price} pro Betriebsstunde · jederzeit pausierbar"
+      runtime: '{price} pro Betriebsstunde · jederzeit pausierbar'
       hosted: Von XMCL gehostet
       runsOn: Läuft auf
       bestFor: Geeignet für
@@ -513,7 +514,7 @@ commercial:
       pauseTitle: Pausieren, wenn niemand spielt
       pauseDescription: Im Pausenmodus entfallen Laufzeitkosten; beim nächsten Mal geht es in derselben Welt weiter.
     confirm:
-      serverNumber: "{plan}-Server #{number}"
+      serverNumber: '{plan}-Server #{number}'
       addAnother: Weiteren Server hinzufügen
       close: Schließen
       purchaseEyebrow: Server erstellen
@@ -524,7 +525,7 @@ commercial:
       regionDescription: Wähle den Standort, der den meisten Spielern am nächsten liegt. Die aktuelle Konfiguration unterstützt {count} Vultr-Standorte.
       testRegions: Testen und empfehlen
       testingRegions: Test läuft…
-      testComplete: "{location} mit der niedrigsten gemessenen Latenz ({latency} ms) wurde ausgewählt."
+      testComplete: '{location} mit der niedrigsten gemessenen Latenz ({latency} ms) wurde ausgewählt.'
       testUnavailable: Der Geschwindigkeitstest ist derzeit nicht verfügbar. Bitte wähle einen Standort manuell.
       cancelTitle: Kündigung von {plan} bestätigen
       cancelDescription: Die Kündigung wird am Ende des aktuellen Zeitraums am {date} wirksam. Bis dahin bleibt der Server verfügbar.
@@ -571,17 +572,17 @@ commercial:
     allowancesTitle: Kontingente hinter dem Erlebnis
     aiAllowance: Verbleibende KI-Unterstützung
     aiUnits: gewichtete Token-Einheiten verbleibend
-    aiUsage: "{consumed} von {included} verwendet"
+    aiUsage: '{consumed} von {included} verwendet'
     aiFormula: Nutzung = Cache-Miss-Eingabe + ceil(Cache-Hit-Eingabe × 0.1) + Ausgabe × 4.
     turnAllowance: Mehrspieler-Relay
     turnEgress: authentifizierter Relay-Datenverkehr
-    turnUsage: "{consumed} von {included} verwendet"
+    turnUsage: '{consumed} von {included} verwendet'
     remainingUnavailable: Verbleibende Nutzung ist nicht verfügbar.
     meteringUnavailable: Die Verbrauchserfassung ist noch nicht angebunden; dies ist das enthaltene Kontingent, kein Restguthaben.
     sourcesTitle: Aktive Kontingentquellen
     source:
-      plus: "Together: {ai} KI-Einheiten und {turn} Relay"
-      shared_hosting: "Server-Tarif: {ai} KI-Einheiten und kein TURN"
+      plus: 'Together: {ai} KI-Einheiten und {turn} Relay'
+      shared_hosting: 'Server-Tarif: {ai} KI-Einheiten und kein TURN'
     serverBonus: Jeder aktive Server-Tarif enthält separat jeden Monat 200.000 KI-Einheiten zur Unterstützung bei der Modpack- und Servereinrichtung.
     aiTitle: Bring das Modpack zum Laufen
     aiDescription: Diagnostiziere Abstürze, Abhängigkeitskonflikte und Konfigurationsprobleme, ohne dass ein einzelner Freund zum Vollzeit-Helpdesk der Gruppe werden muss.
@@ -658,7 +659,7 @@ commercial:
     description: Lade dein XMCL-Guthaben sicher über Waffo Pancake auf.
     amount: Betrag
     preparing: Checkout wird vorbereitet…
-    add: "{amount} aufladen"
+    add: '{amount} aufladen'
     providerNote: Du wirst zum gehosteten Checkout von Waffo weitergeleitet, um die Zahlung abzuschließen.
     legalNote: Mit dem Fortfahren stimmst du den XMCL Together-
     terms: Nutzungsbedingungen

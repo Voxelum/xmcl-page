@@ -2,7 +2,7 @@ documentation: Құжаттама
 repository: Бастапқы кодтар репозиторийі
 intro:
   first:
-    body: "{modernUx} интерфейсі бар {openSource} Minecraft лаунчері"
+    body: '{modernUx} интерфейсі бар {openSource} Minecraft лаунчері'
     openSource: Ашық бастапқы
     modernUx: Заманауи
   second:
@@ -22,9 +22,9 @@ launcher:
     intro: Minecraft ойынын тиімді басқарыңыз.
   description: Қарапайым, ашық бастапқы және функционалды Minecraft лаунчері
 downloadFor:
-  windows: "Windows нұсқасын жүктеу:"
-  mac: "Mac нұсқасын жүктеу:"
-  linux: "Linux нұсқасын жүктеу:"
+  windows: 'Windows нұсқасын жүктеу:'
+  mac: 'Mac нұсқасын жүктеу:'
+  linux: 'Linux нұсқасын жүктеу:'
 author: Авторға хабарласу
 download-zip: Zip
 download-zip-32: Zip (32 бит)
@@ -49,12 +49,12 @@ openInAppButton: Лаунчерде ашу
 nothingWork: Егер жоғарыдағы ешбір әдіс жұмыс істемесе, соңғы лаунчерді қайта жүктеп көріңіз
 gameInstall:
   title:
-    body: "{gameInstall} туралы енді уайымдамаңыз"
+    body: '{gameInstall} туралы енді уайымдамаңыз'
     gameInstall: Ойын орнату
   description: XMCL ваниль Minecraft, Minecraft Forge, Fabric, тіпті Optifine орнатуды қолдайды - бәрі бір жерде! Оларды лаунчер ішінде бір жерден орната аласыз. Сондай-ақ BMCL API сияқты үшінші жақ айна сілтемелерін қолдайды. Тіпті лаунчерде өзіңіздің айнаңызды теңшей аласыз.
 optimalDisk:
   title:
-    body: "{massiveResources} бар {optimal} диск кеңістігі"
+    body: '{massiveResources} бар {optimal} диск кеңістігі'
     optimal: Оңтайландырылған
     massiveResources: Көп ресурстар
   description: XMCL барлық модтар, ресурс жинақтары, шейдер жинақтары мен мод жинақтарын бір сақтау орнына сақтайды. Кез келген белгілі ресурсты пайдалануға тырысқанда, ол ресурсты көшірмей инстанцияға орнату үшін қатты сілтемені қолданады. Бұл енді /mods қалтасында қайталанған көшірмелерді көрмейтініңізді білдіреді.
@@ -65,13 +65,13 @@ cleanWorkspace:
   description: XMCL көп инстанцияларды қолдауды қамтиды. Бірнеше инстанцияларды оңай жасай аласыз. Осылайша, әртүрлі іске қосу параметрлерінің араласуы туралы уайымдамауыңыз керек.
 communityIntegration:
   title:
-    body: "{multipleCommunities} интеграцияланған"
+    body: '{multipleCommunities} интеграцияланған'
     multipleCommunities: Бірнеше қауымдастықтармен
   description: XMCL Curseforge және Modrinth-ты қолдауды кіріктіреді. Сондай-ақ, blessing skin сияқты теңшелетін пайдаланушы тіркелгілерін/скин жүйелерін қолдау мүмкіндігін ұсынады.
 download-tarxz: Tar.xz
 download-linuxZip: Zip
-joinPeer: "{inviter} партиясына қосылыңыз"
-joinPeerDescription: "{inviter} сізді {group} тобына қосылып, бірге Minecraft ойнауға шақырды! Сіз лаунчерге қайтарыласыз!"
+joinPeer: '{inviter} партиясына қосылыңыз'
+joinPeerDescription: '{inviter} сізді {group} тобына қосылып, бірге Minecraft ойнауға шақырды! Сіз лаунчерге қайтарыласыз!'
 fullChangelog: Жаңа не бар?
 privacy: Бағдарлама құпиялығы
 prebuild:
@@ -89,13 +89,13 @@ prebuild:
   tryNext: Жаңа нәрсені байқап көріңіз.
   unstableDescription: XMCL-дің алдағы өзгерістерін сынауға арналған тұрақсыз артефактілер.
   selectedBuild: ТАҢДАЛҒАН ҚҰРАСТЫРУ
-  buildsAvailable: "{count} құрастыру қолжетімді"
+  buildsAvailable: '{count} құрастыру қолжетімді'
   selectABuild: ҚҰРАСТЫРУДЫ ТАҢДАҢЫЗ
   noBuilds: ҚҰРАСТЫРУЛАР ТАБЫЛМАДЫ
   noBuildsDescription: Қазіргі уақытта қолжетімді prebuild артефактілері жоқ.
   checkBack: Келесі әзірлеу жұмыс процесі аяқталғаннан кейін қайта тексеріңіз.
   yesterday: Кеше
-  daysAgo: "{count} күн бұрын"
+  daysAgo: '{count} күн бұрын'
 downloadMacHint:
   content: Mac қолданушылары үшін орнату үшін {link} орындаңыз.
   link: орнату нұсқауларын
@@ -219,7 +219,7 @@ features:
       capabilities: Қалтаға экспорттау немесе жүктеу|Сервер файлдарын таңдау|MOTD және сервер параметрлерін теңшеу
     account-login:
       title: Бірнеше аутентификация қызметі
-      benefit: "Ойын стиліңізге сәйкес келетін тіркелгі қызметін таңдаңыз: Microsoft-тан оффлайн және үшінші тарап қызметтеріне дейін."
+      benefit: 'Ойын стиліңізге сәйкес келетін тіркелгі қызметін таңдаңыз: Microsoft-тан оффлайн және үшінші тарап қызметтеріне дейін.'
       capabilities: Microsoft және оффлайн тіркелгілер|Ely.by және LittleSkin қызметтері|Аутентификация қызметтерін қосу және басқару
     quick-action:
       title: Жылдам әрекеттер
@@ -254,6 +254,7 @@ siteFooter:
     github: GitHub
     issue: Мәселе туралы хабарлау
     discord: Discord
+    status: API күйі
   bottomNote: Сіздің ойнау және жасау тәсіліңіз үшін жасалған.
   readDocumentation: Құжаттаманы оқу
 sceneLanding:
@@ -278,7 +279,7 @@ sceneLanding:
       link: Барлық релиздер мен жинақтарды көру
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Linux пакеттері
         description: DEB, RPM, AppImage, tar.xz және Flathub.
       scale:
@@ -392,7 +393,7 @@ commercial:
     managerEyebrow: Хостинг серверлеріңіз
     managerTitle: Серверлерді басқару
     managerDescription: Әр сервер бөлек жұмыс істейді және бөлек төленеді. Күйін қарап, осы жерден қосыңыз немесе өшіріңіз.
-    serverNumber: "{plan} сервері {number}"
+    serverNumber: '{plan} сервері {number}'
     start: Серверді іске қосу
     stop: Серверді тоқтату
     cpuUsage: CPU қолданылуы
@@ -434,8 +435,8 @@ commercial:
     balance: Теңгерім
     addFunds: Қаражат салу
     paymentDue: Төлем мерзімі жетті. Бұл жазылымды автоматты түрде қалпына келтіру үшін қаражат салыңыз.
-    cancelsOn: "{date} күні тоқтатылады."
-    renewsOn: "{date} күні жаңартылады."
+    cancelsOn: '{date} күні тоқтатылады.'
+    renewsOn: '{date} күні жаңартылады.'
     cancel: Жоспардан бас тарту
     plansEyebrow: Ортақ хостинг
     choosePlan: Жоспарды таңдаңыз
@@ -444,12 +445,12 @@ commercial:
     perMonth: / ай
     runtimePrice: + жұмыс сағатына {amount}
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: Жад
     storage: Тұрақты сақтау орны
     includedAi: Қосылған AI көмегі
     includedAiValue: айына 200 000 бірлік
-    select: "{plan} таңдау"
+    select: '{plan} таңдау'
     selected: Таңдалған
     unavailable: Қолжетімсіз
     noPlans: Қазіргі уақытта жарияланған ортақ хостинг жоспарлары жоқ.
@@ -513,12 +514,12 @@ commercial:
       pauseTitle: Ешкім ойнамағанда тоқтатыңыз
       pauseDescription: Тоқтатқанда сағаттық төлем де тоқтайды; келесі жолы сол әлемнен жалғастырасыз.
     confirm:
-      serverNumber: "{plan} сервері №{number}"
+      serverNumber: '{plan} сервері №{number}'
       addAnother: Тағы сервер қосу
       close: Жабу
       purchaseEyebrow: Сервер жасау
       cancelEyebrow: Серверден бас тарту
-      purchaseTitle: "{plan} сатып алуды растау"
+      purchaseTitle: '{plan} сатып алуды растау'
       purchaseDescription: Айлық {monthly} төлем бірден алынады. Жұмыс құны {hourly}/сағат, тоқтатылған кезде сағаттық төлем алынбайды. Әр сервер бөлек төленіп, AI қызметі сыйлыққа беріледі.
       regionLabel: Сервер орналасуы
       regionDescription: Ойыншылардың көпшілігіне жақын орынды таңдаңыз. Ағымдағы конфигурация {count} Vultr орнын қолдайды.
@@ -526,7 +527,7 @@ commercial:
       testingRegions: Тексерілуде…
       testComplete: Ең төмен өлшенген кідірісі бар {location} ({latency} мс) таңдалды.
       testUnavailable: Жылдамдықты тексеру қолжетімсіз. Орынды қолмен таңдаңыз.
-      cancelTitle: "{plan} тоқтатуды растау"
+      cancelTitle: '{plan} тоқтатуды растау'
       cancelDescription: Тоқтату ағымдағы кезең аяқталатын {date} күні күшіне енеді. Оған дейін сервер қолжетімді.
       retentionTitle: Сақтаулар суық қоймада 30 күн сақталады
       retentionDescription: Сақтауды {date} дейін Серверлерді басқару → осы сервер → Деректер және экспорт бөлімінен жүктеңіз. Кейін ол біржола жойылады.
@@ -560,7 +561,7 @@ commercial:
     activeTitle: XMCL Together белсенді
     paymentDueTitle: Төлем қажет
     paymentDueDescription: Together қызметін қайта жалғастыру үшін биллинг теңгеріміңізге қаражат салыңыз.
-    renewsOn: "{date} күні жаңартылады."
+    renewsOn: '{date} күні жаңартылады.'
     cancelsOn: Қолжетімділік {date} күніне дейін белсенді болып қалады.
     status:
       inactive: Белсенді емес
@@ -571,17 +572,17 @@ commercial:
     allowancesTitle: Қызмет негізіндегі лимиттер
     aiAllowance: Қалған AI көмегі
     aiUnits: қалған салмақталған токен бірліктері
-    aiUsage: "{included} ішінен {consumed} пайдаланылды"
+    aiUsage: '{included} ішінен {consumed} пайдаланылды'
     aiFormula: Тұтыну = кэш-miss кіріс + ceil(кэш-hit кіріс × 0.1) + шығыс × 4.
     turnAllowance: Мультиплеер ретрансляциясы
     turnEgress: аутентификацияланған ретрансляция трафигі
-    turnUsage: "{included} ішінен {consumed} пайдаланылды"
+    turnUsage: '{included} ішінен {consumed} пайдаланылды'
     remainingUnavailable: Қалған тұтыну көлемі қолжетімсіз.
     meteringUnavailable: Тұтынуды есептеу әлі қосылмаған; бұл қалған теңгерім емес, берілген лимит.
     sourcesTitle: Белсенді лимит көздері
     source:
-      plus: "Together: {ai} AI бірлігі және {turn} ретрансляция"
-      shared_hosting: "Сервер жоспары: {ai} AI бірлігі және TURN жоқ"
+      plus: 'Together: {ai} AI бірлігі және {turn} ретрансляция'
+      shared_hosting: 'Сервер жоспары: {ai} AI бірлігі және TURN жоқ'
     serverBonus: Әрбір белсенді сервер жоспары модпак пен серверді баптауға көмектесу үшін ай сайын бөлек 200 000 AI бірлігін қамтиды.
     aiTitle: Модпактың жұмысын жолға қойыңыз
     aiDescription: Бір досыңызды топтың тұрақты техникалық қолдау қызметіне айналдырмай-ақ, қателерді, тәуелділік қақтығыстарын және конфигурация мәселелерін анықтаңыз.
@@ -648,9 +649,9 @@ commercial:
     description: Waffo Pancake арқылы XMCL теңгеріміңізді қауіпсіз толықтырыңыз.
     amount: Сомасы
     preparing: Төлем дайындалуда…
-    add: "{amount} салу"
+    add: '{amount} салу'
     providerNote: Төлемді аяқтау үшін Waffo төлем бетіне өтесіз.
-    legalNote: "Жалғастыру арқылы сіз келесі құжаттармен келісесіз: XMCL Together"
+    legalNote: 'Жалғастыру арқылы сіз келесі құжаттармен келісесіз: XMCL Together'
     terms: Шарттары
     and: және
     privacy: Құпиялық саясаты

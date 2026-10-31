@@ -28,9 +28,9 @@ launcher:
     intro: Ефективно керуйте своїм Minecraft.
   description: Простий, відкритий та функціональний лаунчер Minecraft
 downloadFor:
-  windows: "Завантажити для Windows:"
-  mac: "Завантажити для Mac:"
-  linux: "Завантажити для Linux:"
+  windows: 'Завантажити для Windows:'
+  mac: 'Завантажити для Mac:'
+  linux: 'Завантажити для Linux:'
 guide: Посібник
 documentation: Документація
 docHub:
@@ -40,7 +40,7 @@ docHub:
   searchPlaceholder: Пошук статей, параметрів, ключових слів...
   quickTopics: Популярні запити
   viewSection: До розділу
-  articlesCount: "{count} статей"
+  articlesCount: '{count} статей'
   backToHub: Назад до хабу документації
   needHelp: Потрібна допомога?
   needHelpDesc: Не знайшли відповіді на своє питання? Приєднуйтесь до нашої спільноти або допоможіть покращити документацію.
@@ -48,10 +48,10 @@ docHub:
   githubRepo: Репозиторій GitHub
   contributeDocs: Запропонувати правку
 docGroups:
-  gettingStarted: "01 / Початок роботи"
-  gameAndMods: "02 / Керування грою та моди"
-  multiplayerAndTroubleshooting: "03 / Мультиплеєр та діагностика"
-  coreAndDev: "04 / Архітектура та ядро"
+  gettingStarted: 01 / Початок роботи
+  gameAndMods: 02 / Керування грою та моди
+  multiplayerAndTroubleshooting: 03 / Мультиплеєр та діагностика
+  coreAndDev: 04 / Архітектура та ядро
 protocol: Протокол
 changelogs: Список змін
 blogs: Блог
@@ -87,7 +87,7 @@ gameInstall:
   description: XMCL підтримує встановлення ванільного Minecraft, Forge, Fabric та навіть OptiFine — все в одному місці! Ви можете встановити їх прямо в лаунчері. Також підтримується завантаження через BMCL API, а за бажанням можна налаштувати власне дзеркало.
 optimalDisk:
   title:
-    body: "{optimal} дисковий простір з {massiveResources}"
+    body: '{optimal} дисковий простір з {massiveResources}'
     optimal: Оптимальний
     massiveResources: масивними ресурсами
   description: XMCL зберігає всі моди, пакети ресурсів, шейдери та модпаки в одному місці. Замість копіювання файлів для кожного ігрового профілю використовуються жорсткі посилання. Це означає, що ви більше ніколи не побачите дублікатів файлів у папці /mods, що значно економить місце на диску.
@@ -103,8 +103,8 @@ communityIntegration:
   description: XMCL підтримує CurseForge та Modrinth. Також є можливість використовувати сторонні системи авторизації та скінів, такі як Blessing Skin.
 download-tarxz: Tar.xz
 download-linuxZip: Zip(Архів)
-joinPeer: "Приєднуйтесь до: {inviter} Вечірки"
-joinPeerDescription: "{inviter} запросив вас приєднатися до групи {group}, щоб разом грати в Minecraft! Вас буде перенаправлено назад у лаунчер!"
+joinPeer: 'Приєднуйтесь до: {inviter} Вечірки'
+joinPeerDescription: '{inviter} запросив вас приєднатися до групи {group}, щоб разом грати в Minecraft! Вас буде перенаправлено назад у лаунчер!'
 fullChangelog: Що нового?
 privacy: Конфіденційність програмного забезпечення
 prebuild:
@@ -125,13 +125,13 @@ prebuild:
   tryNext: Спробуйте найновіше.
   unstableDescription: Нестабільні артефакти для тестування майбутніх змін у XMCL.
   selectedBuild: ВИБРАНА ЗБІРКА
-  buildsAvailable: "{count} збірок доступно"
+  buildsAvailable: '{count} збірок доступно'
   selectABuild: ОБЕРІТЬ ЗБІРКУ
   noBuilds: ЗБІРОК НЕ ЗНАЙДЕНО
   noBuildsDescription: Наразі немає доступних артефактів prebuild.
   checkBack: Будь ласка, завітайте знову після завершення наступного робочого процесу розробки.
   yesterday: Вчора
-  daysAgo: "{count} днів тому"
+  daysAgo: '{count} днів тому'
 downloadMacHint:
   link: Інструкція з встановлення
   content: Для користувачів MAC, будь ласка, дотримуйтесь {link}, щоб встановити.
@@ -219,7 +219,7 @@ features:
       capabilities: Джерела Modrinth і CurseForge|Фільтри за версією Minecraft і завантажувачем|Фільтри середовища та категорій
     modpack-detail:
       title: Деталі модпаку
-      benefit: "Дізнайтеся все про пак перед встановленням: від скриншотів та авторів до технічних вимог."
+      benefit: 'Дізнайтеся все про пак перед встановленням: від скриншотів та авторів до технічних вимог.'
       capabilities: Скриншоти, теги та статистика проєкту|Дії встановлення та запуску|Технічна інформація та зовнішні ресурси
     mod-collections:
       title: Колекції модів
@@ -255,7 +255,7 @@ features:
       capabilities: Експорт у папку або завантаження|Вибір файлів сервера|Налаштування MOTD і параметрів сервера
     account-login:
       title: Кілька сервісів автентифікації
-      benefit: "Обирайте сервіс облікових записів під ваш стиль гри: від Microsoft до автономних і сторонніх сервісів."
+      benefit: 'Обирайте сервіс облікових записів під ваш стиль гри: від Microsoft до автономних і сторонніх сервісів.'
       capabilities: Облікові записи Microsoft та автономні|Сервіси Ely.by і LittleSkin|Додавання сервісів автентифікації та керування ними
     quick-action:
       title: Швидкі дії
@@ -290,6 +290,7 @@ siteFooter:
     github: GitHub
     issue: Повідомити про проблему
     discord: Discord
+    status: Статус API
   bottomNote: Створено для вашого способу грати й творити.
   readDocumentation: Читати документацію
 sceneLanding:
@@ -314,7 +315,7 @@ sceneLanding:
       link: Усі релізи та збірки
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Пакети для Linux
         description: DEB, RPM, AppImage, tar.xz та Flathub.
       scale:
@@ -534,7 +535,7 @@ commercial:
     perMonth: / місяць
     runtimePrice: + {amount} за годину роботи
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: Пам'ять
     storage: Постійне сховище
     includedAi: ШІ-допомога у подарунок
@@ -589,7 +590,7 @@ commercial:
       recommended: Для більшості модпаків
       perMonth: / місяць
       flatMonthly: 20 ГБ ретрансляції включено · далі 0,08 $ / ГБ
-      runtime: "{price} за годину роботи · можна призупинити"
+      runtime: '{price} за годину роботи · можна призупинити'
       hosted: Хостинг XMCL
       runsOn: Працює на
       bestFor: Підходить для
@@ -682,17 +683,17 @@ commercial:
     allowancesTitle: Доступні ліміти
     aiAllowance: Залишок ШІ-допомоги
     aiUnits: зважених одиниць токенів залишилося
-    aiUsage: "{consumed} використано з {included}"
+    aiUsage: '{consumed} використано з {included}'
     aiFormula: Використання = запити повз кеш + ceil(запити в кеш × 0.1) + відповідь × 4.
     turnAllowance: Ретрансляція мультиплеєра
     turnEgress: авторизований трафік релею
-    turnUsage: "{consumed} використано з {included}"
+    turnUsage: '{consumed} використано з {included}'
     remainingUnavailable: Залишок використання недоступний.
     meteringUnavailable: Облік використання ще не підключено; це включений ліміт, а не залишок балансу.
     sourcesTitle: Активні джерела лімітів
     source:
-      plus: "Together: {ai} ШІ-одиниць та {turn} релею"
-      shared_hosting: "План сервера: {ai} ШІ-одиниць без TURN"
+      plus: 'Together: {ai} ШІ-одиниць та {turn} релею'
+      shared_hosting: 'План сервера: {ai} ШІ-одиниць без TURN'
     serverBonus: Кожен активний план сервера окремо включає 200 000 ШІ-одиниць щомісяця для налаштування модпаків і сервера.
     aiTitle: Запустіть модпак без проблем
     aiDescription: Діагностуйте краші, конфлікти залежностей та помилки конфігурації без перетворення одного друга на цілодобову техпідтримку.

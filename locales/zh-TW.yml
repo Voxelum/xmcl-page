@@ -22,7 +22,7 @@ notFound:
   quote: 這裡什麼都沒有
   linkLabel: 返回首頁
   linkText: 返回首頁
-  code: "404"
+  code: '404'
 outline: 本頁包含
 darkModeSwitchLabel: 顏色主題
 darkModeSwitchTitle: 切換至暗色
@@ -46,8 +46,7 @@ intro:
     body: 提供一種 {diskEfficient} 的方式來管理你的所有 {mods}!
     diskEfficient: 磁碟空間最優選
     mods: 模組包
-  description: XMCL 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft Forge、
-    Fabric、Quilt、CurseForge 以及 Modrinth。
+  description: XMCL 是一個方便你管理多種模組包、模組、資源包、光影包的現代化啟動器。它同樣支援 Minecraft Forge、 Fabric、Quilt、CurseForge 以及 Modrinth。
 launcher:
   manage:
     intro: 有效管理你的 Minecraft.
@@ -82,15 +81,13 @@ gameInstall:
   title:
     body: 輕鬆處理所有 {gameInstall}
     gameInstall: 遊戲安裝
-  description: XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！
-    你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方 BMCL API。
+  description: XMCL 支援安裝原版 Minecraft、Minecraft Forge、Fabric, 甚至 Optifine！ 你可以在單一介面處理所有基本的遊戲安裝。它同樣支援第三方 BMCL API。
 optimalDisk:
   title:
     body: 磁碟空間 {optimal} 選，輕鬆處理 {massiveResources}
     optimal: 最優選
     massiveResources: 大量資源
-  description: XMCL 會在統一位置儲存所有模組、資源包、光影包、模組包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。
-    所以副本檔案不會被存放在 /mods 資料夾中。
+  description: XMCL 會在統一位置儲存所有模組、資源包、光影包、模組包。當你嘗試安裝任何已有資源，啟動器會使用連結來安裝資源，以節省磁碟空間。 所以副本檔案不會被存放在 /mods 資料夾中。
 cleanWorkspace:
   title:
     body: 多版本實例，讓你的各版本 Minecraft {clean}
@@ -100,12 +97,11 @@ communityIntegration:
   title:
     body: 支援 {multipleCommunities}
     multipleCommunities: 各種第三方模組網站
-  description: XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如
-    Blessin Skin。
+  description: XMCL 目前支援 CurseForge 和 Modrinth，可以在啟動器內訪問並下載資源。啟動器同樣支援自定義的帳號皮膚系統，如 Blessin Skin。
 download-tarxz: 壓縮檔 (tar.xz)
 download-linuxZip: 壓縮檔 (zip)
 joinPeer: 和 {inviter} 一起玩
-joinPeerDescription: "{inviter} 邀請你加入 Minecraft 聯機群組 {group}，瀏覽器將自動開啟啟動器並加入群組。"
+joinPeerDescription: '{inviter} 邀請你加入 Minecraft 聯機群組 {group}，瀏覽器將自動開啟啟動器並加入群組。'
 privacy: 隱私協議
 prebuild:
   history: 構建歷史
@@ -131,7 +127,7 @@ prebuild:
   noBuildsDescription: 目前沒有可用的預構建產物。
   checkBack: 請在下一個開發工作流程完成後再回來查看。
   yesterday: 昨天
-  daysAgo: "{count} 天前"
+  daysAgo: '{count} 天前'
 downloadMacHint:
   link: 安裝指令
   content: 對於Mac用戶，請按照{link}進行安裝。
@@ -188,8 +184,7 @@ features:
     instance-create-modloaders:
       title: 建立 Java 與 Bedrock 實例
       benefit: 選擇適合目標世界的載入器與版本，快速建立新的遊戲設定。
-      capabilities: 支援 Java Edition 與實驗性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine
-        與 LabyMod|Minecraft 與本機版本來源
+      capabilities: 支援 Java Edition 與實驗性 Bedrock|Forge、Fabric、Quilt、NeoForge、OptiFine 與 LabyMod|Minecraft 與本機版本來源
     instance-folder-groups:
       title: 實例資料夾分組
       benefit: 將大量實例按資料夾整理，讓不同世界與設定更容易瀏覽查找。
@@ -291,6 +286,7 @@ siteFooter:
     github: GitHub
     issue: 回報問題
     discord: Discord
+    status: API 狀態
   bottomNote: 為你的遊玩與創作方式而生。
   readDocumentation: 閱讀文件
 sceneLanding:
@@ -310,7 +306,7 @@ sceneLanding:
     workflowDescription: XMCL 將 Linux 玩家在意的體驗放在一起：可靠的安裝方式、清晰的介面，以及彼此獨立、方便切換的遊戲環境。
     signals:
       packages:
-        number: "05"
+        number: '05'
         label: Linux 安裝包
         description: DEB、RPM、AppImage、tar.xz 與 Flathub。
       scale:
@@ -330,8 +326,7 @@ sceneLanding:
       install:
         label: 01 / 選擇安裝方式
         title: 使用發行版熟悉的格式。
-        description: 為桌面下載原生安裝包，或透過 Flathub 以更便攜的方式在 Steam Deck 上使用 XMCL。XMCL 也在硬體有需求時提供
-          ARM64 建置版本。
+        description: 為桌面下載原生安裝包，或透過 Flathub 以更便攜的方式在 Steam Deck 上使用 XMCL。XMCL 也在硬體有需求時提供 ARM64 建置版本。
         point1: 主流 Linux 桌面的 DEB 與 RPM
         point2: 便攜安裝的 AppImage 與 tar.xz
         point3: 面向 Steam Deck 的 Flathub 支援
@@ -347,8 +342,7 @@ sceneLanding:
       anywhere:
         label: 03 / 隨處暢玩
         title: 從桌面到 Steam Deck 都好用。
-        description: 在 Linux 桌面與 Steam Deck 之間切換時，依然保留清晰的實例庫與可靠的遊戲設定。XMCL
-          讓你的收藏自由擴展，無需面對繁瑣的試算表。
+        description: 在 Linux 桌面與 Steam Deck 之間切換時，依然保留清晰的實例庫與可靠的遊戲設定。XMCL 讓你的收藏自由擴展，無需面對繁瑣的試算表。
         point1: 為 Steam Deck 打造的 Flathub 途徑
         point2: 適合 4K 螢幕的清晰介面
         point3: 面向 Linux 玩家打造的開源專案
@@ -421,8 +415,7 @@ sceneLanding:
       diagnose:
         label: 05 / 分析問題
         title: 讓 AI 幫你把當機報告變成修復方案。
-        description: 測試啟動失敗時，在同一個地方查看記錄、當機報告並使用 AI Agent 分析實例環境。Agent
-          能直接檢查實例環境內容，並說明具體可行的下一步修復操作。
+        description: 測試啟動失敗時，在同一個地方查看記錄、當機報告並使用 AI Agent 分析實例環境。Agent 能直接檢查實例環境內容，並說明具體可行的下一步修復操作。
         point1: 在上下文脈絡中查看啟動記錄與當機報告
         point2: AI 輔助檢查實例檔案
         point3: 在發布前排查並解決模組衝突
@@ -538,7 +531,7 @@ commercial:
     perMonth: / 月
     runtimePrice: + 每執行小時 {amount}
     cpu: CPU
-    cpuValue: "{count} vCPU"
+    cpuValue: '{count} vCPU'
     memory: 記憶體
     storage: 持久儲存
     includedAi: 贈送 AI 協助
@@ -553,7 +546,7 @@ commercial:
     managerEyebrow: 你的託管伺服器
     managerTitle: 伺服器管理
     managerDescription: 每台伺服器獨立執行和計費；在這裡查看狀態並控制開關。
-    serverNumber: "{plan} 伺服器 {number}"
+    serverNumber: '{plan} 伺服器 {number}'
     start: 啟動伺服器
     stop: 停止伺服器
     cpuUsage: CPU 使用率
@@ -632,7 +625,7 @@ commercial:
       pauseTitle: 不玩就暫停
       pauseDescription: 暫停後停止運行時計費，下次從原來的世界繼續。
     confirm:
-      serverNumber: "{plan} 伺服器 #{number}"
+      serverNumber: '{plan} 伺服器 #{number}'
       addAnother: 再購買一台
       close: 關閉
       purchaseEyebrow: 建立新伺服器
@@ -797,7 +790,7 @@ docHub:
   searchPlaceholder: 搜尋文件、指南、設定、關鍵字...
   quickTopics: 快捷主題
   viewSection: 瀏覽章節
-  articlesCount: "{count} 篇文章"
+  articlesCount: '{count} 篇文章'
   backToHub: 返回文件中心
   needHelp: 需要協助？
   needHelpDesc: 沒有找到所需內容？歡迎加入官方社群或為文件貢獻內容。

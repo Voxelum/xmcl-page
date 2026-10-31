@@ -33,6 +33,7 @@ import BlogTierCards from './components/BlogTierCards.vue'
 import GuideFloatingSearch from './components/GuideFloatingSearch.vue'
 import GuideDocFooter from './components/GuideDocFooter.vue'
 import DocumentationHub from './components/DocumentationHub.vue'
+import ApiStatus from './components/ApiStatus.vue'
 import AsideLastUpdated from './components/AsideLastUpdated.vue'
 import NavLanguageSelector from './components/NavLanguageSelector.vue'
 
@@ -141,5 +142,6 @@ export default {
     app.component('AppLabymodPicture', AppLabymodPicture)
     app.component('LogViewer', LogViewer)
     app.component('DocumentationHub', DocumentationHub)
+    app.component('ApiStatus', ApiStatus)
   },
 }

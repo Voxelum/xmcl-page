@@ -12,6 +12,8 @@
       <div class="site-doc-links">
         <span class="site-doc-copy">© {{ year }} XMCL</span>
         <span class="doc-sep">/</span>
+        <a :href="statusUrl">{{ t('siteFooter.resources.status') || 'API Status' }}</a>
+        <span class="doc-sep">/</span>
         <a :href="privacyUrl">{{ legalLabels.projectPrivacy }}</a>
         <span class="doc-sep">/</span>
         <a :href="togetherPrivacyUrl">{{ legalLabels.togetherPrivacy }}</a>
@@ -32,7 +34,7 @@
       <div class="site-footer-brand">
         <a class="site-footer-logo" :href="homeUrl"><img src="/logo.svg" alt="" /> <span>XMCL</span></a>
         <p>{{ t('siteFooter.description') }}</p>
-        <span class="site-footer-status"><span class="site-footer-live-dot"></span> {{ t('siteFooter.status') }}</span>
+        <a :href="statusUrl" class="site-footer-status" :title="t('siteFooter.resources.status') || 'API Status'"><span class="site-footer-live-dot"></span> {{ t('siteFooter.status') }}</a>
       </div>
       <nav class="site-footer-links" :aria-label="t('siteFooter.navigation')">
         <section class="site-footer-group">
@@ -51,6 +53,7 @@
           <h2>{{ t('siteFooter.resources.title') }}</h2>
           <a :href="logViewerUrl">{{ t('siteFooter.resources.logViewer') }}</a>
           <a :href="togetherUrl">XMCL Together</a>
+          <a :href="statusUrl">{{ t('siteFooter.resources.status') || 'API Status' }}</a>
           <a :href="githubUrl" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.github') }}</a>
           <a :href="githubIssuesUrl" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.issue') }}</a>
           <a href="https://discord.gg/W5XVwYY7GQ" target="_blank" rel="noreferrer">{{ t('siteFooter.resources.discord') }}</a>
@@ -99,6 +102,7 @@ const togetherUrl = computed(() => `${site.value.base}${togetherLocale.value}/to
 const githubUrl = 'https://github.com/voxelum/x-minecraft-launcher'
 const githubIssuesUrl = `${githubUrl}/issues`
 const logViewerUrl = computed(() => pageUrl('log-viewer'))
+const statusUrl = computed(() => pageUrl('status'))
 const legalLocale = computed(() => ['zh', 'zh-TW', 'ru', 'uk'].includes(lang.value) ? lang.value : 'en')
 const legalLabels = computed(() => {
   switch (lang.value) {
