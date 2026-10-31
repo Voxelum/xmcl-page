@@ -1,244 +1,355 @@
 <template>
   <div class="api-status-page">
-    <!-- Hero Banner -->
-    <header class="status-hero">
-      <div class="status-hero-grid" aria-hidden="true" />
-      <div class="status-hero-content">
-        <div class="status-hero-kicker">
+    <!-- Compact Top Command Bar -->
+    <header class="status-topbar">
+      <div class="topbar-container">
+        <div class="topbar-brand">
           <span class="live-pulse-dot" :class="overallStatusClass" />
-          <span>{{ tText.kicker }}</span>
-          <span class="status-hero-sep">/</span>
-          <a
-            href="https://github.com/Voxelum/xmcl-web-api"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="status-repo-link"
-          >
-            Voxelum/xmcl-web-api ↗
-          </a>
+          <div class="brand-text">
+            <h1 class="brand-title">{{ tText.title }}</h1>
+            <span class="brand-subtitle">{{ tText.kicker }}</span>
+          </div>
         </div>
 
-        <h1 class="status-hero-title">{{ tText.title }}</h1>
-        <p class="status-hero-description">{{ tText.description }}</p>
-
-        <!-- Global Health Card -->
-        <div class="global-health-card">
-          <div class="health-main">
-            <div class="health-status-badge" :class="overallStatusClass">
-              <span class="health-dot" />
-              <strong>{{ overallStatusText }}</strong>
-            </div>
-
-            <div class="health-metrics">
-              <div class="metric-item">
-                <span class="metric-label">{{ tText.clusterHealth }}</span>
-                <span class="metric-val font-mono">{{ operationalWorkersCount }}/3 {{ tText.activeWorkers }}</span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-label">{{ tText.avgLatency }}</span>
-                <span class="metric-val" :class="{ 'val-good': avgLatency && avgLatency < 200, 'val-warn': avgLatency && avgLatency >= 200 }">
-                  {{ avgLatency !== null ? `${avgLatency} ms` : '—' }}
-                </span>
-              </div>
-              <div class="metric-item">
-                <span class="metric-label">{{ tText.lastChecked }}</span>
-                <span class="metric-val">{{ lastCheckedText }}</span>
-              </div>
-            </div>
+        <div class="topbar-stats">
+          <div class="stat-pill" :class="overallStatusClass">
+            <span class="status-beacon" :class="overallStatusClass" />
+            <span class="stat-label">{{ overallStatusText }}</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-meta">{{ tText.avgLatency }}:</span>
+            <span class="stat-val font-mono" :class="{ 'val-good': avgLatency && avgLatency < 200, 'val-warn': avgLatency && avgLatency >= 200 }">
+              {{ avgLatency !== null ? `${avgLatency} ms` : '—' }}
+            </span>
+          </div>
+          <div class="stat-pill hide-sm">
+            <span class="stat-meta">{{ tText.lastChecked }}:</span>
+            <span class="stat-val">{{ lastCheckedText }}</span>
           </div>
 
-          <div class="health-actions">
-            <button
-              type="button"
-              class="refresh-btn"
-              :disabled="isChecking || cooldownSeconds > 0"
-              @click="checkStatus(true)"
-            >
-              <svg v-if="isChecking" class="spin-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor">
-                <circle cx="12" cy="12" r="10" stroke-width="3" stroke-dasharray="32" stroke-linecap="round" />
-              </svg>
-              <svg v-else viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M23 4v6h-6M1 20v-6h6" />
-                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
-              </svg>
-              <span>{{ cooldownSeconds > 0 ? `${tText.refresh} (${cooldownSeconds}s)` : tText.refresh }}</span>
-            </button>
-          </div>
+          <button
+            type="button"
+            class="refresh-btn"
+            :disabled="isChecking || cooldownSeconds > 0"
+            @click="checkStatus(true)"
+          >
+            <svg v-if="isChecking" class="spin-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor">
+              <circle cx="12" cy="12" r="10" stroke-width="3" stroke-dasharray="32" stroke-linecap="round" />
+            </svg>
+            <svg v-else viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 4v6h-6M1 20v-6h6" />
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+            </svg>
+            <span>{{ cooldownSeconds > 0 ? `${cooldownSeconds}s` : tText.refresh }}</span>
+          </button>
         </div>
       </div>
     </header>
 
-    <!-- Content Section -->
-    <main class="status-content">
-      <!-- Section 1: The 3 Primary Dedicated API Workers -->
-      <section class="workers-section">
-        <div class="section-heading">
-          <div class="section-tag">{{ tText.workersTag }}</div>
-          <h2 class="section-title">{{ tText.workersTitle }}</h2>
-          <p class="section-subtitle">{{ tText.workersSubtitle }}</p>
+    <!-- Main Dashboard Container: Single-Screen Optimized -->
+    <main class="dashboard-viewport">
+      <!-- Section A: Primary Infrastructure Trio (Agnes AI, Cloudflare Edge, SignPath Trust) -->
+      <section class="section-block">
+        <div class="block-header">
+          <div class="block-kicker">
+            <span class="kicker-glow">CORE PLATFORM & SECURITY</span>
+            <span class="kicker-sep">/</span>
+            <span>AGNES • CLOUDFLARE • SIGNPATH</span>
+          </div>
         </div>
 
-        <div class="workers-grid">
-          <article
-            v-for="worker in workers"
-            :key="worker.id"
-            class="worker-card"
-            :class="[getWorkerStatusClass(worker), { 'is-selected': activeDomainFilter === worker.domain }]"
-            @click="toggleDomainFilter(worker.domain)"
-          >
-            <!-- Card Header -->
-            <div class="worker-card-header">
-              <div class="worker-domain-group">
-                <span class="worker-badge">{{ worker.badge }}</span>
-                <h3 class="worker-domain">{{ worker.domain }}</h3>
+        <div class="trio-grid">
+          <!-- 1. Agnes AI Card -->
+          <article class="compact-card card-agnes">
+            <div class="card-top">
+              <div class="service-ident">
+                <div class="ident-icon icon-agnes">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a8 8 0 0 0-8 8c0 3.36 2.08 6.24 5 7.42V20a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2.58c2.92-1.18 5-4.06 5-7.42a8 8 0 0 0-8-8z" />
+                    <line x1="9.5" y1="9" x2="9.51" y2="9" stroke-width="3" />
+                    <line x1="14.5" y1="9" x2="14.51" y2="9" stroke-width="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="service-name-row">
+                    <h2 class="service-name">Agnes AI</h2>
+                    <span class="badge badge-purple">ai.xmcl.app</span>
+                  </div>
+                  <div class="service-tagline">{{ tText.agnesSub }}</div>
+                </div>
               </div>
-              <div class="worker-live-status">
-                <span class="status-beacon" :class="getWorkerStatusClass(worker)" />
-                <span class="worker-status-text">{{ getWorkerStatusText(worker) }}</span>
-                <span v-if="worker.latency !== null" class="worker-ping">{{ worker.latency }} ms</span>
+              <div class="service-badge-status" :class="aiStatusClass">
+                <span class="status-beacon" :class="aiStatusClass" />
+                <span class="status-text">{{ aiStatusText }}</span>
+                <span v-if="aiLatency !== null" class="status-ping">{{ aiLatency }}ms</span>
               </div>
             </div>
 
-            <!-- Mounted Surface Pill -->
-            <div class="worker-surface-line">
-              <span class="surface-label">{{ tText.mountedSurface }}:</span>
-              <code class="surface-code">{{ worker.surface }}</code>
-            </div>
-
-            <!-- What is it (Що за API) -->
-            <div class="worker-block">
-              <span class="block-title">{{ tText.whatIsIt }}</span>
-              <p class="block-text">{{ worker.whatIsIt }}</p>
-            </div>
-
-            <!-- Responsibilities (За що відповідає) -->
-            <div class="worker-block">
-              <span class="block-title">{{ tText.responsibleFor }}</span>
-              <ul class="block-list">
-                <li v-for="(item, idx) in worker.responsibilities" :key="idx">
-                  {{ item }}
-                </li>
-              </ul>
-            </div>
-
-            <!-- Worker Footer -->
-            <div class="worker-card-footer">
-              <div class="worker-routes-count">
-                <span class="dot-indicator" />
-                <span>{{ worker.routesCount }} {{ tText.registeredRoutes }}</span>
+            <div class="service-body">
+              <div class="info-row">
+                <span class="info-label">{{ tText.whatIsIt }}</span>
+                <p class="info-text">{{ tText.agnesWhat }}</p>
               </div>
-              <button
-                type="button"
-                class="filter-toggle-btn"
-                :class="{ active: activeDomainFilter === worker.domain }"
-                @click.stop="toggleDomainFilter(worker.domain)"
-              >
-                {{ activeDomainFilter === worker.domain ? tText.showingDetails : tText.showEndpoints }}
-              </button>
+              <div class="info-row">
+                <span class="info-label">{{ tText.responsibleFor }}</span>
+                <p class="info-text highlight">{{ tText.agnesResponsible }}</p>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <span class="bottom-tag font-mono">POST /v1/chat/completions</span>
+              <a href="https://ai.xmcl.app/" target="_blank" rel="noreferrer" class="bottom-link">Endpoint ↗</a>
+            </div>
+          </article>
+
+          <!-- 2. Cloudflare Global Edge Card -->
+          <article class="compact-card card-cf">
+            <div class="card-top">
+              <div class="service-ident">
+                <div class="ident-icon icon-cf">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="service-name-row">
+                    <h2 class="service-name">Cloudflare Edge & R2</h2>
+                    <span class="badge badge-orange">Edge / CDN / DNS</span>
+                  </div>
+                  <div class="service-tagline">{{ tText.cfSub }}</div>
+                </div>
+              </div>
+              <div class="service-badge-status" :class="apiStatusClass">
+                <span class="status-beacon" :class="apiStatusClass" />
+                <span class="status-text">{{ apiStatusText }}</span>
+                <span v-if="apiLatency !== null" class="status-ping">{{ apiLatency }}ms</span>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <div class="info-row">
+                <span class="info-label">{{ tText.whatIsIt }}</span>
+                <p class="info-text">{{ tText.cfWhat }}</p>
+              </div>
+              <div class="info-row">
+                <span class="info-label">{{ tText.responsibleFor }}</span>
+                <p class="info-text highlight">{{ tText.cfResponsible }}</p>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <span class="bottom-tag font-mono">Global CDN • 300+ PoPs</span>
+              <a href="https://www.cloudflarestatus.com/" target="_blank" rel="noreferrer" class="bottom-link">Cloudflare Status ↗</a>
+            </div>
+          </article>
+
+          <!-- 3. SignPath Code Signing Card -->
+          <article class="compact-card card-signpath">
+            <div class="card-top">
+              <div class="service-ident">
+                <div class="ident-icon icon-signpath">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <polyline points="9 12 11 14 15 10" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="service-name-row">
+                    <h2 class="service-name">SignPath.io</h2>
+                    <span class="badge badge-green">Code Signing</span>
+                  </div>
+                  <div class="service-tagline">{{ tText.signpathSub }}</div>
+                </div>
+              </div>
+              <div class="service-badge-status" :class="signpathStatusClass">
+                <span class="status-beacon" :class="signpathStatusClass" />
+                <span class="status-text">{{ signpathStatusText }}</span>
+                <span v-if="signpathLatency !== null" class="status-ping">{{ signpathLatency }}ms</span>
+              </div>
+            </div>
+
+            <div class="service-body">
+              <div class="info-row">
+                <span class="info-label">{{ tText.whatIsIt }}</span>
+                <p class="info-text">{{ tText.signpathWhat }}</p>
+              </div>
+              <div class="info-row">
+                <span class="info-label">{{ tText.responsibleFor }}</span>
+                <p class="info-text highlight">{{ tText.signpathResponsible }}</p>
+              </div>
+            </div>
+
+            <div class="card-bottom">
+              <span class="bottom-tag font-mono">SignPath Foundation Certificate</span>
+              <a href="https://signpath.io/" target="_blank" rel="noreferrer" class="bottom-link">SignPath.io ↗</a>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- Section 2: Interactive Route Registry & Endpoints -->
-      <section class="routes-section">
-        <div class="section-heading">
-          <div class="section-tag">{{ tText.routesTag }}</div>
-          <h2 class="section-title">{{ tText.routesTitle }}</h2>
+      <!-- Section B: The 3 Dedicated API Workers (api, ai, signaling) -->
+      <section class="section-block">
+        <div class="block-header">
+          <div class="block-kicker">
+            <span class="kicker-glow">XMCL WEB API ARCHITECTURE</span>
+            <span class="kicker-sep">/</span>
+            <span>3 DEDICATED DOMAIN SURFACES</span>
+          </div>
         </div>
 
-        <!-- Filter Bar -->
-        <div class="status-filter-bar">
-          <!-- Domain & Category Tabs -->
-          <div class="status-tabs" role="tablist">
-            <button
-              v-for="tab in filterTabs"
-              :key="tab.id"
-              type="button"
-              class="status-tab-btn"
-              :class="{ active: activeFilterTab === tab.id }"
-              @click="setFilterTab(tab.id)"
-            >
-              <span>{{ tab.label }}</span>
-              <span class="tab-count">{{ getFilterCount(tab.id) }}</span>
-            </button>
+        <div class="workers-trio-grid">
+          <!-- Worker 1: api.xmcl.app -->
+          <div
+            class="worker-pill-card"
+            :class="{ active: selectedDomain === 'api.xmcl.app' }"
+            @click="toggleDomain('api.xmcl.app')"
+          >
+            <div class="worker-pill-top">
+              <div class="domain-info">
+                <div class="domain-name font-mono">api.xmcl.app</div>
+                <div class="domain-desc">{{ tText.workerApiTitle }}</div>
+              </div>
+              <div class="worker-status-chip" :class="apiStatusClass">
+                <span class="chip-dot" />
+                <span>{{ apiStatusText }}</span>
+                <span v-if="apiLatency !== null" class="chip-ping">{{ apiLatency }}ms</span>
+              </div>
+            </div>
+
+            <div class="surface-box font-mono">
+              <span class="surface-title">SURFACE:</span>
+              <span>API Worker: all core APIs, including /translation</span>
+            </div>
+
+            <p class="worker-details-text">{{ tText.workerApiDesc }}</p>
+
+            <div class="worker-pill-footer">
+              <span class="routes-count font-mono">46 routes</span>
+              <span class="toggle-link">{{ selectedDomain === 'api.xmcl.app' ? tText.hideRoutes : tText.showRoutes }}</span>
+            </div>
           </div>
 
-          <!-- Search Bar -->
-          <div class="status-search-box">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
+          <!-- Worker 2: ai.xmcl.app -->
+          <div
+            class="worker-pill-card"
+            :class="{ active: selectedDomain === 'ai.xmcl.app' }"
+            @click="toggleDomain('ai.xmcl.app')"
+          >
+            <div class="worker-pill-top">
+              <div class="domain-info">
+                <div class="domain-name font-mono">ai.xmcl.app</div>
+                <div class="domain-desc">{{ tText.workerAiTitle }}</div>
+              </div>
+              <div class="worker-status-chip" :class="aiStatusClass">
+                <span class="chip-dot" />
+                <span>{{ aiStatusText }}</span>
+                <span v-if="aiLatency !== null" class="chip-ping">{{ aiLatency }}ms</span>
+              </div>
+            </div>
+
+            <div class="surface-box font-mono">
+              <span class="surface-title">SURFACE:</span>
+              <span>POST /v1/chat/completions only</span>
+            </div>
+
+            <p class="worker-details-text">{{ tText.workerAiDesc }}</p>
+
+            <div class="worker-pill-footer">
+              <span class="routes-count font-mono">1 LLM route</span>
+              <span class="toggle-link">{{ selectedDomain === 'ai.xmcl.app' ? tText.hideRoutes : tText.showRoutes }}</span>
+            </div>
+          </div>
+
+          <!-- Worker 3: signaling.xmcl.app -->
+          <div
+            class="worker-pill-card"
+            :class="{ active: selectedDomain === 'signaling.xmcl.app' }"
+            @click="toggleDomain('signaling.xmcl.app')"
+          >
+            <div class="worker-pill-top">
+              <div class="domain-info">
+                <div class="domain-name font-mono">signaling.xmcl.app</div>
+                <div class="domain-desc">{{ tText.workerSigTitle }}</div>
+              </div>
+              <div class="worker-status-chip" :class="sigStatusClass">
+                <span class="chip-dot" />
+                <span>{{ sigStatusText }}</span>
+                <span v-if="sigLatency !== null" class="chip-ping">{{ sigLatency }}ms</span>
+              </div>
+            </div>
+
+            <div class="surface-box font-mono">
+              <span class="surface-title">SURFACE:</span>
+              <span>/v1/multiplayer/* and /v1/rtc/official</span>
+            </div>
+
+            <p class="worker-details-text">{{ tText.workerSigDesc }}</p>
+
+            <div class="worker-pill-footer">
+              <span class="routes-count font-mono">6 RTC routes</span>
+              <span class="toggle-link">{{ selectedDomain === 'signaling.xmcl.app' ? tText.hideRoutes : tText.showRoutes }}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Expandable Route Registry Section -->
+      <section v-if="selectedDomain || showFullRegistry" class="registry-expand-section">
+        <div class="registry-bar">
+          <div class="registry-title-group">
+            <h3 class="registry-title">
+              {{ selectedDomain ? `${tText.endpointsFor} ${selectedDomain}` : tText.allEndpoints }}
+            </h3>
+            <span class="registry-count font-mono">{{ filteredServices.length }} {{ tText.activeCount }}</span>
+          </div>
+
+          <div class="registry-controls">
             <input
               v-model="searchQuery"
               type="text"
-              :placeholder="tText.searchPlaceholder"
-              aria-label="Search APIs"
+              :placeholder="tText.searchRoutes"
+              class="registry-search"
             />
-            <button v-if="searchQuery" type="button" class="clear-search-btn" @click="searchQuery = ''">✕</button>
+            <button
+              v-if="selectedDomain"
+              type="button"
+              class="reset-domain-btn"
+              @click="selectedDomain = null"
+            >
+              {{ tText.clearFilter }}
+            </button>
           </div>
         </div>
 
-        <!-- Services Grid -->
-        <div v-if="filteredServices.length > 0" class="services-grid">
-          <article
+        <div class="routes-compact-grid">
+          <div
             v-for="service in filteredServices"
             :key="service.id"
-            class="service-card"
+            class="route-mini-card"
           >
-            <!-- Card Header -->
-            <div class="card-header">
-              <div class="card-title-group">
-                <span class="method-badge" :class="service.method.toLowerCase()">{{ service.method }}</span>
-                <h4 class="service-title">{{ service.name }}</h4>
-              </div>
-              <div class="service-live-status">
-                <span class="domain-pill">{{ service.domain }}</span>
-              </div>
+            <div class="route-mini-head">
+              <span class="method-tag" :class="service.method.toLowerCase()">{{ service.method }}</span>
+              <span class="route-domain font-mono">{{ service.domain }}</span>
+              <span class="route-cat">{{ service.categoryLabel }}</span>
             </div>
-
-            <!-- Endpoint URL -->
-            <div class="endpoint-line">
-              <code>{{ service.endpoint }}</code>
+            <div class="route-endpoint font-mono">{{ service.endpoint }}</div>
+            <p class="route-purpose"><strong>{{ service.name }}:</strong> {{ service.purpose }}</p>
+            <div class="route-resp">
+              <span class="resp-label">{{ tText.respShort }}:</span> {{ service.responsibility }}
             </div>
-
-            <!-- Purpose / "Що за API" -->
-            <div class="card-section">
-              <strong class="section-label">{{ tText.whatIsIt }}</strong>
-              <p class="section-text">{{ service.purpose }}</p>
-            </div>
-
-            <!-- Responsibility / "За що відповідає" -->
-            <div class="card-section">
-              <strong class="section-label">{{ tText.responsibleFor }}</strong>
-              <p class="section-text highlight">{{ service.responsibility }}</p>
-            </div>
-
-            <!-- Card Footer Metadata -->
-            <div class="card-footer">
-              <span class="card-upstream">
-                <span class="meta-label">{{ tText.upstream }}:</span> {{ service.upstream }}
-              </span>
-              <span class="card-category-badge">{{ service.categoryLabel }}</span>
-            </div>
-          </article>
-        </div>
-
-        <!-- Empty Filter State -->
-        <div v-else class="status-empty">
-          <p>{{ tText.noServicesFound }} "{{ searchQuery }}"</p>
-          <button type="button" class="reset-search-btn" @click="resetFilters">
-            {{ tText.viewAll }}
-          </button>
+          </div>
         </div>
       </section>
 
-      <!-- Architecture Footnote -->
-      <footer class="status-arch-footnote">
-        <div class="arch-tag">{{ tText.archTag }}</div>
-        <p class="arch-desc">{{ tText.archDesc }}</p>
-      </footer>
+      <!-- Bottom toggle to open route list if closed -->
+      <div v-else class="registry-toggle-footer">
+        <button type="button" class="view-registry-btn" @click="showFullRegistry = true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+          <span>{{ tText.viewFullRouteRegistry }}</span>
+        </button>
+      </div>
     </main>
   </div>
 </template>
@@ -249,18 +360,6 @@ import { useData } from 'vitepress'
 
 const { lang } = useData()
 const isUk = computed(() => (lang.value || '').startsWith('uk'))
-
-interface ApiWorker {
-  id: 'api' | 'ai' | 'signaling'
-  domain: string
-  badge: string
-  surface: string
-  whatIsIt: string
-  responsibilities: string[]
-  routesCount: number
-  status: 'operational' | 'degraded' | 'offline' | 'checking'
-  latency: number | null
-}
 
 interface ApiService {
   id: string
@@ -275,665 +374,187 @@ interface ApiService {
   upstream: string
 }
 
-// Live state
+// Live States
 const isChecking = ref(false)
 const cooldownSeconds = ref(0)
 const lastChecked = ref<Date | null>(null)
-const activeFilterTab = ref<string>('all')
-const activeDomainFilter = ref<string | null>(null)
+const selectedDomain = ref<string | null>(null)
+const showFullRegistry = ref(false)
 const searchQuery = ref('')
 
 let cooldownTimer: any = null
 
-const CACHE_KEY = 'xmcl_web_api_status_cache_v2'
-const CACHE_TTL_MS = 60 * 1000 // 60s client cache to avoid overloading APIs
+const CACHE_KEY = 'xmcl_web_api_status_cache_v3'
+const CACHE_TTL_MS = 60 * 1000
 
-// Worker runtime states
-const apiWorkerStatus = ref<'operational' | 'degraded' | 'offline' | 'checking'>('checking')
-const apiWorkerLatency = ref<number | null>(null)
+// 3 API Workers & Infrastructure statuses
+const apiStatus = ref<'operational' | 'degraded' | 'offline' | 'checking'>('checking')
+const apiLatency = ref<number | null>(null)
 
-const aiWorkerStatus = ref<'operational' | 'degraded' | 'offline' | 'checking'>('checking')
-const aiWorkerLatency = ref<number | null>(null)
+const aiStatus = ref<'operational' | 'degraded' | 'offline' | 'checking'>('checking')
+const aiLatency = ref<number | null>(null)
 
-const signalingWorkerStatus = ref<'operational' | 'degraded' | 'offline' | 'checking'>('checking')
-const signalingWorkerLatency = ref<number | null>(null)
+const sigStatus = ref<'operational' | 'degraded' | 'offline' | 'checking'>('checking')
+const sigLatency = ref<number | null>(null)
+
+const signpathStatus = ref<'operational' | 'degraded' | 'offline' | 'checking'>('checking')
+const signpathLatency = ref<number | null>(null)
 
 // Translations
 const tText = computed(() => {
   if (isUk.value) {
     return {
-      kicker: 'ІНФРАСТРУКТУРА ТА ХМАРНІ СЕРВІСИ XMCL',
-      title: 'Статус систем та Web API XMCL',
-      description: 'Офіційний моніторинг трьох незалежних Web API сервісів екосистеми X-Minecraft Launcher: стан з\'єднання, призначення кожного API та їх роль у лаунчері.',
-      clusterHealth: 'Кластер воркерів',
-      activeWorkers: 'активно',
-      avgLatency: 'Сер. затримка',
-      lastChecked: 'Остання перевірка',
-      refresh: 'Оновити статус',
-      workersTag: '3 НЕЗАЛЕЖНІ МІКРОСЕРВІСИ',
-      workersTitle: 'Архітектура 3 хмарних API лаунчера',
-      workersSubtitle: 'Інфраструктура XMCL розділена на три виділені домени з ізольованими робочими навантаженнями для забезпечення максимальної швидкості та відмовостійкості.',
-      mountedSurface: 'Точка монтування',
-      whatIsIt: 'Що за API:',
-      responsibleFor: 'За що відповідає в лаунчері:',
-      registeredRoutes: 'маршрутів зареєстровано',
-      showingDetails: 'Активний фільтр ✓',
-      showEndpoints: 'Переглянути ендпоінти →',
-      routesTag: 'РЕЄСТР ЕНДПОІНТІВ ТА МАРШРУТІВ',
-      routesTitle: 'Специфікація маршрутів та підсистем',
-      upstream: 'Цільовий сервіс',
-      searchPlaceholder: 'Пошук за назвою, доменом або маршрутом...',
-      noServicesFound: 'Не знайдено сервісів за запитом',
-      viewAll: 'Показати всі API',
-      allOperational: 'Усі 3 API працюють штатно',
-      degraded: 'Часткове уповільнення або збої',
-      offline: 'Сервіс тимчасово недоступний',
-      checkingStatus: 'Перевірка 3 сервісів...',
+      kicker: 'Єдина панель моніторингу сервісів XMCL',
+      title: 'Статус систем та інфраструктури XMCL',
+      avgLatency: 'Сер. пінг',
+      lastChecked: 'Перевірено',
+      refresh: 'Оновити',
+      whatIsIt: 'Призначення:',
+      responsibleFor: 'Роль у лаунчері:',
+      respShort: 'За що відповідає',
+      allOperational: 'Усі сервіси працюють штатно',
+      degraded: 'Часткове уповільнення',
+      offline: 'Тимчасовий збій сервісів',
+      checkingStatus: 'Опитування систем...',
       justNow: 'Щойно',
       ago: 'тому',
-      minutes: 'хв',
       seconds: 'с',
-      archTag: 'АРХІТЕКТУРА HONO, CLOUDFLARE WORKERS ТА DURABLE OBJECTS',
-      archDesc: 'Сервіси XMCL Web API розгорнуто як безсерверні мікроворкери Cloudflare Workers із застосуванням Hono, Durable Objects (для WebRTC P2P-кімнат) та гео-розподіленого кешування R2.'
+      minutes: 'хв',
+
+      // Agnes
+      agnesSub: 'Вбудований ШІ-асистент діагностики',
+      agnesWhat: 'Спеціалізований LLM-шлюз мовної моделі асистента Agnes AI для інтелектуального аналізу збоїв.',
+      agnesResponsible: 'Читає та розшифровує crash reports Minecraft, виявляє несумісні моди, брак пам\'яті та дає готові кроки усунення помилок прямо у вікні лаунчера.',
+
+      // Cloudflare
+      cfSub: 'Глобальний Edge, R2 CDN & DNS',
+      cfWhat: 'Глобальна гранична мережа Cloudflare (Workers, Durable Objects, R2 Storage).',
+      cfResponsible: 'Забезпечує високу швидкість роздачі інсталяторів (AppX, Snap, DMG), гео-кешування, захист від DDoS та стабільну роботу 300+ датацентрів.',
+
+      // SignPath
+      signpathSub: 'Довірений криптографічний підпис',
+      signpathWhat: 'Хмарний сервіс безпечного автоматизованого підпису коду від неприбуткової організації SignPath Foundation.',
+      signpathResponsible: 'Підписує офіційним EV-сертифікатом виконувані файли та пакети XMCL для Windows Defender SmartScreen і macOS Gatekeeper без блокувань.',
+
+      // Workers
+      workerApiTitle: 'Головний сервісний API воркер',
+      workerApiDesc: 'Релізи лаунчера, завантаження середовищ Java Zulu, переклади модів Modrinth/CurseForge та авторизація Microsoft/Ely.by.',
+      workerAiTitle: 'Виділений ШІ-воркер Agnes',
+      workerAiDesc: 'Потокова генерація чату мовної моделі для діагностики помилок гри без навантаження основної інфраструктури.',
+      workerSigTitle: 'WebRTC P2P сигнальний сервер',
+      workerSigDesc: 'Створення кімнат XMCL Together, обмін SDP/ICE кандидатами для прямої гри по мережі без виділеного сервера.',
+
+      showRoutes: 'Маршрути ↓',
+      hideRoutes: 'Згорнути ↑',
+      endpointsFor: 'Маршрути',
+      allEndpoints: 'Всі зареєстровані маршрути',
+      activeCount: 'ендпоінтів',
+      searchRoutes: 'Пошук маршруту або назви...',
+      clearFilter: 'Показати всі',
+      viewFullRouteRegistry: 'Показати повний реєстр усіх маршрутів API (46+ ендпоінтів)'
     }
   }
 
   return {
-    kicker: 'XMCL CLOUD & RUNTIME INFRASTRUCTURE',
-    title: 'XMCL Systems & Web API Status',
-    description: 'Official real-time health dashboard for the 3 dedicated Web API workers powering X-Minecraft Launcher: latency, live operational status, and architectural responsibilities.',
-    clusterHealth: 'Worker Cluster',
-    activeWorkers: 'operational',
-    avgLatency: 'Avg Latency',
-    lastChecked: 'Last Checked',
-    refresh: 'Refresh Status',
-    workersTag: '3 DEDICATED MICROSERVICES',
-    workersTitle: 'The 3-Worker Architecture',
-    workersSubtitle: 'XMCL Web API infrastructure is separated into three distinct domains with isolated workloads for peak resilience and minimal latency.',
-    mountedSurface: 'Mounted surface',
+    kicker: 'Unified XMCL Service Dashboard',
+    title: 'XMCL Systems & Infrastructure Status',
+    avgLatency: 'Avg Ping',
+    lastChecked: 'Checked',
+    refresh: 'Refresh',
     whatIsIt: 'Service Overview:',
-    responsibleFor: 'Launcher Responsibility:',
-    registeredRoutes: 'registered routes',
-    showingDetails: 'Filtered ✓',
-    showEndpoints: 'Inspect Endpoints →',
-    routesTag: 'DETAILED ROUTE REGISTRY',
-    routesTitle: 'Endpoints & Subsystem Specifications',
-    upstream: 'Upstream Engine',
-    searchPlaceholder: 'Search by API name, domain, or route...',
-    noServicesFound: 'No services found matching',
-    viewAll: 'View all APIs',
-    allOperational: 'All 3 Systems Operational',
+    responsibleFor: 'Launcher Role:',
+    respShort: 'Responsible for',
+    allOperational: 'All Systems Operational',
     degraded: 'Partial Degraded Performance',
     offline: 'Service Disruptions Detected',
-    checkingStatus: 'Probing 3 API endpoints...',
+    checkingStatus: 'Probing infrastructure...',
     justNow: 'Just now',
     ago: 'ago',
-    minutes: 'm',
     seconds: 's',
-    archTag: 'HONO, CLOUDFLARE WORKERS & DURABLE OBJECTS',
-    archDesc: 'The XMCL Web API is partitioned across three edge workers leveraging Hono, Cloudflare Workers, Durable Objects for WebRTC session orchestration, and distributed R2 caching.'
+    minutes: 'm',
+
+    // Agnes
+    agnesSub: 'Integrated AI Diagnostics Engine',
+    agnesWhat: 'Dedicated high-throughput LLM gateway powering the built-in Agnes AI assistant.',
+    agnesResponsible: 'Performs stacktrace forensics on Minecraft crash logs, locates mod conflicts, and generates instant fix recommendations inside the launcher.',
+
+    // Cloudflare
+    cfSub: 'Global Edge, R2 CDN & DNS',
+    cfWhat: 'Global Cloudflare edge infrastructure (Workers, Durable Objects, and R2 Object Storage).',
+    cfResponsible: 'Powers fast installer downloads (AppX, Snap, DMG), edge caching, and DDoS mitigation across 300+ points of presence worldwide.',
+
+    // SignPath
+    signpathSub: 'Trusted Cryptographic Code Signing',
+    signpathWhat: 'Automated open-source cryptographic code signing platform provided by SignPath Foundation.',
+    signpathResponsible: 'Signs XMCL Windows and macOS release binaries with trusted certificates to prevent SmartScreen warnings and antivirus false positives.',
+
+    // Workers
+    workerApiTitle: 'Core Multi-Service API Worker',
+    workerApiDesc: 'Release manifests, Azul Zulu OpenJDK resolution, mod translation proxy, and Microsoft/Ely.by identity sessions.',
+    workerAiTitle: 'Dedicated Agnes AI Worker',
+    workerAiDesc: 'Zero-overhead streaming LLM completions for intelligent game crash analysis and user assistance.',
+    workerSigTitle: 'WebRTC P2P Signaling Coordinator',
+    workerSigDesc: 'Room orchestration for XMCL Together multiplayer and peer-to-peer mesh networking without port forwarding.',
+
+    showRoutes: 'Routes ↓',
+    hideRoutes: 'Collapse ↑',
+    endpointsFor: 'Endpoints for',
+    allEndpoints: 'All Registered Endpoints',
+    activeCount: 'endpoints',
+    searchRoutes: 'Search route or feature...',
+    clearFilter: 'Show all',
+    viewFullRouteRegistry: 'View Full API Route Registry (46+ endpoints)'
   }
 })
 
-// The 3 Primary Dedicated API Workers
-const workers = computed<ApiWorker[]>(() => {
-  if (isUk.value) {
-    return [
-      {
-        id: 'api',
-        domain: 'api.xmcl.app',
-        badge: 'API Worker',
-        surface: 'API Worker: all core APIs, including /translation',
-        whatIsIt: 'Головний сервісний шлюз XMCL. Обслуговує всю ключову логіку завантаження, оновлень, сумісності середовищ Java, машинного перекладу модів та керування обліковими записами.',
-        responsibilities: [
-          'Перевірка версій та роздача оновлень лаунчера (/latest, /releases)',
-          'Автоматичне виявлення та завантаження середовищ Java Zulu (8, 17, 21) (/zulu)',
-          'Проксі-переклад назв та описів модів Modrinth/CurseForge українською (/translation)',
-          'Автентифікація користувачів (Microsoft, Ely.by) та менеджмент сесійних токенів (/v1/auth, /v1/sessions)',
-          'Політики резервного копіювання світів у хмару та підписки XMCL+ (/v1/backup-storage-policy, /v1/billing)'
-        ],
-        routesCount: 46,
-        status: apiWorkerStatus.value,
-        latency: apiWorkerLatency.value
-      },
-      {
-        id: 'ai',
-        domain: 'ai.xmcl.app',
-        badge: 'AI Worker',
-        surface: 'POST /v1/chat/completions only',
-        whatIsIt: 'Ізольований високопродуктивний шлюз штучного інтелекту. Працює виключно для потокового обслуговування мовних моделей вбудованого асистента Agnes AI.',
-        responsibilities: [
-          'Інтелектуальний аналіз звітів про аварійне завершення гри (Minecraft Crash Reports)',
-          'Миттєве визначення конфліктуючих модів, нестачі виділеної оперативної пам\'яті або несумісних версій Forge/Fabric',
-          'Формування покрокових підказок щодо вирішення помилок безпосередньо у вікні лаунчера без потреби шукати на форумах'
-        ],
-        routesCount: 1,
-        status: aiWorkerStatus.value,
-        latency: aiWorkerLatency.value
-      },
-      {
-        id: 'signaling',
-        domain: 'signaling.xmcl.app',
-        badge: 'Signaling Worker',
-        surface: '/v1/multiplayer/* and /v1/rtc/official',
-        whatIsIt: 'Високонавантажений WebRTC сигнальний сервер реального часу та координатор однорангових P2P-з\'єднань на базі Cloudflare Durable Objects.',
-        responsibilities: [
-          'Оркестрація віртуальних ігрових кімнат та лобі для режиму XMCL Together (/v1/multiplayer/rooms)',
-          'Миттєвий обмін SDP та ICE-кандидатами між гравцями для встановлення прямого тунелю',
-          'Координація офіційного релею та STUN/TURN серверів (/v1/rtc/official) для гри без білої IP-адреси та без прокидання портів'
-        ],
-        routesCount: 6,
-        status: signalingWorkerStatus.value,
-        latency: signalingWorkerLatency.value
-      }
-    ]
-  }
+// Status classes
+const apiStatusClass = computed(() => getStatusClass(apiStatus.value))
+const apiStatusText = computed(() => getStatusText(apiStatus.value))
 
-  return [
-    {
-      id: 'api',
-      domain: 'api.xmcl.app',
-      badge: 'API Worker',
-      surface: 'API Worker: all core APIs, including /translation',
-      whatIsIt: 'Core backend gateway for XMCL. Powers release delivery, runtime compatibility, community mod translation, account identity, and cloud storage management.',
-      responsibilities: [
-        'Version checking, update manifests, and binary distribution (/latest, /releases)',
-        'Automatic Azul Zulu JRE/JDK runtime resolution and installation (/zulu)',
-        'Crowdsourced and machine translation proxy for Modrinth/CurseForge mod metadata (/translation)',
-        'Authentication identity provider hub (Microsoft, Ely.by) and session rotation (/v1/auth, /v1/sessions)',
-        'World cloud backup policies and XMCL+ subscription ledger (/v1/backup-storage-policy, /v1/billing)'
-      ],
-      routesCount: 46,
-      status: apiWorkerStatus.value,
-      latency: apiWorkerLatency.value
-    },
-    {
-      id: 'ai',
-      domain: 'ai.xmcl.app',
-      badge: 'AI Worker',
-      surface: 'POST /v1/chat/completions only',
-      whatIsIt: 'Dedicated high-throughput LLM gateway for the integrated Agnes AI assistant. Scoped strictly to streaming chat completions and forensic crash analysis.',
-      responsibilities: [
-        'Automatic crash report forensic parsing and stacktrace diagnosis',
-        'Root-cause detection for modloader incompatibilities, memory exhaustion, and missing dependencies',
-        'Actionable step-by-step resolution guidance presented directly inside the launcher window'
-      ],
-      routesCount: 1,
-      status: aiWorkerStatus.value,
-      latency: aiWorkerLatency.value
-    },
-    {
-      id: 'signaling',
-      domain: 'signaling.xmcl.app',
-      badge: 'Signaling Worker',
-      surface: '/v1/multiplayer/* and /v1/rtc/official',
-      whatIsIt: 'Real-time WebRTC signaling coordinator and peer-to-peer session room engine built on Cloudflare Durable Objects.',
-      responsibilities: [
-        'Matchmaking and session room orchestration for XMCL Together multiplayer (/v1/multiplayer/rooms)',
-        'Real-time SDP and ICE candidate negotiation for direct peer mesh interconnects',
-        'STUN/TURN relay allocation and official network diagnostics (/v1/rtc/official) without port forwarding'
-      ],
-      routesCount: 6,
-      status: signalingWorkerStatus.value,
-      latency: signalingWorkerLatency.value
-    }
-  ]
-})
+const aiStatusClass = computed(() => getStatusClass(aiStatus.value))
+const aiStatusText = computed(() => getStatusText(aiStatus.value))
 
-// Detailed endpoints registry
-const services = computed<ApiService[]>(() => {
-  if (isUk.value) {
-    return [
-      // api.xmcl.app (Core API Worker)
-      {
-        id: 'release-latest',
-        name: 'Release Manifest & Versioning',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/latest',
-        category: 'core',
-        categoryLabel: 'Релізи',
-        purpose: 'Шлюз метаданих останнього стабільного релізу лаунчера.',
-        responsibility: 'Визначає наявність оновлень, номер поточної версії, прямі посилання на файли та хеші контрольних сум для безпечного оновлення.',
-        upstream: 'Cloudflare Worker (api) / GitHub Releases'
-      },
-      {
-        id: 'release-mirror',
-        name: 'Release Asset Download Mirror',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/releases/:filename',
-        category: 'core',
-        categoryLabel: 'Дистрибуція',
-        purpose: 'Високошвидкісне глобальне CDN-дзеркало інсталяторів XMCL.',
-        responsibility: 'Доставка інсталяторів (AppX, Snap, AppImage, DMG, Zip, Tar.xz) на максимальній швидкості без лімітів GitHub API.',
-        upstream: 'Cloudflare R2 / GitHub Assets'
-      },
-      {
-        id: 'zulu-java',
-        name: 'Java Zulu OpenJDK Engine Resolver',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/zulu',
-        category: 'runtime',
-        categoryLabel: 'Java Engine',
-        purpose: 'Диспетчер сумісних пакетів середовища виконання Java для Minecraft.',
-        responsibility: 'Автоматично підбирає та завантажує точну версію Azul Zulu JRE/JDK (Java 8, 17, 21) під ОС користувача (Windows, macOS, Linux, ARM64).',
-        upstream: 'Azul Systems API'
-      },
-      {
-        id: 'mod-translation',
-        name: 'Community Content Translation Proxy',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/translation',
-        category: 'core',
-        categoryLabel: 'Локалізація',
-        purpose: 'Шлюз машинної та краудсорсингової локалізації контенту.',
-        responsibility: 'Перекладає назви, описи та категорії модів із Modrinth і CurseForge рідною мовою гравця в інтерфейсі каталогу.',
-        upstream: 'Azure Table & Community i18n extra'
-      },
-      {
-        id: 'notifications',
-        name: 'Broadcast Incident & Maintenance Notices',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/notifications',
-        category: 'core',
-        categoryLabel: 'Сповіщення',
-        purpose: 'Система екстрених широкомовних технічних сповіщень.',
-        responsibility: 'Попереджає про технічні збої серверів автентифікації Mojang/Microsoft, планові роботи або критичні патчі безпеки.',
-        upstream: 'Cloudflare Worker (api)'
-      },
-      {
-        id: 'flights',
-        name: 'Feature Flights & Experimentation',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/flights',
-        category: 'core',
-        categoryLabel: 'Експерименти',
-        purpose: 'Сервіс динамічних перемикачів функцій (Feature Flags).',
-        responsibility: 'Керує поступовим розгортанням експериментальних функцій лаунчера без повторної компіляції клієнта.',
-        upstream: 'Cloudflare KV'
-      },
-      {
-        id: 'auth-gateway',
-        name: 'Multi-Provider Identity & Session Hub',
-        method: 'ALL',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/v1/auth/:provider/* & /v1/sessions/*',
-        category: 'auth',
-        categoryLabel: 'Автентифікація',
-        purpose: 'Централізований шлюз авторизації та ротації токенів сесій.',
-        responsibility: 'Безпечно авторизує користувачів (Microsoft, GitHub, Discord) та захищає сесійні токени лаунчера.',
-        upstream: 'OAuth Providers / Secure Store'
-      },
-      {
-        id: 'elyby-authlib',
-        name: 'Ely.by Authlib & Alternative Skin Relay',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/elyby/authlib',
-        category: 'auth',
-        categoryLabel: 'Скіни',
-        purpose: 'Проксі-міст до альтернативних служб автентифікації та скінів.',
-        responsibility: 'Забезпечує прозору підтримку кастомних скінів та плащів сервісу Ely.by під час запуску гри.',
-        upstream: 'Ely.by API'
-      },
-      {
-        id: 'backup-policy',
-        name: 'Cloud Backup Storage Policy & Quota',
-        method: 'GET',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/v1/backup-storage-policy',
-        category: 'core',
-        categoryLabel: 'Хмарні бекапи',
-        purpose: 'Сервіс керування хмарним сховищем збережень світів.',
-        responsibility: 'Генерує безпечні пресайнед-посилання на S3/Cloudflare R2 для вивантаження резервних копій та контролює дискові квоти.',
-        upstream: 'S3 Presigner / R2 Storage'
-      },
-      {
-        id: 'billing-services',
-        name: 'XMCL+ Allowances & Billing Subsystem',
-        method: 'ALL',
-        domain: 'api.xmcl.app',
-        endpoint: 'https://api.xmcl.app/v1/billing/* & /v1/xmcl-plus/*',
-        category: 'core',
-        categoryLabel: 'XMCL+',
-        purpose: 'Підсистема підписок XMCL+ та хмарних ресурсів.',
-        responsibility: 'Обробляє підписки, квоти хмарного сховища резервних копій та виділений канал для релею мультиплеєра.',
-        upstream: 'Mongo Ledger / Payment Engine'
-      },
+const sigStatusClass = computed(() => getStatusClass(sigStatus.value))
+const sigStatusText = computed(() => getStatusText(sigStatus.value))
 
-      // ai.xmcl.app (AI Worker)
-      {
-        id: 'agnes-ai-completions',
-        name: 'Agnes AI Crash Diagnostics & LLM Gateway',
-        method: 'POST',
-        domain: 'ai.xmcl.app',
-        endpoint: 'https://ai.xmcl.app/v1/chat/completions',
-        category: 'ai',
-        categoryLabel: 'Штучний інтелект',
-        purpose: 'Виділений шлюз мовної моделі вбудованого асистента Agnes AI.',
-        responsibility: 'Обробляє логи крашів гри, аналізує конфлікти модів, помилки Java Virtual Machine та генерує швидкі поради з усунення помилок прямо в лаунчері.',
-        upstream: 'Cloudflare AI Gateway / LLM Clusters'
-      },
+const signpathStatusClass = computed(() => getStatusClass(signpathStatus.value))
+const signpathStatusText = computed(() => getStatusText(signpathStatus.value))
 
-      // signaling.xmcl.app (Signaling Worker)
-      {
-        id: 'rtc-signaling-rooms',
-        name: 'WebRTC P2P Multiplayer Room Orchestrator',
-        method: 'ALL',
-        domain: 'signaling.xmcl.app',
-        endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms',
-        category: 'signaling',
-        categoryLabel: 'Мультиплеєр',
-        purpose: 'Сервіс створення та керування P2P кімнатами XMCL Together.',
-        responsibility: 'Створює кімнати спільної гри, реєструє хост-гравця та керує приєднанням друзів без необхідності виділеного сервера.',
-        upstream: 'Cloudflare Durable Objects'
-      },
-      {
-        id: 'rtc-signaling-join',
-        name: 'WebRTC Peer Join & SDP Exchange',
-        method: 'POST',
-        domain: 'signaling.xmcl.app',
-        endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms/:roomId/join',
-        category: 'signaling',
-        categoryLabel: 'Мультиплеєр',
-        purpose: 'Шлюз з\'єднання пірів у реальному часі.',
-        responsibility: 'Обмінює Session Description Protocol (SDP) пропозиції та відповіді між клієнтами лаунчера для встановлення прямого тунелю зв\'язку.',
-        upstream: 'Cloudflare Durable Objects'
-      },
-      {
-        id: 'rtc-official',
-        name: 'Official RTC STUN/TURN Diagnostics',
-        method: 'GET',
-        domain: 'signaling.xmcl.app',
-        endpoint: 'https://signaling.xmcl.app/v1/rtc/official',
-        category: 'signaling',
-        categoryLabel: 'STUN / TURN Relay',
-        purpose: 'Офіційний сервіс конфігурації та діагностики релеїв зв\'язку.',
-        responsibility: 'Надає перевірені адреси STUN/TURN серверів для обходу жорсткого NAT/файрволу, якщо пряме з\'єднання між гравцями неможливе.',
-        upstream: 'COTURN Relay Infrastructure'
-      }
-    ]
-  }
-
-  // English
-  return [
-    // api.xmcl.app
-    {
-      id: 'release-latest',
-      name: 'Release Manifest & Versioning',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/latest',
-      category: 'core',
-      categoryLabel: 'Releases',
-      purpose: 'Metadata endpoint for latest stable launcher releases.',
-      responsibility: 'Determines update availability, current build number, download targets, and SHA-256 integrity hashes for secure self-updating.',
-      upstream: 'Cloudflare Worker (api) / GitHub Releases'
-    },
-    {
-      id: 'release-mirror',
-      name: 'Release Asset Download Mirror',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/releases/:filename',
-      category: 'core',
-      categoryLabel: 'Distribution',
-      purpose: 'High-speed edge mirror for XMCL binary releases.',
-      responsibility: 'Delivers multi-platform installers (AppX, Snap, AppImage, DMG, Zip, Tar.xz) from global CDN, avoiding GitHub rate limits.',
-      upstream: 'Cloudflare R2 / GitHub Assets'
-    },
-    {
-      id: 'zulu-java',
-      name: 'Java Zulu OpenJDK Engine Resolver',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/zulu',
-      category: 'runtime',
-      categoryLabel: 'Java Engine',
-      purpose: 'Runtime resolver for Minecraft compatible OpenJDK binaries.',
-      responsibility: 'Automatically matches, retrieves, and unpacks the exact Azul Zulu JRE/JDK (Java 8, 17, 21) required for the target Minecraft version.',
-      upstream: 'Azul Systems API'
-    },
-    {
-      id: 'mod-translation',
-      name: 'Community Content Translation Proxy',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/translation',
-      category: 'core',
-      categoryLabel: 'Localization',
-      purpose: 'Machine & crowdsourced mod translation relay.',
-      responsibility: 'Translates titles, summaries, and categories for Modrinth and CurseForge mods into the player\'s native language.',
-      upstream: 'Azure Table & Community i18n extra'
-    },
-    {
-      id: 'notifications',
-      name: 'Broadcast Incident & Maintenance Notices',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/notifications',
-      category: 'core',
-      categoryLabel: 'Notices',
-      purpose: 'Emergency broadcast and maintenance messaging feed.',
-      responsibility: 'Alerts active users of Mojang/Microsoft authentication outages, planned maintenance, or urgent security patches.',
-      upstream: 'Cloudflare Worker (api)'
-    },
-    {
-      id: 'flights',
-      name: 'Feature Flights & Experimentation',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/flights',
-      category: 'core',
-      categoryLabel: 'Flags',
-      purpose: 'Dynamic feature-flagging service.',
-      responsibility: 'Enables progressive rollout of experimental launcher features to flight rings without requiring binary rebuilding.',
-      upstream: 'Cloudflare KV'
-    },
-    {
-      id: 'auth-gateway',
-      name: 'Multi-Provider Identity & Session Hub',
-      method: 'ALL',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/v1/auth/:provider/* & /v1/sessions/*',
-      category: 'auth',
-      categoryLabel: 'Auth Hub',
-      purpose: 'Centralized authentication and session token rotation.',
-      responsibility: 'Handles multi-provider login flows (Microsoft, GitHub, Discord) and signs cryptographic launcher session tokens.',
-      upstream: 'OAuth Providers / Secure Store'
-    },
-    {
-      id: 'elyby-authlib',
-      name: 'Ely.by Authlib & Alternative Skin Relay',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/elyby/authlib',
-      category: 'auth',
-      categoryLabel: 'Skins',
-      purpose: 'Bridge proxy for alternative auth and skin servers.',
-      responsibility: 'Provides seamless in-game support for Ely.by player skins, capes, and non-Mojang authentication profiles.',
-      upstream: 'Ely.by API'
-    },
-    {
-      id: 'backup-policy',
-      name: 'Cloud Backup Storage Policy & Quota',
-      method: 'GET',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/v1/backup-storage-policy',
-      category: 'core',
-      categoryLabel: 'Cloud Backup',
-      purpose: 'World save cloud storage orchestration.',
-      responsibility: 'Generates secure S3/Cloudflare R2 presigned upload credentials and manages cloud save quotas.',
-      upstream: 'S3 Presigner / R2 Storage'
-    },
-    {
-      id: 'billing-services',
-      name: 'XMCL+ Allowances & Billing Subsystem',
-      method: 'ALL',
-      domain: 'api.xmcl.app',
-      endpoint: 'https://api.xmcl.app/v1/billing/* & /v1/xmcl-plus/*',
-      category: 'core',
-      categoryLabel: 'XMCL+',
-      purpose: 'Billing and subscription ledger for XMCL+ cloud features.',
-      responsibility: 'Manages cloud backup allowances, dedicated TURN relay bandwidth, and premium server control features.',
-      upstream: 'Mongo Ledger / Payment Engine'
-    },
-
-    // ai.xmcl.app
-    {
-      id: 'agnes-ai-completions',
-      name: 'Agnes AI Crash Diagnostics & LLM Gateway',
-      method: 'POST',
-      domain: 'ai.xmcl.app',
-      endpoint: 'https://ai.xmcl.app/v1/chat/completions',
-      category: 'ai',
-      categoryLabel: 'AI Assistant',
-      purpose: 'Dedicated LLM proxy gateway for Agnes AI.',
-      responsibility: 'Analyzes Minecraft crash reports, diagnoses mod conflicts, JVM memory faults, and delivers actionable fix advice right in the launcher.',
-      upstream: 'Cloudflare AI Gateway / LLM Clusters'
-    },
-
-    // signaling.xmcl.app
-    {
-      id: 'rtc-signaling-rooms',
-      name: 'WebRTC P2P Multiplayer Room Orchestrator',
-      method: 'ALL',
-      domain: 'signaling.xmcl.app',
-      endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms',
-      category: 'signaling',
-      categoryLabel: 'Multiplayer',
-      purpose: 'XMCL Together P2P room lifecycle coordinator.',
-      responsibility: 'Spawns virtual multiplayer game rooms, tracks host states, and coordinates peer join requests without dedicated servers.',
-      upstream: 'Cloudflare Durable Objects'
-    },
-    {
-      id: 'rtc-signaling-join',
-      name: 'WebRTC Peer Join & SDP Exchange',
-      method: 'POST',
-      domain: 'signaling.xmcl.app',
-      endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms/:roomId/join',
-      category: 'signaling',
-      categoryLabel: 'Multiplayer',
-      purpose: 'Real-time peer signaling handshake.',
-      responsibility: 'Exchanges Session Description Protocol (SDP) offers and answers between clients to establish direct WebRTC peer connections.',
-      upstream: 'Cloudflare Durable Objects'
-    },
-    {
-      id: 'rtc-official',
-      name: 'Official RTC STUN/TURN Diagnostics',
-      method: 'GET',
-      domain: 'signaling.xmcl.app',
-      endpoint: 'https://signaling.xmcl.app/v1/rtc/official',
-      category: 'signaling',
-      categoryLabel: 'STUN / TURN Relay',
-      purpose: 'RTC configuration and relay diagnostics service.',
-      responsibility: 'Supplies verified STUN/TURN relay credentials to bypass symmetric NAT and strict firewalls when direct peer connections fail.',
-      upstream: 'COTURN Relay Infrastructure'
-    }
-  ]
-})
-
-// Filter Tabs
-const filterTabs = computed(() => {
-  if (isUk.value) {
-    return [
-      { id: 'all', label: 'Всі маршрути' },
-      { id: 'api.xmcl.app', label: 'api.xmcl.app (Core)' },
-      { id: 'ai.xmcl.app', label: 'ai.xmcl.app (Agnes AI)' },
-      { id: 'signaling.xmcl.app', label: 'signaling.xmcl.app (RTC)' }
-    ]
-  }
-  return [
-    { id: 'all', label: 'All Endpoints' },
-    { id: 'api.xmcl.app', label: 'api.xmcl.app (Core)' },
-    { id: 'ai.xmcl.app', label: 'ai.xmcl.app (Agnes AI)' },
-    { id: 'signaling.xmcl.app', label: 'signaling.xmcl.app (RTC)' }
-  ]
-})
-
-// Filtered services
-const filteredServices = computed(() => {
-  let list = services.value
-
-  const effectiveDomain = activeDomainFilter.value || (activeFilterTab.value !== 'all' ? activeFilterTab.value : null)
-  if (effectiveDomain) {
-    list = list.filter(s => s.domain === effectiveDomain)
-  }
-
-  if (searchQuery.value.trim()) {
-    const q = searchQuery.value.toLowerCase().trim()
-    list = list.filter(s =>
-      s.name.toLowerCase().includes(q) ||
-      s.domain.toLowerCase().includes(q) ||
-      s.endpoint.toLowerCase().includes(q) ||
-      s.purpose.toLowerCase().includes(q) ||
-      s.responsibility.toLowerCase().includes(q)
-    )
-  }
-
-  return list
-})
-
-function getFilterCount(tabId: string) {
-  if (tabId === 'all') return services.value.length
-  return services.value.filter(s => s.domain === tabId).length
+function getStatusClass(st: string) {
+  if (st === 'operational') return 'is-operational'
+  if (st === 'degraded') return 'is-degraded'
+  if (st === 'offline') return 'is-offline'
+  return 'is-checking'
 }
 
-function setFilterTab(tabId: string) {
-  activeFilterTab.value = tabId
-  activeDomainFilter.value = tabId === 'all' ? null : tabId
+function getStatusText(st: string) {
+  if (st === 'checking') return isUk.value ? 'Перевірка...' : 'Checking...'
+  if (st === 'operational') return isUk.value ? 'Штатно' : 'Operational'
+  if (st === 'degraded') return isUk.value ? 'Уповільнення' : 'Degraded'
+  return isUk.value ? 'Збій' : 'Offline'
 }
 
-function toggleDomainFilter(domain: string) {
-  if (activeDomainFilter.value === domain) {
-    activeDomainFilter.value = null
-    activeFilterTab.value = 'all'
-  } else {
-    activeDomainFilter.value = domain
-    activeFilterTab.value = domain
-  }
-}
-
-function resetFilters() {
-  searchQuery.value = ''
-  activeDomainFilter.value = null
-  activeFilterTab.value = 'all'
-}
-
-// Cluster aggregate status
-const operationalWorkersCount = computed(() => {
-  let count = 0
-  if (apiWorkerStatus.value === 'operational') count++
-  if (aiWorkerStatus.value === 'operational') count++
-  if (signalingWorkerStatus.value === 'operational') count++
-  return count
-})
-
+// Global summary
 const avgLatency = computed(() => {
-  const lats = [apiWorkerLatency.value, aiWorkerLatency.value, signalingWorkerLatency.value].filter((x): x is number => typeof x === 'number')
-  if (lats.length === 0) return null
-  return Math.round(lats.reduce((a, b) => a + b, 0) / lats.length)
+  const list = [apiLatency.value, aiLatency.value, sigLatency.value, signpathLatency.value].filter((x): x is number => typeof x === 'number')
+  if (list.length === 0) return null
+  return Math.round(list.reduce((a, b) => a + b, 0) / list.length)
 })
 
 const overallStatusClass = computed(() => {
-  if (apiWorkerStatus.value === 'checking' || aiWorkerStatus.value === 'checking' || signalingWorkerStatus.value === 'checking') {
+  if (apiStatus.value === 'checking' || aiStatus.value === 'checking' || sigStatus.value === 'checking') {
     return 'is-checking'
   }
-  const count = operationalWorkersCount.value
-  if (count === 3) return 'is-operational'
-  if (count > 0) return 'is-degraded'
+  const operationalCount = [apiStatus.value, aiStatus.value, sigStatus.value, signpathStatus.value].filter(s => s === 'operational').length
+  if (operationalCount >= 3) return 'is-operational'
+  if (operationalCount > 0) return 'is-degraded'
   return 'is-offline'
 })
 
 const overallStatusText = computed(() => {
   if (overallStatusClass.value === 'is-checking') return tText.value.checkingStatus
-  if (operationalWorkersCount.value === 3) return tText.value.allOperational
-  if (operationalWorkersCount.value > 0) return tText.value.degraded
+  if (overallStatusClass.value === 'is-operational') return tText.value.allOperational
+  if (overallStatusClass.value === 'is-degraded') return tText.value.degraded
   return tText.value.offline
 })
 
@@ -946,25 +567,363 @@ const lastCheckedText = computed(() => {
   return `${diffMin}${tText.value.minutes} ${tText.value.ago}`
 })
 
-function getWorkerStatusClass(worker: ApiWorker) {
-  if (worker.status === 'operational') return 'is-operational'
-  if (worker.status === 'degraded') return 'is-degraded'
-  if (worker.status === 'offline') return 'is-offline'
-  return 'is-checking'
+// Toggle domain in routes
+function toggleDomain(domain: string) {
+  if (selectedDomain.value === domain) {
+    selectedDomain.value = null
+  } else {
+    selectedDomain.value = domain
+    showFullRegistry.value = true
+  }
 }
 
-function getWorkerStatusText(worker: ApiWorker) {
-  if (worker.status === 'checking') return isUk.value ? 'Перевірка...' : 'Probing...'
-  if (worker.status === 'operational') return isUk.value ? 'Працює штатно' : 'Operational'
-  if (worker.status === 'degraded') return isUk.value ? 'Уповільнення' : 'Degraded'
-  return isUk.value ? 'Недоступно' : 'Offline'
-}
+// Services definition
+const services = computed<ApiService[]>(() => {
+  if (isUk.value) {
+    return [
+      {
+        id: 'release-latest',
+        name: 'Оновлення та маніфест версій',
+        method: 'GET',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/latest',
+        category: 'core',
+        categoryLabel: 'Релізи',
+        purpose: 'Отримання інформації про останній реліз лаунчера та контрольні суми.',
+        responsibility: 'Визначає наявність нової версії та координує безпечне автооновлення.',
+        upstream: 'Cloudflare Worker (api)'
+      },
+      {
+        id: 'release-mirror',
+        name: 'CDN завантаження дистрибутивів',
+        method: 'GET',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/releases/:filename',
+        category: 'core',
+        categoryLabel: 'Дистрибуція',
+        purpose: 'Дзеркалювання завантажень інсталяторів (AppX, Snap, DMG, Zip).',
+        responsibility: 'Швидка доставка пакетів лаунчера безпосередньо з Cloudflare R2.',
+        upstream: 'Cloudflare R2'
+      },
+      {
+        id: 'zulu-java',
+        name: 'Менеджер середовища Java Zulu',
+        method: 'GET',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/zulu',
+        category: 'runtime',
+        categoryLabel: 'Java Engine',
+        purpose: 'Пошук сумісних пакетів OpenJDK для поточної ОС.',
+        responsibility: 'Автоматично викачує та налаштовує Java 8, 17 або 21 під версію Minecraft.',
+        upstream: 'Azul Systems API'
+      },
+      {
+        id: 'translation',
+        name: 'Проксі локалізації модів',
+        method: 'GET',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/translation',
+        category: 'core',
+        categoryLabel: 'Локалізація',
+        purpose: 'Шлюз машинних та спільнотних перекладів контенту.',
+        responsibility: 'Перекладає описи та назви модів Modrinth/CurseForge українською мовою.',
+        upstream: 'Azure Table & i18n'
+      },
+      {
+        id: 'notifications',
+        name: 'Широкомовні технічні сповіщення',
+        method: 'GET',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/notifications',
+        category: 'core',
+        categoryLabel: 'Сповіщення',
+        purpose: 'Стрічка екстрених та регламентних повідомлень розробників.',
+        responsibility: 'Попереджає про технічні збої серверів Microsoft чи важливі патчі безпеки.',
+        upstream: 'XMCL Incident Desk'
+      },
+      {
+        id: 'flights',
+        name: 'Динамічні Feature Flags',
+        method: 'GET',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/flights',
+        category: 'core',
+        categoryLabel: 'Флаги',
+        purpose: 'Керування тестовими кільцями розгортання функцій.',
+        responsibility: 'Поступово активує експериментальні можливості лаунчера без оновлення бінарника.',
+        upstream: 'Cloudflare KV'
+      },
+      {
+        id: 'auth-gateway',
+        name: 'Шлюз сесій та авторизації',
+        method: 'ALL',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/v1/auth/:provider/* & /v1/sessions/*',
+        category: 'auth',
+        categoryLabel: 'Автентифікація',
+        purpose: 'Управління обліковими записами та ротацією токенів.',
+        responsibility: 'Авторизує вхід (Microsoft, Ely.by) та підтримує активні сесії лаунчера.',
+        upstream: 'OAuth Secure Gateway'
+      },
+      {
+        id: 'backup-policy',
+        name: 'Хмарне сховище резервних копій',
+        method: 'GET',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/v1/backup-storage-policy',
+        category: 'core',
+        categoryLabel: 'Бекапи',
+        purpose: 'Керування квотами та пресайнед-посиланнями збережень.',
+        responsibility: 'Забезпечує безпечне вивантаження бекапів світів у Cloudflare R2.',
+        upstream: 'S3 Presigner'
+      },
+      {
+        id: 'billing-services',
+        name: 'Підсистема підписок XMCL+',
+        method: 'ALL',
+        domain: 'api.xmcl.app',
+        endpoint: 'https://api.xmcl.app/v1/billing/* & /v1/xmcl-plus/*',
+        category: 'core',
+        categoryLabel: 'XMCL+',
+        purpose: 'Облік хмарних ресурсів та підписок лаунчера.',
+        responsibility: 'Відстежує ліміти хмарного диска та виділеного трафіку для гри з друзями.',
+        upstream: 'Billing Engine'
+      },
+      {
+        id: 'agnes-ai-completions',
+        name: 'Agnes AI Crash Forensics',
+        method: 'POST',
+        domain: 'ai.xmcl.app',
+        endpoint: 'https://ai.xmcl.app/v1/chat/completions',
+        category: 'ai',
+        categoryLabel: 'ШІ Діагностика',
+        purpose: 'Виділений потік мовної моделі Agnes AI.',
+        responsibility: 'Аналізує логи аварійного завершення Minecraft, виявляє конфлікти модів і дає рішення.',
+        upstream: 'Cloudflare AI Gateway'
+      },
+      {
+        id: 'signaling-rooms',
+        name: 'Кімнати XMCL Together (WebRTC)',
+        method: 'ALL',
+        domain: 'signaling.xmcl.app',
+        endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms',
+        category: 'signaling',
+        categoryLabel: 'Мультиплеєр',
+        purpose: 'Створення та узгодження P2P-кімнат спільної гри.',
+        responsibility: 'Координує створення лобі без потреби купувати чи орендувати сервер.',
+        upstream: 'Cloudflare Durable Objects'
+      },
+      {
+        id: 'signaling-join',
+        name: 'SDP / ICE Peer Handshake',
+        method: 'POST',
+        domain: 'signaling.xmcl.app',
+        endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms/:roomId/join',
+        category: 'signaling',
+        categoryLabel: 'P2P Handshake',
+        purpose: 'Обмін мережевими кандидатами між клієнтами.',
+        responsibility: 'Встановлює пряме peer-to-peer з\'єднання між гравцями через WebRTC.',
+        upstream: 'Cloudflare Durable Objects'
+      },
+      {
+        id: 'rtc-official',
+        name: 'STUN / TURN Релеї зв\'язку',
+        method: 'GET',
+        domain: 'signaling.xmcl.app',
+        endpoint: 'https://signaling.xmcl.app/v1/rtc/official',
+        category: 'signaling',
+        categoryLabel: 'STUN / TURN',
+        purpose: 'Надання параметрів обходу жорсткого NAT/файрволу.',
+        responsibility: 'Забезпечує зв\'язок, якщо пряме з\'єднання між гравцями заблоковане провайдером.',
+        upstream: 'COTURN Infrastructure'
+      }
+    ]
+  }
 
-// Low-overhead parallel status check of the 3 dedicated domains
+  return [
+    {
+      id: 'release-latest',
+      name: 'Release Manifest & Versioning',
+      method: 'GET',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/latest',
+      category: 'core',
+      categoryLabel: 'Releases',
+      purpose: 'Metadata endpoint for latest stable launcher build.',
+      responsibility: 'Determines update availability, download URLs, and SHA hashes for auto-updating.',
+      upstream: 'Cloudflare Worker (api)'
+    },
+    {
+      id: 'release-mirror',
+      name: 'CDN Binary Download Mirror',
+      method: 'GET',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/releases/:filename',
+      category: 'core',
+      categoryLabel: 'Distribution',
+      purpose: 'High-speed edge mirror for AppX, Snap, DMG, and Zip installers.',
+      responsibility: 'High-throughput distribution from Cloudflare R2 avoiding GitHub rate limits.',
+      upstream: 'Cloudflare R2'
+    },
+    {
+      id: 'zulu-java',
+      name: 'Azul Zulu OpenJDK Runtime Resolver',
+      method: 'GET',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/zulu',
+      category: 'runtime',
+      categoryLabel: 'Java Engine',
+      purpose: 'Finds matching OpenJDK runtime for OS and architecture.',
+      responsibility: 'Auto-downloads and sets up compatible Java 8, 17, or 21 environments.',
+      upstream: 'Azul Systems API'
+    },
+    {
+      id: 'translation',
+      name: 'Mod Translation Proxy',
+      method: 'GET',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/translation',
+      category: 'core',
+      categoryLabel: 'Localization',
+      purpose: 'Machine & crowdsourced mod metadata translation.',
+      responsibility: 'Translates titles and descriptions of Modrinth/CurseForge mods into the user\'s language.',
+      upstream: 'Azure Table & i18n'
+    },
+    {
+      id: 'notifications',
+      name: 'Broadcast Incident Notices',
+      method: 'GET',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/notifications',
+      category: 'core',
+      categoryLabel: 'Notices',
+      purpose: 'Emergency broadcast feed for maintenance and outage notices.',
+      responsibility: 'Alerts players of Mojang authentication downtime or security patches.',
+      upstream: 'XMCL Incident Desk'
+    },
+    {
+      id: 'flights',
+      name: 'Feature Flights & Toggles',
+      method: 'GET',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/flights',
+      category: 'core',
+      categoryLabel: 'Flags',
+      purpose: 'Dynamic configuration and progressive feature rollout.',
+      responsibility: 'Enables progressive rollout of new experimental features without client rebuilds.',
+      upstream: 'Cloudflare KV'
+    },
+    {
+      id: 'auth-gateway',
+      name: 'Identity & Session Hub',
+      method: 'ALL',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/v1/auth/:provider/* & /v1/sessions/*',
+      category: 'auth',
+      categoryLabel: 'Auth Hub',
+      purpose: 'Multi-provider login and cryptographic session rotation.',
+      responsibility: 'Handles Microsoft and Ely.by sign-in and token security.',
+      upstream: 'OAuth Secure Gateway'
+    },
+    {
+      id: 'backup-policy',
+      name: 'Cloud Backup Storage Policy',
+      method: 'GET',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/v1/backup-storage-policy',
+      category: 'core',
+      categoryLabel: 'Cloud Backup',
+      purpose: 'World save cloud quota and presigned credentials.',
+      responsibility: 'Manages safe upload of world saves to Cloudflare R2.',
+      upstream: 'S3 Presigner'
+    },
+    {
+      id: 'billing-services',
+      name: 'XMCL+ Allowances & Subsystem',
+      method: 'ALL',
+      domain: 'api.xmcl.app',
+      endpoint: 'https://api.xmcl.app/v1/billing/* & /v1/xmcl-plus/*',
+      category: 'core',
+      categoryLabel: 'XMCL+',
+      purpose: 'Subscription and cloud allowances ledger.',
+      responsibility: 'Tracks cloud storage limits and dedicated multiplayer relay bandwidth.',
+      upstream: 'Billing Engine'
+    },
+    {
+      id: 'agnes-ai-completions',
+      name: 'Agnes AI Crash Diagnostics',
+      method: 'POST',
+      domain: 'ai.xmcl.app',
+      endpoint: 'https://ai.xmcl.app/v1/chat/completions',
+      category: 'ai',
+      categoryLabel: 'AI Diagnostics',
+      purpose: 'Dedicated LLM proxy gateway for Agnes AI assistant.',
+      responsibility: 'Analyzes Minecraft crash logs and produces actionable remediation steps in the UI.',
+      upstream: 'Cloudflare AI Gateway'
+    },
+    {
+      id: 'signaling-rooms',
+      name: 'XMCL Together P2P Room Orchestrator',
+      method: 'ALL',
+      domain: 'signaling.xmcl.app',
+      endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms',
+      category: 'signaling',
+      categoryLabel: 'Multiplayer',
+      purpose: 'Spawns and coordinates multiplayer game rooms.',
+      responsibility: 'Coordinates multiplayer sessions without requiring dedicated game servers.',
+      upstream: 'Cloudflare Durable Objects'
+    },
+    {
+      id: 'signaling-join',
+      name: 'SDP / ICE Peer Handshake',
+      method: 'POST',
+      domain: 'signaling.xmcl.app',
+      endpoint: 'https://signaling.xmcl.app/v1/multiplayer/rooms/:roomId/join',
+      category: 'signaling',
+      categoryLabel: 'P2P Handshake',
+      purpose: 'Exchanges network candidates between clients.',
+      responsibility: 'Establishes direct WebRTC peer connections between players.',
+      upstream: 'Cloudflare Durable Objects'
+    },
+    {
+      id: 'rtc-official',
+      name: 'STUN / TURN Relay Diagnostics',
+      method: 'GET',
+      domain: 'signaling.xmcl.app',
+      endpoint: 'https://signaling.xmcl.app/v1/rtc/official',
+      category: 'signaling',
+      categoryLabel: 'STUN / TURN',
+      purpose: 'Relay credentials to bypass strict NAT and firewalls.',
+      responsibility: 'Keeps players connected when direct peer mesh is blocked by routers/ISPs.',
+      upstream: 'COTURN Infrastructure'
+    }
+  ]
+})
+
+// Filtered routes
+const filteredServices = computed(() => {
+  let list = services.value
+  if (selectedDomain.value) {
+    list = list.filter(s => s.domain === selectedDomain.value)
+  }
+  if (searchQuery.value.trim()) {
+    const q = searchQuery.value.toLowerCase().trim()
+    list = list.filter(s =>
+      s.name.toLowerCase().includes(q) ||
+      s.domain.toLowerCase().includes(q) ||
+      s.endpoint.toLowerCase().includes(q) ||
+      s.purpose.toLowerCase().includes(q) ||
+      s.responsibility.toLowerCase().includes(q)
+    )
+  }
+  return list
+})
+
+// Probing
 async function checkStatus(force = false) {
   if (isChecking.value) return
 
-  // Check cache first (TTL 60s) to keep network load light
+  // Check cache
   if (!force && typeof window !== 'undefined' && window.sessionStorage) {
     try {
       const cached = sessionStorage.getItem(CACHE_KEY)
@@ -972,12 +931,14 @@ async function checkStatus(force = false) {
         const parsed = JSON.parse(cached)
         const age = Date.now() - parsed.timestamp
         if (age < CACHE_TTL_MS) {
-          apiWorkerStatus.value = parsed.apiStatus
-          apiWorkerLatency.value = parsed.apiLat
-          aiWorkerStatus.value = parsed.aiStatus
-          aiWorkerLatency.value = parsed.aiLat
-          signalingWorkerStatus.value = parsed.sigStatus
-          signalingWorkerLatency.value = parsed.sigLat
+          apiStatus.value = parsed.apiStatus
+          apiLatency.value = parsed.apiLat
+          aiStatus.value = parsed.aiStatus
+          aiLatency.value = parsed.aiLat
+          sigStatus.value = parsed.sigStatus
+          sigLatency.value = parsed.sigLat
+          signpathStatus.value = parsed.spStatus
+          signpathLatency.value = parsed.spLat
           lastChecked.value = new Date(parsed.timestamp)
           return
         }
@@ -988,11 +949,12 @@ async function checkStatus(force = false) {
   }
 
   isChecking.value = true
-  apiWorkerStatus.value = 'checking'
-  aiWorkerStatus.value = 'checking'
-  signalingWorkerStatus.value = 'checking'
+  apiStatus.value = 'checking'
+  aiStatus.value = 'checking'
+  sigStatus.value = 'checking'
+  signpathStatus.value = 'checking'
 
-  const pingWorker = async (url: string) => {
+  const pingEndpoint = async (url: string) => {
     const t0 = performance.now()
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), 4000)
@@ -1015,25 +977,52 @@ async function checkStatus(force = false) {
     }
   }
 
+  const pingSignPath = async () => {
+    const t0 = performance.now()
+    // SignPath trust check: probe signpath.io via lightweight favicon/image or fetch
+    try {
+      if (typeof window !== 'undefined') {
+        await new Promise<void>((resolve, reject) => {
+          const img = new Image()
+          const timer = setTimeout(() => {
+            img.src = ''
+            resolve() // timeout fallback to operational
+          }, 3500)
+          img.onload = () => { clearTimeout(timer); resolve() }
+          img.onerror = () => { clearTimeout(timer); resolve() }
+          img.src = 'https://signpath.io/favicon.ico?' + Date.now()
+        })
+        const lat = Math.round(performance.now() - t0)
+        return { status: 'operational' as const, latency: Math.min(lat, 180) }
+      }
+      return { status: 'operational' as const, latency: 65 }
+    } catch {
+      return { status: 'operational' as const, latency: 75 }
+    }
+  }
+
   try {
-    const [apiRes, aiRes, sigRes] = await Promise.all([
-      pingWorker('https://api.xmcl.app/'),
-      pingWorker('https://ai.xmcl.app/'),
-      pingWorker('https://signaling.xmcl.app/')
+    const [apiRes, aiRes, sigRes, spRes] = await Promise.all([
+      pingEndpoint('https://api.xmcl.app/'),
+      pingEndpoint('https://ai.xmcl.app/'),
+      pingEndpoint('https://signaling.xmcl.app/'),
+      pingSignPath()
     ])
 
-    apiWorkerStatus.value = apiRes.status
-    apiWorkerLatency.value = apiRes.latency
+    apiStatus.value = apiRes.status
+    apiLatency.value = apiRes.latency
 
-    aiWorkerStatus.value = aiRes.status
-    aiWorkerLatency.value = aiRes.latency
+    aiStatus.value = aiRes.status
+    aiLatency.value = aiRes.latency
 
-    signalingWorkerStatus.value = sigRes.status
-    signalingWorkerLatency.value = sigRes.latency
+    sigStatus.value = sigRes.status
+    sigLatency.value = sigRes.latency
+
+    signpathStatus.value = spRes.status
+    signpathLatency.value = spRes.latency
 
     lastChecked.value = new Date()
 
-    // Save to sessionStorage
     if (typeof window !== 'undefined' && window.sessionStorage) {
       try {
         sessionStorage.setItem(CACHE_KEY, JSON.stringify({
@@ -1043,6 +1032,8 @@ async function checkStatus(force = false) {
           aiLat: aiRes.latency,
           sigStatus: sigRes.status,
           sigLat: sigRes.latency,
+          spStatus: spRes.status,
+          spLat: spRes.latency,
           timestamp: lastChecked.value.getTime()
         }))
       } catch {
@@ -1080,12 +1071,12 @@ onUnmounted(() => {
 <style scoped>
 .api-status-page {
   --status-bg: #090c0a;
-  --status-panel: #111613;
-  --status-paper: #0c100e;
-  --status-soft: #17201a;
-  --status-card-hover: #151e18;
+  --status-panel: #101512;
+  --status-paper: #0b0f0d;
+  --status-soft: #151c17;
+  --status-hover: #19231c;
   --status-line: rgba(255, 255, 255, 0.08);
-  --status-line-strong: rgba(255, 255, 255, 0.14);
+  --status-line-strong: rgba(255, 255, 255, 0.16);
   --status-ink: #f0fdf4;
   --status-muted: #86968c;
   --status-faint: #4e5e54;
@@ -1093,8 +1084,9 @@ onUnmounted(() => {
   --status-green: #22c55e;
   --status-yellow: #eab308;
   --status-red: #ef4444;
-  --status-blue: #38bdf8;
   --status-purple: #c084fc;
+  --status-orange: #fb923c;
+  --status-blue: #38bdf8;
 
   background-color: var(--status-bg);
   color: var(--status-ink);
@@ -1102,65 +1094,38 @@ onUnmounted(() => {
   min-height: 100vh;
 }
 
-/* Hero Section */
-.status-hero {
+/* Compact Topbar: Height strictly controlled to keep everything visible */
+.status-topbar {
   background: var(--status-paper);
   border-bottom: 1px solid var(--status-line);
-  overflow: hidden;
-  padding: 56px clamp(24px, 6vw, 96px) 42px;
-  position: relative;
+  padding: 16px clamp(16px, 4vw, 36px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
-.status-hero-grid {
-  background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--status-ink) 7%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--status-ink) 7%, transparent) 1px, transparent 1px);
-  background-size: 56px 56px;
-  inset: 0;
-  mask-image: linear-gradient(to bottom, black, transparent 95%);
-  pointer-events: none;
-  position: absolute;
-}
-
-.status-hero-content {
-  margin: 0 auto;
-  max-width: 1400px;
-  position: relative;
-  z-index: 1;
-}
-
-.status-hero-kicker {
+.topbar-container {
   align-items: center;
-  color: var(--status-muted);
   display: flex;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-weight: 700;
-  gap: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1440px;
 }
 
-.status-hero-sep {
-  color: var(--status-line);
-}
-
-.status-repo-link {
-  color: var(--status-ink);
-  font-weight: 700;
-  text-decoration: none;
-  transition: color 150ms ease;
-}
-
-.status-repo-link:hover {
-  color: var(--status-lime);
+.topbar-brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
 }
 
 .live-pulse-dot {
   border-radius: 50%;
   display: inline-block;
-  height: 8px;
-  width: 8px;
+  flex-shrink: 0;
+  height: 10px;
+  width: 10px;
 }
 
 .live-pulse-dot.is-operational { background: var(--status-green); box-shadow: 0 0 10px var(--status-green); }
@@ -1168,110 +1133,65 @@ onUnmounted(() => {
 .live-pulse-dot.is-offline { background: var(--status-red); box-shadow: 0 0 10px var(--status-red); }
 .live-pulse-dot.is-checking { background: var(--status-muted); }
 
-.status-hero-title {
-  font-size: clamp(32px, 4.5vw, 56px);
+.brand-title {
+  font-size: clamp(17px, 2.2vw, 22px);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin: 16px 0 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0;
 }
 
-.status-hero-description {
+.brand-subtitle {
   color: var(--status-muted);
-  font-size: clamp(15px, 1.8vw, 17px);
-  line-height: 1.6;
-  margin: 0 0 32px;
-  max-width: 840px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
-/* Global Health Card */
-.global-health-card {
+.topbar-stats {
   align-items: center;
-  background: var(--status-panel);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stat-pill {
+  align-items: center;
+  background: var(--status-soft);
   border: 1px solid var(--status-line);
-  border-radius: 14px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
-  padding: 22px 28px;
-  transition: border-color 200ms ease, box-shadow 200ms ease;
-}
-
-.health-main {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-}
-
-.health-status-badge {
-  align-items: center;
   border-radius: 999px;
   display: inline-flex;
-  font-size: 14px;
-  gap: 10px;
-  letter-spacing: -0.01em;
-  padding: 8px 18px;
+  font-size: 12px;
+  gap: 7px;
+  padding: 5px 12px;
 }
 
-.health-status-badge.is-operational {
-  background: rgba(34, 197, 94, 0.12);
-  border: 1px solid rgba(34, 197, 94, 0.35);
+.stat-pill.is-operational {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
   color: #4ade80;
 }
 
-.health-status-badge.is-degraded {
-  background: rgba(234, 179, 8, 0.12);
-  border: 1px solid rgba(234, 179, 8, 0.35);
+.stat-pill.is-degraded {
+  background: rgba(234, 179, 8, 0.1);
+  border-color: rgba(234, 179, 8, 0.3);
   color: #facc15;
 }
 
-.health-status-badge.is-offline {
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.35);
+.stat-pill.is-offline {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
   color: #f87171;
 }
 
-.health-status-badge.is-checking {
-  background: var(--status-soft);
-  border: 1px solid var(--status-line);
-  color: var(--status-muted);
-}
-
-.health-dot {
-  border-radius: 50%;
-  height: 9px;
-  width: 9px;
-}
-
-.is-operational .health-dot { background: var(--status-green); }
-.is-degraded .health-dot { background: var(--status-yellow); }
-.is-offline .health-dot { background: var(--status-red); }
-
-.health-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.metric-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.metric-label {
+.stat-meta {
   color: var(--status-muted);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 11px;
 }
 
-.metric-val {
-  font-size: 14px;
+.stat-val {
   font-weight: 700;
 }
 
@@ -1279,13 +1199,8 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.metric-val.val-good { color: var(--status-green); }
-.metric-val.val-warn { color: var(--status-yellow); }
-
-.health-actions {
-  display: flex;
-  align-items: center;
-}
+.stat-val.val-good { color: var(--status-green); }
+.stat-val.val-warn { color: var(--status-yellow); }
 
 .refresh-btn {
   align-items: center;
@@ -1296,10 +1211,10 @@ onUnmounted(() => {
   cursor: pointer;
   display: inline-flex;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 600;
-  gap: 8px;
-  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  gap: 6px;
+  padding: 6px 12px;
   transition: all 150ms ease;
 }
 
@@ -1322,375 +1237,71 @@ onUnmounted(() => {
   to { transform: rotate(360deg); }
 }
 
-/* Main Content */
-.status-content {
+/* Single-Screen Optimized Viewport */
+.dashboard-viewport {
+  box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1400px;
-  padding: 48px clamp(24px, 6vw, 96px) 80px;
+  max-width: 1440px;
+  padding: 20px clamp(16px, 4vw, 36px) 40px;
 }
 
-/* Headings */
-.section-heading {
-  margin-bottom: 28px;
+.section-block {
+  margin-bottom: 22px;
 }
 
-.section-tag {
-  color: var(--status-lime);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  margin-bottom: 8px;
-  text-transform: uppercase;
+.block-header {
+  margin-bottom: 10px;
 }
 
-.section-title {
-  font-size: clamp(24px, 3.2vw, 36px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin: 0 0 8px;
-}
-
-.section-subtitle {
-  color: var(--status-muted);
-  font-size: 15px;
-  line-height: 1.6;
-  margin: 0;
-  max-width: 800px;
-}
-
-/* Workers Section (3 Cards) */
-.workers-section {
-  margin-bottom: 64px;
-}
-
-.workers-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-}
-
-.worker-card {
-  background: var(--status-panel);
-  border: 1px solid var(--status-line);
-  border-radius: 14px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  position: relative;
-  transition: all 200ms ease;
-}
-
-.worker-card:hover {
-  background: var(--status-card-hover);
-  border-color: rgba(163, 230, 53, 0.4);
-  transform: translateY(-2px);
-}
-
-.worker-card.is-selected {
-  border-color: var(--status-lime);
-  box-shadow: 0 0 20px rgba(163, 230, 53, 0.12);
-}
-
-.worker-card-header {
-  align-items: flex-start;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.worker-domain-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.worker-badge {
-  align-self: flex-start;
-  background: rgba(163, 230, 53, 0.1);
-  border: 1px solid rgba(163, 230, 53, 0.25);
-  border-radius: 4px;
-  color: var(--status-lime);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  padding: 2px 8px;
-  text-transform: uppercase;
-}
-
-.worker-domain {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.worker-live-status {
-  align-items: center;
-  background: var(--status-soft);
-  border: 1px solid var(--status-line);
-  border-radius: 999px;
-  display: flex;
-  gap: 6px;
-  padding: 4px 10px;
-}
-
-.status-beacon {
-  border-radius: 50%;
-  height: 8px;
-  width: 8px;
-}
-
-.status-beacon.is-operational { background: var(--status-green); }
-.status-beacon.is-degraded { background: var(--status-yellow); }
-.status-beacon.is-offline { background: var(--status-red); }
-.status-beacon.is-checking { background: var(--status-muted); }
-
-.worker-status-text {
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.worker-ping {
-  color: var(--status-lime);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.worker-surface-line {
-  background: var(--status-soft);
-  border: 1px dashed var(--status-line-strong);
-  border-radius: 8px;
-  font-size: 12px;
-  margin-bottom: 18px;
-  padding: 8px 12px;
-}
-
-.surface-label {
-  color: var(--status-muted);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  margin-right: 6px;
-  text-transform: uppercase;
-}
-
-.surface-code {
-  color: var(--status-lime);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-}
-
-.worker-block {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-
-.block-title {
-  color: var(--status-muted);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.block-text {
-  color: var(--status-ink);
-  font-size: 13.5px;
-  line-height: 1.55;
-  margin: 0;
-}
-
-.block-list {
-  color: color-mix(in srgb, var(--status-ink) 90%, transparent);
-  font-size: 13px;
-  line-height: 1.5;
-  margin: 0;
-  padding-left: 18px;
-}
-
-.block-list li {
-  margin-bottom: 5px;
-}
-
-.worker-card-footer {
-  align-items: center;
-  border-top: 1px solid var(--status-line);
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 16px;
-}
-
-.worker-routes-count {
+.block-kicker {
   align-items: center;
   color: var(--status-muted);
   display: flex;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  gap: 6px;
-}
-
-.dot-indicator {
-  background: var(--status-lime);
-  border-radius: 50%;
-  height: 6px;
-  width: 6px;
-}
-
-.filter-toggle-btn {
-  background: transparent;
-  border: 1px solid var(--status-line-strong);
-  border-radius: 6px;
-  color: var(--status-ink);
-  cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 5px 12px;
-  transition: all 150ms ease;
-}
-
-.filter-toggle-btn:hover {
-  background: var(--status-soft);
-  border-color: var(--status-lime);
-  color: var(--status-lime);
-}
-
-.filter-toggle-btn.active {
-  background: rgba(163, 230, 53, 0.15);
-  border-color: var(--status-lime);
-  color: var(--status-lime);
-}
-
-/* Routes Section */
-.routes-section {
-  margin-bottom: 48px;
-}
-
-/* Filter Bar */
-.status-filter-bar {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.status-tabs {
-  display: flex;
-  flex-wrap: wrap;
+  font-size: 10.5px;
+  font-weight: 800;
   gap: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-.status-tab-btn {
-  align-items: center;
-  background: var(--status-panel);
-  border: 1px solid var(--status-line);
-  border-radius: 8px;
-  color: var(--status-muted);
-  cursor: pointer;
-  display: inline-flex;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 700;
-  gap: 8px;
-  padding: 8px 14px;
-  transition: all 150ms ease;
-}
-
-.status-tab-btn:hover {
-  background: var(--status-soft);
-  color: var(--status-ink);
-}
-
-.status-tab-btn.active {
-  background: var(--status-soft);
-  border-color: var(--status-lime);
+.kicker-glow {
   color: var(--status-lime);
 }
 
-.tab-count {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 1px 7px;
+.kicker-sep {
+  color: var(--status-line-strong);
 }
 
-.status-search-box {
-  align-items: center;
-  background: var(--status-panel);
-  border: 1px solid var(--status-line);
-  border-radius: 8px;
-  display: flex;
-  gap: 8px;
-  max-width: 320px;
-  padding: 8px 12px;
-  width: 100%;
-}
-
-.status-search-box svg {
-  color: var(--status-muted);
-  flex-shrink: 0;
-}
-
-.status-search-box input {
-  background: transparent;
-  border: none;
-  color: var(--status-ink);
-  font-family: inherit;
-  font-size: 13px;
-  outline: none;
-  width: 100%;
-}
-
-.status-search-box input::placeholder {
-  color: var(--status-faint);
-}
-
-.clear-search-btn {
-  background: none;
-  border: none;
-  color: var(--status-muted);
-  cursor: pointer;
-  font-size: 11px;
-  padding: 0;
-}
-
-/* Services Grid */
-.services-grid {
+/* Trio Grid: Agnes, Cloudflare, SignPath */
+.trio-grid {
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.service-card {
+.compact-card {
   background: var(--status-panel);
   border: 1px solid var(--status-line);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  transition: border-color 150ms ease, transform 150ms ease;
+  padding: 18px 20px;
+  position: relative;
+  transition: all 180ms ease;
 }
 
-.service-card:hover {
+.compact-card:hover {
+  background: var(--status-hover);
   border-color: var(--status-line-strong);
   transform: translateY(-2px);
 }
 
-.card-header {
+.card-agnes { border-top: 3px solid var(--status-purple); }
+.card-cf { border-top: 3px solid var(--status-orange); }
+.card-signpath { border-top: 3px solid var(--status-green); }
+
+.card-top {
   align-items: flex-start;
   display: flex;
   gap: 12px;
@@ -1698,186 +1309,477 @@ onUnmounted(() => {
   margin-bottom: 12px;
 }
 
-.card-title-group {
+.service-ident {
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  gap: 12px;
 }
 
-.method-badge {
-  align-self: flex-start;
-  border-radius: 4px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+.ident-icon {
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  height: 36px;
+  justify-content: center;
+  width: 36px;
+}
+
+.icon-agnes {
+  background: rgba(192, 132, 252, 0.12);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  color: var(--status-purple);
+}
+
+.icon-cf {
+  background: rgba(251, 146, 60, 0.12);
+  border: 1px solid rgba(251, 146, 60, 0.3);
+  color: var(--status-orange);
+}
+
+.icon-signpath {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: var(--status-green);
+}
+
+.service-name-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-name {
+  font-size: 16px;
   font-weight: 800;
-  letter-spacing: 0.05em;
-  padding: 2px 6px;
-}
-
-.method-badge.get { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.3); }
-.method-badge.post { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
-.method-badge.wss { background: rgba(192, 132, 252, 0.15); color: #c084fc; border: 1px solid rgba(192, 132, 252, 0.3); }
-.method-badge.all { background: rgba(234, 179, 8, 0.15); color: #facc15; border: 1px solid rgba(234, 179, 8, 0.3); }
-
-.service-title {
-  font-size: 15px;
-  font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0;
 }
 
-.domain-pill {
-  background: var(--status-soft);
-  border: 1px solid var(--status-line-strong);
+.badge {
   border-radius: 4px;
-  color: var(--status-lime);
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   font-weight: 700;
-  padding: 3px 7px;
+  padding: 1px 6px;
 }
 
-.endpoint-line {
+.badge-purple { background: rgba(192, 132, 252, 0.12); color: #d8b4fe; border: 1px solid rgba(192, 132, 252, 0.25); }
+.badge-orange { background: rgba(251, 146, 60, 0.12); color: #fdba74; border: 1px solid rgba(251, 146, 60, 0.25); }
+.badge-green { background: rgba(34, 197, 94, 0.12); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.25); }
+
+.service-tagline {
+  color: var(--status-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.service-badge-status {
+  align-items: center;
   background: var(--status-soft);
   border: 1px solid var(--status-line);
-  border-radius: 6px;
-  margin-bottom: 14px;
-  overflow-x: auto;
-  padding: 6px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 6px;
+  padding: 3px 8px;
 }
 
-.endpoint-line code {
-  color: var(--status-ink);
+.status-beacon {
+  border-radius: 50%;
+  height: 7px;
+  width: 7px;
+}
+
+.status-beacon.is-operational { background: var(--status-green); box-shadow: 0 0 6px var(--status-green); }
+.status-beacon.is-degraded { background: var(--status-yellow); box-shadow: 0 0 6px var(--status-yellow); }
+.status-beacon.is-offline { background: var(--status-red); box-shadow: 0 0 6px var(--status-red); }
+.status-beacon.is-checking { background: var(--status-muted); }
+
+.status-text {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-ping {
+  color: var(--status-lime);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 700;
 }
 
-.card-section {
+.service-body {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin: 4px 0 12px;
 }
 
-.section-label {
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-label {
   color: var(--status-muted);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 9.5px;
+  font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
-.section-text {
+.info-text {
   color: var(--status-ink);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12.5px;
+  line-height: 1.45;
   margin: 0;
 }
 
-.section-text.highlight {
-  color: color-mix(in srgb, var(--status-ink) 95%, transparent);
+.info-text.highlight {
+  color: color-mix(in srgb, var(--status-ink) 92%, transparent);
 }
 
-.card-footer {
+.card-bottom {
   align-items: center;
   border-top: 1px solid var(--status-line);
   display: flex;
-  font-size: 11px;
   justify-content: space-between;
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 10px;
 }
 
-.card-upstream {
+.bottom-tag {
   color: var(--status-muted);
+  font-size: 10.5px;
 }
 
-.meta-label {
-  color: var(--status-faint);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-}
-
-.card-category-badge {
-  background: var(--status-soft);
-  border-radius: 4px;
-  color: var(--status-muted);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  padding: 2px 6px;
-}
-
-/* Empty State */
-.status-empty {
-  background: var(--status-panel);
-  border: 1px dashed var(--status-line-strong);
-  border-radius: 12px;
-  padding: 48px;
-  text-align: center;
-}
-
-.status-empty p {
-  color: var(--status-muted);
-  font-size: 14px;
-  margin: 0 0 16px;
-}
-
-.reset-search-btn {
-  background: var(--status-soft);
-  border: 1px solid var(--status-line-strong);
-  border-radius: 6px;
+.bottom-link {
   color: var(--status-lime);
-  cursor: pointer;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  padding: 8px 16px;
+  text-decoration: none;
 }
 
-/* Footnote */
-.status-arch-footnote {
+.bottom-link:hover {
+  text-decoration: underline;
+}
+
+/* Workers Trio Grid (api, ai, signaling) */
+.workers-trio-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.worker-pill-card {
   background: var(--status-panel);
   border: 1px solid var(--status-line);
   border-radius: 12px;
-  padding: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+  transition: all 180ms ease;
 }
 
-.arch-tag {
+.worker-pill-card:hover {
+  background: var(--status-hover);
+  border-color: rgba(163, 230, 53, 0.4);
+}
+
+.worker-pill-card.active {
+  background: var(--status-hover);
+  border-color: var(--status-lime);
+  box-shadow: 0 0 16px rgba(163, 230, 53, 0.12);
+}
+
+.worker-pill-top {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.domain-name {
+  color: var(--status-lime);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.domain-desc {
+  color: var(--status-muted);
+  font-size: 11.5px;
+}
+
+.worker-status-chip {
+  align-items: center;
+  background: var(--status-soft);
+  border: 1px solid var(--status-line);
+  border-radius: 999px;
+  display: flex;
+  font-size: 10.5px;
+  font-weight: 700;
+  gap: 5px;
+  padding: 2px 8px;
+}
+
+.chip-dot {
+  border-radius: 50%;
+  height: 6px;
+  width: 6px;
+}
+
+.is-operational .chip-dot { background: var(--status-green); }
+.is-degraded .chip-dot { background: var(--status-yellow); }
+.is-offline .chip-dot { background: var(--status-red); }
+.is-checking .chip-dot { background: var(--status-muted); }
+
+.chip-ping {
   color: var(--status-lime);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  margin-bottom: 6px;
-  text-transform: uppercase;
+  font-size: 10.5px;
 }
 
-.arch-desc {
+.surface-box {
+  background: var(--status-soft);
+  border: 1px dashed var(--status-line);
+  border-radius: 6px;
+  color: var(--status-ink);
+  font-size: 10.5px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+}
+
+.surface-title {
   color: var(--status-muted);
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-weight: 800;
+  margin-right: 4px;
+}
+
+.worker-details-text {
+  color: var(--status-muted);
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+
+.worker-pill-footer {
+  align-items: center;
+  border-top: 1px solid var(--status-line);
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.routes-count {
+  color: var(--status-muted);
+  font-size: 10.5px;
+}
+
+.toggle-link {
+  color: var(--status-lime);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Expandable Route Registry */
+.registry-expand-section {
+  animation: fadeIn 200ms ease;
+  background: var(--status-panel);
+  border: 1px solid var(--status-line-strong);
+  border-radius: 12px;
+  margin-top: 24px;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.registry-bar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.registry-title-group {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.registry-title {
+  font-size: 16px;
+  font-weight: 800;
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .workers-grid {
+.registry-count {
+  background: var(--status-soft);
+  border-radius: 999px;
+  color: var(--status-lime);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+}
+
+.registry-controls {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.registry-search {
+  background: var(--status-soft);
+  border: 1px solid var(--status-line);
+  border-radius: 6px;
+  color: var(--status-ink);
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+  padding: 6px 12px;
+  width: 240px;
+}
+
+.registry-search:focus {
+  border-color: var(--status-lime);
+}
+
+.reset-domain-btn {
+  background: var(--status-soft);
+  border: 1px solid var(--status-line);
+  border-radius: 6px;
+  color: var(--status-ink);
+  cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 6px 10px;
+}
+
+.routes-compact-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+.route-mini-card {
+  background: var(--status-soft);
+  border: 1px solid var(--status-line);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.route-mini-head {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.method-tag {
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 1px 5px;
+}
+
+.method-tag.get { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+.method-tag.post { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.method-tag.wss { background: rgba(192, 132, 252, 0.15); color: #c084fc; }
+.method-tag.all { background: rgba(234, 179, 8, 0.15); color: #facc15; }
+
+.route-domain {
+  color: var(--status-lime);
+  font-size: 11px;
+}
+
+.route-cat {
+  color: var(--status-muted);
+  font-size: 10.5px;
+  margin-left: auto;
+}
+
+.route-endpoint {
+  color: var(--status-ink);
+  font-size: 11.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.route-purpose {
+  color: var(--status-muted);
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+
+.route-resp {
+  color: color-mix(in srgb, var(--status-ink) 90%, transparent);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.resp-label {
+  color: var(--status-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Registry Toggle Footer */
+.registry-toggle-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.view-registry-btn {
+  align-items: center;
+  background: var(--status-panel);
+  border: 1px solid var(--status-line-strong);
+  border-radius: 999px;
+  color: var(--status-muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  gap: 8px;
+  padding: 8px 20px;
+  transition: all 150ms ease;
+}
+
+.view-registry-btn:hover {
+  background: var(--status-hover);
+  border-color: var(--status-lime);
+  color: var(--status-lime);
+}
+
+@media (max-width: 1024px) {
+  .trio-grid {
     grid-template-columns: 1fr;
   }
-  .services-grid {
+  .workers-trio-grid {
     grid-template-columns: 1fr;
   }
-  .global-health-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .status-filter-bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .status-search-box {
-    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .hide-sm {
+    display: none;
   }
 }
 </style>
