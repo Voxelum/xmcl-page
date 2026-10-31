@@ -1,5 +1,6 @@
 <template>
   <div class="api-status-page">
+    <div class="modern-grid" aria-hidden="true" />
     <!-- Compact Top Command Bar -->
     <header class="status-topbar">
       <div class="topbar-container">
@@ -1092,6 +1093,19 @@ onUnmounted(() => {
   color: var(--status-ink);
   font-family: 'Space Grotesk', -apple-system, sans-serif;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.modern-grid {
+  background-image:
+    linear-gradient(to right, rgba(237, 243, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 243, 237, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  inset: 0;
+  mask-image: linear-gradient(to bottom, black 30%, transparent 95%);
+  pointer-events: none;
+  position: absolute;
 }
 
 /* Compact Topbar: Height strictly controlled to keep everything visible */
@@ -1243,6 +1257,8 @@ onUnmounted(() => {
   margin: 0 auto;
   max-width: 1440px;
   padding: 20px clamp(16px, 4vw, 36px) 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .section-block {

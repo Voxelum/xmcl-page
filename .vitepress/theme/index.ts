@@ -142,6 +142,7 @@ export default {
     app.component('AppLabymodPicture', AppLabymodPicture)
     app.component('LogViewer', LogViewer)
     app.component('DocumentationHub', DocumentationHub)
+    app.component('status', ApiStatus)
     app.component('ApiStatus', ApiStatus)
   },
 }

@@ -1,6 +1,5 @@
 ---
+layout: status
 title: Статус систем и Web API XMCL | XMCL
 description: Мониторинг работоспособности, эндпоинтов и микросервисов экосистемы XMCL в реальном времени.
 ---
-
-<ApiStatus />
