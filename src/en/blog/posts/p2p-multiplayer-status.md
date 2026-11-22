@@ -102,7 +102,7 @@ While online P2P room hosting is being restored:
 Once the new Cloudflare Durable Objects backend is fully deployed and verified, **we will immediately announce service restoration** on our official communication channels:
 
 - 📰 **XMCL Blog**: Updates and post-mortems will be published directly here in our journal.
-- 💬 **Community Channels**: Announcements will be posted in our **Discord server** and **Reddit community**.
+- 💬 **Community Channels**: Announcements will be posted in our **Discord server**.
 
 *(Note: Official status announcements are published via our blog and social channels rather than GitHub repository issues).*
 

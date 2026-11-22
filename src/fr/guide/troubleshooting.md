@@ -217,11 +217,7 @@ Si vous avez lu les journaux et ne trouvez toujours pas l'origine du plantage, a
   
   <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. Demandez sur Reddit
-- Vous pouvez poser vos questions sur notre forum communautaire :
-- Visiter : **[Subreddit r/XMCL](https://www.reddit.com/r/XMCL/)**
-
-#### 3. Ouvrez un ticket (Issue) sur GitHub
+#### 2. Ouvrez un ticket (Issue) sur GitHub
 - Si vous pensez avoir rencontré un bug lié au fonctionnement du lanceur, vous pouvez soumettre un rapport.
 - Soumettre ici : **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
 - Copiez-collez le contenu de votre rapport ou vos journaux de plantage dans la description pour que l'équipe puisse reproduire et corriger le bug.

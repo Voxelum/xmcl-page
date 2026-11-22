@@ -217,11 +217,7 @@ Se você olhou pelos logs/relatórios e ainda não sabe o que está causando o c
   
   <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. Pergunte no Reddit
-- Você pode postar seus problemas e perguntar à comunidade no nosso subreddit:
-- Visite: **[Subreddit r/XMCL](https://www.reddit.com/r/XMCL/)**
-
-#### 3. Abra uma Issue no GitHub
+#### 2. Abra uma Issue no GitHub
 - Se você acredita ter encontrado um bug no próprio launcher, pode registrar um relatório de bug.
 - Envie aqui: **[Issues do XMCL no GitHub](https://github.com/Voxelum/x-minecraft-launcher/issues)**
 - Cole o conteúdo do seu relatório ou logs dentro da descrição da issue para que os desenvolvedores possam depurá-la.

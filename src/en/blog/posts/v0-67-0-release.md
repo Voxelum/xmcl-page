@@ -112,7 +112,6 @@ Consolidated our signaling and WebRTC peer-to-peer multiplayer stack, improving 
 - **Silent Microsoft Bootstrap Deduplication ([`4b80842`](https://github.com/Voxelum/x-minecraft-launcher/commit/4b80842446e5f57d10e6fc5d69051540873c8f25))**: Deduplicated concurrent background token renewals, eliminating redundant Microsoft authentication calls.
 - **Refined Login Cache ([`2726659`](https://github.com/Voxelum/x-minecraft-launcher/commit/2726659e25d65c3f1caf51c628e924a04f6364df))**: Polished credential caching to eliminate cold-start startup delay.
 - **Context Menu Stability ([`1a79eb0`](https://github.com/Voxelum/x-minecraft-launcher/commit/1a79eb044da83e8d41d280a74c35baa64144247a))**: Fixed right-click context menu dismiss and focus-trapping glitches.
-- **Reddit Community in Feedback Dialog ([#1684](https://github.com/Voxelum/x-minecraft-launcher/pull/1684), [`b0cf753`](https://github.com/Voxelum/x-minecraft-launcher/commit/b0cf753c0c03db5f8f16141952aeebc35af76b84))**: Added a dedicated shortcut to [r/XMCL](https://www.reddit.com/r/XMCL/) inside the Feedback dialog.
 
 ---
 
@@ -179,7 +178,6 @@ You can inspect the customized legal policies for your language in our [Privacy 
 - java: detect and repair incomplete runtimes automatically (f130b2a3)
 - ui: scroll agent chat to bottom on conversation load (4bff0597)
 - ui: localize instance sort tabs in all languages (97386732)
-- ui: add Reddit channel to Feedback dialog (#1684) (b0cf753c)
 - ui: show active state on collection bookmark button (#1689) (bc077167)
 - modrinth: use remove_projects for collection removal (#1688) (a0f6c754)
 - curseforge: align upgrade plan key with item.id (#1692) (fbbf06d4)
@@ -196,6 +194,6 @@ You can inspect the customized legal policies for your language in our [Privacy 
 
 - **Direct Downloads**: Grab the installer for Windows, macOS, or Linux from **[GitHub Releases v0.67.0](https://github.com/Voxelum/x-minecraft-launcher/releases/tag/v0.67.0)**.
 - **Linux Flatpak**: Available on **[Flathub](https://flathub.org/en/apps/app.xmcl.voxelum)**.
-- **Join Our Community**: Discuss the update on **[Discord](https://discord.gg/W5XVwYY7GQ)** or share feedback on **[Reddit r/XMCL](https://www.reddit.com/r/XMCL/)**.
+- **Join Our Community**: Discuss the update and share feedback on **[Discord](https://discord.gg/W5XVwYY7GQ)**.
 
 </PostDetail>

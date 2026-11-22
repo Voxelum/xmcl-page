@@ -217,11 +217,7 @@ XMCL 擁有極其智能的自動 Java 管理器，可以替您一鍵下載並配
   
   <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. 在 Reddit 社區提問
-- 您也可以在我們的海外玩家論壇上發帖詢問：
-- 傳送門：**[r/XMCL Subreddit](https://www.reddit.com/r/XMCL/)**
-
-#### 3. 在 GitHub 提交 Issue
+#### 2. 在 GitHub 提交 Issue
 - 如果您確認所遇問題是啟動器本身的程式 Bug，可以提交 Bug 報告。
 - 報告地址：**[XMCL GitHub Issues 反饋板塊](https://github.com/Voxelum/x-minecraft-launcher/issues)**
 - 在 Issue 描述中附上您的診斷報告，以便開發人員進行調試排查。

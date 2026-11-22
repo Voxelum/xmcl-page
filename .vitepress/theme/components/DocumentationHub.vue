@@ -207,7 +207,7 @@ const blocks = computed(() => hubData.value.blocks)
                 ? 'Якщо документація не допомогла вирішити проблему чи ви знайшли баг у лаунчері, зверніться до спільноти або створіть Issue на GitHub:'
                 : (isRu
                   ? 'Если документация не помогла решить проблему или вы обнаружили баг, обратитесь к сообществу или создайте Issue на GitHub:'
-                  : 'If the documentation didn’t resolve your issue, get direct community support or report launcher bugs on Discord, Reddit, or GitHub:')
+                  : 'If the documentation didn’t resolve your issue, get direct community support or report launcher bugs on Discord or GitHub:')
             }}
           </p>
           <div class="console-actions-row">
@@ -218,15 +218,6 @@ const blocks = computed(() => hubData.value.blocks)
               class="console-btn"
             >
               <span>{{ isUk ? 'DISCORD СПІЛЬНОТА' : (isRu ? 'DISCORD СООБЩЕСТВО' : 'CONNECT TO DISCORD') }}</span>
-              <span class="console-btn-plus">+</span>
-            </a>
-            <a
-              href="https://www.reddit.com/r/XMCL/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="console-btn"
-            >
-              <span>{{ isUk ? 'R/XMCL НА REDDIT' : (isRu ? 'R/XMCL НА REDDIT' : 'R/XMCL ON REDDIT') }}</span>
               <span class="console-btn-plus">+</span>
             </a>
             <a

@@ -217,11 +217,7 @@ Wenn Sie die Logs/Berichte geprüft haben und immer noch nicht wissen, was den A
   
   <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. Auf Reddit fragen
-- Sie können Fragen in unserer Reddit-Community stellen:
-- Subreddit besuchen: **[r/XMCL Subreddit](https://www.reddit.com/r/XMCL/)**
-
-#### 3. Ein GitHub-Issue erstellen
+#### 2. Ein GitHub-Issue erstellen
 - Wenn Sie glauben, einen Fehler im Launcher selbst gefunden zu haben, können Sie einen Fehlerbericht erstellen.
 - Hier erstellen: **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
 - Fügen Sie den Inhalt Ihres Diagnoseberichts oder der Logdateien in die Beschreibung ein, damit die Entwickler das Problem beheben können.

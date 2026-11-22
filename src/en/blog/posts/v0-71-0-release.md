@@ -202,7 +202,6 @@ Behind the visual updates, v0.71.0 introduces critical architectural stability f
 
 Encountered an issue or want to suggest a new feature?
 * 💬 Join the conversation on **[Discord](https://discord.gg/W5XVwYY7GQ)**.
-* 🌐 Discuss updates and share your thoughts on **[Reddit (r/XMCL)](https://www.reddit.com/r/XMCL/)**.
 * 🐛 Report bugs and submit feature requests on **[GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**.
 
 Enjoy exploring your worlds and quests with **XMCL v0.71.0**! 🚀

@@ -217,11 +217,7 @@ XMCL мае аўтаматычны менеджэр Java, які самасто�
   
   <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. Запытайце на Reddit
-- Вы можаце задаць пытанні на форуме супольнасці:
-- Наведаць: **[Subreddit r/XMCL](https://www.reddit.com/r/XMCL/)**
-
-#### 3. Стварыце Issue на GitHub
+#### 2. Стварыце Issue на GitHub
 - Калі вы сутыкнуліся з багам у самой праграме лаўнчара:
 - Стварыць справаздачу: **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
 - Скапіруйце змесціва вашай дыягнастычнай справаздачы ў апісанне, каб распрацоўшчыкі змаглі выправіць памылку.

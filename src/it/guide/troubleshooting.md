@@ -216,11 +216,7 @@ Se hai controllato i log e ancora non sai cosa stia fallendo, non preoccuparti. 
   
   <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. Chiedi su Reddit
-- Puoi pubblicare la tua domanda sul forum della nostra comunità:
-- Enlace: **[Comunità Reddit r/XMCL](https://www.reddit.com/r/XMCL/)**
-
-#### 3. Apri una segnalazione (Issue) su GitHub
+#### 2. Apri una segnalazione (Issue) su GitHub
 - Se ritieni di aver riscontrato un bug del launcher XMCL, puoi inviare una segnalazione di errore.
 - Crea segnalazione: **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
 - Incolla i dettagli del report di diagnostica nella descrizione in modo che gli sviluppatori possano riprodurre e risolvere il problema.

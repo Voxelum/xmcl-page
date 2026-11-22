@@ -70,7 +70,6 @@ XMCL розробляється на основі локального підх�
 
 - **GitHub Issues**: прикріпіть файл `.zip` до вашого повідомлення про проблему у репозиторії [voxelum/x-minecraft-launcher/issues](https://github.com/voxelum/x-minecraft-launcher/issues).
 - **Офіційний Discord**: надішліть у канал `#support` або `#troubleshooting` на [сервері XMCL Discord](https://discord.gg/W57tNmF).
-- **Reddit**: використовуйте сервіс [mclo.gs](https://mclo.gs) для публікації текстових фрагментів та створіть тему у спільноті [r/xmcl](https://www.reddit.com/r/xmcl/).
 
 ::: tip ПОРАДА
 Ніколи не публікуйте повні логи на неперевірені публічні сервіси для тексту. Для Discord та GitHub завжди використовуйте [mclo.gs](https://mclo.gs), який автоматично приховує випадково виявлені IP-адреси та конфіденційні шляхи.

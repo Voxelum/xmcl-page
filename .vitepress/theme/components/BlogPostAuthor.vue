@@ -16,7 +16,6 @@ const role = computed(() => props.roleOverride || props.author?.data?.role || 'C
 const profileUrl = computed(() => {
   if (props.author?.data?.github) return props.author.data.github
   if (props.author?.data?.gitlab) return props.author.data.gitlab
-  if (props.author?.data?.reddit) return props.author.data.reddit
   if (name.value.toLowerCase() === 'bansafan') return 'https://github.com/BANSAFAn'
   if (name.value.toLowerCase() === 'ci010') return 'https://github.com/ci010'
   if (name.value.toLowerCase() === 'volodiakraplich') return 'https://gitlab.com/VolodiaKraplich'

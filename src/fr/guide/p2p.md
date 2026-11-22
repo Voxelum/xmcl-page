@@ -86,4 +86,4 @@ Une fois connecté, vous pouvez partager des instances de monde avec vos amis à
 
 ## Besoin d'aide ?
 
-Si vous rencontrez des problèmes, n'hésitez pas à demander de l'aide sur Discord, Reddit ou d'autres communautés Minecraft.
+Si vous rencontrez des problèmes, n'hésitez pas à demander de l'aide sur Discord ou d'autres communautés Minecraft.

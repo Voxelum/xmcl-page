@@ -257,7 +257,7 @@ html:not(.dark) .VPNavBarMenuLink:hover {
   display: none !important;
 }
 
-/* Social Icon Links (GitHub, Discord, Reddit) */
+/* Social Icon Links (GitHub, Discord) */
 .VPSocialLink {
   width: 2.25rem !important;
   height: 2.25rem !important;
@@ -294,11 +294,6 @@ html:not(.dark) .VPSocialLink {
   box-shadow: 0 4px 14px rgba(88, 101, 242, 0.3) !important;
 }
 
-.VPSocialLink[href*="reddit"]:hover {
-  color: #ff4500 !important;
-  border-color: rgba(255, 69, 0, 0.4) !important;
-  box-shadow: 0 4px 14px rgba(255, 69, 0, 0.3) !important;
-}
 
 /* Appearance Switch */
 .VPSwitchAppearance {

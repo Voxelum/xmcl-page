@@ -202,7 +202,6 @@ coAuthors:
 
 Знайшли помилку чи маєте пропозицію для нових функцій?
 * 💬 Приєднуйтесь до нашого ком'юніті в **[Discord](https://discord.gg/W5XVwYY7GQ)**.
-* 🌐 Обговорюйте реліз та діліться враженнями на **[Reddit (r/XMCL)](https://www.reddit.com/r/XMCL/)**.
 * 🐛 Повідомляйте про помилки на **[GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**.
 
 Приємної гри та нових відкриттів разом з **XMCL v0.71.0**! 🚀

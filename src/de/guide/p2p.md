@@ -86,4 +86,4 @@ Sobald die Verbindung hergestellt ist, kannst du Weltinstanzen mit deinen Freund
 
 ## Benötigst du Hilfe?
 
-Wenn Probleme auftreten, kannst du gerne in Discord, Reddit oder anderen Minecraft-Communitys um Hilfe bitten.
+Wenn Probleme auftreten, kannst du gerne in Discord oder anderen Minecraft-Communitys um Hilfe bitten.

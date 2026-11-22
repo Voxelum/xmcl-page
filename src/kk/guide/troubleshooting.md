@@ -217,11 +217,7 @@ XMCL-де сізге қажетті JDK нұсқаларын автоматты 
   
   <img src="/guidephoto/Discord-feedback.gif" style="border-radius: 8px; max-width: 100%; border: 1px solid var(--vp-c-divider); margin: 12px 0;" />
 
-#### 2. Reddit-те сұраңыз
-- Сондай-ақ Reddit-тегі қауымдастығымызда сұрақ қоя аласыз:
-- Сілтеме: **[Reddit-тегі r/XMCL қауымдастығы](https://www.reddit.com/r/XMCL/)**
-
-#### 3. GitHub-та Issue жасаңыз
+#### 2. GitHub-та Issue жасаңыз
 - Егер лаунчердің өзінен қате таптыңыз деп ойласаңыз, баг туралы есеп жасай аласыз.
 - Жасау орны: **[XMCL GitHub Issues](https://github.com/Voxelum/x-minecraft-launcher/issues)**
 - Әзірлеушілер қатені талдай алуы үшін мәселені сипаттап, диагностикалық есептің немесе журнал файлының мазмұнын қосыңыз.

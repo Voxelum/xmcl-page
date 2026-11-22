@@ -72,7 +72,6 @@ Once inspected, you can submit the report through official channels:
 
 - **GitHub Issues**: Attach the `.zip` directly to an issue ticket at [voxelum/x-minecraft-launcher/issues](https://github.com/voxelum/x-minecraft-launcher/issues).
 - **Official Discord**: Share in the `#support` or `#troubleshooting` channels on [XMCL Discord](https://discord.gg/W57tNmF).
-- **Reddit**: Upload redacted log excerpts to [mclo.gs](https://mclo.gs) or pastebin services and link them in the [r/xmcl](https://www.reddit.com/r/xmcl/) community.
 
 ::: tip PRO-TIP
 Never upload raw log files containing full directory paths to unverified public paste sites. When pasting snippets into Discord or GitHub, use [mclo.gs](https://mclo.gs), which automatically hides known IP addresses, authentication tokens, and system usernames.

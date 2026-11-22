@@ -68,7 +68,7 @@ Managing your in-game memories is now seamless thanks to the brand-new built-in 
   * Safely rename or delete captures with confirmation guards.
   * Open screenshot locations in your native file manager (Explorer, Finder, or Nautilus) in a single click.
 * **Built-in Image Editor**:
-  * Crop, highlight, add text notes, and draw callout arrows right inside the launcher before sharing your builds on Discord or Reddit.
+  * Crop, highlight, add text notes, and draw callout arrows right inside the launcher before sharing your builds on Discord.
 * **Non-Disruptive Dialog Integration**: Opens as a modal dialog that preserves your current page, keyboard focus, and scoped drag-and-drop actions.
 
 #### Screenshot Manager Gallery Video Demo:
