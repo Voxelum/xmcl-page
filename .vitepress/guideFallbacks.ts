@@ -86,6 +86,34 @@ const fallbackNotices: Record<string, { title: string; body: string }> = {
         title: 'Цей розділ ще не перекладено українською мовою',
         body: 'Текст відображається англійською мовою. Якщо ви бажаєте допомогти з перекладом, ви можете зробити це в репозиторії [xmcl-page на GitHub](https://github.com/voxelum/xmcl-page).'
     },
+    ro: {
+        title: 'Această secțiune nu a fost încă tradusă în limba română',
+        body: 'Conținutul este afișat în limba engleză. Dacă doriți să contribuiți la traducere, vizitați depozitul [xmcl-page pe GitHub](https://github.com/voxelum/xmcl-page).'
+    },
+    hu: {
+        title: 'Ez a szakasz még nincs magyarra fordítva',
+        body: 'A tartalom angol nyelven jelenik meg. Ha szeretnél segíteni a fordításban, csatlakozz az [xmcl-page GitHub-tárolóhoz](https://github.com/voxelum/xmcl-page).'
+    },
+    sl: {
+        title: 'Ta razdelek še ni preveden v slovenščino',
+        body: 'Vsebina je prikazana v angleščini. Če želite pomagati pri prevajanju, prispevajte v repozitoriju [xmcl-page na GitHubu](https://github.com/voxelum/xmcl-page).'
+    },
+    hr: {
+        title: 'Ovaj odjeljak još nije preveden na hrvatski jezik',
+        body: 'Sadržaj je prikazan na engleskom jeziku. Ako želite pomoći s prijevodom, pridružite se repozitoriju [xmcl-page na GitHubu](https://github.com/voxelum/xmcl-page).'
+    },
+    el: {
+        title: 'Αυτή η ενότητα δεν έχει μεταφραστεί ακόμη στα Ελληνικά',
+        body: 'Το περιεχόμενο εμφανίζεται στα Αγγλικά. Αν θέλετε να βοηθήσετε στη μετάφραση, συνεισφέρετε στο αποθετήριο [xmcl-page στο GitHub](https://github.com/voxelum/xmcl-page).'
+    },
+    'fr-CA': {
+        title: 'Cette section n’est pas encore traduite en français canadien',
+        body: 'Le contenu est affiché en anglais. Si vous souhaitez contribuer à la traduction, rendez-vous sur le dépôt [xmcl-page sur GitHub](https://github.com/voxelum/xmcl-page).'
+    },
+    'es-MX': {
+        title: 'Esta sección aún no está traducida al español de México',
+        body: 'El contenido se muestra en inglés. Si deseas ayudar con la traducción, colabora en el repositorio [xmcl-page en GitHub](https://github.com/voxelum/xmcl-page).'
+    },
     default: {
         title: 'This section has not been translated yet',
         body: 'This content is shown in fallback language. If you would like to help translate, please contribute to the [xmcl-page GitHub repository](https://github.com/voxelum/xmcl-page).'

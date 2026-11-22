@@ -36,7 +36,7 @@ import DocumentationHub from './components/DocumentationHub.vue'
 import AsideLastUpdated from './components/AsideLastUpdated.vue'
 import NavLanguageSelector from './components/NavLanguageSelector.vue'
 
-const supportedLocales = ['ar', 'be', 'bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'jp', 'jv', 'kk', 'ko', 'lol', 'pl', 'pt', 'ru', 'tr', 'uk', 'vi', 'zh-TW', 'zh']
+const supportedLocales = ['ar', 'be', 'bn', 'de', 'el', 'en', 'es-MX', 'es', 'fr-CA', 'fr', 'hi', 'hr', 'hu', 'it', 'jp', 'jv', 'kk', 'ko', 'lol', 'pl', 'pt', 'ro', 'ru', 'sl', 'tr', 'uk', 'vi', 'zh-TW', 'zh']
 
 function resolveLocale(language: string) {
   const normalizedLanguage = language.trim().replace('_', '-')

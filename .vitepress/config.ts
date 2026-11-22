@@ -16,7 +16,7 @@ import { imagetools } from 'vite-imagetools'
 const src = resolve(__dirname, '../src')
 const files = readdirSync(src)
 const localesOrder = [
-  'uk', 'en', 'lol', 'zh', 'zh-TW', 'es', 'hi', 'bn', 'jp', 'jv', 'ko', 'vi', 'it', 'tr', 'pt', 'de', 'fr', 'pl', 'ru', 'kk', 'be', 'ar'
+  'uk', 'en', 'lol', 'zh', 'zh-TW', 'es', 'es-MX', 'hi', 'bn', 'jp', 'jv', 'ko', 'vi', 'it', 'tr', 'pt', 'de', 'fr', 'fr-CA', 'pl', 'ro', 'hu', 'sl', 'hr', 'el', 'ru', 'kk', 'be', 'ar'
 ]
 const locales = files
   .filter(f => f !== 'assets' && !f.endsWith('.md'))
@@ -58,10 +58,15 @@ const localeMetadata: Record<string, { hreflang: string; ogLocale: string }> = {
   be: { hreflang: 'be', ogLocale: 'be_BY' },
   bn: { hreflang: 'bn', ogLocale: 'bn_BD' },
   de: { hreflang: 'de', ogLocale: 'de_DE' },
+  el: { hreflang: 'el', ogLocale: 'el_GR' },
   en: { hreflang: 'en', ogLocale: 'en_US' },
+  'es-MX': { hreflang: 'es-MX', ogLocale: 'es_MX' },
   es: { hreflang: 'es', ogLocale: 'es_ES' },
+  'fr-CA': { hreflang: 'fr-CA', ogLocale: 'fr_CA' },
   fr: { hreflang: 'fr', ogLocale: 'fr_FR' },
   hi: { hreflang: 'hi', ogLocale: 'hi_IN' },
+  hr: { hreflang: 'hr', ogLocale: 'hr_HR' },
+  hu: { hreflang: 'hu', ogLocale: 'hu_HU' },
   it: { hreflang: 'it', ogLocale: 'it_IT' },
   jp: { hreflang: 'ja', ogLocale: 'ja_JP' },
   jv: { hreflang: 'jv', ogLocale: 'jv_ID' },
@@ -70,7 +75,9 @@ const localeMetadata: Record<string, { hreflang: string; ogLocale: string }> = {
   lol: { hreflang: 'x-lolcat', ogLocale: 'en_US' },
   pl: { hreflang: 'pl', ogLocale: 'pl_PL' },
   pt: { hreflang: 'pt-BR', ogLocale: 'pt_BR' },
+  ro: { hreflang: 'ro', ogLocale: 'ro_RO' },
   ru: { hreflang: 'ru', ogLocale: 'ru_RU' },
+  sl: { hreflang: 'sl', ogLocale: 'sl_SI' },
   tr: { hreflang: 'tr', ogLocale: 'tr_TR' },
   uk: { hreflang: 'uk', ogLocale: 'uk_UA' },
   vi: { hreflang: 'vi', ogLocale: 'vi_VN' },

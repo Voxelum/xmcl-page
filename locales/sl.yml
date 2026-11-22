@@ -1,0 +1,808 @@
+repository: Repozitorij izvorne kode
+intro:
+  first:
+    body: '{openSource} zaganjalnik za Minecraft z {modernUx} uporabniško izkušnjo.'
+    openSource: Odprtokodni
+    modernUx: sodobno
+  second:
+    body: Zagotovite {diskEfficient} način za upravljanje vseh vaših {mods}!
+    diskEfficient: prostorsko učinkovit
+    mods: modov
+  description: >-
+    XMCL je sodoben zaganjalnik za Minecraft, ki vam omogoča upravljanje
+    obsežnih virov, kot so paketi modov, paketi virov, modi, paketi senčilnikov ...
+    Prav tako vključuje integracijo z Minecraft Forge, Fabric, Quilt,
+    CurseForge in Modrinth.
+label: Slovenščina
+search:
+  button:
+    buttonText: Iskanje
+    buttonAriaLabel: Iskanje po dokumentaciji
+  modal:
+    noResultsText: Ni rezultatov za
+    resetButtonTitle: Ponastavi iskanje
+    displayDetails: Prikaži podroben seznam
+    backButtonTitle: Zapri iskanje
+    footer:
+      selectText: za izbiro
+      navigateText: za navigacijo
+      closeText: za zaprtje
+guide: Vodnik
+documentation: Dokumentacija
+docHub:
+  kicker: Uradna dokumentacija
+  title: Središče dokumentacije XMCL
+  description: Vse, kar potrebujete za namestitev, nastavitev, modiranje, skupno igranje in razumevanje arhitekture XMCL.
+  searchPlaceholder: Išči dokumentacijo, vodnike, nastavitve, ključne besede ...
+  quickTopics: Hitre teme
+  viewSection: Razišči razdelek
+  articlesCount: '{count} člankov'
+  backToHub: Nazaj v središče dokumentacije
+  needHelp: Potrebujete pomoč?
+  needHelpDesc: Ne najdete, kar iščete? Pridružite se naši skupnosti ali prispevajte k dokumentaciji.
+  joinDiscord: Pridruži se Discordu
+  githubRepo: Repozitorij GitHub
+  contributeDocs: Uredi ali izboljšaj dokumentacijo
+docGroups:
+  gettingStarted: '01 / Začetek'
+  gameAndMods: '02 / Igra in modi'
+  multiplayerAndTroubleshooting: '03 / Večigralstvo in diagnostika'
+  coreAndDev: '04 / Jedrna arhitektura in API'
+logViewer: Pregledovalnik dnevnikov
+protocol: Protokol
+changelogs: Dnevniki sprememb
+outline: Na tej strani
+coreDocument: Jedrna dokumentacija
+blogs: Blogi
+launcher:
+  manage:
+    intro: Učinkovito upravljajte svoj Minecraft.
+  description: Preprost, odprtokoden in funkcionalno usmerjen zaganjalnik za Minecraft
+downloadFor:
+  windows: 'Prenos za Windows:'
+  mac: 'Prenos za Mac:'
+  linux: 'Prenos za Linux:'
+author: Kontaktirajte avtorja
+download-zip: Zip
+download-zip-32: Zip (32-bitni)
+download-appx: Paket AppX
+download-appinstaller: App Installer
+download-portable: Prenosna različica
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: Prenos iz Azure
+azure-ms-source: Prenos iz Azure Microsoft CDN
+github-source: Prenos iz GitHuba
+auto-source: Samodejno zaznaj vir prenosa
+authSuccess: Uspešno!
+authSuccessTitle: Avtorizacija je bila uspešna. Preusmerjeni boste nazaj v zaganjalnik!
+redirectHelperTitle: >-
+  Če niste preusmerjeni, lahko poskusite klikniti gumb Odpri v zaganjalniku
+  za ročno preusmeritev.
+redirectHelperMessage: >-
+  Odprlo se bo pojavno okno z vprašanjem, ali želite odpreti zaganjalnik. Če še vedno
+  ne deluje, lahko gumb povlečete v okno zaganjalnika!
+notWork: Ne deluje?
+openInAppButton: Odpri v zaganjalniku
+nothingWork: Če nič od navedenega ne deluje, poskusite znova prenesti najnovejši zaganjalnik
+gameInstall:
+  title:
+    body: Brez skrbi glede {gameInstall}
+    gameInstall: namestitve igre
+  description: >-
+    XMCL podpira namestitev osnovnega Minecrafta, Minecraft Forge, Fabric
+    in celo OptiFine vse na enem mestu! Namestite jih lahko neposredno v
+    zaganjalniku. Podpira tudi zrcalni strežnik tretje osebe BMCL API,
+    v zaganjalniku pa lahko celo nastavite svoj zrcalni strežnik.
+optimalDisk:
+  title:
+    body: '{optimal} prostor na disku z {massiveResources}'
+    optimal: Optimalen
+    massiveResources: obsežnimi viri
+  description: >-
+    XMCL shranjuje vse mode, pakete virov, pakete senčilnikov in pakete modov na
+    enotni lokaciji shrambe. Ko želite uporabiti znan vir, ga v primerek namesti
+    s trdo povezavo brez kopiranja. To pomeni, da v mapi /mods nikoli več
+    ne boste imeli podvojenih kopij.
+cleanWorkspace:
+  title:
+    body: Ohranite svoje delovno okolje {clean} z več primerki
+    clean: čisto
+  description: >-
+    XMCL ima vgrajeno podporo za več primerkov. Z lahkoto lahko ustvarite
+    več primerkov, zato vam ni treba skrbeti za mešanje različnih
+    zagonskih nastavitev.
+communityIntegration:
+  title:
+    body: Povezan z {multipleCommunities}
+    multipleCommunities: več skupnostmi
+  description: >-
+    XMCL ima vgrajeno podporo za CurseForge in Modrinth. Ponuja tudi možnost
+    podpore za uporabniške račune in sisteme preoblek po meri, kot je Blessing Skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: Pridruži se skupini uporabnika {inviter}
+joinPeerDescription: >-
+  {inviter} vas je povabil v svojo skupino {group} za skupno igranje Minecrafta!
+  Preusmerjeni boste nazaj v zaganjalnik!
+fullChangelog: Kaj je novega?
+privacy: Zasebnost programske opreme
+prebuild:
+  history: Zgodovina gradenj
+  historyDescription: Prejšnje gradnje in izdaje
+  download: Prenos predizdaj
+  downloadDescription: >-
+    Predizdaje so artefakti, ustvarjeni med razvojnim procesom. Lahko so
+    nestabilne. Uporabljajte jih na lastno odgovornost!
+  entryHint: Artefakti predizdaj?
+  ready: Pripravljeno
+  selected: Izbrano
+  selectBuild: Izberi gradnjo
+  downloading: Prenašanje ...
+  kicker: KANAL PREDIZDAJ
+  developmentBuilds: RAZVOJNE GRADNJE
+  tryNext: Preizkusite, kaj prihaja.
+  unstableDescription: Nestabilni artefakti za preizkušanje prihajajočih sprememb XMCL.
+  selectedBuild: IZBRANA GRADNJA
+  buildsAvailable: 'Na voljo gradenj: {count}'
+  selectABuild: IZBERITE GRADNJO
+  noBuilds: NI NAJDENIH GRADENJ
+  noBuildsDescription: Trenutno ni na voljo nobenih artefaktov predizdaj.
+  checkBack: Preverite znova po zaključku naslednjega razvojnega poteka dela.
+  yesterday: Včeraj
+  daysAgo: 'Pred {count} dnevi'
+downloadMacHint:
+  content: Uporabniki Mac naj za namestitev sledijo {link}.
+  link: navodilom za namestitev
+features:
+  label: Funkcije
+  ui:
+    kicker: XMCL / KATALOG FUNKCIJ
+    heading: Zaganjalnik na dlani.
+    description: Raziščite poteke dela, s katerimi je modirana nastavitev Minecrafta lažja za gradnjo, razumevanje in deljenje.
+    all: Vse funkcije
+    search: Išči funkcije ...
+    features: funkcij
+    featuresInView: prikazanih funkcij
+    readWorkflow: Preberi potek dela
+  status:
+    homepage: Domača stran
+    catalog: Katalog
+    guide: Vodnik
+    detail: Podrobnosti
+  groups:
+    instances:
+      short: Primerki
+      title: Primerki in profili
+      description: Ohranite vsako nastavitev Minecrafta neodvisno, pregledno in pripravljeno za zagon, ne da bi izgubili podrobnosti, ki jo delajo vašo.
+    community:
+      short: Skupnost
+      title: Modi in vsebina skupnosti
+      description: Odkrivajte, pregledujte in nameščajte projekte, ki različico Minecrafta spremenijo v vaš naslednji svet.
+    mods:
+      short: Nadzor modov
+      title: Upravljanje modov
+      description: Ohranite veliko modirano nastavitev pregledno z iskanjem, združevanjem v skupine, preverjanjem odvisnosti in premišljenim nadzorom posodobitev.
+    world-tools:
+      short: Orodja za svetove
+      title: Orodja za svetove
+      description: 'Delajte s svetovi v svojih primerkih: preglejte njihovo obliko, izberite dele in spoznajte njihove materiale.'
+    sharing:
+      short: Deljenje
+      title: Deljenje in večigralstvo
+      description: Prenesite delujočo nastavitev iz svojega računalnika k prijatelju, na strežnik ali v drugo namestitev z vsemi podrobnostmi.
+    accounts:
+      short: Računi
+      title: Računi in produktivnost
+      description: Imejte identiteto, prilagoditve in pogosta dejanja blizu svetov, ki jih igrate.
+    diagnostics:
+      short: Diagnostika
+      title: Diagnostika in pomoč
+      description: Ko zagon ne uspe, XMCL postavi dokaze in naslednji korak na isto mesto.
+  items:
+    instance-library:
+      title: Ena urejena knjižnica primerkov
+      benefit: Oglejte si osnovne, modirane in eksperimentalne svetove skupaj na enem domačem zaslonu, pripravljenem za zagon.
+      capabilities: Ločene različice igre in nalagalniki|Pregled modov, shranjenih svetov in virov na prvi pogled|Zagon nastavitve, ki jo potrebujete
+    instance-create-modloaders:
+      title: Ustvarjanje primerkov Java in Bedrock
+      benefit: Začnite novo nastavitev z nalagalnikom in izdajo, ki ustrezata svetu, ki ga želite igrati.
+      capabilities: Izdaja Java in eksperimentalna podpora Bedrock|Forge, Fabric, Quilt, NeoForge, OptiFine in LabyMod|Minecraft in lokalni viri različic
+    instance-folder-groups:
+      title: Skupine map za primerke
+      benefit: Razporedite številne primerke v mape, da različni svetovi in nastavitve ostanejo pregledni.
+      capabilities: Združevanje primerkov po namenu ali projektu|Ohranjanje sorodnih nastavitev skupaj|Preklapljanje med mapami iz vrstice primerkov
+    instance-settings:
+      title: Nastavitve primerka
+      benefit: Prilagodite Javo, pomnilnik, različice, nalagalnike in vedenje pri zagonu, ne da bi posegali v druge nastavitve.
+      capabilities: Neodvisna konfiguracija primerka|Izbira različice in nalagalnika|Nastavitve videza za posamezen primerek
+    instance-theme:
+      title: Tema primerka
+      benefit: Dajte vsakemu svetu lastno identiteto z ozadji, barvami, zameglitvijo, pisavami in CSS po meri.
+      capabilities: Slika ozadja in prekrivni sloj|Zaobljeni robovi in nastavitve pisav|Izvoz in uvoz teme
+    local-server:
+      title: Zagon lokalnega strežnika
+      benefit: Spremenite primerek v nastavljiv lokalni strežnik s svetom, omejitvijo igralcev in datotekami za izvoz.
+      capabilities: MOTD, vrata in omejitev igralcev|Izbira datotek sveta in strežnika|Izvoz strežniškega paketa
+    server-list:
+      title: Seznam strežnikov
+      benefit: Imejte večigralske cilje blizu primerka, ki jih uporablja, in spremljajte stanje njihove povezave.
+      capabilities: Stanje strežnika in število igralcev|Pripenjanje in odstranjevanje ciljev|Jasen prikaz napak povezave
+    modpack-market:
+      title: Tržnica paketov modov
+      benefit: Brskajte po vsebini Modrinth, CurseForge in FTB na eni sami iskalni tržnici.
+      capabilities: Filtri po viru, različici, nalagalniku in kategoriji|Odkrivanje priljubljenih in najnovejših paketov|Odpiranje strani s podrobnostmi paketa
+    online-mod-search:
+      title: Spletno iskanje modov
+      benefit: Poiščite združljive mode na vodilnih platformah skupnosti, še preden pridejo v vaš primerek.
+      capabilities: Vira Modrinth in CurseForge|Filtri po različici Minecrafta in nalagalniku|Filtri po okolju in kategoriji
+    modpack-detail:
+      title: Podrobnosti paketa modov
+      benefit: Spoznajte paket pred namestitvijo – od posnetkov zaslona in avtorjev do tehničnih zahtev.
+      capabilities: Posnetki zaslona, oznake in statistika projekta|Dejanja namestitve in zagona|Tehnične informacije in zunanji viri
+    mod-collections:
+      title: Zbirke modov
+      benefit: Shranite projekte, h katerim se želite vrniti, in spremenite zbirko v ponovno uporabno nastavitev.
+      capabilities: Zbirke v zaganjalniku|Sledeni projekti Modrinth|Paketna namestitev in upravljanje zbirk
+    mod-detail:
+      title: Podrobnosti moda
+      benefit: Preglejte mod pred spremembo primerka ter spoznajte njegove različice, odvisnosti in vire.
+      capabilities: Izbira različice in odvisnosti|Nalagalniki, kategorije in povezave do virov|Opis in zunanji viri
+    local-mods:
+      title: Upravljanje nameščenih modov
+      benefit: Oglejte si, kaj je omogočeno, hitro filtrirajte in ohranite delujoči nabor zdrav.
+      capabilities: Iskanje, razvrščanje in filtriranje modov|Preverjanje odvisnosti in neuporabljene vsebine|Izbira pravilnika posodabljanja
+    custom-mod-groups:
+      title: Skupine modov po meri
+      benefit: Ustvarite lastne skupine in shranite pravila, ki urejajo zapleten primerek.
+      capabilities: Uporaba in shranjevanje pravil združevanja|Združevanje modov iz kontekstnega menija|Omogočanje, onemogočanje ali pregled datotek
+    save-preview:
+      title: Predogled shranjenih svetov in orodja za koščke (Chunks)
+      benefit: Vizualno preglejte svet pred zagonom in izvajajte natančne spremembe na ravni koščkov.
+      capabilities: Premikanje in pregledovanje zemljevidov sveta|Izbira, kopiranje ali brisanje koščkov|Branje lastnosti sveta in materialov
+    blueprint-preview:
+      title: Predogled načrtov
+      benefit: Oglejte si strukturo v 3D ter preverite združljivost in materiale, preden jo postavite v igro.
+      capabilities: Formata Litematica in WorldEdit|Združljivost in stanje manjkajočih modov|Seznam materialov in pretvorba formatov
+    modpack-export:
+      title: Izvoz paketa modov
+      benefit: Zapakirajte primerek za druge igralce, ne da bi izgubili metapodatke in datoteke, zaradi katerih deluje.
+      capabilities: Izvoz za CurseForge in Modrinth|Metapodatki o avtorju, opisu in URL-ju|Izbira datotek in sredstev za vključitev
+    server-export:
+      title: Izvoz strežnika
+      benefit: Izberite prave datoteke sveta in strežnika ter izvozite lokalni strežnik z jasno konfiguracijo.
+      capabilities: Izvoz v mapo ali nalaganje|Izbira strežniških datotek|Nastavitev MOTD in možnosti strežnika
+    account-login:
+      title: Več storitev za preverjanje pristnosti
+      benefit: Izberite storitev računa, ki ustreza vašemu načinu igranja – od Microsofta do računov brez povezave in storitev tretjih oseb.
+      capabilities: Microsoftovi računi in računi brez povezave|Storitvi Ely.by in LittleSkin|Dodajanje in upravljanje storitev preverjanja pristnosti
+    quick-action:
+      title: Hitra dejanja
+      benefit: Poiščite primerke in ukaze, ne da bi zapustili stran, na kateri delate.
+      capabilities: Iskanje ukazov, primerkov in modov|Zagon ali ustvarjanje primerka|Navigacija s tipkovnico prek Ctrl+K
+    crash-diagnosis:
+      title: Poročila o sesutjih in napakah zagona
+      benefit: Preberite dejanske dnevnike, poročila o sesutjih in izpis strežnika ob neuspešnem zagonu.
+      capabilities: Dnevniki, poročila o sesutjih in napake zagona|Napake razreševanja modov in izhodne kode|Kopiranje poziva za zunanja orodja umetne inteligence
+    ai-agent:
+      title: Vgrajeni agent UI
+      benefit: Naj agent pregleda navidezni datotečni sistem primerka in pojasni uporaben popravek.
+      capabilities: Branje datotek primerka in poročil|Preiskava pred podajo zaključka|Uporaba uporabnega popravka, kadar je to mogoče
+modernHome:
+  kicker: ODPRTOKODNI ZAGANJALNIK ZA MINECRAFT
+  visualLabel: ZGRAJEN ZA MODIRANE SVETOVE
+  windowLabel: XMCL / DOMOV
+  latestRelease: NAJNOVEJŠA IZDAJA
+  readyToPlay: PRIPRAVLJENO ZA IGRANJE
+  libraryTitle: Ena čista knjižnica
+  librarySubtitle: Modi, paketi in primerki
+  proofLabel: Zmogljivosti zaganjalnika
+  proof:
+    fastTitle: HITRA NASTAVITEV
+    fastDescription: Od osnovne do modirane igre
+    libraryTitle: ENA KNJIŽNICA
+    libraryDescription: Viri ostanejo urejeni
+    ecosystemTitle: VAŠ EKOSISTEM
+    ecosystemDescription: Modrinth in CurseForge
+  workflow:
+    kicker: POTEK DELA XMCL
+    title: Vse, kar potrebujejo vaši svetovi.
+    description: Zasnovan za igralce, ki želijo moč modirane nastavitve brez napornega vzdrževanja.
+    stageLabel: XMCL / POTEK DELA
+    scrollHint: POMAKNITE SE ZA RAZISKOVANJE
+  openSource:
+    kicker: ODPRTOKODNI UTRIP
+    title: Zgrajen javno.
+    viewOnGitHub: Ogled na GitHubu
+    repository: REPOZITORIJ GITHUB
+    snapshot: POSNETEK GRADNJE
+    downloads: Prenosi
+    stars: Zvezdice
+    forks: Razvejitve
+    openIssues: Odprte težave
+    statsNote: Podatki projekta GitHub, zajeti ob izgradnji tega spletnega mesta.
+    contributors: PRISPEVATELJI
+    inView: V POGLEDU
+    contributorsCopy: Vsaka prijava težave, predlog spremembe, prevod in zamisel pomaga oblikovati naslednjo izdajo.
+  sponsor:
+    label: SPONZORIRAJTE XMCL
+    title: Pomagajte zaganjalniku naprej.
+    description: Podprite vzdrževanje, izdaje in ljudi, ki javno gradijo XMCL.
+    supportedBy: PODPIRAJO
+  download:
+    kicker: VAŠA NASLEDNJA PUSTOLOVŠČINA
+    title: Pripravljen, ko ste vi.
+    platforms: Platforme za prenos
+  footer:
+    issues: Težave
+  features:
+    setup:
+      title: Vsaka nastavitev, en zaganjalnik
+      short: Več nalagalnikov, več primerkov
+      description: Ustvarjajte in upravljajte ločene primerke Minecrafta s Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod in eksperimentalno podporo Bedrock – namestitev poteka samodejno.
+      alt: Pogovorno okno za ustvarjanje igre v XMCL z več nalagalniki modov in izdajo Bedrock
+      link: Razišči nastavitev primerkov
+    discover:
+      title: Poiščite vsebino skupnosti
+      short: Modrinth, CurseForge in FTB
+      description: Brskajte po paketih modov in projektih skupnosti, filtrirajte jih po različici in nalagalniku ter hitro preidite od odkrivanja k igranju.
+      alt: Tržnica paketov modov XMCL s filtri vsebine skupnosti
+      link: Razišči vsebino skupnosti
+    mods:
+      title: Ohranite modirane nastavitve pod nadzorom
+      short: Iskanje, združevanje, posodabljanje
+      description: Upravljajte nameščene mode, preverjajte odvisnosti, urejajte skupine po meri in ohranite veliko nastavitev pregledno.
+      alt: Lokalno upravljanje modov v XMCL s filtri in nadzorom posodobitev
+      link: Razišči upravljanje modov
+    accounts:
+      title: Vaši računi, po vaše
+      short: Microsoft, brez povezave in več
+      description: Povežite storitev računa, ki ustreza vaši nastavitvi – od Microsofta in profilov brez povezave do zunanjih storitev preverjanja pristnosti – ne da bi zapustili zaganjalnik.
+      alt: Pogovorno okno za prijavo v račun XMCL z več storitvami preverjanja pristnosti
+      link: Razišči podporo za račune
+siteFooter:
+  ariaLabel: Noga spletnega mesta
+  navigation: Navigacija v nogi
+  description: Odprtokodna infrastruktura za Minecraft za igralce, namizja Linux in ljudi, ki gradijo svetove, v katerih igramo.
+  status: Odprtokodno · grajeno javno
+  explore:
+    title: Razišči
+    home: Domov
+    features: Katalog funkcij
+    documentation: Dokumentacija
+  useCases:
+    title: Primeri uporabe
+    linux: Zaganjalnik za Linux
+    creators: Ustvarjalci paketov modov
+    download: Prenesi XMCL
+  resources:
+    title: Viri
+    logViewer: Pregledovalnik dnevnikov
+    github: GitHub
+    issue: Prijavi težavo
+    discord: Discord
+  bottomNote: Zgrajen za način, kako igrate in ustvarjate.
+  readDocumentation: Preberi dokumentacijo
+sceneLanding:
+  linux:
+    eyebrow: XMCL / IZDAJA ZA LINUX
+    title: Zaganjalnik za Minecraft, ki se na Linuxu počuti kot doma.
+    lede: Izpopolnjen, odprtokodni zaganjalnik za namizja Linux in Steam Deck. Izberite paket, ki ga pričakuje vaša distribucija, priklopite zaslon 4K in imejte vsak svet na dosegu enega klika.
+    primaryAction: Prenesi za Linux
+    secondaryAction: Oglej si potek dela na Linuxu
+    heroNote: Izvorne gradnje za Linux, možnosti ARM64 in podpora za Flathub
+    visualLabel: XMCL · delovno okolje Linux
+    heroAlt: Začetni zaslon XMCL s knjižnico primerkov Minecrafta
+    visualTag: Delovno okolje, pripravljeno na 4K
+    visualStatus: PRIPRAVLJENO ZA VAŠ NASLEDNJI SVET
+    workflowKicker: POTEK DELA, PRILAGOJEN LINUXU
+    workflowTitle: Od upravljalnika paketov do igranja brez zapletov.
+    workflowDescription: 'XMCL ohranja stvari, ki so igralcem na Linuxu pomembne, na dosegu roke: predvidljive namestitve, oster vmesnik in neodvisna igralna okolja, med katerimi je preprosto preklapljati.'
+    signals:
+      packages:
+        number: '05'
+        label: Paketi za Linux
+        description: DEB, RPM, AppImage, tar.xz in Flathub.
+      scale:
+        number: '4K'
+        label: Jasno pri vsaki ločljivosti
+        description: Bogata knjižnica, ki ostane berljiva na velikem zaslonu.
+      worlds:
+        number: '∞'
+        label: Ločeni svetovi
+        description: Preprečite trke med različicami, nalagalniki in shranjenimi svetovi.
+    features:
+      install:
+        label: 01 / IZBERITE NAMESTITEV
+        title: Uporabite format, ki ga vaša distribucija razume.
+        description: Prenesite izvorni paket za svoje namizje ali uporabite Flathub za prenosljivo pot, prijazno do Steam Decka. XMCL ponuja tudi gradnje ARM64, kjer jih strojna oprema zahteva.
+        point1: DEB in RPM za uveljavljena namizja Linux
+        point2: AppImage in tar.xz za prenosljive namestitve
+        point3: Podpora za Flathub za Steam Deck
+        alt: Pogovorno okno XMCL za ustvarjanje primerka z različicami Minecrafta in nalagalniki modov
+      organize:
+        label: 02 / OHRANITE UREJENOST
+        title: Vsak primerek dobi svojo čisto stezo.
+        description: Ločite osnovne, modirane, testne in strežniške nastavitve brez ročnega premetavanja map. Vaše različice, nalagalniki, modi, shranjeni svetovi in nastavitve ostanejo skupaj.
+        point1: Neodvisni podatki igre in zagonske nastavitve
+        point2: Forge, Fabric, Quilt, NeoForge in več
+        point3: Hitro preklapljanje med svetovi in preizkusi
+        alt: Knjižnica primerkov XMCL z urejenimi profili igre Minecraft
+      anywhere:
+        label: 03 / IGRAJTE KJERKOLI
+        title: Namizni zaganjalnik, ki dobro potuje.
+        description: Preidite z namizja Linux na igranje na Steam Decku, ne da bi se odpovedali pregledni knjižnici ali zanesljivi nastavitvi. XMCL daje vaši zbirki prostor za rast, ne da bi se spremenila v preglednico.
+        point1: Pot prek Flathuba, zasnovana za Steam Deck
+        point2: Osredotočen vmesnik na zaslonih 4K
+        point3: Odprtokoden in ustvarjen za igralce na Linuxu
+        alt: Domača stran XMCL z veliko knjižnico primerkov
+    download:
+      kicker: PRENOS ZA LINUX
+      title: Namestite XMCL po svoje.
+      description: Izberite paket, ki spada na vaš sistem, ali uporabite Flathub za namestitev XMCL na Steam Deck.
+      link: Oglej si vse izdaje in predizdaje
+  creators:
+    eyebrow: XMCL / ZA USTVARJALCE PAKETOV MODOV
+    title: Gradite pakete modov s celotnim ciklom izdaje na enem mestu.
+    lede: Odkrivajte projekte, razrešujte odvisnosti, preizkušajte delujoč nabor, diagnosticirajte sesutja in izvozite čist paket Modrinth ali CurseForge, ne da bi zapustili zaganjalnik.
+    primaryAction: Razišči poteke dela za ustvarjalce
+    secondaryAction: Odpri katalog funkcij
+    heroNote: Poteki dela za Modrinth in CurseForge z diagnostiko ob pomoči UI
+    visualLabel: XMCL · delovno okolje ustvarjalca
+    heroAlt: Tržnica paketov modov XMCL s projekti Modrinth in CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: DELUJOČI NABOR USKLAJEN
+    workflowKicker: KROG USTVARJALCA
+    workflowTitle: Hitrejša pot od grobe zamisli do paketa, ki ga igralci res lahko zaženejo.
+    workflowDescription: 'XMCL obravnava paket modov kot živ sistem. Raziščite oba kataloga, izvajajte premišljene spremembe in pustite zaganjalniku, da pokaže povezave, ki ohranjajo vašo izdajo zdravo.'
+    signals:
+      sources:
+        number: '2×'
+        label: Vira projektov
+        description: Iščite po Modrinthu in CurseForge iz enega delovnega okolja.
+      export:
+        number: '1-KLIK'
+        label: Izvoz paketa
+        description: Ustvarite paket MR ali CF za distribucijo v nekaj korakih.
+      ai:
+        number: 'UI'
+        label: Pomoč pri sesutjih
+        description: Spremenite poročilo o napaki v uporaben naslednji korak.
+    features:
+      discover:
+        label: 01 / ODKRIJTE
+        title: Iščite po obeh ekosistemih brez razpršene pozornosti.
+        description: Poiščite projekte na Modrinthu in CurseForge s filtri po različici, nalagalniku, okolju in kategoriji. XMCL povezuje projekte med obema viroma, da lahko primerjate isto delo z manj ugibanja.
+        point1: Iskanje po Modrinthu in CurseForge v enem toku
+        point2: Filtri združljivosti za različico Minecrafta in nalagalnik
+        point3: Medplatformsko preslikovanje projektov
+        alt: Spletno iskanje modov v XMCL s filtri virov in združljivosti
+      build:
+        label: 02 / ZGRADITE
+        title: Naj bodo odvisnosti del načrta.
+        description: Ko mod potrebuje drug mod, lahko XMCL samodejno namesti odvisnost. Ko projekt omogočite ali onemogočite, zaganjalnik pomaga ohraniti nastali nabor skladen, namesto da bi ročno sledili grafu odvisnosti.
+        point1: Samodejna namestitev odvisnosti
+        point2: Omogočanje in onemogočanje z upoštevanjem odvisnosti
+        point3: Pregled različic, nalagalnikov in metapodatkov projekta
+        alt: Podrobni pogled moda v XMCL s prikazom različic in odvisnosti
+      curate:
+        label: 03 / UREDITE
+        title: Ohranite delujoči nabor vitek in premišljen.
+        description: Iščite, razvrščajte, združujte v skupine, posodabljajte in odstranjujte mode, ki ne sodijo več zraven. Skupine po meri olajšajo preizkušanje izbirne vsebine, primerjavo profilov ali osredotočanje kandidata za izdajo.
+        point1: Samodejno preverjanje posodobitev modov
+        point2: Skupine po meri za izbirno in testno vsebino
+        point3: Iskanje in odstranjevanje neuporabljenih modov
+        alt: Pogled upravljanja nameščenih modov v XMCL z iskanjem in nadzorom posodobitev
+      export:
+        label: 04 / IZVOZITE
+        title: Izdajte en paket v formatu, ki ga potrebujejo vaši igralci.
+        description: Izvozite izpopolnjen paket modov Modrinth ali CurseForge s pravimi metapodatki in izbranimi datotekami. Korak izdaje postane ponovljiv del poteka dela, ne pa arhiviranje v zadnjem trenutku.
+        point1: Izvoz za Modrinth in CurseForge z enim klikom
+        point2: Metapodatki avtorja, opisa, URL-ja in različice
+        point3: Natančna izbira datotek in sredstev za vključitev
+        alt: Zaslon za izvoz paketa modov v XMCL za formata Modrinth in CurseForge
+      diagnose:
+        label: 05 / DIAGNOSTICIRAJTE
+        title: Naj UI pomaga spremeniti poročila o sesutjih v popravke.
+        description: Ko testni zagon ne uspe, XMCL združi dnevnike, poročila o sesutjih in agenta UI na istem mestu. Agent lahko pregleda kontekst primerka in pojasni uporaben naslednji korak.
+        point1: Branje zagonskih dnevnikov in poročil o sesutjih v kontekstu
+        point2: Preiskava datotek primerka ob pomoči UI
+        point3: Odpravljanje sporov med modi pred izdajo
+        alt: Agent UI v XMCL pri preiskavi napake zagona Minecrafta
+    cta:
+      kicker: DELOVNA MIZA ZA VAŠO NASLEDNJO IZDAJO
+      title: Ustvarite paket. Izdajte paket. Ohranite ga zdravega.
+      description: XMCL ustvarjalcem ponuja hiter lokalen krog za odkrivanje, preizkušanje, diagnostiko in izvoz v obeh ekosistemih, ki ju vaši igralci že uporabljajo.
+      button: Razišči vse funkcije
+commercial:
+  common:
+    loading: Nalaganje …
+    refresh: Osveži
+    refreshing: Osveževanje …
+    signIn: Prijava
+  playModes:
+    label: Izberite, kako igra vaša skupina
+    plusEyebrow: GOSTOVANJE PRI PRIJATELJU
+    plusTitle: Together Home
+    plusDescription: Zaženite svet lokalno in uporabite Together, ko neposredno večigralstvo potrebuje pomoč.
+    serverEyebrow: VEDNO NA SPLETU
+    serverTitle: Together Camp, Lodge ali Village
+    serverDescription: Ohranite en trajen svet na voljo tudi takrat, ko lastnik skupine ni na spletu.
+  billing:
+    eyebrow: OBRAČUNAVANJE XMCL
+    title: Obračunavanje in dobroimetje
+    description: Upravljajte svoje dobroimetje, plačila in dejavnost obračunavanja.
+    accountSettings: Nastavitve računa
+    disabled: Obračunavanje v tej namestitvi ni omogočeno.
+    loadingTitle: Nalaganje obračunavanja
+    loadingDescription: Pridobivanje vašega dobroimetja in dejavnosti …
+    signInTitle: Prijavite se za upravljanje obračunavanja
+    signInDescription: Vaše dobroimetje, plačila in poraba pripadajo vašemu računu XMCL.
+    overview: Pregled
+    accountTitle: Vaš obračunski račun
+    debt: Prihodnja polnjenja najprej poravnajo {amount} neporavnanega zneska.
+    available: Razpoložljivo dobroimetje
+    availableHint: Pripravljeno za uporabo v storitvah XMCL
+    homeFundingRequired: Vaše dobroimetje ne zadošča za Together Home. Dodajte vsaj {amount}, nato se vrnite v Together in zaključite nakup.
+    reserved: Rezervirano
+    reservedHint: Zadržano za aktivno porabo
+    history: Zgodovina
+    activity: Dejavnost obračunavanja
+    activityViews: Pogledi dejavnosti obračunavanja
+    transactions: Transakcije
+    payments: Plačila
+    usage: Poraba
+    descriptionLabel: Opis
+    reference: Sklic
+    date: Datum
+    amount: Znesek
+    payment: Plačilo
+    status: Stanje
+    usageEvent: Dogodek porabe
+    rate: Tarifa
+    charged: Zaračunano
+    noTransactions: Še ni transakcij.
+    noPayments: Še ni plačil Waffo.
+    noUsage: Še ni merjene porabe.
+    loadError: Podatkov obračunavanja ni bilo mogoče naložiti.
+    securedTitle: Plačila varuje Waffo
+    securedDescription: Podatki o kartici in kupcu se obdelujejo na gostovani blagajni Waffo Pancake. XMCL nikoli ne prejme številke vaše kartice.
+  checkout:
+    title: Dodaj sredstva
+    description: Varno napolnite svoje dobroimetje XMCL prek Waffo Pancake.
+    amount: Znesek
+    preparing: Priprava blagajne …
+    add: Dodaj {amount}
+    providerNote: Za zaključek plačila boste nadaljevali na gostovano blagajno Waffo.
+    legalNote: Z nadaljevanjem se strinjate s storitvijo XMCL Together –
+    terms: Pogoji uporabe
+    and: in
+    privacy: Pravilnik o zasebnosti
+    openCheckout: Odpri blagajno
+    cancelledReturned: Preklical sem ali se vrnil
+    newTopUp: Začni novo polnjenje
+    invalidAmount: Pred nadaljevanjem vnesite pozitiven cel znesek.
+    unsafeUrl: Storitev ni vrnila varnega naslova URL za blagajno Waffo.
+    opened: Zaključite ali prekličite na blagajni Waffo in se nato vrnite sem. XMCL bo osvežil naročilo in dobroimetje.
+    blocked: Okno za potrditev je bilo blokirano. Dovolite ga in poskusite znova z istim plačilnim namenom.
+    returnRecorded: Vrnitev iz blagajne je zabeležena.
+    returnDetected: Zaznana je vrnitev iz blagajne.
+    refreshFailed: XMCL je poskusil osvežiti naročilo in dobroimetje.
+    restoreFailed: Prejšnje blagajne ni bilo mogoče obnoviti. Ponovni poskus uporablja isti plačilni namen.
+    newIntent: Zdaj je mogoče ustvariti nov plačilni namen. Ne uporabljajte prejšnje povezave do blagajne Waffo.
+  server:
+    eyebrow: XMCL PLAY / VEDNO NA SPLETU
+    title: Svet, ki je pripravljen, kadar koli je vaša skupina.
+    description: Ponudite svoji skupini vedno dosegljiv modiran svet, ne da bi moral en prijatelj pustiti računalnik ves čas prižgan.
+    storyLink: Žalostno ozadje nastanka XMCL
+    billingLink: Obračunavanje in dobroimetje
+    from: Od
+    priceSuffix: / mesec + čas delovanja
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: Brez gostitelja. Brez čakanja, da se nekdo prijavi.
+    experienceDescription: Ohranite modirani svet skupine na trajni infrastrukturi in izberite zmogljivost, ki ustreza paketu.
+    alwaysAvailable: razpoložljivost sveta
+    performancePlans: konfiguracije zmogljivosti
+    aiBonus: vključene enote UI / mesec
+    alwaysOnTitle: Svet ostane pri skupini
+    alwaysOnDescription: Prijatelji se lahko vrnejo v isti trajni svet, ne da bi bili odvisni od računalnika ali urnika enega igralca.
+    rightSizeTitle: Prilagodite strežnik paketu modov
+    rightSizeDescription: Izberite zmogljivost, pomnilnik in shrambo, ki danes ustrezata paketu, nato pa nadgradite, ko skupina potrebuje več.
+    signInTitle: Prijavite se za upravljanje strežnikov
+    signInDescription: Strežniški paketi in naročnine pripadajo vašemu računu XMCL.
+    overview: Strežniška naročnina
+    yourServer: Vaš strežniški paket
+    balance: Dobroimetje
+    addFunds: Dodaj sredstva
+    paymentDue: Plačilo zapade. Dodajte sredstva za samodejno obnovitev te naročnine.
+    cancelsOn: Prekliče se dne {date}.
+    renewsOn: Obnovi se dne {date}.
+    cancel: Prekliči paket
+    plansEyebrow: Deljeno gostovanje
+    choosePlan: Izberite paket
+    planDescription: Mesečni dostop plus merjeni čas delovanja. Vsak aktiven paket vključuje pomoč UI za nastavitev paketa modov in strežnika.
+    current: Trenutni
+    perMonth: / mesec
+    runtimePrice: '+ {amount} na uro delovanja'
+    cpu: CPE
+    cpuValue: '{count} vCPU'
+    memory: Pomnilnik
+    storage: Trajna shramba
+    includedAi: Vključena pomoč UI
+    includedAiValue: 200.000 enot / mesec
+    select: Izberi {plan}
+    selected: Izbrano
+    unavailable: Ni na voljo
+    noPlans: Trenutno ni objavljen noben paket deljenega gostovanja.
+    loadError: Strežniških paketov ni bilo mogoče naložiti.
+    subscribeError: Naročnine ni bilo mogoče ustvariti.
+    cancelError: Naročnine ni bilo mogoče preklicati.
+    managerEyebrow: Vaši gostovani strežniki
+    managerTitle: Upravljanje strežnikov
+    managerDescription: Vsak strežnik deluje in se obračunava neodvisno. Tukaj preverite njegovo stanje ter ga vklopite ali izklopite.
+    serverNumber: '{plan} strežnik {number}'
+    start: Zaženi strežnik
+    stop: Ustavi strežnik
+    cpuUsage: Poraba CPE
+    memoryUsage: Poraba pomnilnika
+    launcherGuide: Za spreminjanje modov, paketov modov, svetov in drugih podrobnih nastavitev uporabite zaganjalnik XMCL.
+    operationError: Stanja strežnika ni bilo mogoče spremeniti.
+    status:
+      pending: Čakanje na zmogljivost
+      queued: Čakanje na zmogljivost
+      ready: Ustavljeno
+      starting: Zaganjanje
+      running: Deluje
+      stopping: Ustavljam in shranjujem
+      payment_due: Zapadlo plačilo
+      failed: Potrebna je pozornost
+      retained: Arhiv ohranjen
+      deleted: Izbrisano
+    plusEyebrow: RAJE GOSTOVANJE PRI PRIJATELJU?
+    plusTitle: Namesto tega začnite na svojem računalniku.
+    plusDescription: Together ohranja neposredno večigralstvo s prijatelji zanesljivo in vključuje enako pomoč pri odpravljanju težav s paketi modov.
+    plusAction: Razišči večigralstvo s prijatelji
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: Najboljša nastavitev za Minecraft so prijatelji, s katerimi igrate.
+    description: Od gradnje paketa modov in ohranjanja povezave do vzdrževanja strežnika – XMCL Together vam omogoča, da s prijatelji uživate v paketih modov Minecrafta.
+    projectBoundary: XMCL ostaja brezplačen in odprtokoden. Together je neobvezen, zaganjalnik pa deluje brez računa Together.
+    serviceOperator: XMCL Together je neobvezna spletna storitev, ki jo upravlja CI010.
+    storyLink: Zgodba o XMCL
+    perMonth: / mesec
+    from: Od
+    priceSuffix: / mesec
+    catalog:
+      heroNote: Štirje paketi. Eden bo ustrezal vaši skupini.
+      eyebrow: Izberite paket
+      title: Odločite se, kje teče svet.
+      description: Vsi štirje paketi služijo istemu cilju – pomagati vaši skupini vzdrževati in igrati v enem skupnem modiranem svetu.
+      recommended: Večina paketov modov
+      perMonth: / mesec
+      flatMonthly: Vključenih 20 GB posredovanja · 0,08 $ / GB naprej
+      runtime: '{price} na uro delovanja · premor kadarkoli'
+      hosted: Gostuje XMCL
+      runsOn: Teče na
+      bestFor: Najbolje za
+      connection: Povezava
+      memory: Pomnilnik
+      cpu: CPE
+      storage: Trajna shramba
+      aiIncluded: Vključena storitev UI
+      aiIncludedDescription: Pomoč pri gradnji paketov modov, odpravljanju težav in vzdrževanju strežnikov
+      home:
+        location: Gostovanje pri prijatelju
+        description: Večigralstvo z izboljšanim posredovanjem za prijatelje, katerih povezave P2P so zahtevne ali nestabilne; 20 GB običajno zadošča za približno 65 ur mesečno za 3 prijatelje.
+        runsOn: Vaš lastni računalnik
+        bestFor: Skupine, ki igrajo občasno
+        connection: Več kot 300 globalnih lokacij posredovanja
+      camp:
+        description: Majhno, a zmogljivo izhodišče za 2–4 prijatelje, ki igrajo lažji paket modov.
+      lodge:
+        description: Uravnotežena zmogljivost in cena za 4–6 prijateljev, ki igrajo običajen paket modov.
+      village:
+        description: Prostor za 6–10 prijateljev, večje pakete modov, več vsebine in več sočasnih igralcev.
+    shared:
+      eyebrow: Vključeno v vsak paket
+      title: Več kot le ohranjanje strežnika na spletu.
+      description: Together pomaga na celotni poti od paketa modov do skupnega sveta, namesto da bi enemu prijatelju prepustil vsako tehnično težavo.
+      aiTitle: Ustvarjanje in vzdrževanje ob pomoči UI
+      aiDescription: Pridobite pomoč pri izbiri in prilagajanju modov, razreševanju odvisnosti in sesutij ter nastavitvi in rutinskem vzdrževanju strežnika.
+      worldTitle: Svet ostane pri skupini
+      worldDescription: Home olajša dostopnost gostovanja pri prijateljih; gostovani paketi ohranijo svet in konfiguracijo, dokler se skupina ne vrne.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Plačajte za ure, ko strežnik dejansko deluje.
+      description: Nizka mesečna naročnina ohranja paket, svet, shranjene podatke in konfiguracijo. Urna tarifa se obračunava le, ko strežnik deluje.
+      playTitle: Zaženite ga, ko ga potrebujete
+      playDescription: Vklopite ga, ko so prijatelji pripravljeni, in plačajte za dejanske ure delovanja.
+      pauseTitle: Ustavi, ko nihče ne igra
+      pauseDescription: Zaračunavanje časa delovanja se med premorom ustavi; naslednjič nadaljujte iz istega sveta.
+    confirm:
+      serverNumber: '{plan} strežnik #{number}'
+      addAnother: Dodaj še en strežnik
+      close: Zapri
+      purchaseEyebrow: Ustvari strežnik
+      cancelEyebrow: Prekliči strežnik
+      purchaseTitle: Potrdi nakup paketa {plan}
+      purchaseDescription: Mesečna naročnina {monthly} se zaračuna takoj. Čas delovanja stane {hourly}/uro in se med premorom ustavi. Vsak strežnik se obračunava neodvisno in vključuje brezplačno storitev UI.
+      regionLabel: Lokacija strežnika
+      regionDescription: Izberite lokacijo, ki je najbližje večini igralcev. Trenutna konfiguracija podpira {count} lokacij Vultr.
+      testRegions: Preizkusi in priporoči
+      testingRegions: Preizkušanje …
+      testComplete: Izbrana lokacija {location} z najnižjo izmerjeno zakasnitvijo ({latency} ms).
+      testUnavailable: Preizkus hitrosti ni na voljo. Prosimo, izberite lokacijo ročno.
+      cancelTitle: Potrdi preklic paketa {plan}
+      cancelDescription: Preklic začne veljati ob koncu trenutnega obdobja dne {date}. Do takrat strežnik ostane na voljo.
+      retentionTitle: Shranjeni svetovi se za 30 dni premaknejo v hladno shrambo
+      retentionDescription: Prenesite shranjeni svet pred {date} v Upravljanje strežnikov → ta strežnik → Podatki in izvoz. Po tem datumu bo trajno izbrisan.
+      back: Nazaj
+      purchase: Potrdi nakup
+      cancel: Potrdi preklic
+    experienceEyebrow: TOGETHER HOME · GOSTOVANJE PRI PRIJATELJU
+    experienceTitle: Manj odpravljanja težav. Več časa v istem svetu.
+    experienceDescription: Together pomaga vaši skupini rešiti težave s paketi modov in ohranja večigralstvo tekoče, ko neposredna povezava ne uspe.
+    networkLocations: globalnih lokacij posredovanja
+    automatic: Samodejno
+    nearestRelay: usmerjanje prek najbližje lokacije
+    guided: Vodeno
+    modpackHelp: odpravljanje težav s paketi modov
+    signInTitle: Prijavite se za upravljanje Together
+    signInDescription: Vaša naročnina Together in kvote pripadajo vašemu računu XMCL.
+    disabled: Together v tej namestitvi ni omogočen.
+    loadError: Podatkov za Together ni bilo mogoče naložiti.
+    subscribeError: Naročnine Together ni bilo mogoče ustvariti.
+    cancelError: Naročnine Together ni bilo mogoče preklicati.
+    subscribe: Kupi Together Home
+    cancel: Prekliči naročnino
+    addFunds: Dodaj sredstva
+    inactiveTitle: Začnite z XMCL Together
+    inactiveDescription: Naročite se s svojim dobroimetjem XMCL. Prvi mesec se zaračuna takoj.
+    activeTitle: XMCL Together je aktiven
+    paymentDueTitle: Potrebno je plačilo
+    paymentDueDescription: Dodajte sredstva na svoje obračunsko dobroimetje za nadaljevanje storitve Together.
+    renewsOn: Obnovi se dne {date}.
+    cancelsOn: Dostop ostane aktiven do {date}.
+    status:
+      inactive: Neaktivno
+      active: Aktivno
+      payment_due: Zapadlo plačilo
+      cancelled: Preklicano
+    allowancesEyebrow: Vaša mesečna poraba
+    allowancesTitle: Kvote v ozadju izkušnje
+    aiAllowance: Preostala pomoč UI
+    aiUnits: preostalih uteženih enot žetonov
+    aiUsage: 'Porabljeno {consumed} od {included}'
+    aiFormula: 'Poraba = vhod brez predpomnilnika + ceil(vhod iz predpomnilnika × 0,1) + izhod × 4.'
+    turnAllowance: Večigralsko posredovanje
+    turnEgress: overjen promet posredovanja
+    turnUsage: 'Porabljeno {consumed} od {included}'
+    remainingUnavailable: Podatek o preostali porabi ni na voljo.
+    meteringUnavailable: Merjenje porabe še ni povezano; to je vključena kvota, ne preostalo stanje.
+    sourcesTitle: Aktivni viri kvot
+    source:
+      plus: 'Together: {ai} enot UI in {turn} posredovanja'
+      shared_hosting: 'Strežniški paket: {ai} enot UI in brez TURN'
+    serverBonus: Vsak aktiven strežniški paket ločeno vključuje 200.000 enot UI mesečno za pomoč pri nastavitvi paketa modov in strežnika.
+    aiTitle: Spravite paket modov v tek
+    aiDescription: Diagnosticirajte sesutja, spore odvisnosti in težave s konfiguracijo, ne da bi en prijatelj postal stalna tehnična podpora skupine.
+    turnTitle: Ohranite vse povezane
+    turnDescription: XMCL najprej poskusi neposredno povezavo, nato pa samodejno uporabi najbližji razpoložljivi posrednik, kadar omrežja ali usmerjevalniki ovirajo povezavo.
+    serverEyebrow: POTREBUJETE VEČ?
+    serverTitle: Ponudite skupini vedno dosegljiv svet.
+    serverDescription: Najemite namenski strežnik XMCL, ko gostovanje pri prijateljih ne zadošča več – s trajno shrambo in izbirno zmogljivostjo.
+    serverAction: Oglej si strežniške pakete
+  accountLinks:
+    title: Storitve XMCL
+    plusTitle: Razišči Together
+    plusDescription: Rešujte težave s paketi modov in ohranite svojo skupino povezano.
+    billingEyebrow: Obračunavanje
+    billingTitle: Dobroimetje in dejavnost
+    billingDescription: Dodajte sredstva in preglejte zaračunane postavke.
+    serverEyebrow: Strežniki
+    serverTitle: Deljeno gostovanje
+    serverDescription: Izberite strežniški paket in upravljajte njegovo naročnino.

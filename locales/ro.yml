@@ -1,0 +1,811 @@
+repository: Depozit cod sursă
+intro:
+  first:
+    body: Un launcher Minecraft {openSource} cu UX {modernUx}.
+    openSource: Open Source
+    modernUx: Modern
+  second:
+    body: Oferă o modalitate {diskEfficient} de a gestiona toate {mods} tale!
+    diskEfficient: Eficientă pe disc
+    mods: Modurile
+  description: >-
+    XMCL este un launcher Minecraft modern care îți permite să gestionezi
+    resursele tale masive precum pachete de moduri, pachete de resurse, moduri,
+    pachete de shadere... De asemenea, are integrare cu Minecraft Forge, Fabric,
+    Quilt, CurseForge și Modrinth.
+label: Română
+search:
+  button:
+    buttonText: Căutare
+    buttonAriaLabel: Caută în documentație
+  modal:
+    noResultsText: Niciun rezultat pentru
+    resetButtonTitle: Resetează căutarea
+    displayDetails: Afișează lista detaliată
+    backButtonTitle: Închide căutarea
+    footer:
+      selectText: pentru a selecta
+      navigateText: pentru a naviga
+      closeText: pentru a închide
+guide: Ghid
+documentation: Documentație
+docHub:
+  kicker: Documentație oficială
+  title: Centrul de documentație XMCL
+  description: Tot ce ai nevoie pentru a instala, configura, adăuga moduri, juca împreună și înțelege arhitectura XMCL.
+  searchPlaceholder: Caută documentație, ghiduri, setări, cuvinte cheie...
+  quickTopics: Subiecte rapide
+  viewSection: Explorează secțiunea
+  articlesCount: "{count} articole"
+  backToHub: Înapoi la Centrul de documentație
+  needHelp: Ai nevoie de ajutor?
+  needHelpDesc: Nu găsești ce cauți? Alătură-te comunității noastre sau contribuie la documentație.
+  joinDiscord: Intră pe Discord
+  githubRepo: Depozit GitHub
+  contributeDocs: Editează sau îmbunătățește documentația
+docGroups:
+  gettingStarted: "01 / Primii pași"
+  gameAndMods: "02 / Joc și Moduri"
+  multiplayerAndTroubleshooting: "03 / Multiplayer și Diagnosticare"
+  coreAndDev: "04 / Arhitectură Core și API"
+logViewer: Vizualizator jurnale
+protocol: Protocol
+changelogs: Jurnal de modificări
+outline: Pe această pagină
+coreDocument: Document de bază
+blogs: Bloguri
+launcher:
+  manage:
+    intro: Gestionează-ți eficient Minecraft.
+  description: Un launcher Minecraft simplu, open-source și orientat pe funcționalitate
+downloadFor:
+  windows: 'Descarcă pentru Windows:'
+  mac: 'Descarcă pentru Mac:'
+  linux: 'Descarcă pentru Linux:'
+author: Contactează autorul
+download-zip: Zip
+download-zip-32: Zip (32 biți)
+download-appx: Pachet AppX
+download-appinstaller: App Installer
+download-portable: Portabil
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: Descarcă de pe Azure
+azure-ms-source: Descarcă de pe Azure Microsoft CDN
+github-source: Descarcă de pe GitHub
+auto-source: Detectează automat sursa de descărcare
+authSuccess: Succes!
+authSuccessTitle: Autorizarea a reușit. Vei fi redirecționat înapoi în Launcher!
+redirectHelperTitle: >-
+  Dacă nu ești redirecționat, poți încerca să apeși butonul Deschide în aplicație
+  pentru a redirecționa manual.
+redirectHelperMessage: >-
+  Se va deschide o fereastră pop-up care te va întreba dacă dorești să deschizi
+  launcher-ul. Dacă tot nu funcționează, poți încerca să tragi butonul în fereastra
+  launcher-ului!
+notWork: Nu funcționează?
+openInAppButton: Deschide în Launcher
+nothingWork: Dacă nimic de mai sus nu funcționează, încearcă să redescarci cea mai recentă versiune a Launcher-ului
+gameInstall:
+  title:
+    body: Nu-ți mai face griji pentru {gameInstall}
+    gameInstall: Instalarea jocului
+  description: >-
+    XMCL suportă instalarea Minecraft vanilla, Minecraft Forge, Fabric și chiar
+    OptiFine, toate într-un singur loc! Le poți instala direct din Launcher. De
+    asemenea, suportă link-ul mirror terț BMCL API și îți poți configura chiar
+    propriul mirror în launcher.
+optimalDisk:
+  title:
+    body: 'Spațiu pe disc {optimal} pentru {massiveResources}'
+    optimal: Optim
+    massiveResources: Resurse masive
+  description: >-
+    XMCL stochează toate modurile, pachetele de resurse, pachetele de shadere și
+    pachetele de moduri într-o singură locație. Când folosești orice resursă
+    cunoscută, acesta utilizează legături fizice (hard links) pentru a instala
+    resursa în instanță fără a o copia. Astfel, nu vei mai vedea niciodată copii
+    duplicate în folderul /mods.
+cleanWorkspace:
+  title:
+    body: Păstrează-ți spațiul de lucru {clean} cu instanțe multiple
+    clean: Curat
+  description: >-
+    XMCL are suport integrat pentru instanțe multiple. Poți crea cu ușurință mai
+    multe instanțe, astfel încât nu trebuie să îți faci griji că setările
+    diferite de lansare se vor amesteca.
+communityIntegration:
+  title:
+    body: Integrat cu {multipleCommunities}
+    multipleCommunities: Multiple comunități
+  description: >-
+    XMCL are suport integrat pentru CurseForge și Modrinth. Oferă, de asemenea,
+    posibilitatea de a suporta conturi personalizate și sisteme de skin-uri
+    precum Blessing Skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: Alătură-te grupului lui {inviter}
+joinPeerDescription: >-
+  {inviter} te-a invitat să te alături grupului {group} pentru a juca Minecraft
+  împreună! Vei fi redirecționat înapoi în Launcher!
+fullChangelog: Ce este nou?
+privacy: Confidențialitate software
+prebuild:
+  history: Istoric versiuni
+  historyDescription: Versiuni și lansări anterioare
+  download: Descarcă Prebuilds
+  downloadDescription: >-
+    Prebuild-urile sunt artefacte generate în timpul procesului de dezvoltare.
+    Pot fi instabile. Folosește-le pe propriul risc!
+  entryHint: Artefacte prebuild?
+  ready: Pregătit
+  selected: Selectat
+  selectBuild: Selectează versiunea
+  downloading: Se descarcă...
+  kicker: CANAL PREBUILD
+  developmentBuilds: VERSIUNI DE DEZVOLTARE
+  tryNext: Încearcă ce urmează.
+  unstableDescription: Artefacte instabile pentru testarea viitoarelor modificări XMCL.
+  selectedBuild: VERSIUNE SELECTATĂ
+  buildsAvailable: '{count} versiuni disponibile'
+  selectABuild: SELECTEAZĂ O VERSIUNE
+  noBuilds: NICIO VERSIUNE GĂSITĂ
+  noBuildsDescription: Nu există artefacte prebuild disponibile în acest moment.
+  checkBack: Te rugăm să revii după finalizarea următorului flux de dezvoltare.
+  yesterday: Ieri
+  daysAgo: 'acum {count} zile'
+downloadMacHint:
+  content: Pentru utilizatorii de Mac, te rugăm să urmezi {link} pentru instalare.
+  link: instrucțiunile de instalare
+features:
+  label: Funcționalități
+  ui:
+    kicker: XMCL / CATALOG DE FUNCȚIONALITĂȚI
+    heading: Launcher-ul, pe înțelesul tău.
+    description: Explorează fluxurile de lucru care fac configurarea Minecraft cu moduri mai ușor de construit, înțeles și partajat.
+    all: Toate funcționalitățile
+    search: Caută funcționalități...
+    features: funcționalități
+    featuresInView: funcționalități afișate
+    readWorkflow: Citește fluxul de lucru
+  status:
+    homepage: Pagina principală
+    catalog: Catalog
+    guide: Ghid
+    detail: Detalii
+  groups:
+    instances:
+      short: Instanțe
+      title: Instanțe și profiluri
+      description: Păstrează fiecare configurație Minecraft independentă, vizibilă și gata de lansare, fără a pierde detaliile care o fac unică.
+    community:
+      short: Comunitate
+      title: Moduri și conținut al comunității
+      description: Descoperă, inspectează și instalează proiectele care transformă o versiune de Minecraft în următoarea ta lume.
+    mods:
+      short: Control moduri
+      title: Gestionarea modurilor
+      description: Păstrează o configurație mare cu moduri ușor de înțeles prin căutare, grupare, verificări de dependențe și control precis al actualizărilor.
+    world-tools:
+      short: Unelte pentru lumi
+      title: Unelte pentru lumi
+      description: "Lucrează cu lumile din spatele instanțelor tale: inspectează forma lor, selectează porțiuni și analizează materialele."
+    sharing:
+      short: Partajare
+      title: Partajare și multiplayer
+      description: Mută o configurație funcțională de pe calculatorul tău la un prieten, pe un server sau pe o altă instalare, cu toate detaliile intacte.
+    accounts:
+      short: Conturi
+      title: Conturi și productivitate
+      description: Păstrează identitatea, personalizarea și acțiunile frecvente aproape de lumile pe care le joci.
+    diagnostics:
+      short: Diagnosticare
+      title: Diagnosticare și asistență
+      description: Când o lansare eșuează, XMCL pune dovezile și următorul pas în același loc.
+  items:
+    instance-library:
+      title: O bibliotecă organizată de instanțe
+      benefit: Vezi lumile vanilla, cu moduri și experimentale împreună, într-un singur loc gata de lansare.
+      capabilities: Versiuni de joc și loader-e separate|Vezi modurile, salvările și resursele dintr-o privire|Lansează configurația de care ai nevoie
+    instance-create-modloaders:
+      title: Creează instanțe Java și Bedrock
+      benefit: Începe o configurație nouă cu loader-ul și ediția potrivite pentru lumea pe care vrei să o joci.
+      capabilities: Suport Java Edition și Bedrock experimental|Forge, Fabric, Quilt, NeoForge, OptiFine și LabyMod|Surse Minecraft oficiale și versiuni locale
+    instance-folder-groups:
+      title: Grupuri de foldere pentru instanțe
+      benefit: Organizează numeroase instanțe în foldere astfel încât diferitele lumi și configurații să rămână ușor de parcurs.
+      capabilities: Grupează instanțele după scop sau proiect|Păstrează configurațiile înrudite împreună|Comută între foldere direct din bara de instanțe
+    instance-settings:
+      title: Setări ale instanței
+      benefit: Ajustează Java, memoria, versiunile, loader-ele și comportamentul la lansare fără a afecta altă configurație.
+      capabilities: Configurare independentă pe instanță|Selectare versiune și loader|Control al aspectului per instanță
+    instance-theme:
+      title: Tema instanței
+      benefit: Oferă fiecărei lumi propria identitate cu fundaluri, culori, efect de estompare, fonturi și CSS personalizat.
+      capabilities: Imagine de fundal și suprapunere|Colțuri rotunjite și control al fonturilor|Exportă și importă o temă
+    local-server:
+      title: Lansează un server local
+      benefit: Transformă o instanță într-un server local configurabil cu o lume, limită de jucători și fișiere exportabile.
+      capabilities: MOTD, port și limită de jucători|Selectare lume și fișiere de server|Exportă un pachet de server
+    server-list:
+      title: Listă de servere
+      benefit: Păstrează destinațiile multiplayer aproape de instanța care le folosește și vezi starea conexiunii.
+      capabilities: Stare server și număr de jucători|Fixează și elimină destinații|Afișează clar erorile de conexiune
+    modpack-market:
+      title: Piața de pachete de moduri
+      benefit: Răsfoiește conținut Modrinth, CurseForge și FTB dintr-o singură piață cu căutare integrată.
+      capabilities: Filtre după sursă, versiune, loader și categorie|Descoperă pachete populare și recente|Deschide pagina de detalii a pachetului
+    online-mod-search:
+      title: Căutare online de moduri
+      benefit: Găsește moduri compatibile pe principalele platforme ale comunității înainte ca acestea să ajungă în instanța ta.
+      capabilities: Surse Modrinth și CurseForge|Filtre pentru versiunea Minecraft și loader|Filtre de mediu și categorii
+    modpack-detail:
+      title: Detalii pachet de moduri
+      benefit: Înțelege un pachet înainte de a-l instala, de la capturi de ecran și autori până la cerințe tehnice.
+      capabilities: Capturi de ecran, etichete și statistici ale proiectului|Acțiuni de instalare și lansare|Informații tehnice și resurse externe
+    mod-collections:
+      title: Colecții de moduri
+      benefit: Salvează proiectele la care vrei să revii și transformă o colecție într-o configurație reutilizabilă.
+      capabilities: Colecții în launcher|Proiecte Modrinth urmărite|Instalare în lot și gestionare colecții
+    mod-detail:
+      title: Detalii mod
+      benefit: Inspectează un mod înainte de a-ți modifica instanța și înțelege versiunile, dependențele și sursele sale.
+      capabilities: Selectare versiuni și dependențe|Loader-e, categorii și link-uri către sursă|Descriere și resurse externe
+    local-mods:
+      title: Gestionarea modurilor instalate
+      benefit: Vezi ce este activat, filtrează rapid și păstrează setul activ funcțional.
+      capabilities: Caută, sortează și filtrează moduri|Verifică dependențele și conținutul neutilizat|Alege o politică de actualizare
+    custom-mod-groups:
+      title: Grupuri personalizate de moduri
+      benefit: Creează propriile grupuri și salvează regulile care organizează o instanță complexă.
+      capabilities: Aplică și salvează reguli de grupare|Grupează moduri din meniul contextual|Activează, dezactivează sau inspectează fișiere
+    save-preview:
+      title: Previzualizare salvări și unelte Chunk
+      benefit: Examinează vizual o lume înainte de a o lansa și fă modificări precise la nivel de Chunk.
+      capabilities: Navighează și inspectează hărțile lumii|Selectează, copiază sau șterge Chunk-uri|Citește proprietățile și materialele lumii
+    blueprint-preview:
+      title: Previzualizare planuri (Blueprints)
+      benefit: Previzualizează o structură în 3D și verifică compatibilitatea și materialele înainte de a o plasa în joc.
+      capabilities: Formate Litematica și WorldEdit|Stare compatibilitate și moduri lipsă|Listă de materiale și conversie de format
+    modpack-export:
+      title: Export pachet de moduri
+      benefit: Împachetează o instanță pentru alți jucători fără a pierde metadatele și fișierele necesare funcționării.
+      capabilities: Export CurseForge și Modrinth|Metadate pentru autor, descriere și URL|Alege fișierele și resursele de inclus
+    server-export:
+      title: Export server
+      benefit: Selectează lumea și fișierele potrivite ale serverului, apoi exportă un server local cu o configurație clară.
+      capabilities: Exportă într-un folder sau încarcă|Selectează fișierele serverului|Configurează MOTD și opțiunile serverului
+    account-login:
+      title: Servicii multiple de autentificare
+      benefit: Alege serviciul de cont care se potrivește modului tău de joc, de la Microsoft la conturi offline și servicii terțe.
+      capabilities: Conturi Microsoft și offline|Servicii Ely.by și LittleSkin|Adaugă și gestionează servicii de autentificare
+    quick-action:
+      title: Acțiune rapidă
+      benefit: Găsește instanțe și comenzi fără a părăsi pagina pe care lucrezi.
+      capabilities: Caută comenzi, instanțe și moduri|Lansează sau creează o instanță|Navigare rapidă de la tastatură cu Ctrl+K
+    crash-diagnosis:
+      title: Rapoarte de eroare și eșec la lansare
+      benefit: Citește jurnalele reale, rapoartele de crash și ieșirea serverului din spatele unei lansări eșuate.
+      capabilities: Jurnale, rapoarte de crash și erori de lansare|Erori de rezolvare a modurilor și coduri de ieșire|Copiază un prompt pentru instrumente AI externe
+    ai-agent:
+      title: Agent AI integrat
+      benefit: Lasă un agent să inspecteze sistemul de fișiere virtual al instanței și să explice o soluție concretă.
+      capabilities: Citește fișierele și rapoartele instanței|Investighează înainte de a trage o concluzie|Aplică o remediere concretă atunci când este posibil
+modernHome:
+  kicker: LAUNCHER MINECRAFT OPEN SOURCE
+  visualLabel: CONSTRUIT PENTRU LUMI CU MODURI
+  windowLabel: XMCL / ACASĂ
+  latestRelease: ULTIMA VERSIUNE
+  readyToPlay: GATA DE JOC
+  libraryTitle: O bibliotecă curată
+  librarySubtitle: Moduri, pachete și instanțe
+  proofLabel: Capabilitățile launcher-ului
+  proof:
+    fastTitle: CONFIGURARE RAPIDĂ
+    fastDescription: De la vanilla la modat
+    libraryTitle: O SINGURĂ BIBLIOTECĂ
+    libraryDescription: Resursele rămân organizate
+    ecosystemTitle: ECOSISTEMUL TĂU
+    ecosystemDescription: Modrinth și CurseForge
+  workflow:
+    kicker: FLUXUL DE LUCRU XMCL
+    title: Tot ce au nevoie lumile tale.
+    description: Conceput pentru jucătorii care își doresc puterea unei configurații cu moduri fără efortul de întreținere.
+    stageLabel: XMCL / FLUX DE LUCRU
+    scrollHint: DERULEAZĂ PENTRU A EXPLORA
+  openSource:
+    kicker: PULSUL OPEN SOURCE
+    title: Construit în public.
+    viewOnGitHub: Vezi pe GitHub
+    repository: DEPOZIT GITHUB
+    snapshot: IMAGINE DE MOMENT
+    downloads: Descărcări
+    stars: Stele
+    forks: Fork-uri
+    openIssues: Probleme deschise
+    statsNote: Statistici ale proiectului GitHub capturate la momentul construirii acestui site.
+    contributors: CONTRIBUTORI
+    inView: ÎN VEDERE
+    contributorsCopy: Fiecare problemă raportată, pull request, traducere și idee ajută la modelarea următoarei versiuni.
+  sponsor:
+    label: SPONSORIZEAZĂ XMCL
+    title: Menține launcher-ul în mișcare.
+    description: Susține mentenanța, lansările și oamenii care construiesc XMCL în mod deschis.
+    supportedBy: SUSȚINUT DE
+  download:
+    kicker: URMĂTOAREA TA AVENTURĂ
+    title: Gata când ești și tu.
+    platforms: Platforme de descărcare
+  footer:
+    issues: Probleme
+  features:
+    setup:
+      title: Fiecare configurație, un singur launcher
+      short: Multi-loader, multi-instanță
+      description: Creează și gestionează instanțe Minecraft separate pe Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod și suport Bedrock experimental, cu instalarea gestionată automat.
+      alt: Dialogul XMCL de creare a jocului cu multiple Mod Loader-e și Bedrock Edition
+      link: Explorează configurarea instanțelor
+    discover:
+      title: Găsește conținut al comunității
+      short: Modrinth, CurseForge și FTB
+      description: Răsfoiește pachete de moduri și proiecte ale comunității, filtrează-le după versiune și loader și treci direct de la descoperire la joc.
+      alt: Piața de pachete de moduri XMCL cu filtre de conținut ale comunității
+      link: Explorează conținutul comunității
+    mods:
+      title: Păstrează configurațiile cu moduri sub control
+      short: Caută, grupează, actualizează
+      description: Gestionează modurile instalate, inspectează dependențele, organizează grupuri personalizate și menține o configurație mare ușor de înțeles.
+      alt: Gestionarea locală a modurilor în XMCL cu filtre și controale de actualizare
+      link: Explorează gestionarea modurilor
+    accounts:
+      title: Conturile tale, în felul tău
+      short: Microsoft, offline și altele
+      description: Conectează serviciul de cont care se potrivește configurației tale, de la Microsoft și profiluri offline la servicii terțe de autentificare, fără a părăsi launcher-ul.
+      alt: Dialogul de autentificare XMCL cu multiple servicii de autentificare
+      link: Explorează suportul pentru conturi
+siteFooter:
+  ariaLabel: Subsolul site-ului
+  navigation: Navigare în subsol
+  description: Infrastructură Minecraft open-source pentru jucători, desktop-uri Linux și oamenii care construiesc lumile în care ne jucăm.
+  status: Open source · construit în public
+  explore:
+    title: Explorează
+    home: Acasă
+    features: Catalog de funcționalități
+    documentation: Documentație
+  useCases:
+    title: Cazuri de utilizare
+    linux: Launcher Linux
+    creators: Creatori de pachete de moduri
+    download: Descarcă XMCL
+  resources:
+    title: Resurse
+    logViewer: Vizualizator jurnale
+    github: GitHub
+    issue: Raportează o problemă
+    discord: Discord
+  bottomNote: Construit pentru modul în care joci și creezi.
+  readDocumentation: Citește documentația
+sceneLanding:
+  linux:
+    eyebrow: XMCL / EDIȚIA LINUX
+    title: Launcher-ul Minecraft care se simte nativ pe Linux.
+    lede: Un launcher open-source rafinat pentru desktop-uri Linux și Steam Deck. Alege pachetul pe care îl așteaptă distribuția ta, conectează-te la un ecran 4K și păstrează fiecare lume la un singur clic distanță.
+    primaryAction: Descarcă pentru Linux
+    secondaryAction: Vezi fluxul de lucru Linux
+    heroNote: Versiuni Linux native, opțiuni ARM64 și suport Flathub
+    visualLabel: XMCL · Spațiu de lucru Linux
+    heroAlt: Ecranul principal XMCL afișând o bibliotecă de instanțe Minecraft
+    visualTag: Spațiu de lucru pregătit pentru 4K
+    visualStatus: GATA PENTRU URMĂTOAREA TA LUME
+    workflowKicker: UN FLUX DE LUCRU AXAT PE LINUX
+    workflowTitle: De la managerul de pachete la sesiunea de joc, fără obstacole.
+    workflowDescription: 'XMCL păstrează aproape lucrurile de care le pasă jucătorilor de Linux: instalări previzibile, o interfață clară și medii de joc independente între care poți comuta cu ușurință.'
+    signals:
+      packages:
+        number: '05'
+        label: Pachete Linux
+        description: DEB, RPM, AppImage, tar.xz și Flathub.
+      scale:
+        number: '4K'
+        label: Clar la orice scară
+        description: O bibliotecă densă care rămâne lizibilă pe un ecran mare.
+      worlds:
+        number: '∞'
+        label: Lumi separate
+        description: Previne conflictele între versiuni, loader-e și salvări.
+    features:
+      install:
+        label: 01 / ALEGE INSTALAREA
+        title: Folosește formatul pe care distribuția ta îl înțelege.
+        description: Descarcă un pachet nativ pentru desktop-ul tău sau folosește Flathub atunci când vrei o variantă portabilă, potrivită pentru Steam Deck. XMCL oferă și versiuni ARM64 acolo unde hardware-ul o cere.
+        point1: DEB și RPM pentru distribuțiile Linux populare
+        point2: AppImage și tar.xz pentru instalări portabile
+        point3: Suport Flathub pentru Steam Deck
+        alt: Dialogul XMCL de creare a instanței cu versiuni Minecraft și mod loader-e
+      organize:
+        label: 02 / PĂSTREAZĂ TOTUL ORGANIZAT
+        title: Fiecare instanță are propria sa pistă curată.
+        description: Separă configurațiile vanilla, cu moduri, de testare și de server fără a muta foldere manual. Versiunile, loader-ele, modurile, salvările și setările tale rămân împreună.
+        point1: Date de joc și setări de lansare independente
+        point2: Forge, Fabric, Quilt, NeoForge și altele
+        point3: Comutare rapidă între lumi și experimente
+        alt: Biblioteca de instanțe XMCL cu profiluri de joc Minecraft organizate
+      anywhere:
+        label: 03 / JOACĂ ORIUNDE
+        title: Un launcher desktop care călătorește bine.
+        description: Treci de la un desktop Linux la o sesiune pe Steam Deck fără a renunța la o bibliotecă clară sau la o configurație de încredere. XMCL oferă colecției tale spațiu să crească fără a o transforma într-un tabel complicat.
+        point1: Cale Flathub concepută pentru Steam Deck
+        point2: O interfață clară pe ecrane 4K
+        point3: Open source și construit pentru jucătorii de Linux
+        alt: Pagina principală XMCL cu o bibliotecă mare de instanțe
+    download:
+      kicker: DESCARCĂ PENTRU LINUX
+      title: Instalează XMCL în felul tău.
+      description: Alege pachetul potrivit sistemului tău sau folosește Flathub pentru a aduce XMCL pe Steam Deck.
+      link: Vezi toate versiunile și prebuild-urile
+  creators:
+    eyebrow: XMCL / PENTRU CREATORI DE PACHETE DE MODURI
+    title: Construiește pachete de moduri cu întregul ciclu de lansare într-un singur loc.
+    lede: Descoperă proiecte, rezolvă dependențe, testează un set funcțional, diagnostichează erori și exportă un pachet curat pentru Modrinth sau CurseForge fără a părăsi launcher-ul.
+    primaryAction: Explorează fluxurile pentru creatori
+    secondaryAction: Deschide catalogul de funcționalități
+    heroNote: Fluxuri de lucru Modrinth și CurseForge, cu diagnosticare asistată de AI
+    visualLabel: XMCL · Spațiu de lucru pentru creatori
+    heroAlt: Piața de pachete de moduri XMCL cu proiecte Modrinth și CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: SET DE LUCRU SINCRONIZAT
+    workflowKicker: CICLUL CREATORULUI
+    workflowTitle: O cale mai rapidă de la idee la un pachet pe care jucătorii îl pot lansa cu adevărat.
+    workflowDescription: 'XMCL tratează un pachet de moduri ca pe un sistem viu. Explorează ambele cataloage, fă modificări deliberate și lasă launcher-ul să evidențieze relațiile care mențin lansarea stabilă.'
+    signals:
+      sources:
+        number: '2×'
+        label: Surse de proiecte
+        description: Caută pe Modrinth și CurseForge dintr-un singur spațiu de lucru.
+      export:
+        number: '1-CLIC'
+        label: Export pachet
+        description: Construiește un pachet MR sau CF distribuibil în câțiva pași.
+      ai:
+        number: 'AI'
+        label: Asistență la erori
+        description: Transformă un raport de eșec într-un următor pas util.
+    features:
+      discover:
+        label: 01 / DESCOPERĂ
+        title: Caută în ambele ecosisteme fără să-ți împarți atenția.
+        description: Găsește proiecte pe Modrinth și CurseForge cu filtre pentru versiune, loader, mediu și categorie. XMCL mapează proiectele între ambele surse, astfel încât să poți compara același proiect cu mai puține presupuneri.
+        point1: Căutare Modrinth și CurseForge într-un singur flux
+        point2: Filtre de compatibilitate pentru versiunea Minecraft și loader
+        point3: Mapare de proiecte între platforme
+        alt: Căutare online de moduri XMCL cu filtre de sursă și compatibilitate
+      build:
+        label: 02 / CONSTRUIEȘTE
+        title: Fă din dependențe o parte a planului.
+        description: Când un mod are nevoie de un alt mod, XMCL poate instala dependența odată cu el. Când activezi sau dezactivezi un proiect, launcher-ul te ajută să păstrezi setul coerent în loc să te oblige să urmărești manual graful de dependențe.
+        point1: Instalare automată a dependențelor
+        point2: Activare și dezactivare conștientă de dependențe
+        point3: Inspectează versiuni, loader-e și metadatele proiectului
+        alt: Vizualizare detalii mod XMCL afișând versiuni și dependențe
+      curate:
+        label: 03 / ORGANIZEAZĂ
+        title: Păstrează setul de lucru suplu și intenționat.
+        description: Caută, sortează, grupează, actualizează și elimină modurile care nu mai au ce căuta acolo. Grupurile personalizate fac ușoară testarea conținutului opțional, compararea profilurilor sau menținerea unei versiuni candidate curate.
+        point1: Verificări automate ale actualizărilor pentru moduri
+        point2: Grupuri personalizate pentru conținut opțional și de test
+        point3: Găsește și elimină modurile neutilizate
+        alt: Vizualizare XMCL de gestionare a modurilor instalate cu controale de căutare și actualizare
+      export:
+        label: 04 / EXPORTĂ
+        title: Livrează un singur pachet în formatul de care au nevoie jucătorii tăi.
+        description: Exportă un pachet de moduri Modrinth sau CurseForge finisat, cu metadatele corecte și fișierele selectate. Pasul de lansare devine o parte repetabilă a fluxului de lucru, nu o arhivare făcută pe ultima sută de metri.
+        point1: Export cu un singur clic pentru Modrinth și CurseForge
+        point2: Metadate pentru autor, descriere, URL și versiune
+        point3: Alege exact ce fișiere și resurse sunt livrate
+        alt: Ecranul XMCL de export pachet de moduri pentru formatele Modrinth și CurseForge
+      diagnose:
+        label: 05 / DIAGNOSTICHEAZĂ
+        title: Lasă AI-ul să transforme rapoartele de crash în soluții.
+        description: Când o lansare de test eșuează, XMCL pune jurnalele, rapoartele de crash și un agent AI în același loc. Agentul poate inspecta contextul instanței și poate explica un următor pas concret.
+        point1: Citește jurnalele de lansare și rapoartele de crash în context
+        point2: Investigare asistată de AI a fișierelor instanței
+        point3: Rezolvă conflictele de moduri înainte de lansare
+        alt: Agentul AI XMCL investigând o eroare de lansare Minecraft
+    cta:
+      kicker: UN BANC DE LUCRU PENTRU URMĂTOAREA TA LANSARE
+      title: Fă pachetul. Livrează pachetul. Păstrează-l stabil.
+      description: XMCL oferă creatorilor un ciclu local rapid pentru descoperire, testare, diagnosticare și export în cele două ecosisteme pe care jucătorii tăi le folosesc deja.
+      button: Explorează toate funcționalitățile
+commercial:
+  common:
+    loading: Se încarcă…
+    refresh: Reîmprospătează
+    refreshing: Se reîmprospătează…
+    signIn: Autentificare
+  playModes:
+    label: Alege cum joacă grupul tău
+    plusEyebrow: GĂZDUIT DE PRIETENI
+    plusTitle: Together Home
+    plusDescription: Pornește o lume local și folosește Together atunci când conexiunea multiplayer directă are nevoie de ajutor.
+    serverEyebrow: MEREU ONLINE
+    serverTitle: Together Camp, Lodge sau Village
+    serverDescription: Păstrează o lume persistentă disponibilă chiar și atunci când proprietarul grupului este offline.
+  billing:
+    eyebrow: FACTURARE XMCL
+    title: Facturare și sold
+    description: Gestionează soldul în numerar, plățile și activitatea de facturare.
+    accountSettings: Setările contului
+    disabled: Facturarea nu este activată pe această implementare.
+    loadingTitle: Se încarcă facturarea
+    loadingDescription: Se preiau soldul și activitatea ta…
+    signInTitle: Autentifică-te pentru a gestiona facturarea
+    signInDescription: Soldul, plățile și utilizarea aparțin contului tău XMCL.
+    overview: Prezentare generală
+    accountTitle: Contul tău de facturare
+    debt: Alimentările viitoare vor acoperi mai întâi {amount} din soldul restant.
+    available: Sold disponibil
+    availableHint: Gata de utilizat în serviciile XMCL
+    homeFundingRequired: Soldul tău nu este suficient pentru Together Home. Adaugă cel puțin {amount}, apoi revino la Together pentru a-l achiziționa.
+    reserved: Rezervat
+    reservedHint: Reținut pentru utilizarea activă
+    history: Istoric
+    activity: Activitate de facturare
+    activityViews: Vizualizări activitate de facturare
+    transactions: Tranzacții
+    payments: Plăți
+    usage: Utilizare
+    descriptionLabel: Descriere
+    reference: Referință
+    date: Dată
+    amount: Sumă
+    payment: Plată
+    status: Stare
+    usageEvent: Eveniment de utilizare
+    rate: Tarif
+    charged: Taxat
+    noTransactions: Încă nu există tranzacții.
+    noPayments: Încă nu există plăți Waffo.
+    noUsage: Încă nu există utilizare contorizată.
+    loadError: Datele de facturare nu au putut fi încărcate.
+    securedTitle: Plăți securizate de Waffo
+    securedDescription: Detaliile cardului și ale cumpărătorului sunt procesate pe pagina de plată găzduită de Waffo Pancake. XMCL nu primește niciodată numărul cardului tău.
+  checkout:
+    title: Adaugă fonduri
+    description: Alimentează-ți soldul XMCL în siguranță cu Waffo Pancake.
+    amount: Sumă
+    preparing: Se pregătește plata…
+    add: Adaugă {amount}
+    providerNote: Vei continua către pagina de plată găzduită de Waffo pentru a finaliza plata.
+    legalNote: Continuând, ești de acord cu XMCL Together
+    terms: Termenii și condițiile
+    and: și
+    privacy: Politica de confidențialitate
+    openCheckout: Deschide pagina de plată
+    cancelledReturned: Am anulat sau am revenit
+    newTopUp: Începe o nouă alimentare
+    invalidAmount: Introdu o sumă pozitivă întreagă înainte de a continua.
+    unsafeUrl: Serviciul nu a returnat un URL de plată Waffo sigur.
+    opened: Finalizează sau anulează în pagina de plată Waffo, apoi revino aici. XMCL va reîmprospăta comanda și soldul.
+    blocked: Fereastra de aprobare a fost blocată. Permite-o, apoi încearcă din nou cu aceeași intenție de plată.
+    returnRecorded: Revenirea din pagina de plată a fost înregistrată.
+    returnDetected: A fost detectată revenirea din pagina de plată.
+    refreshFailed: XMCL a încercat să reîmprospăteze comanda și soldul.
+    restoreFailed: Plata anterioară nu a putut fi restaurată. Reîncercarea folosește aceeași intenție de plată.
+    newIntent: Acum poate fi creată o nouă intenție de plată. Nu folosi link-ul anterior de plată Waffo.
+  server:
+    eyebrow: XMCL PLAY / MEREU ONLINE
+    title: O lume pregătită ori de câte ori este și grupul tău.
+    description: Oferă grupului tău o lume cu moduri mereu disponibilă, fără a obliga un prieten să țină calculatorul pornit.
+    storyLink: Povestea tristă a XMCL
+    billingLink: Facturare și sold
+    from: De la
+    priceSuffix: / lună + timp de rulare
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: Fără jucător gazdă. Fără să aștepți ca cineva să intre online.
+    experienceDescription: Păstrează lumea cu moduri a grupului pe o infrastructură persistentă și alege capacitatea potrivită pachetului.
+    alwaysAvailable: disponibilitatea lumii
+    performancePlans: configurații de performanță
+    aiBonus: unități AI incluse / lună
+    alwaysOnTitle: Lumea rămâne cu grupul
+    alwaysOnDescription: Prietenii pot reveni în aceeași lume persistentă fără a depinde de calculatorul sau programul unui singur jucător.
+    rightSizeTitle: Potrivește serverul cu pachetul de moduri
+    rightSizeDescription: Alege performanța, memoria și stocarea potrivite pachetului de astăzi, apoi treci la un plan superior când grupul are nevoie de mai mult.
+    signInTitle: Autentifică-te pentru a gestiona serverele
+    signInDescription: Planurile de server și abonamentele aparțin contului tău XMCL.
+    overview: Abonament server
+    yourServer: Planul tău de server
+    balance: Sold
+    addFunds: Adaugă fonduri
+    paymentDue: Plata este scadentă. Adaugă fonduri pentru a reactiva automat acest abonament.
+    cancelsOn: Se anulează pe {date}.
+    renewsOn: Se reînnoiește pe {date}.
+    cancel: Anulează planul
+    plansEyebrow: Găzduire partajată
+    choosePlan: Alege un plan
+    planDescription: Acces lunar plus timp de rulare contorizat. Fiecare plan activ include asistență AI pentru pachete de moduri și configurarea serverului.
+    current: Actual
+    perMonth: / lună
+    runtimePrice: + {amount} pe oră de rulare
+    cpu: Procesor
+    cpuValue: '{count} vCPU'
+    memory: Memorie
+    storage: Stocare persistentă
+    includedAi: Asistență AI inclusă
+    includedAiValue: 200.000 unități / lună
+    select: Selectează {plan}
+    selected: Selectat
+    unavailable: Indisponibil
+    noPlans: Nu există planuri de găzduire partajată publicate în acest moment.
+    loadError: Planurile de server nu au putut fi încărcate.
+    subscribeError: Abonamentul nu a putut fi creat.
+    cancelError: Abonamentul nu a putut fi anulat.
+    managerEyebrow: Serverele tale găzduite
+    managerTitle: Gestionarea serverelor
+    managerDescription: Fiecare server rulează și este facturat independent. Verifică starea și pornește-l sau oprește-l aici.
+    serverNumber: 'Server {plan} {number}'
+    start: Pornește serverul
+    stop: Oprește serverul
+    cpuUsage: Utilizare CPU
+    memoryUsage: Utilizare memorie
+    launcherGuide: Folosește launcher-ul XMCL pentru a schimba modurile, pachetele de moduri, lumile și alte setări detaliate.
+    operationError: Nu se poate schimba starea serverului.
+    status:
+      pending: În așteptare de capacitate
+      queued: În așteptare de capacitate
+      ready: Oprit
+      starting: Se pornește
+      running: Rulează
+      stopping: Se oprește și se salvează
+      payment_due: Plată scadentă
+      failed: Necesită atenție
+      retained: Arhivă păstrată
+      deleted: Șters
+    plusEyebrow: PREFERI GĂZDUIREA LA UN PRIETEN?
+    plusTitle: Pornește în schimb de pe propriul tău calculator.
+    plusDescription: Together menține fiabil jocul multiplayer direct între prieteni și include același tip de asistență pentru depanarea pachetelor de moduri.
+    plusAction: Explorează multiplayer-ul între prieteni
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: Cea mai bună configurație Minecraft sunt prietenii cu care joci.
+    description: De la construirea pachetului de moduri și menținerea conexiunii până la administrarea serverului, XMCL Together îți permite să te bucuri de pachetele de moduri Minecraft alături de prieteni.
+    projectBoundary: XMCL rămâne gratuit și open source. Together este opțional, iar launcher-ul funcționează fără un cont Together.
+    serviceOperator: XMCL Together este un serviciu online opțional operat de CI010.
+    storyLink: Povestea XMCL
+    perMonth: / lună
+    from: De la
+    priceSuffix: / lună
+    catalog:
+      heroNote: Patru planuri. Unul se va potrivi grupului tău.
+      eyebrow: Alege un plan
+      title: Decide unde rulează lumea.
+      description: Toate cele patru planuri servesc aceluiași scop — să ajute grupul tău să întrețină și să joace într-o singură lume comună cu moduri.
+      recommended: Majoritatea pachetelor
+      perMonth: / lună
+      flatMonthly: 20 GB relay inclus · $0.08 / GB după
+      runtime: '{price} pe oră de rulare · pune pe pauză oricând'
+      hosted: Găzduit de XMCL
+      runsOn: Rulează pe
+      bestFor: Ideal pentru
+      connection: Conexiune
+      memory: Memorie
+      cpu: Procesor
+      storage: Stocare persistentă
+      aiIncluded: Serviciu AI inclus
+      aiIncludedDescription: Ajutor pentru construirea pachetelor de moduri, depanare și întreținerea serverelor
+      home:
+        location: Găzduit de prieteni
+        description: Multiplayer îmbunătățit prin relay, creat pentru prietenii ale căror conexiuni P2P sunt dificile sau instabile; 20 GB oferă de obicei la 3 prieteni aproximativ 65 de ore pe lună.
+        runsOn: Propriul tău calculator
+        bestFor: Grupuri care joacă ocazional
+        connection: Peste 300 de locații relay globale
+      camp:
+        description: Un punct de pornire mic, dar capabil, pentru 2–4 prieteni care joacă un pachet de moduri mai ușor.
+      lodge:
+        description: Performanță și preț echilibrate pentru 4–6 prieteni care joacă un pachet de moduri obișnuit.
+      village:
+        description: Spațiu pentru 6–10 prieteni, pachete de moduri mai mari, mai mult conținut și mai mulți jucători simultan.
+    shared:
+      eyebrow: Inclus în fiecare plan
+      title: Mai mult decât a ține un server online.
+      description: Together ajută pe tot parcursul drumului de la pachetul de moduri la lumea comună, în loc să lase un singur prieten cu toate problemele tehnice.
+      aiTitle: Creare și întreținere asistate de AI
+      aiDescription: Primești ajutor pentru alegerea și ajustarea modurilor, rezolvarea dependențelor și a erorilor, precum și configurarea și întreținerea de rutină a serverului.
+      worldTitle: Lumea rămâne cu grupul
+      worldDescription: Home face găzduirea de la prieteni mai ușor de accesat; planurile găzduite păstrează lumea și configurația până la revenirea grupului.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Plătești doar pentru orele în care serverul chiar rulează.
+      description: O taxă lunară mică păstrează planul, lumea, salvările și configurația. Taxele pe oră se aplică doar cât timp serverul rulează.
+      playTitle: Pornește-l când ai nevoie
+      playDescription: Pornește-l când prietenii sunt gata și plătește pentru orele reale de funcționare.
+      pauseTitle: Pune-l pe pauză când nu joacă nimeni
+      pauseDescription: Taxele de rulare se opresc cât timp este pe pauză; continuă din aceeași lume data viitoare.
+    confirm:
+      serverNumber: 'Server {plan} #{number}'
+      addAnother: Adaugă un alt server
+      close: Închide
+      purchaseEyebrow: Creează un server
+      cancelEyebrow: Anulează un server
+      purchaseTitle: Confirmă achiziția {plan}
+      purchaseDescription: Taxa lunară de {monthly} este debitată imediat. Timpul de rulare costă {hourly}/oră și se oprește pe pauză. Fiecare server este facturat independent și include serviciu AI gratuit.
+      regionLabel: Locația serverului
+      regionDescription: Alege locația cea mai apropiată de majoritatea jucătorilor. Configurația actuală suportă {count} locații Vultr.
+      testRegions: Testează și recomandă
+      testingRegions: Se testează…
+      testComplete: A fost selectat {location}, cu cea mai mică latență măsurată ({latency} ms).
+      testUnavailable: Testul de viteză nu este disponibil. Te rugăm să alegi manual o locație.
+      cancelTitle: Confirmă anularea planului {plan}
+      cancelDescription: Anularea intră în vigoare la sfârșitul perioadei curente, pe {date}. Serverul rămâne disponibil până atunci.
+      retentionTitle: Salvările sunt mutate în stocare rece timp de 30 de zile
+      retentionDescription: Descarcă salvarea înainte de {date} din Gestionarea serverelor → acest server → Date și export. După această dată va fi ștearsă definitiv.
+      back: Înapoi
+      purchase: Confirmă achiziția
+      cancel: Confirmă anularea
+    experienceEyebrow: TOGETHER HOME · GĂZDUIT DE PRIETENI
+    experienceTitle: Mai puțină depanare. Mai mult timp în aceeași lume.
+    experienceDescription: Together ajută grupul tău să rezolve problemele pachetelor de moduri și menține multiplayer-ul activ atunci când o conexiune directă nu reușește.
+    networkLocations: locații relay globale
+    automatic: Automat
+    nearestRelay: rutare către cel mai apropiat relay
+    guided: Ghidat
+    modpackHelp: depanare pachete de moduri
+    signInTitle: Autentifică-te pentru a gestiona Together
+    signInDescription: Abonamentul și cotele tale Together aparțin contului tău XMCL.
+    disabled: Together nu este activat pe această implementare.
+    loadError: Informațiile Together nu au putut fi încărcate.
+    subscribeError: Abonamentul Together nu a putut fi creat.
+    cancelError: Abonamentul Together nu a putut fi anulat.
+    subscribe: Achiziționează Together Home
+    cancel: Anulează abonamentul
+    addFunds: Adaugă fonduri
+    inactiveTitle: Începe XMCL Together
+    inactiveDescription: Abonează-te folosind soldul tău XMCL. Prima lună este debitată imediat.
+    activeTitle: XMCL Together este activ
+    paymentDueTitle: Plată necesară
+    paymentDueDescription: Adaugă fonduri în soldul de facturare pentru a relua Together.
+    renewsOn: Se reînnoiește pe {date}.
+    cancelsOn: Accesul rămâne activ până pe {date}.
+    status:
+      inactive: Inactiv
+      active: Activ
+      payment_due: Plată scadentă
+      cancelled: Anulat
+    allowancesEyebrow: Utilizarea ta lunară
+    allowancesTitle: Cotele din spatele experienței
+    aiAllowance: Asistență AI rămasă
+    aiUnits: unități de tokeni ponderate rămase
+    aiUsage: '{consumed} utilizate din {included}'
+    aiFormula: 'Utilizare = intrare cache-miss + ceil(intrare cache-hit × 0.1) + ieșire × 4.'
+    turnAllowance: Relay multiplayer
+    turnEgress: trafic relay autentificat
+    turnUsage: '{consumed} utilizate din {included}'
+    remainingUnavailable: Utilizarea rămasă nu este disponibilă.
+    meteringUnavailable: Contorizarea utilizării nu este conectată încă; aceasta este cota inclusă, nu soldul rămas.
+    sourcesTitle: Surse active de cote
+    source:
+      plus: 'Together: {ai} unități AI și {turn} relay'
+      shared_hosting: 'Plan server: {ai} unități AI și fără TURN'
+    serverBonus: Fiecare plan de server activ include separat 200.000 de unități AI în fiecare lună pentru a ajuta la pachetele de moduri și configurarea serverului.
+    aiTitle: Fă pachetul de moduri să funcționeze
+    aiDescription: Diagnostichează erori, conflicte de dependențe și probleme de configurare fără ca un prieten să devină suportul tehnic cu normă întreagă al grupului.
+    turnTitle: Ține pe toată lumea conectată
+    turnDescription: XMCL încearcă mai întâi o conexiune directă, apoi folosește automat cel mai apropiat relay disponibil atunci când rețelele sau routerele blochează conexiunea.
+    serverEyebrow: AI NEVOIE DE MAI MULT?
+    serverTitle: Oferă grupului o lume mereu disponibilă.
+    serverDescription: Închiriază un server XMCL dedicat când găzduirea peer-to-peer nu mai este suficientă, cu stocare persistentă și performanță selectabilă.
+    serverAction: Vezi planurile de server
+  accountLinks:
+    title: Servicii XMCL
+    plusTitle: Explorează Together
+    plusDescription: Rezolvă problemele pachetelor de moduri și menține-ți grupul conectat.
+    billingEyebrow: Facturare
+    billingTitle: Sold și activitate
+    billingDescription: Adaugă fonduri și verifică taxările.
+    serverEyebrow: Servere
+    serverTitle: Găzduire partajată
+    serverDescription: Alege un plan de server și gestionează-i abonamentul.

@@ -1,0 +1,809 @@
+repository: Forráskód-tárhely
+intro:
+  first:
+    body: Egy {openSource} Minecraft-indító {modernUx} felülettel.
+    openSource: nyílt forráskódú
+    modernUx: modern
+  second:
+    body: '{diskEfficient} megoldás az összes {mods} kezelésére!'
+    diskEfficient: Tárhelytakarékos
+    mods: modod
+  description: >-
+    Az XMCL egy modern Minecraft-indító, amellyel könnyedén kezelheted a hatalmas
+    erőforrásaidat, például modcsomagokat, erőforráscsomagokat, modokat és shader
+    csomagokat. Beépített támogatást nyújt a Minecraft Forge, Fabric, Quilt,
+    CurseForge és Modrinth rendszerekhez is.
+label: Magyar
+search:
+  button:
+    buttonText: Keresés
+    buttonAriaLabel: Keresés a dokumentációban
+  modal:
+    noResultsText: Nincs találat erre
+    resetButtonTitle: Keresés törlése
+    displayDetails: Részletes lista megjelenítése
+    backButtonTitle: Keresés bezárása
+    footer:
+      selectText: kiválasztás
+      navigateText: navigáció
+      closeText: bezárás
+guide: Útmutató
+documentation: Dokumentáció
+docHub:
+  kicker: Hivatalos dokumentáció
+  title: XMCL dokumentációs központ
+  description: Minden, amire szükséged van az XMCL telepítéséhez, beállításához, modolásához, közös játékához és felépítésének megértéséhez.
+  searchPlaceholder: Keress a dokumentációban, útmutatókban, beállításokban, kulcsszavakban...
+  quickTopics: Gyors témák
+  viewSection: Szekció megnyitása
+  articlesCount: "{count} cikk"
+  backToHub: Vissza a dokumentációs központba
+  needHelp: Segítségre van szükséged?
+  needHelpDesc: Nem találod, amit keresel? Csatlakozz a közösségünkhöz, vagy járulj hozzá a dokumentációhoz.
+  joinDiscord: Csatlakozás a Discordhoz
+  githubRepo: GitHub-tárhely
+  contributeDocs: Dokumentáció szerkesztése vagy bővítése
+docGroups:
+  gettingStarted: "01 / Első lépések"
+  gameAndMods: "02 / Játék és modok"
+  multiplayerAndTroubleshooting: "03 / Többjátékos mód és hibaelhárítás"
+  coreAndDev: "04 / Alaparchitektúra és API"
+logViewer: Naplónézegető
+protocol: Protokoll
+changelogs: Változásnaplók
+outline: Ezen az oldalon
+coreDocument: Alapdokumentáció
+blogs: Blogok
+launcher:
+  manage:
+    intro: Kezeld a Minecraftot hatékonyan.
+  description: Egyszerű, nyílt forráskódú és funkcióközpontú Minecraft-indító
+downloadFor:
+  windows: 'Letöltés Windowsra:'
+  mac: 'Letöltés Macre:'
+  linux: 'Letöltés Linuxra:'
+author: Kapcsolat a szerzővel
+download-zip: Zip
+download-zip-32: Zip (32 bites)
+download-appx: AppX csomag
+download-appinstaller: App Installer
+download-portable: Hordozható
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: Letöltés Azure-ból
+azure-ms-source: Letöltés Azure Microsoft CDN-ről
+github-source: Letöltés GitHubról
+auto-source: Letöltési forrás automatikus felismerése
+authSuccess: Siker!
+authSuccessTitle: A hitelesítés sikeres volt. Hamarosan visszairányítunk az indítóba!
+redirectHelperTitle: >-
+  Ha nem történik meg az átirányítás, kattints a Megnyitás az alkalmazásban
+  gombra a manuális visszatéréshez.
+redirectHelperMessage: >-
+  Egy felugró ablak megkérdezi, hogy megnyitod-e az indítót. Ha ez sem működik,
+  próbáld meg áthúzni a gombot az indító ablakába!
+notWork: Nem működik?
+openInAppButton: Megnyitás az indítóban
+nothingWork: Ha a fentiek egyike sem működik, érdemes újratelepíteni az indító legújabb verzióját
+gameInstall:
+  title:
+    body: Ne aggódj többé a {gameInstall} miatt
+    gameInstall: játéktelepítés
+  description: >-
+    Az XMCL egyetlen helyen támogatja a vanilla Minecraft, a Minecraft Forge, a
+    Fabric és még az OptiFine telepítését is! Mindent elintézhetsz közvetlenül az
+    indítón belül. Emellett támogatja a harmadik féltől származó BMCL API tükröt,
+    sőt saját tükröt is beállíthatsz.
+optimalDisk:
+  title:
+    body: '{optimal} tárhelyhasználat {massiveResources} mellett is'
+    optimal: Optimális
+    massiveResources: hatalmas erőforrások
+  description: >-
+    Az XMCL minden modot, erőforráscsomagot, shader csomagot és modcsomagot egy
+    központi tárhelyen tárol. Amikor egy már ismert erőforrást használsz, hard
+    link segítségével telepíti azt a példányba másolás nélkül. Így soha többé nem
+    lesznek felesleges másolatok a /mods mappában.
+cleanWorkspace:
+  title:
+    body: Tartsd {clean} a munkaterületedet több példánnyal
+    clean: tisztán
+  description: >-
+    Az XMCL beépített többpéldányos támogatással rendelkezik. Könnyedén
+    létrehozhatsz több különálló példányt, így nem kell aggódnod az eltérő
+    indítási beállítások keveredése miatt.
+communityIntegration:
+  title:
+    body: Integrálva {multipleCommunities} rendszerével
+    multipleCommunities: több közösség
+  description: >-
+    Az XMCL beépített támogatást kínál a CurseForge és a Modrinth felületeihez.
+    Emellett támogatja az egyéni felhasználói fiók- és skinrendszereket is,
+    például a Blessing Skint.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: Csatlakozás {inviter} csapatához
+joinPeerDescription: >-
+  {inviter} meghívott a(z) {group} csoportba, hogy együtt játsszatok
+  Minecrafttal! Hamarosan visszairányítunk az indítóba!
+fullChangelog: Újdonságok
+privacy: Szoftver adatvédelme
+prebuild:
+  history: Buildelőzmények
+  historyDescription: Korábbi buildek és kiadások
+  download: Előzetes buildek letöltése
+  downloadDescription: >-
+    Az előzetes buildek a fejlesztés során készülő verziók. Instabilak lehetnek,
+    használatuk saját felelősségre történik!
+  entryHint: Előzetes buildeket keresel?
+  ready: Kész
+  selected: Kiválasztva
+  selectBuild: Build kiválasztása
+  downloading: Letöltés...
+  kicker: ELŐZETES CSATORNA
+  developmentBuilds: FEJLESZTÉSI BUILDEK
+  tryNext: Próbáld ki, mi jön legközelebb.
+  unstableDescription: Instabil fejlesztői csomagok a közelgő XMCL változtatások teszteléséhez.
+  selectedBuild: KIVÁLASZTOTT BUILD
+  buildsAvailable: '{count} elérhető build'
+  selectABuild: VÁLASSZ EGY BUILDET
+  noBuilds: NEM TALÁLHATÓ BUILD
+  noBuildsDescription: Jelenleg nem érhetők el előzetes buildek.
+  checkBack: Kérjük, nézz vissza a következő fejlesztési munkafolyamat lefutása után.
+  yesterday: Tegnap
+  daysAgo: '{count} napja'
+downloadMacHint:
+  content: Mac felhasználók számára kérjük, kövesd a {link} lépéseit a telepítéshez.
+  link: telepítési útmutató
+features:
+  label: Funkciók
+  ui:
+    kicker: XMCL / FUNKCIÓKATALÓGUS
+    heading: Az indító feltérképezve.
+    description: Fedezd fel azokat a munkafolyamatokat, amelyekkel könnyebb összeállítani, átlátni és megosztani egy modolt Minecraft-környezetet.
+    all: Összes funkció
+    search: Keresés a funkciók között...
+    features: funkció
+    featuresInView: megjelenített funkció
+    readWorkflow: Munkafolyamat megtekintése
+  status:
+    homepage: Kezdőlap
+    catalog: Katalógus
+    guide: Útmutató
+    detail: Részletek
+  groups:
+    instances:
+      short: Példányok
+      title: Példányok és profilok
+      description: Tartsd minden Minecraft-beállításodat elkülönítve, átláthatóan és indításra készen anélkül, hogy elveszítenéd az egyedi részleteket.
+    community:
+      short: Közösség
+      title: Modok és közösségi tartalmak
+      description: Fedezz fel, vizsgálj meg és telepíts olyan projekteket, amelyek egy Minecraft-verzióból a következő világodat varázsolják.
+    mods:
+      short: Modkezelés
+      title: Modok kezelése
+      description: Tartsd átláthatóan a nagyobb modolt összeállításokat kereséssel, csoportosítással, függőség-ellenőrzéssel és tudatos frissítéskezeléssel.
+    world-tools:
+      short: Világeszközök
+      title: Világeszközök
+      description: "Dolgozz közvetlenül a példányaid mögötti világokkal: vizsgáld meg a felépítésüket, válassz ki részeket, és nézd át az anyaglistát."
+    sharing:
+      short: Megosztás
+      title: Megosztás és többjátékos mód
+      description: Vidd át egy működő összeállításodat a barátaidhoz, egy szerverre vagy egy másik telepítésre minden részlet megőrzésével.
+    accounts:
+      short: Fiókok
+      title: Fiókok és hatékonyság
+      description: Tartsd az identitásodat, a testreszabást és a gyakori műveleteket közel a világaidhoz.
+    diagnostics:
+      short: Diagnosztika
+      title: Diagnosztika és segítségnyújtás
+      description: Ha egy indítás meghiúsul, az XMCL egy helyen mutatja a bizonyítékokat és a következő lépést.
+  items:
+    instance-library:
+      title: Egyetlen rendezett példánykönyvtár
+      benefit: Lásd egy helyen a vanilla, modolt és kísérleti világokat, azonnal indítható állapotban.
+      capabilities: Külön játékverziók és modbetöltők|Modok, mentések és erőforrások egy pillantással|Az adott összeállítás azonnali indítása
+    instance-create-modloaders:
+      title: Java és Bedrock példányok létrehozása
+      benefit: Indíts új összeállítást pontosan azzal a betöltővel és kiadással, amelyikre a világodnak szüksége van.
+      capabilities: Java Edition és kísérleti Bedrock támogatás|Forge, Fabric, Quilt, NeoForge, OptiFine és LabyMod|Hivatalos Minecraft és helyi verzióforrások
+    instance-folder-groups:
+      title: Példánymappák és csoportok
+      benefit: Rendezd mappákba a példányaidat, hogy a különböző világok és projektek könnyen áttekinthetők maradjanak.
+      capabilities: Példányok csoportosítása cél vagy projekt szerint|Összetartozó beállítások egyben tartása|Gyors váltás a mappák között a példánysávon
+    instance-settings:
+      title: Példánybeállítások
+      benefit: Hangold finomra a Javát, a memóriát, a verziókat, a betöltőket és az indítási viselkedést más példányok érintése nélkül.
+      capabilities: Független példánykonfiguráció|Verzió- és betöltőválasztás|Példányonkénti megjelenési beállítások
+    instance-theme:
+      title: Példánytéma
+      benefit: Adj minden világnak saját arculatot háttérképekkel, színekkel, elmosással, betűtípusokkal és egyéni CSS-sel.
+      capabilities: Háttérkép és fedőréteg|Lekerekített sarkok és betűtípus-beállítások|Témák exportálása és importálása
+    local-server:
+      title: Helyi szerver indítása
+      benefit: Alakíts át egy példányt testreszabható helyi szerverré világválasztással, játékoskorláttal és exportálható fájlokkal.
+      capabilities: MOTD, port és játékoskorlát|Világ- és szerverfájlok kiválasztása|Szervercsomag exportálása
+    server-list:
+      title: Szerverlista
+      benefit: Tartsd a többjátékos szervereket közvetlenül a hozzájuk tartozó példány mellett, és lásd a kapcsolat állapotát.
+      capabilities: Szerverállapot és játékosszám|Szerverek rögzítése és eltávolítása|Kapcsolódási hibák egyértelmű megjelenítése
+    modpack-market:
+      title: Modcsomag-piactér
+      benefit: Böngéssz a Modrinth, CurseForge és FTB tartalmai között egyetlen kereshető felületen.
+      capabilities: Forrás-, verzió-, betöltő- és kategóriaszűrők|Népszerű és legújabb csomagok felfedezése|Csomag részleteinek megnyitása
+    online-mod-search:
+      title: Online modkeresés
+      benefit: Találj kompatibilis modokat a főbb közösségi platformokon, még mielőtt a példányodba kerülnének.
+      capabilities: Modrinth és CurseForge források|Minecraft-verzió és betöltő szűrők|Környezeti és kategóriaszűrők
+    modpack-detail:
+      title: Modcsomag részletei
+      benefit: Ismerj meg egy csomagot telepítés előtt, a képernyőképektől és szerzőktől a technikai követelményekig.
+      capabilities: Képernyőképek, címkék és projektstatisztikák|Telepítési és indítási műveletek|Technikai adatok és külső források
+    mod-collections:
+      title: Modgyűjtemények
+      benefit: Mentsd el a később is használni kívánt projekteket, és alakíts egy gyűjteményt újrahasznosítható összeállítássá.
+      capabilities: Indítón belüli gyűjtemények|Követett Modrinth-projektek|Csoportos telepítés és gyűjteménykezelés
+    mod-detail:
+      title: Mod részletei
+      benefit: Vizsgálj meg egy modot a példány módosítása előtt, és nézd át a verzióit, függőségeit és forrásait.
+      capabilities: Verzióválasztás és függőségek|Betöltők, kategóriák és forráslinkek|Leírás és külső hivatkozások
+    local-mods:
+      title: Telepített modok kezelése
+      benefit: Lásd, mi van engedélyezve, szűrj gyorsan, és tartsd stabilan a működő összeállítást.
+      capabilities: Modok keresése, rendezése és szűrése|Függőségek és nem használt tartalmak ellenőrzése|Frissítési szabályzat kiválasztása
+    custom-mod-groups:
+      title: Egyéni modcsoportok
+      benefit: Hozz létre saját csoportokat, és mentsd el a szabályokat, amelyek rendszerezik az összetett példányokat.
+      capabilities: Csoportosítási szabályok alkalmazása és mentése|Modok csoportosítása a helyi menüből|Fájlok engedélyezése, letiltása vagy megtekintése
+    save-preview:
+      title: Mentés-előnézet és chunk-eszközök
+      benefit: Tekintsd át vizuálisan a világodat indítás előtt, és végezz pontos, chunk-szintű módosításokat.
+      capabilities: Világtérképek görgetése és vizsgálata|Chunkok kijelölése, másolása vagy törlése|Világtulajdonságok és anyagok megtekintése
+    blueprint-preview:
+      title: Tervrajz-előnézet
+      benefit: Tekints meg egy építményt 3D-ben, és ellenőrizd a kompatibilitást meg az anyagigényt a játékbeli elhelyezés előtt.
+      capabilities: Litematica és WorldEdit formátumok|Kompatibilitás és hiányzó modok jelzése|Anyaglista és formátumkonvertálás
+    modpack-export:
+      title: Modcsomag exportálása
+      benefit: Csomagolj össze egy példányt más játékosok számára anélkül, hogy elvesznének a működéshez szükséges metaadatok és fájlok.
+      capabilities: CurseForge és Modrinth exportálás|Szerző, leírás és URL metaadatok|A csomagba kerülő fájlok és erőforrások kiválasztása
+    server-export:
+      title: Szerver exportálása
+      benefit: Válaszd ki a megfelelő világ- és szerverfájlokat, majd exportálj egy átlátható konfigurációjú helyi szervert.
+      capabilities: Exportálás mappába vagy feltöltés|Szerverfájlok kiválasztása|MOTD és szerverbeállítások megadása
+    account-login:
+      title: Többféle hitelesítési szolgáltatás
+      benefit: Válaszd ki a játékstílusodhoz illő fiókszolgáltatást a Microsofttól az offline és külső szolgáltatásokig.
+      capabilities: Microsoft és offline fiókok|Ely.by és LittleSkin szolgáltatások|Hitelesítési szolgáltatások hozzáadása és kezelése
+    quick-action:
+      title: Gyorsművelet
+      benefit: Találj meg példányokat és parancsokat anélkül, hogy elhagynád az aktuális oldalt.
+      capabilities: Parancsok, példányok és modok keresése|Példány indítása vagy létrehozása|Billentyűzet-központú navigáció a Ctrl+K billentyűvel
+    crash-diagnosis:
+      title: Összeomlási és indítási hibajelentések
+      benefit: Olvasd el a sikertelen indítás mögötti valódi naplókat, összeomlási jelentéseket és szerverkimeneteket.
+      capabilities: Naplók, összeomlási jelentések és indítási hibák|Modfeloldási hibák és kilépési kódok|Prompt másolása külső AI-eszközökhöz
+    ai-agent:
+      title: Beépített AI-ügynök
+      benefit: Engedd, hogy az ügynök megvizsgálja a példány virtuális fájlrendszerét, és konkrét javítási javaslatot adjon.
+      capabilities: Példányfájlok és jelentések olvasása|Alapos vizsgálat a következtetés előtt|Megvalósítható javítás alkalmazása, ha lehetséges
+modernHome:
+  kicker: NYÍLT FORRÁSKÓDÚ MINECRAFT-INDÍTÓ
+  visualLabel: MODOLT VILÁGOKHOZ TERVEZVE
+  windowLabel: XMCL / KEZDŐLAP
+  latestRelease: LEGÚJABB KIADÁS
+  readyToPlay: JÁTÉKRA KÉSZ
+  libraryTitle: Egyetlen tiszta könyvtár
+  librarySubtitle: Modok, csomagok és példányok
+  proofLabel: Az indító képességei
+  proof:
+    fastTitle: GYORS BEÁLLÍTÁS
+    fastDescription: Vanillától a modolt játékig
+    libraryTitle: EGYETLEN KÖNYVTÁR
+    libraryDescription: Az erőforrások rendezettek maradnak
+    ecosystemTitle: A TE ÖKOSZISZTÉMÁD
+    ecosystemDescription: Modrinth és CurseForge
+  workflow:
+    kicker: AZ XMCL MUNKAFOLYAMAT
+    title: Minden, amire a világaidnak szüksége van.
+    description: Azoknak a játékosoknak tervezve, akik élvezni akarják a modolt Minecraft erejét a karbantartási nyűg nélkül.
+    stageLabel: XMCL / MUNKAFOLYAMAT
+    scrollHint: GÖRGESS A FELFEDEZÉSHEZ
+  openSource:
+    kicker: NYÍLT FORRÁSKÓDÚ PULZUS
+    title: Nyilvánosan fejlesztve.
+    viewOnGitHub: Megtekintés GitHubon
+    repository: GITHUB-TÁRHELY
+    snapshot: BUILD PILLANATKÉP
+    downloads: Letöltések
+    stars: Csillagok
+    forks: Forkok
+    openIssues: Nyitott hibajegyek
+    statsNote: Az oldal összeállításakor rögzített GitHub projektadatok.
+    contributors: KÖZREMŰKÖDŐK
+    inView: MEGJELENÍTVE
+    contributorsCopy: Minden hibajegy, pull request, fordítás és ötlet segít a következő kiadás alakításában.
+  sponsor:
+    label: AZ XMCL TÁMOGATÁSA
+    title: Tartsd mozgásban az indítót.
+    description: Támogasd a karbantartást, a kiadásokat és azokat, akik nyílt forráskódként építik az XMCL-t.
+    supportedBy: TÁMOGATÓK
+  download:
+    kicker: A KÖVETKEZŐ KALANDOD
+    title: Készen áll, amikor te is.
+    platforms: Letöltési platformok
+  footer:
+    issues: Hibajegyek
+  features:
+    setup:
+      title: Minden összeállítás egyetlen indítóban
+      short: Több betöltő, több példány
+      description: Hozz létre és kezelj elkülönített Minecraft-példányokat Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod és kísérleti Bedrock támogatással – a telepítést az indító intézi.
+      alt: XMCL játék létrehozása párbeszédablak több modbetöltővel és Bedrock Edition támogatással
+      link: Példánykezelés felfedezése
+    discover:
+      title: Fedezz fel közösségi tartalmakat
+      short: Modrinth, CurseForge és FTB
+      description: Böngéssz modcsomagok és közösségi projektek között, szűrj verzió és betöltő szerint, majd válts a felfedezésből azonnal játékra.
+      alt: XMCL modcsomag-piactér közösségi tartalomszűrőkkel
+      link: Közösségi tartalmak felfedezése
+    mods:
+      title: Tartsd kézben a modolt összeállításokat
+      short: Keresés, csoportosítás, frissítés
+      description: Kezeld a telepített modokat, ellenőrizd a függőségeket, hozz létre egyéni csoportokat, és tartsd átláthatóan a nagyobb összeállításokat is.
+      alt: XMCL helyi modkezelő szűrőkkel és frissítési vezérlőkkel
+      link: Modkezelés felfedezése
+    accounts:
+      title: A fiókjaid, a te szabályaid szerint
+      short: Microsoft, offline és még több
+      description: Kapcsold össze a hozzád illő fiókszolgáltatást a Microsofttól és az offline profiloktól a külső hitelesítési szolgáltatásokig anélkül, hogy elhagynád az indítót.
+      alt: XMCL bejelentkezési párbeszédablak többféle hitelesítési szolgáltatással
+      link: Fióktámogatás felfedezése
+siteFooter:
+  ariaLabel: Oldal lábléce
+  navigation: Lábléc navigáció
+  description: Nyílt forráskódú Minecraft-infrastruktúra játékosoknak, Linux-asztali gépeknek és azoknak, akik a világokat építik.
+  status: Nyílt forráskód · nyilvánosan fejlesztve
+  explore:
+    title: Felfedezés
+    home: Kezdőlap
+    features: Funkciókatalógus
+    documentation: Dokumentáció
+  useCases:
+    title: Felhasználási területek
+    linux: Linux-indító
+    creators: Modcsomag-készítők
+    download: XMCL letöltése
+  resources:
+    title: Erőforrások
+    logViewer: Naplónézegető
+    github: GitHub
+    issue: Hiba bejelentése
+    discord: Discord
+  bottomNote: Ahogyan játszol és alkotsz – arra tervezve.
+  readDocumentation: Dokumentáció olvasása
+sceneLanding:
+  linux:
+    eyebrow: XMCL / LINUX KIADÁS
+    title: A Minecraft-indító, amely otthonosan mozog Linuxon.
+    lede: Letisztult, nyílt forráskódú indító Linux asztali rendszerekre és Steam Deckre. Válaszd a disztribúciódnak megfelelő csomagot, élvezd 4K kijelzőn is, és indítsd el bármelyik világodat egyetlen kattintással.
+    primaryAction: Letöltés Linuxra
+    secondaryAction: Linux munkafolyamat megtekintése
+    heroNote: Natív Linux buildek, ARM64 opciók és Flathub támogatás
+    visualLabel: XMCL · Linux munkaterület
+    heroAlt: XMCL kezdőképernyő a Minecraft-példányok könyvtárával
+    visualTag: 4K-ra kész munkaterület
+    visualStatus: KÉSZEN ÁLL A KÖVETKEZŐ VILÁGODRA
+    workflowKicker: LINUX-KÖZPONTÚ MUNKAFOLYAMAT
+    workflowTitle: A csomagkezelőtől a játékig, minden felesleges kör nélkül.
+    workflowDescription: 'Az XMCL közel tartja mindazt, ami a Linux-játékosoknak fontos: kiszámítható telepítések, éles felület és elkülönített játékkörnyezetek, amelyek között könnyű váltani.'
+    signals:
+      packages:
+        number: '05'
+        label: Linux-csomagok
+        description: DEB, RPM, AppImage, tar.xz és Flathub.
+      scale:
+        number: '4K'
+        label: Tiszta bármilyen skálán
+        description: Gazdag könyvtár, amely nagy felbontású kijelzőn is jól olvasható.
+      worlds:
+        number: '∞'
+        label: Külön világok
+        description: A verziók, betöltők és mentések sosem akadnak össze.
+    features:
+      install:
+        label: 01 / VÁLASZD KI A TELEPÍTÉST
+        title: Használd azt a formátumot, amit a disztribúciód ismer.
+        description: Tölts le natív csomagot az asztali gépedre, vagy használd a Flathubot, ha hordozható, Steam Deck-barát megoldást szeretnél. Az XMCL ARM64 buildeket is kínál, ahol a hardver megkívánja.
+        point1: DEB és RPM a legelterjedtebb Linux-disztribúciókhoz
+        point2: AppImage és tar.xz hordozható telepítésekhez
+        point3: Flathub támogatás Steam Deckhez
+        alt: XMCL példány létrehozása párbeszédablak Minecraft-verziókkal és modbetöltőkkel
+      organize:
+        label: 02 / TARTS RENDET
+        title: Minden példány saját tiszta kifutót kap.
+        description: Válaszd el egymástól a vanilla, modolt, teszt- és szerverbeállításokat kézi mappapakolgatás nélkül. A verzióid, betöltőid, modjaid, mentéseid és beállításaid egyben maradnak.
+        point1: Független játékadatok és indítási beállítások
+        point2: Forge, Fabric, Quilt, NeoForge és még sok más
+        point3: Gyors váltás a világok és kísérletek között
+        alt: XMCL példánykönyvtár rendezett Minecraft-profilokkal
+      anywhere:
+        label: 03 / JÁTSSZ BÁRHOL
+        title: Asztali indító, amely jól bírja az utazást is.
+        description: Válts át egy Linux asztali gépről egy Steam Deck játékmenetre anélkül, hogy lemondanál az átlátható könyvtárról vagy a megbízható beállításokról. Az XMCL teret ad a gyűjteményed növekedésének anélkül, hogy táblázattá válna.
+        point1: Steam Deckre optimalizált Flathub telepítés
+        point2: Letisztult felület 4K kijelzőkön
+        point3: Nyílt forráskódú, Linux-játékosokra szabva
+        alt: XMCL kezdőlap nagy példánykönyvtárral
+    download:
+      kicker: LETÖLTÉS LINUXRA
+      title: Telepítsd az XMCL-t a saját módodon.
+      description: Válaszd ki a rendszeredhez illő csomagot, vagy használd a Flathubot az XMCL Steam Deckre telepítéséhez.
+      link: Összes kiadás és előzetes build megtekintése
+  creators:
+    eyebrow: XMCL / MODCSOMAG-KÉSZÍTŐKNEK
+    title: Építs modcsomagokat úgy, hogy a teljes kiadási ciklus egy helyen van.
+    lede: Fedezz fel projekteket, oldd meg a függőségeket, tesztelj egy működő összeállítást, diagnosztizálj összeomlásokat, és exportálj tiszta Modrinth vagy CurseForge csomagot anélkül, hogy elhagynád az indítót.
+    primaryAction: Alkotói munkafolyamatok felfedezése
+    secondaryAction: Funkciókatalógus megnyitása
+    heroNote: Modrinth és CurseForge munkafolyamatok, AI-alapú hibadiagnosztikával
+    visualLabel: XMCL · alkotói munkaterület
+    heroAlt: XMCL modcsomag-piactér Modrinth és CurseForge projektekkel
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: A MUNKAKÉSZLET SZINKRONBAN
+    workflowKicker: AZ ALKOTÓI CIKLUS
+    workflowTitle: Gyorsabb út a nyers ötlettől a valóban elindítható modcsomagig.
+    workflowDescription: 'Az XMCL élő rendszerként kezeli a modcsomagokat. Böngéssz mindkét katalógusban, végezz tudatos változtatásokat, és hagyd, hogy az indító megmutassa a kiadásod stabilitását biztosító kapcsolatokat.'
+    signals:
+      sources:
+        number: '2×'
+        label: Projektforrások
+        description: Keress a Modrinth és a CurseForge kínálatában egyetlen munkaterületről.
+      export:
+        number: '1 KATTINTÁS'
+        label: Csomagexportálás
+        description: Készíts megosztható MR vagy CF csomagot néhány lépésben.
+      ai:
+        number: 'AI'
+        label: Összeomlás-diagnosztika
+        description: Alakítsd a hibajelentést hasznos következő lépéssé.
+    features:
+      discover:
+        label: 01 / FELFEDEZÉS
+        title: Keress mindkét ökoszisztémában anélkül, hogy megosztanád a figyelmedet.
+        description: Találj projekteket a Modrinth és a CurseForge felületein verzió, betöltő, környezet és kategória szerint szűrve. Az XMCL összekapcsolja a két forrás projektjeit, így kevesebb találgatással hasonlíthatod össze ugyanazt a modot.
+        point1: Modrinth és CurseForge keresés egyetlen folyamatban
+        point2: Minecraft-verzió és betöltő kompatibilitási szűrők
+        point3: Platformok közötti projektleképezés
+        alt: XMCL online modkeresés forrás- és kompatibilitási szűrőkkel
+      build:
+        label: 02 / ÖSSZEÁLLÍTÁS
+        title: Tedd a függőségeket a terv részévé.
+        description: Ha egy modnak szüksége van egy másik modra, az XMCL vele együtt tudja telepíteni a függőséget. Amikor engedélyezel vagy letiltasz egy projektet, az indító segít koherensen tartani az összeállítást a kézi nyomozás helyett.
+        point1: Automatikus függőségtelepítés
+        point2: Függőség-tudatos engedélyezés és letiltás
+        point3: Verziók, betöltők és projekt-metaadatok megtekintése
+        alt: XMCL mod részletei nézet verziókkal és függőségekkel
+      curate:
+        label: 03 / RENDSZEREZÉS
+        title: Tartsd az összeállítást letisztultan és céltudatosan.
+        description: Keress, rendezz, csoportosíts, frissíts és távolítsd el a már nem odavaló modokat. Az egyéni csoportokkal könnyen tesztelhetsz opcionális tartalmakat, összehasonlíthatsz profilokat, vagy fókuszban tarthatsz egy kiadásjelöltet.
+        point1: Automatikus modfrissítés-ellenőrzés
+        point2: Egyéni csoportok opcionális és teszttartalmakhoz
+        point3: Nem használt modok felkutatása és eltávolítása
+        alt: XMCL telepített modkezelő nézet keresési és frissítési vezérlőkkel
+      export:
+        label: 04 / EXPORTÁLÁS
+        title: Add ki a csomagot abban a formátumban, amire a játékosaidnak szükségük van.
+        description: Exportálj kiforrott Modrinth vagy CurseForge modcsomagot a megfelelő metaadatokkal és kiválasztott fájlokkal. A kiadás megismételhető munkafolyamattá válik, nem az utolsó pillanatban összerakott archívummá.
+        point1: Egykattintásos Modrinth és CurseForge exportálás
+        point2: Szerző, leírás, URL és verzió metaadatok
+        point3: Pontos választás, mely fájlok és erőforrások kerüljenek bele
+        alt: XMCL modcsomag-exportálási képernyő Modrinth és CurseForge formátumokhoz
+      diagnose:
+        label: 05 / DIAGNOSZTIKA
+        title: Hagyd, hogy az AI segítsen javítássá alakítani az összeomlási jelentéseket.
+        description: Ha egy tesztindítás meghiúsul, az XMCL egy helyre gyűjti a naplókat, az összeomlási jelentéseket és az AI-ügynököt. Az ügynök megvizsgálja a példány kontextusát, és konkrét következő lépést javasol.
+        point1: Indítási naplók és összeomlási jelentések kontextusban
+        point2: Példányfájlok AI-támogatott vizsgálata
+        point3: Modütközések feloldása kiadás előtt
+        alt: XMCL AI-ügynök egy Minecraft-indítási hiba vizsgálata közben
+    cta:
+      kicker: MUNKAASZTAL A KÖVETKEZŐ KIADÁSODHOZ
+      title: Állítsd össze. Add ki. Tartsd egészségesen.
+      description: Az XMCL gyors helyi ciklust ad az alkotóknak a felfedezéshez, teszteléshez, diagnosztikához és exportáláshoz azon a két ökoszisztémán, amelyet a játékosaid már használnak.
+      button: Összes funkció felfedezése
+commercial:
+  common:
+    loading: Betöltés…
+    refresh: Frissítés
+    refreshing: Frissítés…
+    signIn: Bejelentkezés
+  playModes:
+    label: Válaszd ki, hogyan játszik a csapatod
+    plusEyebrow: BARÁT ÁLTAL HOSZTOLT
+    plusTitle: Together Home
+    plusDescription: Indíts világot helyben, és használd a Together szolgáltatást, amikor a közvetlen többjátékos módnak segítségre van szüksége.
+    serverEyebrow: MINDIG ONLINE
+    serverTitle: Together Camp, Lodge vagy Village
+    serverDescription: Tartsd elérhetően az állandó világot akkor is, amikor a csoport tulajdonosa nincs online.
+  billing:
+    eyebrow: XMCL SZÁMLÁZÁS
+    title: Számlázás és egyenleg
+    description: Kezeld a pénzegyenlegedet, a befizetéseidet és a számlázási előzményeidet.
+    accountSettings: Fiókbeállítások
+    disabled: A számlázás ezen a példányon nincs engedélyezve.
+    loadingTitle: Számlázás betöltése
+    loadingDescription: Egyenleg és előzmények lekérése…
+    signInTitle: Jelentkezz be a számlázás kezeléséhez
+    signInDescription: Az egyenleged, a befizetéseid és a használati adataid az XMCL-fiókodhoz tartoznak.
+    overview: Áttekintés
+    accountTitle: Számlázási fiókod
+    debt: A jövőbeli feltöltések először a fennálló {amount} tartozást rendezik.
+    available: Elérhető egyenleg
+    availableHint: Felhasználható az XMCL szolgáltatásaiban
+    homeFundingRequired: Az egyenleged nem elegendő a Together Home csomaghoz. Tölts fel legalább {amount} összeget, majd térj vissza a Together oldalra a vásárláshoz.
+    reserved: Zárolva
+    reservedHint: Aktív használathoz elkülönítve
+    history: Előzmények
+    activity: Számlázási tevékenység
+    activityViews: Számlázási nézetek
+    transactions: Tranzakciók
+    payments: Befizetések
+    usage: Használat
+    descriptionLabel: Leírás
+    reference: Hivatkozás
+    date: Dátum
+    amount: Összeg
+    payment: Befizetés
+    status: Állapot
+    usageEvent: Használati esemény
+    rate: Díjszabás
+    charged: Terhelve
+    noTransactions: Még nincsenek tranzakciók.
+    noPayments: Még nincsenek Waffo-befizetések.
+    noUsage: Még nincs mért használat.
+    loadError: A számlázási adatok betöltése sikertelen.
+    securedTitle: A fizetést a Waffo biztosítja
+    securedDescription: A kártya- és vásárlói adatok kezelése a Waffo Pancake hosztolt fizetési oldalán történik. Az XMCL soha nem kapja meg a bankkártyaszámodat.
+  checkout:
+    title: Egyenleg feltöltése
+    description: Töltsd fel az XMCL-egyenlegedet biztonságosan a Waffo Pancake segítségével.
+    amount: Összeg
+    preparing: Fizetés előkészítése…
+    add: '{amount} hozzáadása'
+    providerNote: A fizetés befejezéséhez a Waffo hosztolt fizetési oldalára kerülsz.
+    legalNote: A folytatással elfogadod az XMCL Together
+    terms: Felhasználási feltételeit
+    and: és
+    privacy: Adatvédelmi tájékoztatóját
+    openCheckout: Fizetési oldal megnyitása
+    cancelledReturned: Megszakítottam vagy visszatértem
+    newTopUp: Új feltöltés indítása
+    invalidAmount: A folytatás előtt adj meg egy pozitív egész összeget.
+    unsafeUrl: A szolgáltatás nem adott vissza biztonságos Waffo fizetési URL-t.
+    opened: Fejezd be vagy szakítsd meg a fizetést a Waffo felületén, majd térj vissza ide. Az XMCL frissíti a rendelést és az egyenleget.
+    blocked: A jóváhagyási ablak blokkolva lett. Engedélyezd, majd próbáld újra ugyanazzal a fizetési kéréssel.
+    returnRecorded: A fizetésről való visszatérés rögzítve.
+    returnDetected: Visszatérés észlelve a fizetési oldalról.
+    refreshFailed: Az XMCL megpróbálta frissíteni a rendelést és az egyenleget.
+    restoreFailed: Az előző fizetési folyamat nem állítható vissza. Az újrapróbálkozás ugyanazt a fizetési szándékot használja.
+    newIntent: Most már új fizetési kérelem indítható. Ne használd a korábbi Waffo fizetési hivatkozást.
+  server:
+    eyebrow: XMCL PLAY / MINDIG ONLINE
+    title: Egy világ, amely akkor is készen áll, amikor a csapatod.
+    description: Adj a csapatodnak egy mindig elérhető modolt világot anélkül, hogy egy barátnak állandóan bekapcsolva kellene tartania a gépét.
+    storyLink: Az XMCL szomorú háttértörténete
+    billingLink: Számlázás és egyenleg
+    from: Már
+    priceSuffix: / hó + futásidő
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: Nincs hosztoló játékos. Nem kell várni, hogy valaki feljöjjön.
+    experienceDescription: Tartsd a csoport modolt világát állandó infrastruktúrán, és válaszd a csomaghoz illő kapacitást.
+    alwaysAvailable: világelérhetőség
+    performancePlans: teljesítménycsomagok
+    aiBonus: foglalt AI-egység / hó
+    alwaysOnTitle: A világ a csapaté marad
+    alwaysOnDescription: A barátok bármikor visszatérhetnek ugyanabba az állandó világba, egyetlen játékos gépétől vagy időbeosztásától függetlenül.
+    rightSizeTitle: Igazítsd a szervert a modcsomaghoz
+    rightSizeDescription: Válaszd ki a csomaghoz ma szükséges teljesítményt, memóriát és tárhelyet, majd lépj feljebb, ha a csoportnak többre van szüksége.
+    signInTitle: Jelentkezz be a szerverek kezeléséhez
+    signInDescription: A szervercsomagok és előfizetések az XMCL-fiókodhoz tartoznak.
+    overview: Szerver-előfizetés
+    yourServer: A szervercsomagod
+    balance: Egyenleg
+    addFunds: Egyenleg feltöltése
+    paymentDue: Fizetés esedékes. Töltsd fel az egyenlegedet az előfizetés automatikus helyreállításához.
+    cancelsOn: 'Megszűnik ekkor: {date}.'
+    renewsOn: 'Megújul ekkor: {date}.'
+    cancel: Csomag lemondása
+    plansEyebrow: Megosztott tárhely
+    choosePlan: Válassz csomagot
+    planDescription: Havi hozzáférés plusz mért futásidő. Minden aktív csomag tartalmaz AI-segítséget a modcsomag és a szerver beállításához.
+    current: Jelenlegi
+    perMonth: / hó
+    runtimePrice: '+ {amount} futási óránként'
+    cpu: CPU
+    cpuValue: '{count} vCPU'
+    memory: Memória
+    storage: Állandó tárhely
+    includedAi: Tartalmazott AI-segítség
+    includedAiValue: 200 000 egység / hó
+    select: '{plan} kiválasztása'
+    selected: Kiválasztva
+    unavailable: Nem elérhető
+    noPlans: Jelenleg nincsenek közzétett megosztott tárhelycsomagok.
+    loadError: A szervercsomagok betöltése sikertelen.
+    subscribeError: Az előfizetés létrehozása sikertelen.
+    cancelError: Az előfizetés lemondása sikertelen.
+    managerEyebrow: Hosztolt szervereid
+    managerTitle: Szerverkezelés
+    managerDescription: Minden szerver önállóan fut és számlázódik. Itt ellenőrizheted az állapotát, illetve ki- és bekapcsolhatod.
+    serverNumber: '{plan} szerver {number}'
+    start: Szerver indítása
+    stop: Szerver leállítása
+    cpuUsage: CPU-használat
+    memoryUsage: Memóriahasználat
+    launcherGuide: A modok, modcsomagok, világok és egyéb részletes beállítások módosításához használd az XMCL indítót.
+    operationError: Nem sikerült megváltoztatni a szerver állapotát.
+    status:
+      pending: Kapacitásra vár
+      queued: Kapacitásra vár
+      ready: Leállítva
+      starting: Indítás
+      running: Fut
+      stopping: Leállítás és mentés
+      payment_due: Fizetés esedékes
+      failed: Beavatkozást igényel
+      retained: Archívum megőrizve
+      deleted: Törölve
+    plusEyebrow: INKÁBB BARÁT ÁLTAL HOSZTOLVA?
+    plusTitle: Indítsd inkább a saját számítógépedről.
+    plusDescription: A Together megbízhatóvá teszi a barátokkal való közvetlen többjátékos módot, és ugyanolyan modcsomag-hibaelhárítási segítséget nyújt.
+    plusAction: Barátokkal való játék felfedezése
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: A legjobb Minecraft-beállítás azok a barátok, akikkel játszol.
+    description: A modcsomag összeállításától a stabil kapcsolaton át a szerver karbantartásáig az XMCL Together segít, hogy gondtalanul élvezhessétek a modolt Minecraftot a barátokkal.
+    projectBoundary: Az XMCL továbbra is ingyenes és nyílt forráskódú. A Together opcionális, és az indító Together-fiók nélkül is teljes mértékben használható.
+    serviceOperator: Az XMCL Together egy opcionális online szolgáltatás, amelyet a CI010 üzemeltet.
+    storyLink: Az XMCL története
+    perMonth: / hó
+    from: Már
+    priceSuffix: / hó
+    catalog:
+      heroNote: Négy csomag. Az egyik biztosan illik a csapatodhoz.
+      eyebrow: Válassz csomagot
+      title: Döntsd el, hol fusson a világ.
+      description: Mind a négy csomag ugyanazt a célt szolgálja – segít a csapatodnak egyetlen közös modcsomag-világ karbantartásában és játszásában.
+      recommended: A legtöbb modcsomaghoz
+      perMonth: / hó
+      flatMonthly: 20 GB relay benne van · utána $0.08 / GB
+      runtime: '{price} futási óránként · bármikor szüneteltethető'
+      hosted: Az XMCL által hosztolva
+      runsOn: Futtatás helye
+      bestFor: Kinek ajánlott
+      connection: Kapcsolat
+      memory: Memória
+      cpu: CPU
+      storage: Állandó tárhely
+      aiIncluded: Ajándék AI-szolgáltatás
+      aiIncludedDescription: Segítség modcsomagok építéséhez, hibaelhárításhoz és szerverek karbantartásához
+      home:
+        location: Barát által hosztolt
+        description: Relay-támogatott többjátékos mód azoknak a barátoknak, akiknél a P2P-kapcsolat nehézkes vagy instabil; a 20 GB általában 3 barátnak havonta körülbelül 65 órára elegendő.
+        runsOn: Saját számítógéped
+        bestFor: Alkalmanként játszó csoportoknak
+        connection: 300+ globális relay-helyszín
+      camp:
+        description: Kicsi, de ütőképes kiindulópont 2–4 barátnak egy könnyedebb modcsomaghoz.
+      lodge:
+        description: Kiegyensúlyozott teljesítmény és ár 4–6 barátnak egy tipikus modcsomaghoz.
+      village:
+        description: Bőven van hely 6–10 barátnak, nagyobb modcsomagoknak, több tartalomnak és több egyidejű játékosnak.
+    shared:
+      eyebrow: Minden csomagban benne van
+      title: Több, mint egy online tartott szerver.
+      description: A Together a modcsomagtól a közös világig a teljes utat támogatja, ahelyett hogy egyetlen barátra hárítaná az összes technikai problémát.
+      aiTitle: AI-támogatott összeállítás és karbantartás
+      aiDescription: Kapj segítséget a modok kiválasztásában és hangolásában, a függőségek és összeomlások megoldásában, valamint a szerver beállításában és napi karbantartásában.
+      worldTitle: A világ a csapaté marad
+      worldDescription: A Home könnyebben elérhetővé teszi a barát által hosztolt játékot; a hosztolt csomagok pedig megőrzik a világot és a beállításokat, amíg a csapat vissza nem tér.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Csak azokért az órákért fizess, amikor a szerver valóban fut.
+      description: Az alacsony havi díj megőrzi a csomagot, a világot, a mentéseket és a beállításokat. Az óradíj kizárólag a szerver futása alatt számolódik.
+      playTitle: Indítsd el, amikor kell
+      playDescription: Kapcsold be, amikor a barátok készen állnak, és fizess a tényleges futási órákért.
+      pauseTitle: Szüneteltesd, ha senki sem játszik
+      pauseDescription: Szüneteltetés közben a futásidő díjazása megáll; legközelebb pontosan ugyanabból a világból folytathatjátok.
+    confirm:
+      serverNumber: '{plan} szerver #{number}'
+      addAnother: Újabb szerver hozzáadása
+      close: Bezárás
+      purchaseEyebrow: Szerver létrehozása
+      cancelEyebrow: Szerver lemondása
+      purchaseTitle: '{plan} vásárlásának megerősítése'
+      purchaseDescription: A(z) {monthly} havi díj azonnal levonásra kerül. A futásidő ára {hourly}/óra, és szüneteltetés közben megáll. Minden szerver önállóan számlázódik, és ajándék AI-szolgáltatást tartalmaz.
+      regionLabel: Szerver helyszíne
+      regionDescription: Válaszd a legtöbb játékoshoz legközelebbi helyszínt. A jelenlegi konfiguráció {count} Vultr helyszínt támogat.
+      testRegions: Tesztelés és ajánlás
+      testingRegions: Tesztelés…
+      testComplete: 'Kiválasztva: {location}, a legalacsonyabb mért késleltetéssel ({latency} ms).'
+      testUnavailable: A sebességteszt nem elérhető. Kérjük, válassz helyszínt manuálisan.
+      cancelTitle: '{plan} lemondásának megerősítése'
+      cancelDescription: A lemondás az aktuális időszak végén, {date} napján lép életbe. A szerver addig elérhető marad.
+      retentionTitle: A mentések 30 napra hideg tárhelyre kerülnek
+      retentionDescription: Töltsd le a mentést {date} előtt a Szerverkezelés → ez a szerver → Adatok és exportálás menüpontból. Ezt követően véglegesen törlődik.
+      back: Vissza
+      purchase: Vásárlás megerősítése
+      cancel: Lemondás megerősítése
+    experienceEyebrow: TOGETHER HOME · BARÁT ÁLTAL HOSZTOLT
+    experienceTitle: Kevesebb hibakeresés. Több idő ugyanabban a világban.
+    experienceDescription: A Together segít a csapatodnak megoldani a modcsomag-problémákat, és fenntartja a többjátékos kapcsolatot, amikor a közvetlen kapcsolat nem működik.
+    networkLocations: globális relay-helyszín
+    automatic: Automatikus
+    nearestRelay: legközelebbi helyszín választása
+    guided: Irányított
+    modpackHelp: modcsomag-hibaelhárítás
+    signInTitle: Jelentkezz be a Together kezeléséhez
+    signInDescription: A Together-előfizetésed és a kereteid az XMCL-fiókodhoz tartoznak.
+    disabled: A Together ezen a példányon nincs engedélyezve.
+    loadError: A Together adatai nem tölthetők be.
+    subscribeError: A Together-előfizetés létrehozása sikertelen.
+    cancelError: A Together-előfizetés lemondása sikertelen.
+    subscribe: Together Home megvásárlása
+    cancel: Előfizetés lemondása
+    addFunds: Egyenleg feltöltése
+    inactiveTitle: Indítsd el az XMCL Together szolgáltatást
+    inactiveDescription: Fizess elő az XMCL-pénzegyenlegeddel. Az első hónap díja azonnal levonásra kerül.
+    activeTitle: Az XMCL Together aktív
+    paymentDueTitle: Fizetés szükséges
+    paymentDueDescription: Tölts fel egyenleget a számlázási fiókodra a Together folytatásához.
+    renewsOn: 'Megújul ekkor: {date}.'
+    cancelsOn: 'A hozzáférés aktív marad eddig: {date}.'
+    status:
+      inactive: Inaktív
+      active: Aktív
+      payment_due: Fizetés esedékes
+      cancelled: Lemondva
+    allowancesEyebrow: Havi felhasználásod
+    allowancesTitle: Az élmény mögötti keretek
+    aiAllowance: Hátralévő AI-segítség
+    aiUnits: hátralévő súlyozott tokenegység
+    aiUsage: '{consumed} felhasználva a(z) {included} keretből'
+    aiFormula: 'Felhasználás = cache-miss bemenet + ceil(cache-hit bemenet × 0,1) + kimenet × 4.'
+    turnAllowance: Többjátékos relay
+    turnEgress: hitelesített relay-forgalom
+    turnUsage: '{consumed} felhasználva a(z) {included} keretből'
+    remainingUnavailable: A hátralévő keret nem elérhető.
+    meteringUnavailable: A használatmérés még nincs csatlakoztatva; ez a foglalt keret, nem a hátralévő egyenleg.
+    sourcesTitle: Aktív keretforrások
+    source:
+      plus: 'Together: {ai} AI-egység és {turn} relay'
+      shared_hosting: 'Szervercsomag: {ai} AI-egység és nincs TURN'
+    serverBonus: Minden aktív szervercsomag külön tartalmaz havi 200 000 AI-egységet a modcsomag és a szerver beállításához.
+    aiTitle: Működjön a modcsomag
+    aiDescription: Diagnosztizálj összeomlásokat, függőségi ütközéseket és konfigurációs hibákat anélkül, hogy egyetlen barátnak kellene a csoport teljes munkaidős ügyfélszolgálatává válnia.
+    turnTitle: Maradjon mindenki kapcsolatban
+    turnDescription: Az XMCL először közvetlen kapcsolatot próbál létesíteni, majd automatikusan a legközelebbi elérhető relayt használja, ha a hálózat vagy a router akadályt jelent.
+    serverEyebrow: TÖBBRE VAN SZÜKSÉGED?
+    serverTitle: Adj a csapatnak egy mindig elérhető világot.
+    serverDescription: Bérelj dedikált XMCL-szervert, ha a barát általi hosztolás már nem elég – állandó tárhellyel és választható teljesítménnyel.
+    serverAction: Szervercsomagok megtekintése
+  accountLinks:
+    title: XMCL szolgáltatások
+    plusTitle: Together felfedezése
+    plusDescription: Oldd meg a modcsomag-problémákat, és tartsd kapcsolatban a csapatodat.
+    billingEyebrow: Számlázás
+    billingTitle: Egyenleg és tevékenység
+    billingDescription: Tölts fel egyenleget és tekintsd át a terheléseket.
+    serverEyebrow: Szerverek
+    serverTitle: Megosztott tárhely
+    serverDescription: Válassz szervercsomagot és kezeld az előfizetésedet.

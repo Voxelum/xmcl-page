@@ -152,6 +152,48 @@ const blogNoticeMap: Record<string, BlogNoticeTranslation> = {
     title: 'Публікацыі блога выходзяць на англійскай мове',
     desc: 'Тэхнічныя агляды архітэктуры, абнаўленні P2P-сетак і афіцыйныя нататкі рэлізаў пішуцца па-англійску.',
     flag: 'en'
+  },
+  ro: {
+    badge: 'ENGLEZĂ',
+    title: 'Articolele de blog sunt publicate în limba engleză',
+    desc: 'Analizele de arhitectură ale launcherului, actualizările P2P și notele oficiale de lansare sunt scrise în engleză.',
+    flag: 'en'
+  },
+  hu: {
+    badge: 'ANGOL',
+    title: 'A blogbejegyzések angol nyelven jelennek meg',
+    desc: 'A launcher architektúrájáról szóló cikkek, a P2P hálózati frissítések és a hivatalos kiadási megjegyzések angolul készülnek.',
+    flag: 'en'
+  },
+  sl: {
+    badge: 'ANGLEŠČINA',
+    title: 'Objave na blogu so objavljene v angleščini',
+    desc: 'Tehnični pregledi arhitekture zaganjalnika, posodobitve P2P omrežja in uradne opombe ob izdaji so napisani v angleščini.',
+    flag: 'en'
+  },
+  hr: {
+    badge: 'ENGLESKI',
+    title: 'Objave na blogu objavljuju se na engleskom jeziku',
+    desc: 'Analize arhitekture pokretača, ažuriranja P2P mreže i službene bilješke o izdanjima pisane su na engleskom jeziku.',
+    flag: 'en'
+  },
+  el: {
+    badge: 'ΑΓΓΛΙΚΑ',
+    title: 'Τα άρθρα του ιστολογίου δημοσιεύονται στα Αγγλικά',
+    desc: 'Οι αναλύσεις αρχιτεκτονικής του launcher, οι ενημερώσεις δικτύου P2P και οι επίσημες σημειώσεις έκδοσης γράφονται στα Αγγλικά.',
+    flag: 'en'
+  },
+  'fr-ca': {
+    badge: 'ANGLAIS',
+    title: 'Les articles du blogue sont publiés en anglais',
+    desc: 'Les analyses techniques du lanceur, les mises à jour P2P et les notes de version officielles sont rédigées en anglais.',
+    flag: 'en'
+  },
+  'es-mx': {
+    badge: 'INGLÉS',
+    title: 'Las publicaciones del blog se publican en inglés',
+    desc: 'Los análisis de arquitectura del lanzador, actualizaciones P2P y notas oficiales de lanzamiento se redactan en inglés.',
+    flag: 'en'
   }
 }
 

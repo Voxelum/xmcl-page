@@ -106,7 +106,7 @@ const awaitingReturn = ref(false)
 const checkoutIntentKey = ref<string>()
 let pollTimer: ReturnType<typeof setInterval> | undefined
 
-const supportedLegalLocales = new Set(['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'pt', 'jp', 'ko', 'ar', 'be', 'kk', 'tr', 'vi', 'hi', 'bn', 'jv', 'lol'])
+const supportedLegalLocales = new Set(['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'fr', 'fr-CA', 'es', 'es-MX', 'it', 'pl', 'pt', 'ro', 'hu', 'sl', 'hr', 'el', 'jp', 'ko', 'ar', 'be', 'kk', 'tr', 'vi', 'hi', 'bn', 'jv', 'lol'])
 const formattedAmount = computed(() => formatIsoMoney({ currency: props.currency, amountMinor: Math.max(0, amountMinor.value || 0) }, locale.value))
 const legalLocale = computed(() => supportedLegalLocales.has(locale.value) ? locale.value : 'en')
 const termsUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/terms`)
@@ -115,10 +115,17 @@ const withdrawalConsentNote = computed(() => {
   switch (locale.value) {
     case 'uk': return 'Я також підтверджую досягнення 18 років (або наявність згоди батьків/опікунів) і прошу розпочати надання цифрової послуги негайно, усвідомлюючи втрату 14-денного права на відмову після початку використання.'
     case 'de': return 'Ich bestätige zudem, dass ich mindestens 18 Jahre alt bin (oder eine Zustimmung der Erziehungsberechtigten vorliegt), und verlange ausdrücklich die sofortige Bereitstellung der digitalen Dienste bei Verlust des 14-tägigen Widerrufsrechts nach Beginn der Nutzung.'
-    case 'fr': return 'Je confirme également avoir au moins 18 ans (ou disposer de l’accord parental) et demande l’exécution immédiate du service numérique, en reconnaissant la perte du droit de rétractation de 14 jours dès le début de l’utilisation.'
-    case 'es': return 'También confirmo tener al menos 18 años (o consentimiento parental) y solicito la prestación inmediata del servicio digital, reconociendo la pérdida del derecho de desistimiento de 14 días una vez iniciado el uso.'
+    case 'fr':
+    case 'fr-CA': return 'Je confirme également avoir au moins 18 ans (ou disposer de l’accord parental) et demande l’exécution immédiate du service numérique, en reconnaissant les règles applicables au droit de rétractation dès le début de l’utilisation.'
+    case 'es':
+    case 'es-MX': return 'También confirmo tener al menos 18 años (o consentimiento parental) y solicito la prestación inmediata del servicio digital, reconociendo las reglas aplicables al desistimiento una vez iniciado el uso.'
     case 'it': return 'Confermo inoltre di avere almeno 18 anni (o il consenso dei genitori) e richiedo l’esecuzione immediata del servizio digitale, accettando la perdita del diritto di recesso di 14 giorni all’inizio dell’utilizzo.'
     case 'pl': return 'Potwierdzam również ukończenie 18 lat (lub posiadanie zgody opiekuna) i żądam natychmiastowego rozpoczęcia świadczenia usługi cyfrowej, przyjmując do wiadomości utratę 14-dniowego prawa odstąpienia po rozpoczęciu korzystania.'
+    case 'ro': return 'Confirm, de asemenea, că am cel puțin 18 ani (sau consimțământul părinților/tutorilor) și solicit furnizarea imediată a serviciului digital, recunoscând pierderea dreptului de retragere de 14 zile odată cu începerea utilizării.'
+    case 'hu': return 'Kijelentem továbbá, hogy elmúltam 18 éves (vagy szülői/törvényes képviselői hozzájárulással rendelkezem), és kifejezetten kérem a digitális szolgáltatás azonnali megkezdését, tudomásul véve a 14 napos elállási jog elvesztését a teljesítés megkezdésével.'
+    case 'sl': return 'Potrjujem tudi, da sem star najmanj 18 let (ali imam soglasje staršev/skrbnikov) in izrecno zahtevam takojšen začetek izvajanja digitalne storitve ter se zavedam izgube 14-dnevne pravice do odstopa ob začetku uporabe.'
+    case 'hr': return 'Također potvrđujem da imam najmanje 18 godina (ili suglasnost roditelja/skrbnika) te izričito zahtijevam trenutni početak pružanja digitalne usluge, prihvaćajući gubitak 14-dnevnog prava na raskid početkom korištenja.'
+    case 'el': return 'Επιβεβαιώνω επίσης ότι είμαι τουλάχιστον 18 ετών (ή έχω γονική συναίνεση) και ζητώ ρητά την άμεση παροχή της ψηφιακής υπηρεσίας, αναγνωρίζοντας την απώλεια του 14ήμερου δικαιώματος υπαναχώρησης μόλις ξεκινήσει η εκτέλεση.'
     case 'pt': return 'Também confirmo ter pelo menos 18 anos (ou consentimento dos pais/responsáveis) e solicito o fornecimento imediato do serviço digital, ciente das regras de desistência aplicáveis após o início do uso.'
     case 'zh': return '我同时确认已年满 18 周岁（或已获得监护人同意），并明确要求立即提供数字服务，知悉一旦开始使用将适用相应的退款限制。'
     case 'zh-TW': return '我同時確認已年滿 18 歲（或已獲得監護人同意），並明確要求立即提供數位服務，知悉一旦開始使用即適用相應的退款限制。'

@@ -1,0 +1,810 @@
+repository: Αποθετήριο Πηγαίου Κώδικα
+intro:
+  first:
+    body: Ένας {openSource} Minecraft Launcher με {modernUx} εμπειρία χρήσης.
+    openSource: Ανοιχτού Κώδικα
+    modernUx: Σύγχρονη
+  second:
+    body: Προσφέρει έναν {diskEfficient} τρόπο διαχείρισης όλων των {mods} σας!
+    diskEfficient: Αποδοτικό στον Δίσκο
+    mods: Mods
+  description: >-
+    Ο XMCL είναι ένας σύγχρονος Minecraft launcher που σας επιτρέπει να
+    διαχειρίζεστε τεράστιους πόρους όπως modpacks, resource packs, mods, shader
+    packs... Διαθέτει επίσης ενσωμάτωση με Minecraft Forge, Fabric, Quilt,
+    CurseForge και Modrinth.
+label: Ελληνικά
+search:
+  button:
+    buttonText: Αναζήτηση
+    buttonAriaLabel: Αναζήτηση στην τεκμηρίωση
+  modal:
+    noResultsText: Δεν βρέθηκαν αποτελέσματα για
+    resetButtonTitle: Επαναφορά αναζήτησης
+    displayDetails: Εμφάνιση αναλυτικής λίστας
+    backButtonTitle: Κλείσιμο αναζήτησης
+    footer:
+      selectText: για επιλογή
+      navigateText: για πλοήγηση
+      closeText: για κλείσιμο
+guide: Οδηγός
+documentation: Τεκμηρίωση
+docHub:
+  kicker: Επίσημη Τεκμηρίωση
+  title: Κέντρο Τεκμηρίωσης XMCL
+  description: Όλα όσα χρειάζεστε για εγκατάσταση, ρύθμιση, mods, multiplayer και κατανόηση της αρχιτεκτονικής του XMCL.
+  searchPlaceholder: Αναζήτηση σε τεκμηρίωση, οδηγούς, ρυθμίσεις, λέξεις-κλειδιά...
+  quickTopics: Γρήγορα θέματα
+  viewSection: Εξερεύνηση ενότητας
+  articlesCount: '{count} άρθρα'
+  backToHub: Επιστροφή στο Κέντρο Τεκμηρίωσης
+  needHelp: Χρειάζεστε Βοήθεια;
+  needHelpDesc: Δεν βρίσκετε αυτό που ψάχνετε; Γίνετε μέλος της κοινότητάς μας ή συνεισφέρετε στην τεκμηρίωση.
+  joinDiscord: Συμμετοχή στο Discord
+  githubRepo: Αποθετήριο GitHub
+  contributeDocs: Επεξεργασία ή Βελτίωση Τεκμηρίωσης
+docGroups:
+  gettingStarted: '01 / Ξεκινώντας'
+  gameAndMods: '02 / Παιχνίδι & Mods'
+  multiplayerAndTroubleshooting: '03 / Multiplayer & Διαγνωστικά'
+  coreAndDev: '04 / Βασική Αρχιτεκτονική & API'
+logViewer: Προβολή Αρχείων Καταγραφής
+protocol: Πρωτόκολλο
+changelogs: Ιστορικό Αλλαγών
+outline: Σε αυτή τη σελίδα
+coreDocument: Βασική Τεκμηρίωση
+blogs: Ιστολόγιο
+launcher:
+  manage:
+    intro: Διαχειριστείτε το Minecraft σας αποτελεσματικά.
+  description: Ένας απλός, ανοιχτού κώδικα και λειτουργικός Minecraft Launcher
+downloadFor:
+  windows: 'Λήψη για Windows:'
+  mac: 'Λήψη για Mac:'
+  linux: 'Λήψη για Linux:'
+author: Επικοινωνία με τον Δημιουργό
+download-zip: Zip
+download-zip-32: Zip (32-bit)
+download-appx: Πακέτο AppX
+download-appinstaller: App Installer
+download-portable: Φορητή Έκδοση (Portable)
+download-dmg: DMG
+download-snap: Snap
+download-appimage: AppImage
+download-deb: Deb
+download-rpm: RPM
+download-flathub: Flathub
+azure-source: Λήψη από Azure
+azure-ms-source: Λήψη από Azure Microsoft CDN
+github-source: Λήψη από GitHub
+auto-source: Αυτόματος Εντοπισμός Πηγής Λήψης
+authSuccess: Επιτυχία!
+authSuccessTitle: Η εξουσιοδότηση ολοκληρώθηκε με επιτυχία. Θα ανακατευθυνθείτε πίσω στον Launcher!
+redirectHelperTitle: >-
+  Εάν δεν ανακατευθυνθείτε αυτόματα, μπορείτε να πατήσετε το κουμπί Άνοιγμα στον
+  Launcher για χειροκίνητη ανακατεύθυνση.
+redirectHelperMessage: >-
+  Θα εμφανιστεί ένα αναδυόμενο παράθυρο που θα σας ζητήσει να ανοίξετε τον
+  launcher. Εάν εξακολουθεί να μη λειτουργεί, δοκιμάστε να σύρετε το κουμπί στο
+  παράθυρο του launcher!
+notWork: Δεν Λειτουργεί;
+openInAppButton: Άνοιγμα στον Launcher
+nothingWork: Εάν τίποτα από τα παραπάνω δεν λειτουργεί, ίσως χρειαστεί να κατεβάσετε ξανά την πιο πρόσφατη έκδοση του Launcher
+gameInstall:
+  title:
+    body: Τέλος οι έγνοιες για την {gameInstall}
+    gameInstall: Εγκατάσταση Παιχνιδιού
+  description: >-
+    Ο XMCL υποστηρίζει εγκατάσταση vanilla Minecraft, Minecraft Forge, Fabric
+    και ακόμη και OptiFine, όλα σε ένα! Μπορείτε να τα εγκαταστήσετε από ένα
+    ενιαίο σημείο μέσα στον Launcher. Υποστηρίζει επίσης τον mirror BMCL API,
+    ενώ μπορείτε να ορίσετε και τον δικό σας προσαρμοσμένο mirror.
+optimalDisk:
+  title:
+    body: '{optimal} χώρος στον δίσκο με {massiveResources}'
+    optimal: Βέλτιστος
+    massiveResources: Τεράστιους Πόρους
+  description: >-
+    Ο XMCL αποθηκεύει όλα τα mods, resource packs, shader packs και modpacks σε
+    μία κεντρική τοποθεσία. Όταν χρησιμοποιείτε έναν ήδη αποθηκευμένο πόρο,
+    χρησιμοποιεί hard link για την εγκατάσταση στο instance χωρίς αντιγραφή.
+    Έτσι δεν θα βλέπετε ποτέ ξανά διπλότυπα αρχεία στον φάκελο /mods.
+cleanWorkspace:
+  title:
+    body: Κρατήστε τον χώρο εργασίας σας {clean} με πολλαπλά instances
+    clean: Καθαρό
+  description: >-
+    Ο XMCL διαθέτει ενσωματωμένη υποστήριξη πολλαπλών instances. Μπορείτε να
+    δημιουργήσετε εύκολα πολλά instances, ώστε να μην ανησυχείτε για σύγχυση
+    μεταξύ διαφορετικών ρυθμίσεων εκκίνησης.
+communityIntegration:
+  title:
+    body: Ενσωμάτωση με {multipleCommunities}
+    multipleCommunities: Πολλαπλές Κοινότητες
+  description: >-
+    Ο XMCL διαθέτει ενσωματωμένη υποστήριξη για CurseForge και Modrinth.
+    Προσφέρει επίσης υποστήριξη για προσαρμοσμένους λογαριασμούς και συστήματα
+    skins, όπως το Blessing Skin.
+download-tarxz: Tar.xz
+download-linuxZip: Zip
+joinPeer: Συμμετοχή στην ομάδα του χρήστη {inviter}
+joinPeerDescription: >-
+  Ο χρήστης {inviter} σας προσκάλεσε στην ομάδα {group} για να παίξετε Minecraft
+  μαζί! Θα ανακατευθυνθείτε πίσω στον Launcher!
+fullChangelog: Τι Νέο Υπάρχει;
+privacy: Απόρρητο Λογισμικού
+prebuild:
+  history: Ιστορικό Εκδόσεων
+  historyDescription: Προηγούμενες δομές (builds) και εκδόσεις
+  download: Λήψη Prebuilds
+  downloadDescription: >-
+    Τα prebuilds είναι πακέτα που δημιουργούνται κατά τη διαδικασία ανάπτυξης.
+    Ενδέχεται να είναι ασταθή. Χρησιμοποιήστε τα με δική σας ευθύνη!
+  entryHint: Δοκιμαστικές εκδόσεις (Prebuilds);
+  ready: Έτοιμο
+  selected: Επιλεγμένο
+  selectBuild: Επιλογή Build
+  downloading: Γίνεται λήψη...
+  kicker: ΚΑΝΑΛΙ PREBUILD
+  developmentBuilds: ΕΚΔΟΣΕΙΣ ΑΝΑΠΤΥΞΗΣ
+  tryNext: Δοκιμάστε ό,τι έρχεται.
+  unstableDescription: Ασταθείς εκδόσεις για δοκιμή επερχόμενων αλλαγών του XMCL.
+  selectedBuild: ΕΠΙΛΕΓΜΕΝΟ BUILD
+  buildsAvailable: '{count} διαθέσιμα builds'
+  selectABuild: ΕΠΙΛΕΞΤΕ ΕΝΑ BUILD
+  noBuilds: ΔΕΝ ΒΡΕΘΗΚΑΝ BUILDS
+  noBuildsDescription: Δεν υπάρχουν διαθέσιμα prebuilds αυτή τη στιγμή.
+  checkBack: Παρακαλούμε ελέγξτε ξανά μετά την ολοκλήρωση της επόμενης ροής ανάπτυξης.
+  yesterday: Χθες
+  daysAgo: 'Πριν από {count} ημέρες'
+downloadMacHint:
+  content: Για χρήστες Mac, ακολουθήστε τις {link} για την εγκατάσταση.
+  link: οδηγίες εγκατάστασης
+features:
+  label: Λειτουργίες
+  ui:
+    kicker: XMCL / ΚΑΤΑΛΟΓΟΣ ΛΕΙΤΟΥΡΓΙΩΝ
+    heading: Ο launcher, χαρτογραφημένος.
+    description: Εξερευνήστε τις ροές εργασίας που κάνουν τη δημιουργία, κατανόηση και κοινή χρήση ενός modded Minecraft πιο απλή.
+    all: Όλες οι λειτουργίες
+    search: Αναζήτηση λειτουργιών...
+    features: λειτουργίες
+    featuresInView: λειτουργίες σε προβολή
+    readWorkflow: Δείτε τη ροή εργασίας
+  status:
+    homepage: Αρχική
+    catalog: Κατάλογος
+    guide: Οδηγός
+    detail: Λεπτομέρειες
+  groups:
+    instances:
+      short: Instances
+      title: Instances και προφίλ
+      description: Διατηρήστε κάθε εγκατάσταση Minecraft ανεξάρτητη, ορατή και έτοιμη για εκκίνηση, χωρίς να χάνετε τις λεπτομέρειες που την κάνουν δική σας.
+    community:
+      short: Κοινότητα
+      title: Mods και περιεχόμενο κοινότητας
+      description: Ανακαλύψτε, ελέγξτε και εγκαταστήστε τα έργα που μετατρέπουν μια έκδοση του Minecraft στον επόμενο κόσμο σας.
+    mods:
+      short: Έλεγχος mods
+      title: Διαχείριση mods
+      description: Διατηρήστε μια μεγάλη εγκατάσταση mods κατανοητή με αναζήτηση, ομαδοποίηση, έλεγχο εξαρτήσεων και στοχευμένες ενημερώσεις.
+    world-tools:
+      short: Εργαλεία κόσμου
+      title: Εργαλεία κόσμου
+      description: 'Δουλέψτε με τους κόσμους πίσω από τα instances σας: επιθεωρήστε τη μορφή τους, επιλέξτε τμήματα και κατανοήστε τα υλικά τους.'
+    sharing:
+      short: Κοινή χρήση
+      title: Κοινή χρήση και multiplayer
+      description: Μεταφέρετε μια λειτουργική εγκατάσταση από τον υπολογιστή σας σε έναν φίλο, έναν server ή άλλη εγκατάσταση με όλες τις λεπτομέρειες ανέπαφες.
+    accounts:
+      short: Λογαριασμοί
+      title: Λογαριασμοί και παραγωγικότητα
+      description: Κρατήστε την ταυτότητα, την εξατομίκευση και τις συχνές ενέργειες κοντά στους κόσμους που παίζετε.
+    diagnostics:
+      short: Διαγνωστικά
+      title: Διαγνωστικά και υποβοήθηση
+      description: Όταν μια εκκίνηση αποτυγχάνει, ο XMCL συγκεντρώνει τα στοιχεία και την επόμενη ενέργεια στο ίδιο σημείο.
+  items:
+    instance-library:
+      title: Μία οργανωμένη βιβλιοθήκη instances
+      benefit: Δείτε vanilla, modded και πειραματικούς κόσμους μαζί σε ένα έτοιμο για εκκίνηση περιβάλλον.
+      capabilities: Ξεχωριστές εκδόσεις παιχνιδιού και loaders|Προβολή Mods, Saves και πόρων με μια ματιά|Εκκίνηση της εγκατάστασης που χρειάζεστε
+    instance-create-modloaders:
+      title: Δημιουργία Java και Bedrock Instances
+      benefit: Ξεκινήστε μια νέα εγκατάσταση με τον loader και την έκδοση που ταιριάζουν στον κόσμο που θέλετε να παίξετε.
+      capabilities: Java Edition και πειραματική υποστήριξη Bedrock|Forge, Fabric, Quilt, NeoForge, OptiFine και LabyMod|Επίσημες και τοπικές πηγές εκδόσεων Minecraft
+    instance-folder-groups:
+      title: Ομάδες Φακέλων Instances
+      benefit: Οργανώστε πολλά instances σε φακέλους ώστε διαφορετικοί κόσμοι και εγκαταστάσεις να παραμένουν ευανάγνωστα.
+      capabilities: Ομαδοποίηση instances ανά σκοπό ή έργο|Συγκέντρωση σχετικών εγκαταστάσεων|Εναλλαγή μεταξύ φακέλων από τη γραμμή instances
+    instance-settings:
+      title: Ρυθμίσεις instance
+      benefit: Ρυθμίστε Java, μνήμη, εκδόσεις, loaders και συμπεριφορά εκκίνησης χωρίς να επηρεάσετε άλλες εγκαταστάσεις.
+      capabilities: Ανεξάρτητη ρύθμιση instance|Επιλογή έκδοσης και loader|Έλεγχος εμφάνισης ανά instance
+    instance-theme:
+      title: Θέμα Instance
+      benefit: Δώστε σε κάθε κόσμο τη δική του ταυτότητα με φόντα, χρώματα, θόλωση, γραμματοσειρές και προσαρμοσμένο CSS.
+      capabilities: Εικόνα φόντου και επικάλυψη|Στρογγυλεμένες γωνίες και επιλογές γραμματοσειράς|Εξαγωγή και εισαγωγή θέματος
+    local-server:
+      title: Εκκίνηση τοπικού server
+      benefit: Μετατρέψτε ένα instance σε παραμετροποιήσιμο τοπικό server με κόσμο, όριο παικτών και εξαγώγιμα αρχεία.
+      capabilities: MOTD, θύρα και όριο παικτών|Επιλογή κόσμου και αρχείων server|Εξαγωγή πακέτου server
+    server-list:
+      title: Λίστα Servers
+      benefit: Κρατήστε τους multiplayer προορισμούς κοντά στο instance που τους χρησιμοποιεί και δείτε την κατάσταση σύνδεσής τους.
+      capabilities: Κατάσταση server και αριθμός παικτών|Καρφίτσωμα και αφαίρεση προορισμών|Σαφής εμφάνιση σφαλμάτων σύνδεσης
+    modpack-market:
+      title: Αγορά Modpacks
+      benefit: Περιηγηθείτε σε περιεχόμενο από Modrinth, CurseForge και FTB μέσα από μία ενιαία αναζητήσιμη αγορά.
+      capabilities: Φίλτρα πηγής, έκδοσης, loader και κατηγορίας|Ανακάλυψη δημοφιλών και πρόσφατων packs|Άνοιγμα σελίδας λεπτομερειών pack
+    online-mod-search:
+      title: Διαδικτυακή Αναζήτηση Mods
+      benefit: Βρείτε συμβατά Mods στις μεγάλες πλατφόρμες της κοινότητας πριν φτάσουν στο instance σας.
+      capabilities: Πηγές Modrinth και CurseForge|Φίλτρα έκδοσης Minecraft και loader|Φίλτρα περιβάλλοντος και κατηγορίας
+    modpack-detail:
+      title: Λεπτομέρειες Modpack
+      benefit: Γνωρίστε ένα pack πριν το εγκαταστήσετε, από στιγμιότυπα οθόνης και δημιουργούς έως τεχνικές απαιτήσεις.
+      capabilities: Στιγμιότυπα, ετικέτες και στατιστικά έργου|Ενέργειες εγκατάστασης και εκκίνησης|Τεχνικές πληροφορίες και εξωτερικοί πόροι
+    mod-collections:
+      title: Συλλογές Mods
+      benefit: Αποθηκεύστε έργα που θέλετε να ξαναδείτε και μετατρέψτε μια συλλογή σε επαναχρησιμοποιήσιμη εγκατάσταση.
+      capabilities: Συλλογές του launcher|Ακολουθούμενα έργα Modrinth|Μαζική εγκατάσταση και διαχείριση συλλογών
+    mod-detail:
+      title: Λεπτομέρειες Mod
+      benefit: Επιθεωρήστε ένα Mod πριν αλλάξετε το instance σας και δείτε εκδόσεις, εξαρτήσεις και πηγές.
+      capabilities: Επιλογή έκδοσης και εξαρτήσεις|Loaders, κατηγορίες και σύνδεσμοι πηγών|Περιγραφή και εξωτερικοί πόροι
+    local-mods:
+      title: Διαχείριση Εγκατεστημένων Mods
+      benefit: Δείτε τι είναι ενεργοποιημένο, φιλτράρετέ το γρήγορα και διατηρήστε το σύνολο υγιές.
+      capabilities: Αναζήτηση, ταξινόμηση και φιλτράρισμα Mods|Έλεγχος εξαρτήσεων και αχρησιμοποίητου περιεχομένου|Επιλογή πολιτικής ενημερώσεων
+    custom-mod-groups:
+      title: Προσαρμοσμένες Ομάδες Mods
+      benefit: Δημιουργήστε τις δικές σας ομάδες και αποθηκεύστε κανόνες που οργανώνουν ένα σύνθετο instance.
+      capabilities: Εφαρμογή και αποθήκευση κανόνων ομαδοποίησης|Ομαδοποίηση Mods από το μενού περιβάλλοντος|Ενεργοποίηση, απενεργοποίηση ή επιθεώρηση αρχείων
+    save-preview:
+      title: Προεπισκόπηση Save και Εργαλεία Chunk
+      benefit: Δείτε έναν κόσμο οπτικά πριν τον ξεκινήσετε και κάντε ακριβείς αλλαγές σε επίπεδο Chunk.
+      capabilities: Μετακίνηση και επιθεώρηση χαρτών κόσμου|Επιλογή, αντιγραφή ή διαγραφή Chunks|Ανάγνωση ιδιοτήτων και υλικών κόσμου
+    blueprint-preview:
+      title: Προεπισκόπηση Blueprint
+      benefit: Δείτε μια κατασκευή σε 3D και ελέγξτε συμβατότητα και υλικά πριν την τοποθετήσετε στο παιχνίδι.
+      capabilities: Μορφές Litematica και WorldEdit|Κατάσταση συμβατότητας και ελλειπόντων Mods|Λίστα υλικών και μετατροπή μορφής
+    modpack-export:
+      title: Εξαγωγή Modpack
+      benefit: Πακετάρετε ένα instance για άλλους παίκτες χωρίς να χάσετε τα μεταδεδομένα και τα αρχεία που το κάνουν να λειτουργεί.
+      capabilities: Εξαγωγή για CurseForge και Modrinth|Μεταδεδομένα δημιουργού, περιγραφής και URL|Επιλογή αρχείων και πόρων προς συμπερίληψη
+    server-export:
+      title: Εξαγωγή Server
+      benefit: Επιλέξτε τον σωστό κόσμο και τα αρχεία server και εξαγάγετε έναν τοπικό server με καθαρή παραμετροποίηση.
+      capabilities: Εξαγωγή σε φάκελο ή μεταφόρτωση|Επιλογή αρχείων server|Ρύθμιση MOTD και επιλογών server
+    account-login:
+      title: Πολλαπλές Υπηρεσίες Ταυτοποίησης
+      benefit: Επιλέξτε την υπηρεσία λογαριασμού που ταιριάζει στον τρόπο που παίζετε, από Microsoft έως offline και υπηρεσίες τρίτων.
+      capabilities: Λογαριασμοί Microsoft και offline|Υπηρεσίες Ely.by και LittleSkin|Προσθήκη και διαχείριση υπηρεσιών ταυτοποίησης
+    quick-action:
+      title: Γρήγορες Ενέργειες
+      benefit: Βρείτε instances και εντολές χωρίς να φύγετε από τη σελίδα στην οποία εργάζεστε.
+      capabilities: Αναζήτηση εντολών, instances και Mods|Εκκίνηση ή δημιουργία instance|Πλοήγηση με πληκτρολόγιο μέσω Ctrl+K
+    crash-diagnosis:
+      title: Αναφορές Crash και Αποτυχίας Εκκίνησης
+      benefit: Διαβάστε τα πραγματικά logs, crash reports και την έξοδο του server πίσω από μια αποτυχημένη εκκίνηση.
+      capabilities: Logs, crash reports και αποτυχίες εκκίνησης|Σφάλματα επίλυσης mods και κωδικοί εξόδου|Αντιγραφή prompt για εξωτερικά εργαλεία AI
+    ai-agent:
+      title: Ενσωματωμένος AI Agent
+      benefit: Αφήστε έναν agent να επιθεωρήσει το εικονικό σύστημα αρχείων του instance και να προτείνει μια πρακτική λύση.
+      capabilities: Ανάγνωση αρχείων instance και αναφορών|Διερεύνηση πριν την εξαγωγή συμπερασμάτων|Εφαρμογή πρακτικής διόρθωσης όπου είναι δυνατό
+modernHome:
+  kicker: MINECRAFT LAUNCHER ΑΝΟΙΧΤΟΥ ΚΩΔΙΚΑ
+  visualLabel: ΦΤΙΑΓΜΕΝΟΣ ΓΙΑ MODDED ΚΟΣΜΟΥΣ
+  windowLabel: XMCL / ΑΡΧΙΚΗ
+  latestRelease: ΤΕΛΕΥΤΑΙΑ ΕΚΔΟΣΗ
+  readyToPlay: ΕΤΟΙΜΟΣ ΓΙΑ ΠΑΙΧΝΙΔΙ
+  libraryTitle: Μία καθαρή βιβλιοθήκη
+  librarySubtitle: Mods, packs και instances
+  proofLabel: Δυνατότητες launcher
+  proof:
+    fastTitle: ΓΡΗΓΟΡΗ ΡΥΘΜΙΣΗ
+    fastDescription: Από vanilla σε modded
+    libraryTitle: ΜΙΑ ΒΙΒΛΙΟΘΗΚΗ
+    libraryDescription: Οι πόροι μένουν οργανωμένοι
+    ecosystemTitle: ΤΟ ΟΙΚΟΣΥΣΤΗΜΑ ΣΑΣ
+    ecosystemDescription: Modrinth και CurseForge
+  workflow:
+    kicker: Η ΡΟΗ ΕΡΓΑΣΙΑΣ ΤΟΥ XMCL
+    title: Όλα όσα χρειάζονται οι κόσμοι σας.
+    description: Σχεδιασμένος για παίκτες που θέλουν τη δύναμη μιας modded εγκατάστασης χωρίς το βάρος της συντήρησης.
+    stageLabel: XMCL / ΡΟΗ ΕΡΓΑΣΙΑΣ
+    scrollHint: ΚΥΛΙΣΤΕ ΓΙΑ ΕΞΕΡΕΥΝΗΣΗ
+  openSource:
+    kicker: ΠΑΛΜΟΣ ΑΝΟΙΧΤΟΥ ΚΩΔΙΚΑ
+    title: Χτισμένος δημόσια.
+    viewOnGitHub: Προβολή στο GitHub
+    repository: ΑΠΟΘΕΤΗΡΙΟ GITHUB
+    snapshot: ΣΤΙΓΜΙΟΤΥΠΟ ΕΚΔΟΣΗΣ
+    downloads: Λήψεις
+    stars: Αστέρια
+    forks: Forks
+    openIssues: Ανοιχτά ζητήματα
+    statsNote: Στατιστικά έργου GitHub κατά τη δημιουργία αυτού του ιστότοπου.
+    contributors: ΣΥΝΕΙΣΦΕΡΟΝΤΕΣ
+    inView: ΣΕ ΠΡΟΒΟΛΗ
+    contributorsCopy: Κάθε αναφορά ζητήματος, pull request, μετάφραση και ιδέα συμβάλλει στη διαμόρφωση της επόμενης έκδοσης.
+  sponsor:
+    label: ΥΠΟΣΤΗΡΙΞΤΕ ΤΟΝ XMCL
+    title: Κρατήστε τον launcher σε κίνηση.
+    description: Υποστηρίξτε τη συντήρηση, τις εκδόσεις και τους ανθρώπους που αναπτύσσουν τον XMCL ανοιχτά.
+    supportedBy: ΜΕ ΤΗΝ ΥΠΟΣΤΗΡΙΞΗ ΤΩΝ
+  download:
+    kicker: Η ΕΠΟΜΕΝΗ ΠΕΡΙΠΕΤΕΙΑ ΣΑΣ
+    title: Έτοιμος όποτε είστε κι εσείς.
+    platforms: Πλατφόρμες λήψης
+  footer:
+    issues: Ζητήματα
+  features:
+    setup:
+      title: Κάθε εγκατάσταση, ένας launcher
+      short: Πολλαπλοί loaders, πολλαπλά instances
+      description: Δημιουργήστε και διαχειριστείτε ξεχωριστά Minecraft instances σε Forge, Fabric, Quilt, NeoForge, OptiFine, LabyMod και πειραματική υποστήριξη Bedrock, με την εγκατάσταση να γίνεται για εσάς.
+      alt: Παράθυρο δημιουργίας παιχνιδιού XMCL με πολλαπλούς Mod Loaders και Bedrock Edition
+      link: Εξερευνήστε τη ρύθμιση instances
+    discover:
+      title: Βρείτε περιεχόμενο κοινότητας
+      short: Modrinth, CurseForge και FTB
+      description: Περιηγηθείτε σε modpacks και έργα της κοινότητας, φιλτράρετέ τα ανά έκδοση και loader και περάστε από την ανακάλυψη στο παιχνίδι.
+      alt: Αγορά modpacks XMCL με φίλτρα περιεχομένου κοινότητας
+      link: Εξερευνήστε το περιεχόμενο κοινότητας
+    mods:
+      title: Κρατήστε τα mods υπό έλεγχο
+      short: Αναζήτηση, ομαδοποίηση, ενημέρωση
+      description: Διαχειριστείτε εγκατεστημένα Mods, επιθεωρήστε εξαρτήσεις, οργανώστε προσαρμοσμένες ομάδες και κρατήστε μια μεγάλη εγκατάσταση κατανοητή.
+      alt: Διαχείριση τοπικών Mods στον XMCL με φίλτρα και ελέγχους ενημερώσεων
+      link: Εξερευνήστε τη διαχείριση Mods
+    accounts:
+      title: Οι λογαριασμοί σας, με τον δικό σας τρόπο
+      short: Microsoft, offline και άλλα
+      description: Συνδέστε την υπηρεσία λογαριασμού που ταιριάζει στην εγκατάστασή σας, από Microsoft και offline προφίλ έως υπηρεσίες ταυτοποίησης τρίτων, χωρίς να φύγετε από τον launcher.
+      alt: Παράθυρο σύνδεσης λογαριασμού XMCL με πολλαπλές υπηρεσίες ταυτοποίησης
+      link: Εξερευνήστε την υποστήριξη λογαριασμών
+siteFooter:
+  ariaLabel: Υποσέλιδο ιστότοπου
+  navigation: Πλοήγηση υποσέλιδου
+  description: Υποδομή Minecraft ανοιχτού κώδικα για παίκτες, επιτραπέζια συστήματα Linux και τους ανθρώπους που χτίζουν τους κόσμους που παίζουμε.
+  status: Ανοιχτός κώδικας · χτισμένος δημόσια
+  explore:
+    title: Εξερεύνηση
+    home: Αρχική
+    features: Κατάλογος λειτουργιών
+    documentation: Τεκμηρίωση
+  useCases:
+    title: Σενάρια χρήσης
+    linux: Launcher για Linux
+    creators: Δημιουργοί modpacks
+    download: Λήψη XMCL
+  resources:
+    title: Πόροι
+    logViewer: Προβολή αρχείων καταγραφής
+    github: GitHub
+    issue: Αναφορά ζητήματος
+    discord: Discord
+  bottomNote: Φτιαγμένος για τον τρόπο που παίζετε και δημιουργείτε.
+  readDocumentation: Διαβάστε την τεκμηρίωση
+sceneLanding:
+  linux:
+    eyebrow: XMCL / ΕΚΔΟΣΗ LINUX
+    title: Ο Minecraft launcher που δείχνει φυσικός στο Linux.
+    lede: Ένας καλοσχεδιασμένος launcher ανοιχτού κώδικα για Linux desktops και Steam Deck. Επιλέξτε το πακέτο που περιμένει η διανομή σας, συνδέστε οθόνη 4K και κρατήστε κάθε κόσμο ένα κλικ μακριά.
+    primaryAction: Λήψη για Linux
+    secondaryAction: Δείτε τη ροή εργασίας στο Linux
+    heroNote: Εγγενή πακέτα Linux, επιλογές ARM64 και υποστήριξη Flathub
+    visualLabel: XMCL · Περιβάλλον Linux
+    heroAlt: Αρχική οθόνη XMCL που εμφανίζει μια βιβλιοθήκη Minecraft instances
+    visualTag: Περιβάλλον έτοιμο για 4K
+    visualStatus: ΕΤΟΙΜΟΣ ΓΙΑ ΤΟΝ ΕΠΟΜΕΝΟ ΚΟΣΜΟ ΣΑΣ
+    workflowKicker: ΡΟΗ ΕΡΓΑΣΙΑΣ ΜΕ ΠΡΟΤΕΡΑΙΟΤΗΤΑ ΤΟ LINUX
+    workflowTitle: Από τον διαχειριστή πακέτων στο παιχνίδι χωρίς εμπόδια.
+    workflowDescription: 'Ο XMCL κρατά κοντά όσα έχουν σημασία για τους παίκτες Linux: προβλέψιμες εγκαταστάσεις, ευκρινή διεπαφή και ανεξάρτητα περιβάλλοντα παιχνιδιού με εύκολη εναλλαγή.'
+    signals:
+      packages:
+        number: '05'
+        label: Πακέτα Linux
+        description: DEB, RPM, AppImage, tar.xz και Flathub.
+      scale:
+        number: '4K'
+        label: Ευκρινής σε κάθε κλίμακα
+        description: Μια πλούσια βιβλιοθήκη που παραμένει ευανάγνωστη σε μεγάλη οθόνη.
+      worlds:
+        number: '∞'
+        label: Ξεχωριστοί κόσμοι
+        description: Αποτρέψτε συγκρούσεις μεταξύ εκδόσεων, loaders και saves.
+    features:
+      install:
+        label: 01 / ΕΠΙΛΕΞΤΕ ΕΓΚΑΤΑΣΤΑΣΗ
+        title: Χρησιμοποιήστε τη μορφή που καταλαβαίνει η διανομή σας.
+        description: Κατεβάστε ένα εγγενές πακέτο για τον υπολογιστή σας ή χρησιμοποιήστε Flathub για μια φορητή λύση φιλική προς το Steam Deck. Ο XMCL προσφέρει επίσης εκδόσεις ARM64 όπου το απαιτεί το υλικό.
+        point1: DEB και RPM για δημοφιλείς διανομές Linux
+        point2: AppImage και tar.xz για φορητές εγκαταστάσεις
+        point3: Υποστήριξη Flathub για Steam Deck
+        alt: Παράθυρο δημιουργίας instance XMCL με εκδόσεις Minecraft και mod loaders
+      organize:
+        label: 02 / ΔΙΑΤΗΡΗΣΤΕ ΤΑΞΗ
+        title: Κάθε instance έχει τον δικό του καθαρό χώρο.
+        description: Διαχωρίστε vanilla, modded, δοκιμαστικές και server εγκαταστάσεις χωρίς χειροκίνητη διαχείριση φακέλων. Οι εκδόσεις, οι loaders, τα mods, τα saves και οι ρυθμίσεις μένουν μαζί.
+        point1: Ανεξάρτητα δεδομένα παιχνιδιού και ρυθμίσεις εκκίνησης
+        point2: Forge, Fabric, Quilt, NeoForge και άλλα
+        point3: Γρήγορη εναλλαγή μεταξύ κόσμων και πειραμάτων
+        alt: Βιβλιοθήκη instances XMCL με οργανωμένα προφίλ Minecraft
+      anywhere:
+        label: 03 / ΠΑΙΞΤΕ ΠΑΝΤΟΥ
+        title: Ένας desktop launcher που ταξιδεύει εύκολα.
+        description: Μεταβείτε από έναν υπολογιστή Linux σε συνεδρία Steam Deck χωρίς να χάσετε μια καθαρή βιβλιοθήκη ή μια αξιόπιστη εγκατάσταση. Ο XMCL δίνει χώρο στη συλλογή σας να μεγαλώσει χωρίς να γίνει χαοτική.
+        point1: Διαδρομή Flathub σχεδιασμένη για Steam Deck
+        point2: Καθαρή διεπαφή σε οθόνες 4K
+        point3: Ανοιχτός κώδικας, φτιαγμένος για παίκτες Linux
+        alt: Αρχική σελίδα XMCL με μεγάλη βιβλιοθήκη instances
+    download:
+      kicker: ΛΗΨΗ ΓΙΑ LINUX
+      title: Εγκαταστήστε τον XMCL με τον δικό σας τρόπο.
+      description: Επιλέξτε το πακέτο που ταιριάζει στο σύστημά σας ή χρησιμοποιήστε το Flathub για να φέρετε τον XMCL στο Steam Deck.
+      link: Δείτε όλες τις εκδόσεις και τα prebuilds
+  creators:
+    eyebrow: XMCL / ΓΙΑ ΔΗΜΙΟΥΡΓΟΥΣ MODPACKS
+    title: Χτίστε modpacks με ολόκληρο τον κύκλο κυκλοφορίας σε ένα μέρος.
+    lede: Ανακαλύψτε έργα, επιλύστε εξαρτήσεις, δοκιμάστε ένα λειτουργικό σύνολο, διαγνώστε crashes και εξαγάγετε ένα καθαρό pack για Modrinth ή CurseForge χωρίς να φύγετε από τον launcher.
+    primaryAction: Εξερευνήστε τις ροές δημιουργών
+    secondaryAction: Άνοιγμα καταλόγου λειτουργιών
+    heroNote: Ροές Modrinth και CurseForge, με διάγνωση υποβοηθούμενη από AI
+    visualLabel: XMCL · Χώρος εργασίας δημιουργού
+    heroAlt: Αγορά modpacks XMCL με έργα Modrinth και CurseForge
+    visualTag: MODRINTH ↔ CURSEFORGE
+    visualStatus: ΕΝΕΡΓΟ ΣΥΝΟΛΟ ΣΕ ΣΥΓΧΡΟΝΙΣΜΟ
+    workflowKicker: Ο ΚΥΚΛΟΣ ΤΟΥ ΔΗΜΙΟΥΡΓΟΥ
+    workflowTitle: Πιο γρήγορος δρόμος από μια αρχική ιδέα σε ένα pack που οι παίκτες μπορούν πραγματικά να τρέξουν.
+    workflowDescription: 'Ο XMCL αντιμετωπίζει ένα modpack ως ζωντανό σύστημα. Εξερευνήστε και τους δύο καταλόγους, κάντε στοχευμένες αλλαγές και αφήστε τον launcher να αναδείξει τις σχέσεις που κρατούν την έκδοσή σας υγιή.'
+    signals:
+      sources:
+        number: '2×'
+        label: Πηγές έργων
+        description: Αναζήτηση σε Modrinth και CurseForge από έναν χώρο εργασίας.
+      export:
+        number: '1-ΚΛΙΚ'
+        label: Εξαγωγή pack
+        description: Δημιουργήστε διανεμήσιμο πακέτο MR ή CF σε λίγα βήματα.
+      ai:
+        number: 'AI'
+        label: Βοήθεια για crashes
+        description: Μετατρέψτε μια αναφορά σφάλματος σε χρήσιμη επόμενη ενέργεια.
+    features:
+      discover:
+        label: 01 / ΑΝΑΚΑΛΥΨΗ
+        title: Αναζητήστε και στα δύο οικοσυστήματα χωρίς να διασπάτε την προσοχή σας.
+        description: Βρείτε έργα σε Modrinth και CurseForge με φίλτρα έκδοσης, loader, περιβάλλοντος και κατηγορίας. Ο XMCL αντιστοιχίζει έργα μεταξύ των δύο πηγών ώστε να συγκρίνετε την ίδια δουλειά με λιγότερες εικασίες.
+        point1: Αναζήτηση σε Modrinth και CurseForge σε μία ροή
+        point2: Φίλτρα συμβατότητας έκδοσης Minecraft και loader
+        point3: Διαπλατφορμική αντιστοίχιση έργων
+        alt: Διαδικτυακή αναζήτηση mods XMCL με φίλτρα πηγής και συμβατότητας
+      build:
+        label: 02 / ΔΗΜΙΟΥΡΓΙΑ
+        title: Κάντε τις εξαρτήσεις μέρος του σχεδίου.
+        description: Όταν ένα mod χρειάζεται ένα άλλο mod, ο XMCL μπορεί να εγκαταστήσει μαζί και την εξάρτηση. Όταν ενεργοποιείτε ή απενεργοποιείτε ένα έργο, ο launcher βοηθά να διατηρείται το σύνολο συνεκτικό αντί να ιχνηλατείτε χειροκίνητα το γράφημα.
+        point1: Αυτόματη εγκατάσταση εξαρτήσεων
+        point2: Ενεργοποίηση και απενεργοποίηση με επίγνωση εξαρτήσεων
+        point3: Επιθεώρηση εκδόσεων, loaders και μεταδεδομένων έργου
+        alt: Προβολή λεπτομερειών mod στον XMCL με εκδόσεις και εξαρτήσεις
+      curate:
+        label: 03 / ΕΠΙΜΕΛΕΙΑ
+        title: Διατηρήστε το ενεργό σύνολο λιτό και στοχευμένο.
+        description: Αναζητήστε, ταξινομήστε, ομαδοποιήστε, ενημερώστε και αφαιρέστε τα mods που δεν ανήκουν πλέον. Οι προσαρμοσμένες ομάδες διευκολύνουν τη δοκιμή προαιρετικού περιεχομένου, τη σύγκριση προφίλ ή την εστίαση μιας υποψήφιας έκδοσης.
+        point1: Αυτόματοι έλεγχοι ενημερώσεων mods
+        point2: Προσαρμοσμένες ομάδες για προαιρετικό και δοκιμαστικό περιεχόμενο
+        point3: Εντοπισμός και αφαίρεση αχρησιμοποίητων mods
+        alt: Προβολή διαχείρισης εγκατεστημένων mods στον XMCL με αναζήτηση και ενημερώσεις
+      export:
+        label: 04 / ΕΞΑΓΩΓΗ
+        title: Διανείμετε ένα pack στη μορφή που χρειάζονται οι παίκτες σας.
+        description: Εξαγάγετε ένα ολοκληρωμένο Modrinth ή CurseForge modpack με τα σωστά μεταδεδομένα και τα επιλεγμένα αρχεία. Το βήμα κυκλοφορίας γίνεται επαναλήψιμο μέρος της ροής εργασίας, όχι αγχωτική αρχειοθέτηση της τελευταίας στιγμής.
+        point1: Εξαγωγή σε Modrinth και CurseForge με ένα κλικ
+        point2: Μεταδεδομένα δημιουργού, περιγραφής, URL και έκδοσης
+        point3: Ακριβής επιλογή των αρχείων και πόρων που διανέμονται
+        alt: Οθόνη εξαγωγής modpack XMCL για μορφές Modrinth και CurseForge
+      diagnose:
+        label: 05 / ΔΙΑΓΝΩΣΗ
+        title: Αφήστε την AI να μετατρέψει τα crash reports σε λύσεις.
+        description: Όταν μια δοκιμαστική εκκίνηση αποτυγχάνει, ο XMCL συγκεντρώνει logs, crash reports και έναν AI agent στο ίδιο σημείο. Ο agent μπορεί να επιθεωρήσει το πλαίσιο του instance και να εξηγήσει το επόμενο πρακτικό βήμα.
+        point1: Ανάγνωση logs εκκίνησης και crash reports στο πλαίσιό τους
+        point2: Διερεύνηση αρχείων instance με υποβοήθηση AI
+        point3: Επίλυση συγκρούσεων mods πριν την κυκλοφορία
+        alt: AI agent του XMCL που διερευνά αποτυχία εκκίνησης Minecraft
+    cta:
+      kicker: ΕΝΑΣ ΠΑΓΚΟΣ ΕΡΓΑΣΙΑΣ ΓΙΑ ΤΗΝ ΕΠΟΜΕΝΗ ΕΚΔΟΣΗ ΣΑΣ
+      title: Φτιάξτε το pack. Κυκλοφορήστε το. Κρατήστε το υγιές.
+      description: Ο XMCL προσφέρει στους δημιουργούς έναν γρήγορο τοπικό κύκλο ανακάλυψης, δοκιμής, διάγνωσης και εξαγωγής στα δύο οικοσυστήματα που ήδη χρησιμοποιούν οι παίκτες σας.
+      button: Εξερευνήστε κάθε λειτουργία
+commercial:
+  common:
+    loading: Φόρτωση…
+    refresh: Ανανέωση
+    refreshing: Γίνεται ανανέωση…
+    signIn: Σύνδεση
+  playModes:
+    label: Επιλέξτε πώς παίζει η παρέα σας
+    plusEyebrow: ΦΙΛΟΞΕΝΙΑ ΑΠΟ ΦΙΛΟ
+    plusTitle: Together Home
+    plusDescription: Ξεκινήστε έναν κόσμο τοπικά και χρησιμοποιήστε το Together όταν η απευθείας σύνδεση multiplayer χρειάζεται βοήθεια.
+    serverEyebrow: ΠΑΝΤΑ ONLINE
+    serverTitle: Together Camp, Lodge ή Village
+    serverDescription: Διατηρήστε έναν μόνιμο κόσμο διαθέσιμο ακόμη και όταν ο κάτοχος της ομάδας είναι εκτός σύνδεσης.
+  billing:
+    eyebrow: ΧΡΕΩΣΕΙΣ XMCL
+    title: Χρεώσεις & υπόλοιπο
+    description: Διαχειριστείτε το χρηματικό σας υπόλοιπο, τις πληρωμές και τη δραστηριότητα χρεώσεων.
+    accountSettings: Ρυθμίσεις λογαριασμού
+    disabled: Οι χρεώσεις δεν είναι ενεργοποιημένες σε αυτή την εγκατάσταση.
+    loadingTitle: Φόρτωση χρεώσεων
+    loadingDescription: Ανάκτηση του υπολοίπου και της δραστηριότητάς σας…
+    signInTitle: Συνδεθείτε για διαχείριση χρεώσεων
+    signInDescription: Το υπόλοιπο, οι πληρωμές και η χρήση σας ανήκουν στον λογαριασμό σας XMCL.
+    overview: Επισκόπηση
+    accountTitle: Ο λογαριασμός χρεώσεών σας
+    debt: Οι μελλοντικές φορτίσεις εξοφλούν πρώτα εκκρεμές υπόλοιπο {amount}.
+    available: Διαθέσιμο υπόλοιπο
+    availableHint: Έτοιμο προς χρήση στις υπηρεσίες XMCL
+    homeFundingRequired: Το υπόλοιπό σας δεν επαρκεί για το Together Home. Προσθέστε τουλάχιστον {amount} και επιστρέψτε στο Together για να το αγοράσετε.
+    reserved: Δεσμευμένο
+    reservedHint: Κρατείται για ενεργή χρήση
+    history: Ιστορικό
+    activity: Δραστηριότητα χρεώσεων
+    activityViews: Προβολές δραστηριότητας χρεώσεων
+    transactions: Συναλλαγές
+    payments: Πληρωμές
+    usage: Χρήση
+    descriptionLabel: Περιγραφή
+    reference: Αναφορά
+    date: Ημερομηνία
+    amount: Ποσό
+    payment: Πληρωμή
+    status: Κατάσταση
+    usageEvent: Συμβάν χρήσης
+    rate: Χρέωση
+    charged: Χρεώθηκε
+    noTransactions: Δεν υπάρχουν ακόμη συναλλαγές.
+    noPayments: Δεν υπάρχουν ακόμη πληρωμές Waffo.
+    noUsage: Δεν υπάρχει ακόμη μετρημένη χρήση.
+    loadError: Δεν ήταν δυνατή η φόρτωση των δεδομένων χρέωσης.
+    securedTitle: Ασφαλείς πληρωμές μέσω Waffo
+    securedDescription: Τα στοιχεία κάρτας και αγοραστή διαχειρίζονται στη φιλοξενούμενη σελίδα πληρωμής του Waffo Pancake. Ο XMCL δεν λαμβάνει ποτέ τον αριθμό της κάρτας σας.
+  checkout:
+    title: Προσθήκη χρημάτων
+    description: Φορτίστε το υπόλοιπό σας στον XMCL με ασφάλεια μέσω Waffo Pancake.
+    amount: Ποσό
+    preparing: Προετοιμασία πληρωμής…
+    add: Προσθήκη {amount}
+    providerNote: Θα μεταφερθείτε στη φιλοξενούμενη σελίδα πληρωμής της Waffo για να ολοκληρώσετε τη συναλλαγή.
+    legalNote: Συνεχίζοντας, αποδέχεστε τους
+    terms: Όρους Χρήσης
+    and: και την
+    privacy: Πολιτική Απορρήτου
+    openCheckout: Άνοιγμα σελίδας πληρωμής
+    cancelledReturned: Ακύρωσα ή επέστρεψα
+    newTopUp: Έναρξη νέας φόρτισης
+    invalidAmount: Εισαγάγετε ένα θετικό ακέραιο ποσό πριν συνεχίσετε.
+    unsafeUrl: Η υπηρεσία δεν επέστρεψε ασφαλές URL πληρωμής Waffo.
+    opened: Ολοκληρώστε ή ακυρώστε στη σελίδα πληρωμής της Waffo και επιστρέψτε εδώ. Ο XMCL θα ανανεώσει την παραγγελία και το υπόλοιπο.
+    blocked: Το παράθυρο έγκρισης αποκλείστηκε. Επιτρέψτε το και δοκιμάστε ξανά με την ίδια πρόθεση πληρωμής.
+    returnRecorded: Η επιστροφή από την πληρωμή καταγράφηκε.
+    returnDetected: Εντοπίστηκε επιστροφή από την πληρωμή.
+    refreshFailed: Ο XMCL επιχείρησε να ανανεώσει την παραγγελία και το υπόλοιπο.
+    restoreFailed: Δεν ήταν δυνατή η επαναφορά της προηγούμενης πληρωμής. Η επανάληψη χρησιμοποιεί την ίδια πρόθεση πληρωμής.
+    newIntent: Μπορεί πλέον να δημιουργηθεί νέα πρόθεση πληρωμής. Μην χρησιμοποιήσετε τον προηγούμενο σύνδεσμο πληρωμής Waffo.
+  server:
+    eyebrow: XMCL PLAY / ΠΑΝΤΑ ONLINE
+    title: Ένας κόσμος έτοιμος όποτε είναι και η παρέα σας.
+    description: Δώστε στην παρέα σας έναν πάντα διαθέσιμο modded κόσμο, χωρίς να χρειάζεται ένας φίλος να κρατά ανοιχτό τον υπολογιστή του.
+    storyLink: Η ιστορία πίσω από τον XMCL
+    billingLink: Χρεώσεις & υπόλοιπο
+    from: Από
+    priceSuffix: / μήνα + χρόνος λειτουργίας
+    experienceEyebrow: TOGETHER CAMP · LODGE · VILLAGE
+    experienceTitle: Χωρίς host παίκτη. Χωρίς αναμονή να συνδεθεί κάποιος.
+    experienceDescription: Κρατήστε τον modded κόσμο της παρέας σε μόνιμη υποδομή και επιλέξτε τη χωρητικότητα που ταιριάζει στο modpack.
+    alwaysAvailable: διαθεσιμότητα κόσμου
+    performancePlans: διαμορφώσεις απόδοσης
+    aiBonus: περιλαμβανόμενες μονάδες AI / μήνα
+    alwaysOnTitle: Ο κόσμος μένει με την παρέα
+    alwaysOnDescription: Οι φίλοι μπορούν να επιστρέφουν στον ίδιο μόνιμο κόσμο χωρίς να εξαρτώνται από τον υπολογιστή ή το πρόγραμμα ενός παίκτη.
+    rightSizeTitle: Προσαρμόστε τον server στο modpack
+    rightSizeDescription: Επιλέξτε την απόδοση, τη μνήμη και τον αποθηκευτικό χώρο που ταιριάζουν σήμερα στο pack και αναβαθμίστε όταν η παρέα χρειαστεί περισσότερα.
+    signInTitle: Συνδεθείτε για διαχείριση servers
+    signInDescription: Τα πακέτα server και οι συνδρομές ανήκουν στον λογαριασμό σας XMCL.
+    overview: Συνδρομή server
+    yourServer: Το πακέτο server σας
+    balance: Υπόλοιπο
+    addFunds: Προσθήκη χρημάτων
+    paymentDue: Απαιτείται πληρωμή. Προσθέστε χρήματα για αυτόματη επαναφορά αυτής της συνδρομής.
+    cancelsOn: Ακυρώνεται στις {date}.
+    renewsOn: Ανανεώνεται στις {date}.
+    cancel: Ακύρωση πακέτου
+    plansEyebrow: Κοινή φιλοξενία
+    choosePlan: Επιλέξτε ένα πακέτο
+    planDescription: Μηνιαία πρόσβαση συν μετρημένος χρόνος λειτουργίας. Κάθε ενεργό πακέτο περιλαμβάνει υποβοήθηση AI για ρύθμιση modpack και server.
+    current: Τρέχον
+    perMonth: / μήνα
+    runtimePrice: '+ {amount} ανά ώρα λειτουργίας'
+    cpu: CPU
+    cpuValue: '{count} vCPU'
+    memory: Μνήμη
+    storage: Μόνιμος αποθηκευτικός χώρος
+    includedAi: Περιλαμβανόμενη βοήθεια AI
+    includedAiValue: 200.000 μονάδες / μήνα
+    select: Επιλογή {plan}
+    selected: Επιλεγμένο
+    unavailable: Μη διαθέσιμο
+    noPlans: Δεν υπάρχουν δημοσιευμένα πακέτα κοινής φιλοξενίας αυτή τη στιγμή.
+    loadError: Δεν ήταν δυνατή η φόρτωση των πακέτων server.
+    subscribeError: Δεν ήταν δυνατή η δημιουργία της συνδρομής.
+    cancelError: Δεν ήταν δυνατή η ακύρωση της συνδρομής.
+    managerEyebrow: Οι φιλοξενούμενοι servers σας
+    managerTitle: Διαχείριση server
+    managerDescription: Κάθε server εκτελείται και χρεώνεται ανεξάρτητα. Ελέγξτε την κατάστασή του και ενεργοποιήστε ή απενεργοποιήστε τον από εδώ.
+    serverNumber: '{plan} server {number}'
+    start: Εκκίνηση server
+    stop: Διακοπή server
+    cpuUsage: Χρήση CPU
+    memoryUsage: Χρήση μνήμης
+    launcherGuide: Χρησιμοποιήστε τον XMCL launcher για να αλλάξετε mods, modpacks, κόσμους και άλλες λεπτομερείς ρυθμίσεις.
+    operationError: Δεν ήταν δυνατή η αλλαγή κατάστασης του server.
+    status:
+      pending: Αναμονή για χωρητικότητα
+      queued: Αναμονή για χωρητικότητα
+      ready: Σταματημένος
+      starting: Εκκίνηση
+      running: Σε λειτουργία
+      stopping: Διακοπή και αποθήκευση
+      payment_due: Απαιτείται πληρωμή
+      failed: Χρειάζεται προσοχή
+      retained: Διατήρηση αρχείου
+      deleted: Διαγραμμένος
+    plusEyebrow: ΠΡΟΤΙΜΑΤΕ ΦΙΛΟΞΕΝΙΑ ΑΠΟ ΦΙΛΟ;
+    plusTitle: Ξεκινήστε από τον δικό σας υπολογιστή.
+    plusDescription: Το Together διατηρεί το απευθείας multiplayer με φίλους αξιόπιστο και περιλαμβάνει την ίδια βοήθεια επίλυσης προβλημάτων modpack.
+    plusAction: Εξερευνήστε το multiplayer με φίλους
+  plus:
+    eyebrow: XMCL TOGETHER
+    title: Η καλύτερη εγκατάσταση Minecraft είναι οι φίλοι με τους οποίους παίζετε.
+    description: Από τη δημιουργία του modpack και τη σταθερή σύνδεση έως τη συντήρηση του server, το XMCL Together σας επιτρέπει να απολαμβάνετε modpacks του Minecraft με φίλους.
+    projectBoundary: Ο XMCL παραμένει δωρεάν και ανοιχτού κώδικα. Το Together είναι προαιρετικό και ο launcher λειτουργεί χωρίς λογαριασμό Together.
+    serviceOperator: Το XMCL Together είναι μια προαιρετική διαδικτυακή υπηρεσία που λειτουργεί από τον CI010.
+    storyLink: Η ιστορία του XMCL
+    perMonth: / μήνα
+    from: Από
+    priceSuffix: / μήνα
+    catalog:
+      heroNote: Τέσσερα πακέτα. Ένα θα ταιριάξει στην παρέα σας.
+      eyebrow: Επιλέξτε ένα πακέτο
+      title: Αποφασίστε πού θα τρέχει ο κόσμος.
+      description: Και τα τέσσερα πακέτα εξυπηρετούν τον ίδιο στόχο—να βοηθήσουν την παρέα σας να συντηρεί και να παίζει σε έναν κοινό κόσμο modpack.
+      recommended: Τα περισσότερα modpacks
+      perMonth: / μήνα
+      flatMonthly: 20 GB relay περιλαμβάνονται · $0.08 / GB στη συνέχεια
+      runtime: '{price} ανά ώρα λειτουργίας · παύση οποιαδήποτε στιγμή'
+      hosted: Φιλοξενία από XMCL
+      runsOn: Τρέχει σε
+      bestFor: Ιδανικό για
+      connection: Σύνδεση
+      memory: Μνήμη
+      cpu: CPU
+      storage: Μόνιμος αποθηκευτικός χώρος
+      aiIncluded: Δωρεάν υπηρεσία AI
+      aiIncludedDescription: Βοήθεια στη δημιουργία modpacks, επίλυση προβλημάτων και συντήρηση servers
+      home:
+        location: Φιλοξενία από φίλο
+        description: Multiplayer ενισχυμένο με relay για φίλους των οποίων οι P2P συνδέσεις είναι δύσκολες ή ασταθείς· τα 20 GB συνήθως αρκούν για 3 φίλους περίπου 65 ώρες τον μήνα.
+        runsOn: Τον δικό σας υπολογιστή
+        bestFor: Παρέες που παίζουν περιστασιακά
+        connection: 300+ παγκόσμιες τοποθεσίες relay
+      camp:
+        description: Ένα μικρό αλλά ικανό ξεκίνημα για 2–4 φίλους που παίζουν ένα πιο ελαφρύ modpack.
+      lodge:
+        description: Ισορροπημένη απόδοση και τιμή για 4–6 φίλους που παίζουν ένα τυπικό modpack.
+      village:
+        description: Χώρος για 6–10 φίλους, μεγαλύτερα modpacks, περισσότερο περιεχόμενο και περισσότερους ταυτόχρονους παίκτες.
+    shared:
+      eyebrow: Περιλαμβάνεται σε κάθε πακέτο
+      title: Κάτι περισσότερο από το να μένει ένας server online.
+      description: Το Together βοηθά σε ολόκληρη τη διαδρομή από το modpack έως τον κοινό κόσμο, αντί να αφήνει έναν φίλο μόνο του με κάθε τεχνικό πρόβλημα.
+      aiTitle: Δημιουργία και συντήρηση με υποβοήθηση AI
+      aiDescription: Λάβετε βοήθεια στην επιλογή και ρύθμιση mods, στην επίλυση εξαρτήσεων και crashes, καθώς και στη ρύθμιση και καθημερινή συντήρηση του server.
+      worldTitle: Ο κόσμος μένει με την παρέα
+      worldDescription: Το Home κάνει τη φιλοξενία από φίλο πιο εύκολα προσβάσιμη· τα φιλοξενούμενα πακέτα διατηρούν τον κόσμο και τις ρυθμίσεις μέχρι να επιστρέψει η παρέα.
+    runtime:
+      eyebrow: CAMP · LODGE · VILLAGE
+      title: Πληρώστε μόνο για τις ώρες που ο server τρέχει πραγματικά.
+      description: Μια χαμηλή μηνιαία χρέωση διατηρεί το πακέτο, τον κόσμο, τα saves και τις ρυθμίσεις. Οι ωριαίες χρεώσεις ισχύουν μόνο όσο ο server λειτουργεί.
+      playTitle: Ξεκινήστε τον όταν χρειάζεται
+      playDescription: Ενεργοποιήστε τον όταν οι φίλοι είναι έτοιμοι και πληρώστε για τις πραγματικές ώρες λειτουργίας.
+      pauseTitle: Κάντε παύση όταν δεν παίζει κανείς
+      pauseDescription: Οι χρεώσεις λειτουργίας σταματούν κατά την παύση· συνεχίστε από τον ίδιο κόσμο την επόμενη φορά.
+    confirm:
+      serverNumber: '{plan} server #{number}'
+      addAnother: Προσθήκη άλλου server
+      close: Κλείσιμο
+      purchaseEyebrow: Δημιουργία server
+      cancelEyebrow: Ακύρωση server
+      purchaseTitle: Επιβεβαίωση αγοράς {plan}
+      purchaseDescription: Η μηνιαία χρέωση {monthly} χρεώνεται άμεσα. Ο χρόνος λειτουργίας κοστίζει {hourly}/ώρα και σταματά κατά την παύση. Κάθε server χρεώνεται ανεξάρτητα και περιλαμβάνει δωρεάν υπηρεσία AI.
+      regionLabel: Τοποθεσία server
+      regionDescription: Επιλέξτε την τοποθεσία πιο κοντά στους περισσότερους παίκτες. Η τρέχουσα διαμόρφωση υποστηρίζει {count} τοποθεσίες Vultr.
+      testRegions: Δοκιμή και πρόταση
+      testingRegions: Γίνεται δοκιμή…
+      testComplete: Επιλέχθηκε η τοποθεσία {location}, με τη χαμηλότερη μετρημένη καθυστέρηση ({latency} ms).
+      testUnavailable: Η δοκιμή ταχύτητας δεν είναι διαθέσιμη. Παρακαλούμε επιλέξτε τοποθεσία χειροκίνητα.
+      cancelTitle: Επιβεβαίωση ακύρωσης του {plan}
+      cancelDescription: Η ακύρωση τίθεται σε ισχύ στο τέλος της τρέχουσας περιόδου στις {date}. Ο server παραμένει διαθέσιμος μέχρι τότε.
+      retentionTitle: Τα saves μεταφέρονται σε ψυχρή αποθήκευση για 30 ημέρες
+      retentionDescription: Κατεβάστε το save πριν από τις {date} από Διαχείριση server → αυτός ο server → Δεδομένα & εξαγωγή. Μετά από αυτή την ημερομηνία διαγράφεται οριστικά.
+      back: Επιστροφή
+      purchase: Επιβεβαίωση αγοράς
+      cancel: Επιβεβαίωση ακύρωσης
+    experienceEyebrow: TOGETHER HOME · ΦΙΛΟΞΕΝΙΑ ΑΠΟ ΦΙΛΟ
+    experienceTitle: Λιγότερη επίλυση προβλημάτων. Περισσότερος χρόνος στον ίδιο κόσμο.
+    experienceDescription: Το Together βοηθά την παρέα σας να λύσει προβλήματα modpack και κρατά το multiplayer σε κίνηση όταν η απευθείας σύνδεση δεν τα καταφέρνει.
+    networkLocations: παγκόσμιες τοποθεσίες relay
+    automatic: Αυτόματη
+    nearestRelay: δρομολόγηση στον πλησιέστερο κόμβο
+    guided: Καθοδηγούμενη
+    modpackHelp: επίλυση προβλημάτων modpack
+    signInTitle: Συνδεθείτε για διαχείριση του Together
+    signInDescription: Η συνδρομή Together και τα όρια χρήσης σας ανήκουν στον λογαριασμό σας XMCL.
+    disabled: Το Together δεν είναι ενεργοποιημένο σε αυτή την εγκατάσταση.
+    loadError: Δεν ήταν δυνατή η φόρτωση των πληροφοριών Together.
+    subscribeError: Δεν ήταν δυνατή η δημιουργία της συνδρομής Together.
+    cancelError: Δεν ήταν δυνατή η ακύρωση της συνδρομής Together.
+    subscribe: Αγορά Together Home
+    cancel: Ακύρωση συνδρομής
+    addFunds: Προσθήκη χρημάτων
+    inactiveTitle: Ξεκινήστε το XMCL Together
+    inactiveDescription: Εγγραφείτε χρησιμοποιώντας το χρηματικό υπόλοιπο XMCL. Ο πρώτος μήνας χρεώνεται άμεσα.
+    activeTitle: Το XMCL Together είναι ενεργό
+    paymentDueTitle: Απαιτείται πληρωμή
+    paymentDueDescription: Προσθέστε χρήματα στο υπόλοιπο χρεώσεών σας για να συνεχίσετε το Together.
+    renewsOn: Ανανεώνεται στις {date}.
+    cancelsOn: Η πρόσβαση παραμένει ενεργή έως τις {date}.
+    status:
+      inactive: Ανενεργή
+      active: Ενεργή
+      payment_due: Απαιτείται πληρωμή
+      cancelled: Ακυρωμένη
+    allowancesEyebrow: Η μηνιαία σας χρήση
+    allowancesTitle: Τα όρια χρήσης πίσω από την εμπειρία
+    aiAllowance: Υπόλοιπο υποβοήθησης AI
+    aiUnits: σταθμισμένες μονάδες token που απομένουν
+    aiUsage: '{consumed} σε χρήση από {included}'
+    aiFormula: 'Χρήση = είσοδος cache-miss + ceil(είσοδος cache-hit × 0,1) + έξοδος × 4.'
+    turnAllowance: Relay multiplayer
+    turnEgress: πιστοποιημένη κίνηση relay
+    turnUsage: '{consumed} σε χρήση από {included}'
+    remainingUnavailable: Το υπόλοιπο χρήσης δεν είναι διαθέσιμο.
+    meteringUnavailable: Η μέτρηση χρήσης δεν είναι ακόμη συνδεδεμένη· αυτό είναι το περιλαμβανόμενο όριο, όχι το υπόλοιπο.
+    sourcesTitle: Ενεργές πηγές ορίων χρήσης
+    source:
+      plus: 'Together: {ai} μονάδες AI και {turn} relay'
+      shared_hosting: 'Πακέτο server: {ai} μονάδες AI χωρίς TURN'
+    serverBonus: Κάθε ενεργό πακέτο server περιλαμβάνει ξεχωριστά 200.000 μονάδες AI κάθε μήνα για βοήθεια στη ρύθμιση modpack και server.
+    aiTitle: Κάντε το modpack να δουλέψει
+    aiDescription: Διαγνώστε crashes, συγκρούσεις εξαρτήσεων και προβλήματα ρυθμίσεων χωρίς να μετατρέπεται ένας φίλος σε μόνιμη τεχνική υποστήριξη της παρέας.
+    turnTitle: Κρατήστε όλους συνδεδεμένους
+    turnDescription: Ο XMCL δοκιμάζει πρώτα απευθείας σύνδεση και στη συνέχεια χρησιμοποιεί αυτόματα το πλησιέστερο διαθέσιμο relay όταν τα δίκτυα ή οι δρομολογητές στέκονται εμπόδιο.
+    serverEyebrow: ΧΡΕΙΑΖΕΣΤΕ ΠΕΡΙΣΣΟΤΕΡΑ;
+    serverTitle: Δώστε στην παρέα έναν πάντα διαθέσιμο κόσμο.
+    serverDescription: Ενοικιάστε έναν αποκλειστικό server XMCL όταν η φιλοξενία peer δεν αρκεί πλέον, με μόνιμο αποθηκευτικό χώρο και επιλέξιμη απόδοση.
+    serverAction: Προβολή πακέτων server
+  accountLinks:
+    title: Υπηρεσίες XMCL
+    plusTitle: Εξερευνήστε το Together
+    plusDescription: Λύστε προβλήματα modpacks και κρατήστε την παρέα σας συνδεδεμένη.
+    billingEyebrow: Χρεώσεις
+    billingTitle: Υπόλοιπο & δραστηριότητα
+    billingDescription: Προσθέστε χρήματα και δείτε τις χρεώσεις.
+    serverEyebrow: Servers
+    serverTitle: Κοινή φιλοξενία
+    serverDescription: Επιλέξτε πακέτο server και διαχειριστείτε τη συνδρομή του.

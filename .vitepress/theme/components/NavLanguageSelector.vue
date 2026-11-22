@@ -319,6 +319,62 @@ const ALL_LOCALES: LocaleEntry[] = [
     region: 'الشرق الأوسط',
     flagSvg: `<svg viewBox="0 0 24 16" width="24" height="16"><rect width="24" height="5.33" fill="#000000"/><rect y="5.33" width="24" height="5.33" fill="#FFFFFF"/><rect y="10.66" width="24" height="5.34" fill="#007A3D"/><polygon points="0,0 7,8 0,16" fill="#CE1126"/></svg>`
   },
+  {
+    locale: 'ro',
+    code: 'RO',
+    nativeName: 'Română',
+    secondaryName: 'Romanian',
+    region: 'România',
+    flagSvg: `<svg viewBox="0 0 24 16" width="24" height="16"><rect width="8" height="16" fill="#002B7F"/><rect x="8" width="8" height="16" fill="#FCD116"/><rect x="16" width="8" height="16" fill="#CE1126"/></svg>`
+  },
+  {
+    locale: 'hu',
+    code: 'HU',
+    nativeName: 'Magyar',
+    secondaryName: 'Hungarian',
+    region: 'Magyarország',
+    flagSvg: `<svg viewBox="0 0 24 16" width="24" height="16"><rect width="24" height="5.33" fill="#CD2A3E"/><rect y="5.33" width="24" height="5.33" fill="#FFFFFF"/><rect y="10.66" width="24" height="5.34" fill="#436F4D"/></svg>`
+  },
+  {
+    locale: 'sl',
+    code: 'SL',
+    nativeName: 'Slovenščina',
+    secondaryName: 'Slovenian',
+    region: 'Slovenija',
+    flagSvg: `<svg viewBox="0 0 24 16" width="24" height="16"><rect width="24" height="5.33" fill="#FFFFFF"/><rect y="5.33" width="24" height="5.33" fill="#005DA4"/><rect y="10.66" width="24" height="5.34" fill="#ED1C24"/><path d="M4.5 3.6 h3 v2.6 c0 1.2 -1.5 1.8 -1.5 1.8 s-1.5 -0.6 -1.5 -1.8 z" fill="#005DA4" stroke="#ED1C24" stroke-width="0.45"/><path d="M4.9 6.6 L5.5 5.6 L6 6.2 L6.5 5.6 L7.1 6.6 Z" fill="#FFFFFF"/></svg>`
+  },
+  {
+    locale: 'hr',
+    code: 'HR',
+    nativeName: 'Hrvatski',
+    secondaryName: 'Croatian',
+    region: 'Hrvatska',
+    flagSvg: `<svg viewBox="0 0 24 16" width="24" height="16"><rect width="24" height="5.33" fill="#FF0000"/><rect y="5.33" width="24" height="5.33" fill="#FFFFFF"/><rect y="10.66" width="24" height="5.34" fill="#171796"/><rect x="10" y="5.2" width="4" height="5.2" rx="1.2" fill="#FF0000" stroke="#171796" stroke-width="0.4"/><rect x="11.3" y="6.3" width="1.4" height="1.4" fill="#FFFFFF"/><rect x="10.3" y="7.7" width="1.3" height="1.3" fill="#FFFFFF"/><rect x="12.4" y="7.7" width="1.3" height="1.3" fill="#FFFFFF"/></svg>`
+  },
+  {
+    locale: 'el',
+    code: 'EL',
+    nativeName: 'Ελληνικά',
+    secondaryName: 'Greek',
+    region: 'Ελλάδα',
+    flagSvg: `<svg viewBox="0 0 27 18" width="24" height="16"><rect width="27" height="18" fill="#0D5EAF"/><rect y="2" width="27" height="2" fill="#FFFFFF"/><rect y="6" width="27" height="2" fill="#FFFFFF"/><rect y="10" width="27" height="2" fill="#FFFFFF"/><rect y="14" width="27" height="2" fill="#FFFFFF"/><rect width="10" height="10" fill="#0D5EAF"/><rect x="4" width="2" height="10" fill="#FFFFFF"/><rect y="4" width="10" height="2" fill="#FFFFFF"/></svg>`
+  },
+  {
+    locale: 'fr-CA',
+    code: 'CA',
+    nativeName: 'Français (Canada)',
+    secondaryName: 'Canadian French',
+    region: 'Canada',
+    flagSvg: `<svg viewBox="0 0 24 16" width="24" height="16"><rect width="6" height="16" fill="#D80621"/><rect x="6" width="12" height="16" fill="#FFFFFF"/><rect x="18" width="6" height="16" fill="#D80621"/><path d="M12 3.2 L12.8 5.6 L14.4 5.1 L13.8 7.1 L15.4 7.7 L14.4 8.6 L14.8 9.6 L12.5 9.3 L12.5 12.6 L11.5 12.6 L11.5 9.3 L9.2 9.6 L9.6 8.6 L8.6 7.7 L10.2 7.1 L9.6 5.1 L11.2 5.6 Z" fill="#D80621"/></svg>`
+  },
+  {
+    locale: 'es-MX',
+    code: 'MX',
+    nativeName: 'Español (México)',
+    secondaryName: 'Mexican Spanish',
+    region: 'México',
+    flagSvg: `<svg viewBox="0 0 24 16" width="24" height="16"><rect width="8" height="16" fill="#006847"/><rect x="8" width="8" height="16" fill="#FFFFFF"/><rect x="16" width="8" height="16" fill="#CE1126"/><circle cx="12" cy="8" r="1.9" fill="#8B5A2B"/><path d="M10.8 8.8 Q12 10.2 13.2 8.8" stroke="#006847" stroke-width="0.7" fill="none"/></svg>`
+  },
 ]
 
 const { page, lang } = useData()
