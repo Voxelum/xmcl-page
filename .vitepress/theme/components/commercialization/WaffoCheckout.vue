@@ -45,8 +45,20 @@
         {{ t('commercial.checkout.openCheckout') }}
       </a>
     </article>
+    <div class="legal-consent">
+      <label class="consent-checkbox">
+        <input v-model="acceptedLegal" type="checkbox" :disabled="busy" />
+        <span>
+          {{ t('commercial.checkout.legalNote') }}
+          <a :href="termsUrl" target="_blank" rel="noopener">{{ t('commercial.checkout.terms') }}</a>
+          {{ t('commercial.checkout.and') }}
+          <a :href="privacyUrl" target="_blank" rel="noopener">{{ t('commercial.checkout.privacy') }}</a>.
+          {{ withdrawalConsentNote }}
+        </span>
+      </label>
+    </div>
     <div class="actions">
-      <button type="button" class="primary" :disabled="busy || !api || activeOrder?.status === 'pending'" @click="startCheckout">
+      <button type="button" class="primary" :disabled="busy || !api || !acceptedLegal || activeOrder?.status === 'pending'" @click="startCheckout">
         {{ busy ? t('commercial.checkout.preparing') : t('commercial.checkout.add', { amount: formattedAmount }) }}
         <span aria-hidden="true">→</span>
       </button>
@@ -54,12 +66,6 @@
       <button v-if="activeOrder?.status === 'pending'" type="button" class="secondary" :disabled="busy" @click="startNewCheckout">{{ t('commercial.checkout.newTopUp') }}</button>
     </div>
     <p class="provider-note"><span aria-hidden="true">↗</span> {{ t('commercial.checkout.providerNote') }}</p>
-    <p class="legal-note">
-      {{ t('commercial.checkout.legalNote') }}
-      <a :href="termsUrl" target="_blank" rel="noopener">{{ t('commercial.checkout.terms') }}</a>
-      {{ t('commercial.checkout.and') }}
-      <a :href="privacyUrl" target="_blank" rel="noopener">{{ t('commercial.checkout.privacy') }}</a>.
-    </p>
     <p class="minecraft-disclaimer">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
   </section>
 </template>
@@ -92,6 +98,7 @@ const amountMinor = computed(() => {
   return Number.isFinite(parsed) && Math.abs(parsed * 100 - minor) < 0.000001 ? minor : 0
 })
 const activeOrder = ref<WaffoOrder>()
+const acceptedLegal = ref(false)
 const busy = ref(false)
 const error = ref(false)
 const message = ref('')
@@ -99,10 +106,30 @@ const awaitingReturn = ref(false)
 const checkoutIntentKey = ref<string>()
 let pollTimer: ReturnType<typeof setInterval> | undefined
 
+const supportedLegalLocales = new Set(['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'pt', 'jp', 'ko', 'ar', 'be', 'kk', 'tr', 'vi', 'hi', 'bn', 'jv', 'lol'])
 const formattedAmount = computed(() => formatIsoMoney({ currency: props.currency, amountMinor: Math.max(0, amountMinor.value || 0) }, locale.value))
-const legalLocale = computed(() => ['zh', 'zh-TW'].includes(locale.value) ? locale.value : 'en')
+const legalLocale = computed(() => supportedLegalLocales.has(locale.value) ? locale.value : 'en')
 const termsUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/terms`)
 const privacyUrl = computed(() => `https://www.xmcl.app/${legalLocale.value}/together/privacy`)
+const withdrawalConsentNote = computed(() => {
+  switch (locale.value) {
+    case 'uk': return 'Я також підтверджую досягнення 18 років (або наявність згоди батьків/опікунів) і прошу розпочати надання цифрової послуги негайно, усвідомлюючи втрату 14-денного права на відмову після початку використання.'
+    case 'de': return 'Ich bestätige zudem, dass ich mindestens 18 Jahre alt bin (oder eine Zustimmung der Erziehungsberechtigten vorliegt), und verlange ausdrücklich die sofortige Bereitstellung der digitalen Dienste bei Verlust des 14-tägigen Widerrufsrechts nach Beginn der Nutzung.'
+    case 'fr': return 'Je confirme également avoir au moins 18 ans (ou disposer de l’accord parental) et demande l’exécution immédiate du service numérique, en reconnaissant la perte du droit de rétractation de 14 jours dès le début de l’utilisation.'
+    case 'es': return 'También confirmo tener al menos 18 años (o consentimiento parental) y solicito la prestación inmediata del servicio digital, reconociendo la pérdida del derecho de desistimiento de 14 días una vez iniciado el uso.'
+    case 'it': return 'Confermo inoltre di avere almeno 18 anni (o il consenso dei genitori) e richiedo l’esecuzione immediata del servizio digitale, accettando la perdita del diritto di recesso di 14 giorni all’inizio dell’utilizzo.'
+    case 'pl': return 'Potwierdzam również ukończenie 18 lat (lub posiadanie zgody opiekuna) i żądam natychmiastowego rozpoczęcia świadczenia usługi cyfrowej, przyjmując do wiadomości utratę 14-dniowego prawa odstąpienia po rozpoczęciu korzystania.'
+    case 'pt': return 'Também confirmo ter pelo menos 18 anos (ou consentimento dos pais/responsáveis) e solicito o fornecimento imediato do serviço digital, ciente das regras de desistência aplicáveis após o início do uso.'
+    case 'zh': return '我同时确认已年满 18 周岁（或已获得监护人同意），并明确要求立即提供数字服务，知悉一旦开始使用将适用相应的退款限制。'
+    case 'zh-TW': return '我同時確認已年滿 18 歲（或已獲得監護人同意），並明確要求立即提供數位服務，知悉一旦開始使用即適用相應的退款限制。'
+    case 'jp': return 'また、18歳以上（または法定代理人の同意あり）であることを確認し、デジタルサービスの即時提供を明示的に希望します。'
+    case 'ko': return '또한 만 18세 이상(또는 법정대리인 동의)임을 확인하며 디지털 서비스의 즉시 제공에 명시적으로 동의합니다.'
+    case 'ru': return 'Я также подтверждаю достижение 18 лет (или наличие согласия законных представителей) и прошу начать оказание цифровой услуги немедленно с учетом правил возврата после начала использования.'
+    case 'tr': return 'Ayrıca 18 yaşından büyük olduğumu (veya yasal veli onayına sahip olduğumu) onaylıyor ve dijital hizmetin derhal başlatılmasını talep ediyorum.'
+    case 'ar': return 'أؤكد أيضًا أن عمري لا يقل عن 18 عامًا (أو لدي موافقة ولي الأمر) وأطلب البدء الفوري في تقديم الخدمة الرقمية.'
+    default: return 'I also confirm I am at least 18 years old (or have verifiable parental/guardian consent) and explicitly request immediate provision of the digital service, acknowledging that where EU/UK/local statutory withdrawal rights apply, the 14-day right of withdrawal is lost once performance begins.'
+  }
+})
 
 onMounted(() => {
   window.addEventListener('visibilitychange', refreshAfterApprovalReturn)
@@ -406,6 +433,25 @@ button:disabled { cursor: not-allowed; opacity: .55; }
 .order-status { color: var(--xmcl-muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .order-status.completed { color: #31855b; }
 .order-status.failed { color: #bd3f2b; }
+.legal-consent { margin-top: 2px; }
+.consent-checkbox {
+  align-items: flex-start;
+  color: var(--xmcl-muted);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  gap: 10px;
+  line-height: 1.55;
+}
+.consent-checkbox input[type="checkbox"] {
+  accent-color: var(--xmcl-ink);
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 16px;
+  margin-top: 2px;
+  width: 16px;
+}
+.consent-checkbox a { color: var(--xmcl-ink); font-weight: 700; text-decoration: underline; }
 .actions { display: grid; gap: 9px; }
 .provider-note { border-top: 1px solid var(--xmcl-line); padding-top: 16px; }
 .provider-note span { color: var(--xmcl-orange); margin-right: 5px; }

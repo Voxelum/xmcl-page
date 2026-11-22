@@ -5,115 +5,120 @@ description: Terms governing XMCL Together accounts, balance, payments, AI featu
 
 # XMCL Together Terms of Service
 
-**Effective date: August 14, 2026 · Version: T2-2026-08-14**
+**Effective date: November 22, 2026 · Version: T3-2026-11-22**
 
-These Terms of Service ("Terms") are an agreement between you and **CI010**, who operates the Services as an individual operator under the Voxelum and XMCL names ("XMCL Together", "we", "us"). They govern XMCL Together accounts and paid or hosted online services available through xmcl.app ("Services"). The open-source launcher remains subject to the license distributed with its source code.
+These Terms of Service ("Terms") form a binding agreement between you and **CI010**, operating the Services as an individual operator under the Voxelum and XMCL names ("XMCL Together", "we", "us"). They govern XMCL Together accounts and paid or hosted online services available through [xmcl.app](https://xmcl.app) ("Services"). The free open-source launcher remains governed by the open-source license distributed with its source code.
 
-By creating an XMCL Together account, purchasing account balance, subscribing to Together Home, or using a paid Service, you confirm that you are at least 14 years of age (or the applicable age of digital consent in your jurisdiction, e.g., 13 in the US/UK, 16 in parts of the EU), or have verifiable consent from a parent or legal guardian, and can legally enter this agreement. If you act for an organization, you confirm that you are authorized to bind it.
+**Eligibility & Age:** By creating an XMCL Together account, adding account balance, subscribing to Together Home, or using any paid Service, you confirm that you are at least **18 years of age** (or the age of legal majority in your jurisdiction), or that you have **verifiable consent from a parent or legal guardian** who agrees to these Terms and accepts responsibility for your use and payments. If you act for an organization, you confirm you are authorized to bind it.
 
 ---
 
 ## 1. Services
 
-XMCL provides launcher-related online services, including account and billing functions, Together Home benefits, AI-assisted launcher features, and multiplayer signaling or TURN connectivity. These are digital services delivered over the internet. Features can depend on third-party infrastructure and may change as the project develops. XMCL is an independent project and is not affiliated with or endorsed by Microsoft or Mojang Studios. You must obtain Minecraft and third-party content lawfully and comply with their respective terms.
+XMCL Together provides launcher-related online services, including account and billing functions, Together Home benefits, AI-assisted launcher features, and multiplayer signaling or TURN connectivity. These are digital services delivered over the internet. Features depend on third-party infrastructure and may evolve over time. XMCL is an independent project and is not affiliated with or endorsed by Microsoft Corporation or Mojang Studios. You must obtain Minecraft and third-party content lawfully and comply with their respective terms.
 
 ---
 
-## 2. Accounts and security
+## 2. Accounts and Security
 
-You must provide accurate information and protect your devices, sessions, and connected accounts. You are responsible for activity performed through your account unless caused by our failure to use reasonable security measures. Notify us promptly through the channels in Section 15 if you suspect unauthorized use. You may not sell, transfer, or share paid access in a way that defeats account, allowance, or security controls. We may require account verification before changing billing information, issuing a refund, or processing a data request.
-
----
-
-## 3. Prices, taxes, and account balance
-
-Prices, currency, included allowances, billing period, and applicable taxes are shown before checkout or subscription confirmation. Unless the checkout says otherwise, taxes are not included in the displayed base price and are added when legally required. Waffo Pancake processes one-time purchases that add value to your XMCL account balance. Each checkout is a separate transaction authorized for the amount displayed. XMCL does not currently use Waffo to automatically recharge your payment card.  
-
-**Account balance:**  
-- is a limited, non-transferable right to purchase eligible XMCL Services;  
-- is not a bank account, stored-value card, cryptocurrency, or cash equivalent;  
-- cannot be sold or transferred between accounts;  
-- has no cash-redemption value except where required by law or through an approved refund;  
-- may be corrected when a payment is reversed, refunded, duplicated, or fraudulent.
+You must provide accurate information and protect your devices, sessions, and connected accounts. You are responsible for activity performed through your account unless caused by our failure to maintain reasonable security measures. Notify us promptly via Section 15 if you suspect unauthorized access. You may not sell, transfer, or share paid access in a way that circumvents account, allowance, or security controls. We may require account verification before updating billing data, issuing a refund, or processing a data request.
 
 ---
 
-## 4. Together Home subscription
+## 3. Prices, Taxes, and Account Balance
 
-Together Home is currently offered as a monthly digital subscription. The current price and included AI and TURN allowances are shown before subscription. Included allowances reset at the start of each billing period and do not roll over. By subscribing, you authorize XMCL to debit the displayed subscription price from your XMCL account balance at the beginning of each renewal period until you cancel. This is not authorization for XMCL or Waffo to charge your card automatically. If the balance is insufficient, the subscription enters payment-due status and paid benefits may pause. Adding sufficient balance can begin a new monthly period. You may cancel renewal at any time through the account interface. Cancellation takes effect at the end of the current paid period.
+Prices, currency, included allowances, billing periods, and applicable taxes are displayed before checkout or subscription confirmation. Unless stated otherwise at checkout, applicable taxes are added where legally required. **Waffo Pancake** processes one-time purchases that add value to your XMCL account balance. Each checkout is a separate transaction authorized for the displayed amount; XMCL does not automatically recharge your payment card via Waffo.
 
----
-
-## 5. AI and network allowances
-
-Together Home can include metered AI usage and TURN traffic. The product interface describes current limits. AI allowance is measured using weighted prompt, cached-prompt, and completion-token usage. TURN allowance is measured from provider-reported network egress. Unused included allowance expires at the end of the billing period and has no cash value. We may delay or reject a request when an allowance is exhausted, usage cannot be measured safely, or fraud or abuse is suspected.
-
----
-
-## 6. Payment processing
-
-Payment-card data is entered directly into checkout operated by **Waffo Pancake**, our payment processor. We receive transaction identifiers, status, amount, currency, and signed payment events, but not full card numbers or card security codes. Your bank statement descriptor is displayed during checkout or by Waffo. You are responsible for any foreign-exchange or issuer fees charged by your bank.
+**Account balance:**
+- is a limited, non-transferable right to purchase eligible XMCL Services;
+- is not a bank account, stored-value card, e-money instrument, cryptocurrency, or cash equivalent;
+- cannot be sold or transferred between accounts;
+- has no cash-redemption value except where required by mandatory law or through an approved refund;
+- may be adjusted if a payment is reversed, refunded, duplicated, or fraudulent.
 
 ---
 
-## 7. Refunds and payment disputes
+## 4. Together Home Subscription
 
-Contact us before initiating a chargeback so we can investigate. Include the XMCL account and transaction reference, but never send full card details or passwords. Subject to mandatory consumer law:  
-- duplicate or incorrect charges are refundable after verification;  
-- an unused one-time balance purchase may be refunded if requested within 7 days of purchase;  
-- consumed balance, a substantially used subscription period, and consumed AI or TURN allowance are generally non-refundable. *Note for EU/UK consumers: By explicitly requesting the immediate provision of digital services (such as AI generation, TURN connectivity, or Together Home benefits) and acknowledging that you lose your right of withdrawal once performance has begun, you agree that the service starts immediately upon purchase.*  
-- if we terminate a paid Service for reasons unrelated to your breach, we will refund or credit the unused prepaid portion where reasonably measurable.  
-
-Approved refunds are returned through the original payment channel when possible. We may refuse abusive, fraudulent, or unsupported requests.
+Together Home is offered as a monthly digital subscription. Current pricing and included AI/TURN allowances are shown prior to subscription. Included allowances reset each billing period and do not roll over. By subscribing, you authorize XMCL to debit the displayed monthly price from your XMCL account balance at the start of each renewal period until you cancel. This does not authorize XMCL or Waffo to charge your bank card automatically. If your balance is insufficient, the subscription enters payment-due status and paid benefits pause until you add sufficient balance. You may cancel renewal anytime through the account interface; cancellation takes effect at the end of the current paid period.
 
 ---
 
-## 8. AI features
+## 5. AI and Network Allowances
 
-AI requests may be handled by third-party model providers, currently Agnes and DeepSeek. You grant XMCL a limited, non-exclusive permission to process and transmit your input solely to provide, secure, and meter the requested feature. XMCL does not use your input to train an XMCL model. However, you acknowledge that third-party AI providers process this data according to their own privacy policies and terms of service. We configure our integrations to request "no-training" modes where the provider allows it, but we cannot guarantee the internal data handling practices of external API providers. To the extent permitted by law, you may use output generated for you. AI output can be inaccurate, incomplete, unsafe, or outdated. Verify it before acting.
-
----
-
-## 9. Acceptable use
-
-You must not: violate law, payment-network rules, intellectual-property, privacy, or other rights; upload malware, phishing content, or content that exploits minors; harass, defraud, or deceive others; attack, probe, overload, scrape, reverse engineer, or bypass security or metering controls; use the Services to operate unauthorized commercial resale, account sharing, or competing model training; use AI output as purported professional advice or as authentic human work in a deceptive context.
+Together Home includes metered AI usage and TURN relay traffic as described in the interface. AI allowance is measured by weighted prompt, cached-prompt, and completion tokens; TURN allowance is measured by provider-reported network egress. Unused period allowances expire at the end of the billing cycle and carry no cash value. We may throttle, delay, or reject requests if an allowance is exhausted, metering is unavailable, or fraud/abuse is suspected.
 
 ---
 
-## 10. Third-party services and content
+## 6. Payment Processing
 
-The Services rely on providers such as Waffo, Cloudflare, Microsoft Azure, Agnes, and DeepSeek and can link to Microsoft, Mojang, Modrinth, CurseForge, or authentication servers. Their terms and availability also apply to your direct use of those services. We are not responsible for third-party content or outages outside our reasonable control.
-
----
-
-## 11. Intellectual property
-
-These Terms do not transfer ownership of XMCL trademarks, service infrastructure, or third-party content. Rights in open-source code are granted only under the applicable repository license. You retain ownership of content you submit, subject to the limited permissions needed to provide the Services.
+Payment-card details are entered directly into checkout pages hosted and operated by **Waffo Pancake**. XMCL receives transaction identifiers, status, amount, currency, and signed payment webhooks, never full card numbers or security codes (CVC/CVV). Your bank statement descriptor is displayed during checkout. You are responsible for any currency-conversion or issuer fees charged by your bank.
 
 ---
 
-## 12. Suspension and termination
+## 7. Refunds, Right of Withdrawal, and Payment Disputes
 
-We may limit, suspend, or terminate access to protect the Services or users, investigate fraud or security incidents, comply with law, address non-payment, or respond to a material breach. We will provide notice and an opportunity to appeal when reasonably practical. You may stop using the Services at any time, cancel renewal through the account interface, and request account deletion. Financial, security, dispute, and audit records may be retained as explained in the Privacy Policy.
+Please contact us at [cijhn@hotmail.com](mailto:cijhn@hotmail.com) before initiating a chargeback so we can resolve the issue quickly. Subject to mandatory consumer protection laws:
+- **Duplicate or erroneous charges** are fully refundable upon verification.
+- **Unused one-time balance top-ups** are refundable if requested within **14 days** of purchase (satisfying statutory cooling-off periods in the EU, UK, Ukraine, Brazil, Taiwan, South Korea, and other jurisdictions).
+- **Right of Withdrawal & Immediate Performance (EU / UK / Ukraine / Equivalent Jurisdictions):** Consumers in the EU, EEA, UK, and Ukraine normally have a 14-day statutory right to withdraw from distance contracts. However, when you check the consent box at checkout and explicitly request immediate delivery of digital services (such as AI generation, TURN connectivity, or active Together Home benefits) while acknowledging the loss of your right of withdrawal once performance begins, consumed balance, substantially used subscription periods, and consumed AI/TURN allowances are non-refundable to the extent permitted by law.
+- **Service Termination by XMCL:** If we permanently discontinue a paid Service for reasons unrelated to your breach, we will refund or credit the measurable unused prepaid portion.
 
----
-
-## 13. Disclaimers and limitation of liability
-
-To the maximum extent permitted by law, Services are provided "as is" and "as available" without implied warranties of merchantability, fitness for a particular purpose, uninterrupted availability, or accuracy of AI output. To the maximum extent permitted by law, XMCL and its maintainers are not liable for indirect, incidental, special, consequential, or punitive damages. Our aggregate liability arising from paid Services will not exceed the amount you paid to XMCL for those Services during the 12 months before the event giving rise to the claim. **These limits do not apply where liability cannot legally be excluded or limited, including (where applicable by law) liability for death or personal injury caused by our negligence, fraud, or fraudulent misrepresentation.**
-
----
-
-## 14. Changes and disputes
-
-We may update these Terms as the Services change. Material changes will be posted at least 14 days before they take effect when reasonably possible. Changes do not retroactively reduce rights that already accrued. Before starting formal proceedings, please contact us and allow a reasonable opportunity to resolve the issue. Applicable law and the courts with jurisdiction are determined by mandatory law and ordinary conflict-of-law rules; these Terms do not require private arbitration or waive a consumer's right to use an eligible court or regulator.
+Approved refunds are returned via the original payment method where technically possible. We may refuse abusive, fraudulent, or unsupported requests.
 
 ---
 
-## 15. Contact
+## 8. AI Features
 
-- General, billing, refund, cancellation, legal, and privacy support: [cijhn@hotmail.com](mailto:cijhn@hotmail.com)  
-- Security reports: [GitHub private vulnerability reporting](https://github.com/voxelum/x-minecraft-launcher/security)  
-- Subscription cancellation: through the XMCL account interface  
+AI requests are processed by third-party model providers, currently **Agnes** and **DeepSeek**. You grant XMCL a limited, non-exclusive license to process and transmit your input solely to deliver, secure, and meter the feature. XMCL does not train its own models on your prompts or outputs. External AI providers process inputs under their own privacy policies and terms; while we request "no-training" modes where supported, we cannot guarantee external API providers' internal practices. To the extent permitted by law, you may use outputs generated for you. AI output may be inaccurate, incomplete, or unsafe—always verify before acting.
 
-Do not send payment-card details, passwords, access tokens, or other unnecessary sensitive information. We may request account or transaction verification.
+---
+
+## 9. Acceptable Use
+
+You must not: violate applicable laws, payment-network rules, intellectual property, or privacy rights; upload malware, phishing content, or content that exploits or harms minors; harass, defraud, or deceive others; attack, overload, scrape, reverse engineer, or bypass security, metering, or quota controls; engage in unauthorized commercial resale, account sharing, or competing model training; or misrepresent AI output as professional advice or authentic human work in a deceptive context.
+
+---
+
+## 10. Third-Party Services and Content
+
+The Services rely on providers including Waffo Pancake, Cloudflare, Microsoft Azure, Vercel, GitHub, Agnes, and DeepSeek, and may link to Microsoft, Mojang, Modrinth, CurseForge, or third-party authentication servers. Their respective terms and availability apply to your direct use of those services. We are not responsible for third-party content or outages outside our reasonable control.
+
+---
+
+## 11. Intellectual Property
+
+These Terms do not transfer ownership of XMCL trademarks, service infrastructure, or third-party content. Open-source launcher rights are granted solely under the repository license. You retain ownership of content you submit, subject to the limited permissions needed to operate the Services.
+
+---
+
+## 12. Suspension and Termination
+
+We may limit, suspend, or terminate access to protect the Services or users, investigate fraud or security incidents, comply with law, address non-payment, or respond to a material breach. We will provide notice and an opportunity to appeal when reasonably practical. You may stop using the Services anytime, cancel renewal in your account interface, and request account deletion. Financial, tax, dispute, and audit records are retained as stated in the [XMCL Together Privacy Policy](./privacy).
+
+---
+
+## 13. Disclaimers and Limitation of Liability
+
+To the maximum extent permitted by applicable law, Services are provided "as is" and "as available" without implied warranties of merchantability, fitness for a particular purpose, uninterrupted availability, or AI accuracy. To the maximum extent permitted by law, XMCL and its maintainers are not liable for indirect, incidental, special, consequential, or punitive damages, and our aggregate liability arising from paid Services will not exceed the amount you paid to XMCL for those Services during the **12 months** preceding the claim.
+
+**Mandatory Carve-Outs:** Nothing in these Terms excludes or limits liability that cannot legally be excluded or limited under applicable mandatory law—including liability for **death or personal injury**, **intent (willful misconduct)**, **gross negligence**, **fraud or fraudulent misrepresentation**, breach of **essential contractual obligations** (where required by national law such as German § 309 BGB), or any **non-waivable statutory consumer rights** in your country of residence.
+
+---
+
+## 14. Changes, Governing Language, and Disputes
+
+- **Changes:** We may update these Terms as Services evolve. Material changes will be posted at least **14 days** before taking effect where reasonably possible and will not retroactively reduce accrued rights.
+- **Disputes & Mandatory Law:** Please contact us first to resolve any dispute amicably. Applicable law and competent courts are determined by ordinary conflict-of-law rules and **mandatory consumer protection laws of your country of residence**. These Terms do not require mandatory private arbitration and do not waive any consumer's right to bring a claim before a competent court or regulatory authority.
+- **Governing Language:** Translations are provided for convenience. In the event of any conflict between a translated version and the English version, the English version prevails to the extent permitted by mandatory local law.
+
+---
+
+## 15. Operator Information & Contact
+
+- **Operator:** CI010 (individual operator under the Voxelum / XMCL project names). Statutory legal notice and postal contact details required under applicable local e-commerce or consumer law are available upon verified legal or regulatory request via email.
+- **General, billing, refund, cancellation, legal, and privacy support:** [cijhn@hotmail.com](mailto:cijhn@hotmail.com)
+- **Security reports:** [GitHub private vulnerability reporting](https://github.com/voxelum/x-minecraft-launcher/security)
+- **Subscription cancellation:** directly through the XMCL account interface
+
+Do not send payment-card numbers, passwords, or access tokens via email.

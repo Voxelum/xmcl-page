@@ -1,130 +1,130 @@
 ---
 title: XMCL Together Privacy Policy
-description: How XMCL Together handles account, billing, AI, and multiplayer service information.
+description: How XMCL Together handles account, billing, AI, and multiplayer service information in compliance with international data protection laws.
 ---
 
 # XMCL Together Privacy Policy
 
-**Effective date: August 21, 2026 · Version: P3-2026-08-21**
+**Effective date: November 22, 2026 · Version: P4-2026-11-22**
 
 This policy explains how **CI010**, operating as an individual operator under the Voxelum and XMCL names ("XMCL Together", "we", "us"), processes information when you use an XMCL Together account, paid services, or related online features at [xmcl.app](https://xmcl.app). It does not govern independent services you choose to connect, such as Microsoft, Mojang, third-party authentication servers, Modrinth, or CurseForge.
 
 ---
 
-## 1. Information we process
+## 1. Information We Process
 
-### Together website and service telemetry
-Together pages and services may use Microsoft Azure Application Insights to record page views, service actions, approximate network and device information, browser information, and diagnostic events. The website also stores a language-preference cookie. Telemetry from the free, open-source launcher is covered separately by the [XMCL Open-Source Project Privacy Notice](../privacy).
+### Together Website and Service Telemetry
+Together pages and services use Microsoft Azure Application Insights configured in **cookieless mode** (`disableCookiesUsage: true`), hosted in **Azure East Asia (Hong Kong)**, to record anonymous page views, service actions, approximate network/device attributes, and diagnostic events. The website stores only one strictly necessary local cookie (`nf_lang`) for your language preference. Telemetry from the free open-source launcher is governed separately by the [XMCL Open-Source Project Privacy Notice](../privacy).
 
-### Accounts and authentication
-When you create or use an XMCL Together account, we process account identifiers, authentication-provider identifiers, session and refresh-token metadata, granted scopes, timestamps, and security information used to prevent replay or account abuse. We do not receive your Microsoft or other third-party account password.
+### Accounts and Authentication
+When you create or use an XMCL Together account, we process account identifiers, authentication-provider identifiers, session and refresh-token metadata, granted scopes, timestamps, and security telemetry used to prevent replay or account abuse. We **never** receive or store your Microsoft or other third-party account passwords.
 
-### Billing and subscriptions
-We process account balances, currency and rate information, orders, subscription state, allowance periods, usage totals, refunds, disputes, idempotency identifiers, and audit records. Waffo Pancake processes payment-card and checkout information. XMCL receives transaction references, status, amount, currency, and signed webhook events, but does not receive or store full card numbers or card security codes (CVC/CVV).
+### Billing and Subscriptions
+We process account balances, currency and rate information, orders, subscription state, allowance periods, usage totals, refunds, disputes, idempotency identifiers, and audit records. **Waffo Pancake** processes payment-card and checkout information directly. XMCL receives transaction references, status, amount, currency, and signed webhook events, and never receives or stores full card numbers or security codes (CVC/CVV).
 
-### AI features
-If you invoke an AI feature, we process the prompt, conversation content, selected model, and launcher context you choose to provide (such as instance name, game and loader versions, selected page, or local instance path). Requests are sent to our configured AI providers, currently Agnes and, when needed, DeepSeek. We measure token counts and weighted allowance usage for billing and abuse prevention. We do not use your prompts or outputs to train an XMCL model.
+### AI Features
+If you invoke an AI feature, we process the prompt, conversation content, selected model, and launcher context you choose to provide (such as instance name, game and loader versions, selected page, or local instance path). Requests are transmitted to our configured AI providers, currently **Agnes** and, when needed, **DeepSeek**. We measure token counts and weighted allowance usage for billing and abuse prevention. We do not use your prompts or outputs to train an XMCL model.
 
-> **Third-Party AI Disclaimer:** Third-party AI providers (Agnes, DeepSeek) process this data according to their own privacy policies. We configure our integrations to request "no-training" modes where the provider allows it, but we cannot guarantee the internal data handling practices of external API providers.
+> **Third-Party AI Disclaimer:** External AI providers (Agnes, DeepSeek) process request payloads under their own privacy policies and terms. We configure integrations to request "no-training" modes where supported, but we cannot guarantee the internal data handling practices of external API providers. Do not submit sensitive personal data, passwords, or confidential information in AI prompts.
 
-### Multiplayer, signaling, and TURN (P2P Connectivity)
-Together and RTC features process account and session identifiers, room or peer-routing metadata, IP addresses, timestamps, TURN credential identifiers, and aggregate ingress/egress usage. Cloudflare provides edge, signaling, TURN, and traffic analytics services.
+### Multiplayer, Signaling, and TURN (P2P Connectivity)
+Together and RTC features process account and session identifiers, room/peer-routing metadata, IP addresses, timestamps, TURN credential identifiers, and aggregate ingress/egress usage. **Cloudflare** provides edge, signaling, TURN, and traffic analytics infrastructure.
 
-> **P2P IP Exposure Consent:** Peer-to-peer connectivity can reveal your public IP address to the other peer in the multiplayer session. By using P2P features, you explicitly acknowledge and consent to this specific technical data exposure necessary for direct connection. XMCL signaling services route connection metadata only; they are not intended to record Minecraft voice, video, or gameplay content.
+> **P2P IP Exposure Consent:** Peer-to-peer connectivity inherently reveals your public IP address to the other peer in the multiplayer session. By using P2P features, you explicitly acknowledge and consent to this technical data disclosure necessary to establish direct connectivity. XMCL signaling routes connection metadata only and does not record Minecraft voice, video, or gameplay content.
 
-### Support and community communications
-If you contact us, we process the information you submit, such as your contact details, account or transaction reference, diagnostic information, and the content of the request. Do not send passwords, access tokens, full payment-card data, or unrelated personal information.
-
----
-
-## 2. Why we use information and legal bases
-
-We use information to:
-- provide, authenticate, secure, and troubleshoot XMCL services;
-- operate subscriptions, balances, allowances, payments, refunds, and support;
-- route multiplayer connections and measure TURN usage;
-- generate requested AI responses and account for AI usage;
-- prevent fraud, replay, abuse, and security incidents;
-- comply with payment, accounting, tax, legal, and dispute obligations.
-
-**Legal Bases (GDPR / UK GDPR):** Depending on your location, our legal bases include performing our contract with you (providing subscribed services), our legitimate interests in operating and securing the services, compliance with statutory legal and tax obligations, and explicit consent where required (e.g., for optional AI features and telemetry).
+### Support and Community Communications
+If you contact us, we process the contact details, account or transaction references, diagnostics, and message content you submit. Do not send passwords, access tokens, full payment-card data, or unrelated sensitive personal information.
 
 ---
 
-## 3. When information is shared and international transfers
+## 2. Purposes and Legal Bases
 
-We share only what is reasonably necessary with:
-- **Waffo Pancake**, for checkout, payment processing, fraud review, refunds, and payment events;
-- **Cloudflare**, for Workers, edge delivery, DDoS protection, signaling, TURN, and traffic analytics;
-- **Microsoft Azure**, for hosting, MongoDB-compatible data storage, diagnostics, and Application Insights;
-- **Vercel and GitHub**, for website delivery, source hosting, releases, and issue-based support;
-- **Agnes and DeepSeek**, when you request AI functionality;
-- authentication and content services you choose to use (Microsoft, Mojang, Modrinth, CurseForge);
-- maintainers and service operators who need access to investigate support, reliability, billing, or security issues;
-- authorities or other parties when required by law or necessary to protect users and the services.
+We process information to:
+- provide, authenticate, secure, and troubleshoot XMCL Together services;
+- operate subscriptions, balances, allowances, payments, refunds, and customer support;
+- route multiplayer connections and measure TURN bandwidth usage;
+- generate requested AI responses and meter AI allowances;
+- prevent fraud, replay attacks, abuse, and security incidents;
+- comply with accounting, tax, payment-network, legal, and dispute obligations.
 
-**International Transfers:** When data is processed outside the European Economic Area (EEA) and the United Kingdom, we ensure adequate data protection by relying on European Commission-approved Standard Contractual Clauses (SCCs) and the UK International Data Transfer Agreement (IDTA) / Addendum. We do not sell personal information or share it for cross-context behavioral advertising.
-
----
-
-## 4. Retention limits
-
-We adhere to strict retention limits:
-- **Operational telemetry, AI usage metrics, and TURN measurements** are retained for a **maximum of 90 days**, then permanently deleted or irreversibly anonymized.
-- **Account and session data** is retained while the account is active, and for **30 days** after account deletion to allow for recovery and dispute resolution.
-- **Financial ledger entries, payment events, refunds, and audit records** are retained for **5 to 7 years** to comply with accounting, tax, payment-network, and legal obligations, even after account closure.
-- Backups are removed through normal rotation schedules.
+**Legal Bases (GDPR / UK GDPR / LGPD / International):**
+- **Contract performance (Art. 6(1)(b) GDPR):** providing accounts, subscriptions, AI, and multiplayer services you request;
+- **Legal obligation (Art. 6(1)(c) GDPR):** retaining financial, tax, and payment audit records;
+- **Legitimate interests (Art. 6(1)(f) GDPR):** securing infrastructure, preventing fraud/abuse, and cookieless operational diagnostics;
+- **Explicit consent (Art. 6(1)(a) GDPR):** optional AI prompts, P2P IP exposure, and cross-border transfers where consent is required by law.
 
 ---
 
-## 5. Your choices and legal rights
+## 3. Sub-processors & International Data Transfers
 
-### General & GDPR / UK GDPR Rights
-You can:
-- avoid optional online features or disconnect third-party services;
-- change website language cookies through your browser;
-- cancel Together Home renewal from the account interface, effective at the end of the current period;
-- request access, rectification, export (portability), or deletion of eligible account information;
-- object to or restrict certain processing, or withdraw consent at any time;
-- lodge a complaint with your local Data Protection Authority or the UK Information Commissioner's Office (ICO).
+We share only what is reasonably necessary with the following infrastructure and service providers:
 
-### California and US State Privacy Rights (CCPA / CPRA)
-- **Do Not Sell or Share My Personal Information:** XMCL does **not** sell personal information and does **not** share personal information for cross-context behavioral advertising.
-- Consumers have the right to request disclosure of categories and specific pieces of personal information collected, request deletion, request correction of inaccurate data, and exercise these rights free from discrimination.
+| Recipient | Purpose & Data Categories | Processing Regions | Privacy Policy |
+| :--- | :--- | :--- | :--- |
+| **Waffo Pancake** | Payment checkout, fraud review, refunds, webhook events (transaction & payment metadata) | Global / United States / Singapore | Provided at checkout |
+| **Cloudflare** | Workers, CDN, DDoS protection, WebRTC signaling, TURN relay (IP, session & traffic metadata) | Global Edge / United States | [Cloudflare Privacy](https://www.cloudflare.com/privacypolicy/) |
+| **Microsoft Azure** | Hosting, database storage, cookieless Application Insights (account, billing & diagnostic data) | Hong Kong (East Asia), United States, EU | [Microsoft Privacy](https://privacy.microsoft.com/privacystatement) |
+| **Vercel & GitHub** | Website delivery, releases, issue/security support | United States / Global Edge | [Vercel](https://vercel.com/legal/privacy-policy) / [GitHub](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) |
+| **Agnes & DeepSeek** | AI response generation (prompts, conversation context, model parameters) | Global / China (PRC) / United States | Provider policies |
+
+- **Transfer Safeguards:** Cross-border transfers outside the EEA, UK, or Switzerland rely on EU Standard Contractual Clauses (SCCs), the UK IDTA/Addendum, TLS encryption in transit, and strict data minimization.
+- **Consequences of Refusal:** Providing account, payment, and cross-border routing data is necessary to operate XMCL Together. If you decline such processing or cross-border transfer, you may still use the free offline/open-source XMCL launcher, but hosted XMCL Together features will not be available.
+- **No Sale of Data:** We do **not** sell personal information or share it for cross-context behavioral advertising.
+
+---
+
+## 4. Retention Limits
+
+We enforce strict retention periods:
+- **Operational telemetry, AI usage metrics, and TURN measurements:** retained for a **maximum of 90 days**, then permanently deleted or irreversibly anonymized.
+- **Account and session data:** retained while the account is active, plus **30 days** after account deletion for recovery and dispute resolution.
+- **Financial ledger entries, payment events, refunds, and audit records:** retained for **5 to 7 years** to comply with statutory accounting, tax, and payment-network obligations, even after account closure.
+- Encrypted backups are purged through normal rotation schedules.
+
+---
+
+## 5. Your Choices and Legal Rights
+
+### General, GDPR, UK GDPR & International Rights
+You may:
+- opt out of optional online features or disconnect third-party services;
+- manage the `nf_lang` cookie via your browser;
+- cancel Together Home renewal anytime from your account interface (effective at the end of the current paid period);
+- request access, rectification, erasure ("right to be forgotten"), restriction, data portability, or object to processing;
+- withdraw consent at any time without affecting prior lawful processing;
+- lodge a complaint with your national Data Protection Authority (e.g., EU DPA, UK ICO at [ico.org.uk](https://ico.org.uk), or local regulator).
+
+### California & US State Privacy Rights (CCPA / CPRA)
+XMCL does **not** sell personal information or share it for cross-context behavioral advertising. Residents of California and US states with applicable privacy statutes (VA, CO, CT, UT, TX, OR, etc.) have the right to know, access, delete, correct inaccurate data, and exercise these rights without discrimination.
 
 ---
 
 ## 6. Security
 
-We use access controls, scoped sessions, encrypted transport (TLS), signed payment webhooks, replay protection, provider secrets, and service monitoring. No system is completely secure. You are responsible for protecting your device, account sessions, and third-party credentials.
+We implement scoped sessions, least-privilege access controls, TLS encryption in transit, signed payment webhooks, replay protection, secret isolation, and continuous monitoring. No online system is 100% immune to risk; you are responsible for safeguarding your device, sessions, and third-party credentials.
 
 ---
 
-## 7. Children and COPPA Notice
+## 7. Children and Age Requirements
 
-XMCL Together paid services and AI features are not directed to children under the age of **14** (or the applicable age of digital consent in your jurisdiction, e.g., 16 in parts of the EU, 13 in the US/UK). Users under this age may only use these services with verifiable consent from a parent or legal guardian.
-
-**COPPA Notice (US):** We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child under 13 has provided us with personal information, please contact us immediately at [cijhn@hotmail.com](mailto:cijhn@hotmail.com) for prompt deletion.
-
----
-
-## 8. Third-party links and Minecraft
-
-Third-party integrations and links are governed by their own privacy policies. XMCL is an independent open-source project and is not affiliated with or endorsed by Microsoft, Mojang Studios, or the providers of third-party Minecraft content.
+- **Paid Services & Accounts:** XMCL Together accounts and paid features require you to be at least **18 years of age** (or the age of legal majority in your jurisdiction), or to have verifiable consent from a parent or legal guardian.
+- **Digital Consent & COPPA (US):** We do not knowingly collect personal information from children under **13** (US/UK) or below the applicable local digital consent age (14–16 in EU/Ukraine/Korea/China, 18 under India DPDP Act) without verifiable parental consent. Parents or guardians may contact [cijhn@hotmail.com](mailto:cijhn@hotmail.com) for prompt deletion.
 
 ---
 
-## 9. Changes
+## 8. Changes, Governing Language & Disclaimer
 
-We may update this policy as the services change. We will publish the new effective date and version here. When required, we will provide additional notice before a material change takes effect.
+- **Changes:** We will publish updates here with a new effective date and version, and provide advance notice for material changes where required by law.
+- **Governing Language:** In the event of any discrepancy between a translated version and the English version, the English version prevails to the extent permitted by mandatory local law.
+- **Minecraft Disclaimer:** XMCL is an independent project and is not affiliated with, sponsored by, or endorsed by Microsoft Corporation or Mojang Studios.
 
 ---
 
-## 10. Contact
+## 9. Contact
 
-CI010 can be contacted through:
-- [cijhn@hotmail.com](mailto:cijhn@hotmail.com) for general, billing, refund, legal, and privacy requests;
-- [GitHub private vulnerability reporting](https://github.com/voxelum/x-minecraft-launcher/security) for security reports;
-- [XMCL Discord](https://discord.gg/W5XVwYY7GQ) for community support.
+**Operator / Privacy Contact (CI010):**
+- General, billing, refund, legal, and privacy requests: [cijhn@hotmail.com](mailto:cijhn@hotmail.com)
+- Security reports: [GitHub private vulnerability reporting](https://github.com/voxelum/x-minecraft-launcher/security)
+- Community support: [XMCL Discord](https://discord.gg/W5XVwYY7GQ)
 
-For account, billing, refund, or privacy requests, include only the minimum account or transaction reference needed to locate the record. We may ask you to verify control of the account through a private channel.
+Include only the minimum account or transaction reference needed to locate your record. We may ask you to verify account ownership before fulfilling a request.

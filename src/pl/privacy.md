@@ -1,82 +1,96 @@
 ---
-title: Polityka prywatności otwartoźródłowego projektu XMCL
-description: Informacje o prywatności na stronie internetowej oraz w launcherze XMCL zgodnie z RODO (GDPR).
+title: Informacja o prywatności projektu open source XMCL
+description: Informacja o prywatności dla strony internetowej XMCL i otwartoźródłowego launchera, zgodna z unijnym RODO, UK GDPR, amerykańskimi przepisami COPPA/CCPA oraz międzynarodowymi standardami ochrony danych.
 ---
 
-# Polityka prywatności otwartoźródłowego projektu XMCL
+# Informacja o prywatności projektu open source XMCL
 
-**Data wejścia w życie: 21 sierpnia 2026 r. · Wersja: OP2-2026-08-21**
+**Data wejścia w życie: 22 listopada 2026 r. · Wersja: OP3-2026-11-22**
 
-Niniejsza informacja dotyczy publicznej strony internetowej XMCL ([xmcl.app](https://xmcl.app)) oraz darmowego launchera o otwartym kodzie źródłowym XMCL. Nie obejmuje ona płatnych funkcji, kont, rozliczeń, sztucznej inteligencji ani usług przekaźnikowych multiplayer/TURN w ramach XMCL Together, które są regulowane przez osobną [Politykę prywatności XMCL Together](./together/privacy).
+Niniejsza informacja dotyczy publicznej strony internetowej XMCL ([xmcl.app](https://xmcl.app)) oraz bezpłatnego, otwartoźródłowego launchera XMCL. Nie obejmuje ona płatnych funkcji, kont, rozliczeń, sztucznej inteligencji ani usług sygnalizacji/TURN dla trybu wieloosobowego świadczonych przez XMCL Together, które reguluje odrębna [Polityka prywatności XMCL Together](./together/privacy).
 
 ---
 
 ## 1. Administrator danych i kontakt
 
-Administratorem danych w rozumieniu Ogólnego rozporządzenia o ochronie danych (RODO/GDPR) jest społeczność projektu open-source XMCL / Voxelum kierowana przez dewelopera CI010.
-- **E-mail w sprawach ochrony danych:** [cijhn@hotmail.com](mailto:cijhn@hotmail.com)
+XMCL jest niezależnym projektem open source prowadzonym przez **CI010** oraz społeczność współtwórców Voxelum.
+- **Zapytania dotyczące prywatności i kwestii prawnych:** [cijhn@hotmail.com](mailto:cijhn@hotmail.com)
 - **Repozytorium kodu źródłowego:** [github.com/voxelum/x-minecraft-launcher](https://github.com/voxelum/x-minecraft-launcher)
-- **Społeczność wsparcia:** [XMCL Discord](https://discord.gg/W5XVwYY7GQ)
+- **Zgłaszanie podatności bezpieczeństwa:** [GitHub Security Advisories](https://github.com/voxelum/x-minecraft-launcher/security)
+- **Wsparcie społeczności:** [XMCL Discord](https://discord.gg/W5XVwYY7GQ)
 
 ---
 
-## 2. Przetwarzane dane i minimalizacja
+## 2. Przetwarzane informacje i minimalizacja danych
 
-Projekt stosuje zasadę ścisłej minimalizacji danych:
+XMCL stosuje ścisłą zasadę minimalizacji danych (art. 5 ust. 1 lit. c RODO):
 
-### Strona internetowa (xmcl.app)
-- **Statystyki zbiorcze:** Za pośrednictwem Microsoft Azure Application Insights rejestrowane są anonimowe odsłony, wybory plików do pobrania oraz ogólne parametry przeglądarki i systemu.
-- **Techniczne pliki cookie:** Wykorzystywany jest wyłącznie lokalny plik cookie do zapamiętania preferencji językowych. Nie stosujemy marketingowych ani śledzących plików cookie stron trzecich.
+### Publiczna strona internetowa (xmcl.app)
+- **Zagregowana analityka bez plików cookie:** Korzystamy z usługi Microsoft Azure Application Insights skonfigurowanej w **trybie bez plików cookie** (`disableCookiesUsage: true`), z przetwarzaniem danych w regionie **Microsoft Azure East Asia (Hongkong)**, w celu rejestrowania anonimowych odsłon stron, wyborów pobrań, ogólnych atrybutów sieci/urządzenia oraz nagłówków User-Agent przeglądarki. Na urządzeniu użytkownika nie są zapisywane żadne pliki cookie analityczne ani śledzące między witrynami.
+- **Plik cookie ściśle niezbędny:** Przechowujemy wyłącznie jeden lokalny funkcjonalny plik cookie (`nf_lang`), ściśle niezbędny do zapamiętania wybranego języka interfejsu. Nie stosujemy plików cookie podmiotów trzecich do celów marketingowych, reklamowych ani śledzenia behawioralnego.
 
-### Launcher Open-Source
-- **Telemetria diagnostyczna (Wyłącznie za zgodą / Opt-in):** Zbieranie telemetrii jest **domyślnie wyłączone**. Tylko w przypadku aktywnego włączenia opcji w ustawieniach launchera mogą być przetwarzane:
-  - Losowo wygenerowany pseudonimowy identyfikator instalacji/urządzenia;
-  - Zdarzenia uruchomienia i zamknięcia gry, kody błędów aplikacji;
-  - Specyfikacja środowiska wykonawczego (system operacyjny, wersja Java, architektura procesora);
-  - Zrzuty stosu błędów (stack traces) z automatycznym usuwaniem ścieżek użytkownika.
-- **Bezpieczeństwo kont:** Nigdy nie pobieramy, nie przetwarzamy ani nie przechowujemy haseł ani tokenów logowania do kont Microsoft/Mojang.
+### Otwartoźródłowy launcher
+- **Opcjonalna telemetria i diagnostyka (Opt-in):** Telemetria diagnostyczna jest **domyślnie wyłączona**. Wyłącznie wtedy, gdy użytkownik wyraźnie włączy telemetrię w ustawieniach launchera (zgoda opt-in), launcher może przetwarzać:
+  - losowo wygenerowany, pseudonimizowany identyfikator instalacji/urządzenia;
+  - zdarzenia cyklu życia aplikacji (uruchomienie gry, normalne lub błędne kody zakończenia, wersja aplikacji);
+  - typ dostawcy uwierzytelniania (np. identyfikator uwierzytelniania Microsoft lub trybu offline);
+  - podstawowe parametry środowiska uruchomieniowego (system operacyjny, wersja środowiska Java, architektura procesora);
+  - dzienniki awarii (crash logs) oraz ślady stosu (stack traces).
+- **Oczyszczanie danych i dane uwierzytelniające:** Raporty awarii są, w miarę technicznych możliwości, oczyszczane z wrażliwych ścieżek plików, nazw użytkowników i tokenów systemowych. **Nigdy** nie przetwarzamy ani nie przechowujemy haseł, danych logowania ani tokenów sesji kont Microsoft/Mojang.
 
 ---
 
 ## 3. Okres przechowywania danych
 
-Stosujemy precyzyjnie określone terminy:
-- Dane telemetryczne oraz dzienniki błędów są przechowywane przez **maksymalnie 90 dni**, po czym są trwale usuwane lub bezpowrotnie anonimizowane.
-- Publiczne zgłoszenia w GitHub Issues podlegają regulaminowi platformy GitHub.
+Unikamy bezterminowego przechowywania danych:
+- Wszystkie dzienniki telemetrii, raporty błędów diagnostycznych i metryki wydajności są przechowywane przez **maksymalnie 90 dni**, po czym są trwale usuwane lub nieodwracalnie anonimizowane.
+- Publiczne zgłoszenia w systemie śledzenia błędów (issue tracker) na GitHubie pozostają dostępne zgodnie z politykami platformy GitHub i zasadami zarządzania repozytorium do momentu ich rozwiązania lub usunięcia.
 
 ---
 
-## 4. Przekazywanie danych poza EOG
+## 4. Podmioty przetwarzające i międzynarodowe przekazywanie danych
 
-- Korzystamy ze sprawdzonych dostawców infrastruktury chmurowej (Microsoft Azure, Cloudflare, GitHub, Vercel).
-- **Standardowe Klauzule Umowne (SCCs):** W przypadku transferu danych poza Europejski Obszar Gospodarczy (EOG) stosujemy Standardowe Klauzule Umowne zatwierdzone przez Komisję Europejską, zapewniające odpowiedni poziom ochrony.
-- **Brak sprzedaży danych:** Nie sprzedajemy danych osobowych ani nie wykorzystujemy ich do targetowania reklam.
+XMCL korzysta z globalnych dostawców infrastruktury w celu udostępniania pobrań, stron internetowych i opcjonalnej diagnostyki:
 
----
+| Dostawca | Rola i przetwarzane dane | Regiony przetwarzania | Polityka prywatności |
+| :--- | :--- | :--- | :--- |
+| **Microsoft Azure (Application Insights)** | Analityka internetowa bez plików cookie, opcjonalna diagnostyka launchera | Hongkong (Azja Wschodnia), Stany Zjednoczone, UE | [Prywatność Microsoft](https://privacy.microsoft.com/privacystatement) |
+| **Cloudflare** | CDN, routing brzegowy (edge), ochrona przed DDoS | Globalna sieć Edge / Stany Zjednoczone | [Prywatność Cloudflare](https://www.cloudflare.com/privacypolicy/) |
+| **GitHub** | Hosting kodu źródłowego, wydania, system śledzenia błędów | Stany Zjednoczone | [Prywatność GitHub](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) |
+| **Vercel** | Hosting i dystrybucja strony internetowej | Stany Zjednoczone / Globalna sieć Edge | [Prywatność Vercel](https://vercel.com/legal/privacy-policy) |
 
-## 5. Wiek zgody i ochrona małoletnich
-
-- Zgodnie z przepisami RODO oraz polskiej ustawy o ochronie danych osobowych, osoby w wieku **od 16 lat** mogą samodzielnie wyrażać zgodę.
-- W przypadku osób poniżej 16. roku życia wymagana jest **zgoda rodzica lub opiekuna prawnego**.
-
----
-
-## 6. Prawa osoby, której dane dotyczą (RODO)
-
-Przysługują Ci następujące prawa:
-1. Prawo dostępu do danych (art. 15 RODO);
-2. Prawo do sprostowania danych (art. 16 RODO);
-3. Prawo do usunięcia danych („prawo do bycia zapomnianym”, art. 17 RODO);
-4. Prawo do ograniczenia przetwarzania (art. 18 RODO);
-5. Prawo do przenoszenia danych (art. 20 RODO);
-6. Prawo do sprzeciwu (art. 21 RODO);
-7. Prawo do wycofania zgody w dowolnym momencie (w ustawieniach launchera);
-8. Prawo wniesienia skargi do organu nadzorczego (w Polsce: Prezes Urzędu Ochrony Danych Osobowych – UODO, [uodo.gov.pl](https://uodo.gov.pl)).
-
-W celu realizacji praw prosimy o kontakt: **cijhn@hotmail.com**.
+- **Zabezpieczenia przekazywania danych:** W przypadku przekazywania danych technicznych poza EOG, Wielką Brytanię lub Szwajcarię opieramy się na Standardowych Klauzulach Umownych (SCC) zatwierdzonych przez Komisję Europejską (art. 46 RODO), brytyjskim porozumieniu UK International Data Transfer Agreement (IDTA) / Addendum oraz równoważnych zabezpieczeniach ustawowych.
+- **Prawo do odmowy:** Użytkownik może odmówić transgranicznego przekazywania danych diagnostycznych launchera, pozostawiając telemetrię wyłączoną (stan domyślny).
+- **Brak sprzedaży danych:** Nigdy nie sprzedajemy danych osobowych ani nie udostępniamy ich na potrzeby międzykontekstowej reklamy behawioralnej.
 
 ---
 
-## 7. Zastrzeżenie prawne dotyczące Minecraft
+## 5. Postanowienia regionalne i prawa ustawowe
 
-XMCL jest niezależnym projektem open-source i nie jest powiązany z firmami Microsoft Corporation ani Mojang Studios, ani przez nie sponsorowany.
+### Unia Europejska, EOG i Polska (RODO)
+- **Podstawy prawne:** Zgoda (art. 6 ust. 1 lit. a RODO) w przypadku opcjonalnej telemetrii diagnostycznej; prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO) w zakresie bezpieczeństwa infrastruktury, dostępności oraz zagregowanej analityki bez plików cookie.
+- **Wiek zgody cyfrowej:** W Polsce wiek wyrażenia zgody cyfrowej wynosi **16 lat** zgodnie z art. 8 ust. 1 RODO (w innych państwach członkowskich UE 13–15 lat). Osoby małoletnie poniżej tego progu wymagają zgody lub aprobaty osoby sprawującej władzę rodzicielską lub opiekę.
+- **Prawa użytkownika:** Na mocy art. 15–22 RODO przysługuje prawo dostępu do danych, ich sprostowania, usunięcia („prawo do bycia zapomnianym”), ograniczenia przetwarzania, przenoszenia danych, wniesienia sprzeciwu, cofnięcia zgody w dowolnym momencie oraz wniesienia skargi do **Prezesa Urzędu Ochrony Danych Osobowych (UODO)** pod adresem [https://uodo.gov.pl](https://uodo.gov.pl) lub innego właściwego organu nadzorczego.
+
+### Wielka Brytania (UK GDPR i DPA 2018)
+- Regulowane przepisami UK GDPR oraz Data Protection Act 2018. Wiek zgody cyfrowej: **13 lat**. Organ nadzorczy: UK Information Commissioner's Office (ICO) pod adresem [ico.org.uk](https://ico.org.uk).
+
+### Stany Zjednoczone (COPPA, CCPA / CPRA i prawa stanowe)
+- **COPPA:** XMCL nie jest skierowany do dzieci poniżej 13. roku życia. Nie gromadzimy świadomie danych osobowych dzieci poniżej 13 lat. Rodzice lub opiekunowie mogą skontaktować się pod adresem [cijhn@hotmail.com](mailto:cijhn@hotmail.com) w celu niezwłocznego usunięcia danych.
+- **CCPA / CPRA i przepisy stanowe USA:** XMCL **nie** sprzedaje ani nie udostępnia danych osobowych na potrzeby międzykontekstowej reklamy behawioralnej. Mieszkańcy Kalifornii, Wirginii, Kolorado, Connecticut, Utah, Teksasu, Oregonu i innych stanów posiadających odpowiednie przepisy mają prawo do informacji, dostępu, poprawiania, usuwania danych oraz korzystania z tych praw bez dyskryminacji.
+
+### Inne jurysdykcje
+- Respektujemy równoważne prawa osób, których dane dotyczą, wynikające z obowiązujących lokalnych przepisów na całym świecie (w tym Brazylia LGPD, Japonia APPI, Korea Południowa PIPA, Chiny PIPL, Tajwan PDPA, Turcja KVKK, Indie DPDP Act, Indonezja UU PDP, Wietnam Dekret 13, Ukraina, Arabia Saudyjska/ZEA PDPL).
+
+---
+
+## 6. Wykonywanie praw
+
+W celu wykonania praw dostępu, sprostowania, usunięcia danych lub cofnięcia zgody prosimy o kontakt z **CI010** pod adresem **[cijhn@hotmail.com](mailto:cijhn@hotmail.com)**.
+
+---
+
+## 7. Język wiążący i zastrzeżenie prawne
+
+- **Język wiążący:** Tłumaczenia niniejszej informacji udostępniane są dla wygody użytkowników. W razie rozbieżności między wersją przetłumaczoną a wersją angielską rozstrzygająca jest wersja angielska w zakresie dopuszczonym przez bezwzględnie obowiązujące przepisy prawa lokalnego.
+- **Zastrzeżenie dotyczące Minecraft i Mojang:** XMCL jest niezależnym otwartoźródłowym projektem oprogramowania i nie jest powiązany, autoryzowany, sponsorowany ani wspierany przez Microsoft Corporation ani Mojang Studios.

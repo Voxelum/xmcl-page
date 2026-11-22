@@ -301,7 +301,8 @@ const homeFundingUrl = computed(() => {
   })
   return `${billingUrl}?${params}`
 })
-const legalLocale = computed(() => ['zh', 'zh-TW'].includes(locale.value) ? locale.value : 'en')
+const supportedLegalLocales = new Set(['en', 'uk', 'ru', 'zh', 'zh-TW', 'de', 'fr', 'es', 'it', 'pl', 'pt', 'jp', 'ko', 'ar', 'be', 'kk', 'tr', 'vi', 'hi', 'bn', 'jv', 'lol'])
+const legalLocale = computed(() => supportedLegalLocales.has(locale.value) ? locale.value : 'en')
 const comingSoon = computed(() => locale.value === 'zh'
   ? '即将推出'
   : locale.value === 'zh-TW'

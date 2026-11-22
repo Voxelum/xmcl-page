@@ -79,6 +79,7 @@ export default {
               const appInsights = new ApplicationInsights({
                 config: {
                   connectionString: 'InstrumentationKey=7a526b34-c173-43f6-9641-1e4c98863368;IngestionEndpoint=https://eastasia-0.in.applicationinsights.azure.com/',
+                  disableCookiesUsage: true,
                   disableFetchTracking: true,
                   enableUnhandledPromiseRejectionTracking: false
                 }
